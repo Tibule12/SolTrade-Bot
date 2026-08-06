@@ -1,0 +1,29 @@
+# SHA-256 manifest for Phase 6 V8. This manifest intentionally cannot include its own hash.
+# Repository artifacts
+1c4bbafabf1b1baa0b074a0162701953518b2ed5031b2e7474040154eeb0f07e  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/SolTradePhase6V8TesterRealTickProbe.mq5
+1f0d43c874198710f254a86a020437cee902e01e3598f9e6f5b4ced8a67f30f3  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/SolTradePhase6V8TickBarBuilder.mq5
+c60424d36c2fd2cfaf3140c64cfee42a31c920d1a8cc6b1ecea643b076e15898  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/SolTradePhase6V8TickTailObserver.mq5
+94d1fc9a32d0af1d99a67ac0150e0a9e2bfb1d7b3232d6e7b4ced3275b06caab  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/clean-segment-manifest-v8.json
+61082930bde47b351561cbfb60d46b02e5c550d8a40431d22309dfd3df752f11  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/compilation-evidence-v8.json
+2d6d97287e42895c8fad031d70430fc1f2baae414e46d3597cdb0cb4469a6dd7  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/connected-bar-builder-v8.ini
+d4f7ed40de53ec4437ec4a0ad85d45fb20261eab6f1635e08f00a30ba3af3663  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/connected-tail-observer-v8.ini
+0961e0543e2b2ea7a72725268e339a49166c130445a54499209c15de432a1ae7  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/data-qualification-result-v8.json
+dcd2f489cc6bd06f6a6e3bc3644179f4348cd54ea7dbad52819611008e2b7f26  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/history-identity-v8.json
+d2036b3a0c629fb45c95385e62f92785da5951fd11a5b617b2d8615c5d01407c  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/normalized-runtime-evidence-v8.md
+75c90c0c030c77509c1fe0c0ad340d858429dd8d6dbb7d13820eeb3cacf1521e  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/phase6-v8-methodology-amendment.json
+d556aade45c78b309e3a2fa98df090231480e6990be98c3950238949bff0042d  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/real-tick-source-manifest-v8.json
+b579e051f9998ef977874b2c88c565860d2af106e8c944b64878a1b149b981c8  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/strategy-tester-real-tick-probe-v8.ini
+645b7c297fa93345aef2010b09ea8c7c0b8948e5070e2f5120a4bac04328c948  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/terminal-outcome-v8.md
+04eab663c26bddd737e4f5e0234c34f394c4b3eadec0eea5fd17f74e1bc864a7  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/tester-real-tick-probe-v8.json
+d29494e91fabbf96ea6dde6cc531ac92a9db126036a784ec79b4fa8627735426  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/tick-derived-h1-report-v8.json
+1db1352dfe792f17a89bcbb9e467ac413e9fe6e0a84cd6422257f6fac82e1822  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/tick-derived-m1-report-v8.json
+97edfbb77abe30639e5e6448c537045167c9b40b5cf286ecd10a3d3a8922a03c  reports/backtests/phase6-v8-fpmarkets-tick-derived-qualification/unresolved-gap-quarantine-v8.json
+
+# Bulk derived evidence retained in the isolated FP Markets Wine prefix (not committed)
+7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee  /home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedH1.csv
+e39578b49bf62361de23655c76891f0fd427a016aa970e3555cebc5ad8a3a63e  /home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedM1.csv
+
+# Compiled runtime evidence retained outside the repository
+94b1e6186a72bce22213689ecd1854c2192c7be784560990de4053ef4b87063b  /home/tibule12/.wine-fpmarkets/drive_c/v8/SolTradePhase6V8TesterRealTickProbe.ex5
+7a0aff2e9cb684e2637951ef2682c6b3d4aa2ae70dcc3c4ac24b30f7aeaaa5c8  /home/tibule12/.wine-fpmarkets/drive_c/v8/SolTradePhase6V8TickBarBuilder.ex5
+f47aa3cef4dd2cbe4a18e2f487ab0b6e3c77ffa7cbe524f21ba0651835784465  /home/tibule12/.wine-fpmarkets/drive_c/v8/SolTradePhase6V8TickTailObserver.ex5

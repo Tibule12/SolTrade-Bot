@@ -1,0 +1,13 @@
+{
+  "label": "PROPOSED_OOS",
+  "interval_start_inclusive": "2026-04-09 00:00:00",
+  "interval_end_exclusive": "2026-07-01 00:00:00",
+  "setups": 115,
+  "confirmed_entries": 2,
+  "rejected_confirmations": 113,
+  "expired_setups": 113,
+  "theoretical_stop_exits": 0,
+  "theoretical_donchian_exits": 2,
+  "naturally_completed_position_cycles": 2,
+  "positions_open_at_interval_end": 0
+}

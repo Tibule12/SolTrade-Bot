@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_PHYSICAL_RUN_STATUS_ATTEMPT2_V1",
+  "supersedes_zero-entry_technical_failure": true,
+  "runner_original_status": "PASS",
+  "post_run_acceptance_audit": "INVALIDATED_ZERO_FILLED_TRADES",
+  "run_number": 1,
+  "run_id": "01-v26-2025-development-native",
+  "dataset": "V26_2025_DEVELOPMENT",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 788.0467896461487,
+  "wine_return_code": 0,
+  "schedule_legs": 204,
+  "entry_attempts": 204,
+  "entry_fills": 0,
+  "exit_fills": 0,
+  "open_positions_at_end": 0,
+  "seal_breach": "NO",
+  "native_reports": [
+    "attempt-2-01-v26-2025-development-native-holding.png",
+    "attempt-2-01-v26-2025-development-native.html",
+    "attempt-2-01-v26-2025-development-native.png",
+    "attempt-2-01-v26-2025-development-native-hst.png",
+    "attempt-2-01-v26-2025-development-native-mfemae.png"
+  ],
+  "operational_result": "204_OF_204_POSITION_SIZE_REJECTED_BELOW_BROKER_MINIMUM",
+  "profitability_evidence_produced": false,
+  "status": "VALID_ZERO_FILL_OPERATIONAL_RESULT"
+}

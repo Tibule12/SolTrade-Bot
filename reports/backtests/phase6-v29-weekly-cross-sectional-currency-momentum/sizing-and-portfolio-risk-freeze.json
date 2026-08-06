@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_SIZING_RISK_FREEZE_V1",
+  "starting_equity_usd": 10000.0,
+  "risk_budget_per_leg": "current_account_equity * 0.0025",
+  "stop_distance": "3.0 * Wilder ATR14 from last completed D1 bar",
+  "raw_volume": "risk_budget_usd / (stop_distance / tick_size * tick_value_loss)",
+  "volume_rounding": "floor to broker volume step; never round above risk budget",
+  "below_minimum_volume": "POSITION_SIZE_REJECTED; no retry",
+  "maximum_simultaneous_legs": 4,
+  "maximum_weekly_initial_risk": "current_account_equity * 0.0100",
+  "portfolio_gate": "sum of actual fill risk for a rebalance must be <= 1.00 percent of equity immediately before the first leg; otherwise INVALID_TEST_EVIDENCE",
+  "unchanged_safety_locks": {
+    "daily_loss_percent": 1.0,
+    "weekly_loss_percent": 2.5,
+    "emergency_drawdown_percent": 5.0,
+    "consecutive_losses": 3
+  }
+}

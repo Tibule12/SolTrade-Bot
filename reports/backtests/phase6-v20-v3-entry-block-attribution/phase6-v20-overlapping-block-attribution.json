@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "combinations": {
+    "SPREAD_ABOVE_FROZEN_LIMIT": 61
+  },
+  "multiple_reason_block_count": 0,
+  "each_block_has_exactly_one_primary": true
+}

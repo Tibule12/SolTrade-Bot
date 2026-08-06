@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_GATE_EVALUATION_V1",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "evidence_gate": "FAIL",
+  "performance_gates_evaluated": false,
+  "sample_size_gate_evaluated": false,
+  "normal_cost_gates": "NOT_EVALUATED",
+  "high_cost_gates": "NOT_EVALUATED",
+  "stress_cost_gates": "NOT_EVALUATED",
+  "concentration_gates": "NOT_EVALUATED",
+  "cross_dataset_gates": "NOT_EVALUATED",
+  "reason": "No valid run may begin with unresolved boundary, delay, comparator and seed inputs."
+}

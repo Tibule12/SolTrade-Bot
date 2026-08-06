@@ -1,0 +1,64 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_GATE_MANIFEST_V1",
+  "all_mandatory": true,
+  "sample_normal_native": {
+    "all_closed_legs": ">= 150",
+    "closed_legs_dated_2026": ">= 50",
+    "LONG_closed": ">= 50",
+    "SHORT_closed": ">= 50",
+    "each_currency_closed": ">= 10"
+  },
+  "performance_every_cell": {
+    "NORMAL": {
+      "profit_factor": "> 1.15",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "< 5"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.05",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 7"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 9"
+    }
+  },
+  "concentration_every_cell": {
+    "best_individual_leg_percent": "<= 15",
+    "best_currency_percent": "<= 40",
+    "best_direction_percent": "<= 70",
+    "best_week_percent": "<= 20",
+    "best_month_percent": "<= 40",
+    "undefined_on_nonpositive_net": "FAIL"
+  },
+  "cross_dataset_per_cost_execution": {
+    "expectancy_min_div_max": ">= 0.35",
+    "annualized_return_min_div_max": ">= 0.35",
+    "profit_factor_range": "<= 0.50"
+  },
+  "portfolio_risk": {
+    "simultaneous_legs": "<= 4",
+    "actual_initial_risk_percent_per_rebalance": "<= 1.00",
+    "unexplained_missing_or_unclosed_leg": "INVALID"
+  },
+  "correlation": {
+    "method": "Pearson correlation of simultaneous-leg net-R series by deterministic rank slot across complete rebalance cohorts",
+    "numeric_gate": "REPORTING_ONLY"
+  },
+  "uncertainty": {
+    "bootstrap_paths": 100000,
+    "monte_carlo_paths": 100000,
+    "reporting_only": true
+  },
+  "outcomes": [
+    "V29_INDEPENDENT_DEVELOPMENT_PASSED",
+    "V29_INDEPENDENT_DEVELOPMENT_FAILED",
+    "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+    "INVALID_TEST_EVIDENCE"
+  ]
+}

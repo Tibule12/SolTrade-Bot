@@ -1,0 +1,22 @@
+{
+  "schema": "SOLTRADE_FXIFY_V28_CONTINUOUS_RUN_COMPLETION_V1",
+  "status": "PASS",
+  "runs": [
+    "a2-reference-normal",
+    "normal",
+    "high",
+    "stress",
+    "a2-reference-200ms",
+    "200ms"
+  ],
+  "technical_failures_retained": [
+    "technical-failures/reference-normal-attempt1"
+  ],
+  "production_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "frozen_signal_source_sha256": "7f080c26d26b634b2f8a1e840b3a9fa60926fb95e415956ba0a8475f838537bd",
+  "frozen_performance_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "generated_signal_source_sha256": "c3af2ccaa19187222081de68bd393ce887cf0ac220e2395db9018c2ce140a78d",
+  "generated_performance_source_sha256": "8a8179d359b04941094d9019bc4a8ddda7f9319ff028af43a8e0369c2d27d503",
+  "generated_signal_ex5_sha256": "a765b9d05d47fe54510da946b04f4d422a01fa4469fb59d7268182a32f8b298a",
+  "generated_performance_ex5_sha256": "df0601a7863f5b52c45f3a327da91e9d4b0e38390d36e48407417c800f47884b"
+}

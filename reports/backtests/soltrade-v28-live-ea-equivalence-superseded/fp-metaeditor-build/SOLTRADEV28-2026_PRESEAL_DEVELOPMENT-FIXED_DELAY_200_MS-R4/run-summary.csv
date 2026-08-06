@@ -1,0 +1,18 @@
+field,value
+schema,SOLTRADE_V28_LIVE_EQUIVALENCE_SUMMARY_V1
+execution_instance_id,SOLTRADEV28-2026_PRESEAL_DEVELOPMENT-FIXED_DELAY_200_MS-R4
+dataset,V28_2026_PRESEAL_DEVELOPMENT
+execution_layer,FIXED_DELAY_200_MS
+schedule_signals,42
+processed_signals,42
+entry_attempts,42
+entry_fills,35
+exit_fills,24
+missed_signals,0
+spread_blocks,0
+risk_blocks,7
+execution_blocks,0
+open_positions_at_end,0
+max_tick,2026.07.31 23:59:56
+seal_breach,NO
+run_evidence_status,PASS

@@ -1,0 +1,10 @@
+{
+  "terminal_outcome": "V3_SAMPLE_GATE_INFEASIBLE",
+  "result_classification": "STRUCTURAL_SAMPLE_UPPER_BOUND",
+  "frozen_gate": 50,
+  "proposed_oos_completed_cycles": 7,
+  "gate_met": false,
+  "post_oos_combined_with_oos": false,
+  "extension_applied": false,
+  "performance_dependent_risk_state_calculated": false
+}

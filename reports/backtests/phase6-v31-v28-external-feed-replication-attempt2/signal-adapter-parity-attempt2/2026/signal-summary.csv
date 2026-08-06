@@ -1,0 +1,15 @@
+field,value
+schema,SOLTRADE_PHASE6_V31_SIGNAL_SUMMARY_V1
+dataset,V31_SIGNAL_ADAPTER_EQUIVALENCE_2026
+eligible_from,2026.01.05 00:00:00
+eligible_to_exclusive,2026.08.01 00:00:00
+cohorts,6
+legs,42
+buy,21
+sell,21
+skips,0
+max_tick,2026.07.31 23:59:56
+seal_breach,NO
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,PASS

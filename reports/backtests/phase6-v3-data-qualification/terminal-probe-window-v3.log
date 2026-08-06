@@ -1,0 +1,17 @@
+MO	0	21:22:42.138	Startup	successfully initialized from start config "Z:\home\tibule12\Projects\SolTrade-Bot\reports\backtests\phase6-v3-data-qualification\strategy-tester-probe.ini"
+LD	0	21:22:42.310	Terminal	MetaTrader 5 x64 build 6067 started for MetaQuotes Ltd.
+QP	0	21:22:42.311	Terminal	Windows 11 build 22000 on Wine 11.14 Linux 7.0.0-28-generic, 8 x Intel Core i7-7820HQ  @ 2.90GHz, AVX2, 17 / 23 Gb memory, 9 / 232 Gb disk, GMT+2
+ND	0	21:22:42.311	Terminal	C:\Program Files\MetaTrader 5
+PM	0	21:22:42.311	Terminal	launched with Z:\home\tibule12\Projects\SolTrade-Bot\reports\backtests\phase6-v3-data-qualification\strategy-tester-probe.ini
+RN	0	21:22:42.320	MCP	started on 127.0.0.1:22346
+II	0	21:22:46.125	Network '<REDACTED_ACCOUNT>': authorized on easyMarkets-Live through Access Server 2
+CF	0	21:22:46.125	Network '<REDACTED_ACCOUNT>': previous successful authorization performed from <REDACTED_IP> on 2026.07.28 19:15:40
+CR	0	21:22:46.723	Network '<REDACTED_ACCOUNT>': terminal synchronized with Blue Capital Markets Limited: 0 positions, 0 orders, 144 symbols, 0 spreads
+MK	0	21:22:46.723	Network '<REDACTED_ACCOUNT>': trading has been enabled, demo account - hedging mode
+EO	0	21:22:46.723	Network '<REDACTED_ACCOUNT>': balance management has been disabled - demo account
+RM	0	21:22:46.794	Tester	automatic testing started
+JO	0	21:22:53.039	Tester	last test passed with result "successfully finished" in 0:00:05.169
+JP	0	21:22:53.266	Terminal	exit with code 0
+GH	0	21:22:53.328	Network '<REDACTED_ACCOUNT>': disconnected from easyMarkets-Live
+MO	0	21:22:53.379	Terminal	stopped with 0
+DO	0	21:22:53.386	Terminal	shutdown with 0

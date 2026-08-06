@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_EXECUTION_STOP_RECORD_V1",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "stopped_at": "PRE_DOWNLOAD_EXECUTABLE_TO_CUSTOM_SYMBOL_COMPATIBILITY_GATE",
+  "raw_tick_files_downloaded": 0,
+  "raw_or_normalized_ticks_transformed": 0,
+  "custom_symbols_created": 0,
+  "ticks_imported": 0,
+  "qualification_runs": 0,
+  "performance_runs": 0,
+  "formal_performance_cells": 0,
+  "combined_evidence_audit": "NOT_AUTHORIZED",
+  "v28_pnl_viewed": false,
+  "profitability_metrics_calculated": false,
+  "orders_positions_demo_or_live_trades": 0,
+  "v28_status": "UNCHANGED_AND_NOT_FAILED_REPLICATION"
+}

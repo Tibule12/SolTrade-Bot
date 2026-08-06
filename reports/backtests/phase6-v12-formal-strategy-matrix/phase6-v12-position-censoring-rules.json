@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_POSITION_CENSORING_RULES_V1",
+  "classification": "RIGHT_CENSORED_OPEN_POSITION",
+  "at_most_per_subrun": 1,
+  "formal_pnl": "EXCLUDED",
+  "unrealized_pnl": "EXCLUDED",
+  "naturally_closed_trade_count": "EXCLUDED",
+  "win_loss_expectancy_profit_factor": "EXCLUDED",
+  "carry_to_next_subrun": false,
+  "forced_exit_invented": false,
+  "native_tester_forced_close_retained_as_physical_evidence": true,
+  "implementation_status": "FAIL_NOT_IMPLEMENTED_IN_FROZEN_REPORTER",
+  "required_evidence": "A pre-forced-close snapshot or an unambiguous tester-forced-exit marker must identify the position open at the final eligible tick."
+}

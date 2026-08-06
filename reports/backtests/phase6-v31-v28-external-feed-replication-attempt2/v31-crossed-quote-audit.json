@@ -1,0 +1,157 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_CROSSED_QUOTE_AUDIT_V1",
+  "status": "FAIL",
+  "source": "Dukascopy Bank Jetta historical tick service",
+  "parser_semantics": "Initial bid and ask plus provider-supplied per-tick bid/ask deltas; previously matched the Dukascopy BI5 archive exactly on all 4,343 equivalence rows.",
+  "crossed_quote_count": 12208,
+  "both_reported_volumes_zero_count": 8698,
+  "affected_symbol_count": 6,
+  "unaffected_symbols": [
+    "GBPUSD"
+  ],
+  "all_crossings_reconciled_to_frozen_raw_summary": true,
+  "all_crossings_confined_to_2024_10_09_23_and_2024_10_10_00_utc": true,
+  "interpretation": "The preserved provider payload contains bid-above-ask rows. They cannot represent a valid historical market spread and cannot be patched, filtered, interpolated or replaced under the frozen V31 rules.",
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "crossed_quote_count": 3464,
+      "both_reported_volumes_zero_count": 1829,
+      "first_crossed_quote_utc": "2024-10-09T23:07:46.000Z",
+      "final_crossed_quote_utc": "2024-10-10T00:59:57.362Z",
+      "affected_raw_files": [
+        "EURUSD/2024/10/09/23h_ticks.json.gz",
+        "EURUSD/2024/10/10/00h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 13,
+      "first_example": {
+        "raw_file": "EURUSD/2024/10/09/23h_ticks.json.gz",
+        "timestamp_utc": "2024-10-09T23:07:46.000Z",
+        "bid": 1.09406,
+        "ask": 1.09399,
+        "bid_points": 109406,
+        "ask_points": 109399,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    },
+    {
+      "symbol": "GBPUSD",
+      "crossed_quote_count": 0,
+      "both_reported_volumes_zero_count": 0,
+      "first_crossed_quote_utc": null,
+      "final_crossed_quote_utc": null,
+      "affected_raw_files": [],
+      "maximum_bid_above_ask_points": 0,
+      "first_example": null
+    },
+    {
+      "symbol": "AUDUSD",
+      "crossed_quote_count": 1710,
+      "both_reported_volumes_zero_count": 1710,
+      "first_crossed_quote_utc": "2024-10-09T23:17:23.000Z",
+      "final_crossed_quote_utc": "2024-10-10T00:04:45.000Z",
+      "affected_raw_files": [
+        "AUDUSD/2024/10/09/23h_ticks.json.gz",
+        "AUDUSD/2024/10/10/00h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 47,
+      "first_example": {
+        "raw_file": "AUDUSD/2024/10/09/23h_ticks.json.gz",
+        "timestamp_utc": "2024-10-09T23:17:23.000Z",
+        "bid": 0.67161,
+        "ask": 0.67159,
+        "bid_points": 67161,
+        "ask_points": 67159,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    },
+    {
+      "symbol": "NZDUSD",
+      "crossed_quote_count": 2382,
+      "both_reported_volumes_zero_count": 1020,
+      "first_crossed_quote_utc": "2024-10-09T23:42:06.000Z",
+      "final_crossed_quote_utc": "2024-10-10T00:59:57.148Z",
+      "affected_raw_files": [
+        "NZDUSD/2024/10/09/23h_ticks.json.gz",
+        "NZDUSD/2024/10/10/00h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 26,
+      "first_example": {
+        "raw_file": "NZDUSD/2024/10/09/23h_ticks.json.gz",
+        "timestamp_utc": "2024-10-09T23:42:06.000Z",
+        "bid": 0.6069300000000001,
+        "ask": 0.60692,
+        "bid_points": 60693,
+        "ask_points": 60692,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    },
+    {
+      "symbol": "USDCAD",
+      "crossed_quote_count": 2071,
+      "both_reported_volumes_zero_count": 2071,
+      "first_crossed_quote_utc": "2024-10-09T23:18:46.000Z",
+      "final_crossed_quote_utc": "2024-10-09T23:59:59.000Z",
+      "affected_raw_files": [
+        "USDCAD/2024/10/09/23h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 39,
+      "first_example": {
+        "raw_file": "USDCAD/2024/10/09/23h_ticks.json.gz",
+        "timestamp_utc": "2024-10-09T23:18:46.000Z",
+        "bid": 1.3711200000000001,
+        "ask": 1.3711000000000002,
+        "bid_points": 137112,
+        "ask_points": 137110,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    },
+    {
+      "symbol": "USDCHF",
+      "crossed_quote_count": 5,
+      "both_reported_volumes_zero_count": 4,
+      "first_crossed_quote_utc": "2024-10-10T00:08:34.000Z",
+      "final_crossed_quote_utc": "2024-10-10T00:42:57.582Z",
+      "affected_raw_files": [
+        "USDCHF/2024/10/10/00h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 1,
+      "first_example": {
+        "raw_file": "USDCHF/2024/10/10/00h_ticks.json.gz",
+        "timestamp_utc": "2024-10-10T00:08:34.000Z",
+        "bid": 0.86048,
+        "ask": 0.8604700000000001,
+        "bid_points": 86048,
+        "ask_points": 86047,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    },
+    {
+      "symbol": "USDJPY",
+      "crossed_quote_count": 2576,
+      "both_reported_volumes_zero_count": 2064,
+      "first_crossed_quote_utc": "2024-10-09T23:11:58.000Z",
+      "final_crossed_quote_utc": "2024-10-10T00:59:57.135Z",
+      "affected_raw_files": [
+        "USDJPY/2024/10/09/23h_ticks.json.gz",
+        "USDJPY/2024/10/10/00h_ticks.json.gz"
+      ],
+      "maximum_bid_above_ask_points": 19,
+      "first_example": {
+        "raw_file": "USDJPY/2024/10/09/23h_ticks.json.gz",
+        "timestamp_utc": "2024-10-09T23:11:58.000Z",
+        "bid": 149.244,
+        "ask": 149.243,
+        "bid_points": 149244,
+        "ask_points": 149243,
+        "bid_volume": 0.0,
+        "ask_volume": 0.0
+      }
+    }
+  ]
+}

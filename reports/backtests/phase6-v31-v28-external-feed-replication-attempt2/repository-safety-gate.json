@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_ATTEMPT2_REPOSITORY_SAFETY_GATE_V1",
+  "status": "PASS",
+  "checked_at": "2026-08-04T16:21:44+02:00",
+  "branch": "main",
+  "head_before_predownload_freeze": "431ac5a55657499443728fdcde563c10c5f137f7",
+  "worktree_clean": true,
+  "ahead_of_origin_main": 73,
+  "bundle_path": "/home/tibule12/Backups/SolTrade-Bot-phase6-v31-external-start-431ac5a-20260804.bundle",
+  "bundle_bytes": 30262192,
+  "bundle_sha256": "bda8dd5144fb97583b9b6f6010df14e899942c44f29984588c10645afd6712fb",
+  "bundle_verify": "PASS_COMPLETE_HISTORY_ALL_REFS",
+  "automatic_push": false
+}

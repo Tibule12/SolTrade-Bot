@@ -1,0 +1,458 @@
+{
+  "acceptance_rules": {
+    "below_oos_minimum_label": "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+    "best_calendar_year_or_registered_subperiod_max_percent": 40.0,
+    "best_trade_max_percent_of_positive_net_profit": 20.0,
+    "high": {
+      "expectancy": "> 0",
+      "maximum_equity_drawdown_percent": "<= 10.0",
+      "net_profit": "> 0",
+      "profit_factor": ">= 1.05"
+    },
+    "normal": {
+      "expectancy": "> 0",
+      "maximum_equity_drawdown_percent": "< 8.0",
+      "net_profit": "> 0",
+      "profit_factor": "> 1.15"
+    },
+    "out_of_sample_closed_trade_minimum": 50,
+    "stress": {
+      "expectancy": "> 0",
+      "maximum_equity_drawdown_percent": "<= 12.0",
+      "net_profit": "> 0",
+      "profit_factor": ">= 1.00"
+    },
+    "subperiod_semantics": "For intervals shorter than four years, five equal chronological subperiods are used; otherwise calendar years are used.",
+    "variation": {
+      "maximum_profit_factor_range": "<= 0.40",
+      "minimum_annualized_return_vs_max": ">= 50%",
+      "minimum_normalized_expectancy_vs_max": ">= 50%"
+    }
+  },
+  "canonical_trading_inputs": {
+    "execution_instance_id_included": false,
+    "matrix_fingerprint_sha256": "bb021bcb6f7bc409577de135ba8b6d93efb5dbc31b1f5869155a88a7e3765b27",
+    "reason_for_exclusions": "ExecutionInstanceId and its derived roots isolate state/artifacts only. Static and MQL fixtures prove they do not reach strategy, risk, execution-plan, position, or metric calculations.",
+    "runs": [
+      {
+        "authoritative_execution_instance_id": "P6-DEV-NORMAL-AUTH-01",
+        "authoritative_name": "P6-DEV-NORMAL-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "NORMAL",
+        "dataset": "DEVELOPMENT",
+        "end_exclusive": "2025-04-01T00:00:00Z",
+        "fixed_execution_delay_ms": 200,
+        "replica_execution_instance_id": "P6-DEV-NORMAL-REPLICA-01",
+        "replica_name": "P6-DEV-NORMAL-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2024-01-01T00:00:00Z",
+        "supplementary_multiplier": 0.0,
+        "trading_input_hash": "8092dc9bfdf23632dae16d0caae7204a9a8a8c427cec78fb900dffe26792bc42"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-DEV-HIGH-AUTH-01",
+        "authoritative_name": "P6-DEV-HIGH-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "HIGH",
+        "dataset": "DEVELOPMENT",
+        "end_exclusive": "2025-04-01T00:00:00Z",
+        "fixed_execution_delay_ms": 400,
+        "replica_execution_instance_id": "P6-DEV-HIGH-REPLICA-01",
+        "replica_name": "P6-DEV-HIGH-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2024-01-01T00:00:00Z",
+        "supplementary_multiplier": 0.5,
+        "trading_input_hash": "6053c31134471dab9e2601efe80527c28d4bef79a5b96ba01311b3914a7c1718"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-DEV-STRESS-AUTH-01",
+        "authoritative_name": "P6-DEV-STRESS-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "STRESS",
+        "dataset": "DEVELOPMENT",
+        "end_exclusive": "2025-04-01T00:00:00Z",
+        "fixed_execution_delay_ms": 800,
+        "replica_execution_instance_id": "P6-DEV-STRESS-REPLICA-01",
+        "replica_name": "P6-DEV-STRESS-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2024-01-01T00:00:00Z",
+        "supplementary_multiplier": 1.0,
+        "trading_input_hash": "2a41a7e4666195f99a2448c05e0f052dd6cd9ca3f05baaad7750b693dc320fc9"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-VAL-NORMAL-AUTH-01",
+        "authoritative_name": "P6-VAL-NORMAL-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "NORMAL",
+        "dataset": "VALIDATION",
+        "end_exclusive": "2025-11-15T00:00:00Z",
+        "fixed_execution_delay_ms": 200,
+        "replica_execution_instance_id": "P6-VAL-NORMAL-REPLICA-01",
+        "replica_name": "P6-VAL-NORMAL-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-04-01T00:00:00Z",
+        "supplementary_multiplier": 0.0,
+        "trading_input_hash": "b0f5ae16572f59877ce64784a46ce004c76b731bca7d61dc0caecf32e368980f"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-VAL-HIGH-AUTH-01",
+        "authoritative_name": "P6-VAL-HIGH-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "HIGH",
+        "dataset": "VALIDATION",
+        "end_exclusive": "2025-11-15T00:00:00Z",
+        "fixed_execution_delay_ms": 400,
+        "replica_execution_instance_id": "P6-VAL-HIGH-REPLICA-01",
+        "replica_name": "P6-VAL-HIGH-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-04-01T00:00:00Z",
+        "supplementary_multiplier": 0.5,
+        "trading_input_hash": "5ae742987145e31dd46496eb5ea4c758518eb6f601d5bbf8b6225e86b438b415"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-VAL-STRESS-AUTH-01",
+        "authoritative_name": "P6-VAL-STRESS-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "STRESS",
+        "dataset": "VALIDATION",
+        "end_exclusive": "2025-11-15T00:00:00Z",
+        "fixed_execution_delay_ms": 800,
+        "replica_execution_instance_id": "P6-VAL-STRESS-REPLICA-01",
+        "replica_name": "P6-VAL-STRESS-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-04-01T00:00:00Z",
+        "supplementary_multiplier": 1.0,
+        "trading_input_hash": "73fa93f8013221ab20f7d67de8ddc733e993138bf2f1ecd9d5e82d495a39f8ce"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-OOS-NORMAL-AUTH-01",
+        "authoritative_name": "P6-OOS-NORMAL-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "NORMAL",
+        "dataset": "OUT_OF_SAMPLE",
+        "end_exclusive": "2026-07-01T00:00:00Z",
+        "fixed_execution_delay_ms": 200,
+        "replica_execution_instance_id": "P6-OOS-NORMAL-REPLICA-01",
+        "replica_name": "P6-OOS-NORMAL-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-11-15T00:00:00Z",
+        "supplementary_multiplier": 0.0,
+        "trading_input_hash": "63c5f96eb1532203b6aee97180ff73bbb85ca5a696c951c5a7e46c2550b99c46"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-OOS-HIGH-AUTH-01",
+        "authoritative_name": "P6-OOS-HIGH-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "HIGH",
+        "dataset": "OUT_OF_SAMPLE",
+        "end_exclusive": "2026-07-01T00:00:00Z",
+        "fixed_execution_delay_ms": 400,
+        "replica_execution_instance_id": "P6-OOS-HIGH-REPLICA-01",
+        "replica_name": "P6-OOS-HIGH-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-11-15T00:00:00Z",
+        "supplementary_multiplier": 0.5,
+        "trading_input_hash": "dd27c86cc21c22129ac1513b3893f4aea0ba17035087b1e16e9798931676e663"
+      },
+      {
+        "authoritative_execution_instance_id": "P6-OOS-STRESS-AUTH-01",
+        "authoritative_name": "P6-OOS-STRESS-AUTH-01",
+        "authoritative_replica_hash_equal": true,
+        "cost_profile": "STRESS",
+        "dataset": "OUT_OF_SAMPLE",
+        "end_exclusive": "2026-07-01T00:00:00Z",
+        "fixed_execution_delay_ms": 800,
+        "replica_execution_instance_id": "P6-OOS-STRESS-REPLICA-01",
+        "replica_name": "P6-OOS-STRESS-REPLICA-01",
+        "set_file_byte_identity_claimed": false,
+        "start_inclusive": "2025-11-15T00:00:00Z",
+        "supplementary_multiplier": 1.0,
+        "trading_input_hash": "31c80388a62671f2a7f09ed79bedd6b51b4e922f23a480fc9287441c3f53f207"
+      }
+    ],
+    "state_and_artifact_roots_included": false
+  },
+  "connected_safety": {
+    "actual": {
+      "actual_label": "RESEARCH_REJECTED",
+      "expected_label": "PASS",
+      "failed": 1,
+      "failed_assertion": "Fifty closed OOS trades can pass sample gate",
+      "failure_marker_seen": true,
+      "passed": 65,
+      "status": "FAILED_TEST_FIXTURE_CONCENTRATION",
+      "success_marker_seen": false
+    },
+    "corrected_fixture": {
+      "acceptance_rule_changed": false,
+      "cause": "The 50-trade fixture placed every profitable outcome inside the first of five registered subperiods, so best-period contribution was 100 percent and the mandatory 40 percent concentration rule correctly rejected the metrics.",
+      "connected_rerun_authorized": false,
+      "connected_rerun_performed": false,
+      "corrected_compile_result": "0 errors, 0 warnings",
+      "corrected_ex5_sha256": "344ac4d3d1c6fd0239023dcbeca9a6e04ac63f4b73288a42156af5295f01807f",
+      "corrected_source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+      "fixture_repair": "Spread the 50 deterministic fixture outcomes one day apart across all five registered subperiods.",
+      "phase_1_through_5_logic_changed": false
+    },
+    "evidence_file": "connected-safety-runtime.json",
+    "evidence_sha256": "899667d86d0937f3b5eb144d1cdd90c45b77e3faf7734d825558200082f5b660",
+    "expected": {
+      "failed": 0,
+      "passed": 66,
+      "success_marker": "ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED"
+    },
+    "gate": "INVALID_CONNECTED_SAFETY_RESULT_REVIEW_REQUIRED",
+    "markers": {
+      "all_connected_terminal_state_markers_changed": false,
+      "completed_v1_markers_unchanged": true,
+      "completed_v2_markers_unchanged": true,
+      "v1_execution_sha256": "ba4c8b352e09f35168138a300fe82dc0aeaeaacd40abd165c4d51ca93f735cf9",
+      "v1_fixture_sha256": "57e477853eb6bbd98f10a0d6503a3361d05097cece1f9209e0ffa75700b498d1",
+      "v1_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b",
+      "v2_completion_sha256": "54b0cbec0ef9c04208a0a08318b4634e108679d1e613dcc1a1ae3cb0a7b645b2",
+      "v2_execution_sha256": "bcfbcbda0d3de6f2156ab54887aacfdc1d461330dde3bbc9e795ce5b0e790b4e",
+      "v2_fixture_sha256": "49896c0160811f3e9cb7dceaf61e4bb4c695d8b3c685b52c66557f78a5480eb7",
+      "v2_position_sha256": "67fb97ef15321f9dc8278778a91b1fb15db254b710091eac9d2050c5c475ab11",
+      "v2_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b"
+    },
+    "run_count": 1,
+    "trading_effects": {
+      "new_deals": 0,
+      "new_orders": 0,
+      "new_positions": 0,
+      "orders_after": 0,
+      "positions_after": 0
+    }
+  },
+  "costs": {
+    "high": {
+      "fixed_delay_ms": 400,
+      "multiplier": 0.5
+    },
+    "native_layer": "MT5 real-tick spread, commission, swap, fees and fills remain broker-native and are never subtracted twice.",
+    "normal": {
+      "fixed_delay_ms": 200,
+      "multiplier": 0.0
+    },
+    "random_delay": "PROHIBITED for authoritative real-tick runs. Any future random-delay test must use a compatible generated-tick mode and be supplementary/non-comparable with seeds and repeats disclosed.",
+    "stress": {
+      "fixed_delay_ms": 800,
+      "multiplier": 1.0
+    },
+    "supplementary_charge": "native_friction * multiplier",
+    "supplementary_formula": "adjusted_trade_net = native_trade_net - supplementary_charge"
+  },
+  "date_semantics": {
+    "boundary_positions": "Start- and end-boundary flags are emitted per position. Any unexplained boundary position or cash-flow mismatch invalidates the run.",
+    "end": "exclusive",
+    "full_interval": {
+      "end_exclusive": "2026-07-01T00:00:00Z",
+      "start_inclusive": "2024-01-01T00:00:00Z"
+    },
+    "replacement_proposal": {
+      "basis": "longest full-day interval between recorded in-session candidate gaps, with a separate deterministic 14-calendar-day indicator warm-up allowance; no strategy result was viewed",
+      "continuous_cache_start_inclusive": "2024-01-02T00:00:00Z",
+      "end_exclusive": "2024-12-24T00:00:00Z",
+      "manifest_id": "PHASE6-PROPOSED-V2",
+      "split_rule": "50/25/25 elapsed-day split after the separate deterministic 14-calendar-day warm-up allowance; no strategy result viewed",
+      "splits": [
+        {
+          "end_exclusive": "2024-07-05T00:00:00Z",
+          "name": "DEVELOPMENT",
+          "start_inclusive": "2024-01-16T00:00:00Z"
+        },
+        {
+          "end_exclusive": "2024-09-29T00:00:00Z",
+          "name": "VALIDATION",
+          "start_inclusive": "2024-07-05T00:00:00Z"
+        },
+        {
+          "end_exclusive": "2024-12-24T00:00:00Z",
+          "name": "OUT_OF_SAMPLE",
+          "start_inclusive": "2024-09-29T00:00:00Z"
+        }
+      ],
+      "start_inclusive": "2024-01-16T00:00:00Z",
+      "status": "REVIEW_REQUIRED_NOT_AUTHORIZED",
+      "warmup_end_exclusive": "2024-01-16T00:00:00Z",
+      "warmup_start_inclusive": "2024-01-02T00:00:00Z"
+    },
+    "splits": [
+      {
+        "end_exclusive": "2025-04-01T00:00:00Z",
+        "name": "DEVELOPMENT",
+        "start_inclusive": "2024-01-01T00:00:00Z"
+      },
+      {
+        "end_exclusive": "2025-11-15T00:00:00Z",
+        "name": "VALIDATION",
+        "start_inclusive": "2025-04-01T00:00:00Z"
+      },
+      {
+        "end_exclusive": "2026-07-01T00:00:00Z",
+        "name": "OUT_OF_SAMPLE",
+        "start_inclusive": "2025-11-15T00:00:00Z"
+      }
+    ],
+    "start": "inclusive",
+    "warmup": "Indicator history is loaded separately before start_inclusive; orders with signal_bar_time outside [start,end) are rejected and never enter statistics."
+  },
+  "execution_authorized": false,
+  "history": {
+    "aggregate_identity_sha256": "12d5b2474e69004f7e0f1b43f6c42c94f7d9f9a4c97c51a9878968024ad98dc9",
+    "aggregate_manifest_entry_count": 44,
+    "aggregate_manifest_file": "aggregate-history-identity.sha256",
+    "broker_download_message_count": 1977,
+    "broker_or_data_source_substitution": false,
+    "generated_tick_substitution": false,
+    "identity_file": "history-identity.json",
+    "m1_hcc": {
+      "copyrates_access_status": "INCOMPLETE",
+      "copyrates_failure_days": 841,
+      "copyrates_final_available_bar": "2026.06.30 23:59:00",
+      "copyrates_first_available_bar": "2026.04.21 07:31:00",
+      "raw_hcc_and_h1_cache_files": [
+        {
+          "logical_name": "m1-hcc-bars/2024.hcc",
+          "sha256": "d86af3bf68eb7d8fc93c7de8372af97de7a0aa6c93995cb68ab9458c67f0b33c",
+          "size_bytes": 22337052
+        },
+        {
+          "logical_name": "m1-hcc-bars/2025.hcc",
+          "sha256": "1eff47967f97cf5ed1fe2c2f4f98e0327602da3abaadbb4b8f102df768dd4676",
+          "size_bytes": 22268841
+        },
+        {
+          "logical_name": "m1-hcc-bars/2026.hcc",
+          "sha256": "301f48816dc1a963c386da6a65d17d3a657b89b69acf2a3ec21a0e4f10c74082",
+          "size_bytes": 12663975
+        },
+        {
+          "logical_name": "m1-hcc-bars/cache/H1.hc",
+          "sha256": "91786dff5ffa3913dd5e35d4013b7ad8a591cce294b6316f9c337dd15bd5f0af",
+          "size_bytes": 973796
+        }
+      ]
+    },
+    "out_of_interval_202607_tkc_included": false,
+    "proposed_interval": {
+      "continuous": false,
+      "earliest_real_tick": "2024-01-01T22:10:00.021000Z",
+      "end_exclusive": "2026-07-01T00:00:00Z",
+      "expected_months": 30,
+      "final_real_tick": "2026-06-30T23:59:55.707000Z",
+      "in_session_candidate_gap_count": 12,
+      "missing_months": [],
+      "present_months": 30,
+      "start_inclusive": "2024-01-01T00:00:00Z",
+      "tick_copy_failures": 0,
+      "total_real_ticks": 58542679,
+      "weekday_zero_tick_days": 0
+    },
+    "real_tick_coverage_status": "HISTORY_UNAVAILABLE_FOR_PROPOSED_MATRIX",
+    "same_frozen_history_for_all_runs": false,
+    "symbol_and_session_identity": {
+      "company": "Blue Capital Markets Limited",
+      "server": "easyMarkets-Live",
+      "symbol": "EURUSD",
+      "symbol_specification_sha256": "04aff981ce31dbb40a85a5792140f982bf31d65642e31682cfb6c39c212a7618",
+      "terminal_build": 6067,
+      "trading_sessions_sha256": "0fe1169dbfba200e195a6b8f58a720714055a30923365a8de1811bd6976d8c36"
+    },
+    "tester_history_quality_messages": "NON_TRADING_ACQUISITION_MESSAGES_FROZEN; native Strategy Tester history-quality messages remain absent because no run is authorized"
+  },
+  "invalidating_gate": "All 30 proposed TKC months were acquired, but 12 gaps longer than 15 minutes occur inside the broker's weekly sessions, connected M1 access is incomplete, and the single connected safety run reported 65 passed and 1 failed. No matrix execution is authorized.",
+  "invalidation_rules": [
+    "journal mismatch",
+    "missing report",
+    "missing metadata",
+    "history change",
+    "in-session real-tick gap",
+    "incomplete relevant M1 access",
+    "connected safety result other than exactly 66 passed and 0 failed",
+    "state or artifact namespace collision",
+    "canonical trading-input hash mismatch",
+    "authoritative/replica fixed-delay result mismatch"
+  ],
+  "latency": {
+    "fingerprint_sha256": "e301e77895e8f095d485b00bd1b5da9f10f07d6c8b6ae9162048a7643ddf4dfe",
+    "first_timestamp": "2026-07-28T18:15:40.810124153+02:00",
+    "frozen_D_ms": 200,
+    "last_timestamp": "2026-07-28T18:15:46.987519750+02:00",
+    "maximum_ms": 260,
+    "mean_ms": 199.1,
+    "median_ms": 193.5,
+    "minimum_ms": 178,
+    "raw_round_trip_ms": [
+      178,
+      212,
+      193,
+      183,
+      221,
+      200,
+      204,
+      247,
+      189,
+      201,
+      186,
+      192,
+      205,
+      183,
+      187,
+      187,
+      205,
+      188,
+      192,
+      199,
+      192,
+      198,
+      208,
+      260,
+      184,
+      183,
+      199,
+      194,
+      212,
+      191
+    ],
+    "rounding_rule": "nearest 50 ms, half upward",
+    "sample_count": 30,
+    "session_note": "Minimum 30-observation gate met in one session; multiple sessions remain preferable but were not mandatory.",
+    "sessions": 1
+  },
+  "manifest_id": "PHASE6-PROPOSED-V1",
+  "replication": {
+    "authoritative_runs": 9,
+    "fixed_delay_identical_run_required": true,
+    "full_set_files_byte_identical_claimed": false,
+    "replicas": 9,
+    "set_file_note": "Authoritative and replica .set files will differ in ExecutionInstanceId. Their canonical trading-input hash must be identical within each pair."
+  },
+  "schema": "SOLTRADE_PHASE6_PROPOSED_FROZEN_MANIFEST_V1",
+  "source": {
+    "aggregate_trading_source_fingerprint_sha256": "73e6ee6a6c7984d7c555ca38013e38d5b5c4c92822d5c5fb8bf40829e4f858e1",
+    "ea_ex5_sha256": "dbc0e03b446c6ad1c03724aebe2ac99d3d28f74295398f7a628eb694db94867c",
+    "ea_source_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "release_commit": "0bf1ccf1c0d29fffc6a11e759d46949d11c8e8c6",
+    "release_commit_frozen": true,
+    "release_tag": "phase6-prerun-v1"
+  },
+  "status": "HISTORY_UNAVAILABLE_FOR_PROPOSED_MATRIX",
+  "terminal_and_broker": {
+    "broker_company": "Blue Capital Markets Limited",
+    "broker_server": "easyMarkets-Live",
+    "symbol": "EURUSD",
+    "terminal_build": 6067,
+    "tester_account_parameters_status": "PROPOSED_FOR_REVIEW",
+    "tester_deposit_currency": "USD",
+    "tester_initial_deposit": 10000.0,
+    "tester_leverage": 200,
+    "tester_tick_model": "Every tick based on real ticks",
+    "timeframe": "H1"
+  },
+  "uncertainty": {
+    "assumption": "Individual-trade bootstrap assumes independently resampled historical trade returns. It does not reproduce serial dependence, market regimes, or the strategy time-based lock state.",
+    "bootstrap_paths": 100000,
+    "reporting_only": true
+  }
+}

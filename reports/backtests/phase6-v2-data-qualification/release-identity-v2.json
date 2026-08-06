@@ -1,0 +1,21 @@
+{
+  "schema": "SOLTRADE_PHASE6_PRERUN_RELEASE_IDENTITY_V2",
+  "execution_authorized": false,
+  "release_tag": "phase6-prerun-v2",
+  "annotated_tag_object": "d9f0161d097d81e176a570f40d0e9416f74e64da",
+  "commit": "60bc5c88a39fa010bb0077819ce690f50247f629",
+  "tagged_worktree_was_clean": true,
+  "corrected_safety_fixture": {
+    "source": "MQL5/Scripts/SolTradePhase6SafetyTests.mq5",
+    "source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "connected_terminal_ex5_sha256": "300c031faf00676f0c7e46463db27a0d8f38687ae767ae4342f29f68ae481da8"
+  },
+  "v1_preservation": {
+    "release_tag": "phase6-prerun-v1",
+    "annotated_tag_object": "1d56c9889cc0a6876c39456f0bead4da1ba9b14e",
+    "commit": "0bf1ccf1c0d29fffc6a11e759d46949d11c8e8c6",
+    "manifest_status": "HISTORY_UNAVAILABLE_FOR_PROPOSED_MATRIX",
+    "moved_or_rewritten": false,
+    "reactivated": false
+  }
+}

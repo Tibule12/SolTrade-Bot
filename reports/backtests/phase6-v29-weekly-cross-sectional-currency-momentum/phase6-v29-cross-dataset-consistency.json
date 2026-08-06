@@ -1,0 +1,247 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_CROSS_DATASET_CONSISTENCY_V1",
+  "groups": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10050574870261653
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10726673772322193
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.1126990940964111
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.02687014643047214
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026785230850286945
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026899247241990443
+    }
+  ],
+  "gates": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10050574870261653,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10050574870261653,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10050574870261653,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.10050574870261653,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10726673772322193,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10726673772322193,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10726673772322193,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.10726673772322193,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.1126990940964111,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.1126990940964111,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.1126990940964111,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.1126990940964111,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.02687014643047214,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.02687014643047214,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.02687014643047214,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.02687014643047214,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026785230850286945,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026785230850286945,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026785230850286945,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.026785230850286945,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026899247241990443,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026899247241990443,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.026899247241990443,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.026899247241990443,
+      "status": "PASS"
+    }
+  ]
+}

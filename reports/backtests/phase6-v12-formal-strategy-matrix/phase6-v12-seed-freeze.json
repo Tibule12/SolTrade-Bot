@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_SEED_FREEZE_V1",
+  "status": "FAIL_SELF_REFERENTIAL_DEFINITION",
+  "requested_rule": {
+    "bootstrap":"uint32(first_8_hex(SHA256(manifest_sha256 + ':bootstrap')))",
+    "monte_carlo":"uint32(first_8_hex(SHA256(manifest_sha256 + ':monte-carlo')))"
+  },
+  "seed_basis_manifest_sha256": null,
+  "bootstrap_seed_decimal": null,
+  "bootstrap_seed_hex": null,
+  "monte_carlo_seed_decimal": null,
+  "monte_carlo_seed_hex": null,
+  "ambiguity": "The completed manifest must contain the seeds, but deriving and inserting them changes the completed manifest hash.",
+  "required_resolution": "Pre-register a seed-basis canonical projection that excludes the derived seed and final-manifest-hash fields, or explicitly authorize another non-circular two-stage construction."
+}

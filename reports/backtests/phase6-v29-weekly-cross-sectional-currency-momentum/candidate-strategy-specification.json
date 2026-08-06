@@ -1,0 +1,51 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_CANDIDATE_SPECIFICATION_V1",
+  "strategy_identifier": "FX_CROSS_SECTIONAL_MOMENTUM_3W_1W_TOP2_BOTTOM2_V29_1_0",
+  "source_signal_set": "EXACT_FROZEN_V26_320_SELECTED_LEGS",
+  "selected_signal_identity_set_sha256": "7e437783c8e9b5b616bd301c4a0434afa208b2339fdc80064ad4675425014db9",
+  "unchanged": [
+    "seven-currency universe and broker symbols",
+    "three-week formation return",
+    "Monday 10:05 broker-server rebalance",
+    "descending rank with ISO-code tie break",
+    "top-two LONG and bottom-two SHORT composition",
+    "one-week holding period",
+    "five-minute no-retry entry window",
+    "close-prior-week-before-open-current-week",
+    "3.0-times completed-D1 Wilder ATR14 initial stop",
+    "30-point inclusive spread ceiling",
+    "no take-profit, trailing, breakeven, or partial close"
+  ],
+  "only_amendment": {
+    "risk_per_leg_current_equity_percent": 0.25,
+    "maximum_simultaneous_legs": 4,
+    "maximum_total_weekly_initial_portfolio_risk_percent": 1.0,
+    "reason": "V26 0.05 percent leg risk was below broker minimum volume for every attempted leg"
+  },
+  "datasets": {
+    "V29_2025_DEVELOPMENT": {
+      "schedule_dataset": "V26_2025_DEVELOPMENT",
+      "history_from": "2024.12.02 00:00:00",
+      "eligible": "[2025.01.06 10:05:00,2026.01.01 00:00:00)"
+    },
+    "V29_2026_PRESEAL_DEVELOPMENT": {
+      "schedule_dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "history_from": "2025.12.01 00:00:00",
+      "eligible": "[2026.01.05 10:05:00,2026.08.01 00:00:00)"
+    },
+    "research_cutoff_exclusive": "2026.08.01 00:00:00",
+    "sealed_future_oos": "UNOPENED_UNASSIGNED"
+  },
+  "prohibited": [
+    "signal regeneration",
+    "symbol removal",
+    "leg removal",
+    "ranking change",
+    "parameter tuning",
+    "portfolio-composition change",
+    "size optimization",
+    "sealed-OOS access",
+    "demo trading",
+    "live trading"
+  ]
+}

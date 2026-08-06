@@ -1,0 +1,61 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_INTAKE_MANIFEST_V1",
+  "status": "DATA_QUALIFICATION_COMPLETE_NOT_APPROVED",
+  "source": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "mt5_company": "First Prudential Markets Limited",
+    "server": "FPMarketsSC-Demo",
+    "demo_account_confirmed": true,
+    "account_currency": "USD",
+    "account_leverage": 30,
+    "terminal_build": 6090,
+    "account_login_stored": false,
+    "trading_password_stored": false
+  },
+  "symbol": {
+    "name": "EURUSD",
+    "digits": 5,
+    "point_size": 0.00001,
+    "tick_size": 0.00001,
+    "tick_value": 1.0,
+    "tick_value_profit": 1.0,
+    "tick_value_loss": 1.0,
+    "contract_size": 100000.0,
+    "symbol_database_sha256": "5cd66c4072f58da8d84448bf5f8c778f83705a2652169b011570081fcc4bd731",
+    "unchanged_from_v6_intake": true
+  },
+  "time_capture": {
+    "broker_server_time": "2026-08-03T13:03:38",
+    "simultaneous_utc_time": "2026-08-03T10:03:38Z",
+    "observed_utc_offset_seconds": 10800,
+    "observed_utc_offset": "+03:00",
+    "daylight_saving_status": "UNDETERMINED",
+    "session_timezone": "UNRESOLVED",
+    "fpmarkets_current_published_hours_note": "FP Markets states displayed trading times are GMT+2 or GMT+3 when DST takes effect; this does not establish exact 2025 transition timestamps.",
+    "fpmarkets_current_published_hours_url": "https://www.fpmarkets.com/en-au/trading-hours/"
+  },
+  "mt5_session_schedule": {
+    "source": "SymbolInfoSessionTrade",
+    "sunday": "CLOSED",
+    "monday": "00:01:00-23:59:00",
+    "tuesday": "00:01:00-23:59:00",
+    "wednesday": "00:01:00-23:59:00",
+    "thursday": "00:01:00-23:59:00",
+    "friday": "00:01:00-23:59:00",
+    "saturday": "CLOSED",
+    "daily_break_seconds": 120
+  },
+  "coverage": {
+    "real_tick_count": 20682267,
+    "first_real_tick": "2025-01-02T00:00:00.594",
+    "last_real_tick": "2025-12-23T23:59:59.877",
+    "real_tick_boundaries_complete": true,
+    "first_m1_bar": null,
+    "last_m1_bar": null,
+    "m1_unavailable_reason": "CopyRates returned -1/error 4401 after 120 bounded timer-deferred attempts"
+  },
+  "frozen_manifest_sha256": "c37be4c040ca68de2c17099adb6f672de73d431a5e2a0257a6fac54698f3e572",
+  "strategy_matrix_authorized": false,
+  "terminal_outcome": "FAIL_M1_HISTORY_UNAVAILABLE"
+}

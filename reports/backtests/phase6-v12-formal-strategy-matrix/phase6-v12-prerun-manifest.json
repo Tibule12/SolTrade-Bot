@@ -1,0 +1,88 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_PRERUN_MANIFEST_V1",
+  "manifest_id": "PHASE6-V12-FORMAL-STRATEGY-MATRIX",
+  "status": "PRE_RUN_AUDIT_FAILED",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "execution_authorized": false,
+  "profitability_viewed": false,
+  "parent_commit": "d80219b1b65eda2782426e2d48db941bf2d80894",
+  "parent_tree": "d98d23ff7e4d66d2e22604e2bbdb943478848d1a",
+  "v10_commit": "c2eaf600b5a08612f92fedf2e9312e0e0091be59",
+  "v11_prerun_commit": "2767af78a7ac700570430ef8faa4906fde514fac",
+  "v11_final_commit": "d80219b1b65eda2782426e2d48db941bf2d80894",
+  "source": {
+    "ea_source_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "backtest_research_sha256": "602d29f01764a1900759c5afa26211156d8c541f69bfca478680250ca49bd0c8",
+    "config_sha256": "7eafceeb76bf7103cdb8a28841edc1a103f8226e1cb2872b63febe8e1807f351",
+    "compiled_ex5_sha256": null,
+    "compilation_status": "NOT_ATTEMPTED_AUDIT_FAILED",
+    "phase_1_through_5_logic_changed": false
+  },
+  "environment": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "server": "FPMarketsSC-Demo",
+    "symbol": "EURUSD",
+    "timeframe": "H1",
+    "terminal_build": 6090,
+    "account_currency": "USD",
+    "account_leverage": 30,
+    "initial_deposit_usd": 10000.0,
+    "tester_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "optimization": false
+  },
+  "strategy": {
+    "version": "TREND_BREAKOUT_V1",
+    "ema_period": 200,
+    "donchian_entry_period": 20,
+    "donchian_exit_period": 10,
+    "atr_period": 14,
+    "initial_stop_atr_multiple": 2.0,
+    "risk_per_trade_percent": 0.25,
+    "one_position_maximum": 1,
+    "production_logic_modified": false
+  },
+  "planned_counts": {
+    "physical_subruns": 36,
+    "formal_matrix_cells": 18,
+    "native_physical_subruns": 18,
+    "fixed_200ms_replica_subruns": 18
+  },
+  "hash_model": {
+    "core_trading_input_hash": null,
+    "complete_run_configuration_hashes": null,
+    "status": "NOT_FREEZABLE_WHILE_CONFIGURATION_BLOCKERS_REMAIN"
+  },
+  "seed_model": {
+    "manifest_sha256": null,
+    "bootstrap_seed_decimal": null,
+    "bootstrap_seed_hex": null,
+    "monte_carlo_seed_decimal": null,
+    "monte_carlo_seed_hex": null,
+    "status": "INVALID_SELF_REFERENTIAL_DEFINITION"
+  },
+  "evidence_hashes": {
+    "v10_artifact_manifest_sha256": "696f54ce1f45951bfd6fdfcc077c113a4857655db5b7e23726f14b13024545a1",
+    "v11_artifact_manifest_sha256": "c8243b376ed7b861ba97cc526e86a1d54fd9d06761b2906ec782cd5c2f1fa070",
+    "v8_history_identity_sha256": "dcd2f489cc6bd06f6a6e3bc3644179f4348cd54ea7dbad52819611008e2b7f26",
+    "v8_quarantine_sha256": "97edfbb77abe30639e5e6448c537045167c9b40b5cf286ecd10a3d3a8922a03c",
+    "v8_clean_segment_manifest_sha256": "94d1fc9a32d0af1d99a67ac0150e0a9e2bfb1d7b3232d6e7b4ced3275b06caab"
+  },
+  "blocking_finding_ids": [
+    "V12-BLOCK-001",
+    "V12-BLOCK-002",
+    "V12-BLOCK-003",
+    "V12-BLOCK-004",
+    "V12-BLOCK-005",
+    "V12-BLOCK-006"
+  ],
+  "actions": {
+    "strategy_subruns_executed": 0,
+    "profitability_calculations": 0,
+    "optimizations": 0,
+    "replicas_executed": 0,
+    "generated_tick_runs": 0,
+    "connected_demo_live_trades": 0,
+    "phase_7_started": false
+  }
+}

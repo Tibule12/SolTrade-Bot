@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_GUARD_V1",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "sealed_future_oos_accessed": false,
+  "signal_regeneration": false,
+  "optimization": false,
+  "demo_orders": 0,
+  "live_orders": 0,
+  "production_ea_expected_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3"
+}

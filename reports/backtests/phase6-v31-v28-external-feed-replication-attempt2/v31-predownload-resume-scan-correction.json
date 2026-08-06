@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_PREDOWNLOAD_RESUME_SCAN_CORRECTION_V1",
+  "status": "APPLIED_BEFORE_ANY_NETWORK_REQUEST",
+  "reason": "per-request filesystem stat scan delayed the first network request",
+  "network_requests_completed_before_interrupt": 0,
+  "raw_files_downloaded_before_interrupt": 0,
+  "pnl_viewed": false,
+  "correction": "scan existing raw files once and perform in-memory resume membership checks",
+  "provider_symbols_interval_http_behavior_and_raw_bytes": "UNCHANGED"
+}

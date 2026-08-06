@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "selected_signals": 320,
+  "signal_set_sha256": "7e437783c8e9b5b616bd301c4a0434afa208b2339fdc80064ad4675425014db9",
+  "physical_runs": 4,
+  "formal_cells": 12,
+  "optimization_or_tuning": false,
+  "sealed_future_oos_accessed": false,
+  "future_combination_executed": false,
+  "production_phase1_5_unchanged": true,
+  "demo_trades": 0,
+  "live_trades": 0,
+  "terminal_outcome": "V29_INDEPENDENT_DEVELOPMENT_FAILED"
+}

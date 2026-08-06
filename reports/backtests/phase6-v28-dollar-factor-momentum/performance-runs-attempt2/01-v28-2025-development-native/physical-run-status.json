@@ -1,0 +1,32 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 1,
+  "run_id": "01-v28-2025-development-native",
+  "dataset": "V28_2025_DEVELOPMENT",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 111.84858298301697,
+  "wine_return_code": 0,
+  "schedule_signals": 77,
+  "processed_signals": 77,
+  "entry_attempts": 77,
+  "entry_fills": 70,
+  "exit_callback_fills": 54,
+  "authoritative_closed_deal_positions": 70,
+  "all_deal_positions_closed": true,
+  "spread_blocks": 0,
+  "risk_blocks": 7,
+  "execution_blocks": 0,
+  "open_positions_at_end": 0,
+  "seal_breach": "NO",
+  "native_reports": [
+    "a2-01-v28-2025-development-native-mfemae.png",
+    "a2-01-v28-2025-development-native.png",
+    "a2-01-v28-2025-development-native-holding.png",
+    "a2-01-v28-2025-development-native-hst.png",
+    "a2-01-v28-2025-development-native.html"
+  ],
+  "status": "PASS"
+}

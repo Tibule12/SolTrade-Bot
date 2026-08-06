@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_EXECUTABLE_FREEZE_V1",
+  "status": "FROZEN_BEFORE_RUN_1",
+  "source": "research/fixing/SolTradeFixingReversalHarness.mq5",
+  "source_sha256": "19c2d1f338bb005475c39421ca0933dee1fb78e252ca03e0a511330e52824385",
+  "compiled_ex5_sha256": "20e515772e71fa536bc4a1a4bd5ef9554bd6300ea2071f628e2c018e32c6a1e2",
+  "compiler_result": "0 errors, 0 warnings",
+  "strategy_specification_sha256": "398f16e38e2eba5d450eaa4a8821488a7834384b9a5de7725165a4439793c283",
+  "physical_run_plan_sha256": "78ca028eb65b6844294215fbff7b592432260f677eec6525f3b1e6523b5100e3",
+  "formal_cell_plan_sha256": "ab436b548995c938c2271c68341db4fc7fc1bfa9c6da11f581c8bba545d22fd3",
+  "profitability_viewed": false,
+  "run_1_started": false
+}

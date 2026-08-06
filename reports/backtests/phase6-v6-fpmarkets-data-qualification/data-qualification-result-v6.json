@@ -1,0 +1,73 @@
+{
+  "schema": "SOLTRADE_PHASE6_V6_FP_MARKETS_QUALIFICATION_RESULT_V1",
+  "dataset_qualified": false,
+  "terminal_outcome": "FAIL_REAL_TICK_HISTORY_UNAVAILABLE_FOR_FROZEN_INTERVAL",
+  "primary_reason": "FP_MARKETS_REAL_TICK_HISTORY_BEGINS_2025_01_02_AFTER_FROZEN_END_EXCLUSIVE_2024_12_24",
+  "authoritative_strategy_matrix_authorized": false,
+  "facts": {
+    "requested_tick_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "server_reported_real_tick_start": "2025-01-02T00:00:00",
+    "exact_first_available_real_tick": "2025-01-02T00:00:00.594",
+    "frozen_qualification_interval": "[2024-01-02T00:00:00,2024-12-24T00:00:00)",
+    "frozen_interval_real_tick_coverage": "NONE",
+    "start_coverage_complete": false,
+    "end_coverage_complete": false,
+    "tick_cache_months_present": "2025-01 through 2026-08",
+    "tick_cache_months_overlapping_frozen_interval": 0,
+    "m1_bars_in_frozen_interval": 366617,
+    "m1_first_in_frozen_interval": "2024-01-02T00:00:00",
+    "m1_final_in_frozen_interval": "2024-12-23T23:59:00",
+    "m1_gaps_over_15_minutes": 54,
+    "m1_open_session_gaps_unresolved": 3,
+    "m1_max_open_gap_seconds": 5880,
+    "m1_usable": false,
+    "connected_m1_copyrates_attempts": 120,
+    "connected_m1_copyrates_result": -1,
+    "connected_m1_copyrates_error": 4401,
+    "copyticks_2025_first_day_error": 0,
+    "copyticks_2025_first_day_memory_failure": false,
+    "qualification_probe_memory_errors": 0,
+    "qualification_probe_timeout_errors": 0
+  },
+  "tester_fallback": {
+    "occurred": true,
+    "controller_message": "EURUSD : 2024.01.02 00:00 - 2024.12.24 00:00 no real ticks, every tick generation used",
+    "modeled_tick_count": 18590155,
+    "accepted_as_real_tick_evidence": false,
+    "accepted_for_qualification": false,
+    "used_for_strategy": false,
+    "used_for_profitability": false,
+    "reason": "MT5 fell back to generated ticks because broker-native 2024 real ticks were unavailable"
+  },
+  "noncanonical_probe_stream": {
+    "description": "CopyTicksRange data visible inside the fallback tester environment; rejected because it conflicts with server TKC availability and the tester controller's no-real-ticks message",
+    "accepted_as_canonical": false,
+    "tick_count": 131072,
+    "first": "2024-12-20T13:27:49.565",
+    "final": "2024-12-23T23:59:59.000",
+    "aggregate_sha256_chain": "d3519880f9a486c0aec1f8d93480eaba108ea92bdb3d59845619e0f72fe4295d",
+    "model_stream_match": false
+  },
+  "prohibited_activity_reconciliation": {
+    "strategy_run_performed": false,
+    "performance_statistics_generated": false,
+    "profitability_calculation_performed": false,
+    "optimization_performed": false,
+    "replica_performed": false,
+    "demo_trade_performed": false,
+    "live_trade_performed": false,
+    "phase7_action_performed": false,
+    "tester_trading_deals": 0,
+    "tester_orders": 0,
+    "tester_positions": 0,
+    "tester_trade_transactions": 0,
+    "tester_entry_engine_activity": 0,
+    "tester_position_manager_activity": 0
+  },
+  "research_status": {
+    "profitability": "UNKNOWN",
+    "strategy_matrix": "UNAUTHORIZED",
+    "phase7": "UNAUTHORIZED",
+    "next_action": "STOP_AND_WAIT_FOR_REVIEW"
+  }
+}

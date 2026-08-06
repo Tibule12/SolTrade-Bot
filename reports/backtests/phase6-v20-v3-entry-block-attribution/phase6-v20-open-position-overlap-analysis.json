@@ -1,0 +1,9 @@
+{
+  "unique_active_positions_causing_blocks": 0,
+  "blocked_confirmations": 0,
+  "same_direction_blocks": 0,
+  "opposite_direction_blocks": 0,
+  "median_overlap_duration_hours": null,
+  "maximum_overlap_duration_hours": null,
+  "positions": []
+}

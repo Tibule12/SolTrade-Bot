@@ -1,0 +1,32 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 2,
+  "run_id": "02-v28-2026-preseal-development-native",
+  "dataset": "V28_2026_PRESEAL_DEVELOPMENT",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 57.98034644126892,
+  "wine_return_code": 0,
+  "schedule_signals": 42,
+  "processed_signals": 42,
+  "entry_attempts": 42,
+  "entry_fills": 35,
+  "exit_callback_fills": 24,
+  "authoritative_closed_deal_positions": 35,
+  "all_deal_positions_closed": true,
+  "spread_blocks": 0,
+  "risk_blocks": 7,
+  "execution_blocks": 0,
+  "open_positions_at_end": 0,
+  "seal_breach": "NO",
+  "native_reports": [
+    "a2-02-v28-2026-preseal-development-native-holding.png",
+    "a2-02-v28-2026-preseal-development-native.html",
+    "a2-02-v28-2026-preseal-development-native-hst.png",
+    "a2-02-v28-2026-preseal-development-native.png",
+    "a2-02-v28-2026-preseal-development-native-mfemae.png"
+  ],
+  "status": "PASS"
+}

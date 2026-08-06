@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "reference_events": 667,
+  "tester_events": 667,
+  "eligible_h1_candles_reference": 7023,
+  "eligible_h1_candles_tester": 7023,
+  "divergence_count": 0,
+  "indicator_tolerance": 1e-12,
+  "state_timestamp_tolerance": "EXACT",
+  "divergences": []
+}

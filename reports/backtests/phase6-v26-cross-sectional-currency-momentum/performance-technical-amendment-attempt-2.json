@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_TECHNICAL_AMENDMENT_ATTEMPT2_V1",
+  "status": "FROZEN_BEFORE_ANY_ENTRY_OR_PNL",
+  "retained_failure": "performance-runs/01-v26-2025-development-native",
+  "failure_entry_attempts": 0,
+  "failure_entry_fills": 0,
+  "failure_exit_fills": 0,
+  "failure_cause": "Phase 1-5 ValidateSolTradeConfig intentionally hard-codes the original EURUSD production strategy and rejected non-EURUSD research configurations",
+  "correction": "For non-EURUSD research configurations only, validate every common configuration field through the unchanged Phase 1-5 validator using its required EURUSD placeholder, then restore the already-frozen actual symbol before initializing the unchanged execution and position engines",
+  "strategy_rules_changed": false,
+  "universe_or_schedule_changed": false,
+  "risk_cost_or_gate_changed": false,
+  "phase1_5_source_changed": false,
+  "pnl_viewed": false,
+  "corrected_source_sha256": "11e9e2488efcecd0fff1f9b7f26582be5dd614a5bb6c1dee73f89435a0ca26ff",
+  "corrected_ex5_sha256": "3373236ae3f56d0a55adab859a2e54fc27a0723c09208d2f12c555eb95828733",
+  "compiler_result": "0 errors, 0 warnings",
+  "attempt_2_output_root": "performance-runs-attempt-2"
+}

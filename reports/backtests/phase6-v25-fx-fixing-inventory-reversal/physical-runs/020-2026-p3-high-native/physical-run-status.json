@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 20,
+  "run_id": "020-2026-p3-high-native",
+  "execution_instance_id": "V25-020-2026_P3-HIGH-NATIVE",
+  "formal_dataset": "V25_2026_PRESEAL_DEVELOPMENT",
+  "segment_id": "2026_P3",
+  "cost_profile": "HIGH",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "229092bab5e1ca0983792fb3a45cfb2c507260d7c89d6e290aa09dd4b04472e1",
+  "rendered_ini_sha256": "38bbffdcd00b7ea99980ebc7a1ccef102b2edf61fa6b93456004a9cabd10d717",
+  "wine_return_code": 0,
+  "elapsed_seconds": 15.898030996322632,
+  "run_evidence_status": "PASS",
+  "evaluations": 252,
+  "entry_opportunities": 23,
+  "entry_fills": 11,
+  "exit_fills": 11,
+  "seal_breach": "NO",
+  "native_reports": [
+    "020-2026-p3-high-native.html",
+    "020-2026-p3-high-native.png",
+    "020-2026-p3-high-native-holding.png",
+    "020-2026-p3-high-native-mfemae.png",
+    "020-2026-p3-high-native-hst.png"
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_EXECUTION_STOP_RECORD_V1",
+  "terminal_outcome": "V31_DATA_INSUFFICIENT_OR_INVALID",
+  "stopped_at": "RAW_EXTERNAL_DATA_QUALIFICATION",
+  "normalization": "NOT_RUN_AFTER_FAILED_RAW_GATE",
+  "mt5_custom_symbol_import": "NOT_RUN",
+  "mt5_qualification_runs": 0,
+  "signal_generation_runs": 0,
+  "normal_native": "NOT_RUN",
+  "high_native": "NOT_RUN",
+  "stress_native": "NOT_RUN",
+  "normal_fixed_200ms": "NOT_RUN",
+  "high_fixed_200ms": "NOT_RUN",
+  "stress_fixed_200ms": "NOT_RUN",
+  "combined_evidence_audit": "NOT_RUN",
+  "tester_simulated_trades": 0,
+  "connected_chart_trades": 0,
+  "demo_forward_trades": 0,
+  "live_trades": 0
+}

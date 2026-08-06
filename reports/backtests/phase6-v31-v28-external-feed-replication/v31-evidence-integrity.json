@@ -1,0 +1,20 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "repository_safety_gate": "PASS",
+  "frozen_v28_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "frozen_v28_source_unchanged": true,
+  "frozen_v28_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "frozen_v28_ex5_unchanged": true,
+  "production_phase1_5_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_phase1_5_unchanged": true,
+  "earlier_evidence_changed": false,
+  "raw_downloads": 0,
+  "pnl_or_profitability_viewed": false,
+  "optimization_or_tuning": false,
+  "v29_used": false,
+  "orders_or_positions": 0,
+  "demo_or_live_trades": 0,
+  "automatic_push": false
+}

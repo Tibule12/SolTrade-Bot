@@ -1,0 +1,71 @@
+{
+  "schema": "SOLTRADE_PHASE6_V5_DATA_QUALIFICATION_RESULT_V1",
+  "adjudication_date": "2026-08-03",
+  "scope": "EASYMARKETS_BROKER_EVIDENCE_ADJUDICATION_ONLY",
+  "terminal_outcome": "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+  "reason": "INSUFFICIENT_INTERVAL_SPECIFIC_BROKER_EVIDENCE",
+  "execution_authorized": false,
+  "authoritative_strategy_matrix_authorized": false,
+  "phase7_authorized": false,
+  "profitability": "UNKNOWN",
+  "source_v4": {
+    "immutable_commit": "366918a7a6216d80147ba7d5b233f19586e7260b",
+    "history_identity_sha256": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+    "history_identity_preserved": true,
+    "frozen_dates_changed": false,
+    "gap_threshold_changed": false,
+    "tick_data_changed": false
+  },
+  "broker_evidence_findings": {
+    "normal_weekend_schedule_stated": true,
+    "daily_break_stated": true,
+    "schedule_timezone_provided": false,
+    "general_correspondence_statement_provided": true,
+    "general_correspondence_treated_as_interval_specific_confirmation": false,
+    "individual_intervals_confirmed": 0,
+    "mt5_open_session_conflict_explained": false,
+    "gap_11_explained": false,
+    "missing_ticks_ruled_out": false,
+    "server_maintenance_ruled_out": false,
+    "other_data_issue_ruled_out": false,
+    "retrospective_technical_investigation_performed_by_broker": false
+  },
+  "gap_result": {
+    "v4_unresolved_count": 17,
+    "v5_unresolved_count": 17,
+    "v5_reclassified_count": 0,
+    "gap_11_classification": "UNRESOLVED",
+    "dataset_qualified": false
+  },
+  "prohibited_or_unperformed_actions": {
+    "strategy_run_performed": false,
+    "authoritative_matrix_run_performed": false,
+    "optimization_performed": false,
+    "profitability_test_performed": false,
+    "replica_performed": false,
+    "generated_ticks_used": false,
+    "connected_trade_performed": false,
+    "demo_trade_performed": false,
+    "live_trade_performed": false,
+    "phase7_action_performed": false,
+    "tests_run": false
+  },
+  "code_and_data_integrity": {
+    "phase1_through_5_code_changed": false,
+    "strategy_changed": false,
+    "risk_engine_changed": false,
+    "execution_engine_changed": false,
+    "position_manager_changed": false,
+    "frozen_dates_changed": false,
+    "gap_threshold_changed": false,
+    "tick_data_changed": false,
+    "v4_files_modified_by_v5_adjudication": false
+  },
+  "required_evidence_to_reconsider": [
+    "Broker timezone and daylight-saving rules applicable to the stated 2024 trading hours",
+    "Interval-specific cause and status for each of the 17 gaps",
+    "Explanation of the MT5 symbol-session API reporting open during the intervals",
+    "Specific explanation for gap 11 through Monday 2024.11.11 00:13:00.130",
+    "Evidence establishing whether missing ticks, server maintenance, feed interruption, or another data issue occurred"
+  ]
+}

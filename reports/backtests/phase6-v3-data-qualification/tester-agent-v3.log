@@ -1,0 +1,62 @@
+CS	0	21:22:47.533	Startup	MetaTester 5 build 6067, 27 Jul 2026
+CS	0	21:22:47.534	Startup	Windows 11 build 22000 on Wine 11.14 Linux 7.0.0-28-generic, 8 x Intel Core i7-7820HQ  @ 2.90GHz, AVX2, 17 / 23 Gb memory, 9 / 232 Gb disk, GMT+2
+CS	0	21:22:47.539	Server	MetaTester 5 started on 127.0.0.1:3001
+CS	0	21:22:47.541	Startup	cloud network mode is off
+CS	0	21:22:47.541	Startup	initialization finished
+CS	0	21:22:47.805	127.0.0.1	login (build 6067)
+CS	0	21:22:47.817	Network	28796 bytes of account info loaded
+CS	0	21:22:47.817	Network	1478 bytes of tester parameters loaded
+CS	0	21:22:47.817	Network	2756 bytes of input parameters loaded
+CS	0	21:22:47.819	Network	880 bytes of symbols list loaded (144 symbols)
+CS	0	21:22:47.819	Tester	expert file added: Experts\SolTradePhase6DataQualificationProbe.ex5. 29948 bytes loaded
+CS	0	21:22:47.850	Tester	17499 Mb available, 218 blocks set for ticks generating
+CS	0	21:22:47.850	Tester	initial deposit 10000.00 USD, leverage 1:200
+CS	0	21:22:47.851	Tester	successfully initialized
+CS	0	21:22:47.851	Network	33 Kb of total initialization data received
+CS	0	21:22:47.852	Tester	Intel Core i7-7820HQ  @ 2.90GHz, 23740 MB
+CS	0	21:22:47.876	Symbols	EURUSD: symbol to be synchronized
+CS	0	21:22:47.882	Symbols	EURUSD: symbol synchronized, 4120 bytes of symbol info received
+CS	0	21:22:47.899	History	EURUSD: load 27 bytes of history data to synchronize in 0:00:00.004
+CS	0	21:22:47.899	History	EURUSD: history synchronized from 2023.01.02 to 2024.12.24
+CS	0	21:22:47.903	Ticks	EURUSD: ticks synchronization started
+CS	0	21:22:47.905	Ticks	EURUSD: load 34 bytes of tick data to synchronize in 0:00:00.002
+CS	0	21:22:47.905	Ticks	EURUSD: history ticks synchronized from 2024.01.02 to 2024.12.23
+CS	0	21:22:47.957	History	EURUSD,H1: history cache allocated for 12291 bars and contains 6171 bars from 2023.01.02 07:00 to 2024.01.01 23:00
+CS	0	21:22:47.957	History	EURUSD,H1: history begins from 2023.01.02 07:00
+CS	0	21:22:47.966	Tester	EURUSD,H1 (easyMarkets-Live): generating based on real ticks
+CS	0	21:22:47.966	Tester	EURUSD,H1: testing of Experts\SolTradePhase6DataQualificationProbe.ex5 from 2024.01.02 00:00 to 2024.12.24 00:00 started with inputs:
+CS	0	21:22:47.966	Tester	  EnableEntryPermission=false
+CS	0	21:22:47.966	Tester	  EnableExecutionPermission=false
+CS	0	21:22:47.966	Tester	  EnablePositionManagementPermission=false
+CS	0	21:22:47.966	Tester	  PermitStrategyOrders=false
+CS	0	21:22:47.966	Tester	  ExpectedInitialTesterDeposit=10000.0
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_DEAL_RECORD | phase=PREFLIGHT | ticket=1 | timestamp=2024.01.02 00:00:00.000 | type=DEAL_TYPE_BALANCE | reason=DEAL_REASON_CLIENT | entry=0 | amount=10000.00000000 | volume=0.00000000 | symbol=EMPTY | order_ticket=0 | position_id=0 | magic=0 | commission=0.00000000 | swap=0.00000000 | fee=0.00000000 | comment=EMPTY | external_id=EMPTY
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_DEAL_SUMMARY | phase=PREFLIGHT | total_historical_records=1 | permitted_administrative_records=1 | trading_deals=0 | soltrade_owned_deals=0 | unexplained_administrative_records=0
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_PREFLIGHT | MQL_TESTER=true | symbol=EURUSD | timeframe=PERIOD_H1 | entry_permission=false | execution_permission=false | position_management_permission=false | strategy_orders_permitted=false | pending_orders=0 | historical_orders=0 | positions=0 | total_historical_records=1 | permitted_administrative_records=1 | trading_deals=0 | soltrade_owned_deals=0 | entry_engine_activity=0 | position_manager_activity=0 | expected_initial_deposit=10000.00 | account_balance=10000.00 | initial_balance_valid=YES
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_INITIAL_BALANCE_SNAPSHOT | ticket=1 | timestamp=2024.01.02 00:00:00.000 | amount=10000.00000000 | type=DEAL_TYPE_BALANCE | symbol=EMPTY | volume=0.00000000 | order_ticket=0 | position_id=0 | magic=0 | reason=DEAL_REASON_CLIENT | comment=EMPTY
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_BOUNDARIES | warmup=[2024.01.02 00:00:00,2024.01.16 00:00:00) | research=[2024.01.16 00:00:00,2024.12.24 00:00:00) | tester=[2024.01.02 00:00:00,2024.12.24 00:00:00) | semantics=START_INCLUSIVE_END_EXCLUSIVE
+CS	0	21:22:47.973	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_SCOPE | probe_only=YES | strategy=NOT_LOADED | entry_engine=NOT_LOADED | position_manager=NOT_LOADED | authoritative_run=NO | replica=NO | parameter_search=NO | research_decision=NONE | performance_statistics=NOT_GENERATED | strategy_profitability=NOT_CALCULATED | trade_api_calls=NONE
+CS	0	21:22:49.963	Ticks	EURUSD : real ticks begin from 2024.01.02 00:00:00
+CS	0	21:22:49.982	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.02 00:00:00   SOLTRADE_PHASE6_V3_PROBE_TICK_MODEL | CopyTicks=-1 | error=4004 | real_tick_api_available=NO
+CS	0	21:22:50.060	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.01.16 00:00:00   SOLTRADE_PHASE6_V3_PROBE_INDICATORS | checked_at=2024.01.16 00:00:00 | warmup_h1_bars=240 | ema200=AVAILABLE | atr14=AVAILABLE | donchian20_highs=20 | donchian20_lows=20 | error=0 | available=YES
+CS	0	21:22:52.873	Tester	final balance 10000.00 USD
+CS	0	21:22:52.935	History	EURUSD,M1: history cache allocated for 735029 bars and contains 367829 bars from 2023.01.02 07:00 to 2024.01.01 23:59
+CS	0	21:22:52.993	History	EURUSD,M1: 364234 bars from 2024.01.02 00:00 to 2024.12.23 23:59 added
+CS	0	21:22:52.993	History	EURUSD,M1: history begins from 2023.01.02 07:00
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_DEAL_RECORD | phase=POSTRUN | ticket=1 | timestamp=2024.01.02 00:00:00.000 | type=DEAL_TYPE_BALANCE | reason=DEAL_REASON_CLIENT | entry=0 | amount=10000.00000000 | volume=0.00000000 | symbol=EMPTY | order_ticket=0 | position_id=0 | magic=0 | commission=0.00000000 | swap=0.00000000 | fee=0.00000000 | comment=EMPTY | external_id=EMPTY
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_DEAL_SUMMARY | phase=POSTRUN | total_historical_records=1 | permitted_administrative_records=1 | trading_deals=0 | soltrade_owned_deals=0 | unexplained_administrative_records=0
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_M1_HCC | bars=364234 | first=2024.01.02 00:00:00 | final=2024.12.23 23:59:00 | copy_error=0 | series_synchronized=YES | series_first=2023.01.02 07:00:00 | terminal_first=2023.01.02 07:00:00 | server_first=2023.01.02 07:00:00 | gaps_over_15m=51 | unexplained_open_session_gaps=17 | max_open_gap_seconds=10200 | usable=NO
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_WARMUP | h1_bars=240 | first=2024.01.02 00:00:00 | final=2024.01.15 23:00:00 | first_research_tick=2024.01.16 00:00:00.322 | indicator_warmup_available=YES | usable=YES
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_TICKS | requested_start_inclusive=2024.01.02 00:00:00 | requested_end_exclusive=2024.12.24 00:00:00 | count=21157002 | actual_first=2024.01.02 00:00:00.024 | actual_final=2024.12.23 23:59:58.859 | start_boundary_open_gap_seconds=0 | end_boundary_open_gap_seconds=2 | boundary_violations=0 | gaps_over_15m=51 | unexplained_open_session_gaps=17 | max_open_gap_seconds=10200 | real_tick_api_available=NO | usable=NO
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_POSTRUN | total_historical_records=1 | permitted_administrative_records=1 | trading_deals=0 | soltrade_owned_deals=0 | unexplained_administrative_records=0 | pending_orders=0 | historical_orders=0 | positions=0 | trade_transactions=0 | entry_engine_activity=0 | position_manager_activity=0 | initial_balance_ticket_before=1 | initial_balance_ticket_after=1 | no_new_historical_deal_ticket=YES | initial_balance_unchanged=YES | inert_history_unchanged=YES | deinit_reason=1
+CS	0	21:22:53.008	SolTradePhase6DataQualificationProbe (EURUSD,H1)	2024.12.23 23:59:58   SOLTRADE_PHASE6_V3_PROBE_RESULT | status=FAIL | MQL_TESTER=true | requested_boundaries_exact=YES | actual_tick_boundaries_qualified=NO | m1_hcc=NO | warmup=YES | tick_coverage=NO | exactly_one_permitted_initial_balance=YES | zero_trading_deals=YES | zero_orders=YES | zero_positions=YES | no_new_historical_deal_ticket=YES | initial_balance_unchanged=YES | entry_engine_activity_zero=YES | position_manager_activity_zero=YES | authoritative_run=NO | replica=NO | strategy=NOT_LOADED | research_decision=NONE | performance_statistics=NOT_GENERATED | strategy_profitability=NOT_CALCULATED
+CS	0	21:22:53.027	Tester	EURUSD,H1: 21157002 ticks, 6118 bars generated. Environment synchronized in 0:00:00.053. Test passed in 0:00:05.169 (including ticks preprocessing 0:00:01.988).
+CS	0	21:22:53.027	Tester	EURUSD,H1: total time from login to stop testing 0:00:05.222 (including 0:00:00.053 for history data synchronization)
+CS	0	21:22:53.027	Tester	563 Mb memory used including 43 Mb of history data, 448 Mb of tick data
+CS	0	21:22:53.028	Tester	log file "C:\Program Files\MetaTrader 5\Tester\Agent-127.0.0.1-3001\logs\20260728.log" written
+CS	0	21:22:53.028	Tester	test Experts\SolTradePhase6DataQualificationProbe.ex5 on EURUSD,H1 thread finished
+CS	0	21:22:53.038	127.0.0.1	tester forced to close
+CS	0	21:22:53.038	127.0.0.1	prepare for shutdown
+CS	0	21:22:53.039	127.0.0.1	stop immediately
+CS	0	21:22:53.039	127.0.0.1	shutdown finished
+CS	0	21:22:53.296	Server	MetaTester 5 stopped

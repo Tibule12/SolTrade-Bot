@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 26,
+  "run_id": "026-2025-s2-high-delay200",
+  "execution_instance_id": "V25-026-2025_S2-HIGH-DELAY200",
+  "formal_dataset": "V25_2025_DEVELOPMENT_REUSE",
+  "segment_id": "2025_S2",
+  "cost_profile": "HIGH",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "fef77026eca8e2dba8eac1b33beeadfbd672c48d6475d089c94854be9fd42a16",
+  "rendered_ini_sha256": "a3f9a0cea4f37ece67dc90d04a56aee8192a83b226f986cc1d34bda09cab3c62",
+  "wine_return_code": 0,
+  "elapsed_seconds": 17.778372526168823,
+  "run_evidence_status": "PASS",
+  "evaluations": 50,
+  "entry_opportunities": 15,
+  "entry_fills": 2,
+  "exit_fills": 2,
+  "seal_breach": "NO",
+  "native_reports": [
+    "026-2025-s2-high-delay200-holding.png",
+    "026-2025-s2-high-delay200-mfemae.png",
+    "026-2025-s2-high-delay200.html",
+    "026-2025-s2-high-delay200-hst.png",
+    "026-2025-s2-high-delay200.png"
+  ],
+  "status": "PASS"
+}

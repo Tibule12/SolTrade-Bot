@@ -1,0 +1,23 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_BEFORE_EXTERNAL_COST_CHECK_V1",
+  "purpose": "Establish whether frozen external commission caused the rejection",
+  "result": "NEGATIVE_BEFORE_EXTERNAL_COMMISSION_IN_BOTH_DATASETS",
+  "datasets": [
+    {
+      "formal_dataset": "V25_2025_DEVELOPMENT_REUSE",
+      "trades": 179,
+      "synthetic_net_profit_before_external_commission": -420.60245602734904,
+      "profit_factor_before_external_commission": 0.6680831793698702,
+      "expectancy_R_before_external_commission": -0.09555922937012397,
+      "external_commission_usd_on_segment_account_deals": 80.34
+    },
+    {
+      "formal_dataset": "V25_2026_PRESEAL_DEVELOPMENT",
+      "trades": 115,
+      "synthetic_net_profit_before_external_commission": -136.9536914220189,
+      "profit_factor_before_external_commission": 0.8317022920954956,
+      "expectancy_R_before_external_commission": -0.0473003759935171,
+      "external_commission_usd_on_segment_account_deals": 61.32
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_TICK_DERIVED_METHODOLOGY_AMENDMENT_V1",
+  "frozen_at_utc": "2026-08-03T10:20:49Z",
+  "frozen_before_bar_construction": true,
+  "frozen_before_strategy_performance_view": true,
+  "methodology_change_reason": "FP Markets connected M1 CopyRates is unavailable with persistent error 4401 while broker-native real ticks are available",
+  "selected_from_strategy_performance": false,
+  "source": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "server": "FPMarketsSC-Demo",
+    "symbol": "EURUSD",
+    "account_must_be_demo": true,
+    "v7_commit": "105bf9e8c3ca228a84f67e8803a802ccf6f7702e",
+    "v7_history_identity": "44a2d4f4ffa1dee36e9b440b82c68fc98dd4bfb2ef693da9738a978b927db4b4",
+    "v7_m1_error": 4401
+  },
+  "frozen_periods": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "warmup": "[2025-01-02T00:00:00,2025-01-16T00:00:00)",
+    "research": "[2025-01-16T00:00:00,2025-12-24T00:00:00)",
+    "development": "[2025-01-16T00:00:00,2025-07-05T00:00:00)",
+    "validation": "[2025-07-05T00:00:00,2025-09-29T00:00:00)",
+    "out_of_sample": "[2025-09-29T00:00:00,2025-12-24T00:00:00)"
+  },
+  "bar_construction": {
+    "input": "FPMarketsSC-Demo connected CopyTicksRange broker-native real ticks only",
+    "primary_ohlc_price": "BID",
+    "primary_price_reason": "MT5 chart OHLC convention for Forex qualification; ask OHLC and spread observations are retained separately",
+    "m1_bucket": "floor broker-server tick time_msc to 60000 milliseconds",
+    "h1_bucket": "floor broker-server tick time_msc to 3600000 milliseconds",
+    "server_clock_alignment": "BROKER_SERVER_TIMESTAMP_AS_RECORDED_NO_UTC_REBUCKETING",
+    "observed_collection_offset": "+03:00",
+    "dst_and_historical_timezone_status": "AMBIGUOUS_AND_DISCLOSED",
+    "m1_fields": ["timestamp","bid_open","bid_high","bid_low","bid_close","ask_open","ask_high","ask_low","ask_close","spread_points_open","spread_points_high","spread_points_low","spread_points_close","tick_count","first_tick_timestamp","last_tick_timestamp","observed_bid_count","observed_ask_count"],
+    "h1_fields": ["timestamp","bid_open","bid_high","bid_low","bid_close","ask_open","ask_high","ask_low","ask_close","spread_points_open","spread_points_high","spread_points_low","spread_points_close","tick_count","first_tick_timestamp","last_tick_timestamp","observed_bid_count","observed_ask_count"],
+    "h1_constructed_directly_from_real_ticks": true,
+    "h1_constructed_from_m1": false,
+    "empty_minute_bar_created": false,
+    "empty_hour_bar_created": false,
+    "interpolation": false,
+    "forward_fill": false,
+    "synthetic_or_generated_price": false,
+    "invalid_price_policy": "FAIL_CONSTRUCTION_IF_ANY_DERIVED_BAR_LACKS_AN_OBSERVED_POSITIVE_BID_OR_ASK"
+  },
+  "unresolved_gaps": [
+    {"gap":1,"previous_tick":"2025-02-05T00:15:05.295","next_tick":"2025-02-05T00:37:12.833"},
+    {"gap":2,"previous_tick":"2025-03-07T23:57:59.005","next_tick":"2025-03-10T00:59:59.698"},
+    {"gap":3,"previous_tick":"2025-08-06T16:13:41.024","next_tick":"2025-08-06T17:14:06.171"}
+  ],
+  "quarantine_rules": {
+    "h1_bar_interval": "[bar_timestamp,bar_timestamp+1_hour)",
+    "gap_interval": "(previous_tick,next_tick)",
+    "contaminated_when": "bar_start < next_tick AND bar_end > previous_tick",
+    "contaminated_h1_excluded": true,
+    "indicator_state_carried_across_gap": false,
+    "restart_after": "final contaminated H1 bar",
+    "fully_completed_clean_h1_definition": "derived H1 interval has ended before dataset end, contains at least one real tick, and does not overlap an unresolved gap",
+    "post_gap_warmup_bar_count": 200,
+    "warmup_bar_source": "successive fully completed clean tick-derived H1 bars; scheduled closure intervals create no bar and do not count",
+    "quarantine_end": "exclusive end timestamp of the 200th post-gap warmup H1 bar",
+    "strategy_entry_exit_or_performance_observation_during_quarantine": false,
+    "ema_atr_donchian_state_reset": true
+  },
+  "continuity_rules": {
+    "raw_tick_gap_threshold_seconds": 900,
+    "scheduled_weekend_closures_may_remain_supported_by_mt5_schedule": true,
+    "unresolved_gap_reclassification_without_new_evidence": false,
+    "holiday_classification_requires_interval_specific_evidence": true,
+    "missing_tick_period_silently_filled": false
+  },
+  "tester_probe": {
+    "strategy_tester_only": true,
+    "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "strategy_loaded": false,
+    "trade_operations": false,
+    "expected_tick_count": 20682267,
+    "expected_first_tick": "2025-01-02T00:00:00.594",
+    "expected_last_tick": "2025-12-23T23:59:59.877",
+    "generated_fallback_requires_failure": true,
+    "profitability_calculation": false
+  },
+  "phase1_through_phase5_logic_changes_permitted": false,
+  "strategy_matrix_authorized": false,
+  "mandatory_stop_after_v8": true,
+  "allowed_terminal_outcomes": [
+    "TICK_DERIVED_DATA_QUALIFICATION_PASSED",
+    "FAIL_TICK_DERIVED_BAR_CONSTRUCTION",
+    "FAIL_UNRESOLVED_GAP_QUARANTINE",
+    "FAIL_INSUFFICIENT_CLEAN_SEGMENT_COVERAGE",
+    "FAIL_TESTER_REAL_TICK_PROBE",
+    "FAIL_GENERATED_TICK_FALLBACK",
+    "FAIL_TIME_ALIGNMENT_AMBIGUITY"
+  ]
+}

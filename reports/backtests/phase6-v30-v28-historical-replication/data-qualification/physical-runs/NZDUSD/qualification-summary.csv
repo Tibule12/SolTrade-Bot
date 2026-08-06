@@ -1,0 +1,52 @@
+field,value
+schema,SOLTRADE_PHASE6_V30_REAL_TICK_QUALIFICATION_V1
+symbol,NZDUSD
+model,EVERY_TICK_BASED_ON_REAL_TICKS
+warmup_from,2017.11.01 00:00:00
+bound_from,2018.01.01 00:00:00
+bound_to_exclusive,2025.01.01 00:00:00
+warmup_first_tick,2017.11.01 00:00:00
+warmup_last_tick,2017.12.30 00:59:30
+warmup_tick_count,2227250
+first_tick,2018.01.02 01:01:30
+final_tick,2024.12.31 23:58:59
+tick_count,128860087
+m1_count,2599890
+h1_count,43517
+m1_mismatches,1
+h1_mismatches,0
+spread_samples,128860087
+zero_or_negative_spread_samples,1770
+mean_spread_points,15.362057647842501
+maximum_spread_points,552.9999999999924
+digits,5
+point,0.0000100000
+contract_size,100000.00
+swap_mode,1
+swap_rollover3day,3
+swap_long,-2.76000000
+swap_short,0.46000000
+ticks_2018,15186440
+m1_2018,371713
+h1_2018,6201
+ticks_2019,9707229
+m1_2019,371292
+h1_2019,6195
+ticks_2020,16885224
+m1_2020,373203
+h1_2020,6234
+ticks_2021,17674803
+m1_2021,372166
+h1_2021,6240
+ticks_2022,27636588
+m1_2022,370053
+h1_2022,6216
+ticks_2023,26301822
+m1_2023,369112
+h1_2023,6191
+ticks_2024,15467981
+m1_2024,372351
+h1_2024,6240
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,FAIL

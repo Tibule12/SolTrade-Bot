@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_FORMAL_CELL_INVENTORY_V1",
+  "expected": 18,
+  "produced": 0,
+  "status": "NOT_PRODUCED_PRERUN_AUDIT_FAILED",
+  "cells": [
+    {"cell":1,"id":"V12-AUTH-DEV-NORMAL","layer":"NATIVE","dataset":"DEVELOPMENT","profile":"NORMAL","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":2,"id":"V12-AUTH-DEV-HIGH","layer":"NATIVE","dataset":"DEVELOPMENT","profile":"HIGH","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":3,"id":"V12-AUTH-DEV-STRESS","layer":"NATIVE","dataset":"DEVELOPMENT","profile":"STRESS","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":4,"id":"V12-AUTH-VAL-NORMAL","layer":"NATIVE","dataset":"VALIDATION","profile":"NORMAL","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":5,"id":"V12-AUTH-VAL-HIGH","layer":"NATIVE","dataset":"VALIDATION","profile":"HIGH","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":6,"id":"V12-AUTH-VAL-STRESS","layer":"NATIVE","dataset":"VALIDATION","profile":"STRESS","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":7,"id":"V12-AUTH-OOS-NORMAL","layer":"NATIVE","dataset":"OUT_OF_SAMPLE","profile":"NORMAL","physical_segments":["O1"],"status":"NOT_PRODUCED"},
+    {"cell":8,"id":"V12-AUTH-OOS-HIGH","layer":"NATIVE","dataset":"OUT_OF_SAMPLE","profile":"HIGH","physical_segments":["O1"],"status":"NOT_PRODUCED"},
+    {"cell":9,"id":"V12-AUTH-OOS-STRESS","layer":"NATIVE","dataset":"OUT_OF_SAMPLE","profile":"STRESS","physical_segments":["O1"],"status":"NOT_PRODUCED"},
+    {"cell":10,"id":"V12-REPL-DEV-NORMAL","layer":"FIXED_200MS_REPLICA","dataset":"DEVELOPMENT","profile":"NORMAL","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":11,"id":"V12-REPL-DEV-HIGH","layer":"FIXED_200MS_REPLICA","dataset":"DEVELOPMENT","profile":"HIGH","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":12,"id":"V12-REPL-DEV-STRESS","layer":"FIXED_200MS_REPLICA","dataset":"DEVELOPMENT","profile":"STRESS","physical_segments":["D1","D2","D3"],"status":"NOT_PRODUCED"},
+    {"cell":13,"id":"V12-REPL-VAL-NORMAL","layer":"FIXED_200MS_REPLICA","dataset":"VALIDATION","profile":"NORMAL","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":14,"id":"V12-REPL-VAL-HIGH","layer":"FIXED_200MS_REPLICA","dataset":"VALIDATION","profile":"HIGH","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":15,"id":"V12-REPL-VAL-STRESS","layer":"FIXED_200MS_REPLICA","dataset":"VALIDATION","profile":"STRESS","physical_segments":["V1","V2"],"status":"NOT_PRODUCED"},
+    {"cell":16,"id":"V12-REPL-OOS-NORMAL","layer":"FIXED_200MS_REPLICA","dataset":"OUT_OF_SAMPLE","profile":"NORMAL","physical_segments":["O1"],"status":"NOT_PRODUCED"},
+    {"cell":17,"id":"V12-REPL-OOS-HIGH","layer":"FIXED_200MS_REPLICA","dataset":"OUT_OF_SAMPLE","profile":"HIGH","physical_segments":["O1"],"status":"NOT_PRODUCED"},
+    {"cell":18,"id":"V12-REPL-OOS-STRESS","layer":"FIXED_200MS_REPLICA","dataset":"OUT_OF_SAMPLE","profile":"STRESS","physical_segments":["O1"],"status":"NOT_PRODUCED"}
+  ]
+}

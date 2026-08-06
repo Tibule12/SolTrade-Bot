@@ -1,0 +1,83 @@
+{
+  "schema": "SOLTRADE_PHASE6_V22_RESTART_FIXTURES_V1",
+  "status": "PASS",
+  "strategy_state_namespace": "TREND_BREAKOUT_V3_RETEST_HOLD_1_1",
+  "fixture_count": 12,
+  "pass_count": 12,
+  "fail_count": 0,
+  "fixtures": [
+    {
+      "name": "immediately_before_setup_creation",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_after_setup_creation",
+      "status": "PASS"
+    },
+    {
+      "name": "after_retest_candle_1",
+      "status": "PASS"
+    },
+    {
+      "name": "after_retest_candle_3",
+      "status": "PASS"
+    },
+    {
+      "name": "after_retest_candle_5",
+      "status": "PASS"
+    },
+    {
+      "name": "after_confirmation_before_first_tradable_tick",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_after_spread_block",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_after_structural_entry",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_before_theoretical_stop_exit",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_before_donchian_exit",
+      "status": "PASS"
+    },
+    {
+      "name": "immediately_after_cycle_completion",
+      "status": "PASS"
+    },
+    {
+      "name": "clean_segment_reset",
+      "status": "PASS"
+    }
+  ],
+  "duplicate_counts": {
+    "setups": 0,
+    "confirmations": 0,
+    "entry_decisions": 0,
+    "theoretical_entries": 0,
+    "exits": 0,
+    "completed_cycles": 0
+  },
+  "persistence_fields_verified": [
+    "strategy_version",
+    "clean_segment_identity",
+    "active_setup_identity",
+    "setup_direction",
+    "frozen_boundary",
+    "setup_timestamp",
+    "retest_candle_count",
+    "last_processed_h1_identity",
+    "confirmation_identity",
+    "spread_decision_status",
+    "theoretical_position_state",
+    "final_status"
+  ],
+  "native_tester_log": "/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Terminal/Tester/Agent-127.0.0.1-3210/logs/20260804.log",
+  "native_tester_log_sha256": "991f20cb7c930a3f8cb034c18058476a90dc8bea2295156cb0cf24bc998b9ed3",
+  "raw_result_line": "CS\t0\t08:07:47.592\tSolTradeV31RestartFixtures (EURUSD,H1)\t2026.01.02 00:00:00   SOLTRADE_V31_RESTART_FIXTURES | pass=12 | fail=0 | duplicate_setups=0 | duplicate_confirmations=0 | duplicate_entry_decisions=0 | duplicate_entries=0 | duplicate_exits=0 | duplicate_cycles=0"
+}

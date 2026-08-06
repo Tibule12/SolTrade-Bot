@@ -1,0 +1,34 @@
+{
+  "audit_result_by_condition": {
+    "DELAY_200_MS": "UNRESOLVED",
+    "HIGH": "UNRESOLVED",
+    "NORMAL": "UNRESOLVED",
+    "STRESS": "UNRESOLVED"
+  },
+  "calendar_sha256_ledger": [],
+  "calendar_sources": [],
+  "calendar_status": "MISSING_QUALIFIED_HISTORICAL_CALENDAR",
+  "no_violation_assumed": false,
+  "order_open_and_execution_streams_located": true,
+  "physical_streams": {
+    "DELAY_200_MS": [
+      "03-v28-2025-development-delay200",
+      "04-v28-2026-preseal-development-delay200"
+    ],
+    "HIGH": [
+      "01-v28-2025-development-native",
+      "02-v28-2026-preseal-development-native"
+    ],
+    "NORMAL": [
+      "01-v28-2025-development-native",
+      "02-v28-2026-preseal-development-native"
+    ],
+    "STRESS": [
+      "01-v28-2025-development-native",
+      "02-v28-2026-preseal-development-native"
+    ]
+  },
+  "prohibited_window": "2 minutes before through 2 minutes after each high-impact event",
+  "result": "INSUFFICIENT_EVIDENCE",
+  "schema": "SOLTRADE_THE5ERS_V28_NEWS_WINDOW_AUDIT_V1"
+}

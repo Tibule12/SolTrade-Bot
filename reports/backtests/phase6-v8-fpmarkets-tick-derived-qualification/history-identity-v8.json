@@ -1,0 +1,52 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_TICK_DERIVED_HISTORY_IDENTITY_INPUT_V1",
+  "identity_definition": "SHA-256 of the exact UTF-8 bytes of this file",
+  "source_key": "FP_MARKETS__FPMARKETSSC_DEMO__EURUSD__MT5_BUILD_6090__V8_TICK_DERIVED_2025",
+  "interval": "[2025-01-02T00:00:00,2025-12-24T00:00:00)",
+  "broker": "FP Markets",
+  "server": "FPMarketsSC-Demo",
+  "terminal_build": 6090,
+  "symbol": "EURUSD",
+  "v7_commit": "105bf9e8c3ca228a84f67e8803a802ccf6f7702e",
+  "preserved_v7_history_identity": "44a2d4f4ffa1dee36e9b440b82c68fc98dd4bfb2ef693da9738a978b927db4b4",
+  "methodology_amendment_sha256": "75c90c0c030c77509c1fe0c0ad340d858429dd8d6dbb7d13820eeb3cacf1521e",
+  "ordered_2025_monthly_tkc_hash_list_sha256": "169b9a66f6e706878476b470822ac07aefcb3e6c98a483c76721ffb66bdca1af",
+  "monthly_tkc_files_unchanged_from_v7": true,
+  "connected_tick_stream": {
+    "tick_count": 20682267,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:59.877",
+    "v8_source_chain_sha256": "2c53e0e69a7f37e12122f8a14d1f576467eea23d320590345a41560ffcb5fda"
+  },
+  "derived_m1": {
+    "bar_count": 365245,
+    "tick_count_sum": 20682267,
+    "csv_size": 78253854,
+    "csv_sha256": "e39578b49bf62361de23655c76891f0fd427a016aa970e3555cebc5ad8a3a63e"
+  },
+  "derived_h1": {
+    "bar_count": 6097,
+    "tick_count_sum": 20682267,
+    "csv_size": 1341106,
+    "csv_sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee"
+  },
+  "construction_implementation": {
+    "builder_source_sha256": "1f0d43c874198710f254a86a020437cee902e01e3598f9e6f5b4ced8a67f30f3",
+    "builder_ex5_sha256": "7a0aff2e9cb684e2637951ef2682c6b3d4aa2ae70dcc3c4ac24b30f7aeaaa5c8",
+    "m1_bucket_milliseconds": 60000,
+    "h1_bucket_milliseconds": 3600000,
+    "clock": "BROKER_SERVER_TIMESTAMP_AS_RECORDED",
+    "primary_ohlc": "BID",
+    "generated_or_synthetic_prices": false,
+    "empty_bucket_fill": false
+  },
+  "quarantine_identity": {
+    "unresolved_gap_quarantine_sha256": "97edfbb77abe30639e5e6448c537045167c9b40b5cf286ecd10a3d3a8922a03c",
+    "clean_segment_manifest_sha256": "94d1fc9a32d0af1d99a67ac0150e0a9e2bfb1d7b3232d6e7b4ced3275b06caab",
+    "contaminated_h1_bars": 5,
+    "post_gap_warmup_h1_bars": 600
+  },
+  "raw_cache_files_committed": false,
+  "derived_csv_files_committed": false,
+  "credentials_included": false
+}

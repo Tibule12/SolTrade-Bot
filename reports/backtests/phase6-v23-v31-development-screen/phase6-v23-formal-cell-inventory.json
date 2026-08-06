@@ -1,0 +1,68 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_FORMAL_CELL_INVENTORY_V1",
+  "status": "PASS",
+  "planned": 12,
+  "produced": 12,
+  "cells": [
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-NATIVE",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-NATIVE",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-NATIVE",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-DELAY200",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-DELAY200",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-DELAY200",
+      "naturally_closed_trades": 54,
+      "right_censored_positions": 3
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "naturally_closed_trades": 41,
+      "right_censored_positions": 1
+    }
+  ]
+}

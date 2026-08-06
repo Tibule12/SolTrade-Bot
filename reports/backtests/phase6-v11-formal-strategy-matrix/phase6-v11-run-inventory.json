@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_RUN_INVENTORY_V1",
+  "expected_runs": 18,
+  "executed_runs": 0,
+  "valid_runs": 0,
+  "status": "NOT_RUN_INVALID_TEST_EVIDENCE",
+  "runs": [
+    {"run":1,"id":"P6-V11-DEV-NORMAL-AUTH","dataset":"DEVELOPMENT","profile":"NORMAL","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":2,"id":"P6-V11-DEV-HIGH-AUTH","dataset":"DEVELOPMENT","profile":"HIGH","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":3,"id":"P6-V11-DEV-STRESS-AUTH","dataset":"DEVELOPMENT","profile":"STRESS","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":4,"id":"P6-V11-VAL-NORMAL-AUTH","dataset":"VALIDATION","profile":"NORMAL","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":5,"id":"P6-V11-VAL-HIGH-AUTH","dataset":"VALIDATION","profile":"HIGH","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":6,"id":"P6-V11-VAL-STRESS-AUTH","dataset":"VALIDATION","profile":"STRESS","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":7,"id":"P6-V11-OOS-NORMAL-AUTH","dataset":"OUT_OF_SAMPLE","profile":"NORMAL","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":8,"id":"P6-V11-OOS-HIGH-AUTH","dataset":"OUT_OF_SAMPLE","profile":"HIGH","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":9,"id":"P6-V11-OOS-STRESS-AUTH","dataset":"OUT_OF_SAMPLE","profile":"STRESS","layer":"AUTHORITATIVE","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":10,"id":"P6-V11-DEV-NORMAL-REPLICA","dataset":"DEVELOPMENT","profile":"NORMAL","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":11,"id":"P6-V11-DEV-HIGH-REPLICA","dataset":"DEVELOPMENT","profile":"HIGH","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":12,"id":"P6-V11-DEV-STRESS-REPLICA","dataset":"DEVELOPMENT","profile":"STRESS","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":13,"id":"P6-V11-VAL-NORMAL-REPLICA","dataset":"VALIDATION","profile":"NORMAL","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":14,"id":"P6-V11-VAL-HIGH-REPLICA","dataset":"VALIDATION","profile":"HIGH","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":15,"id":"P6-V11-VAL-STRESS-REPLICA","dataset":"VALIDATION","profile":"STRESS","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":16,"id":"P6-V11-OOS-NORMAL-REPLICA","dataset":"OUT_OF_SAMPLE","profile":"NORMAL","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":17,"id":"P6-V11-OOS-HIGH-REPLICA","dataset":"OUT_OF_SAMPLE","profile":"HIGH","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"},
+    {"run":18,"id":"P6-V11-OOS-STRESS-REPLICA","dataset":"OUT_OF_SAMPLE","profile":"STRESS","layer":"FIXED_DELAY_REPLICA","status":"NOT_RUN_PRECHECK_FAILED"}
+  ],
+  "technical_reruns": 0,
+  "profitability_results_produced": 0
+}

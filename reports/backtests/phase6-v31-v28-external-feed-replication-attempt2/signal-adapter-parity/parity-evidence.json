@@ -1,0 +1,2071 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_SIGNAL_ADAPTER_PARITY_V1",
+  "status": "FAIL",
+  "classification": "SIGNAL_ONLY_NO_PNL",
+  "original_v28_schedule_sha256": "cc0a379aa8aa54dde6079c63d0d4eda97abcc929ed7a6bf0dec1404c64b4ea21",
+  "signal_adapter_source_sha256": "618f714d7ffb228aca533c6ca58de4d0601a5da7421237499b51f2c7d0be1861",
+  "signal_adapter_executable_sha256": "fe4cbd2a0b28a6743ffda29e6b0cb04ffa041665a1f05f4ce3ff011687e7ee71",
+  "original_signals": 119,
+  "adapter_signals": 126,
+  "exact_decision_fields_compared_per_signal": 11,
+  "exact_decision_values_compared": 1309,
+  "divergence_count": 343,
+  "divergences": [
+    {
+      "row": 78,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 78,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 78,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 78,
+      "field": "recent_close",
+      "original": "1.1685500000",
+      "adapter": "1.1606400000"
+    },
+    {
+      "row": 78,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 78,
+      "field": "anchor_close",
+      "original": "1.1606400000",
+      "adapter": "1.1539200000"
+    },
+    {
+      "row": 78,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 79,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 79,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 79,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 79,
+      "field": "recent_close",
+      "original": "1.3422100000",
+      "adapter": "1.3219400000"
+    },
+    {
+      "row": 79,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 79,
+      "field": "anchor_close",
+      "original": "1.3219400000",
+      "adapter": "1.3137300000"
+    },
+    {
+      "row": 79,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 80,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 80,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 80,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 80,
+      "field": "recent_close",
+      "original": "0.6676100000",
+      "adapter": "0.6549700000"
+    },
+    {
+      "row": 80,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 80,
+      "field": "anchor_close",
+      "original": "0.6549700000",
+      "adapter": "0.6552700000"
+    },
+    {
+      "row": 80,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 81,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 81,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 81,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 81,
+      "field": "recent_close",
+      "original": "0.5748700000",
+      "adapter": "0.5735600000"
+    },
+    {
+      "row": 81,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 81,
+      "field": "anchor_close",
+      "original": "0.5735600000",
+      "adapter": "0.5723000000"
+    },
+    {
+      "row": 81,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 82,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 82,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 82,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 82,
+      "field": "recent_close",
+      "original": "1.3777300000",
+      "adapter": "1.3977600000"
+    },
+    {
+      "row": 82,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 82,
+      "field": "anchor_close",
+      "original": "1.3977600000",
+      "adapter": "1.4018100000"
+    },
+    {
+      "row": 82,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 83,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 83,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 83,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 83,
+      "field": "recent_close",
+      "original": "0.7940600000",
+      "adapter": "0.8033900000"
+    },
+    {
+      "row": 83,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 83,
+      "field": "anchor_close",
+      "original": "0.8033900000",
+      "adapter": "0.8050600000"
+    },
+    {
+      "row": 83,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 84,
+      "field": "target",
+      "original": "2026.01.05 10:05:00",
+      "adapter": "2025.12.01 10:05:00"
+    },
+    {
+      "row": 84,
+      "field": "dollar_factor_return",
+      "original": "0.008441334468",
+      "adapter": "0.001520466073"
+    },
+    {
+      "row": 84,
+      "field": "recent_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 84,
+      "field": "recent_close",
+      "original": "156.9850000000",
+      "adapter": "155.3560000000"
+    },
+    {
+      "row": 84,
+      "field": "anchor_h1",
+      "original": "2025.12.01 09:00:00",
+      "adapter": "2025.11.03 09:00:00"
+    },
+    {
+      "row": 84,
+      "field": "anchor_close",
+      "original": "155.3560000000",
+      "adapter": "154.1020000000"
+    },
+    {
+      "row": 84,
+      "field": "scheduled_exit",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 85,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 85,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 85,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 85,
+      "field": "recent_close",
+      "original": "1.1852900000",
+      "adapter": "1.1685500000"
+    },
+    {
+      "row": 85,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 85,
+      "field": "anchor_close",
+      "original": "1.1685500000",
+      "adapter": "1.1606400000"
+    },
+    {
+      "row": 85,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 86,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 86,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 86,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 86,
+      "field": "recent_close",
+      "original": "1.3678900000",
+      "adapter": "1.3422100000"
+    },
+    {
+      "row": 86,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 86,
+      "field": "anchor_close",
+      "original": "1.3422100000",
+      "adapter": "1.3219400000"
+    },
+    {
+      "row": 86,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 87,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 87,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 87,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 87,
+      "field": "recent_close",
+      "original": "0.6941400000",
+      "adapter": "0.6676100000"
+    },
+    {
+      "row": 87,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 87,
+      "field": "anchor_close",
+      "original": "0.6676100000",
+      "adapter": "0.6549700000"
+    },
+    {
+      "row": 87,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 88,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 88,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 88,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 88,
+      "field": "recent_close",
+      "original": "0.6005900000",
+      "adapter": "0.5748700000"
+    },
+    {
+      "row": 88,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 88,
+      "field": "anchor_close",
+      "original": "0.5748700000",
+      "adapter": "0.5735600000"
+    },
+    {
+      "row": 88,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 89,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 89,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 89,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 89,
+      "field": "recent_close",
+      "original": "1.3651400000",
+      "adapter": "1.3777300000"
+    },
+    {
+      "row": 89,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 89,
+      "field": "anchor_close",
+      "original": "1.3777300000",
+      "adapter": "1.3977600000"
+    },
+    {
+      "row": 89,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 90,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 90,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 90,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 90,
+      "field": "recent_close",
+      "original": "0.7733400000",
+      "adapter": "0.7940600000"
+    },
+    {
+      "row": 90,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 90,
+      "field": "anchor_close",
+      "original": "0.7940600000",
+      "adapter": "0.8033900000"
+    },
+    {
+      "row": 90,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 91,
+      "field": "target",
+      "original": "2026.02.02 10:05:00",
+      "adapter": "2026.01.05 10:05:00"
+    },
+    {
+      "row": 91,
+      "field": "dollar_factor_return",
+      "original": "0.023558743650",
+      "adapter": "0.008441334468"
+    },
+    {
+      "row": 91,
+      "field": "recent_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 91,
+      "field": "recent_close",
+      "original": "154.8990000000",
+      "adapter": "156.9850000000"
+    },
+    {
+      "row": 91,
+      "field": "anchor_h1",
+      "original": "2026.01.05 09:00:00",
+      "adapter": "2025.12.01 09:00:00"
+    },
+    {
+      "row": 91,
+      "field": "anchor_close",
+      "original": "156.9850000000",
+      "adapter": "155.3560000000"
+    },
+    {
+      "row": 91,
+      "field": "scheduled_exit",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 92,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 92,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 92,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 92,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 92,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 92,
+      "field": "recent_close",
+      "original": "1.1715300000",
+      "adapter": "1.1852900000"
+    },
+    {
+      "row": 92,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 92,
+      "field": "anchor_close",
+      "original": "1.1852900000",
+      "adapter": "1.1685500000"
+    },
+    {
+      "row": 92,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 93,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 93,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 93,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 93,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 93,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 93,
+      "field": "recent_close",
+      "original": "1.3361400000",
+      "adapter": "1.3678900000"
+    },
+    {
+      "row": 93,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 93,
+      "field": "anchor_close",
+      "original": "1.3678900000",
+      "adapter": "1.3422100000"
+    },
+    {
+      "row": 93,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 94,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 94,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 94,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 94,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 94,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 94,
+      "field": "recent_close",
+      "original": "0.7057300000",
+      "adapter": "0.6941400000"
+    },
+    {
+      "row": 94,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 94,
+      "field": "anchor_close",
+      "original": "0.6941400000",
+      "adapter": "0.6676100000"
+    },
+    {
+      "row": 94,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 95,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 95,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 95,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 95,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 95,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 95,
+      "field": "recent_close",
+      "original": "0.5943000000",
+      "adapter": "0.6005900000"
+    },
+    {
+      "row": 95,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 95,
+      "field": "anchor_close",
+      "original": "0.6005900000",
+      "adapter": "0.5748700000"
+    },
+    {
+      "row": 95,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 96,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 96,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 96,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 96,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 96,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 96,
+      "field": "recent_close",
+      "original": "1.3657100000",
+      "adapter": "1.3651400000"
+    },
+    {
+      "row": 96,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 96,
+      "field": "anchor_close",
+      "original": "1.3651400000",
+      "adapter": "1.3777300000"
+    },
+    {
+      "row": 96,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 97,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 97,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 97,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 97,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 97,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 97,
+      "field": "recent_close",
+      "original": "0.7726500000",
+      "adapter": "0.7733400000"
+    },
+    {
+      "row": 97,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 97,
+      "field": "anchor_close",
+      "original": "0.7733400000",
+      "adapter": "0.7940600000"
+    },
+    {
+      "row": 97,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 98,
+      "field": "target",
+      "original": "2026.03.02 10:05:00",
+      "adapter": "2026.02.02 10:05:00"
+    },
+    {
+      "row": 98,
+      "field": "dollar_factor_return",
+      "original": "-0.005995531455",
+      "adapter": "0.023558743650"
+    },
+    {
+      "row": 98,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 98,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 98,
+      "field": "recent_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 98,
+      "field": "recent_close",
+      "original": "156.9750000000",
+      "adapter": "154.8990000000"
+    },
+    {
+      "row": 98,
+      "field": "anchor_h1",
+      "original": "2026.02.02 09:00:00",
+      "adapter": "2026.01.05 09:00:00"
+    },
+    {
+      "row": 98,
+      "field": "anchor_close",
+      "original": "154.8990000000",
+      "adapter": "156.9850000000"
+    },
+    {
+      "row": 98,
+      "field": "scheduled_exit",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 99,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 99,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 99,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 99,
+      "field": "recent_close",
+      "original": "1.1532300000",
+      "adapter": "1.1715300000"
+    },
+    {
+      "row": 99,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 99,
+      "field": "anchor_close",
+      "original": "1.1715300000",
+      "adapter": "1.1852900000"
+    },
+    {
+      "row": 99,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 100,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 100,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 100,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 100,
+      "field": "recent_close",
+      "original": "1.3218200000",
+      "adapter": "1.3361400000"
+    },
+    {
+      "row": 100,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 100,
+      "field": "anchor_close",
+      "original": "1.3361400000",
+      "adapter": "1.3678900000"
+    },
+    {
+      "row": 100,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 101,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 101,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 101,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 101,
+      "field": "recent_close",
+      "original": "0.6912600000",
+      "adapter": "0.7057300000"
+    },
+    {
+      "row": 101,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 101,
+      "field": "anchor_close",
+      "original": "0.7057300000",
+      "adapter": "0.6941400000"
+    },
+    {
+      "row": 101,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 102,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 102,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 102,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 102,
+      "field": "recent_close",
+      "original": "0.5707300000",
+      "adapter": "0.5943000000"
+    },
+    {
+      "row": 102,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 102,
+      "field": "anchor_close",
+      "original": "0.5943000000",
+      "adapter": "0.6005900000"
+    },
+    {
+      "row": 102,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 103,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 103,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 103,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 103,
+      "field": "recent_close",
+      "original": "1.3934800000",
+      "adapter": "1.3657100000"
+    },
+    {
+      "row": 103,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 103,
+      "field": "anchor_close",
+      "original": "1.3657100000",
+      "adapter": "1.3651400000"
+    },
+    {
+      "row": 103,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 104,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 104,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 104,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 104,
+      "field": "recent_close",
+      "original": "0.7995900000",
+      "adapter": "0.7726500000"
+    },
+    {
+      "row": 104,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 104,
+      "field": "anchor_close",
+      "original": "0.7726500000",
+      "adapter": "0.7733400000"
+    },
+    {
+      "row": 104,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 105,
+      "field": "target",
+      "original": "2026.04.06 10:05:00",
+      "adapter": "2026.03.02 10:05:00"
+    },
+    {
+      "row": 105,
+      "field": "dollar_factor_return",
+      "original": "-0.022673682367",
+      "adapter": "-0.005995531455"
+    },
+    {
+      "row": 105,
+      "field": "recent_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 105,
+      "field": "recent_close",
+      "original": "159.6040000000",
+      "adapter": "156.9750000000"
+    },
+    {
+      "row": 105,
+      "field": "anchor_h1",
+      "original": "2026.03.02 09:00:00",
+      "adapter": "2026.02.02 09:00:00"
+    },
+    {
+      "row": 105,
+      "field": "anchor_close",
+      "original": "156.9750000000",
+      "adapter": "154.8990000000"
+    },
+    {
+      "row": 105,
+      "field": "scheduled_exit",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 106,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 106,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 106,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 106,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 106,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 106,
+      "field": "recent_close",
+      "original": "1.1727800000",
+      "adapter": "1.1532300000"
+    },
+    {
+      "row": 106,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 106,
+      "field": "anchor_close",
+      "original": "1.1532300000",
+      "adapter": "1.1715300000"
+    },
+    {
+      "row": 106,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 107,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 107,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 107,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 107,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 107,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 107,
+      "field": "recent_close",
+      "original": "1.3579700000",
+      "adapter": "1.3218200000"
+    },
+    {
+      "row": 107,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 107,
+      "field": "anchor_close",
+      "original": "1.3218200000",
+      "adapter": "1.3361400000"
+    },
+    {
+      "row": 107,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 108,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 108,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 108,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 108,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 108,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 108,
+      "field": "recent_close",
+      "original": "0.7197500000",
+      "adapter": "0.6912600000"
+    },
+    {
+      "row": 108,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 108,
+      "field": "anchor_close",
+      "original": "0.6912600000",
+      "adapter": "0.7057300000"
+    },
+    {
+      "row": 108,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 109,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 109,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 109,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 109,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 109,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 109,
+      "field": "recent_close",
+      "original": "0.5907500000",
+      "adapter": "0.5707300000"
+    },
+    {
+      "row": 109,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 109,
+      "field": "anchor_close",
+      "original": "0.5707300000",
+      "adapter": "0.5943000000"
+    },
+    {
+      "row": 109,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 110,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 110,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 110,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 110,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 110,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 110,
+      "field": "recent_close",
+      "original": "1.3595500000",
+      "adapter": "1.3934800000"
+    },
+    {
+      "row": 110,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 110,
+      "field": "anchor_close",
+      "original": "1.3934800000",
+      "adapter": "1.3657100000"
+    },
+    {
+      "row": 110,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 111,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 111,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 111,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 111,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 111,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 111,
+      "field": "recent_close",
+      "original": "0.7812400000",
+      "adapter": "0.7995900000"
+    },
+    {
+      "row": 111,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 111,
+      "field": "anchor_close",
+      "original": "0.7995900000",
+      "adapter": "0.7726500000"
+    },
+    {
+      "row": 111,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 112,
+      "field": "target",
+      "original": "2026.05.04 10:05:00",
+      "adapter": "2026.04.06 10:05:00"
+    },
+    {
+      "row": 112,
+      "field": "dollar_factor_return",
+      "original": "0.026213680466",
+      "adapter": "-0.022673682367"
+    },
+    {
+      "row": 112,
+      "field": "factor_side",
+      "original": "LONG_FOREIGN_FACTOR",
+      "adapter": "SHORT_FOREIGN_FACTOR"
+    },
+    {
+      "row": 112,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 112,
+      "field": "recent_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 112,
+      "field": "recent_close",
+      "original": "156.9180000000",
+      "adapter": "159.6040000000"
+    },
+    {
+      "row": 112,
+      "field": "anchor_h1",
+      "original": "2026.04.06 09:00:00",
+      "adapter": "2026.03.02 09:00:00"
+    },
+    {
+      "row": 112,
+      "field": "anchor_close",
+      "original": "159.6040000000",
+      "adapter": "156.9750000000"
+    },
+    {
+      "row": 112,
+      "field": "scheduled_exit",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 113,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 113,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 113,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 113,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 113,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 113,
+      "field": "recent_close",
+      "original": "1.1664000000",
+      "adapter": "1.1727800000"
+    },
+    {
+      "row": 113,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 113,
+      "field": "anchor_close",
+      "original": "1.1727800000",
+      "adapter": "1.1532300000"
+    },
+    {
+      "row": 113,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 114,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 114,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 114,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 114,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 114,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 114,
+      "field": "recent_close",
+      "original": "1.3471200000",
+      "adapter": "1.3579700000"
+    },
+    {
+      "row": 114,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 114,
+      "field": "anchor_close",
+      "original": "1.3579700000",
+      "adapter": "1.3218200000"
+    },
+    {
+      "row": 114,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 115,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 115,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 115,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 115,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 115,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 115,
+      "field": "recent_close",
+      "original": "0.7181500000",
+      "adapter": "0.7197500000"
+    },
+    {
+      "row": 115,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 115,
+      "field": "anchor_close",
+      "original": "0.7197500000",
+      "adapter": "0.6912600000"
+    },
+    {
+      "row": 115,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 116,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 116,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 116,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 116,
+      "field": "chart_direction",
+      "original": "SELL",
+      "adapter": "BUY"
+    },
+    {
+      "row": 116,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 116,
+      "field": "recent_close",
+      "original": "0.5971400000",
+      "adapter": "0.5907500000"
+    },
+    {
+      "row": 116,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 116,
+      "field": "anchor_close",
+      "original": "0.5907500000",
+      "adapter": "0.5707300000"
+    },
+    {
+      "row": 116,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 117,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 117,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 117,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 117,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 117,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 117,
+      "field": "recent_close",
+      "original": "1.3803500000",
+      "adapter": "1.3595500000"
+    },
+    {
+      "row": 117,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 117,
+      "field": "anchor_close",
+      "original": "1.3595500000",
+      "adapter": "1.3934800000"
+    },
+    {
+      "row": 117,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 118,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 118,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 118,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 118,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 118,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 118,
+      "field": "recent_close",
+      "original": "0.7819800000",
+      "adapter": "0.7812400000"
+    },
+    {
+      "row": 118,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 118,
+      "field": "anchor_close",
+      "original": "0.7812400000",
+      "adapter": "0.7995900000"
+    },
+    {
+      "row": 118,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 119,
+      "field": "target",
+      "original": "2026.06.01 10:05:00",
+      "adapter": "2026.05.04 10:05:00"
+    },
+    {
+      "row": 119,
+      "field": "dollar_factor_return",
+      "original": "-0.005269476914",
+      "adapter": "0.026213680466"
+    },
+    {
+      "row": 119,
+      "field": "factor_side",
+      "original": "SHORT_FOREIGN_FACTOR",
+      "adapter": "LONG_FOREIGN_FACTOR"
+    },
+    {
+      "row": 119,
+      "field": "chart_direction",
+      "original": "BUY",
+      "adapter": "SELL"
+    },
+    {
+      "row": 119,
+      "field": "recent_h1",
+      "original": "2026.06.01 09:00:00",
+      "adapter": "2026.05.04 09:00:00"
+    },
+    {
+      "row": 119,
+      "field": "recent_close",
+      "original": "159.4190000000",
+      "adapter": "156.9180000000"
+    },
+    {
+      "row": 119,
+      "field": "anchor_h1",
+      "original": "2026.05.04 09:00:00",
+      "adapter": "2026.04.06 09:00:00"
+    },
+    {
+      "row": 119,
+      "field": "anchor_close",
+      "original": "156.9180000000",
+      "adapter": "159.6040000000"
+    },
+    {
+      "row": 119,
+      "field": "scheduled_exit",
+      "original": "2026.07.06 10:05:00",
+      "adapter": "2026.06.01 10:05:00"
+    },
+    {
+      "row": 120,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 121,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 122,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 123,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 124,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 125,
+      "reason": "ROW_COUNT_MISMATCH"
+    },
+    {
+      "row": 126,
+      "reason": "ROW_COUNT_MISMATCH"
+    }
+  ],
+  "mapping": {
+    "EURUSD": "EURUSD.V31",
+    "GBPUSD": "GBPUSD.V31",
+    "AUDUSD": "AUDUSD.V31",
+    "NZDUSD": "NZDUSD.V31",
+    "USDCAD": "USDCAD.V31",
+    "USDCHF": "USDCHF.V31",
+    "USDJPY": "USDJPY.V31"
+  },
+  "orders_or_positions": "ZERO",
+  "pnl_calculated": false,
+  "wine_return_code": 0
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_CUTOFF_CENSORING_RULES_V1",
+  "status": "PASS",
+  "cutoff_order": "snapshot before processing the first tick at or after EligibleTo",
+  "open_position_classification": "RIGHT_CENSORED_OPEN_POSITION",
+  "flat_classification": "NO_OPEN_POSITION_AT_CUTOFF",
+  "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+  "later_deal_included_in_research_statistics": false,
+  "tester_forced_close_treated_as_natural_phase5_exit": false,
+  "snapshot_fields": [
+    "entry ticket",
+    "direction",
+    "size",
+    "entry price",
+    "stop",
+    "unrealized result",
+    "strategy state"
+  ],
+  "signal_only_runtime_snapshots": [
+    {
+      "run_id": "D1",
+      "eligible_to": "2025.02.05 00:00:00",
+      "captured_at": "2025.02.05 00:02:59",
+      "last_pre_cutoff_observation": "2025.02.04 23:59:58",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "FLAT",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "8a020703e05f05066efb3af1f796c726c388feb415344689d6ab7efa1f74efb9"
+    },
+    {
+      "run_id": "D2",
+      "eligible_to": "2025.03.07 23:00:00",
+      "captured_at": "2025.03.07 23:00:00",
+      "last_pre_cutoff_observation": "2025.03.07 22:59:59",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "LONG",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "278b12a41f12596ca05de8cd8b2e882243db4bbda38d84430f935f7a825e0fde"
+    },
+    {
+      "run_id": "D3",
+      "eligible_to": "2025.07.05 00:00:00",
+      "captured_at": "2025.07.07 00:00:09",
+      "last_pre_cutoff_observation": "2025.07.04 23:58:55",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "FLAT",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "bf24b75a3c47800f181b52c7904fe7cb2b51565fe11de881c931789a7aae6005"
+    },
+    {
+      "run_id": "V1",
+      "eligible_to": "2025.08.06 16:00:00",
+      "captured_at": "2025.08.06 16:00:00",
+      "last_pre_cutoff_observation": "2025.08.06 15:59:58",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "LONG",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "59ca11e107b228da229418611401b084052fe809ccb50011a10ab078aafb001e"
+    },
+    {
+      "run_id": "V2",
+      "eligible_to": "2025.09.29 00:00:00",
+      "captured_at": "2025.09.29 00:00:10",
+      "last_pre_cutoff_observation": "2025.09.26 23:58:58",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "FLAT",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "137436645ac93f7c84bfe5d7ff6ad9b9d023c49076dd6fc06696b6d9fc6125ca"
+    },
+    {
+      "run_id": "O1",
+      "eligible_to": "2025.12.24 00:00:00",
+      "captured_at": "2025.12.24 00:00:00",
+      "last_pre_cutoff_observation": "2025.12.23 23:59:59",
+      "classification": "NO_OPEN_POSITION_AT_CUTOFF",
+      "position_open": "NO",
+      "strategy_state": "LONG",
+      "later_deal_classification": "POST_CUTOFF_EXCLUDED",
+      "runtime_file_sha256": "b186eebfb822510c2780c450517e662792f5d0f337eb5455e1dce5a7e04ed78b"
+    }
+  ],
+  "synthetic_open_position_fixture": "PASS"
+}

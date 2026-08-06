@@ -1,0 +1,10 @@
+{
+  "diagnostic_only": true,
+  "A_frozen_v3_entries": 23,
+  "B_count_including_spread_only_blocks_with_acceptable_tick_within_5_minutes": 41,
+  "B_increment": 18,
+  "C_count_including_open_position_only_blocks": 23,
+  "C_increment": 0,
+  "D_count_with_spread_and_position_restrictions_removed_from_classification": 84,
+  "no_counterfactual_positions_or_exits_simulated": true
+}

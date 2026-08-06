@@ -1,0 +1,12 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_OOS_SEAL_AUDIT_V1",
+  "status": "PASS",
+  "oos_seal_status": "SEALED_UNOPENED",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "maximum_tick_timestamp_accessed": "2026.07.31 23:59:56",
+  "maximum_h1_opening_timestamp_permitted": "2026.07.31 23:00:00",
+  "maximum_completed_h1_timestamp_processed": "2026.07.31 22:00:00",
+  "post_seal_ticks_bars_deals_accessed": 0,
+  "seal_breach_runs": 0,
+  "oos_seal_sha256": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe"
+}

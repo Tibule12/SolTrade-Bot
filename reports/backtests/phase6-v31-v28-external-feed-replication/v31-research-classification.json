@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_RESEARCH_CLASSIFICATION_V1",
+  "classification": "INDEPENDENT_EXTERNAL_FEED_HISTORICAL_REPLICATION",
+  "is_fp_markets_broker_native_replication": false,
+  "is_exact_historical_fp_markets_execution": false,
+  "is_untouched_forward_test": false,
+  "is_demo_or_live_evidence": false,
+  "cost_classification_if_execution_became_valid": "EXTERNAL_PRICE_FEED_WITH_FROZEN_CONTROLLED_COST_MODEL"
+}

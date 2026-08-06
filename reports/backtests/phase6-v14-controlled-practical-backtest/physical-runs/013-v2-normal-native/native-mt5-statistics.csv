@@ -1,0 +1,45 @@
+field,value
+schema,SOLTRADE_PHASE6_V14_RUN_SUMMARY_V1
+core_trading_input_hash,d6185b478920f6f6cbbb26ffc3d4758e34a6bf89129230b4db4b96ac5666c3c0
+execution_instance_id,V14-013-V2-NORMAL-NATIVE
+segment_id,V2
+dataset,VALIDATION
+cost_profile,NORMAL
+execution_layer,NATIVE_NORMAL_EXECUTION
+expected_execution_mode,0
+reset_at,2025.08.06 18:00:00
+eligible_from,2025.08.19 22:00:00
+eligible_to,2025.09.29 00:00:00
+first_evaluation,2025.08.19 22:00:00
+final_evaluation,2025.09.26 22:00:00
+evaluations,673
+entry_signals,70
+exit_signals,115
+execution_evaluations,70
+execution_submissions,16
+execution_acceptances,16
+entry_fills,16
+close_evaluations,228
+close_submissions,8
+close_acceptances,8
+exit_fills,16
+risk_blocks,0
+spread_blocks,0
+loss_limit_pauses,0
+cutoff_frozen,YES
+censored_position,NO
+post_cutoff_actions,0
+tester_profit,-188.48000000
+tester_trades,16
+tester_profit_factor,0.15898443
+tester_expected_payoff,-11.78000000
+tester_equity_dd_percent,2.33403853
+tester_balance_dd_percent,2.12570000
+terminal_build,6090
+broker_server,FPMarketsSC-Demo
+symbol,EURUSD
+swap_mode,1
+swap_long,-9.71000000
+swap_short,4.50000000
+swap_rollover_3days,3
+run_evidence_status,PASS

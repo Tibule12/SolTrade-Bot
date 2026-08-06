@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PRERUN_FREEZE_MANIFEST_V1",
+  "frozen_at_broker_local_time": "2026-08-04T10:49:44+02:00",
+  "parent_commit": "74d654b2c681becd29f5ad6257ecc01f842b07c7",
+  "candidate_specification_sha256": "105db9cb0275d2f386e75bd3786c37077c6299073c9cba15fdff68100a3ba706",
+  "gate_manifest_sha256": "57086360416a385e2c427e3360fca51863eb9cb48aca85a3b7e6622a1d7d2fbb",
+  "economic_hypothesis_sha256": "97d4b6c278a3ee9d3adea774f12bd6741b53e83c93ab48382b2122aaf9f20f5c",
+  "preseal_and_production_guard_sha256": "5528de58c5e71b98bcb0370da2c8e83202e83fcf1468bc17a79b8372562642af",
+  "exact_complete_candidates": 1,
+  "local_v27_signal_counts_viewed": false,
+  "local_v27_pnl_viewed": false,
+  "parameters_and_gates_frozen": true,
+  "optimization": false,
+  "sealed_oos_accessed": false,
+  "demo_trades": 0,
+  "live_trades": 0
+}

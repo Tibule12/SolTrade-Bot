@@ -1,0 +1,24 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_QUALIFICATION_RUN_STATUS_V1",
+  "symbol": "NZDUSD",
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "model_code": 4,
+  "optimization": false,
+  "elapsed_seconds": 207.03674840927124,
+  "wine_return_code": 0,
+  "tick_count": 128860087,
+  "first_tick": "2018.01.02 01:01:30",
+  "final_tick": "2024.12.31 23:58:59",
+  "m1_mismatches": 1,
+  "h1_mismatches": 0,
+  "orders_or_positions": "ZERO",
+  "pnl_calculated": "NO",
+  "native_reports": [
+    "native-mt5-report.html",
+    "native-mt5-report.png",
+    "native-mt5-report-holding.png",
+    "native-mt5-report-hst.png",
+    "native-mt5-report-mfemae.png"
+  ],
+  "status": "DATA_FAIL"
+}

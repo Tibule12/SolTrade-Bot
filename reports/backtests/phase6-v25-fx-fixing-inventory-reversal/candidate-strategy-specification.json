@@ -1,0 +1,83 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_FIXING_REVERSAL_SPEC_V1",
+  "specification_id": "LONDON_FIX_USD_INVENTORY_REVERSAL_1_0",
+  "status": "FROZEN_BEFORE_SIGNAL_COUNTS_OR_PNL",
+  "family": "FX_FIXING_INVENTORY_REVERSAL",
+  "related_to_trend_breakout_family": false,
+  "market": {
+    "symbol": "EURUSD",
+    "tester_timeframe": "H1",
+    "decision_clock": "REAL_TICK_BROKER_SERVER_TIME",
+    "broker_server": "FPMarketsSC-Demo"
+  },
+  "economic_prediction": "EURUSD appreciates after the 16:00 London fixing as pre-fix U.S.-dollar inventory demand unwinds",
+  "clock_mapping": {
+    "london_fix_local_time": "16:00:00",
+    "benchmark_window_end_local_time": "16:02:30",
+    "entry_target_local_time": "16:05:00",
+    "normal_broker_server_entry_time": "18:05:00",
+    "dst_mismatch_broker_server_entry_time": "19:05:00",
+    "normal_mapping_rule": "broker server is UTC+2 in standard time and UTC+3 during U.S.-aligned DST; London is UTC+0 or UTC+1, normally leaving a two-hour difference",
+    "dst_mismatch_rule": "use a three-hour difference between the U.S. second-Sunday-March switch and UK last-Sunday-March switch, and between the UK last-Sunday-October switch and U.S. first-Sunday-November switch",
+    "entry_window_minutes": 5,
+    "one_entry_attempt_per_eligible_day": true
+  },
+  "entry": {
+    "direction": "BUY_EURUSD_ONLY",
+    "timing": "FIRST_TRADABLE_REAL_TICK_AT_OR_AFTER_ENTRY_TARGET_WITHIN_FIVE_MINUTES",
+    "signal_dependency": "CLOCK_ONLY_AFTER_COMPLETED_FIXING_WINDOW",
+    "minimum_clean_segment_local_completed_h1_bars": 300,
+    "atr": "WILDER_ATR_14_FROM_LAST_COMPLETED_H1_CANDLE",
+    "spread_maximum_points_inclusive": 30,
+    "no_atr_spread_fraction": true,
+    "no_price_move_threshold": true,
+    "no_retry_after_failed_or_blocked_attempt": true,
+    "maximum_positions": 1
+  },
+  "position": {
+    "risk_per_trade_current_equity_percent": 0.25,
+    "initial_stop_atr_multiple": 2.0,
+    "stop_atr_source": "LAST_COMPLETED_H1_AT_ENTRY",
+    "scheduled_holding_hours": 4,
+    "scheduled_exit": "FIRST_TRADABLE_REAL_TICK_AT_OR_AFTER_FOUR_HOURS_FROM_TARGET_ENTRY_TIME",
+    "take_profit": false,
+    "trailing_stop": false,
+    "breakeven_move": false,
+    "partial_close": false,
+    "scaling": false,
+    "martingale": false,
+    "grid": false,
+    "averaging": false
+  },
+  "risk_controls": {
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_limit_percent": 5.0,
+    "consecutive_loss_pause_count": 3,
+    "next_broker_day_pause_release": true,
+    "phase1_5_execution_validation": true,
+    "phase1_5_position_manager": true
+  },
+  "eligibility": {
+    "broker_session_must_be_open": true,
+    "all_weekdays_including_friday": true,
+    "holiday_calendar_filter": false,
+    "news_filter": false,
+    "entry_must_be_strictly_before_segment_or_research_cutoff": true,
+    "scheduled_exit_must_be_strictly_before_segment_or_research_cutoff": true,
+    "otherwise_skip_day": true
+  },
+  "prohibited_changes_after_freeze": [
+    "Change entry or exit clock",
+    "Condition direction on observed prefix return",
+    "Add magnitude, volatility, weekday, month, news or session filters",
+    "Add SELL trades",
+    "Tune stop distance, holding period, spread ceiling or risk",
+    "Create a competing fixing strategy or parameter variant"
+  ],
+  "demo_authorization": {
+    "permitted_only_after_all_frozen_development_gates_pass": true,
+    "live_trading_permitted": false
+  }
+}
+

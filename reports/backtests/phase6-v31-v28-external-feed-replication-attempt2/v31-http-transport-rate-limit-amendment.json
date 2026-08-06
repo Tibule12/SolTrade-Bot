@@ -1,0 +1,12 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_HTTP_TRANSPORT_RATE_LIMIT_AMENDMENT_V1",
+  "status": "FROZEN_BEFORE_RAW_MANIFEST_OR_PNL",
+  "reason": "Dukascopy Jetta throttled the single multiplexed HTTP/2 connection to approximately eight completed hourly responses per second. Resume acquisition over bounded HTTP/1.1 connections to avoid a single-connection bottleneck.",
+  "source_changed": false,
+  "endpoint_changed": false,
+  "request_identity_changed": false,
+  "response_encoding_changed": false,
+  "existing_raw_files_overwritten": false,
+  "raw_validation_unchanged": true,
+  "pnl_viewed": false
+}

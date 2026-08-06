@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_AGGREGATION_RULES_V1",
+  "status": "SPECIFIED_NOT_EXECUTED",
+  "starting_synthetic_equity_usd": 10000.0,
+  "risk_fraction_per_trade": 0.0025,
+  "cost_adjusted_trade_net": "native_trade_net - native_friction * supplementary_multiplier",
+  "realized_net_R": "cost_adjusted_trade_net / frozen_initial_risk_amount_at_entry",
+  "equity_update": "current_synthetic_equity + current_synthetic_equity * 0.0025 * realized_net_R",
+  "ordering": "chronological across clean segments within each formal cell",
+  "segment_strategy_state_reset": true,
+  "reporting_equity_reset_between_segments": false,
+  "censored_position_equity_change": 0.0,
+  "native_balances_summed": false,
+  "implementation_gate": "Initial risk amount and reliable censor classification must be present for every trade."
+}

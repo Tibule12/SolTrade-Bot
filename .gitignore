@@ -1,0 +1,18 @@
+# MetaEditor build products
+*.ex5
+*.log
+
+# Terminal-local journals
+MQL5/Files/
+
+# Account-bound MT5 deployment inputs and exported live evidence
+config/mt5/*-live.set
+config/mt5/*-preflight.set
+!config/mt5/*.example.set
+reports/deployment/
+
+# Local editor/OS metadata
+.vscode/
+*~
+__pycache__/
+*.pyc

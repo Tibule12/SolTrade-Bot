@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_BEFORE_EXTERNAL_COST_CHECK_V1",
+  "datasets": [
+    {
+      "dataset": "V27_2025_DEVELOPMENT",
+      "trades": 45,
+      "native_net_before_external_commission": 160.03,
+      "profit_factor_before_external_commission": 1.6098704268292685,
+      "expectancy_usd_before_external_commission": 3.5562222222222224
+    },
+    {
+      "dataset": "V27_2026_PRESEAL_DEVELOPMENT",
+      "trades": 48,
+      "native_net_before_external_commission": -214.74,
+      "profit_factor_before_external_commission": 0.5932954545454545,
+      "expectancy_usd_before_external_commission": -4.47375
+    }
+  ]
+}

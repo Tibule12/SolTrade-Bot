@@ -1,0 +1,25 @@
+{
+  "schema": "SOLTRADE_V28_LIVE_EA_EQUIVALENCE_RUN_STATUS_V1",
+  "run_id": "02-v28-2026-preseal-development-native",
+  "dataset": "V28_2026_PRESEAL_DEVELOPMENT",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 59.38885188102722,
+  "wine_return_code": 0,
+  "schedule_signals": 42,
+  "processed_signals": 42,
+  "entry_attempts": 42,
+  "entry_fills": 35,
+  "exit_fills": 24,
+  "open_positions_at_end": 0,
+  "native_reports": [
+    "native-mt5-report-mfemae.png",
+    "native-mt5-report-hst.png",
+    "native-mt5-report-holding.png",
+    "native-mt5-report.html",
+    "native-mt5-report.png"
+  ],
+  "status": "PASS"
+}

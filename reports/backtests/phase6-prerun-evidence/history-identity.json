@@ -1,0 +1,71 @@
+{
+  "aggregate_history_identity": {
+    "entry_count": 44,
+    "manifest_file": "aggregate-history-identity.sha256",
+    "sha256": "12d5b2474e69004f7e0f1b43f6c42c94f7d9f9a4c97c51a9878968024ad98dc9"
+  },
+  "broker_message_count": 1977,
+  "broker_metadata": {
+    "company": "Blue Capital Markets Limited",
+    "server": "easyMarkets-Live",
+    "symbol": "EURUSD",
+    "symbol_specification_sha256": "04aff981ce31dbb40a85a5792140f982bf31d65642e31682cfb6c39c212a7618",
+    "terminal_build": 6067,
+    "trading_sessions_sha256": "0fe1169dbfba200e195a6b8f58a720714055a30923365a8de1811bd6976d8c36"
+  },
+  "execution_authorized": false,
+  "m1_hcc": {
+    "copyrates_access_status": "INCOMPLETE",
+    "copyrates_failure_days": 841,
+    "copyrates_final_available_bar": "2026.06.30 23:59:00",
+    "copyrates_first_available_bar": "2026.04.21 07:31:00",
+    "raw_hcc_and_h1_cache_files": [
+      {
+        "logical_name": "m1-hcc-bars/2024.hcc",
+        "sha256": "d86af3bf68eb7d8fc93c7de8372af97de7a0aa6c93995cb68ab9458c67f0b33c",
+        "size_bytes": 22337052
+      },
+      {
+        "logical_name": "m1-hcc-bars/2025.hcc",
+        "sha256": "1eff47967f97cf5ed1fe2c2f4f98e0327602da3abaadbb4b8f102df768dd4676",
+        "size_bytes": 22268841
+      },
+      {
+        "logical_name": "m1-hcc-bars/2026.hcc",
+        "sha256": "301f48816dc1a963c386da6a65d17d3a657b89b69acf2a3ec21a0e4f10c74082",
+        "size_bytes": 12663975
+      },
+      {
+        "logical_name": "m1-hcc-bars/cache/H1.hc",
+        "sha256": "91786dff5ffa3913dd5e35d4013b7ad8a591cce294b6316f9c337dd15bd5f0af",
+        "size_bytes": 973796
+      }
+    ]
+  },
+  "proposed_interval": {
+    "continuous": false,
+    "earliest_real_tick": "2024-01-01T22:10:00.021000Z",
+    "end_exclusive": "2026-07-01T00:00:00Z",
+    "expected_months": 30,
+    "final_real_tick": "2026-06-30T23:59:55.707000Z",
+    "in_session_candidate_gap_count": 12,
+    "missing_months": [],
+    "present_months": 30,
+    "start_inclusive": "2024-01-01T00:00:00Z",
+    "tick_copy_failures": 0,
+    "total_real_ticks": 58542679,
+    "weekday_zero_tick_days": 0
+  },
+  "replacement_range_proposal": {
+    "basis": "longest full-day interval between recorded in-session candidate gaps, with a separate deterministic 14-calendar-day indicator warm-up allowance; no strategy result was viewed",
+    "continuous_cache_start_inclusive": "2024-01-02T00:00:00Z",
+    "end_exclusive": "2024-12-24T00:00:00Z",
+    "manifest_id": "PHASE6-PROPOSED-V2",
+    "start_inclusive": "2024-01-16T00:00:00Z",
+    "status": "REVIEW_REQUIRED_NOT_AUTHORIZED",
+    "warmup_end_exclusive": "2024-01-16T00:00:00Z",
+    "warmup_start_inclusive": "2024-01-02T00:00:00Z"
+  },
+  "schema": "SOLTRADE_PHASE6_IMMUTABLE_HISTORY_IDENTITY_V1",
+  "status": "HISTORY_UNAVAILABLE_FOR_PROPOSED_MATRIX"
+}

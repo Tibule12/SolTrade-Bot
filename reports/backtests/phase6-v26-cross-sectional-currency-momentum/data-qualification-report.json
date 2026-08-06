@@ -1,0 +1,72 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_DATA_QUALIFICATION_V1",
+  "status": "PASS",
+  "bound_from": "2024.12.01 00:00:00",
+  "bound_to_exclusive": "2026.08.01 00:00:00",
+  "candidate_symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "qualified_symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "union_h1_timestamps": 10345,
+  "common_h1_timestamps": 10344,
+  "coverage": [
+    {
+      "symbol": "EURUSD",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    },
+    {
+      "symbol": "GBPUSD",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    },
+    {
+      "symbol": "AUDUSD",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    },
+    {
+      "symbol": "NZDUSD",
+      "h1_timestamps": 10344,
+      "missing_vs_union": [
+        "2025.03.10 00:00:00"
+      ]
+    },
+    {
+      "symbol": "USDCAD",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    },
+    {
+      "symbol": "USDCHF",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    },
+    {
+      "symbol": "USDJPY",
+      "h1_timestamps": 10345,
+      "missing_vs_union": []
+    }
+  ],
+  "only_discrepancy": "NZDUSD missing 2025.03.10 00:00:00",
+  "price_fields_written": false,
+  "returns_rankings_signal_counts_or_pnl_inspected": false,
+  "orders_or_positions": 0,
+  "post_seal_access": false,
+  "qualification_inventory_sha256": "5d37d42452c37ed9c84f0395b910c4ece07099c7611a61d14ee4a3c06475794b",
+  "symbol_specification_inventory_sha256": "4c918280a55dcf6a58a732e32059398960851bccb3e0ab7cddf7ffa6ac6faf8c"
+}

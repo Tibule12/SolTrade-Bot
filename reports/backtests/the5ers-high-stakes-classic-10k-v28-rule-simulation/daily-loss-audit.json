@@ -1,0 +1,14 @@
+{
+  "aggregate_native_drawdown_used_as_substitute": false,
+  "closed_trade_totals_used_as_substitute": false,
+  "day_boundary": "00:00 UTC+3",
+  "limit_percent": 5,
+  "result": "INSUFFICIENT_EVIDENCE",
+  "schema": "SOLTRADE_THE5ERS_V28_DAILY_LOSS_AUDIT_V1",
+  "status_by_condition": {
+    "DELAY_200_MS": "UNRESOLVED_MISSING_FULL_INTRADAY_EQUITY_AND_UTC_PLUS_3_BOUNDARIES",
+    "HIGH": "UNRESOLVED_MISSING_FULL_INTRADAY_EQUITY_AND_UTC_PLUS_3_BOUNDARIES",
+    "NORMAL": "UNRESOLVED_MISSING_FULL_INTRADAY_EQUITY_AND_UTC_PLUS_3_BOUNDARIES",
+    "STRESS": "UNRESOLVED_MISSING_FULL_INTRADAY_EQUITY_AND_UTC_PLUS_3_BOUNDARIES"
+  }
+}

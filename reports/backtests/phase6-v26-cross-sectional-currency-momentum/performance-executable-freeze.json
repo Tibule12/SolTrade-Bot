@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_EXECUTABLE_FREEZE_V1",
+  "status": "FROZEN_BEFORE_PNL",
+  "source": "research/relative_strength/SolTradeRelativeStrengthPerformanceHarness.mq5",
+  "source_sha256": "eb807b037a5881a51740d561c68658339ffaa16fd3d1cb75ade64195b68b85ab",
+  "compiled_ex5_sha256": "0954a17444afe2ec49f357e9491a6bd6153c42f56dd0310d0c5f54235e2c6010",
+  "compiler_result": "0 errors, 0 warnings",
+  "strategy_specification_sha256": "dba62ffabb987248971934ba37b3d91244809b1b9eaacdc42811360289b7bf87",
+  "gate_manifest_sha256": "c75fb5ae91c72e5c45b61280dc8f5a03803f5a4a5aece2fd8b9e42d4f135b97a",
+  "physical_run_plan_sha256": "f677be2478c1c73105608e5f1949f4977c449d49a60729ae72e795e6200455a6",
+  "formal_cell_plan_sha256": "c6882b67031a6ff475620b15af5ce9dc1201ecfe76f877bceb6baeed544485e6",
+  "pnl_viewed": false,
+  "run_1_started": false
+}

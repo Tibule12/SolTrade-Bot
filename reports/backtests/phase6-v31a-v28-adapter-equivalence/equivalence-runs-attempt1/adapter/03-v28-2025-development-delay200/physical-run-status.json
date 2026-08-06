@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_PARITY_RUN_STATUS_V1",
+  "side": "adapter",
+  "run_id": "03-v28-2025-development-delay200",
+  "dataset": "V28_2025_DEVELOPMENT",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 103.2095935344696,
+  "wine_return_code": 0,
+  "schedule_signals": 77,
+  "processed_signals": 77,
+  "entry_attempts": 77,
+  "entry_fills": 70,
+  "exit_fills": 54,
+  "closed_positions": 70,
+  "native_reports": [
+    "adapter-03-v28-2025-development-delay200-hst.png",
+    "adapter-03-v28-2025-development-delay200.png",
+    "adapter-03-v28-2025-development-delay200-mfemae.png",
+    "adapter-03-v28-2025-development-delay200.html",
+    "adapter-03-v28-2025-development-delay200-holding.png"
+  ],
+  "status": "PASS"
+}

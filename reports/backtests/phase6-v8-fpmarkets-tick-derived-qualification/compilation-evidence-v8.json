@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_COMPILATION_EVIDENCE_V1",
+  "compiler": "FP Markets MetaEditor build 6090",
+  "targets": [
+    {
+      "source": "SolTradePhase6V8TickBarBuilder.mq5",
+      "source_sha256": "1f0d43c874198710f254a86a020437cee902e01e3598f9e6f5b4ced8a67f30f3",
+      "ex5_sha256": "7a0aff2e9cb684e2637951ef2682c6b3d4aa2ae70dcc3c4ac24b30f7aeaaa5c8",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "source": "SolTradePhase6V8TesterRealTickProbe.mq5",
+      "source_sha256": "1c4bbafabf1b1baa0b074a0162701953518b2ed5031b2e7474040154eeb0f07e",
+      "ex5_sha256": "94b1e6186a72bce22213689ecd1854c2192c7be784560990de4053ef4b87063b",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "source": "SolTradePhase6V8TickTailObserver.mq5",
+      "source_sha256": "c60424d36c2fd2cfaf3140c64cfee42a31c920d1a8cc6b1ecea643b076e15898",
+      "ex5_sha256": "f47aa3cef4dd2cbe4a18e2f487ab0b6e3c77ffa7cbe524f21ba0651835784465",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "compiled_ex5_committed": false,
+  "all_targets_zero_errors_zero_warnings": true
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "specification_sha256_expected": "bcddb6b3d3ed43f9abad9fdb1793fdae11f0d2f34a76b637844345f64bfd5e95",
+  "specification_sha256_actual": "bcddb6b3d3ed43f9abad9fdb1793fdae11f0d2f34a76b637844345f64bfd5e95",
+  "specification_sha256_verified": true,
+  "oos_seal_sha256_verified": true,
+  "cutoff_enforced": true,
+  "profitability_fields_produced": 0,
+  "orders_positions_deals_trade_transactions": 0,
+  "reference_tester_parity": true,
+  "v23_sample_thresholds": {
+    "frozen_before_run_commit": "e9e007419d4dc31086811b79255627a36e1ca7b1",
+    "total_50": true,
+    "2026_15": true,
+    "buy_5": true,
+    "sell_5": true
+  },
+  "compilation_gates_passed": true,
+  "restart_safety_passed": true,
+  "forbidden_trade_api_references": [],
+  "strategy_orders_created": 0,
+  "strategy_positions_created": 0,
+  "strategy_trade_deals_created": 0,
+  "trade_transactions_observed": 0,
+  "tester_balance_initialization_record_is_not_a_trade_deal": true,
+  "demo_trades": 0,
+  "live_trades": 0,
+  "financial_classifications_produced": 0,
+  "terminal_outcome": "V31_IMPLEMENTATION_AND_PARITY_READY"
+}

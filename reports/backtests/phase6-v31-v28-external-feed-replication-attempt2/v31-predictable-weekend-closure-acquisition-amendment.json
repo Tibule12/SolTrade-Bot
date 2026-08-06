@@ -1,0 +1,22 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_PREDICTABLE_WEEKEND_CLOSURE_ACQUISITION_AMENDMENT_V1",
+  "status": "FROZEN_BEFORE_RAW_MANIFEST_OR_PNL",
+  "reason": "Do not make source requests for deterministic closed FX session hours. This avoids requiring empty HTTP payloads while retaining every open-session hour and every previously downloaded raw file.",
+  "timezone": "America/New_York",
+  "closed_interval_each_week": "Friday 17:00 inclusive through Sunday 17:00 exclusive",
+  "calendar_hours_per_symbol": 61370,
+  "mandatory_open_session_hours_per_symbol": 43850,
+  "mandatory_open_session_requests_all_symbols": 306950,
+  "dst_handling": "IANA America/New_York conversion applied independently to every UTC hour",
+  "already_downloaded_closed_session_files": "preserve unchanged, parse, hash and include in the immutable raw-data manifest",
+  "closed_session_hours_without_file": "record individually in a separate immutable closure manifest",
+  "closed_session_validation": "any tick found in an already-downloaded predictably closed hour invalidates qualification",
+  "open_session_missing_file_policy": "FAIL",
+  "provider_changed": false,
+  "source_endpoint_changed": false,
+  "tradable_ticks_excluded": false,
+  "strategy_or_gate_changed": false,
+  "pnl_viewed": false,
+  "downloader_sha256": "88ff92f32d5b49feb11e62789def968da075a94163dce38d87a0eb92f27b1b16",
+  "qualifier_sha256": "bdc02bdb66f7ee6f6428b0a04d270436c536b92c92f18e3929ec1142be8aa497"
+}

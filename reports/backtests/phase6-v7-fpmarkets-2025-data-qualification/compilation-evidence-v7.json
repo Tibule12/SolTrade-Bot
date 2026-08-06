@@ -1,0 +1,20 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_COMPILE_EVIDENCE_V1",
+  "metaeditor_build": 6090,
+  "targets": [
+    {
+      "source": "SolTradePhase6V7DataQualificationObserver.mq5",
+      "source_sha256": "ff1b1d2f63b74f4a2b10b4eb3d260fcb8f3d464e4e6dfc2f32752e3b759f90f4",
+      "compiled_ex5_sha256": "ccc5338a354a49f3408e8e2ed8ccb0b96de1ea18f16da79b0001f2927e4736bd",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "source": "SolTradePhase6V7M1CoverageObserver.mq5",
+      "source_sha256": "764d06e2424885e4ee4a4158f49422afb3a4bf1c9eb9d40595bc019cd25ed76d",
+      "compiled_ex5_sha256": "69ab0e3736e1b287bc46fab5d4a9f1c0482d4f4088dd2694de3445773edcad35",
+      "errors": 0,
+      "warnings": 0
+    }
+  ]
+}

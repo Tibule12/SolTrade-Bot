@@ -1,0 +1,27 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30B_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "V30B_DATA_INSUFFICIENT_OR_INVALID",
+  "status": "FAIL",
+  "repository_safety": "PASS",
+  "qualification_start": "2022.11.14 00:05:00.354",
+  "qualification_end_exclusive": "2025.01.01 00:00:00.000",
+  "common_native_coverage_available": "[2022.11.14 00:05:00.354, 2023.12.29 23:57:52.904]",
+  "complete_2024_common_coverage": false,
+  "full_2024_native_ticks_by_symbol": {
+    "EURUSD": 0,
+    "GBPUSD": 0,
+    "AUDUSD": 0,
+    "NZDUSD": 0,
+    "USDCAD": 0,
+    "USDCHF": 0,
+    "USDJPY": 0
+  },
+  "data_failure_not_strategy_failure": true,
+  "signal_schedule_generated": false,
+  "performance_execution_authorized": false,
+  "performance_runs": 0,
+  "formal_cells": 0,
+  "pnl_viewed": false,
+  "orders_or_positions": 0,
+  "demo_or_live_trades": 0
+}

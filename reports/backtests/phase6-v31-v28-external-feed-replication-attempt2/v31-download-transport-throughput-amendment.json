@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_DOWNLOAD_TRANSPORT_THROUGHPUT_AMENDMENT_V1",
+  "status": "APPLIED_WITH_RESUMABLE_RAW_CHECKPOINT",
+  "reason": "HTTP/1.1 throughput projected multiple days for 429576 frozen hourly requests",
+  "change": "enable HTTP/2 multiplexing using task-local h2 4.2.0",
+  "task_local_dependency_root": "/home/tibule12/Datasets/SolTrade/V31/python-deps",
+  "installed_dependencies": {
+    "h2": "4.2.0",
+    "hpack": "4.2.0",
+    "hyperframe": "6.1.0"
+  },
+  "raw_checkpoint_preserved": true,
+  "download_resume_is_hash_checked_in_final_manifest": true,
+  "provider_symbols_interval_urls_response_bodies_and_parsing": "UNCHANGED",
+  "strategy_or_cost_change": false,
+  "pnl_viewed": false
+}

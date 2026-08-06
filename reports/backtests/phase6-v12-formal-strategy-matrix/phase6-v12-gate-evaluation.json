@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_GATE_EVALUATION_V1",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "prerun_evidence_gate": "FAIL",
+  "performance_gates": "NOT_EVALUATED",
+  "oos_sample_size_gate": "NOT_EVALUATED",
+  "concentration_gates": "NOT_EVALUATED",
+  "cross_dataset_gates": "NOT_EVALUATED",
+  "reason": "The pre-run audit failed before a valid immutable manifest or tester configuration existed."
+}

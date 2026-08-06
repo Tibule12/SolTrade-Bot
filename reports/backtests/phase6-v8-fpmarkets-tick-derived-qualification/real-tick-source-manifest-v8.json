@@ -1,0 +1,109 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_REAL_TICK_SOURCE_MANIFEST_V1",
+  "source": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "company": "First Prudential Markets Limited",
+    "server": "FPMarketsSC-Demo",
+    "demo_account_confirmed": true,
+    "symbol": "EURUSD",
+    "terminal_build": 6090,
+    "credentials_stored": false,
+    "easymarkets_data_used": false,
+    "cross_broker_data_combined": false
+  },
+  "preserved_v7_evidence": {
+    "commit": "105bf9e8c3ca228a84f67e8803a802ccf6f7702e",
+    "history_identity": "44a2d4f4ffa1dee36e9b440b82c68fc98dd4bfb2ef693da9738a978b927db4b4",
+    "connected_m1_copyrates_result": -1,
+    "connected_m1_copyrates_error": 4401,
+    "connected_m1_attempts": 120,
+    "complete_raw_gap_report_path": "reports/backtests/phase6-v7-fpmarkets-2025-data-qualification/complete-gap-report-v7.json",
+    "complete_raw_gap_report_sha256": "a7075bac60a1552f5059232476456239e0e894be1b82d3f292e480570add6417"
+  },
+  "frozen_interval": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "start": "2025-01-02T00:00:00",
+    "end": "2025-12-24T00:00:00"
+  },
+  "server_time_alignment": {
+    "bucket_clock": "BROKER_SERVER_TIMESTAMP_AS_RECORDED",
+    "collection_server_time": "2026-08-03T13:24:51",
+    "simultaneous_utc_time": "2026-08-03T10:24:51Z",
+    "observed_offset_seconds": 10800,
+    "observed_offset": "+03:00",
+    "dst_status": "UNDETERMINED",
+    "historical_session_timezone": "AMBIGUOUS_DISCLOSED",
+    "utc_rebucketing_performed": false
+  },
+  "session_schedule_preserved_from_v7": {
+    "source": "MT5 SymbolInfoSessionTrade",
+    "sunday": "CLOSED",
+    "monday_to_friday": "00:01:00-23:59:00",
+    "saturday": "CLOSED",
+    "timezone": "UNRESOLVED"
+  },
+  "connected_real_ticks": {
+    "api": "CopyTicksRange(COPY_TICKS_ALL)",
+    "tick_count": 20682267,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:59.877",
+    "chunks": 356,
+    "memory_errors": 0,
+    "timeout_errors": 0,
+    "retrieval_failures": 0,
+    "invalid_bid_or_ask": 0,
+    "gaps_over_15_minutes": 53,
+    "scheduled_weekend_gaps": 50,
+    "unresolved_open_session_gaps": 3,
+    "expected_unresolved_matches": 3,
+    "unexpected_unresolved_gaps": 0,
+    "v8_daily_boundary_chain_sha256": "2c53e0e69a7f37e12122f8a14d1f576467eea23d320590345a41560ffcb5fda",
+    "generated_ticks_used": false,
+    "synthetic_ticks_used": false,
+    "interpolation_used": false
+  },
+  "canonical_2025_tkc_files": [
+    {"month":"2025-01","size":12239639,"sha256":"503361a3b81b7c3f5a0373c3917b8134b0d48b5481554a65921cdb17e07bf9d6"},
+    {"month":"2025-02","size":9245034,"sha256":"266e031539e680f68e1e15f7efd1cdf08db351eda4f77c188a440f20412d4718"},
+    {"month":"2025-03","size":8380862,"sha256":"cf160715aaab375dd3aac2bab5944a6f64a0864c5ba13b0a1dbe09243a8fbb18"},
+    {"month":"2025-04","size":13578414,"sha256":"441a9b1d082e563e99620388deebc43ca7866c656191b6bcf86ded6738de5a16"},
+    {"month":"2025-05","size":7606584,"sha256":"8e5435edf678d1e548d7bc2b4f5e32d4a9a45faa3f81c462444752cad107abbd"},
+    {"month":"2025-06","size":5977700,"sha256":"768ed016435cb95e592dcb769ff71c80f525bdf660bc6705051826c667ff4a21"},
+    {"month":"2025-07","size":5737295,"sha256":"bf73c1560823e3b4199e244fe370963b575c5fd9c2334571af646205530f8418"},
+    {"month":"2025-08","size":4907828,"sha256":"38ebea5ac153e4a2680b0f413858646c4c4feacdb078ab51948a379bdffcdd34"},
+    {"month":"2025-09","size":5295687,"sha256":"d7f66e979ac14d22c84daa61aaff5342c12e07629300e528d5d20fa145e3572d"},
+    {"month":"2025-10","size":5481249,"sha256":"e498a29212079b909e8288162b21fe1f6e1f9f1f8e569a9ebb7ce360efcae7d9"},
+    {"month":"2025-11","size":4174989,"sha256":"42559340094953742002b45192edf1a0a45f2ca63c23d76b5ca2ce118c2261d7"},
+    {"month":"2025-12","size":3485623,"sha256":"955e683c8d89d1a0fb5f2bed584a7dbcdfa5645c951a0989da898cc7c9f9d594"}
+  ],
+  "tkc_comparison_to_v7": "ALL_12_CANONICAL_MONTHLY_FILES_BYTE_IDENTICAL",
+  "mutable_tick_index": {
+    "v7_recorded_sha256": "c7232f061039dfb9fd039cd47994f8b482b992aff668e3f05af66093c1dce9a3",
+    "v8_observed_sha256": "b14580ac6aabb7423738fafd7f80e99a7738a6eb31f321cf1572fbeebff894be",
+    "identity_treatment": "EXCLUDED_FROM_V8_CANONICAL_IDENTITY_BECAUSE_INDEX_CONTINUES_TO_TRACK_POST_INTERVAL_CONNECTED_TICKS; MONTHLY_2025_TKC_BYTES_ARE_CANONICAL"
+  },
+  "derived_csv_evidence": {
+    "retained_outside_repository": true,
+    "raw_tick_cache_committed": false,
+    "m1": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedM1.csv",
+      "size": 78253854,
+      "sha256": "e39578b49bf62361de23655c76891f0fd427a016aa970e3555cebc5ad8a3a63e"
+    },
+    "h1": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedH1.csv",
+      "size": 1341106,
+      "sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee"
+    }
+  },
+  "trading_reconciliation": {
+    "orders_before_and_after": 0,
+    "positions_before_and_after": 0,
+    "connected_deal_history_sha256_before": "d82d6e641add5fa41388548c0846b7bfc49f570cdd2df9a813e18cccae11e8de",
+    "connected_deal_history_sha256_after": "d82d6e641add5fa41388548c0846b7bfc49f570cdd2df9a813e18cccae11e8de",
+    "connected_trade_deal_history_unchanged": true,
+    "trade_transactions": 0,
+    "strategy_loaded": false
+  }
+}

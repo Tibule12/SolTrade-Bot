@@ -1,0 +1,3 @@
+# History coverage and fingerprint
+
+All 133 required FPMarketsSC-Demo monthly TKC files (19 months × seven symbols, 2025-01 through 2026-07) are present, non-empty and independently hashed. Tester synchronization records cover through 2026-07-31 for every symbol. The 2025-01-01 market holiday has no executable market tick; the first eligible trading ticks occur afterward, with no warm-up trade. The regenerated 133-leg schedule matches all 119 previously frozen legs field-for-field and adds only the natural 2025-12-01 and 2026-07-06 cohorts. FP Markets' official FAQ states that platform server time is GMT+2/GMT+3 with daylight saving and is aligned to New York close: https://www.fpmarkets.com/en-au/education/faq/

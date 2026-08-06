@@ -1,0 +1,18 @@
+field,value
+schema,SOLTRADE_PHASE6_V27_RUN_SUMMARY_V1
+execution_instance_id,V27-2026_PRESEAL_DEVELOPMENT-NATIVE_NORMAL_EXECUTION-R2-A3
+dataset,V27_2026_PRESEAL_DEVELOPMENT
+execution_layer,NATIVE_NORMAL_EXECUTION
+schedule_signals,48
+processed_signals,48
+entry_attempts,48
+entry_fills,48
+exit_fills,42
+missed_signals,0
+spread_blocks,0
+risk_blocks,0
+execution_blocks,0
+open_positions_at_end,0
+max_tick,2026.07.31 23:59:56
+seal_breach,NO
+run_evidence_status,PASS

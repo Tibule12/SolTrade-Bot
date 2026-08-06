@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_ADAPTER_FREEZE_V1",
+  "status": "FROZEN",
+  "terminal_outcome": "V28_ADAPTER_EQUIVALENCE_PASSED",
+  "future_test_label": "STRATEGY_EQUIVALENT_EXTERNAL_FEED_REPLICATION",
+  "binary_identical_replication_claimed": false,
+  "permitted_behavioral_difference": "CENTRALIZED_CANONICAL_TO_RESEARCH_SYMBOL_RESOLUTION_ONLY",
+  "research_symbol_resolver": "ResearchSymbol(canonical_symbol)",
+  "mapping": {
+    "EURUSD": "EURUSD.V31",
+    "GBPUSD": "GBPUSD.V31",
+    "AUDUSD": "AUDUSD.V31",
+    "NZDUSD": "NZDUSD.V31",
+    "USDCAD": "USDCAD.V31",
+    "USDCHF": "USDCHF.V31",
+    "USDJPY": "USDJPY.V31"
+  },
+  "original_v28": {
+    "source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+    "ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca"
+  },
+  "research_adapter": {
+    "source_sha256": "c16c13ff9642faee88424ab7477e7cdf873164210e185ae257d7e61cab0cfca1",
+    "ex5_sha256": "92bf94431803c0213b1d796c3a412b581978c680869b20de299bcef90ec8e886"
+  },
+  "numeric_tolerance": 1e-10,
+  "divergence_count": 0,
+  "external_feed_replication_authorized": false,
+  "stop_for_approval": true
+}

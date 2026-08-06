@@ -1,0 +1,89 @@
+condition,rule,status,basis
+NORMAL,phase1_starting_balance_usd_10000,SOURCE_SEGMENTS_PASS_CONTINUITY_UNRESOLVED,"Both source periods start at USD 10,000; this creates a continuity break for a chronological prop phase."
+NORMAL,phase1_profit_target_8_percent_usd_800,UNRESOLVED,Continuous-account sizing is unavailable; source segment sums remain below USD 800.
+NORMAL,phase1_minimum_three_profitable_days_at_usd_50,UNRESOLVED,UTC+3 midnight equity is unavailable.
+NORMAL,phase1_maximum_daily_loss_5_percent,UNRESOLVED,Full intraday equity is unavailable.
+NORMAL,phase1_maximum_account_loss_10_percent_absolute,UNRESOLVED,Continuous-account equity is unavailable.
+NORMAL,phase2_reset_starting_balance_usd_10000,NOT_REACHED,No valid Phase 1 pass exists.
+NORMAL,phase2_profit_target_5_percent_usd_500,NOT_REACHED,No valid Phase 1 pass exists.
+NORMAL,phase2_minimum_three_profitable_days_at_usd_50,NOT_REACHED,No valid Phase 1 pass exists.
+NORMAL,phase2_maximum_daily_loss_5_percent,NOT_REACHED,No valid Phase 1 pass exists.
+NORMAL,phase2_maximum_account_loss_10_percent_absolute,NOT_REACHED,No valid Phase 1 pass exists.
+NORMAL,profitable_day_official_midnight_formula,UNRESOLVED,UTC+3 midnight balance/equity snapshots are unavailable.
+NORMAL,unlimited_trading_period,NOT_A_RESTRICTION,No maximum completion-period failure is applied.
+NORMAL,inactivity_more_than_30_days,FAIL,Frozen deal stream contains multiple gaps over 30 days.
+NORMAL,overnight_positions_allowed,PASS_NOT_A_RESTRICTION,V28 holds overnight and the programme permits it.
+NORMAL,weekend_positions_allowed,PASS_NOT_A_RESTRICTION,V28 may hold over weekends and the programme permits it.
+NORMAL,existing_positions_during_news_allowed,PASS_NOT_A_RESTRICTION,The programme permits existing positions during news.
+NORMAL,no_open_or_execution_within_high_impact_news_window,UNRESOLVED,Qualified historical high-impact calendar is unavailable.
+NORMAL,visible_stop_loss,PASS_SOURCE_EVIDENCE,All filled entry attempts have non-zero stop loss; native order reports corroborate.
+NORMAL,prohibited_microstructure_practices,PARTIAL_PASS,No scalping/HFT/arbitrage/copy/emulator evidence; complete request trace unavailable.
+NORMAL,qualitative_concentration_practices,HIGH_RISK_LIKELY_BREACH,Seven simultaneous legs implement one common USD-factor direction.
+NORMAL,mt5_hedge_leverage_1_100,UNRESOLVED,"Source physical run is MT5 at 1:30, not 1:100."
+NORMAL,classic_10k_checkout_price,REVERIFICATION_REQUIRED_NON_BLOCKING,No purchase is being made; prior USD 78 publication is not treated as current checkout evidence.
+HIGH,phase1_starting_balance_usd_10000,SOURCE_SEGMENTS_PASS_CONTINUITY_UNRESOLVED,"Both source periods start at USD 10,000; this creates a continuity break for a chronological prop phase."
+HIGH,phase1_profit_target_8_percent_usd_800,UNRESOLVED,Continuous-account sizing is unavailable; source segment sums remain below USD 800.
+HIGH,phase1_minimum_three_profitable_days_at_usd_50,UNRESOLVED,UTC+3 midnight equity is unavailable.
+HIGH,phase1_maximum_daily_loss_5_percent,UNRESOLVED,Full intraday equity is unavailable.
+HIGH,phase1_maximum_account_loss_10_percent_absolute,UNRESOLVED,Continuous-account equity is unavailable.
+HIGH,phase2_reset_starting_balance_usd_10000,NOT_REACHED,No valid Phase 1 pass exists.
+HIGH,phase2_profit_target_5_percent_usd_500,NOT_REACHED,No valid Phase 1 pass exists.
+HIGH,phase2_minimum_three_profitable_days_at_usd_50,NOT_REACHED,No valid Phase 1 pass exists.
+HIGH,phase2_maximum_daily_loss_5_percent,NOT_REACHED,No valid Phase 1 pass exists.
+HIGH,phase2_maximum_account_loss_10_percent_absolute,NOT_REACHED,No valid Phase 1 pass exists.
+HIGH,profitable_day_official_midnight_formula,UNRESOLVED,UTC+3 midnight balance/equity snapshots are unavailable.
+HIGH,unlimited_trading_period,NOT_A_RESTRICTION,No maximum completion-period failure is applied.
+HIGH,inactivity_more_than_30_days,FAIL,Frozen deal stream contains multiple gaps over 30 days.
+HIGH,overnight_positions_allowed,PASS_NOT_A_RESTRICTION,V28 holds overnight and the programme permits it.
+HIGH,weekend_positions_allowed,PASS_NOT_A_RESTRICTION,V28 may hold over weekends and the programme permits it.
+HIGH,existing_positions_during_news_allowed,PASS_NOT_A_RESTRICTION,The programme permits existing positions during news.
+HIGH,no_open_or_execution_within_high_impact_news_window,UNRESOLVED,Qualified historical high-impact calendar is unavailable.
+HIGH,visible_stop_loss,PASS_SOURCE_EVIDENCE,All filled entry attempts have non-zero stop loss; native order reports corroborate.
+HIGH,prohibited_microstructure_practices,PARTIAL_PASS,No scalping/HFT/arbitrage/copy/emulator evidence; complete request trace unavailable.
+HIGH,qualitative_concentration_practices,HIGH_RISK_LIKELY_BREACH,Seven simultaneous legs implement one common USD-factor direction.
+HIGH,mt5_hedge_leverage_1_100,UNRESOLVED,"Source physical run is MT5 at 1:30, not 1:100."
+HIGH,classic_10k_checkout_price,REVERIFICATION_REQUIRED_NON_BLOCKING,No purchase is being made; prior USD 78 publication is not treated as current checkout evidence.
+STRESS,phase1_starting_balance_usd_10000,SOURCE_SEGMENTS_PASS_CONTINUITY_UNRESOLVED,"Both source periods start at USD 10,000; this creates a continuity break for a chronological prop phase."
+STRESS,phase1_profit_target_8_percent_usd_800,UNRESOLVED,Continuous-account sizing is unavailable; source segment sums remain below USD 800.
+STRESS,phase1_minimum_three_profitable_days_at_usd_50,UNRESOLVED,UTC+3 midnight equity is unavailable.
+STRESS,phase1_maximum_daily_loss_5_percent,UNRESOLVED,Full intraday equity is unavailable.
+STRESS,phase1_maximum_account_loss_10_percent_absolute,UNRESOLVED,Continuous-account equity is unavailable.
+STRESS,phase2_reset_starting_balance_usd_10000,NOT_REACHED,No valid Phase 1 pass exists.
+STRESS,phase2_profit_target_5_percent_usd_500,NOT_REACHED,No valid Phase 1 pass exists.
+STRESS,phase2_minimum_three_profitable_days_at_usd_50,NOT_REACHED,No valid Phase 1 pass exists.
+STRESS,phase2_maximum_daily_loss_5_percent,NOT_REACHED,No valid Phase 1 pass exists.
+STRESS,phase2_maximum_account_loss_10_percent_absolute,NOT_REACHED,No valid Phase 1 pass exists.
+STRESS,profitable_day_official_midnight_formula,UNRESOLVED,UTC+3 midnight balance/equity snapshots are unavailable.
+STRESS,unlimited_trading_period,NOT_A_RESTRICTION,No maximum completion-period failure is applied.
+STRESS,inactivity_more_than_30_days,FAIL,Frozen deal stream contains multiple gaps over 30 days.
+STRESS,overnight_positions_allowed,PASS_NOT_A_RESTRICTION,V28 holds overnight and the programme permits it.
+STRESS,weekend_positions_allowed,PASS_NOT_A_RESTRICTION,V28 may hold over weekends and the programme permits it.
+STRESS,existing_positions_during_news_allowed,PASS_NOT_A_RESTRICTION,The programme permits existing positions during news.
+STRESS,no_open_or_execution_within_high_impact_news_window,UNRESOLVED,Qualified historical high-impact calendar is unavailable.
+STRESS,visible_stop_loss,PASS_SOURCE_EVIDENCE,All filled entry attempts have non-zero stop loss; native order reports corroborate.
+STRESS,prohibited_microstructure_practices,PARTIAL_PASS,No scalping/HFT/arbitrage/copy/emulator evidence; complete request trace unavailable.
+STRESS,qualitative_concentration_practices,HIGH_RISK_LIKELY_BREACH,Seven simultaneous legs implement one common USD-factor direction.
+STRESS,mt5_hedge_leverage_1_100,UNRESOLVED,"Source physical run is MT5 at 1:30, not 1:100."
+STRESS,classic_10k_checkout_price,REVERIFICATION_REQUIRED_NON_BLOCKING,No purchase is being made; prior USD 78 publication is not treated as current checkout evidence.
+DELAY_200_MS,phase1_starting_balance_usd_10000,SOURCE_SEGMENTS_PASS_CONTINUITY_UNRESOLVED,"Both source periods start at USD 10,000; this creates a continuity break for a chronological prop phase."
+DELAY_200_MS,phase1_profit_target_8_percent_usd_800,UNRESOLVED,Continuous-account sizing is unavailable; source segment sums remain below USD 800.
+DELAY_200_MS,phase1_minimum_three_profitable_days_at_usd_50,UNRESOLVED,UTC+3 midnight equity is unavailable.
+DELAY_200_MS,phase1_maximum_daily_loss_5_percent,UNRESOLVED,Full intraday equity is unavailable.
+DELAY_200_MS,phase1_maximum_account_loss_10_percent_absolute,UNRESOLVED,Continuous-account equity is unavailable.
+DELAY_200_MS,phase2_reset_starting_balance_usd_10000,NOT_REACHED,No valid Phase 1 pass exists.
+DELAY_200_MS,phase2_profit_target_5_percent_usd_500,NOT_REACHED,No valid Phase 1 pass exists.
+DELAY_200_MS,phase2_minimum_three_profitable_days_at_usd_50,NOT_REACHED,No valid Phase 1 pass exists.
+DELAY_200_MS,phase2_maximum_daily_loss_5_percent,NOT_REACHED,No valid Phase 1 pass exists.
+DELAY_200_MS,phase2_maximum_account_loss_10_percent_absolute,NOT_REACHED,No valid Phase 1 pass exists.
+DELAY_200_MS,profitable_day_official_midnight_formula,UNRESOLVED,UTC+3 midnight balance/equity snapshots are unavailable.
+DELAY_200_MS,unlimited_trading_period,NOT_A_RESTRICTION,No maximum completion-period failure is applied.
+DELAY_200_MS,inactivity_more_than_30_days,FAIL,Frozen deal stream contains multiple gaps over 30 days.
+DELAY_200_MS,overnight_positions_allowed,PASS_NOT_A_RESTRICTION,V28 holds overnight and the programme permits it.
+DELAY_200_MS,weekend_positions_allowed,PASS_NOT_A_RESTRICTION,V28 may hold over weekends and the programme permits it.
+DELAY_200_MS,existing_positions_during_news_allowed,PASS_NOT_A_RESTRICTION,The programme permits existing positions during news.
+DELAY_200_MS,no_open_or_execution_within_high_impact_news_window,UNRESOLVED,Qualified historical high-impact calendar is unavailable.
+DELAY_200_MS,visible_stop_loss,PASS_SOURCE_EVIDENCE,All filled entry attempts have non-zero stop loss; native order reports corroborate.
+DELAY_200_MS,prohibited_microstructure_practices,PARTIAL_PASS,No scalping/HFT/arbitrage/copy/emulator evidence; complete request trace unavailable.
+DELAY_200_MS,qualitative_concentration_practices,HIGH_RISK_LIKELY_BREACH,Seven simultaneous legs implement one common USD-factor direction.
+DELAY_200_MS,mt5_hedge_leverage_1_100,UNRESOLVED,"Source physical run is MT5 at 1:30, not 1:100."
+DELAY_200_MS,classic_10k_checkout_price,REVERIFICATION_REQUIRED_NON_BLOCKING,No purchase is being made; prior USD 78 publication is not treated as current checkout evidence.

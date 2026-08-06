@@ -1,0 +1,247 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_CROSS_DATASET_CONSISTENCY_V1",
+  "groups": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633033893395087
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12291590837744426
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10360272667376985
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633569638551458
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12306275820310797
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10385093259948258
+    }
+  ],
+  "gates": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633033893395087,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633033893395087,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633033893395087,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.14633033893395087,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12291590837744426,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12291590837744426,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12291590837744426,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.12291590837744426,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10360272667376985,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10360272667376985,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10360272667376985,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.10360272667376985,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633569638551458,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633569638551458,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.14633569638551458,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.14633569638551458,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12306275820310797,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12306275820310797,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.12306275820310797,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.12306275820310797,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10385093259948258,
+      "gate": "normalized_expectancy_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10385093259948258,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.50",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "normalized_expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 0.10385093259948258,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.40",
+      "actual": 0.10385093259948258,
+      "status": "PASS"
+    }
+  ]
+}

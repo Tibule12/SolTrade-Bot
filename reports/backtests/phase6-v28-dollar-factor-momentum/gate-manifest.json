@@ -1,0 +1,11 @@
+{
+  "schema":"SOLTRADE_PHASE6_V28_GATE_MANIFEST_V1",
+  "outcomes":["V28_DEVELOPMENT_GATES_PASSED_DEMO_AUTHORIZED","V28_DEVELOPMENT_GATES_FAILED_CANDIDATE_RETIRED","V28_SAMPLE_GATE_INFEASIBLE_CANDIDATE_RETIRED","V28_INVALID_TEST_EVIDENCE"],
+  "sample_normal_native":{"all_preseal_closed":">= 100","dated_2026_closed":">= 35","BUY_closed":">= 20","SELL_closed":">= 20","each_symbol_closed":">= 10"},
+  "performance_every_cell":{"NORMAL":{"profit_factor":"> 1.15","net_profit":"> 0","expectancy_R":"> 0","drawdown_percent":"< 8"},"HIGH":{"profit_factor":">= 1.05","net_profit":"> 0","expectancy_R":"> 0","drawdown_percent":"<= 10"},"STRESS":{"profit_factor":">= 1.00","net_profit":"> 0","expectancy_R":"> 0","drawdown_percent":"<= 12"}},
+  "concentration_every_cell":{"best_trade_percent":"<= 15","best_currency_percent":"<= 35","best_of_five_time_subperiods_percent":"<= 40"},
+  "cross_dataset_per_cost_execution":{"expectancy_min_div_max":">= 0.35","annualized_return_min_div_max":">= 0.35","profit_factor_range":"<= 0.50"},
+  "uncertainty":{"bootstrap_paths":100000,"monte_carlo_paths":100000,"reporting_only":true},
+  "all_mandatory":true,
+  "failure_policy":"retire unchanged; no tuning, sealed OOS, demo or live"
+}

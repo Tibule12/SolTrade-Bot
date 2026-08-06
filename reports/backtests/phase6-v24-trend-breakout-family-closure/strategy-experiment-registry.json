@@ -1,0 +1,195 @@
+{
+  "schema": "SOLTRADE_PHASE6_V24_STRATEGY_EXPERIMENT_REGISTRY_V1",
+  "status": "IMMUTABLE_APPEND_ONLY",
+  "family_id": "TREND_BREAKOUT_FAMILY",
+  "family_terminal_status": "TREND_BREAKOUT_FAMILY_RETIRED",
+  "related_hypothesis_count": 4,
+  "strategy_configuration_count": 4,
+  "counting_rule": "V1, V2, V3.0 and V3.1 are four related hypotheses in one research family; unsuccessful experiments remain counted",
+  "amendment_rule": "Future corrections require a new versioned registry record and may not overwrite or delete these entries",
+  "experiments": [
+    {
+      "ordinal": 1,
+      "strategy_identifier": "TREND_BREAKOUT_V1",
+      "strategy_version": "1.0.0",
+      "specification_commit": "e0522c607eb59641662a7be9922fd8bd2ba4784c",
+      "specification_commit_semantics": "V13 frozen pre-run configuration used by the V14 controlled practical backtest",
+      "behavioural_changes": [
+        "Baseline completed-H1 Donchian-20 breakout entry on the EMA-200 trend side",
+        "Donchian-10 completed-close exit and two-ATR initial stop",
+        "First-tick entry, one-position limit and frozen Phase 1-5 risk controls"
+      ],
+      "datasets_inspected_during_design": [
+        "INITIAL_DESIGN_PROVENANCE_NOT_RECORDED_IN_V4_V23_EVIDENCE"
+      ],
+      "datasets_used_for_sample_feasibility": [
+        "V14_2025_DEVELOPMENT",
+        "V14_2025_VALIDATION",
+        "V14_2025_OUT_OF_SAMPLE"
+      ],
+      "datasets_used_for_pnl": [
+        "V14_2025_DEVELOPMENT",
+        "V14_2025_VALIDATION",
+        "V14_2025_OUT_OF_SAMPLE"
+      ],
+      "configurations_or_variants_considered": 1,
+      "matrix_scope_not_counted_as_strategy_variants": {
+        "formal_cells": 18,
+        "physical_runs": 36,
+        "cost_profiles": 3,
+        "execution_layers": 2
+      },
+      "sample_size": {
+        "unique_naturally_closed_cycles": 94,
+        "development": 49,
+        "validation": 28,
+        "out_of_sample": 17
+      },
+      "terminal_outcome": "RETIRED_NO_POSITIVE_EDGE",
+      "retirement_reason": "Valid V14 evidence was negative in Development, Validation and OOS under every cost and execution cell",
+      "untouched_oos_accessed": true,
+      "untouched_oos_access_semantics": "The then-designated V14 2025 OOS was opened for V1 P&L; its 17-cycle gate was insufficient but its negative result remains recorded",
+      "demo_trading_occurred": false,
+      "live_trading_occurred": false,
+      "primary_evidence": [
+        "reports/backtests/phase6-v14-controlled-practical-backtest/phase6-v14-terminal-outcome.md",
+        "reports/backtests/phase6-v15-v1-postmortem-v2-design/trend-breakout-v1-closure-report.md"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "strategy_identifier": "SOLTRADE_TREND_BREAKOUT_V2_1_0",
+      "strategy_version": "1.0",
+      "specification_commit": "f1ad840dddb1fa269e1462cb7fcd22042891eb42",
+      "behavioural_changes": [
+        "Converted the Donchian breakout into a setup rather than an immediate entry",
+        "Required immediate-next-completed-H1 directional continuation beyond setup close and frozen boundary",
+        "Required the correct EMA-200 side, no more than two ATR distance from EMA-200, and a frozen ATR regime",
+        "Raised clean segment-local history requirement to 300 bars"
+      ],
+      "datasets_inspected_during_design": [
+        "V14_2025_DEVELOPMENT",
+        "V14_2025_VALIDATION",
+        "V14_2025_OUT_OF_SAMPLE"
+      ],
+      "datasets_used_for_sample_feasibility": [
+        "V16_2026_VALIDATION_2026-01-16_TO_2026-04-09",
+        "V16_2026_PROPOSED_OOS_2026-04-09_TO_2026-07-01",
+        "V16_2026_POST_PROPOSED_OOS_2026-07-01_TO_2026-08-01"
+      ],
+      "datasets_used_for_pnl": [],
+      "configurations_or_variants_considered": 1,
+      "sample_size": {
+        "qualified_2026_setups": 268,
+        "confirmed_entries": 3,
+        "naturally_completed_cycles": 3,
+        "proposed_oos_naturally_completed_cycles": 2,
+        "frozen_oos_minimum": 50
+      },
+      "terminal_outcome": "RETIRED_SAMPLE_INFEASIBLE",
+      "retirement_reason": "Frozen confirmation rules produced too few completed cycles for meaningful profitability testing",
+      "untouched_oos_accessed": true,
+      "untouched_oos_access_semantics": "The then-proposed 2026 OOS was inspected signal-only for structural feasibility; no P&L or outcome classification was viewed",
+      "profitability_tested": false,
+      "demo_trading_occurred": false,
+      "live_trading_occurred": false,
+      "primary_evidence": [
+        "reports/backtests/phase6-v16-v2-data-and-sample-feasibility/phase6-v16-sample-feasibility-result.json",
+        "reports/backtests/phase6-v17-v2-feasibility-postmortem/trend-breakout-v2-closure-report.md"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "strategy_identifier": "TREND_BREAKOUT_V3_RETEST_HOLD_1_0",
+      "strategy_version": "3.0",
+      "specification_commit": "92c002e6844aabf5935b03ec7c69ef62fba4e938",
+      "behavioural_changes": [
+        "Replaced immediate continuation with the first breakout-boundary retest-and-hold within six completed market H1 candles",
+        "Removed V2 directional-continuation and two-ATR EMA-distance confirmation requirements",
+        "Retained trend-side, ATR-regime, two-ATR stop, Donchian-10 exit and no-retry controls",
+        "Used min(30 points, 10 percent of confirmation ATR in points) as the frozen first-tick spread limit"
+      ],
+      "datasets_inspected_during_design": [
+        "V15_V1_FAILURE_ATTRIBUTION_FROM_V14_2025_EVIDENCE",
+        "V17_V2_2025_DEVELOPMENT_FILTER_ATTRIBUTION"
+      ],
+      "datasets_used_for_sample_feasibility": [
+        "V19_2026_VALIDATION_2026-01-16_TO_2026-04-09",
+        "V19_2026_PROPOSED_OOS_2026-04-09_TO_2026-07-01",
+        "V19_2026_POST_PROPOSED_OOS_2026-07-01_TO_2026-08-01"
+      ],
+      "datasets_used_for_pnl": [],
+      "configurations_or_variants_considered": 1,
+      "sample_size": {
+        "naturally_completed_structural_cycles_all_2026_partitions": 22,
+        "validation_cycles": 14,
+        "proposed_oos_cycles": 7,
+        "post_proposed_oos_cycles": 1,
+        "frozen_oos_minimum": 50,
+        "confirmations_in_entry_block_audit": 84,
+        "entries_after_frozen_spread_rule": 23,
+        "spread_blocks": 61
+      },
+      "terminal_outcome": "SUPERSEDED_OPERATIONALLY_BY_V3_1",
+      "retirement_reason": "The frozen 10-percent-ATR spread rule was the dominant operational entry block; V3.0 was superseded by the single V3.1 amendment without P&L testing",
+      "untouched_oos_accessed": true,
+      "untouched_oos_access_semantics": "The then-proposed 2026 OOS was inspected signal-only for structural feasibility and block attribution; no P&L was viewed",
+      "profitability_tested": false,
+      "demo_trading_occurred": false,
+      "live_trading_occurred": false,
+      "primary_evidence": [
+        "reports/backtests/phase6-v19-v3-sample-feasibility/phase6-v19-terminal-outcome.md",
+        "reports/backtests/phase6-v20-v3-entry-block-attribution/phase6-v20-terminal-outcome.md"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "strategy_identifier": "TREND_BREAKOUT_V3_RETEST_HOLD_1_1",
+      "strategy_version": "3.1",
+      "specification_commit": "7f7a11b995d0b03e43df5647d0e673081aebd053",
+      "behavioural_changes": [
+        "Changed only the first-tick ATR-relative spread fraction from 0.10 to 0.20",
+        "Retained the 30-point absolute ceiling, one submission opportunity, no retry, and every V3.0 signal, risk, stop, exit and state rule",
+        "Created a fresh sealed OOS plan beginning 2026-08-01; this was a research-plan change rather than a trading-rule change"
+      ],
+      "datasets_inspected_during_design": [
+        "V20_2026_VALIDATION_ENTRY_BLOCK_ATTRIBUTION",
+        "V20_2026_PROPOSED_OOS_ENTRY_BLOCK_ATTRIBUTION",
+        "V20_2026_POST_PROPOSED_OOS_ENTRY_BLOCK_ATTRIBUTION"
+      ],
+      "datasets_used_for_sample_feasibility": [
+        "V22_2025_DEVELOPMENT_REUSE",
+        "V22_2026_PRESEAL_DESIGN_AND_OPERATIONAL_FEASIBILITY"
+      ],
+      "datasets_used_for_pnl": [
+        "V23_V31_2025_DEVELOPMENT_REUSE",
+        "V23_V31_2026_PRESEAL_DEVELOPMENT"
+      ],
+      "configurations_or_variants_considered": 1,
+      "matrix_scope_not_counted_as_strategy_variants": {
+        "formal_cells": 12,
+        "physical_runs": 42,
+        "cost_profiles": 3,
+        "execution_layers": 2
+      },
+      "sample_size": {
+        "v22_structural_upper_bound": 96,
+        "v23_naturally_closed_cycles": 95,
+        "v23_2025_cycles": 54,
+        "v23_2026_cycles": 41,
+        "buy_cycles": 45,
+        "sell_cycles": 50
+      },
+      "terminal_outcome": "RETIRED_FAILED_DEVELOPMENT_SCREEN",
+      "retirement_reason": "All sample gates passed, but every one of 12 formal cells had negative net profit, profit factor below 1.0, and negative expectancy",
+      "untouched_oos_accessed": false,
+      "untouched_oos_access_semantics": "The fresh period beginning 2026-08-01 remained SEALED_UNOPENED; V23 stopped at the exclusive cutoff",
+      "demo_trading_occurred": false,
+      "live_trading_occurred": false,
+      "primary_evidence": [
+        "reports/backtests/phase6-v22-v31-implementation-parity/phase6-v22-terminal-outcome.md",
+        "reports/backtests/phase6-v23-v31-development-screen/phase6-v23-terminal-outcome.md"
+      ]
+    }
+  ]
+}

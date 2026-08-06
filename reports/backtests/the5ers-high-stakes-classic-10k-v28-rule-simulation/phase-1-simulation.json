@@ -1,0 +1,53 @@
+{
+  "conditions": {
+    "DELAY_200_MS": {
+      "daily_loss": "UNRESOLVED_MISSING_INTRADAY_EQUITY",
+      "inactivity_result": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS",
+      "news_windows": "UNRESOLVED_MISSING_QUALIFIED_CALENDAR",
+      "profitable_days": "UNRESOLVED_MISSING_UTC_PLUS_3_MIDNIGHT_EQUITY",
+      "qualitative_concentration": "HIGH_RISK_LIKELY_PROHIBITED: one common USD-factor bet across seven simultaneous pairs",
+      "source_segment_net_profit_sum_usd_non_authoritative": 750.2998499270049,
+      "source_segment_sum_reaches_800": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "total_loss": "UNRESOLVED_NO_CONTINUOUS_ACCOUNT_EQUITY"
+    },
+    "HIGH": {
+      "daily_loss": "UNRESOLVED_MISSING_INTRADAY_EQUITY",
+      "inactivity_result": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS",
+      "news_windows": "UNRESOLVED_MISSING_QUALIFIED_CALENDAR",
+      "profitable_days": "UNRESOLVED_MISSING_UTC_PLUS_3_MIDNIGHT_EQUITY",
+      "qualitative_concentration": "HIGH_RISK_LIKELY_PROHIBITED: one common USD-factor bet across seven simultaneous pairs",
+      "source_segment_net_profit_sum_usd_non_authoritative": 529.3056497950924,
+      "source_segment_sum_reaches_800": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "total_loss": "UNRESOLVED_NO_CONTINUOUS_ACCOUNT_EQUITY"
+    },
+    "NORMAL": {
+      "daily_loss": "UNRESOLVED_MISSING_INTRADAY_EQUITY",
+      "inactivity_result": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS",
+      "news_windows": "UNRESOLVED_MISSING_QUALIFIED_CALENDAR",
+      "profitable_days": "UNRESOLVED_MISSING_UTC_PLUS_3_MIDNIGHT_EQUITY",
+      "qualitative_concentration": "HIGH_RISK_LIKELY_PROHIBITED: one common USD-factor bet across seven simultaneous pairs",
+      "source_segment_net_profit_sum_usd_non_authoritative": 749.7327157050511,
+      "source_segment_sum_reaches_800": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "total_loss": "UNRESOLVED_NO_CONTINUOUS_ACCOUNT_EQUITY"
+    },
+    "STRESS": {
+      "daily_loss": "UNRESOLVED_MISSING_INTRADAY_EQUITY",
+      "inactivity_result": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS",
+      "news_windows": "UNRESOLVED_MISSING_QUALIFIED_CALENDAR",
+      "profitable_days": "UNRESOLVED_MISSING_UTC_PLUS_3_MIDNIGHT_EQUITY",
+      "qualitative_concentration": "HIGH_RISK_LIKELY_PROHIBITED: one common USD-factor bet across seven simultaneous pairs",
+      "source_segment_net_profit_sum_usd_non_authoritative": 311.3437105386645,
+      "source_segment_sum_reaches_800": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "total_loss": "UNRESOLVED_NO_CONTINUOUS_ACCOUNT_EQUITY"
+    }
+  },
+  "phase": 1,
+  "schema": "SOLTRADE_THE5ERS_V28_PHASE1_SIMULATION_V1",
+  "starting_balance_usd": 10000,
+  "status": "NOT_VALIDLY_SIMULATABLE_INSUFFICIENT_EVIDENCE",
+  "target_usd": 800
+}

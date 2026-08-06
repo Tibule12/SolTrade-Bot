@@ -1,0 +1,1 @@
+schema,canonical_symbol,research_symbol,warmup_m1_rates,source_ticks,imported_ticks,reloaded_ticks,exact_tick_mismatches,property_or_session_mismatches,first_tick,last_tick,status,orders,positions,trade_api_calls,pnl_calculated

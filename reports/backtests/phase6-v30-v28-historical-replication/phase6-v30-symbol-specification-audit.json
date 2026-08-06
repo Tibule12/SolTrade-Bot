@@ -1,0 +1,97 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_SYMBOL_SPECIFICATION_AUDIT_V1",
+  "status": "CURRENT_SNAPSHOTS_MATCH_HISTORICAL_SERIES_UNAVAILABLE",
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": -9.71,
+      "swap_short": 4.5,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "GBPUSD",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": -2.63,
+      "swap_short": -1.53,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "AUDUSD",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": -1.83,
+      "swap_short": -0.51,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "NZDUSD",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": -2.76,
+      "swap_short": 0.46,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "USDCAD",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": 3.49,
+      "swap_short": -9.1,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "USDCHF",
+      "digits": 5,
+      "point": 1e-05,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": 5.97,
+      "swap_short": -11.6,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    },
+    {
+      "symbol": "USDJPY",
+      "digits": 3,
+      "point": 0.001,
+      "contract_size": 100000.0,
+      "swap_mode": 1,
+      "swap_rollover3day": 3,
+      "swap_long": 9.54,
+      "swap_short": -18.97,
+      "frozen_v28_contract_match": true,
+      "frozen_v28_swap_match": true,
+      "historical_symbol_specification_series": "UNAVAILABLE_FROM_BROKER_TESTER; only the run-time contract snapshot is exposed"
+    }
+  ]
+}

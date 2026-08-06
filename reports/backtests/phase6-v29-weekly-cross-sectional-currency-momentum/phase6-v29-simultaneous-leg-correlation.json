@@ -1,0 +1,159 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_SIMULTANEOUS_LEG_CORRELATION_V1",
+  "method": "Pearson correlation of native net-R by deterministic rank slot across fully filled simultaneous four-leg cohorts",
+  "reporting_only": true,
+  "runs": [
+    {
+      "run_id": "01-v29-2025-native",
+      "complete_four_leg_weeks": 12,
+      "slot_definition": [
+        "LONG_R1",
+        "LONG_R2",
+        "SHORT_R6",
+        "SHORT_R7"
+      ],
+      "correlation_matrix": {
+        "LONG_R1": {
+          "LONG_R1": 1.0,
+          "LONG_R2": 0.7883578346881531,
+          "SHORT_R6": -0.48711384655817275,
+          "SHORT_R7": -0.3996099456077725
+        },
+        "LONG_R2": {
+          "LONG_R1": 0.7883578346881531,
+          "LONG_R2": 1.0,
+          "SHORT_R6": -0.12272604260575819,
+          "SHORT_R7": -0.6505928430221215
+        },
+        "SHORT_R6": {
+          "LONG_R1": -0.48711384655817275,
+          "LONG_R2": -0.12272604260575819,
+          "SHORT_R6": 1.0,
+          "SHORT_R7": -0.22639530942101144
+        },
+        "SHORT_R7": {
+          "LONG_R1": -0.3996099456077725,
+          "LONG_R2": -0.6505928430221215,
+          "SHORT_R6": -0.22639530942101144,
+          "SHORT_R7": 1.0
+        }
+      },
+      "mean_pairwise_correlation": -0.18301335875444721,
+      "maximum_absolute_pairwise_correlation": 0.7883578346881531
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "complete_four_leg_weeks": 10,
+      "slot_definition": [
+        "LONG_R1",
+        "LONG_R2",
+        "SHORT_R6",
+        "SHORT_R7"
+      ],
+      "correlation_matrix": {
+        "LONG_R1": {
+          "LONG_R1": 1.0,
+          "LONG_R2": 0.22311893665977867,
+          "SHORT_R6": -0.7044115708953382,
+          "SHORT_R7": -0.4404459226959273
+        },
+        "LONG_R2": {
+          "LONG_R1": 0.22311893665977867,
+          "LONG_R2": 1.0,
+          "SHORT_R6": -0.3883687226929636,
+          "SHORT_R7": -0.38492915755471313
+        },
+        "SHORT_R6": {
+          "LONG_R1": -0.7044115708953382,
+          "LONG_R2": -0.3883687226929636,
+          "SHORT_R6": 1.0,
+          "SHORT_R7": 0.5685088964550712
+        },
+        "SHORT_R7": {
+          "LONG_R1": -0.4404459226959273,
+          "LONG_R2": -0.38492915755471313,
+          "SHORT_R6": 0.5685088964550712,
+          "SHORT_R7": 1.0
+        }
+      },
+      "mean_pairwise_correlation": -0.18775459012068207,
+      "maximum_absolute_pairwise_correlation": 0.7044115708953382
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "complete_four_leg_weeks": 14,
+      "slot_definition": [
+        "LONG_R1",
+        "LONG_R2",
+        "SHORT_R6",
+        "SHORT_R7"
+      ],
+      "correlation_matrix": {
+        "LONG_R1": {
+          "LONG_R1": 1.0,
+          "LONG_R2": 0.781450745883997,
+          "SHORT_R6": -0.49379149765022606,
+          "SHORT_R7": -0.3810071430461179
+        },
+        "LONG_R2": {
+          "LONG_R1": 0.781450745883997,
+          "LONG_R2": 1.0,
+          "SHORT_R6": -0.1254893445258454,
+          "SHORT_R7": -0.6469189364854491
+        },
+        "SHORT_R6": {
+          "LONG_R1": -0.49379149765022606,
+          "LONG_R2": -0.1254893445258454,
+          "SHORT_R6": 1.0,
+          "SHORT_R7": -0.21071555277138626
+        },
+        "SHORT_R7": {
+          "LONG_R1": -0.3810071430461179,
+          "LONG_R2": -0.6469189364854491,
+          "SHORT_R6": -0.21071555277138626,
+          "SHORT_R7": 1.0
+        }
+      },
+      "mean_pairwise_correlation": -0.17941195476583793,
+      "maximum_absolute_pairwise_correlation": 0.781450745883997
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "complete_four_leg_weeks": 12,
+      "slot_definition": [
+        "LONG_R1",
+        "LONG_R2",
+        "SHORT_R6",
+        "SHORT_R7"
+      ],
+      "correlation_matrix": {
+        "LONG_R1": {
+          "LONG_R1": 1.0,
+          "LONG_R2": 0.8160163777108534,
+          "SHORT_R6": -0.8263437100846405,
+          "SHORT_R7": -0.7056338690088845
+        },
+        "LONG_R2": {
+          "LONG_R1": 0.8160163777108534,
+          "LONG_R2": 1.0,
+          "SHORT_R6": -0.7025038176670141,
+          "SHORT_R7": -0.6910722856167626
+        },
+        "SHORT_R6": {
+          "LONG_R1": -0.8263437100846405,
+          "LONG_R2": -0.7025038176670141,
+          "SHORT_R6": 1.0,
+          "SHORT_R7": 0.7264639223017025
+        },
+        "SHORT_R7": {
+          "LONG_R1": -0.7056338690088845,
+          "LONG_R2": -0.6910722856167626,
+          "SHORT_R6": 0.7264639223017025,
+          "SHORT_R7": 1.0
+        }
+      },
+      "mean_pairwise_correlation": -0.23051223039412427,
+      "maximum_absolute_pairwise_correlation": 0.8263437100846405
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "all_physical_runs_valid": true,
+  "all_formal_cells_produced": true,
+  "commission_reconciled": true,
+  "sample_gates_evaluated": true,
+  "performance_gates_evaluated": true,
+  "consistency_gates_evaluated": true,
+  "bootstrap_complete": true,
+  "monte_carlo_complete": true,
+  "technical_failures_retained": 2,
+  "valid_result_reruns": 0,
+  "post_seal_data_accessed": false,
+  "production_unchanged": true,
+  "optimization_or_tuning": false,
+  "terminal_outcome": "V31_DEVELOPMENT_SCREEN_FAILED"
+}

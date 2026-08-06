@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_QUALIFICATION_HARNESS_FREEZE_V1",
+  "source_sha256": "f94599ec5384118890bc0c6489fd74cbd39d59e0c6b9123910195c72b561eaf4",
+  "ex5_sha256": "355dfc759d14c87228c1283431fa428a3d35903b1bf42d1b15cb7ebddbc8a0b6",
+  "compile_result": "0 errors, 0 warnings",
+  "tester_model": 4,
+  "orders_or_positions": 0,
+  "pnl_calculated": false
+}

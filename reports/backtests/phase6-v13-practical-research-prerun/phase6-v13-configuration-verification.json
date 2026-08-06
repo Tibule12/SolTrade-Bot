@@ -1,0 +1,38 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_CONFIGURATION_VERIFICATION_V1",
+  "status": "PASS",
+  "production_ea_hash_before": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_ea_hash_after": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_hash_unchanged": true,
+  "harness_compile": {
+    "errors": 0,
+    "warnings": 0,
+    "log_sha256": "efca9e3b32a729226f34448a4a2b37b320f83d574d38192bf5372ac2fd3014da"
+  },
+  "fixture_compile": {
+    "errors": 0,
+    "warnings": 0,
+    "log_sha256": "8471906afaf46a94e6d96422229df23e81108f66a90081b4814b48291fd17b51"
+  },
+  "harness_ex5_sha256": "a7dd7145ae1addd439e323c46eb5f2c536c91571e54a1ad471cd4af428c39601",
+  "fixture_ex5_sha256": "a0b1c5b36ad49eaf127c9a0cfadc72b701d71b4ae3c4d96a778793eab3ac65dc",
+  "harness_support_header_sha256": "947c8f27695a867791f054a728f999550f0d28a17f1304639fb8f58632e4426f",
+  "terminal_build": 6090,
+  "broker_server": "FPMarketsSC-Demo",
+  "tester_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "generated_tick_fallback": false,
+  "signal_runs": 6,
+  "signal_runs_passed": 6,
+  "orders": 0,
+  "positions": 0,
+  "trade_transactions": 0,
+  "profitability_calculated": false,
+  "core_trading_input_hash": "d6185b478920f6f6cbbb26ffc3d4758e34a6bf89129230b4db4b96ac5666c3c0",
+  "complete_run_configuration_hashes": {
+    "native": "988b7eb650108821400ccd015044c886a19c814c708941cb48260c23c0e4287c",
+    "replica": "5b218e422077874a9825e4e669c00a3ddd4f53c9ba2075618c8222dcc8637366"
+  },
+  "seed_basis_sha256": "f1e404d4a2e0dabfcf37557fb86a462dc174ce1643182c08d48b292783fa5329",
+  "final_manifest_sha256": "5ede3a1bf1ada3de332705af8746f54cc98362234b5c72c7a7da87cd435a2160",
+  "v4_through_v12_evidence_modified": false
+}

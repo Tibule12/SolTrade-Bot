@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "formula": "effective_limit_points = min(30, 0.10 * ATR_price / SYMBOL_POINT_price)",
+  "symbol_point_price_units": 1e-05,
+  "checked_confirmations": 84,
+  "v19_block_classification_mismatches": 0,
+  "dimensional_conversion_independently_reconstructed": true,
+  "atr_units": "EURUSD_PRICE",
+  "spread_units": "SYMBOL_POINTS",
+  "limit_units": "SYMBOL_POINTS"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_EXECUTION_MANIFEST_V1",
+  "study": "CONTROLLED_PRACTICAL_BACKTEST",
+  "v13_commit": "e0522c607eb59641662a7be9922fd8bd2ba4784c",
+  "v13_manifest_sha256": "5ede3a1bf1ada3de332705af8746f54cc98362234b5c72c7a7da87cd435a2160",
+  "core_trading_input_hash": "d6185b478920f6f6cbbb26ffc3d4758e34a6bf89129230b4db4b96ac5666c3c0",
+  "production_ea_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "tester_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "generated_tick_fallback": false,
+  "broker": "FP Markets",
+  "server": "FPMarketsSC-Demo",
+  "symbol": "EURUSD",
+  "terminal_build": 6090,
+  "physical_runs": 36,
+  "formal_cells": 18,
+  "optimization": false,
+  "connected_demo_or_live_trades": 0,
+  "bootstrap_seed": 4201290849,
+  "monte_carlo_seed": 2000388822,
+  "terminal_outcome": "INCONCLUSIVE_INSUFFICIENT_SAMPLE"
+}

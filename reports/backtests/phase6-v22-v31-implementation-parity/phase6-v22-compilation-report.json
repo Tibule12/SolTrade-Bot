@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V22_COMPILATION_V1",
+  "status": "PASS",
+  "targets": [
+    {
+      "role": "research_harness",
+      "source": "research/v31/SolTradeV31TesterHarness.mq5",
+      "source_sha256": "ba43a88ef0b9ece206ab25ab73879c4c96d145b1793435f1a4f48309c099003c",
+      "executable_sha256": "e75b92e4c92d5a54b4e9ea17dfea37e593ad61dde3b3225976344df89c7d11dd",
+      "compile_log": "/home/tibule12/.wine-fpmarkets/drive_c/v22/harness-compile.log",
+      "compile_log_sha256": "d3c4d0b0108d5fbdb923140da4dba9f0eaf770dfcee62d0ffe02b39672cee0b5",
+      "errors": 0,
+      "warnings": 0,
+      "status": "PASS"
+    },
+    {
+      "role": "restart_fixture_runner",
+      "source": "research/v31/SolTradeV31RestartFixtures.mq5",
+      "source_sha256": "d2c2bdd72af2d0afb2e0ba94b93ea2e8f79a84fc7e39d358e48878405ea4ab65",
+      "executable_sha256": "39dad14b27e215758a5827c656552b679e086167137daac21ff2c8ec69586d48",
+      "compile_log": "/home/tibule12/.wine-fpmarkets/drive_c/v22/fixture-compile.log",
+      "compile_log_sha256": "42ff0fe258febe0798bac10aec9004a2be2801b032f77f147bc996e2defe7cd1",
+      "errors": 0,
+      "warnings": 0,
+      "status": "PASS"
+    }
+  ],
+  "production_target_compiled_or_modified": false
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "EURUSD",
+  "elapsed_seconds": 12.037042140960693,
+  "wine_return_code": 0,
+  "h1_timestamp_count": 0,
+  "first_h1": null,
+  "last_h1": null,
+  "price_fields_written": null,
+  "returns_or_rankings_calculated": null,
+  "orders_or_positions": null,
+  "status": "FAIL"
+}

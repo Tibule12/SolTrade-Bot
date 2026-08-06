@@ -1,0 +1,27 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_RAW_CONTENT_ENCODING_FREEZE_V1",
+  "status": "FROZEN_BEFORE_QUALIFICATION_OR_PNL",
+  "provider": "Dukascopy Bank",
+  "endpoint": "https://jetta.dukascopy.com/v1/ticks/",
+  "http_accept_encoding": "gzip",
+  "preserved_raw_representation": "exact HTTP gzip response body before client decompression",
+  "evaluation_raw_root": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw",
+  "decoded_json_checkpoint_root": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-raw",
+  "decoded_json_checkpoint_preserved_unchanged": true,
+  "decoded_json_checkpoint_used_for_replication": false,
+  "equivalence_probe": {
+    "symbol": "EURUSD",
+    "hour_utc": "2018-01-02T12:00:00Z",
+    "raw_gzip_bytes": 25035,
+    "raw_gzip_sha256": "2a6ccea73300c4b521c6b250feb7d179b225bdccaa44e343cd0eb3e38f2899c4",
+    "decoded_json_bytes": 124792,
+    "decoded_json_sha256": "2f0cb098afcef4cee3446381a403327abce8e24792f0049e5cd0f73b436f589e",
+    "decompressed_bytes_match_decoded_json": true,
+    "tick_rows": 4343,
+    "status": "EXACT"
+  },
+  "raw_files_transformed_after_download": false,
+  "downloader_sha256": "4f92be3f21832862ebd4d4a20bfc70af7b3e1a9a56ec2f40237b4f746c5218fa",
+  "provider_symbols_interval_and_tick_semantics": "UNCHANGED",
+  "pnl_viewed": false
+}

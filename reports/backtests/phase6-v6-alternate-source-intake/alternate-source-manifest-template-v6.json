@@ -1,0 +1,181 @@
+{
+  "schema": "SOLTRADE_PHASE6_V6_ALTERNATE_SOURCE_MANIFEST_TEMPLATE_V1",
+  "status": "AWAITING_ALTERNATE_MT5_SOURCE",
+  "execution_authorized": false,
+  "qualification_run_authorized": false,
+  "data_qualification_only": true,
+  "created_date": "2026-08-03",
+  "provenance": {
+    "v5_adjudication_commit": "240bd837a98a5526711bae25376ee01e540193a9",
+    "easyMarkets_v4_history_identity_sha256": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+    "easyMarkets_terminal_outcome": "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+    "easyMarkets_reason": "INSUFFICIENT_INTERVAL_SPECIFIC_BROKER_EVIDENCE",
+    "easyMarkets_evidence_preserved": true,
+    "evidence_combination_permitted": false
+  },
+  "alternate_source": {
+    "source_identity": null,
+    "broker_name": null,
+    "mt5_server_name": null,
+    "demo_account": null,
+    "account_currency": null,
+    "account_leverage": null,
+    "terminal_build": null,
+    "broker_company_reported_by_mt5": null,
+    "collection_instance_id": null,
+    "collection_timestamp_utc": null
+  },
+  "eurusd_symbol": {
+    "symbol_name": null,
+    "digits": null,
+    "point_size": null,
+    "tick_size": null,
+    "tick_value": null,
+    "tick_value_profit": null,
+    "tick_value_loss": null,
+    "contract_size": null
+  },
+  "time_observation": {
+    "broker_server_current_time": null,
+    "simultaneously_observed_utc_time": null,
+    "utc_offset_observed_at_collection": null,
+    "daylight_saving_status": null,
+    "daylight_saving_evidence": null,
+    "timezone_ambiguity": null
+  },
+  "mt5_session_schedule": {
+    "capture_api": "SymbolInfoSessionTrade",
+    "schedule_timezone": null,
+    "monday": null,
+    "tuesday": null,
+    "wednesday": null,
+    "thursday": null,
+    "friday": null,
+    "saturday": null,
+    "sunday": null,
+    "schedule_artifact_path": null,
+    "schedule_artifact_sha256": null
+  },
+  "coverage": {
+    "first_available_real_tick": null,
+    "last_available_real_tick": null,
+    "first_available_m1_bar": null,
+    "last_available_m1_bar": null,
+    "first_processed_real_tick": null,
+    "last_processed_real_tick": null,
+    "real_tick_count": null,
+    "m1_bar_count": null,
+    "complete_beginning_coverage": null,
+    "complete_ending_coverage": null,
+    "tick_retrieval_failures": null
+  },
+  "frozen_dates": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "warmup": {
+      "start_inclusive": "2024-01-02T00:00:00",
+      "end_exclusive": "2024-01-16T00:00:00"
+    },
+    "research": {
+      "start_inclusive": "2024-01-16T00:00:00",
+      "end_exclusive": "2024-12-24T00:00:00"
+    },
+    "development": {
+      "start_inclusive": "2024-01-16T00:00:00",
+      "end_exclusive": "2024-07-05T00:00:00"
+    },
+    "validation": {
+      "start_inclusive": "2024-07-05T00:00:00",
+      "end_exclusive": "2024-09-29T00:00:00"
+    },
+    "out_of_sample": {
+      "start_inclusive": "2024-09-29T00:00:00",
+      "end_exclusive": "2024-12-24T00:00:00"
+    }
+  },
+  "tick_model": {
+    "required": "BROKER_NATIVE_REAL_TICKS_ONLY",
+    "generated_ticks_permitted": false,
+    "synthetic_ticks_permitted": false,
+    "m1_interpolation_permitted": false,
+    "cross_broker_tick_substitution_permitted": false
+  },
+  "qualification_rules": {
+    "open_session_gap_threshold_seconds": 900,
+    "detect_missing_tick_ranges": true,
+    "detect_open_session_gaps": true,
+    "detect_weekend_closures": true,
+    "detect_daily_scheduled_breaks": true,
+    "detect_holidays": true,
+    "detect_session_schedule_conflicts": true,
+    "detect_missing_m1_bars": true,
+    "detect_timezone_ambiguity": true,
+    "detect_tick_retrieval_failures": true,
+    "detect_incomplete_boundaries": true,
+    "official_closure_requires_supported_evidence": true,
+    "weekend_proximity_alone_is_sufficient": false,
+    "unresolved_open_session_gap_disqualifies": true
+  },
+  "qualification_results": {
+    "missing_tick_ranges": null,
+    "open_session_gaps_over_threshold": null,
+    "weekend_closures": null,
+    "daily_scheduled_breaks": null,
+    "holidays": null,
+    "session_schedule_conflicts": null,
+    "missing_m1_bars": null,
+    "timezone_ambiguities": null,
+    "tick_retrieval_failures": null,
+    "incomplete_boundary_findings": null,
+    "unresolved_gaps": null,
+    "dataset_qualified": null
+  },
+  "identity_and_isolation": {
+    "alternate_source_history_identity_sha256": null,
+    "tick_inventory_sha256": null,
+    "m1_hcc_inventory_sha256": null,
+    "symbol_specification_sha256": null,
+    "session_schedule_sha256": null,
+    "terminal_build_included": true,
+    "source_specific_namespace": null,
+    "easyMarkets_files_reused": false,
+    "source_streams_combined": false
+  },
+  "prohibited_activity_record": {
+    "strategy_run_performed": false,
+    "profitability_calculation_performed": false,
+    "optimization_performed": false,
+    "replica_performed": false,
+    "generated_ticks_used": false,
+    "demo_trade_performed": false,
+    "live_trade_performed": false,
+    "phase7_action_performed": false
+  },
+  "required_before_qualification": [
+    "alternate_source.broker_name",
+    "alternate_source.mt5_server_name",
+    "alternate_source.demo_account",
+    "alternate_source.account_currency",
+    "alternate_source.account_leverage",
+    "eurusd_symbol.symbol_name",
+    "eurusd_symbol.digits",
+    "eurusd_symbol.point_size",
+    "eurusd_symbol.tick_size",
+    "eurusd_symbol.tick_value",
+    "eurusd_symbol.contract_size",
+    "time_observation.broker_server_current_time",
+    "time_observation.utc_offset_observed_at_collection",
+    "time_observation.daylight_saving_status",
+    "mt5_session_schedule.monday",
+    "mt5_session_schedule.tuesday",
+    "mt5_session_schedule.wednesday",
+    "mt5_session_schedule.thursday",
+    "mt5_session_schedule.friday",
+    "mt5_session_schedule.saturday",
+    "mt5_session_schedule.sunday",
+    "coverage.first_available_real_tick",
+    "coverage.last_available_real_tick",
+    "coverage.first_available_m1_bar",
+    "coverage.last_available_m1_bar"
+  ],
+  "terminal_outcome": "AWAITING_ALTERNATE_MT5_SOURCE"
+}

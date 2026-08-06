@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_ATTEMPT2_IMMUTABILITY_FREEZE_V1",
+  "v28_candidate_spec_sha256": "b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7",
+  "v28_gate_manifest_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "v28_original_source_sha256": "726273f4fdb949a519897163de5e32adacdb41e6c2ad1235f305fac296abf846",
+  "v28_original_executable_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "v31a_adapter_source_sha256": "c16c13ff9642faee88424ab7477e7cdf873164210e185ae257d7e61cab0cfca1",
+  "v31a_adapter_executable_sha256": "92bf94431803c0213b1d796c3a412b581978c680869b20de299bcef90ec8e886",
+  "v31a_equivalence_terminal_commit": "431ac5a55657499443728fdcde563c10c5f137f7",
+  "v31a_equivalence_status": "V28_ADAPTER_EQUIVALENCE_PASSED",
+  "permitted_behavioral_difference": "canonical symbol name resolution to isolated .V31 custom symbols only",
+  "strategy_logic_change": "PROHIBITED",
+  "parameter_tuning_or_optimization": false,
+  "v29_use": false,
+  "sealed_oos_access": false,
+  "demo_or_live_trading": false
+}

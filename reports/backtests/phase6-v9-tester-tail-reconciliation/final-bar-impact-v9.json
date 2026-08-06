@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V9_FINAL_BAR_IMPACT_V1",
+  "v8_tick_derived": {
+    "m1_2025-12-23T23:59:00": {"bid_open":1.17920,"bid_high":1.17942,"bid_low":1.17919,"bid_close":1.17938,"tick_count":39,"spread_points_open":19,"spread_points_high":20,"spread_points_low":19,"spread_points_close":19,"first_tick":"2025-12-23T23:59:00.402","final_tick":"2025-12-23T23:59:59.877"},
+    "h1_2025-12-23T23:00:00": {"bid_open":1.17890,"bid_high":1.17960,"bid_low":1.17878,"bid_close":1.17938,"tick_count":918,"spread_points_open":12,"spread_points_high":20,"spread_points_low":11,"spread_points_close":19,"first_tick":"2025-12-23T23:00:00.628","final_tick":"2025-12-23T23:59:59.877"}
+  },
+  "probe_a_original_boundary": {
+    "m1": {"open":1.17920,"high":1.17942,"low":1.17919,"close":1.17942,"mt5_tick_volume":37,"database_tick_count":37,"mt5_spread_field":19},
+    "h1": {"open":1.17890,"high":1.17960,"low":1.17878,"close":1.17942,"mt5_tick_volume":702,"database_tick_count":916,"mt5_spread_field":11}
+  },
+  "probe_b_and_c_guard_tail": {
+    "m1": {"open":1.17920,"high":1.17942,"low":1.17919,"close":1.17938,"mt5_tick_volume":39,"database_tick_count":39,"mt5_spread_field":19},
+    "h1": {"open":1.17890,"high":1.17960,"low":1.17878,"close":1.17938,"mt5_tick_volume":704,"database_tick_count":918,"mt5_spread_field":11}
+  },
+  "effect_of_omitting_two_tail_ticks": {
+    "final_m1_close_change_points": 4,
+    "final_m1_close_direction_vs_full_stream": "PROBE_A_IS_0.00004_HIGHER",
+    "final_h1_close_change_points": 4,
+    "final_h1_close_direction_vs_full_stream": "PROBE_A_IS_0.00004_HIGHER",
+    "h1_high_change_points": 0,
+    "h1_low_change_points": 0,
+    "tick_derived_final_spread_change_points": 0,
+    "mt5_copyrates_spread_field_change_between_a_b_c": 0,
+    "completed_bar_before_2025-12-23T23:00:00_changed_by_the_two_tail_ticks": false,
+    "clean_segment_boundary_changed_by_the_two_tail_ticks": false
+  },
+  "spread_semantics_note": "V8 records tick-derived open/high/low/close spread; MT5 CopyRates exposes one bar spread field. The H1 CopyRates value 11 is therefore not equated with V8 close spread 19. The final two ticks and the preceding tester-final tick all have a 19-point instantaneous spread, so their omission does not change the tick-derived closing spread.",
+  "tick_volume_semantics_note": "MT5 H1 CopyRates tick_volume (702/704) is not treated as COPY_TICKS_ALL count (916/918). Database tick counts provide the like-for-like count.",
+  "tail_bar_impact_resolved": true,
+  "separate_pre_final_canonical_impact_resolved": false
+}

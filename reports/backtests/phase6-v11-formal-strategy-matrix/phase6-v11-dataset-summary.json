@@ -1,0 +1,8 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_DATASET_SUMMARY_V1",
+  "status": "NOT_CALCULATED_PRECHECK_FAILED",
+  "development": {"metrics": null},
+  "validation": {"metrics": null},
+  "out_of_sample": {"metrics": null, "naturally_closed_trade_count": null},
+  "profitability_calculated": false
+}

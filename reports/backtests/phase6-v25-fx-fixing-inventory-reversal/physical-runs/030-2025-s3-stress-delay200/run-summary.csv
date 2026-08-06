@@ -1,0 +1,36 @@
+field,value
+schema,SOLTRADE_PHASE6_V25_RUN_SUMMARY_V1
+execution_instance_id,V25-030-2025_S3-STRESS-DELAY200
+segment_id,2025_S3
+dataset,DEVELOPMENT
+cost_profile,STRESS
+execution_layer,FIXED_DELAY_200_MS
+expected_execution_mode,200
+reset_at,2025.03.20 08:00:00
+eligible_from,2025.03.20 08:00:00
+eligible_to,2025.08.06 16:00:00
+first_evaluation,2025.04.07 19:00:00
+final_evaluation,2025.08.06 14:00:00
+expected_processable_completed_h1,2084
+evaluations,2084
+entry_opportunities,99
+entry_attempts,86
+entry_fills,86
+exit_fills,86
+missed_entry_windows,0
+insufficient_history_skips,13
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,0
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,0
+stop_loss_exits,15
+time_exits,71
+censored_position,NO
+max_tick,2025.08.06 15:59:58
+max_completed_h1,2025.08.06 14:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

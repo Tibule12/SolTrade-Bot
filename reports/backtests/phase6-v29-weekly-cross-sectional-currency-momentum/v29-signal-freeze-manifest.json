@@ -1,0 +1,49 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_SIGNAL_FREEZE_V1",
+  "status": "FROZEN_BYTE_IDENTICAL_BEFORE_V29_PNL",
+  "source_candidate": "V26",
+  "v26_pnl_previously_viewed": false,
+  "source_files": [
+    {
+      "dataset": "V26_2025_DEVELOPMENT",
+      "source_path": "reports/backtests/phase6-v26-cross-sectional-currency-momentum/signal-schedules/V26_2025_DEVELOPMENT/signal-schedule.csv",
+      "frozen_copy_path": "reports/backtests/phase6-v29-weekly-cross-sectional-currency-momentum/frozen-v26-signal-set/V26_2025_DEVELOPMENT/signal-schedule.csv",
+      "source_and_copy_sha256": "25876a808a49044bfdb2f2b728e0cbd7d097678c377a9b4af8b4d7b0ed8487cf",
+      "selected_signal_count": 204,
+      "byte_identical": true
+    },
+    {
+      "dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "source_path": "reports/backtests/phase6-v26-cross-sectional-currency-momentum/signal-schedules/V26_2026_PRESEAL_DEVELOPMENT/signal-schedule.csv",
+      "frozen_copy_path": "reports/backtests/phase6-v29-weekly-cross-sectional-currency-momentum/frozen-v26-signal-set/V26_2026_PRESEAL_DEVELOPMENT/signal-schedule.csv",
+      "source_and_copy_sha256": "feada50576c4c6dd8ff716a2dda94abc053265ec8f545057bbd6e9a92425a11b",
+      "selected_signal_count": 116,
+      "byte_identical": true
+    }
+  ],
+  "selected_signal_count": 320,
+  "selected_signal_identity_set_sha256": "7e437783c8e9b5b616bd301c4a0434afa208b2339fdc80064ad4675425014db9",
+  "identity_ledger_sha256": "f1c757edb6ca83c51a9a6a2412503d63defd362ba194eae42ccc700b534f6418",
+  "by_dataset": {
+    "V26_2025_DEVELOPMENT": 204,
+    "V26_2026_PRESEAL_DEVELOPMENT": 116
+  },
+  "by_portfolio_side": {
+    "LONG": 160,
+    "SHORT": 160
+  },
+  "by_chart_direction": {
+    "BUY": 182,
+    "SELL": 138
+  },
+  "by_currency": {
+    "AUD": 50,
+    "CAD": 37,
+    "CHF": 46,
+    "EUR": 37,
+    "GBP": 47,
+    "JPY": 59,
+    "NZD": 44
+  },
+  "signal_regeneration_performed": false
+}

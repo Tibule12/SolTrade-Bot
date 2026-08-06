@@ -1,0 +1,59 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_GATE_MANIFEST_V1",
+  "source_v28_gate_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "outcomes": [
+    "V30C_REPLICATION_AND_COMBINED_GATES_PASSED",
+    "V30C_INDEPENDENT_REPLICATION_FAILED",
+    "V30C_COMBINED_GATES_FAILED",
+    "V30C_DATA_INSUFFICIENT_OR_INVALID",
+    "INVALID_TEST_EVIDENCE"
+  ],
+  "sample": {
+    "closed": ">=100",
+    "BUY": ">=20",
+    "SELL": ">=20",
+    "each_symbol": ">=10"
+  },
+  "performance_every_cell": {
+    "NORMAL": {
+      "profit_factor": "> 1.15",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "< 8"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.05",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 10"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 12"
+    }
+  },
+  "original_concentration_every_cell": {
+    "best_trade_percent": "<= 15",
+    "best_currency_percent": "<= 35",
+    "best_of_five_time_subperiods_percent": "<= 40"
+  },
+  "additional_mandatory_concentration": {
+    "undefined": "FAIL",
+    "BUY_or_SELL": "report and fail if frozen attribution cannot be computed",
+    "best_week": "report",
+    "best_month": "report",
+    "largest_5_trades": "report",
+    "largest_10_trades": "report",
+    "symbol_and_currency": "best currency <=35% unchanged"
+  },
+  "rolling_and_cross_period_consistency": {
+    "expectancy_min_div_max": ">= 0.35",
+    "annualized_return_min_div_max": ">= 0.35",
+    "profit_factor_range": "<= 0.50"
+  },
+  "independent_must_pass_before_combined": true,
+  "all_mandatory": true,
+  "no_gate_weakened": true
+}

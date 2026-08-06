@@ -1,0 +1,24 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_SIGNAL_INVENTORY_V1",
+  "status": "PASS",
+  "orders_or_positions": 0,
+  "pnl_calculated": false,
+  "datasets": [
+    {
+      "dataset": "V26_2025_DEVELOPMENT",
+      "status": "PASS",
+      "rebalances": 51,
+      "selected_legs": 204,
+      "skipped_rebalances": 0,
+      "seal_breach": "NO"
+    },
+    {
+      "dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "status": "PASS",
+      "rebalances": 29,
+      "selected_legs": 116,
+      "skipped_rebalances": 0,
+      "seal_breach": "NO"
+    }
+  ]
+}

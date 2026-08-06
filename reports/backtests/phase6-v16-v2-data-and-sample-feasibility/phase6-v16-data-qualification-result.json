@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "generated_or_synthetic_fallback": "REJECTED_AND_NOT_USED",
+  "retrieval_errors": 0,
+  "invalid_tick_prices": 0,
+  "coverage_begin_pass": true,
+  "coverage_end_pass": true,
+  "tester_real_tick_availability": "PASS_WITH_RECONCILED_NON_BAR_AFFECTING_FINAL_TICK_TAIL",
+  "tester_on_tick_count": 9259174,
+  "connected_tick_count": 9259175,
+  "tester_tail_difference": 1,
+  "h1_bar_equivalence": "PASS_FINAL_TAIL_DOES_NOT_CHANGE_FINAL_H1_OHLC",
+  "broker_server_observed_utc_offset_seconds": 10800,
+  "timezone_ambiguity": "Historical session timezone/DST remains ambiguous; all buckets and frozen dates use broker-server timestamps."
+}

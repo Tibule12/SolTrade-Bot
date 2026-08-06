@@ -1,0 +1,21 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_EXECUTION_MODE_RESOLUTION_V1",
+  "status": "PASS",
+  "matrix_executed": false,
+  "core_trading_input_hash_includes_execution_mode": false,
+  "complete_run_configuration_hash_includes_execution_mode": true,
+  "axes": {
+    "native": {
+      "ExecutionMode": 0,
+      "label": "NATIVE_NORMAL_EXECUTION"
+    },
+    "replica": {
+      "ExecutionMode": 200,
+      "label": "FIXED_DELAY_200_MS"
+    }
+  },
+  "native_zero_is_valid": true,
+  "random_delay": false,
+  "real_tick_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "official_mt5_semantics_source": "https://www.metatrader5.com/en/terminal/help/start_advanced/start"
+}

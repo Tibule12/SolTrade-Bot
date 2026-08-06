@@ -1,0 +1,22 @@
+{
+  "paths": 100000,
+  "sample_trades": 294,
+  "expectancy_R_95_percent_interval": [
+    -0.09730129791736979,
+    -0.09730129791736979
+  ],
+  "ending_net_profit": {
+    "p05": -693.9287724991373,
+    "median": -693.9287724991227,
+    "p95": -693.9287724991082
+  },
+  "probability_negative_ending_net_profit": 1.0,
+  "drawdown_percent": {
+    "median": 7.580569294940464,
+    "p90": 8.483340323782775,
+    "p95": 8.777642015529883
+  },
+  "schema": "SOLTRADE_PHASE6_V25_MONTE_CARLO_V1",
+  "seed": 5665540854223528019,
+  "reporting_only": true
+}

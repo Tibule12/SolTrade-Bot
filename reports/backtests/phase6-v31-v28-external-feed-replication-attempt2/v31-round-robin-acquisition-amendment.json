@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_ROUND_ROBIN_ACQUISITION_AMENDMENT_V1",
+  "status": "FROZEN_BEFORE_RAW_MANIFEST_OR_PNL",
+  "reason": "Avoid serializing all outstanding requests through one cold instrument cache path.",
+  "queue_order": "UTC hour ascending, then frozen symbol order",
+  "target_set_changed": false,
+  "target_identity_changed": false,
+  "raw_file_overwrite": false,
+  "provider_or_endpoint_changed": false,
+  "parser_or_validation_changed": false,
+  "strategy_or_gate_changed": false,
+  "pnl_viewed": false,
+  "downloader_sha256": "88ff92f32d5b49feb11e62789def968da075a94163dce38d87a0eb92f27b1b16"
+}

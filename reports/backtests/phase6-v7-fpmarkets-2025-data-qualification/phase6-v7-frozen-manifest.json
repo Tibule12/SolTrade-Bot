@@ -1,0 +1,59 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FROZEN_MANIFEST_V1",
+  "frozen_at_utc": "2026-08-03T09:55:51Z",
+  "manifest_state": "FROZEN_BEFORE_DATA_QUALIFICATION",
+  "execution_authorized": false,
+  "strategy_matrix_authorized": false,
+  "data_qualification_only": true,
+  "interval_selection": {
+    "method": "SHIFT_EVERY_V6_BOUNDARY_FORWARD_EXACTLY_ONE_CALENDAR_YEAR",
+    "sole_reason": "FP_MARKETS_REAL_TICK_HISTORY_AVAILABILITY_BEGINS_2025_01_02",
+    "selected_from_strategy_performance": false,
+    "strategy_performance_examined_before_freeze": false,
+    "profitability_examined_before_freeze": false,
+    "optimization_or_replica_examined_before_freeze": false
+  },
+  "frozen_periods": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "warmup": {"start_inclusive":"2025-01-02T00:00:00","end_exclusive":"2025-01-16T00:00:00"},
+    "research": {"start_inclusive":"2025-01-16T00:00:00","end_exclusive":"2025-12-24T00:00:00"},
+    "development": {"start_inclusive":"2025-01-16T00:00:00","end_exclusive":"2025-07-05T00:00:00"},
+    "validation": {"start_inclusive":"2025-07-05T00:00:00","end_exclusive":"2025-09-29T00:00:00"},
+    "out_of_sample": {"start_inclusive":"2025-09-29T00:00:00","end_exclusive":"2025-12-24T00:00:00"}
+  },
+  "source": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "server": "FPMarketsSC-Demo",
+    "symbol": "EURUSD",
+    "account_must_be_demo": true,
+    "credentials_must_not_be_stored": true
+  },
+  "data_rules": {
+    "broker_native_real_ticks_only": true,
+    "generated_ticks_permitted": false,
+    "synthetic_ticks_permitted": false,
+    "interpolated_ticks_permitted": false,
+    "m1_substitution_permitted": false,
+    "open_session_gap_threshold_seconds": 900,
+    "official_closure_requires_schedule_or_broker_evidence": true,
+    "unresolved_open_session_gap_disqualifies": true,
+    "m1_error_4401_disqualifies_if_unresolved": true,
+    "generated_tick_fallback_requires_immediate_stop": true
+  },
+  "phase6_acceptance_gates_changed": false,
+  "phase1_through_phase5_logic_changes_permitted": false,
+  "allowed_terminal_outcomes": [
+    "DATA_QUALIFICATION_PASSED",
+    "FAIL_REAL_TICK_HISTORY_UNAVAILABLE",
+    "FAIL_INCOMPLETE_HISTORY_COVERAGE",
+    "FAIL_UNRESOLVED_OPEN_SESSION_GAPS",
+    "FAIL_M1_HISTORY_UNAVAILABLE",
+    "FAIL_TIMEZONE_OR_SESSION_AMBIGUITY",
+    "FAIL_GENERATED_TICK_FALLBACK",
+    "FAIL_TICK_RETRIEVAL"
+  ],
+  "mandatory_stop_after_qualification": true,
+  "v6_commit": "b0b42e8a1b644f1a737263338e9ad7d86e7631ec",
+  "v6_history_identity": "e4d603692ff0f58f5d15ca999d1a6d61f8f7e77ad3942debf165770e3dc95c7a"
+}

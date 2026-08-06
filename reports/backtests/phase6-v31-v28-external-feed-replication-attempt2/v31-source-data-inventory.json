@@ -1,0 +1,38 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_SOURCE_DATA_INVENTORY_V1",
+  "status": "COMPLETE_DOWNLOAD_QUALIFICATION_FAILED",
+  "provider": "Dukascopy Bank",
+  "requested_evaluation_interval": "[2018-01-01 00:00:00, 2025-01-01 00:00:00) FP Markets server-civil",
+  "source_support_interval_utc": "[2017-12-31T22:00:00+00:00, 2025-01-01T00:00:00+00:00)",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "required_open_session_hourly_files": 306950,
+  "manifested_hourly_files": 328975,
+  "raw_tick_count": 1128565591,
+  "raw_bytes": 5007633831,
+  "raw_manifest": {
+    "path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-raw-data-manifest.jsonl.gz",
+    "sha256": "40a3993e1587dcf4e21ca051cc9742963ad12f12cf7b8a07857aa6691c7595ff"
+  },
+  "closure_manifest": {
+    "path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-predictable-closed-session-hours.jsonl.gz",
+    "sha256": "ead979701e874110694954ae41f59a86e646f20953e5633fa46bcced133bd238"
+  },
+  "gap_audit": {
+    "path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-tick-gap-audit.jsonl.gz",
+    "sha256": "d3644d2f91038886d11902d68c480bad60c9b12105c69ca7e6dc48176739482c",
+    "unresolved_open_session_gap_count": 2605,
+    "unresolved_open_session_gap_minutes": 9872
+  },
+  "raw_files_preserved_unchanged": true,
+  "normalized_files_created": 0,
+  "custom_symbols_imported": 0,
+  "pnl_viewed": false
+}

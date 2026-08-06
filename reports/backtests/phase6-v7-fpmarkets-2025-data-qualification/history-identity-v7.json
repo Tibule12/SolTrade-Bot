@@ -1,0 +1,70 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_HISTORY_IDENTITY_INPUT_V1",
+  "identity_definition": "SHA-256 of the exact UTF-8 bytes of this file",
+  "source_key": "FP_MARKETS__FPMARKETSSC_DEMO__EURUSD__MT5_BUILD_6090__V7_2025",
+  "interval": "[2025-01-02T00:00:00,2025-12-24T00:00:00)",
+  "broker": "FP Markets",
+  "company": "First Prudential Markets Limited",
+  "server": "FPMarketsSC-Demo",
+  "terminal_build": 6090,
+  "symbol": "EURUSD",
+  "symbol_database_sha256": "5cd66c4072f58da8d84448bf5f8c778f83705a2652169b011570081fcc4bd731",
+  "symbol_specification": {
+    "digits": 5,
+    "point": "0.0000100000",
+    "tick_size": "0.0000100000",
+    "tick_value": "1.0000000000",
+    "contract_size": "100000.0000"
+  },
+  "session_schedule": {
+    "timezone": "UNRESOLVED",
+    "observed_current_utc_offset": "+03:00",
+    "dst_status": "UNDETERMINED",
+    "sunday": "CLOSED",
+    "monday_to_friday": "00:01:00-23:59:00",
+    "saturday": "CLOSED"
+  },
+  "native_tkc_inventory": [
+    {"month":"2025-01","size":12239639,"sha256":"503361a3b81b7c3f5a0373c3917b8134b0d48b5481554a65921cdb17e07bf9d6"},
+    {"month":"2025-02","size":9245034,"sha256":"266e031539e680f68e1e15f7efd1cdf08db351eda4f77c188a440f20412d4718"},
+    {"month":"2025-03","size":8380862,"sha256":"cf160715aaab375dd3aac2bab5944a6f64a0864c5ba13b0a1dbe09243a8fbb18"},
+    {"month":"2025-04","size":13578414,"sha256":"441a9b1d082e563e99620388deebc43ca7866c656191b6bcf86ded6738de5a16"},
+    {"month":"2025-05","size":7606584,"sha256":"8e5435edf678d1e548d7bc2b4f5e32d4a9a45faa3f81c462444752cad107abbd"},
+    {"month":"2025-06","size":5977700,"sha256":"768ed016435cb95e592dcb769ff71c80f525bdf660bc6705051826c667ff4a21"},
+    {"month":"2025-07","size":5737295,"sha256":"bf73c1560823e3b4199e244fe370963b575c5fd9c2334571af646205530f8418"},
+    {"month":"2025-08","size":4907828,"sha256":"38ebea5ac153e4a2680b0f413858646c4c4feacdb078ab51948a379bdffcdd34"},
+    {"month":"2025-09","size":5295687,"sha256":"d7f66e979ac14d22c84daa61aaff5342c12e07629300e528d5d20fa145e3572d"},
+    {"month":"2025-10","size":5481249,"sha256":"e498a29212079b909e8288162b21fe1f6e1f9f1f8e569a9ebb7ce360efcae7d9"},
+    {"month":"2025-11","size":4174989,"sha256":"42559340094953742002b45192edf1a0a45f2ca63c23d76b5ca2ce118c2261d7"},
+    {"month":"2025-12","size":3485623,"sha256":"955e683c8d89d1a0fb5f2bed584a7dbcdfa5645c951a0989da898cc7c9f9d594"}
+  ],
+  "tick_index": {"size":123312,"sha256":"c7232f061039dfb9fd039cd47994f8b482b992aff668e3f05af66093c1dce9a3"},
+  "m1_hcc_inventory": [
+    {"year":2024,"size":22492764,"sha256":"f8c5a79362ae1ab87ddce18ac7cb5667e0146072b193876c2bc225e472401710"},
+    {"year":2025,"size":22410804,"sha256":"7953396ea9b2e7511590963fbec24a420791bb1c182c63f5163473919e3c61ac"},
+    {"year":2026,"size":13163961,"sha256":"ec75636b8cf1dc3e55bdb0efc159668fecdedbe23391c7bafe08f34ea6a074e7"}
+  ],
+  "connected_real_tick_stream": {
+    "tick_count": 20682267,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:59.877",
+    "daily_boundary_count_chain_sha256": "e99a26088b65bee930c50c07e6d714c459cf8e5528ac5aeebcfed65d0a9c2eb6",
+    "memory_errors": 0,
+    "retrieval_failures": 0
+  },
+  "evidence_sha256": {
+    "frozen_manifest": "c37be4c040ca68de2c17099adb6f672de73d431a5e2a0257a6fac54698f3e572",
+    "complete_gap_report": "a7075bac60a1552f5059232476456239e0e894be1b82d3f292e480570add6417",
+    "m1_coverage_report": "ac808be5b2d42958a182f0c45866293a0ee1f7dbd48e22a06b9cb3288e77d942",
+    "qualification_observer_source": "ff1b1d2f63b74f4a2b10b4eb3d260fcb8f3d464e4e6dfc2f32752e3b759f90f4",
+    "m1_observer_source": "764d06e2424885e4ee4a4158f49422afb3a4bf1c9eb9d40595bc019cd25ed76d",
+    "qualification_observer_ex5": "ccc5338a354a49f3408e8e2ed8ccb0b96de1ea18f16da79b0001f2927e4736bd",
+    "m1_observer_ex5": "69ab0e3736e1b287bc46fab5d4a9f1c0482d4f4088dd2694de3445773edcad35"
+  },
+  "m1_copyrates_status": "FAIL_ERROR_4401",
+  "qualification": "FAIL_M1_HISTORY_UNAVAILABLE",
+  "v6_history_identity_kept_separate": "e4d603692ff0f58f5d15ca999d1a6d61f8f7e77ad3942debf165770e3dc95c7a",
+  "easyMarkets_v4_history_identity_kept_separate": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+  "raw_cache_files_committed": false,
+  "credentials_included": false
+}

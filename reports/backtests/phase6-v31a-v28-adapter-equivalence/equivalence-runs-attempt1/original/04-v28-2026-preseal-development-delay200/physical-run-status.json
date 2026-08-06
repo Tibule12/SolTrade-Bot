@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_PARITY_RUN_STATUS_V1",
+  "side": "original",
+  "run_id": "04-v28-2026-preseal-development-delay200",
+  "dataset": "V28_2026_PRESEAL_DEVELOPMENT",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 60.97419786453247,
+  "wine_return_code": 0,
+  "schedule_signals": 42,
+  "processed_signals": 42,
+  "entry_attempts": 42,
+  "entry_fills": 35,
+  "exit_fills": 24,
+  "closed_positions": 35,
+  "native_reports": [
+    "original-04-v28-2026-preseal-development-delay200-holding.png",
+    "original-04-v28-2026-preseal-development-delay200.png",
+    "original-04-v28-2026-preseal-development-delay200-hst.png",
+    "original-04-v28-2026-preseal-development-delay200-mfemae.png",
+    "original-04-v28-2026-preseal-development-delay200.html"
+  ],
+  "status": "PASS"
+}

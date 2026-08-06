@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_PRERUN_FREEZE_MANIFEST_V1",
+  "frozen_at": "2026-08-04T14:03:00+02:00",
+  "parent_commit": "a235cba97edc3993abcc2f6bc3f6a41628d90026",
+  "worktree_clean_before_phase": true,
+  "historical_v30c_pnl_viewed": false,
+  "v28_modified": false,
+  "optimization": false,
+  "v29_used": false,
+  "demo_trades": 0,
+  "live_trades": 0,
+  "manifest_hashes": {
+    "v30c-conditional-execution-plan.json": "30a914baf4f05fe80c7a6155f486781a37d3ca6d2f9f9f2aafb585f779ab1d76",
+    "v30c-data-window-freeze.json": "25428a5437033b1c4bad66b1f52d284ebc73c6c6f66fe073a1cf5f6221cbd8da",
+    "v30c-gate-manifest.json": "9a8660353b976aa20e1ca3096aa61372f3fe4fb30ad66c7b0497da95e668d600",
+    "v30c-qualification-harness-freeze.json": "8d751966cf1472f66c22288c0f8ec7b33fec48f7b6c5e88fef43ba334a7ebf03",
+    "v30c-v28-immutability-freeze.json": "8a179fb6d665fb6a1b151e02df36f01bb54b91444c6d45aebbe841a07c2fd61e"
+  }
+}

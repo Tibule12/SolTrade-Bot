@@ -1,0 +1,27 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_PHYSICAL_RUN_PLAN_V1",
+  "frozen_before_data_qualification": true,
+  "underlying_real_tick_runs": 2,
+  "runs": [
+    {
+      "run_number": 1,
+      "run_id": "01-v30-2018-2024-native",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "history_from": "2017.11.01",
+      "eligible_from": "2018.01.01 00:00:00",
+      "eligible_to_exclusive": "2025.01.01 00:00:00",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0
+    },
+    {
+      "run_number": 2,
+      "run_id": "02-v30-2018-2024-delay200",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "history_from": "2017.11.01",
+      "eligible_from": "2018.01.01 00:00:00",
+      "eligible_to_exclusive": "2025.01.01 00:00:00",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200
+    }
+  ]
+}

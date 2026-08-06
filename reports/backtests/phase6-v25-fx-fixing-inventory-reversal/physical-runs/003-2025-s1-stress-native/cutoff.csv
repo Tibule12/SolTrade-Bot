@@ -1,0 +1,14 @@
+field,value
+classification,NO_OPEN_POSITION_AT_CUTOFF
+eligible_to,2025.02.05 00:00:00
+observation_time,2025.02.04 23:59:58
+position_open,NO
+position_ticket,24
+position_identifier,24
+position_type,0
+volume,0.05000000
+entry_price,1.0383100000
+stop_loss,1.0339800000
+unrealized_result_reporting_only,-1.10000000
+formal_pnl_included,NO
+naturally_closed_trade_included,NO

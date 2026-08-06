@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_V28_IMMUTABILITY_FREEZE_V1",
+  "status": "PASS",
+  "v28_terminal_commit": "af122b428bb03396b7ecac453d930f8cb19796fa",
+  "candidate_specification_sha256": "b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7",
+  "gate_manifest_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "performance_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "performance_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "preserved_v28_adjusted_ledger_sha256": "4301c6bcb8205803dbbabc665a5c520d9fbaf9a73e524be47ad7c4a57a950970",
+  "warmup": {
+    "minimum_clean_h1_bars": 300,
+    "atr": "unchanged Wilder D1 ATR14",
+    "formation_anchor": "preceding calendar-month first Monday exact 09:00 H1 close"
+  },
+  "symbols_signals_directions_sizing_portfolio_entries_exits_risk_spread_cost_swap_latency_changed": false,
+  "v29_used_or_combined": false,
+  "optimization_or_tuning": false
+}

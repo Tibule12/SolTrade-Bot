@@ -1,0 +1,190 @@
+{
+  "threshold_seconds": 900,
+  "scheduled_weekend_closures": 30,
+  "daily_breaks": 0,
+  "holidays": [],
+  "session_conflicts": 0,
+  "unresolved_open_session_gap_count": 0,
+  "gaps": [
+    {
+      "last_observed_m1": "2026-01-02 23:59:00",
+      "next_observed_m1": "2026-01-05 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-01-09 23:59:00",
+      "next_observed_m1": "2026-01-12 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-01-16 23:59:00",
+      "next_observed_m1": "2026-01-19 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-01-23 23:59:00",
+      "next_observed_m1": "2026-01-26 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-01-30 23:59:00",
+      "next_observed_m1": "2026-02-02 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-02-06 23:59:00",
+      "next_observed_m1": "2026-02-09 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-02-13 23:59:00",
+      "next_observed_m1": "2026-02-16 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-02-20 23:59:00",
+      "next_observed_m1": "2026-02-23 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-02-27 23:59:00",
+      "next_observed_m1": "2026-03-02 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-03-06 23:59:00",
+      "next_observed_m1": "2026-03-09 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-03-13 23:59:00",
+      "next_observed_m1": "2026-03-16 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-03-20 23:59:00",
+      "next_observed_m1": "2026-03-23 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-03-27 23:59:00",
+      "next_observed_m1": "2026-03-30 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-04-03 23:59:00",
+      "next_observed_m1": "2026-04-06 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-04-10 23:59:00",
+      "next_observed_m1": "2026-04-13 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-04-17 23:59:00",
+      "next_observed_m1": "2026-04-20 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-04-24 23:59:00",
+      "next_observed_m1": "2026-04-27 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-05-01 23:59:00",
+      "next_observed_m1": "2026-05-04 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-05-08 23:59:00",
+      "next_observed_m1": "2026-05-11 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-05-15 23:59:00",
+      "next_observed_m1": "2026-05-18 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-05-22 23:59:00",
+      "next_observed_m1": "2026-05-25 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-05-29 23:59:00",
+      "next_observed_m1": "2026-06-01 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-06-05 23:59:00",
+      "next_observed_m1": "2026-06-08 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-06-12 23:59:00",
+      "next_observed_m1": "2026-06-15 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-06-19 23:59:00",
+      "next_observed_m1": "2026-06-22 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-06-26 23:59:00",
+      "next_observed_m1": "2026-06-29 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-07-03 23:59:00",
+      "next_observed_m1": "2026-07-06 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-07-10 23:59:00",
+      "next_observed_m1": "2026-07-13 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-07-17 23:59:00",
+      "next_observed_m1": "2026-07-20 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    },
+    {
+      "last_observed_m1": "2026-07-24 23:59:00",
+      "next_observed_m1": "2026-07-27 00:00:00",
+      "missing_seconds_between_m1_buckets": 172800,
+      "classification": "SCHEDULED_WEEKEND_CLOSURE"
+    }
+  ]
+}

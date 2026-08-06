@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_AGGREGATION_AUDIT_V1",
+  "status": "NOT_EXECUTED",
+  "physical_ledgers_available": false,
+  "initial_risk_amount_available": false,
+  "right_censoring_evidence_available": false,
+  "formal_cells_aggregated": 0,
+  "synthetic_equity_curves_built": 0
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 1,
+  "run_id": "01-v27-2025-development-native",
+  "dataset": "V27_2025_DEVELOPMENT",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 14.115795612335205,
+  "wine_return_code": 0,
+  "schedule_signals": 0,
+  "processed_signals": 0,
+  "entry_attempts": 0,
+  "entry_fills": 0,
+  "exit_fills": 0,
+  "spread_blocks": 0,
+  "risk_blocks": 0,
+  "execution_blocks": 0,
+  "open_positions_at_end": 0,
+  "seal_breach": null,
+  "native_reports": [
+    "01-v27-2025-development-native-mfemae.png",
+    "01-v27-2025-development-native.html",
+    "01-v27-2025-development-native-holding.png",
+    "01-v27-2025-development-native-hst.png"
+  ],
+  "status": "TECHNICAL_FAIL"
+}

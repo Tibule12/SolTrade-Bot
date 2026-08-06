@@ -1,0 +1,20 @@
+{
+  "blocking_gaps": [
+    "No timestamped full intraday equity stream exists; native HTML preserves aggregate drawdown statistics and bitmap charts only.",
+    "No UTC+3 midnight balance/equity snapshots exist for the official profitable-day calculation.",
+    "The 2025 and 2026 qualified V28 runs each reset to USD 10,000, so frozen risk sizing was not run on one continuous prop-account balance.",
+    "No qualified historical high-impact news calendar dataset, source provenance or checksum exists for the order-window audit.",
+    "Physical V28 evidence used MT5 at 1:30 leverage, not the requested 1:100; accepted trades at lower leverage support margin feasibility but are not a native 1:100 run.",
+    "Source timestamps are broker-server timestamps and no complete DST-aware mapping to the required UTC+3 day boundary was frozen."
+  ],
+  "methodological_decision": "No intraday equity, UTC+3 midnight equity, continuous-account sizing or news result is estimated. Rule 7 therefore requires the insufficient-evidence terminal outcome.",
+  "non_blocking_or_resolved": [
+    "All four physical V28 runs and twelve formal cells are qualified V28 evidence.",
+    "Every filled entry request in the transaction evidence has a non-zero stop loss, corroborated by native MT5 order reports.",
+    "V31 and V29 are excluded from all P&L and rule calculations.",
+    "Phase 1-5 production source matches the frozen SHA-256."
+  ],
+  "schema": "SOLTRADE_THE5ERS_V28_EVIDENCE_SUFFICIENCY_V1",
+  "status": "INSUFFICIENT_EVIDENCE",
+  "terminal_outcome": "V28_THE5ERS_10K_CLASSIC_INSUFFICIENT_EVIDENCE"
+}

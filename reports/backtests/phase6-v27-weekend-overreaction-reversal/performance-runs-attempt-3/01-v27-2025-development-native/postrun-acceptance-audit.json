@@ -1,0 +1,22 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_POSTRUN_ACCEPTANCE_AUDIT_V1",
+  "runner_original_status": "TECHNICAL_FAIL",
+  "audited_status": "PASS",
+  "reason": "The auxiliary PositionManager exit callback counter omitted three broker stop-loss exits, but the authoritative MT5 deal ledger and final position state are complete.",
+  "schedule_signals": 45,
+  "processed_signals": 45,
+  "entry_fills": 45,
+  "authoritative_entry_deals": 45,
+  "authoritative_exit_deals": 45,
+  "authoritative_closed_positions": 45,
+  "broker_stop_exit_deals": 3,
+  "auxiliary_exit_callback_count": 42,
+  "open_positions_at_end": 0,
+  "seal_breach": false,
+  "run_evidence_status": "PASS",
+  "valid_result_rerun": false,
+  "strategy_behavior_changed": false,
+  "parameter_or_gate_changed": false,
+  "optimization_or_tuning": false,
+  "decision": "ACCEPT_RUN_1_AND_CONTINUE_WITH_RUNS_2_THROUGH_4"
+}

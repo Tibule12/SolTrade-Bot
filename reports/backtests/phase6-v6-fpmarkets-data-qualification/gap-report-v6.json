@@ -1,0 +1,67 @@
+{
+  "schema": "SOLTRADE_PHASE6_V6_FP_MARKETS_GAP_REPORT_V1",
+  "gap_threshold_seconds": 900,
+  "official_closure_evidence_rule": "MT5_SESSION_SCHEDULE_OR_BROKER_PUBLISHED_HOURS_OR_INTERVAL_SPECIFIC_BROKER_EVIDENCE",
+  "frozen_interval": "[2024-01-02T00:00:00,2024-12-24T00:00:00)",
+  "complete_adjacent_real_tick_gap_enumeration_possible": false,
+  "reason_enumeration_not_possible": "No broker-native real ticks exist in the frozen interval",
+  "coverage_findings": [
+    {
+      "gap_number": 1,
+      "type": "INCOMPLETE_FULL_INTERVAL_COVERAGE",
+      "start_inclusive": "2024-01-02T00:00:00",
+      "end_exclusive": "2024-12-24T00:00:00",
+      "duration_seconds": 30844800,
+      "classification": "MISSING_REAL_TICK_RANGE",
+      "official_closure": false,
+      "mt5_session_status": "MIXED_OPEN_AND_CLOSED_PERIODS; INDIVIDUAL ADJACENT TICK INTERVALS UNAVAILABLE",
+      "m1_bars_present": true,
+      "m1_substitution_permitted": false,
+      "resolved": false,
+      "invalidates_qualification": true
+    }
+  ],
+  "scheduled_session_evidence": {
+    "sunday": "CLOSED",
+    "monday_to_friday": "00:01:00-23:59:00",
+    "saturday": "CLOSED",
+    "scheduled_daily_break_seconds": 120,
+    "scheduled_daily_break_exceeds_gap_threshold": false,
+    "schedule_timezone": "UNRESOLVED"
+  },
+  "classifications": {
+    "open_session_real_tick_gaps_over_15_minutes": "NOT_ENUMERABLE_WITHOUT_REAL_TICKS",
+    "normal_weekend_closures": "SCHEDULE_EXISTS_BUT_NO_2024_ADJACENT_REAL_TICKS_TO_CLASSIFY",
+    "scheduled_daily_breaks": "SCHEDULED_120_SECONDS; BELOW_THRESHOLD",
+    "holidays": "NONE_CLASSIFIED; NO INTERVAL_SPECIFIC_EVIDENCE COLLECTED",
+    "session_schedule_conflicts": "UNRESOLVED_BECAUSE_REAL_TICK_STREAM_ABSENT",
+    "timezone_ambiguity": true,
+    "tick_download_or_retrieval_failures": [
+      "Server supplied no real-tick TKC month overlapping the frozen interval",
+      "Connected CopyRates returned -1/error 4401 after 120 bounded attempts"
+    ],
+    "copyticks_memory_failures": 0
+  },
+  "m1_corroboration": {
+    "bars": 366617,
+    "first": "2024-01-02T00:00:00",
+    "final": "2024-12-23T23:59:00",
+    "gaps_over_15_minutes": 54,
+    "unresolved_open_session_gaps": 3,
+    "max_open_gap_seconds": 5880,
+    "individual_gap_intervals_emitted_by_probe": false,
+    "limitation": "The approved inert legacy observer emitted aggregate M1 counts, not the 54 individual intervals; the connected observer could not enumerate M1 after bounded error-4401 retries",
+    "qualification_effect": "FAIL_CLOSED",
+    "m1_can_replace_missing_real_ticks": false
+  },
+  "excluded_noncanonical_fallback_observation": {
+    "accepted_as_real_ticks": false,
+    "previous_tick": "2024-12-20T23:54:59.000",
+    "next_tick": "2024-12-23T00:00:00.000",
+    "duration_seconds": 173101,
+    "open_segment_seconds_under_mt5_schedule": 241,
+    "fallback_probe_classification": "SCHEDULED_WEEKEND",
+    "exclusion_reason": "Observed only inside MT5's generated-tick fallback environment and cannot repair absent broker-native TKC history"
+  },
+  "terminal_outcome": "FAIL_REAL_TICK_HISTORY_UNAVAILABLE_FOR_FROZEN_INTERVAL"
+}

@@ -1,0 +1,563 @@
+{
+  "counts": {
+    "within_1_minute": 15,
+    "within_5_minutes": 18,
+    "within_15_minutes": 20,
+    "within_30_minutes": 20,
+    "within_60_minutes": 22,
+    "within_remainder_same_h1": 22,
+    "no_acceptable_tick_found_same_h1": 39,
+    "diagnostic_only_no_entry_simulated": true
+  },
+  "records": [
+    {
+      "confirmation_sequence": 6,
+      "period": "VALIDATION",
+      "first_tick": "2026-01-22 17:00:00.111",
+      "first_acceptable_tick": "2026-01-22 17:00:20.066",
+      "seconds": 19.955,
+      "executable_price_movement_points": 0.0,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 11,
+      "period": "VALIDATION",
+      "first_tick": "2026-01-23 01:00:00.494",
+      "first_acceptable_tick": "2026-01-23 01:37:16.212",
+      "seconds": 2235.718,
+      "executable_price_movement_points": -15.000000000009448,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 42,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-17 04:00:00.156",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 45,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-17 14:00:00.176",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 48,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-17 17:00:00.099",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 55,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-18 23:00:00.221",
+      "first_acceptable_tick": "2026-02-18 23:12:55.232",
+      "seconds": 775.011,
+      "executable_price_movement_points": 21.00000000000435,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 64,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-26 03:00:00.153",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 67,
+      "period": "VALIDATION",
+      "first_tick": "2026-02-26 08:00:00.185",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 118,
+      "period": "VALIDATION",
+      "first_tick": "2026-04-06 02:00:00.163",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 129,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-10 01:00:00.352",
+      "first_acceptable_tick": "2026-04-10 01:09:11.706",
+      "seconds": 551.354,
+      "executable_price_movement_points": -13.999999999980693,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 138,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-14 04:00:00.168",
+      "first_acceptable_tick": "2026-04-14 04:00:00.573",
+      "seconds": 0.405,
+      "executable_price_movement_points": -1.0000000000065512,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 145,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-16 08:00:00.121",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 160,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-27 06:00:00.217",
+      "first_acceptable_tick": "2026-04-27 06:00:15.183",
+      "seconds": 14.966,
+      "executable_price_movement_points": 1.0000000000065512,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 167,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-28 06:00:00.320",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 170,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-28 10:00:00.186",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 175,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-29 20:00:00.486",
+      "first_acceptable_tick": "2026-04-29 20:00:19.203",
+      "seconds": 18.717,
+      "executable_price_movement_points": -4.000000000004,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 178,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-29 23:00:00.107",
+      "first_acceptable_tick": "2026-04-29 23:00:00.510",
+      "seconds": 0.403,
+      "executable_price_movement_points": 2.9999999999974487,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 181,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-04-30 09:00:00.137",
+      "first_acceptable_tick": "2026-04-30 09:00:53.551",
+      "seconds": 53.414,
+      "executable_price_movement_points": -2.9999999999974487,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 188,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-01 17:00:00.105",
+      "first_acceptable_tick": "2026-05-01 17:00:07.395",
+      "seconds": 7.29,
+      "executable_price_movement_points": -4.000000000004,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 195,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-06 04:00:00.161",
+      "first_acceptable_tick": "2026-05-06 04:00:01.373",
+      "seconds": 1.212,
+      "executable_price_movement_points": 8.999999999992347,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 198,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-06 11:00:00.240",
+      "first_acceptable_tick": "2026-05-06 11:00:27.944",
+      "seconds": 27.704,
+      "executable_price_movement_points": 8.000000000008,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 203,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-07 13:00:00.327",
+      "first_acceptable_tick": "2026-05-07 13:00:03.058",
+      "seconds": 2.731,
+      "executable_price_movement_points": -3.9999999999817955,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 208,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-08 17:00:00.345",
+      "first_acceptable_tick": "2026-05-08 17:00:08.942",
+      "seconds": 8.597,
+      "executable_price_movement_points": -6.000000000017102,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 211,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-12 19:00:00.053",
+      "first_acceptable_tick": "2026-05-12 19:01:04.366",
+      "seconds": 64.313,
+      "executable_price_movement_points": 4.000000000004,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 214,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-13 11:00:00.298",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 217,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-13 16:00:00.082",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 220,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-14 16:00:00.319",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 223,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-14 18:00:00.292",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 226,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-14 20:00:00.165",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 229,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-15 01:00:00.084",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 232,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-15 08:00:00.040",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 235,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-15 11:00:00.267",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 246,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-20 13:00:00.178",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 249,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-26 09:00:00.118",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 254,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-28 04:00:00.126",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 257,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-05-28 11:00:00.243",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 264,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-01 01:00:00.048",
+      "first_acceptable_tick": "2026-06-01 01:47:53.120",
+      "seconds": 2873.072,
+      "executable_price_movement_points": -90.00000000001228,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 269,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-03 03:00:00.121",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 272,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-03 16:00:00.208",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 275,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-04 17:00:00.218",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 280,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-08 02:00:00.090",
+      "first_acceptable_tick": "2026-06-08 02:01:34.247",
+      "seconds": 94.157,
+      "executable_price_movement_points": 17.000000000000348,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 295,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-16 20:00:01.317",
+      "first_acceptable_tick": "2026-06-16 20:00:13.328",
+      "seconds": 12.011,
+      "executable_price_movement_points": -1.0000000000065512,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 304,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-22 17:00:00.353",
+      "first_acceptable_tick": "2026-06-22 17:00:01.057",
+      "seconds": 0.704,
+      "executable_price_movement_points": 1.0000000000065512,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 307,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-22 23:00:00.797",
+      "first_acceptable_tick": "2026-06-22 23:00:01.200",
+      "seconds": 0.403,
+      "executable_price_movement_points": 0.0,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 312,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-23 20:00:00.375",
+      "first_acceptable_tick": "2026-06-23 20:00:04.618",
+      "seconds": 4.243,
+      "executable_price_movement_points": 2.0000000000131024,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 315,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-24 10:00:00.022",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 322,
+      "period": "PROPOSED_OOS",
+      "first_tick": "2026-06-30 09:00:00.104",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 327,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-01 15:00:00.179",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 338,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-06 16:00:00.238",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 341,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-07 00:00:00.250",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 346,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-07 20:00:00.223",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 351,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-09 13:00:00.127",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 356,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-10 18:00:00.346",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 361,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-14 01:00:00.165",
+      "first_acceptable_tick": "2026-07-14 01:03:13.506",
+      "seconds": 193.341,
+      "executable_price_movement_points": 51.999999999985384,
+      "next_completed_h1_occurred_first": false
+    },
+    {
+      "confirmation_sequence": 368,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-17 15:00:00.141",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 371,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-20 18:00:00.156",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 376,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-23 11:00:00.044",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 379,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-23 15:00:00.138",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 382,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-23 18:00:00.074",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 389,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-28 14:00:00.065",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    },
+    {
+      "confirmation_sequence": 394,
+      "period": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+      "first_tick": "2026-07-29 16:00:00.214",
+      "first_acceptable_tick": "",
+      "seconds": null,
+      "executable_price_movement_points": null,
+      "next_completed_h1_occurred_first": true
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_DELAY_IMPACT_V1",
+  "comparisons": [
+    {
+      "dataset": "DEVELOPMENT",
+      "cost_profile": "NORMAL",
+      "native_net_profit": -190.70045657805406,
+      "delay_net_profit": -198.25271882692854,
+      "net_profit_difference": -7.552262248874484,
+      "native_closed_trades": 49,
+      "delay_closed_trades": 49
+    },
+    {
+      "dataset": "DEVELOPMENT",
+      "cost_profile": "HIGH",
+      "native_net_profit": -237.79919738025447,
+      "delay_net_profit": -245.44002092659713,
+      "net_profit_difference": -7.640823546342659,
+      "native_closed_trades": 49,
+      "delay_closed_trades": 49
+    },
+    {
+      "dataset": "DEVELOPMENT",
+      "cost_profile": "STRESS",
+      "native_net_profit": -284.67757460840255,
+      "delay_net_profit": -292.4059487283151,
+      "net_profit_difference": -7.72837411991253,
+      "native_closed_trades": 49,
+      "delay_closed_trades": 49
+    },
+    {
+      "dataset": "VALIDATION",
+      "cost_profile": "NORMAL",
+      "native_net_profit": -230.15285359169343,
+      "delay_net_profit": -229.84866518663992,
+      "net_profit_difference": 0.30418840505350886,
+      "native_closed_trades": 28,
+      "delay_closed_trades": 28
+    },
+    {
+      "dataset": "VALIDATION",
+      "cost_profile": "HIGH",
+      "native_net_profit": -260.1220749693703,
+      "delay_net_profit": -259.8187996034066,
+      "net_profit_difference": 0.30327536596371374,
+      "native_closed_trades": 28,
+      "delay_closed_trades": 28
+    },
+    {
+      "dataset": "VALIDATION",
+      "cost_profile": "STRESS",
+      "native_net_profit": -290.0029860788449,
+      "delay_net_profit": -289.7006211228631,
+      "net_profit_difference": 0.30236495598182955,
+      "native_closed_trades": 28,
+      "delay_closed_trades": 28
+    },
+    {
+      "dataset": "OUT_OF_SAMPLE",
+      "cost_profile": "NORMAL",
+      "native_net_profit": -112.35488212238971,
+      "delay_net_profit": -112.35488212238971,
+      "net_profit_difference": 0.0,
+      "native_closed_trades": 17,
+      "delay_closed_trades": 17
+    },
+    {
+      "dataset": "OUT_OF_SAMPLE",
+      "cost_profile": "HIGH",
+      "native_net_profit": -132.7584598441619,
+      "delay_net_profit": -132.7584598441619,
+      "net_profit_difference": 0.0,
+      "native_closed_trades": 17,
+      "delay_closed_trades": 17
+    },
+    {
+      "dataset": "OUT_OF_SAMPLE",
+      "cost_profile": "STRESS",
+      "native_net_profit": -153.12287649856157,
+      "delay_net_profit": -153.12287649856157,
+      "net_profit_difference": 0.0,
+      "native_closed_trades": 17,
+      "delay_closed_trades": 17
+    }
+  ]
+}

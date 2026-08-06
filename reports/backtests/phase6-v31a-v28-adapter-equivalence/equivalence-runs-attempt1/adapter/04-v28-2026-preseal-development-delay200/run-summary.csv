@@ -1,0 +1,25 @@
+field,value
+schema,SOLTRADE_PHASE6_V31A_RUN_SUMMARY_V1
+execution_instance_id,V31A-ADAPTER-2026_PRESEAL_DEVELOPMENT-FIXED_DELAY_200_MS-R4
+dataset,V28_2026_PRESEAL_DEVELOPMENT
+execution_layer,FIXED_DELAY_200_MS
+symbol_mapping_EURUSD,EURUSD.V31
+symbol_mapping_GBPUSD,GBPUSD.V31
+symbol_mapping_AUDUSD,AUDUSD.V31
+symbol_mapping_NZDUSD,NZDUSD.V31
+symbol_mapping_USDCAD,USDCAD.V31
+symbol_mapping_USDCHF,USDCHF.V31
+symbol_mapping_USDJPY,USDJPY.V31
+schedule_signals,42
+processed_signals,42
+entry_attempts,42
+entry_fills,35
+exit_fills,24
+missed_signals,0
+spread_blocks,0
+risk_blocks,7
+execution_blocks,0
+open_positions_at_end,0
+max_tick,2026.07.31 23:59:56
+seal_breach,NO
+run_evidence_status,PASS

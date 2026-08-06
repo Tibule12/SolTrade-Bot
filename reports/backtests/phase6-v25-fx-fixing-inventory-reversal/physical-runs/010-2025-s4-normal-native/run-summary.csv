@@ -1,0 +1,36 @@
+field,value
+schema,SOLTRADE_PHASE6_V25_RUN_SUMMARY_V1
+execution_instance_id,V25-010-2025_S4-NORMAL-NATIVE
+segment_id,2025_S4
+dataset,DEVELOPMENT
+cost_profile,NORMAL
+execution_layer,NATIVE_NORMAL_EXECUTION
+expected_execution_mode,0
+reset_at,2025.08.19 02:00:00
+eligible_from,2025.08.19 02:00:00
+eligible_to,2025.12.24 00:00:00
+first_evaluation,2025.09.04 13:00:00
+final_evaluation,2025.12.23 22:00:00
+expected_processable_completed_h1,1882
+evaluations,1882
+entry_opportunities,91
+entry_attempts,79
+entry_fills,79
+exit_fills,79
+missed_entry_windows,0
+insufficient_history_skips,12
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,0
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,0
+stop_loss_exits,8
+time_exits,71
+censored_position,NO
+max_tick,2025.12.23 23:59:58
+max_completed_h1,2025.12.23 22:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

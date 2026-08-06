@@ -1,0 +1,65 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_PRERUN_FREEZE_V1",
+  "status": "FULLY_FROZEN_BEFORE_PNL",
+  "design_freeze_commit": "51216f893b0774239fe29bbdd24408dfd7f86da7",
+  "selected_signal_count": 320,
+  "selected_signal_identity_set_sha256": "7e437783c8e9b5b616bd301c4a0434afa208b2339fdc80064ad4675425014db9",
+  "artifacts": [
+    {
+      "path": "v29-frozen-signal-identity-ledger.csv",
+      "sha256": "f1c757edb6ca83c51a9a6a2412503d63defd362ba194eae42ccc700b534f6418"
+    },
+    {
+      "path": "v29-signal-freeze-manifest.json",
+      "sha256": "37d37705a273b0a4634add92e4a204fe888e4f0d90ff48e78068bd93bb7ff250"
+    },
+    {
+      "path": "candidate-strategy-specification.json",
+      "sha256": "13d45e9599011dd2235a9f92339f8440b1218d9ce56d2f2ca91a4bb40db4462e"
+    },
+    {
+      "path": "sizing-and-portfolio-risk-freeze.json",
+      "sha256": "88107031b3f261035b6beee67d7cafb3fd7b8eb43fb2db6f867458d726ff72ef"
+    },
+    {
+      "path": "cost-and-friction-freeze.json",
+      "sha256": "3f387bfa42a4f00a0fe495d129e35c9f1aad8e76d01a12fabe3d2e2eb16f1bf2"
+    },
+    {
+      "path": "gate-manifest.json",
+      "sha256": "5b2e1a19dd6ad6f14393223f9a72b20ba2c4bb5110b9119dea3c1810e72f2fac"
+    },
+    {
+      "path": "physical-run-plan.json",
+      "sha256": "619a1881218e8c1af6f715853dd1d77ac7450b8c1c1cef4aec4e68d8f7842c45"
+    },
+    {
+      "path": "formal-cell-plan.json",
+      "sha256": "0aa936ca90320131a60906985360b7698d2b32084c447417ce349dd757b342f7"
+    },
+    {
+      "path": "deterministic-seeds.json",
+      "sha256": "d48d2c6952abedf7b9e8a3f27981d8e09ff4903d05a408c82cd6927fdacbdd40"
+    },
+    {
+      "path": "future-portfolio-combination-manifest.json",
+      "sha256": "7f96d9dd6821a370761de69f7819f68787bfcfe39e2c44d04481f264a7703c46"
+    },
+    {
+      "path": "preseal-and-production-guard.json",
+      "sha256": "81cbbc42ca82fff89a9ec6137d0faae5310a520fbd73004871d86db131c038f0"
+    }
+  ],
+  "performance_freeze": {
+    "source_path": "research/v29/SolTradeV29CrossSectionalMomentumPerformanceHarness.mq5",
+    "source_sha256": "5b7edbd8b03f50c1320ed62fc1e374cee03dd2656edd0a28e831fef600fe1ed4",
+    "executable_sha256": "6d73d8febe39ff9ef87f5a36ff06ac35e6335dc0c6417199d2fedf27103c664f",
+    "runner_path": "tools/run_phase6_v29_performance.py",
+    "runner_sha256": "1b15da99a998f4e7962ccae901c820961a64007bff3e01ee38d228e6d5c770e1",
+    "performance_executable_freeze_sha256": "cf123c278a1350585f79030039ab0c42c76165d978f649e60bb1b035cbaceb65",
+    "v26_v29_rule_parity_sha256": "5fc9cdd7df0df8fe01b7d6ecef86b54f3b67ff503ec38bdab2dcdda446abfc0f"
+  },
+  "pnl_viewed": false,
+  "optimization": false,
+  "demo_or_live_trades": 0
+}

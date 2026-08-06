@@ -1,0 +1,59 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PRERUN_FREEZE_V1",
+  "status": "FROZEN_BEFORE_SIGNAL_COUNTS_OR_PNL",
+  "candidate": "LONDON_FIX_USD_INVENTORY_REVERSAL_1_0",
+  "candidate_count": 1,
+  "configuration_or_variant_count": 1,
+  "research_classification": "CONTROLLED_PRESEAL_DEVELOPMENT_EVIDENCE",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "sealed_oos_access_authorized": false,
+  "segments": [
+    ["2025_S1", "2025.01.02 00:00:00", "2025.01.16 00:00:00", "2025.02.05 00:00:00", "V25_2025_DEVELOPMENT_REUSE"],
+    ["2025_S2", "2025.02.17 09:00:00", "2025.02.17 09:00:00", "2025.03.07 23:00:00", "V25_2025_DEVELOPMENT_REUSE"],
+    ["2025_S3", "2025.03.20 08:00:00", "2025.03.20 08:00:00", "2025.08.06 16:00:00", "V25_2025_DEVELOPMENT_REUSE"],
+    ["2025_S4", "2025.08.19 02:00:00", "2025.08.19 02:00:00", "2025.12.24 00:00:00", "V25_2025_DEVELOPMENT_REUSE"],
+    ["2026_P1", "2026.01.02 00:00:00", "2026.01.16 00:00:00", "2026.04.09 00:00:00", "V25_2026_PRESEAL_DEVELOPMENT"],
+    ["2026_P2", "2026.04.09 00:00:00", "2026.04.09 00:00:00", "2026.07.01 00:00:00", "V25_2026_PRESEAL_DEVELOPMENT"],
+    ["2026_P3", "2026.07.01 00:00:00", "2026.07.01 00:00:00", "2026.08.01 00:00:00", "V25_2026_PRESEAL_DEVELOPMENT"]
+  ],
+  "cost_profiles": {
+    "NORMAL": 0.0,
+    "HIGH": 0.5,
+    "STRESS": 1.0
+  },
+  "execution_layers": {
+    "NATIVE_NORMAL_EXECUTION": 0,
+    "FIXED_DELAY_200_MS": 200
+  },
+  "physical_runs": 42,
+  "formal_cells": 12,
+  "sample_gates": {
+    "all_preseal_naturally_closed_minimum": 100,
+    "dated_2026_naturally_closed_minimum": 30,
+    "candidate_is_directionally_one_sided": true,
+    "sell_minimum": "NOT_APPLICABLE_BY_FROZEN_HYPOTHESIS"
+  },
+  "performance_gates_per_dataset_and_execution_layer": {
+    "NORMAL": {"profit_factor": "> 1.20", "adjusted_net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "< 5"},
+    "HIGH": {"profit_factor": ">= 1.10", "adjusted_net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "<= 7"},
+    "STRESS": {"profit_factor": ">= 1.00", "adjusted_net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "<= 9"}
+  },
+  "concentration_gates": {
+    "best_trade_contribution_percent": "<= 20",
+    "best_five_equal_time_subperiod_contribution_percent": "<= 40",
+    "undefined_on_nonpositive_net": "FAIL"
+  },
+  "cross_dataset_gates_per_cost_and_execution": {
+    "normalized_expectancy_min_div_max": ">= 0.50",
+    "annualized_return_min_div_max": ">= 0.50",
+    "profit_factor_range": "<= 0.40"
+  },
+  "robustness": {
+    "bootstrap_paths": 100000,
+    "monte_carlo_paths": 100000,
+    "reporting_only": true
+  },
+  "terminal_rule": "Development passes only if all sample, performance, concentration and consistency gates pass",
+  "demo_forward_rule": "Authorized only after Development pass; never live"
+}
+

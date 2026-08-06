@@ -1,0 +1,2 @@
+schema,time,segment_id,record_type,signal_bar_time,position_identifier,direction,requested_price,actual_price,spread_points,slippage_points,volume,initial_risk_amount,stop_loss,order_ticket,deal_ticket,broker_retcode,exit_reason,fill_confirmed,retest_candle_number,confirmation_timestamp,confirmation_atr
+SOLTRADE_PHASE6_V23_TRANSACTION_V1,2025.03.05 23:00:00,2025_S2,ENTRY_ATTEMPT,2025.03.05 22:00:00,0,BUY,1.0792900000,0.0000000000,12,0.0000,0.05000000,24.85000000,1.0743200000,2,2,10009,NONE,NO,1,2025.03.05 22:00:00,0.002480670910

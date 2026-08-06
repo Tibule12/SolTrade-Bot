@@ -1,0 +1,515 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "V30_DATA_INSUFFICIENT_OR_INVALID",
+  "status": "FAIL",
+  "bound_from": "2018-01-01 00:00:00",
+  "bound_to_exclusive": "2025-01-01 00:00:00",
+  "warmup_from": "2017-11-01 00:00:00",
+  "symbols_required": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "symbols_qualified_for_native_full_interval": [],
+  "symbols_failed": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "dominant_failure": "FPMarkets Strategy Tester used generated ticks for roughly 372k-374k minutes per symbol; native real ticks begin only 2022-11-11 or 2022-11-14, not in the 2017 warm-up or at the 2018 test start",
+  "generated_tick_fallback_prohibited": true,
+  "synthetic_replacement_used": false,
+  "symbol_substitution_used": false,
+  "missing_symbol_excluded": false,
+  "performance_execution_authorized": false,
+  "signal_schedule_generated": false,
+  "pnl_viewed": false,
+  "coverage": [
+    {
+      "symbol": "EURUSD",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.29 23:59:30",
+      "first_processed_tick_in_research_interval": "2018.01.02 00:00:00",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 165499218,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 374471,
+      "real_ticks_discarded_minutes": 2369,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 2342,
+      "unmatched_tick_price_ticks": 251691,
+      "unmatched_tick_price_minutes": 2369,
+      "m1_count": 2609649,
+      "h1_count": 43560,
+      "m1_mismatches": 0,
+      "h1_mismatches": 0,
+      "spread_samples": 165499218,
+      "zero_or_negative_spread_samples": 50729,
+      "mean_spread_points": 8.885867442588154,
+      "maximum_spread_points": 500.99999999999585,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 26505187,
+          "m1_bars": 372911,
+          "h1_bars": 6216
+        },
+        "2019": {
+          "processed_model_ticks": 13551432,
+          "m1_bars": 372852,
+          "h1_bars": 6216
+        },
+        "2020": {
+          "processed_model_ticks": 26809649,
+          "m1_bars": 373935,
+          "h1_bars": 6240
+        },
+        "2021": {
+          "processed_model_ticks": 17604208,
+          "m1_bars": 373174,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 34550779,
+          "m1_bars": 371841,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 27592740,
+          "m1_bars": 371128,
+          "h1_bars": 6192
+        },
+        "2024": {
+          "processed_model_ticks": 18885223,
+          "m1_bars": 373808,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "GBPUSD",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.29 23:59:30",
+      "first_processed_tick_in_research_interval": "2018.01.02 00:00:00",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 214589645,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 374323,
+      "real_ticks_discarded_minutes": 2269,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 2251,
+      "unmatched_tick_price_ticks": 366657,
+      "unmatched_tick_price_minutes": 2269,
+      "m1_count": 2607091,
+      "h1_count": 43560,
+      "m1_mismatches": 0,
+      "h1_mismatches": 0,
+      "spread_samples": 214589645,
+      "zero_or_negative_spread_samples": 40527,
+      "mean_spread_points": 11.999710782875846,
+      "maximum_spread_points": 933.000000000006,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 30794119,
+          "m1_bars": 372885,
+          "h1_bars": 6216
+        },
+        "2019": {
+          "processed_model_ticks": 21386164,
+          "m1_bars": 372827,
+          "h1_bars": 6216
+        },
+        "2020": {
+          "processed_model_ticks": 27624432,
+          "m1_bars": 373970,
+          "h1_bars": 6240
+        },
+        "2021": {
+          "processed_model_ticks": 20794893,
+          "m1_bars": 372913,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 49713749,
+          "m1_bars": 370274,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 38274398,
+          "m1_bars": 370619,
+          "h1_bars": 6192
+        },
+        "2024": {
+          "processed_model_ticks": 26001890,
+          "m1_bars": 373603,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "AUDUSD",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.29 23:59:59",
+      "first_processed_tick_in_research_interval": "2018.01.02 00:00:00",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 151434786,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 374331,
+      "real_ticks_discarded_minutes": 2329,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 2308,
+      "unmatched_tick_price_ticks": 190621,
+      "unmatched_tick_price_minutes": 2329,
+      "m1_count": 2608456,
+      "h1_count": 43560,
+      "m1_mismatches": 0,
+      "h1_mismatches": 0,
+      "spread_samples": 151434786,
+      "zero_or_negative_spread_samples": 28812,
+      "mean_spread_points": 11.159845123035339,
+      "maximum_spread_points": 329.99999999999693,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 18588607,
+          "m1_bars": 372901,
+          "h1_bars": 6216
+        },
+        "2019": {
+          "processed_model_ticks": 10763927,
+          "m1_bars": 372831,
+          "h1_bars": 6216
+        },
+        "2020": {
+          "processed_model_ticks": 21778790,
+          "m1_bars": 373866,
+          "h1_bars": 6240
+        },
+        "2021": {
+          "processed_model_ticks": 18180033,
+          "m1_bars": 372635,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 32223648,
+          "m1_bars": 371802,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 30310280,
+          "m1_bars": 370760,
+          "h1_bars": 6192
+        },
+        "2024": {
+          "processed_model_ticks": 19589501,
+          "m1_bars": 373661,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "NZDUSD",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.30 00:59:30",
+      "first_processed_tick_in_research_interval": "2018.01.02 01:01:30",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:58:59",
+      "processed_model_tick_count": 128860087,
+      "native_real_tick_start": "2022.11.14 00:00:00",
+      "generated_fallback_minutes": 372351,
+      "real_ticks_discarded_minutes": 1382,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 1360,
+      "unmatched_tick_price_ticks": 70141,
+      "unmatched_tick_price_minutes": 1382,
+      "m1_count": 2599890,
+      "h1_count": 43517,
+      "m1_mismatches": 1,
+      "h1_mismatches": 0,
+      "spread_samples": 128860087,
+      "zero_or_negative_spread_samples": 1770,
+      "mean_spread_points": 15.362057647842501,
+      "maximum_spread_points": 552.9999999999924,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 15186440,
+          "m1_bars": 371713,
+          "h1_bars": 6201
+        },
+        "2019": {
+          "processed_model_ticks": 9707229,
+          "m1_bars": 371292,
+          "h1_bars": 6195
+        },
+        "2020": {
+          "processed_model_ticks": 16885224,
+          "m1_bars": 373203,
+          "h1_bars": 6234
+        },
+        "2021": {
+          "processed_model_ticks": 17674803,
+          "m1_bars": 372166,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 27636588,
+          "m1_bars": 370053,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 26301822,
+          "m1_bars": 369112,
+          "h1_bars": 6191
+        },
+        "2024": {
+          "processed_model_ticks": 15467981,
+          "m1_bars": 372351,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "USDCAD",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.30 00:59:59",
+      "first_processed_tick_in_research_interval": "2018.01.02 01:01:30",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 153810916,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 373890,
+      "real_ticks_discarded_minutes": 1371,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 1344,
+      "unmatched_tick_price_ticks": 99830,
+      "unmatched_tick_price_minutes": 1371,
+      "m1_count": 2601994,
+      "h1_count": 43517,
+      "m1_mismatches": 1,
+      "h1_mismatches": 0,
+      "spread_samples": 153810916,
+      "zero_or_negative_spread_samples": 28054,
+      "mean_spread_points": 12.483751848925989,
+      "maximum_spread_points": 802.9999999999981,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 21492718,
+          "m1_bars": 371781,
+          "h1_bars": 6202
+        },
+        "2019": {
+          "processed_model_ticks": 12182333,
+          "m1_bars": 371302,
+          "h1_bars": 6194
+        },
+        "2020": {
+          "processed_model_ticks": 20148117,
+          "m1_bars": 373251,
+          "h1_bars": 6234
+        },
+        "2021": {
+          "processed_model_ticks": 15789249,
+          "m1_bars": 372429,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 30515261,
+          "m1_bars": 369820,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 32829609,
+          "m1_bars": 370027,
+          "h1_bars": 6191
+        },
+        "2024": {
+          "processed_model_ticks": 20853629,
+          "m1_bars": 373384,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "USDCHF",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.30 00:59:59",
+      "first_processed_tick_in_research_interval": "2018.01.02 01:05:00",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 135235633,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 373366,
+      "real_ticks_discarded_minutes": 1387,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 1356,
+      "unmatched_tick_price_ticks": 99194,
+      "unmatched_tick_price_minutes": 1387,
+      "m1_count": 2599216,
+      "h1_count": 43516,
+      "m1_mismatches": 1,
+      "h1_mismatches": 0,
+      "spread_samples": 135235633,
+      "zero_or_negative_spread_samples": 24724,
+      "mean_spread_points": 13.934412796367065,
+      "maximum_spread_points": 625.0000000000089,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 16748372,
+          "m1_bars": 371679,
+          "h1_bars": 6201
+        },
+        "2019": {
+          "processed_model_ticks": 11983104,
+          "m1_bars": 371271,
+          "h1_bars": 6194
+        },
+        "2020": {
+          "processed_model_ticks": 20469211,
+          "m1_bars": 372964,
+          "h1_bars": 6234
+        },
+        "2021": {
+          "processed_model_ticks": 14235919,
+          "m1_bars": 372030,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 25189306,
+          "m1_bars": 368461,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 28425165,
+          "m1_bars": 369936,
+          "h1_bars": 6191
+        },
+        "2024": {
+          "processed_model_ticks": 18184556,
+          "m1_bars": 372875,
+          "h1_bars": 6240
+        }
+      }
+    },
+    {
+      "symbol": "USDJPY",
+      "final_data_gate_status": "FAIL",
+      "failure_reason": "GENERATED_TICK_FALLBACK_USED_BEFORE_NATIVE_TICK_START",
+      "requested_test_interval": "[2017-11-01 00:00:00,2025-01-01 00:00:00)",
+      "actual_tester_interval": [
+        "2017.11.01 00:00",
+        "2025.01.01 00:00"
+      ],
+      "warmup_first_processed_tick": "2017.11.01 00:00:00",
+      "warmup_final_processed_tick": "2017.12.30 00:59:59",
+      "first_processed_tick_in_research_interval": "2018.01.02 01:01:00",
+      "final_processed_tick_in_research_interval": "2024.12.31 23:59:59",
+      "processed_model_tick_count": 185294081,
+      "native_real_tick_start": "2022.11.11 00:00:00",
+      "generated_fallback_minutes": 373899,
+      "real_ticks_discarded_minutes": 1380,
+      "whole_days_without_real_ticks": 260,
+      "unmatched_tick_volume_minutes": 1357,
+      "unmatched_tick_price_ticks": 105271,
+      "unmatched_tick_price_minutes": 1380,
+      "m1_count": 2605848,
+      "h1_count": 43518,
+      "m1_mismatches": 1,
+      "h1_mismatches": 0,
+      "spread_samples": 185294081,
+      "zero_or_negative_spread_samples": 77742,
+      "mean_spread_points": 10.506742997365361,
+      "maximum_spread_points": 653.00000000002,
+      "by_year": {
+        "2018": {
+          "processed_model_ticks": 26138246,
+          "m1_bars": 371818,
+          "h1_bars": 6202
+        },
+        "2019": {
+          "processed_model_ticks": 15178358,
+          "m1_bars": 371352,
+          "h1_bars": 6194
+        },
+        "2020": {
+          "processed_model_ticks": 19556175,
+          "m1_bars": 373606,
+          "h1_bars": 6235
+        },
+        "2021": {
+          "processed_model_ticks": 13458627,
+          "m1_bars": 373398,
+          "h1_bars": 6240
+        },
+        "2022": {
+          "processed_model_ticks": 37307094,
+          "m1_bars": 371540,
+          "h1_bars": 6216
+        },
+        "2023": {
+          "processed_model_ticks": 37233157,
+          "m1_bars": 370749,
+          "h1_bars": 6191
+        },
+        "2024": {
+          "processed_model_ticks": 36422424,
+          "m1_bars": 373385,
+          "h1_bars": 6240
+        }
+      }
+    }
+  ],
+  "m1_h1_consistency_scope": "processed tester stream, which includes generated fallback and therefore cannot establish pure real-tick parity for the required interval",
+  "cross_symbol_timestamp_coverage": "NOT_QUALIFIABLE_AS_NATIVE_REAL_TICK_COVERAGE_BECAUSE_ALL_SEVEN_STREAMS_USED_GENERATED_FALLBACK",
+  "formation_timestamp_coverage": "NOT_QUALIFIABLE_FROM_NATIVE_REAL_TICKS_BEFORE_2022-11; no generated-bar signal schedule was permitted",
+  "commission_availability": {
+    "native_historical_schedule": "NOT_EXPOSED_WITHOUT_TRADING; no trade was placed to probe it",
+    "frozen_v28_external_assumption": "USD 3 per side per standard lot",
+    "assumption_available": true
+  },
+  "swap_assumptions": "all seven current tester snapshots match the frozen V28 values; historical change series unavailable"
+}

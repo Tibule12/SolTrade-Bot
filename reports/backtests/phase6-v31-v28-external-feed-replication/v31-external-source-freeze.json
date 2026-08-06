@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_EXTERNAL_SOURCE_FREEZE_V1",
+  "source": "Dukascopy Bank historical tick data",
+  "official_history_documentation": "https://www.dukascopy.com/wiki/en/development/strategy-api/historical-data/history-ticks/",
+  "official_hourly_archive_base": "https://datafeed.dukascopy.com/datafeed/",
+  "requested_interval": "[2018-01-01 00:00:00, 2025-01-01 00:00:00)",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "required_fields": [
+    "timestamp",
+    "bid",
+    "ask"
+  ],
+  "providers_allowed": [
+    "Dukascopy Bank"
+  ],
+  "bar_midpoint_generated_interpolated_mixed_or_patched_data": "PROHIBITED",
+  "source_probe_method": "HTTP HEAD only; no response body or raw tick file downloaded",
+  "raw_files_downloaded": 0,
+  "raw_data_manifest_status": "NOT_CREATED_BECAUSE_EXECUTION_EVIDENCE_CONTRACT_FAILED_BEFORE_DOWNLOAD",
+  "provider_change_after_pnl": "PROHIBITED",
+  "pnl_viewed": false
+}

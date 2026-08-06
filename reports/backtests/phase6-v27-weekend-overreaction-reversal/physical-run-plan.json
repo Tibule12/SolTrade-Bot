@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PHYSICAL_RUN_PLAN_V1",
+  "frozen_before_profitability_testing": true,
+  "runs": [
+    {"run_number": 1, "run_id": "01-v27-2025-development-native", "dataset": "V27_2025_DEVELOPMENT", "history_from": "2024.12.01", "eligible_from": "2025.01.06 00:00:00", "eligible_to_exclusive": "2026.01.01 00:00:00", "expected_schedule_signals": 45, "execution_layer": "NATIVE_NORMAL_EXECUTION", "execution_mode": 0},
+    {"run_number": 2, "run_id": "02-v27-2026-preseal-development-native", "dataset": "V27_2026_PRESEAL_DEVELOPMENT", "history_from": "2025.12.01", "eligible_from": "2026.01.05 00:00:00", "eligible_to_exclusive": "2026.08.01 00:00:00", "expected_schedule_signals": 48, "execution_layer": "NATIVE_NORMAL_EXECUTION", "execution_mode": 0},
+    {"run_number": 3, "run_id": "03-v27-2025-development-delay200", "dataset": "V27_2025_DEVELOPMENT", "history_from": "2024.12.01", "eligible_from": "2025.01.06 00:00:00", "eligible_to_exclusive": "2026.01.01 00:00:00", "expected_schedule_signals": 45, "execution_layer": "FIXED_DELAY_200_MS", "execution_mode": 200},
+    {"run_number": 4, "run_id": "04-v27-2026-preseal-development-delay200", "dataset": "V27_2026_PRESEAL_DEVELOPMENT", "history_from": "2025.12.01", "eligible_from": "2026.01.05 00:00:00", "eligible_to_exclusive": "2026.08.01 00:00:00", "expected_schedule_signals": 48, "execution_layer": "FIXED_DELAY_200_MS", "execution_mode": 200}
+  ]
+}

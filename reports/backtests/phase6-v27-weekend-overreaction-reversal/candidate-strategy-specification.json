@@ -1,0 +1,113 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_CANDIDATE_SPECIFICATION_V1",
+  "strategy_identifier": "FX_WEEKEND_OVERREACTION_REVERSAL_5PCT_1W_1_0",
+  "research_classification": "CONTROLLED_PRESEAL_DEVELOPMENT_EVIDENCE",
+  "economic_hypothesis_frozen_before_local_counts_or_pnl": true,
+  "local_v27_signal_counts_viewed_before_freeze": false,
+  "local_v27_pnl_viewed_before_freeze": false,
+  "published_rule_basis": {
+    "authors": "Thong M. Dao, Frank McGroarty, Andrew Urquhart",
+    "title": "A calendar effect: Weekend overreaction (and subsequent reversal) in spot FX rates",
+    "journal_year": "Journal of Multinational Financial Management, 2016",
+    "doi": "10.1016/j.mulfin.2016.11.001",
+    "adopted_elements": [
+      "top and bottom 5 percent weekend-gap tails",
+      "five years represented by 260 completed weekly observations",
+      "direction opposite the weekend gap",
+      "one-week holding horizon"
+    ]
+  },
+  "universe": ["EURUSD", "GBPUSD", "AUDUSD", "NZDUSD", "USDCAD", "USDCHF", "USDJPY"],
+  "foreign_currency_orientation": {
+    "EURUSD": 1,
+    "GBPUSD": 1,
+    "AUDUSD": 1,
+    "NZDUSD": 1,
+    "USDCAD": -1,
+    "USDCHF": -1,
+    "USDJPY": -1
+  },
+  "weekend_gap_definition": {
+    "broker_server_timezone": "FP_MARKETS_BROKER_SERVER_TIME",
+    "friday_reference": "close of the exact Friday 23:00 H1 bar",
+    "monday_reference": "open of the exact Monday 00:00 H1 bar",
+    "foreign_currency_gap": "orientation * ln(monday_open / friday_close)",
+    "missing_reference_policy": "skip that symbol-week",
+    "current_gap_excluded_from_threshold_history": true
+  },
+  "tail_estimator": {
+    "window": "immediately preceding 260 valid completed weekend gaps for the same symbol",
+    "minimum_observations": 260,
+    "ordering": "ascending foreign-currency log gaps, timestamp ascending for deterministic equality",
+    "lower_threshold": "13th ascending observation; nearest-rank ceil(0.05 * 260)",
+    "upper_threshold": "247th ascending observation; nearest-rank ceil(0.95 * 260)",
+    "upward_signal": "current gap strictly greater than upper threshold",
+    "downward_signal": "current gap strictly less than lower threshold",
+    "equality": "reject"
+  },
+  "entry": {
+    "target": "Monday 02:05:00 broker-server time",
+    "window": "first executable tick in [02:05:00,02:10:00)",
+    "upward_foreign_gap": "SELL foreign currency",
+    "downward_foreign_gap": "BUY foreign currency",
+    "direct_pair_mapping": "foreign BUY=pair BUY; foreign SELL=pair SELL",
+    "inverse_pair_mapping": "foreign BUY=pair SELL; foreign SELL=pair BUY",
+    "signals": "each symbol independent; at most one position per symbol",
+    "missed_or_blocked_entry": "no retry"
+  },
+  "exit": {
+    "scheduled_target": "Friday 23:55:00 broker-server time of the signal week",
+    "window": "first executable tick in [23:55:00,next market close)",
+    "protective_stop": "3.0 * Wilder D1 ATR14 measured from the last completed D1 bar at entry",
+    "take_profit": "none",
+    "trailing_stop": "none",
+    "break_even": "none",
+    "signal_exit": "none",
+    "weekend_carry": "prohibited"
+  },
+  "execution_and_risk": {
+    "account_equity_usd": 10000.0,
+    "risk_per_trade_percent": 0.5,
+    "maximum_concurrent_symbols": 7,
+    "maximum_initial_portfolio_risk_percent": 3.5,
+    "volume_rounding": "down to broker step; never round above risk budget",
+    "minimum_volume_unavailable": "block entry",
+    "max_spread_points": 30,
+    "max_slippage_points": 10,
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_percent": 5.0,
+    "consecutive_loss_limit": 3,
+    "position_already_open": "block same-symbol entry",
+    "orders_and_positions": "tester-only until every Development gate passes"
+  },
+  "datasets": {
+    "threshold_history_earliest_required": "2019.12.30 00:00:00",
+    "development_2025": "[2025.01.06 00:00:00,2026.01.01 00:00:00)",
+    "preseal_development_2026": "[2026.01.05 00:00:00,2026.08.01 00:00:00)",
+    "research_cutoff_exclusive": "2026.08.01 00:00:00",
+    "postseal_access": "PROHIBITED",
+    "sealed_oos": "SEALED_UNOPENED_AND_UNASSIGNED"
+  },
+  "cost_and_execution_cells": {
+    "commission_usd_per_side_per_standard_lot": 3.0,
+    "swap": "frozen FP Markets point-mode long/short specification captured in V26",
+    "supplementary_friction_multipliers": {"NORMAL": 0.0, "HIGH": 0.5, "STRESS": 1.0},
+    "execution_layers": {"NATIVE_NORMAL_EXECUTION": 0, "FIXED_DELAY_200_MS": 200},
+    "real_tick_model": true,
+    "optimization": false
+  },
+  "prohibited": [
+    "parameter sweep",
+    "automatic optimization",
+    "alternate gap quantile",
+    "alternate estimation window",
+    "alternate entry or exit time after results",
+    "universe selection from local returns",
+    "stop tuning",
+    "cost-profile selection",
+    "sealed OOS access before every Development gate passes",
+    "demo before every Development gate passes",
+    "live trading"
+  ]
+}

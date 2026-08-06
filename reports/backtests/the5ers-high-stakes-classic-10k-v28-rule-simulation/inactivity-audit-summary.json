@@ -1,0 +1,154 @@
+{
+  "conditions": {
+    "DELAY_200_MS": {
+      "basis": "Elapsed time between consecutive executed deals in the frozen physical stream; holding an unchanged open position is not counted as a new trade execution.",
+      "breach_count": 4,
+      "breaches": [
+        {
+          "days": 32.18541666666667,
+          "end": "2025.04.04 14:32:01",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "AUDUSD",
+          "start": "2025.03.03 10:05:01"
+        },
+        {
+          "days": 34.99998842592593,
+          "end": "2026.01.05 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2025.12.01 10:05:01"
+        },
+        {
+          "days": 34.99998842592593,
+          "end": "2026.04.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.03.02 10:05:01"
+        },
+        {
+          "days": 34.999976851851855,
+          "end": "2026.07.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.06.01 10:05:02"
+        }
+      ],
+      "condition": "DELAY_200_MS",
+      "maximum_gap_days": 34.99998842592593,
+      "status": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS"
+    },
+    "HIGH": {
+      "basis": "Elapsed time between consecutive executed deals in the frozen physical stream; holding an unchanged open position is not counted as a new trade execution.",
+      "breach_count": 4,
+      "breaches": [
+        {
+          "days": 32.18542824074074,
+          "end": "2025.04.04 14:32:01",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "AUDUSD",
+          "start": "2025.03.03 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.01.05 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2025.12.01 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.04.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.03.02 10:05:00"
+        },
+        {
+          "days": 34.99998842592593,
+          "end": "2026.07.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.06.01 10:05:01"
+        }
+      ],
+      "condition": "HIGH",
+      "maximum_gap_days": 35.0,
+      "status": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS"
+    },
+    "NORMAL": {
+      "basis": "Elapsed time between consecutive executed deals in the frozen physical stream; holding an unchanged open position is not counted as a new trade execution.",
+      "breach_count": 4,
+      "breaches": [
+        {
+          "days": 32.18542824074074,
+          "end": "2025.04.04 14:32:01",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "AUDUSD",
+          "start": "2025.03.03 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.01.05 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2025.12.01 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.04.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.03.02 10:05:00"
+        },
+        {
+          "days": 34.99998842592593,
+          "end": "2026.07.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.06.01 10:05:01"
+        }
+      ],
+      "condition": "NORMAL",
+      "maximum_gap_days": 35.0,
+      "status": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS"
+    },
+    "STRESS": {
+      "basis": "Elapsed time between consecutive executed deals in the frozen physical stream; holding an unchanged open position is not counted as a new trade execution.",
+      "breach_count": 4,
+      "breaches": [
+        {
+          "days": 32.18542824074074,
+          "end": "2025.04.04 14:32:01",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "AUDUSD",
+          "start": "2025.03.03 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.01.05 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2025.12.01 10:05:00"
+        },
+        {
+          "days": 35.0,
+          "end": "2026.04.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.03.02 10:05:00"
+        },
+        {
+          "days": 34.99998842592593,
+          "end": "2026.07.06 10:05:00",
+          "last_deal_symbol": "USDJPY",
+          "next_deal_symbol": "EURUSD",
+          "start": "2026.06.01 10:05:01"
+        }
+      ],
+      "condition": "STRESS",
+      "maximum_gap_days": 35.0,
+      "status": "FAIL_RECORDED_DEAL_GAP_EXCEEDS_30_DAYS"
+    }
+  },
+  "limit": "more than 30 consecutive days without a trade execution",
+  "schema": "SOLTRADE_THE5ERS_V28_INACTIVITY_AUDIT_V1"
+}

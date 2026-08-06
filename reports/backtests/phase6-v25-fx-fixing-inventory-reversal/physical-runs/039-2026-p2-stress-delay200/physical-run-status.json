@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 39,
+  "run_id": "039-2026-p2-stress-delay200",
+  "execution_instance_id": "V25-039-2026_P2-STRESS-DELAY200",
+  "formal_dataset": "V25_2026_PRESEAL_DEVELOPMENT",
+  "segment_id": "2026_P2",
+  "cost_profile": "STRESS",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "693e64511f84f0c74c7ede2d6885e4ad20453c2b2345a6baf3179b70f2e243f0",
+  "rendered_ini_sha256": "93e64e4bfedfab12e4956a529e43f8259ad5121485961d342b4f2434512a4d2e",
+  "wine_return_code": 0,
+  "elapsed_seconds": 22.874802827835083,
+  "run_evidence_status": "PASS",
+  "evaluations": 1116,
+  "entry_opportunities": 59,
+  "entry_fills": 47,
+  "exit_fills": 47,
+  "seal_breach": "NO",
+  "native_reports": [
+    "039-2026-p2-stress-delay200.html",
+    "039-2026-p2-stress-delay200-mfemae.png",
+    "039-2026-p2-stress-delay200-holding.png",
+    "039-2026-p2-stress-delay200.png",
+    "039-2026-p2-stress-delay200-hst.png"
+  ],
+  "status": "PASS"
+}

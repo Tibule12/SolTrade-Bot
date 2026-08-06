@@ -1,0 +1,2 @@
+artifact_status,physical_run_id,formal_cell_id,position_identifier,entry_time,exit_time,initial_risk_amount,cost_adjusted_trade_net,realized_net_R,censor_classification
+NOT_PRODUCED_PRERUN_AUDIT_FAILED,,,,,,,,,

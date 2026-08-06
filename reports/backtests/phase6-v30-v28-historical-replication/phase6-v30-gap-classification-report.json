@@ -1,0 +1,83 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_GAP_CLASSIFICATION_V1",
+  "status": "FAIL_NATIVE_INTERPRETATION",
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "gaps_over_one_hour": 380,
+      "classifications": {
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5,
+        "NON_WEEKEND_CLOSURE_OR_GAP": 1
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "GBPUSD",
+      "gaps_over_one_hour": 380,
+      "classifications": {
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5,
+        "NON_WEEKEND_CLOSURE_OR_GAP": 1
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "AUDUSD",
+      "gaps_over_one_hour": 380,
+      "classifications": {
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5,
+        "NON_WEEKEND_CLOSURE_OR_GAP": 1
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "NZDUSD",
+      "gaps_over_one_hour": 388,
+      "classifications": {
+        "NON_WEEKEND_CLOSURE_OR_GAP": 9,
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "USDCAD",
+      "gaps_over_one_hour": 388,
+      "classifications": {
+        "NON_WEEKEND_CLOSURE_OR_GAP": 9,
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "USDCHF",
+      "gaps_over_one_hour": 388,
+      "classifications": {
+        "NON_WEEKEND_CLOSURE_OR_GAP": 9,
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    },
+    {
+      "symbol": "USDJPY",
+      "gaps_over_one_hour": 387,
+      "classifications": {
+        "NON_WEEKEND_CLOSURE_OR_GAP": 8,
+        "WEEKEND_CLOSURE": 374,
+        "YEAR_END_HOLIDAY_CLOSURE": 5
+      },
+      "native_only_interpretation_valid": false,
+      "reason": "tester generated ticks before native_real_tick_start"
+    }
+  ]
+}

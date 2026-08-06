@@ -1,0 +1,75 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_TICK_DERIVED_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "FAIL_TESTER_REAL_TICK_PROBE",
+  "dataset_qualified_for_strategy_matrix": false,
+  "primary_reason": "PRE_REGISTERED_TESTER_EXPECTATION_MISMATCHED_BY_TWO_TRAILING_REAL_PRICE_TICKS",
+  "history_identity_v8": "dcd2f489cc6bd06f6a6e3bc3644179f4348cd54ea7dbad52819611008e2b7f26",
+  "component_gates": {
+    "methodology_frozen_before_construction": "PASS",
+    "canonical_real_tick_source_preserved": "PASS",
+    "tick_derived_m1_construction": "PASS",
+    "tick_derived_h1_direct_construction": "PASS",
+    "bar_integrity": "PASS",
+    "unresolved_gap_quarantine": "PASS",
+    "clean_segment_coverage": "PASS",
+    "server_timestamp_bucket_alignment": "PASS_WITH_DISCLOSED_HISTORICAL_TIMEZONE_AMBIGUITY",
+    "tester_generated_tick_fallback": "PASS_NO_FALLBACK",
+    "tester_exact_real_tick_probe": "FAIL"
+  },
+  "bar_results": {
+    "real_ticks": 20682267,
+    "derived_m1_bars": 365245,
+    "derived_h1_bars": 6097,
+    "contaminated_h1_bars": 5,
+    "post_gap_warmup_h1_bars": 600,
+    "eligible_research_h1_bars": 5252,
+    "interpolation": false,
+    "generated_or_synthetic_ticks": false,
+    "empty_bucket_bars": false
+  },
+  "clean_coverage": {
+    "development_eligible_h1_bars": 2526,
+    "validation_eligible_h1_bars": 1238,
+    "out_of_sample_eligible_h1_bars": 1488,
+    "strategy_trade_sample_size_assessed": false
+  },
+  "tester_probe": {
+    "requested_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "controller_confirmed_real_tick_generation": true,
+    "generated_tick_fallback": false,
+    "expected_ticks": 20682267,
+    "observed_ticks": 20682265,
+    "expected_first": "2025-01-02T00:00:00.594",
+    "observed_first": "2025-01-02T00:00:00.594",
+    "expected_final": "2025-12-23T23:59:59.877",
+    "observed_final": "2025-12-23T23:59:58.664",
+    "connected_trailing_price_ticks_omitted": 2,
+    "exact_stream_match": false,
+    "orders": 0,
+    "positions": 0,
+    "nonbalance_deals": 0,
+    "trade_transactions": 0
+  },
+  "time_alignment": {
+    "deterministic_broker_server_bucketing": true,
+    "observed_current_offset": "+03:00",
+    "utc_rebucketing": false,
+    "dst_status": "UNDETERMINED",
+    "historical_session_timezone": "AMBIGUOUS_DISCLOSED",
+    "reason_not_primary_failure": "Bars are deterministically keyed to the broker timestamps actually stored in the source ticks; no UTC conversion or historical timezone inference was used"
+  },
+  "prohibited_activity_reconciliation": {
+    "strategy_run": false,
+    "profitability_calculation": false,
+    "optimization": false,
+    "replica": false,
+    "demo_trade": false,
+    "live_trade": false,
+    "phase7": false,
+    "phase1_through_phase5_logic_modified": false
+  },
+  "authoritative_strategy_matrix": "UNAUTHORIZED",
+  "clean_segment_manifest_status": "PRESERVED_FOR_REVIEW_NOT_AUTHORIZED",
+  "profitability": "UNKNOWN",
+  "next_action": "STOP_AND_WAIT_FOR_REVIEW"
+}

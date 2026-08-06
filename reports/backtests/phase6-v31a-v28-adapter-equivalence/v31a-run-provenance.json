@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_RUN_PROVENANCE_V1",
+  "canonical_run_root": "equivalence-runs",
+  "initial_run_root": "equivalence-runs-attempt1",
+  "initial_physical_runs": 8,
+  "technical_issue": "2025 custom-symbol test initialization shifted to 2024.12.07 because pre-start rate history began too late",
+  "economic_or_trade_divergences_in_initial_runs": 0,
+  "initial_numeric_maximum_absolute_difference": 0.0,
+  "correction": "extended already-consumed FP Markets M1 pre-start history to 2024.11.01 without touching tick history or strategy code",
+  "corrected_adapter_runs": [
+    "01-v28-2025-development-native",
+    "03-v28-2025-development-delay200"
+  ],
+  "original_runs_rerun": false,
+  "unaffected_2026_adapter_runs_rerun": false,
+  "adapter_source_or_executable_changed_between_runs": false,
+  "canonical_physical_runs": 8,
+  "canonical_divergences": 0
+}

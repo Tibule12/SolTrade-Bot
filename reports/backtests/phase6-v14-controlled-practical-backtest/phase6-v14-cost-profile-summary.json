@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_COST_PROFILE_SUMMARY_V1",
+  "supplementary_not_broker_native": true,
+  "profiles": {
+    "NORMAL": {
+      "supplementary_multiplier": 0.0,
+      "trades": 188,
+      "native_trade_net": -1034.8300000000002,
+      "native_friction": 371.30999999999995,
+      "supplementary_charge": 0.0,
+      "adjusted_trade_net": -1034.8300000000002
+    },
+    "HIGH": {
+      "supplementary_multiplier": 0.5,
+      "trades": 188,
+      "native_trade_net": -1034.8300000000002,
+      "native_friction": 371.30999999999995,
+      "supplementary_charge": 185.65499999999997,
+      "adjusted_trade_net": -1220.4850000000001
+    },
+    "STRESS": {
+      "supplementary_multiplier": 1.0,
+      "trades": 188,
+      "native_trade_net": -1034.8300000000002,
+      "native_friction": 371.30999999999995,
+      "supplementary_charge": 371.30999999999995,
+      "adjusted_trade_net": -1406.14
+    }
+  }
+}

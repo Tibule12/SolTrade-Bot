@@ -1,0 +1,43 @@
+field,value
+schema,SOLTRADE_PHASE6_V23_RUN_SUMMARY_V1
+execution_instance_id,V23-021-2026_P3-STRESS-NATIVE
+segment_id,2026_P3
+dataset,DEVELOPMENT
+cost_profile,STRESS
+execution_layer,NATIVE_NORMAL_EXECUTION
+expected_execution_mode,0
+reset_at,2026.07.01 00:00:00
+eligible_from,2026.07.01 00:00:00
+eligible_to,2026.08.01 00:00:00
+first_evaluation,2026.07.17 11:00:00
+final_evaluation,2026.07.31 22:00:00
+indicator_eligible_h1_openings,253
+exclusive_boundary_unobservable_final_h1,1
+expected_processable_completed_h1,252
+evaluations,252
+setups,15
+confirmations,8
+expired_setups,4
+entry_fills,6
+exit_fills,5
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,2
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,2
+stop_loss_exits,4
+donchian_exits,1
+retest_1,6
+retest_2,1
+retest_3,0
+retest_4,0
+retest_5,1
+retest_6,0
+censored_position,YES
+max_tick,2026.07.31 23:59:56
+max_completed_h1,2026.07.31 22:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

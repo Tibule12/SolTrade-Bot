@@ -1,0 +1,162 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_EQUIVALENCE_PROOF_V1",
+  "terminal_outcome": "V28_ADAPTER_EQUIVALENCE_FAILED",
+  "numeric_tolerance": 1e-10,
+  "physical_runs": 8,
+  "run_pairs": 4,
+  "signal_schedule_sha256": "cc0a379aa8aa54dde6079c63d0d4eda97abcc929ed7a6bf0dec1404c64b4ea21",
+  "signal_identities_per_side": 119,
+  "physical_signal_evaluations_per_side": 238,
+  "events_compared": 734,
+  "transactions_compared": 730,
+  "deals_compared": 420,
+  "semantic_field_comparisons": 29084,
+  "maximum_numeric_absolute_difference": 0.0,
+  "divergence_count": 732,
+  "runs": [
+    {
+      "run_id": "01-v28-2025-development-native",
+      "dataset": "V28_2025_DEVELOPMENT",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "events": {
+        "rows_original": 246,
+        "rows_adapter": 246,
+        "rows_compared": 246,
+        "field_comparisons": 1476,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "transactions": {
+        "rows_original": 245,
+        "rows_adapter": 245,
+        "rows_compared": 245,
+        "field_comparisons": 4900,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "deals": {
+        "rows_original": 140,
+        "rows_adapter": 140,
+        "rows_compared": 140,
+        "field_comparisons": 2520,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "adjusted_trades": {
+        "rows_original": 70,
+        "rows_adapter": 70,
+        "rows_compared": 70,
+        "field_comparisons": 840,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "divergences": 246,
+      "status": "FAIL"
+    },
+    {
+      "run_id": "02-v28-2026-preseal-development-native",
+      "dataset": "V28_2026_PRESEAL_DEVELOPMENT",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "events": {
+        "rows_original": 121,
+        "rows_adapter": 121,
+        "rows_compared": 121,
+        "field_comparisons": 726,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "transactions": {
+        "rows_original": 120,
+        "rows_adapter": 120,
+        "rows_compared": 120,
+        "field_comparisons": 2400,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "deals": {
+        "rows_original": 70,
+        "rows_adapter": 70,
+        "rows_compared": 70,
+        "field_comparisons": 1260,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "adjusted_trades": {
+        "rows_original": 35,
+        "rows_adapter": 35,
+        "rows_compared": 35,
+        "field_comparisons": 420,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "divergences": 120,
+      "status": "FAIL"
+    },
+    {
+      "run_id": "03-v28-2025-development-delay200",
+      "dataset": "V28_2025_DEVELOPMENT",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "events": {
+        "rows_original": 246,
+        "rows_adapter": 246,
+        "rows_compared": 246,
+        "field_comparisons": 1476,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "transactions": {
+        "rows_original": 245,
+        "rows_adapter": 245,
+        "rows_compared": 245,
+        "field_comparisons": 4900,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "deals": {
+        "rows_original": 140,
+        "rows_adapter": 140,
+        "rows_compared": 140,
+        "field_comparisons": 2520,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "adjusted_trades": {
+        "rows_original": 70,
+        "rows_adapter": 70,
+        "rows_compared": 70,
+        "field_comparisons": 840,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "divergences": 246,
+      "status": "FAIL"
+    },
+    {
+      "run_id": "04-v28-2026-preseal-development-delay200",
+      "dataset": "V28_2026_PRESEAL_DEVELOPMENT",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "events": {
+        "rows_original": 121,
+        "rows_adapter": 121,
+        "rows_compared": 121,
+        "field_comparisons": 726,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "transactions": {
+        "rows_original": 120,
+        "rows_adapter": 120,
+        "rows_compared": 120,
+        "field_comparisons": 2400,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "deals": {
+        "rows_original": 70,
+        "rows_adapter": 70,
+        "rows_compared": 70,
+        "field_comparisons": 1260,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "adjusted_trades": {
+        "rows_original": 35,
+        "rows_adapter": 35,
+        "rows_compared": 35,
+        "field_comparisons": 420,
+        "max_numeric_absolute_difference": 0.0
+      },
+      "divergences": 120,
+      "status": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3  MQL5/Experts/SolTradeBot.mq5
+90e8c8c08cc6b604fea75e2d0fc34cb01d3f3fd01ec75263ac8dfd6c70ece6af  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/actual-raw-candidate-cost-ledger.csv
+2433e12203fa230140508ec96f12e7b0b13f301315a227b4bd62097a3076be89  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/cost-model-and-limitations.md
+63ab4c0d6a67888e30696d22ca66417a73ab09668705d0f8d92b6e0a7166d556  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/evidence-manifest.md
+eca5aae27476c7b99d01cdd115a10728a6db9f9e9c8125193b1347c8c38dbe70  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/final-decision.md
+6c07b8a0e4afd06f21c20c8a471437e0e29ddbecf297cb24c924d347fa57e3f1  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/fxify-raw-static-specification-summary.csv
+20782fd8ee79955c50622bd4c6dbb3c364ac014106f137ecde9a91a74f42a709  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/inactivity-stage-audit.csv
+6226ae06b4b5d395763dd3349b16a49f64898e1b2e95e250e181f15848553f87  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/instrumentation-source/SolTradeFXIFYRawSpecificationCaptureV3.mq5
+d0c15b845bf4b17a6114031fb6eb4e2c15436a2fdbb283120d2c834a6cf8f67c  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/instrumentation-source/compile.log
+36019a9166713a76aa9ac2764fa47a462c4b0a3b6725fc65a864c917d551688e  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/phase2-reset-replay-ledger.csv
+81ee79bad13d2f80c575f5f8adefbcf4c61bc269f03114da9af8a60e227241d1  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/raw-specification-capture/raw-account-and-server.csv
+1723f883f978b417d3df925685f0c32e4f97a14c7b4b589bcd6823087c7aab75  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/raw-specification-capture/raw-symbol-specifications.csv
+8235e5e311882ee2a585f4de8331a4f13d574c8ffc6b979064e0b5cc43b53df3  reports/backtests/fxify-2phase-pro-10k-v28-rule-simulation/final-raw-lifecycle-completion/sequential-lifecycle-results.csv
+92db22139f0dffcc92f6fbd8d7e83e65106c851d30d05c17d773bd2dedb5b04d  tools/build_fxify_v28_final_raw_lifecycle.py

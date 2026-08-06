@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_DELAY_REPLICA_MATRIX_V1",
+  "result_layer": "FIXED_DELAY_REPLICA",
+  "status": "NOT_PRODUCED_PRECHECK_FAILED",
+  "executed_runs": 0,
+  "expected_runs": 9,
+  "metrics": null,
+  "reason": "The D=200 ms replica rule conflicts with prior 200/400/800 ms profile delays and pairwise TradingInputHash identity."
+}

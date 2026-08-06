@@ -1,0 +1,952 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_COMPLETE_GAP_REPORT_V1",
+  "source": {
+    "broker": "FP Markets",
+    "server": "FPMarketsSC-Demo",
+    "symbol": "EURUSD"
+  },
+  "interval": {
+    "start_inclusive": "2025-01-02T00:00:00",
+    "end_exclusive": "2025-12-24T00:00:00"
+  },
+  "gap_threshold_seconds": 900,
+  "real_tick_gap_count": 53,
+  "unresolved_open_session_gap_count": 3,
+  "scheduled_weekend_closure_count": 50,
+  "scheduled_non_weekend_closure_count": 0,
+  "officially_supported_holiday_count": 0,
+  "classification_rules": {
+    "official_closure_requires": "MT5 session schedule, broker-published hours, or interval-specific broker evidence",
+    "weekend_proximity_alone_sufficient": false,
+    "unsupported_open_session_gap": "UNRESOLVED_OPEN_SESSION_GAP",
+    "m1_substitution_for_ticks_permitted": false
+  },
+  "schedule_evidence": {
+    "source": "SymbolInfoSessionTrade captured from FPMarketsSC-Demo",
+    "sunday": "CLOSED",
+    "monday": "00:01:00-23:59:00",
+    "tuesday": "00:01:00-23:59:00",
+    "wednesday": "00:01:00-23:59:00",
+    "thursday": "00:01:00-23:59:00",
+    "friday": "00:01:00-23:59:00",
+    "saturday": "CLOSED",
+    "daily_scheduled_break_seconds": 120,
+    "broker_published_current_hours_url": "https://www.fpmarkets.com/en-au/trading-hours/",
+    "broker_published_evidence_limit": "Current page states GMT+2/GMT+3 with DST and recurring Forex hours, but is not interval-specific 2025 holiday or outage evidence."
+  },
+  "holidays": {
+    "classifications": [],
+    "note": "No observed gap was classified as an official holiday because no interval-specific 2025 broker evidence was available."
+  },
+  "m1_status": {
+    "retrieval_result": -1,
+    "error": 4401,
+    "bounded_attempts": 120,
+    "series_reported_synchronized": true,
+    "individual_m1_gap_enumeration_completed": false,
+    "effect": "FAIL_M1_HISTORY_UNAVAILABLE"
+  },
+  "gaps": [
+    {
+      "gap_number": 1,
+      "previous_real_tick": "2025.01.03 23:55:00.055",
+      "next_real_tick": "2025.01.06 00:00:00.120",
+      "duration_seconds": 173100,
+      "duration_minutes": 2885,
+      "maximum_scheduled_open_segment_seconds": 240,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 2,
+      "previous_real_tick": "2025.01.10 23:54:59.872",
+      "next_real_tick": "2025.01.13 00:00:00.452",
+      "duration_seconds": 173101,
+      "duration_minutes": 2885.016667,
+      "maximum_scheduled_open_segment_seconds": 241,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 3,
+      "previous_real_tick": "2025.01.17 23:57:52.691",
+      "next_real_tick": "2025.01.20 00:00:10.233",
+      "duration_seconds": 172938,
+      "duration_minutes": 2882.3,
+      "maximum_scheduled_open_segment_seconds": 68,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 4,
+      "previous_real_tick": "2025.01.24 23:54:49.908",
+      "next_real_tick": "2025.01.27 00:01:32.015",
+      "duration_seconds": 173203,
+      "duration_minutes": 2886.716667,
+      "maximum_scheduled_open_segment_seconds": 251,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 5,
+      "previous_real_tick": "2025.01.31 23:55:00.117",
+      "next_real_tick": "2025.02.03 00:00:01.646",
+      "duration_seconds": 173101,
+      "duration_minutes": 2885.016667,
+      "maximum_scheduled_open_segment_seconds": 240,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 6,
+      "previous_real_tick": "2025.02.05 00:15:05.295",
+      "next_real_tick": "2025.02.05 00:37:12.833",
+      "duration_seconds": 1327,
+      "duration_minutes": 22.116667,
+      "maximum_scheduled_open_segment_seconds": 1327,
+      "mt5_session_status": "OPEN_OVER_THRESHOLD",
+      "classification": "UNRESOLVED_OPEN_SESSION_GAP",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_REPORTS_OPEN",
+        "INTERVAL_SPECIFIC_BROKER_EVIDENCE_ABSENT"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 7,
+      "previous_real_tick": "2025.02.07 23:55:00.038",
+      "next_real_tick": "2025.02.10 00:00:00.113",
+      "duration_seconds": 173100,
+      "duration_minutes": 2885,
+      "maximum_scheduled_open_segment_seconds": 240,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 8,
+      "previous_real_tick": "2025.02.14 23:54:58.446",
+      "next_real_tick": "2025.02.17 00:03:04.982",
+      "duration_seconds": 173286,
+      "duration_minutes": 2888.1,
+      "maximum_scheduled_open_segment_seconds": 242,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 9,
+      "previous_real_tick": "2025.02.21 23:54:59.049",
+      "next_real_tick": "2025.02.24 00:00:25.871",
+      "duration_seconds": 173126,
+      "duration_minutes": 2885.433333,
+      "maximum_scheduled_open_segment_seconds": 241,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 10,
+      "previous_real_tick": "2025.02.28 23:57:57.008",
+      "next_real_tick": "2025.03.03 00:03:05.073",
+      "duration_seconds": 173108,
+      "duration_minutes": 2885.133333,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 11,
+      "previous_real_tick": "2025.03.07 23:57:59.005",
+      "next_real_tick": "2025.03.10 00:59:59.698",
+      "duration_seconds": 176520,
+      "duration_minutes": 2942,
+      "maximum_scheduled_open_segment_seconds": 3539,
+      "mt5_session_status": "OPEN_OVER_THRESHOLD",
+      "classification": "UNRESOLVED_OPEN_SESSION_GAP",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_REPORTS_OPEN",
+        "INTERVAL_SPECIFIC_BROKER_EVIDENCE_ABSENT"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 12,
+      "previous_real_tick": "2025.03.15 00:58:54.229",
+      "next_real_tick": "2025.03.17 00:03:05.069",
+      "duration_seconds": 169451,
+      "duration_minutes": 2824.183333,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 13,
+      "previous_real_tick": "2025.03.21 23:58:59.909",
+      "next_real_tick": "2025.03.24 00:03:05.235",
+      "duration_seconds": 173046,
+      "duration_minutes": 2884.1,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 14,
+      "previous_real_tick": "2025.03.28 23:58:58.531",
+      "next_real_tick": "2025.03.31 00:03:05.288",
+      "duration_seconds": 173047,
+      "duration_minutes": 2884.116667,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 15,
+      "previous_real_tick": "2025.04.04 23:58:59.911",
+      "next_real_tick": "2025.04.07 00:03:05.286",
+      "duration_seconds": 173046,
+      "duration_minutes": 2884.1,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 16,
+      "previous_real_tick": "2025.04.11 23:58:59.705",
+      "next_real_tick": "2025.04.14 00:03:05.261",
+      "duration_seconds": 173046,
+      "duration_minutes": 2884.1,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 17,
+      "previous_real_tick": "2025.04.18 23:58:50.296",
+      "next_real_tick": "2025.04.21 00:03:05.081",
+      "duration_seconds": 173055,
+      "duration_minutes": 2884.25,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 18,
+      "previous_real_tick": "2025.04.25 23:58:59.296",
+      "next_real_tick": "2025.04.28 00:03:05.233",
+      "duration_seconds": 173046,
+      "duration_minutes": 2884.1,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 19,
+      "previous_real_tick": "2025.05.02 23:58:59.525",
+      "next_real_tick": "2025.05.05 00:00:20.466",
+      "duration_seconds": 172881,
+      "duration_minutes": 2881.35,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 20,
+      "previous_real_tick": "2025.05.09 23:58:59.375",
+      "next_real_tick": "2025.05.12 00:00:16.697",
+      "duration_seconds": 172877,
+      "duration_minutes": 2881.283333,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 21,
+      "previous_real_tick": "2025.05.16 23:58:58.407",
+      "next_real_tick": "2025.05.19 00:00:04.809",
+      "duration_seconds": 172866,
+      "duration_minutes": 2881.1,
+      "maximum_scheduled_open_segment_seconds": 2,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 22,
+      "previous_real_tick": "2025.05.23 23:58:59.757",
+      "next_real_tick": "2025.05.26 00:00:20.158",
+      "duration_seconds": 172881,
+      "duration_minutes": 2881.35,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 23,
+      "previous_real_tick": "2025.05.30 23:58:57.359",
+      "next_real_tick": "2025.06.02 00:03:05.230",
+      "duration_seconds": 173048,
+      "duration_minutes": 2884.133333,
+      "maximum_scheduled_open_segment_seconds": 125,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 24,
+      "previous_real_tick": "2025.06.06 23:58:56.991",
+      "next_real_tick": "2025.06.09 00:00:02.347",
+      "duration_seconds": 172866,
+      "duration_minutes": 2881.1,
+      "maximum_scheduled_open_segment_seconds": 4,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 25,
+      "previous_real_tick": "2025.06.13 23:58:59.546",
+      "next_real_tick": "2025.06.16 00:00:08.728",
+      "duration_seconds": 172869,
+      "duration_minutes": 2881.15,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 26,
+      "previous_real_tick": "2025.06.20 23:58:59.586",
+      "next_real_tick": "2025.06.23 00:00:10.416",
+      "duration_seconds": 172871,
+      "duration_minutes": 2881.183333,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 27,
+      "previous_real_tick": "2025.06.27 23:58:55.940",
+      "next_real_tick": "2025.06.30 00:00:06.637",
+      "duration_seconds": 172871,
+      "duration_minutes": 2881.183333,
+      "maximum_scheduled_open_segment_seconds": 5,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 28,
+      "previous_real_tick": "2025.07.04 23:58:55.212",
+      "next_real_tick": "2025.07.07 00:00:09.405",
+      "duration_seconds": 172874,
+      "duration_minutes": 2881.233333,
+      "maximum_scheduled_open_segment_seconds": 5,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 29,
+      "previous_real_tick": "2025.07.11 23:58:56.492",
+      "next_real_tick": "2025.07.14 00:00:05.364",
+      "duration_seconds": 172869,
+      "duration_minutes": 2881.15,
+      "maximum_scheduled_open_segment_seconds": 4,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 30,
+      "previous_real_tick": "2025.07.18 23:58:59.843",
+      "next_real_tick": "2025.07.21 00:00:19.451",
+      "duration_seconds": 172880,
+      "duration_minutes": 2881.333333,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 31,
+      "previous_real_tick": "2025.07.25 23:59:00.025",
+      "next_real_tick": "2025.07.28 00:00:09.507",
+      "duration_seconds": 172869,
+      "duration_minutes": 2881.15,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 32,
+      "previous_real_tick": "2025.08.01 23:58:59.563",
+      "next_real_tick": "2025.08.04 00:00:00.179",
+      "duration_seconds": 172861,
+      "duration_minutes": 2881.016667,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 33,
+      "previous_real_tick": "2025.08.06 16:13:41.024",
+      "next_real_tick": "2025.08.06 17:14:06.171",
+      "duration_seconds": 3625,
+      "duration_minutes": 60.416667,
+      "maximum_scheduled_open_segment_seconds": 3625,
+      "mt5_session_status": "OPEN_OVER_THRESHOLD",
+      "classification": "UNRESOLVED_OPEN_SESSION_GAP",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_REPORTS_OPEN",
+        "INTERVAL_SPECIFIC_BROKER_EVIDENCE_ABSENT"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 34,
+      "previous_real_tick": "2025.08.08 23:58:59.370",
+      "next_real_tick": "2025.08.11 00:00:06.995",
+      "duration_seconds": 172867,
+      "duration_minutes": 2881.116667,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 35,
+      "previous_real_tick": "2025.08.15 23:58:58.899",
+      "next_real_tick": "2025.08.18 00:00:08.867",
+      "duration_seconds": 172870,
+      "duration_minutes": 2881.166667,
+      "maximum_scheduled_open_segment_seconds": 2,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 36,
+      "previous_real_tick": "2025.08.22 23:58:59.622",
+      "next_real_tick": "2025.08.25 00:00:11.190",
+      "duration_seconds": 172872,
+      "duration_minutes": 2881.2,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 37,
+      "previous_real_tick": "2025.08.29 23:58:58.965",
+      "next_real_tick": "2025.09.01 00:00:12.233",
+      "duration_seconds": 172874,
+      "duration_minutes": 2881.233333,
+      "maximum_scheduled_open_segment_seconds": 2,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 38,
+      "previous_real_tick": "2025.09.05 23:58:59.870",
+      "next_real_tick": "2025.09.08 00:00:05.558",
+      "duration_seconds": 172866,
+      "duration_minutes": 2881.1,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 39,
+      "previous_real_tick": "2025.09.12 23:58:59.264",
+      "next_real_tick": "2025.09.15 00:00:09.604",
+      "duration_seconds": 172870,
+      "duration_minutes": 2881.166667,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 40,
+      "previous_real_tick": "2025.09.19 23:58:58.515",
+      "next_real_tick": "2025.09.22 00:00:02.652",
+      "duration_seconds": 172864,
+      "duration_minutes": 2881.066667,
+      "maximum_scheduled_open_segment_seconds": 2,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 41,
+      "previous_real_tick": "2025.09.26 23:58:58.945",
+      "next_real_tick": "2025.09.29 00:00:10.268",
+      "duration_seconds": 172872,
+      "duration_minutes": 2881.2,
+      "maximum_scheduled_open_segment_seconds": 2,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 42,
+      "previous_real_tick": "2025.10.03 23:59:00.019",
+      "next_real_tick": "2025.10.06 00:00:00.911",
+      "duration_seconds": 172860,
+      "duration_minutes": 2881,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 43,
+      "previous_real_tick": "2025.10.10 23:58:59.294",
+      "next_real_tick": "2025.10.13 00:00:14.026",
+      "duration_seconds": 172875,
+      "duration_minutes": 2881.25,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 44,
+      "previous_real_tick": "2025.10.17 23:58:56.560",
+      "next_real_tick": "2025.10.20 00:00:03.803",
+      "duration_seconds": 172867,
+      "duration_minutes": 2881.116667,
+      "maximum_scheduled_open_segment_seconds": 4,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 45,
+      "previous_real_tick": "2025.10.24 23:58:56.469",
+      "next_real_tick": "2025.10.27 00:00:00.660",
+      "duration_seconds": 172864,
+      "duration_minutes": 2881.066667,
+      "maximum_scheduled_open_segment_seconds": 4,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 46,
+      "previous_real_tick": "2025.10.31 23:58:59.768",
+      "next_real_tick": "2025.11.03 00:00:00.598",
+      "duration_seconds": 172861,
+      "duration_minutes": 2881.016667,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 47,
+      "previous_real_tick": "2025.11.07 23:58:59.654",
+      "next_real_tick": "2025.11.10 00:00:00.825",
+      "duration_seconds": 172861,
+      "duration_minutes": 2881.016667,
+      "maximum_scheduled_open_segment_seconds": 1,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 48,
+      "previous_real_tick": "2025.11.14 23:59:55.397",
+      "next_real_tick": "2025.11.17 00:00:19.866",
+      "duration_seconds": 172824,
+      "duration_minutes": 2880.4,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 49,
+      "previous_real_tick": "2025.11.21 23:59:56.219",
+      "next_real_tick": "2025.11.24 00:00:00.855",
+      "duration_seconds": 172804,
+      "duration_minutes": 2880.066667,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 50,
+      "previous_real_tick": "2025.11.28 23:59:55.254",
+      "next_real_tick": "2025.12.01 00:00:01.082",
+      "duration_seconds": 172806,
+      "duration_minutes": 2880.1,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 51,
+      "previous_real_tick": "2025.12.05 23:59:55.719",
+      "next_real_tick": "2025.12.08 00:00:00.868",
+      "duration_seconds": 172805,
+      "duration_minutes": 2880.083333,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 52,
+      "previous_real_tick": "2025.12.12 23:59:48.289",
+      "next_real_tick": "2025.12.15 00:00:08.152",
+      "duration_seconds": 172820,
+      "duration_minutes": 2880.333333,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    },
+    {
+      "gap_number": 53,
+      "previous_real_tick": "2025.12.19 23:59:55.467",
+      "next_real_tick": "2025.12.22 00:00:05.675",
+      "duration_seconds": 172810,
+      "duration_minutes": 2880.166667,
+      "maximum_scheduled_open_segment_seconds": 0,
+      "mt5_session_status": "NO_OPEN_SEGMENT_OVER_THRESHOLD",
+      "classification": "SCHEDULED_WEEKEND_CLOSURE",
+      "supporting_evidence": [
+        "MT5_SYMBOL_SESSION_SCHEDULE",
+        "WEEKEND_CALENDAR"
+      ],
+      "interval_specific_broker_evidence": false,
+      "official_holiday_classification": false,
+      "m1_corroboration": "UNAVAILABLE_COPYRATES_ERROR_4401"
+    }
+  ]
+}

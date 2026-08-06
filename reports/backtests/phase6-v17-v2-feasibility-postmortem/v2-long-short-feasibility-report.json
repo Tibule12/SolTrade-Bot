@@ -1,0 +1,51 @@
+{
+  "BUY": {
+    "setups": 246,
+    "confirmations": 3,
+    "rejections": 243,
+    "failure_counts": {
+      "immediate_next_completed_h1": 1,
+      "continued_direction_beyond_setup_close": 126,
+      "beyond_frozen_donchian_boundary": 62,
+      "correct_side_ema200": 4,
+      "ema_distance_at_most_2_atr": 209,
+      "atr_regime_0_50_to_2_00": 4,
+      "strict_equality_rejection": 2,
+      "minimum_300_clean_segment_h1": 28,
+      "no_position_already_open": 2,
+      "risk_or_spread_entry_state": 87,
+      "other_frozen_no_trade_conditions": 1
+    },
+    "first_failure_counts": {
+      "ema_distance_at_most_2_atr": 113,
+      "continued_direction_beyond_setup_close": 125,
+      "minimum_300_clean_segment_h1": 3,
+      "immediate_next_completed_h1": 1,
+      "risk_or_spread_entry_state": 1
+    }
+  },
+  "SELL": {
+    "setups": 119,
+    "confirmations": 2,
+    "rejections": 117,
+    "failure_counts": {
+      "immediate_next_completed_h1": 0,
+      "continued_direction_beyond_setup_close": 70,
+      "beyond_frozen_donchian_boundary": 36,
+      "correct_side_ema200": 5,
+      "ema_distance_at_most_2_atr": 86,
+      "atr_regime_0_50_to_2_00": 1,
+      "strict_equality_rejection": 0,
+      "minimum_300_clean_segment_h1": 8,
+      "no_position_already_open": 1,
+      "risk_or_spread_entry_state": 39,
+      "other_frozen_no_trade_conditions": 0
+    },
+    "first_failure_counts": {
+      "continued_direction_beyond_setup_close": 70,
+      "ema_distance_at_most_2_atr": 43,
+      "minimum_300_clean_segment_h1": 1,
+      "risk_or_spread_entry_state": 3
+    }
+  }
+}

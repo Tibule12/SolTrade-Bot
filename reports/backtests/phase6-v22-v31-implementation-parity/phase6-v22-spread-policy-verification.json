@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "formula": "min(30.0, 0.20 * confirmation_atr_price / symbol_point)",
+  "comparison": "actual_spread_points <= effective_limit_points",
+  "rounded_before_comparison": false,
+  "reference_tester_divergences": 0
+}

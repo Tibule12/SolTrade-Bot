@@ -1,0 +1,124 @@
+{
+  "schema": "SOLTRADE_TREND_BREAKOUT_V2_SPEC_V1",
+  "strategy_name": "Trend Breakout V2",
+  "specification_id": "SOLTRADE_TREND_BREAKOUT_V2_1_0",
+  "status": "DESIGN_FROZEN_UNTESTED",
+  "market": "EURUSD",
+  "timeframe": "H1",
+  "completed_candles_only": true,
+  "minimum_clean_segment_bars": 300,
+  "indicators": {
+    "trend": {"type": "EMA", "period": 200, "price": "CLOSE"},
+    "entry_channel": {"type": "DONCHIAN", "period": 20, "exclude_signal_bar": true},
+    "exit_channel": {"type": "DONCHIAN", "period": 10, "exclude_signal_bar": true},
+    "atr": {"type": "WILDER_ATR", "period": 14},
+    "atr_reference": {"type": "ARITHMETIC_MEAN_OF_ATR14", "period": 100}
+  },
+  "setup": {
+    "buy": ["close_s > donchian20_high_s", "close_s > ema200_s"],
+    "sell": ["close_s < donchian20_low_s", "close_s < ema200_s"],
+    "boundary_is_frozen_from_setup": true,
+    "valid_for_completed_market_bars": 1
+  },
+  "confirmation": {
+    "buy": [
+      "close_c > close_s",
+      "close_c > frozen_donchian20_high_s",
+      "close_c > ema200_c",
+      "abs(close_c - ema200_c) <= 2.0 * atr14_c",
+      "0.50 <= atr14_c / atr14_mean_100_c <= 2.00"
+    ],
+    "sell": [
+      "close_c < close_s",
+      "close_c < frozen_donchian20_low_s",
+      "close_c < ema200_c",
+      "abs(close_c - ema200_c) <= 2.0 * atr14_c",
+      "0.50 <= atr14_c / atr14_mean_100_c <= 2.00"
+    ],
+    "strict_inequalities": true,
+    "entry_time": "FIRST_TRADABLE_TICK_AFTER_CONFIRMATION_CANDLE",
+    "retry_count": 0
+  },
+  "trading_hours": {
+    "filter": "NONE",
+    "require_official_broker_session_open": true
+  },
+  "initial_stop": {
+    "distance_atr_multiple": 2.0,
+    "atr_source": "CONFIRMATION_CANDLE_ATR14",
+    "submitted_with_original_order": true
+  },
+  "exit": {
+    "buy": "completed_close < preceding_donchian10_low",
+    "sell": "completed_close > preceding_donchian10_high",
+    "broker_stop_remains_active": true,
+    "emergency_risk_close": true,
+    "maximum_synchronous_attempts_per_completed_signal_candle": 1,
+    "retry_count": 0
+  },
+  "risk": {
+    "risk_per_trade_equity_percent": 0.25,
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_percent": 5.0,
+    "consecutive_loss_limit": 3,
+    "maximum_positions": 1,
+    "position_size_rounding": "DOWN_TO_BROKER_LOT_STEP",
+    "minimum_volume_may_exceed_budget": false
+  },
+  "loss_pause_rules": {
+    "daily_lock_clears": "NEW_BROKER_DAY",
+    "weekly_lock_clears": "NEW_BROKER_WEEK",
+    "consecutive_loss_lock_clears": "NEW_BROKER_DAY",
+    "profit_resets_consecutive_streak": true,
+    "breakeven_preserves_consecutive_streak": true,
+    "emergency_lock_requires_explicit_authorized_reset": true,
+    "duplicate_outcome_protection": true
+  },
+  "spread": {
+    "maximum_points": 30,
+    "maximum_atr_percent": 10.0,
+    "rule": "STRICTER_OF_FIXED_POINTS_AND_ATR_PERCENT"
+  },
+  "identity": {"magic_number": 2607202601, "state_namespace": "NEW_VERSIONED_V2_NAMESPACE"},
+  "state_reset_rules": [
+    "CLEAR_AFTER_CONFIRMATION_OR_REJECTION",
+    "CLEAR_AFTER_ONE_CONFIRMATION_CANDLE_EXPIRES",
+    "CLEAR_ON_CONTRADICTORY_BREAKOUT",
+    "CLEAR_ON_BROKER_DAY_ROLLOVER",
+    "CLEAR_ON_ANY_RISK_OR_EMERGENCY_LOCK",
+    "CLEAR_WHEN_SOLTRADE_POSITION_EXISTS",
+    "CLEAR_ON_SYMBOL_TIMEFRAME_OR_SPEC_MISMATCH",
+    "CLEAR_ON_CORRUPT_STATE_OR_INSUFFICIENT_HISTORY",
+    "PERSIST_PROCESSED_CONFIRMATION_CANDLE_TO_PREVENT_RESTART_DUPLICATE",
+    "ISOLATE_AND_RESET_EACH_RESEARCH_SEGMENT"
+  ],
+  "no_trade_conditions": [
+    "FEWER_THAN_300_CLEAN_SEGMENT_LOCAL_H1_BARS",
+    "MISSING_STALE_NONFINITE_OR_INCONSISTENT_DATA",
+    "NO_IMMEDIATE_NEXT_CANDLE_CONFIRMATION",
+    "NON_STRICT_EQUALITY_AT_ANY_REQUIRED_BOUNDARY",
+    "EMA_EXTENSION_CAP_FAILED",
+    "ATR_REGIME_GUARD_FAILED",
+    "SPREAD_STOP_VOLUME_MARGIN_OR_TICK_FRESHNESS_FAILED",
+    "SOLTRADE_POSITION_ALREADY_EXISTS",
+    "RISK_OR_EMERGENCY_LOCK_ACTIVE",
+    "DUPLICATE_SETUP_OR_CONFIRMATION_CANDLE",
+    "ACCOUNT_SYMBOL_TIMEFRAME_MAGIC_OR_ENVIRONMENT_MISMATCH",
+    "BROKER_SESSION_CLOSED",
+    "UNQUALIFIED_OR_NON_REAL_TICK_AUTHORITATIVE_DATA",
+    "OPTIMIZATION_MODE",
+    "REAL_ACCOUNT_OR_LIVE_TRADING_DISABLED"
+  ],
+  "prohibited": [
+    "TAKE_PROFIT", "TRAILING_STOP", "BREAKEVEN_MOVE", "MARTINGALE", "GRID",
+    "AVERAGING", "SCALE_IN", "SCALE_OUT", "MACHINE_LEARNING",
+    "PARAMETER_SWEEP", "OPTIMIZATION", "ADAPTIVE_PARAMETER_SEARCH"
+  ],
+  "implementation_authorized": false,
+  "compilation_authorized": false,
+  "backtest_authorized": false,
+  "demo_trading_authorized": false,
+  "live_trading_authorized": false,
+  "phase7_authorized": false
+}

@@ -1,0 +1,7 @@
+**/*.ex5 binary
+**/*.html binary
+**/*.log binary
+**/*.png binary
+physical-runs/**/*.csv binary
+signal-generation/*.csv binary
+technical-failures/**/*.csv binary

@@ -1,0 +1,40 @@
+{
+  "schema": "SOLTRADE_PHASE6_PRERUN_RELEASE_IDENTITY_V4",
+  "execution_authorized": false,
+  "release_tag": "phase6-prerun-v4",
+  "annotated_tag_object": "56f16f19d07934ba79618a819433b5a4c98abeed",
+  "commit": "366918a7a6216d80147ba7d5b233f19586e7260b",
+  "tagged_worktree_was_clean": true,
+  "release_scope": "INERT_QUALIFICATION_OBSERVER_ONLY",
+  "changed_source": {
+    "source": "MQL5/Experts/SolTradePhase6DataQualificationProbe.mq5",
+    "source_sha256": "83026914e142a52e0376a8d20badbd8f8c0645d879b96b6689ff489056e50483",
+    "connected_terminal_ex5_sha256": "8853f0c780bf52a6144b2492933dbc2bf1a0c561ba9ebc523d6782d684900c19",
+    "compile_result": "0 errors, 0 warnings"
+  },
+  "unchanged_safety_fixture": {
+    "source": "MQL5/Scripts/SolTradePhase6SafetyTests.mq5",
+    "source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "connected_terminal_ex5_sha256": "6dc4c4e057e175fdd5d340e3c23151ad9180225ca78964df1dd9842a2de240ee"
+  },
+  "preserved_release_tags": [
+    {
+      "tag": "phase6-prerun-v1",
+      "tag_object": "1d56c9889cc0a6876c39456f0bead4da1ba9b14e",
+      "commit": "0bf1ccf1c0d29fffc6a11e759d46949d11c8e8c6",
+      "moved_or_rewritten": false
+    },
+    {
+      "tag": "phase6-prerun-v2",
+      "tag_object": "d9f0161d097d81e176a570f40d0e9416f74e64da",
+      "commit": "60bc5c88a39fa010bb0077819ce690f50247f629",
+      "moved_or_rewritten": false
+    },
+    {
+      "tag": "phase6-prerun-v3",
+      "tag_object": "7f15b3e63c9a80c6a1f503f88c451e3b8f71981a",
+      "commit": "e7cb8111c6f09a359c8156d110744bf40f20fbef",
+      "moved_or_rewritten": false
+    }
+  ]
+}

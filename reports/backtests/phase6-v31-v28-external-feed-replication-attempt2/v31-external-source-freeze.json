@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_ATTEMPT2_EXTERNAL_SOURCE_FREEZE_V1",
+  "frozen_at": "2026-08-04T16:21:44+02:00",
+  "source": "Dukascopy Bank historical tick data",
+  "official_hourly_archive_base": "https://datafeed.dukascopy.com/datafeed/",
+  "requested_interval_utc": "[2018-01-01 00:00:00, 2025-01-01 00:00:00)",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "source_file_granularity": "one BI5 archive per UTC hour",
+  "archive_path_rule": "{base}/{symbol}/{YYYY}/{zero_based_MM}/{DD}/{HH}h_ticks.bi5",
+  "raw_tick_format": "20-byte big-endian Dukascopy BI5 records; exact parser validation occurs before transformation",
+  "required_market_fields": ["timestamp", "bid", "ask"],
+  "provider_count": 1,
+  "other_providers_allowed": false,
+  "bar_midpoint_generated_interpolated_mixed_or_patched_data": "PROHIBITED",
+  "raw_storage_root": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-raw",
+  "downloader_path": "tools/download_phase6_v31_dukascopy.py",
+  "downloader_sha256": "158e113bc222b9f08310007a77d294728312eeae72382eb16559fceea94a6912",
+  "downloader_planned_hourly_requests": 429576,
+  "raw_files_are_written_without_transformation": true,
+  "provider_change_after_pnl": "PROHIBITED",
+  "pnl_viewed_at_freeze": false
+}

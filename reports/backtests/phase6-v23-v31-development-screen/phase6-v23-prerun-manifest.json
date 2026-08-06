@@ -1,0 +1,23 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_PRERUN_MANIFEST_V1",
+  "status": "FROZEN_NOT_EXECUTED",
+  "research_classification": "CONTROLLED_PRESEAL_DEVELOPMENT_EVIDENCE",
+  "v22_commit": "81370eb7b33464e9bfef38f6dac26c9e24e041a5",
+  "v22_tag": "phase6-v22-v31-implementation-ready",
+  "strategy_id": "TREND_BREAKOUT_V3_RETEST_HOLD_1_1",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "qualified_segments": 7,
+  "physical_runs": 42,
+  "formal_cells": 12,
+  "optimization": false,
+  "parameter_sweeps": false,
+  "profitability_viewed": false,
+  "run_1_started": false,
+  "bundle_sha256": "34c30a1f9691c37faa2827570eac9b1e3a6c8977d86cc0814dbf58097b88f729",
+  "seed_basis_sha256": "7c9f4827ce3f47df97784b307d38a632c7918277dfd510ed03e486bf5a7e884d",
+  "bootstrap_seed": 1388044804,
+  "monte_carlo_seed": 3818035996,
+  "bootstrap_paths": 100000,
+  "monte_carlo_paths": 100000,
+  "manifest_hash_is_external": true
+}

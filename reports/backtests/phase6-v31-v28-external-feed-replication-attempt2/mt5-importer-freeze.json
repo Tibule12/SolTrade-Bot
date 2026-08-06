@@ -1,0 +1,20 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_MT5_IMPORTER_FREEZE_V1",
+  "status": "PASS",
+  "source_path": "research/factor_momentum/SolTradeV31ExternalTickImporter.mq5",
+  "source_sha256": "69912ef56b14121e4bdd37ecc34a95520584d7d00e1f8bda7fa0a134ece4205b",
+  "executable_sha256": "cb3495eec5cba2b56a90c58834ca83e02feccc5fc2b80fdfa0e5e35cdad19f5c",
+  "executable_path": "mt5-importer-freeze/SolTradeV31ExternalTickImporter.ex5",
+  "compile_log_path": "mt5-importer-freeze/external-import-compile.log",
+  "compile_log_sha256": "66f43bec458acc635773617641474ed8b12d1f08815326a4931fe19825eabfee",
+  "compile_errors": 0,
+  "compile_warnings": 0,
+  "trade_safety": "terminal, MQL and account trade permissions disabled; zero pre-existing orders and positions required",
+  "custom_symbol_group": "V31_EXTERNAL",
+  "properties_configured_before_ticks": true,
+  "property_source": "frozen FP Markets canonical-symbol properties and quote/trade sessions",
+  "import_source": "immutable normalized Dukascopy timestamp/bid/ask records only",
+  "exact_reload_comparison": ["time", "time_msc", "bid", "ask"],
+  "broker_history_inside_research_symbols": "PROHIBITED",
+  "pnl_calculated": false
+}

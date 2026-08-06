@@ -1,0 +1,96 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_V28_IMMUTABLE_SPECIFICATION_V1",
+  "source_phase": "V28",
+  "source_terminal_commit": "af122b428bb03396b7ecac453d930f8cb19796fa",
+  "source_terminal_tag": "phase6-v28-terminal",
+  "strategy_identifier": "FX_DOLLAR_FACTOR_MOMENTUM_1M_1M_1_0",
+  "symbol_universe": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "orientation": {
+    "EURUSD": 1,
+    "GBPUSD": 1,
+    "AUDUSD": 1,
+    "NZDUSD": 1,
+    "USDCAD": -1,
+    "USDCHF": -1,
+    "USDJPY": -1
+  },
+  "signal_generation": {
+    "recent": "exact H1 close at 09:00 on current rebalance Monday",
+    "anchor": "exact H1 close at 09:00 on the preceding calendar month's first Monday",
+    "currency_return": "orientation * ln(recent_close / anchor_close)",
+    "dollar_factor_return": "equal-weight arithmetic mean of all seven foreign-currency log returns",
+    "missing_data": "skip entire rebalance",
+    "equality": "no position"
+  },
+  "direction": {
+    "positive_factor": "BUY every foreign currency",
+    "negative_factor": "SELL every foreign currency",
+    "direct_mapping": "foreign BUY=pair BUY, foreign SELL=pair SELL",
+    "inverse_mapping": "foreign BUY=pair SELL, foreign SELL=pair BUY"
+  },
+  "rebalance_entry_exit": {
+    "target": "first Monday of each calendar month at 10:05 broker-server time",
+    "entry_window": "first executable tick in [10:05,10:10)",
+    "exit": "close prior cohort before opening the new cohort",
+    "final_cohort": "must close at the next frozen rebalance before dataset end",
+    "retry": "none"
+  },
+  "position_sizing_and_portfolio_risk": {
+    "account_equity_usd": 10000,
+    "risk_per_leg_percent": 0.5,
+    "legs_per_cohort": 7,
+    "maximum_initial_portfolio_risk_percent": 3.5,
+    "initial_stop": "3.0 * Wilder D1 ATR14",
+    "take_profit": "none",
+    "trailing": "none",
+    "rounding": "down only",
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_percent": 5.0,
+    "consecutive_loss_limit": 3
+  },
+  "spread_and_execution": {
+    "max_spread_points": 30,
+    "max_slippage_points": 10,
+    "real_tick_model": true,
+    "execution_layers": {
+      "NATIVE_NORMAL_EXECUTION": 0,
+      "FIXED_DELAY_200_MS": 200
+    },
+    "optimization": false
+  },
+  "commission_swap_friction": {
+    "commission_usd_per_side_per_lot": 3,
+    "swap": "frozen V26 FP Markets symbol specification",
+    "supplementary_friction": {
+      "NORMAL": 0,
+      "HIGH": 0.5,
+      "STRESS": 1.0
+    }
+  },
+  "normal_high_stress": {
+    "NORMAL": 0.0,
+    "HIGH": 0.5,
+    "STRESS": 1.0
+  },
+  "execution_modes": {
+    "NATIVE_NORMAL_EXECUTION": 0,
+    "FIXED_DELAY_200_MS": 200
+  },
+  "historical_replication_interval": "[2018-01-01 00:00:00,2025-01-01 00:00:00)",
+  "warmup_history_from": "2017-11-01 00:00:00",
+  "first_required_formation_anchor": "2017-12 first Monday 09:00 broker-server time",
+  "last_eligible_target_policy": "target is eligible only when its unchanged next-first-Monday exit is before 2025-01-01",
+  "clean_segment_rule": "one continuous broker history segment; missing any seven-symbol exact anchor or recent H1 close skips the whole cohort and invalidates V30 qualification",
+  "unchanged": true,
+  "optimization": false,
+  "v29_used": false
+}

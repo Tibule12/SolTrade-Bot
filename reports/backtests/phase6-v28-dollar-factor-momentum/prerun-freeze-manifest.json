@@ -1,0 +1,10 @@
+{
+  "schema":"SOLTRADE_PHASE6_V28_PRERUN_FREEZE_MANIFEST_V1",
+  "frozen_at":"2026-08-04T11:18:03+02:00",
+  "parent_commit":"79243b754cf732640cb011c14f6cd202edb637b0",
+  "candidate_sha256":"b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7",
+  "gates_sha256":"3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "hypothesis_sha256":"4846689d78b09221fea2e9e7f470127c7d530ae6aa7c6dadbaecaf921f693c4e",
+  "guard_sha256":"9e2fa95ca1f6539bbb798bef1a2617599b5b9b21d418d3e935602ad83af9cc9c",
+  "complete_candidates":1,"local_counts_viewed":false,"local_pnl_viewed":false,"optimization":false,"sealed_oos_accessed":false,"demo_trades":0,"live_trades":0
+}

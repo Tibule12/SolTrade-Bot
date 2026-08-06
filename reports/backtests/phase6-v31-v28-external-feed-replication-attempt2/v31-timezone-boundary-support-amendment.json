@@ -1,0 +1,16 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_TIMEZONE_BOUNDARY_SUPPORT_AMENDMENT_V1",
+  "status": "FROZEN_BEFORE_RAW_MANIFEST_OR_PNL",
+  "created_at_utc": "2026-08-04T15:05:38Z",
+  "reason": "The requested strategy interval is interpreted in the frozen V28 FP Markets server-civil decision clock. At the 2018 boundary that clock is UTC+2, so source acquisition must begin two UTC hours earlier to reconstruct 2018-01-01 00:00:00 server civil exactly.",
+  "strategy_evaluation_interval_server_civil": "[2018-01-01 00:00:00, 2025-01-01 00:00:00)",
+  "raw_acquisition_interval_utc": "[2017-12-31 22:00:00Z, 2025-01-01 00:00:00Z)",
+  "acquisition_only_boundary_support": "[2017-12-31 22:00:00Z, 2018-01-01 00:00:00Z)",
+  "post_2024_server_civil_policy": "source boundary rows mapping to 2025 server civil are retained unchanged in raw evidence and excluded deterministically from normalized strategy data",
+  "provider_changed": false,
+  "strategy_interval_changed": false,
+  "strategy_logic_changed": false,
+  "pnl_viewed": false,
+  "downloader_sha256": "88ff92f32d5b49feb11e62789def968da075a94163dce38d87a0eb92f27b1b16",
+  "qualifier_sha256": "bdc02bdb66f7ee6f6428b0a04d270436c536b92c92f18e3929ec1142be8aa497"
+}

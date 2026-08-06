@@ -1,0 +1,13 @@
+field,value
+schema,SOLTRADE_PHASE6_V26_SIGNAL_SUMMARY_V1
+dataset,V26_2026_PRESEAL_DEVELOPMENT
+eligible_from,2026.01.05 10:05:00
+eligible_to_exclusive,2026.08.01 00:00:00
+rebalances,29
+selected_legs,116
+skipped_rebalances,0
+max_tick,2026.07.31 23:59:59
+seal_breach,NO
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,PASS

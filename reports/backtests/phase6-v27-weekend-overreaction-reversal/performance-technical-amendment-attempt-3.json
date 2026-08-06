@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PERFORMANCE_TECHNICAL_AMENDMENT_ATTEMPT3_V1",
+  "attempt_2_status": "TECHNICAL_FAIL_RETAINED",
+  "attempt_2_stage": "PREFLIGHT_BEFORE_SCHEDULE_OR_ENTRY",
+  "attempt_2_entries": 0,
+  "attempt_2_deals": 0,
+  "attempt_2_pnl_evidence": false,
+  "attempt_2_reason": "ValidateSolTradeConfig requires research_source_commit to contain the complete 40-character Git object name.",
+  "correction": "Expand the already frozen preregistration commit abbreviation to its full Git object name.",
+  "prerun_commit_full": "782a4e5b7b93be127fac662ca1af09a22510e772",
+  "strategy_behavior_changed": false,
+  "parameter_or_gate_changed": false,
+  "dataset_or_cost_axis_changed": false,
+  "optimization_or_tuning": false,
+  "corrected_source_sha256": "993df30e81bc92905a35bef467ced2aa7b932e96ab70aee07540e648e10c4bfe",
+  "corrected_ex5_sha256": "c77c43f29764fdfd8ecc0169513991609bdac945d8d6b8126966b4a2d268637a",
+  "compile_result": "0 errors, 0 warnings"
+}

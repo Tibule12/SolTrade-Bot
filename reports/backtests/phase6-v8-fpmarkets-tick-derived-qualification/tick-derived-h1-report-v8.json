@@ -1,0 +1,56 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_TICK_DERIVED_H1_REPORT_V1",
+  "source": "Direct aggregation of FPMarketsSC-Demo connected real ticks; not derived from M1 and not broker-supplied H1",
+  "construction": {
+    "bucket": "floor broker-server time_msc to 3600000 milliseconds",
+    "primary_ohlc": "BID",
+    "ask_ohlc_recorded": true,
+    "spread_points_recorded": true,
+    "direct_from_real_ticks": true,
+    "constructed_from_m1": false,
+    "empty_hour_bars_created": false,
+    "forward_fill": false,
+    "interpolation": false,
+    "generated_or_synthetic_prices": false
+  },
+  "coverage": {
+    "bar_count": 6097,
+    "tick_count_sum": 20682267,
+    "first_bar": "2025-01-02T00:00:00",
+    "last_bar": "2025-12-23T23:00:00",
+    "first_tick": "2025-01-02T00:00:00.594",
+    "last_tick": "2025-12-23T23:59:59.877",
+    "beginning_complete": true,
+    "ending_complete": true
+  },
+  "continuity": {
+    "timestamp_discontinuities_over_one_hour": 51,
+    "missing_hour_buckets": 2447,
+    "missing_buckets_filled": 0,
+    "note": "50 V7 raw-tick gaps are supported scheduled weekends; the second unresolved gap also spans a weekend and produces an H1 timestamp discontinuity. Intrahour unresolved gaps are represented by contaminated existing H1 bars."
+  },
+  "periods": {
+    "warmup": {"bars":240,"ticks":1243907,"first":"2025-01-02T00:00:00","last":"2025-01-15T23:00:00","eligible_for_statistics":false},
+    "research": {"bars":5857,"ticks":19438360,"contaminated":5,"post_gap_quarantine":600,"eligible":5252},
+    "development": {"bars":2929,"ticks":12336602,"contaminated":3,"post_gap_quarantine":400,"eligible":2526},
+    "validation": {"bars":1440,"ticks":3733724,"contaminated":2,"post_gap_quarantine":200,"eligible":1238},
+    "out_of_sample": {"bars":1488,"ticks":3368034,"contaminated":0,"post_gap_quarantine":0,"eligible":1488}
+  },
+  "integrity_failures": {
+    "first_or_last_tick_outside_bucket": 0,
+    "first_tick_after_last_tick": 0,
+    "nonpositive_bid_or_ask": 0,
+    "bid_ohlc_bounds": 0,
+    "ask_ohlc_bounds": 0,
+    "spread_bounds": 0,
+    "tick_or_observation_count_mismatch": 0,
+    "timestamp_alignment": 0,
+    "nonmonotonic_timestamp": 0
+  },
+  "csv": {
+    "path": "/home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedH1.csv",
+    "size": 1341106,
+    "sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee"
+  },
+  "construction_status": "PASS"
+}

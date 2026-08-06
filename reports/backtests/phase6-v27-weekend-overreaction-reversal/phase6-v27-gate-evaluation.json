@@ -1,0 +1,866 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_GATE_EVALUATION_V1",
+  "terminal_outcome": "V27_DEVELOPMENT_GATES_FAILED_CANDIDATE_RETIRED",
+  "sample_summary": {
+    "all_preseal": 93,
+    "dated_2026": 48,
+    "BUY": 53,
+    "SELL": 40,
+    "by_symbol": {
+      "EURUSD": 14,
+      "GBPUSD": 11,
+      "AUDUSD": 14,
+      "NZDUSD": 14,
+      "USDCAD": 11,
+      "USDCHF": 16,
+      "USDJPY": 13
+    }
+  },
+  "sample_gates": [
+    {
+      "gate": "all_preseal_naturally_closed >= 50",
+      "actual": 93,
+      "status": "PASS"
+    },
+    {
+      "gate": "dated_2026_naturally_closed >= 15",
+      "actual": 48,
+      "status": "PASS"
+    },
+    {
+      "gate": "BUY_naturally_closed >= 20",
+      "actual": 53,
+      "status": "PASS"
+    },
+    {
+      "gate": "SELL_naturally_closed >= 20",
+      "actual": 40,
+      "status": "PASS"
+    },
+    {
+      "gate": "EURUSD_naturally_closed >= 4",
+      "actual": 14,
+      "status": "PASS"
+    },
+    {
+      "gate": "GBPUSD_naturally_closed >= 4",
+      "actual": 11,
+      "status": "PASS"
+    },
+    {
+      "gate": "AUDUSD_naturally_closed >= 4",
+      "actual": 14,
+      "status": "PASS"
+    },
+    {
+      "gate": "NZDUSD_naturally_closed >= 4",
+      "actual": 14,
+      "status": "PASS"
+    },
+    {
+      "gate": "USDCAD_naturally_closed >= 4",
+      "actual": 11,
+      "status": "PASS"
+    },
+    {
+      "gate": "USDCHF_naturally_closed >= 4",
+      "actual": 16,
+      "status": "PASS"
+    },
+    {
+      "gate": "USDJPY_naturally_closed >= 4",
+      "actual": 13,
+      "status": "PASS"
+    }
+  ],
+  "performance_gates": [
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "profit_factor",
+      "rule": "> 1.15",
+      "actual": 1.7900168448096696,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 280.4707493370733,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.12370221063397832,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "< 8",
+      "actual": 1.5263452232528458,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 20.916422736349258,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 39.713110397869436,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 43.75275113197997,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "profit_factor",
+      "rule": ">= 1.05",
+      "actual": 1.6910116931446966,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 252.49779085867098,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.11158435420016333,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 10",
+      "actual": 1.5854943072203993,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 22.97393124893061,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 43.40117274461824,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 45.27149408498967,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "profit_factor",
+      "rule": ">= 1.0",
+      "actual": 1.5971228685614445,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 224.59890967400858,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.09946649776634832,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 12",
+      "actual": 1.6446128148183876,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 25.5359689960725,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 47.99373001741956,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 47.15822612545793,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "profit_factor",
+      "rule": "> 1.15",
+      "actual": 0.5958025686972676,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -266.717840372802,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.11188522078346769,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "< 8",
+      "actual": 3.2171425876472113,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "profit_factor",
+      "rule": ">= 1.05",
+      "actual": 0.5615157710533727,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -296.3080567587321,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.12456779014903342,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 10",
+      "actual": 3.507175373736459,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "profit_factor",
+      "rule": ">= 1.0",
+      "actual": 0.5289011257326917,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -325.81060035281325,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.13725035951459916,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 12",
+      "actual": 3.7963615448613957,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "profit_factor",
+      "rule": "> 1.15",
+      "actual": 1.7840979727419615,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 278.4405297591635,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.12282132761315236,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "< 8",
+      "actual": 1.5297012135282788,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 21.02715341316938,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 39.97622418004542,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 43.650918022367776,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "profit_factor",
+      "rule": ">= 1.05",
+      "actual": 1.6811929804756427,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 249.19158383155977,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.1101464329483058,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 10",
+      "actual": 1.5919240911575834,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 23.22990052942829,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 43.9252629044591,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 45.15651086010228,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "profit_factor",
+      "rule": ">= 1.0",
+      "actual": 1.5838838187900701,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": 220.02363011788745,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": 0.09747153828345921,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 12",
+      "actual": 1.6541131171059036,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": 26.009281015660342,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": 48.908125737415084,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2025_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": 47.05122741948082,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "profit_factor",
+      "rule": "> 1.15",
+      "actual": 0.5961964789707479,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -266.28884494291714,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.11170228390649195,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "< 8",
+      "actual": 3.211978682359256,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "profit_factor",
+      "rule": ">= 1.05",
+      "actual": 0.5611878823933182,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -296.4846073197745,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.12464434238613965,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 10",
+      "actual": 3.507587750357906,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "profit_factor",
+      "rule": ">= 1.0",
+      "actual": 0.5279200539072549,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "adjusted_net_profit",
+      "rule": "> 0",
+      "actual": -326.5890841699182,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "expectancy_R",
+      "rule": "> 0",
+      "actual": -0.13758640086578736,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "relative_drawdown_percent",
+      "rule": "<= 12",
+      "actual": 3.8023174893901364,
+      "status": "PASS"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_trade_contribution_percent",
+      "rule": "<= 20",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_currency_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "cell_id": "V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "gate": "best_registered_subperiod_contribution_percent",
+      "rule": "<= 40",
+      "actual": null,
+      "status": "FAIL"
+    }
+  ],
+  "consistency_gates": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.194214276112402,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.194214276112402,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.194214276112402,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.194214276112402,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1294959220913239,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1294959220913239,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1294959220913239,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.1294959220913239,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.0682217428287528,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.0682217428287528,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.0682217428287528,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.0682217428287528,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1879014937712136,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1879014937712136,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1879014937712136,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.1879014937712136,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1200050980823244,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1200050980823244,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.1200050980823244,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.1200050980823244,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.055963764882815,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.055963764882815,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": null,
+      "status": "FAIL"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": null,
+      "annualized_return_min_div_max": null,
+      "profit_factor_range": 1.055963764882815,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 1.055963764882815,
+      "status": "FAIL"
+    }
+  ]
+}

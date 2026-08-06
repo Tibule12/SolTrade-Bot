@@ -1,0 +1,23 @@
+SOLTRADE_PHASE6_COMPILE_SUMMARY_V1
+timestamp_local=2026-07-28
+metaeditor_terminal_build=6067
+compiler_cpu=X64 Regular
+aggregate_ea_include_source_sha256=73e6ee6a6c7984d7c555ca38013e38d5b5c4c92822d5c5fb8bf40829e4f858e1
+Experts/SolTradeBot.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeRiskTests.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeStrategyTests.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeExecutionTests.mq5 | 0 errors, 0 warnings
+Scripts/SolTradePositionManagerTests.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeOneShotDemoVerification.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeOneShotPositionCloseVerification.mq5 | 0 errors, 0 warnings
+Scripts/SolTradeOneShotPositionCloseVerificationV2.mq5 | 0 errors, 0 warnings
+Scripts/SolTradePhase6HistoryAcquisition.mq5 | 0 errors, 0 warnings
+Scripts/SolTradePhase6SafetyTests.mq5 | 0 errors, 0 warnings
+compiled_target_count=10
+ea_source_sha256=261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3
+release_commit=0bf1ccf1c0d29fffc6a11e759d46949d11c8e8c6
+release_tag=phase6-prerun-v1
+release_compile_result=0_errors_0_warnings
+ea_ex5_sha256=dbc0e03b446c6ad1c03724aebe2ac99d3d28f74295398f7a628eb694db94867c
+strategy_tester_runs_started=0
+broker_order_calls=0

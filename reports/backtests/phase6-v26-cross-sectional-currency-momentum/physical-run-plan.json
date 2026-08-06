@@ -1,0 +1,69 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_PHYSICAL_RUN_PLAN_V1",
+  "status": "FROZEN_BEFORE_PNL",
+  "physical_run_count": 4,
+  "real_tick_runs": 4,
+  "run_order_locked": true,
+  "runs": [
+    {
+      "run_number": 1,
+      "run_id": "01-v26-2025-development-native",
+      "execution_instance_id": "V26-2025_DEVELOPMENT-NATIVE",
+      "dataset": "V26_2025_DEVELOPMENT",
+      "history_from": "2024.12.02",
+      "eligible_from": "2025.01.06 10:05:00",
+      "eligible_to_exclusive": "2026.01.01 00:00:00",
+      "expected_schedule_legs": 204,
+      "schedule_file": "SolTrade\\Phase6\\V26Signals\\V26_2025_DEVELOPMENT\\signal-schedule.csv",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "output_subdirectory": "performance-runs/01-v26-2025-development-native",
+      "complete_run_configuration_sha256": "f78fe73d872fbd0d28c8e72c8e6dc181bd47a244eaaf00a70acf1728b9a23b0b"
+    },
+    {
+      "run_number": 2,
+      "run_id": "02-v26-2026-preseal-development-native",
+      "execution_instance_id": "V26-2026_PRESEAL_DEVELOPMENT-NATIVE",
+      "dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "history_from": "2025.12.01",
+      "eligible_from": "2026.01.05 10:05:00",
+      "eligible_to_exclusive": "2026.08.01 00:00:00",
+      "expected_schedule_legs": 116,
+      "schedule_file": "SolTrade\\Phase6\\V26Signals\\V26_2026_PRESEAL_DEVELOPMENT\\signal-schedule.csv",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "output_subdirectory": "performance-runs/02-v26-2026-preseal-development-native",
+      "complete_run_configuration_sha256": "9ee546ebb72664bdeff003188a2de347762d3b14b5bb850d19278516d7c8f97e"
+    },
+    {
+      "run_number": 3,
+      "run_id": "03-v26-2025-development-delay200",
+      "execution_instance_id": "V26-2025_DEVELOPMENT-DELAY200",
+      "dataset": "V26_2025_DEVELOPMENT",
+      "history_from": "2024.12.02",
+      "eligible_from": "2025.01.06 10:05:00",
+      "eligible_to_exclusive": "2026.01.01 00:00:00",
+      "expected_schedule_legs": 204,
+      "schedule_file": "SolTrade\\Phase6\\V26Signals\\V26_2025_DEVELOPMENT\\signal-schedule.csv",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "output_subdirectory": "performance-runs/03-v26-2025-development-delay200",
+      "complete_run_configuration_sha256": "4f6d657bad1f32f7b354604e07ee8a98974d7d2e966321b3f4e6a71ca51602f3"
+    },
+    {
+      "run_number": 4,
+      "run_id": "04-v26-2026-preseal-development-delay200",
+      "execution_instance_id": "V26-2026_PRESEAL_DEVELOPMENT-DELAY200",
+      "dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "history_from": "2025.12.01",
+      "eligible_from": "2026.01.05 10:05:00",
+      "eligible_to_exclusive": "2026.08.01 00:00:00",
+      "expected_schedule_legs": 116,
+      "schedule_file": "SolTrade\\Phase6\\V26Signals\\V26_2026_PRESEAL_DEVELOPMENT\\signal-schedule.csv",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "output_subdirectory": "performance-runs/04-v26-2026-preseal-development-delay200",
+      "complete_run_configuration_sha256": "3505aca530aefbbd2fc5edae4f582c0573cbde32443f85765d0c720568419ede"
+    }
+  ]
+}

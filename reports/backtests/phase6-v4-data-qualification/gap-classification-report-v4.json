@@ -1,0 +1,2764 @@
+{
+  "schema": "SOLTRADE_PHASE6_V4_GAP_CLASSIFICATION_REPORT_V1",
+  "execution_authorized": false,
+  "strategy_result_viewed": false,
+  "authoritative_run": false,
+  "replica": false,
+  "symbol": "EURUSD",
+  "timeframe": "H1",
+  "broker_server": "easyMarkets-Live",
+  "requested_interval": {
+    "start_inclusive": "2024-01-02T00:00:00",
+    "end_exclusive": "2024-12-24T00:00:00"
+  },
+  "history_identity_sha256": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+  "raw_gaps_over_15_minutes": 51,
+  "permitted_scheduled_weekends": 34,
+  "unresolved_open_session_gaps": 17,
+  "maximum_open_session_gap_seconds": 10200,
+  "interval_qualified": false,
+  "gaps": [
+    {
+      "gap_number": "1",
+      "previous_tick": "2024.01.05 21:58:59.797",
+      "next_tick": "2024.01.07 22:10:27.919",
+      "duration_milliseconds": "173488122",
+      "duration_seconds": "173488",
+      "previous_broker_weekday_time": "FRIDAY 2024.01.05 21:58:59.797",
+      "next_broker_weekday_time": "SUNDAY 2024.01.07 22:10:27.919",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3627",
+      "bid_before": "1.0940900000",
+      "ask_before": "1.0943700000",
+      "bid_after": "1.0942900000",
+      "ask_after": "1.0947100000",
+      "monthly_tkc_files": "202401.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.01.07 22:10:00",
+      "m1_final_inside": "2024.01.07 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202401.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6761212,
+            "sha256": "ff73b035cf8844de9e3dc9a17fb9908a3b456cbcc297592fc2f1e6903200a473"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6735997,
+            "sha256": "653a58d2c1eb98870a382e383b81519fbce4f7cb03c87e55d71d480f063c669f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "2",
+      "previous_tick": "2024.01.12 21:59:58.975",
+      "next_tick": "2024.01.14 22:10:00.046",
+      "duration_milliseconds": "173401071",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.01.12 21:59:58.975",
+      "next_broker_weekday_time": "SUNDAY 2024.01.14 22:10:00.046",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0948600000",
+      "ask_before": "1.0951100000",
+      "bid_after": "1.0944400000",
+      "ask_after": "1.0947800000",
+      "monthly_tkc_files": "202401.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.01.14 22:10:00",
+      "m1_final_inside": "2024.01.14 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202401.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6761212,
+            "sha256": "ff73b035cf8844de9e3dc9a17fb9908a3b456cbcc297592fc2f1e6903200a473"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6735997,
+            "sha256": "653a58d2c1eb98870a382e383b81519fbce4f7cb03c87e55d71d480f063c669f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "3",
+      "previous_tick": "2024.01.19 21:59:56.091",
+      "next_tick": "2024.01.21 22:10:34.698",
+      "duration_milliseconds": "173438607",
+      "duration_seconds": "173438",
+      "previous_broker_weekday_time": "FRIDAY 2024.01.19 21:59:56.091",
+      "next_broker_weekday_time": "SUNDAY 2024.01.21 22:10:34.698",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3634",
+      "bid_before": "1.0896900000",
+      "ask_before": "1.0898600000",
+      "bid_after": "1.0890500000",
+      "ask_after": "1.0893800000",
+      "monthly_tkc_files": "202401.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.01.21 22:10:00",
+      "m1_final_inside": "2024.01.21 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202401.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6761212,
+            "sha256": "ff73b035cf8844de9e3dc9a17fb9908a3b456cbcc297592fc2f1e6903200a473"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6735997,
+            "sha256": "653a58d2c1eb98870a382e383b81519fbce4f7cb03c87e55d71d480f063c669f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "4",
+      "previous_tick": "2024.01.26 21:59:58.136",
+      "next_tick": "2024.01.28 22:10:00.050",
+      "duration_milliseconds": "173401914",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.01.26 21:59:58.136",
+      "next_broker_weekday_time": "SUNDAY 2024.01.28 22:10:00.050",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0850600000",
+      "ask_before": "1.0855300000",
+      "bid_after": "1.0841500000",
+      "ask_after": "1.0846600000",
+      "monthly_tkc_files": "202401.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.01.28 22:10:00",
+      "m1_final_inside": "2024.01.28 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202401.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6761212,
+            "sha256": "ff73b035cf8844de9e3dc9a17fb9908a3b456cbcc297592fc2f1e6903200a473"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202401.tkc",
+            "size_bytes": 6735997,
+            "sha256": "653a58d2c1eb98870a382e383b81519fbce4f7cb03c87e55d71d480f063c669f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "5",
+      "previous_tick": "2024.02.02 21:59:58.737",
+      "next_tick": "2024.02.04 22:10:00.483",
+      "duration_milliseconds": "173401746",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.02.02 21:59:58.737",
+      "next_broker_weekday_time": "SUNDAY 2024.02.04 22:10:00.483",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0785600000",
+      "ask_before": "1.0789800000",
+      "bid_after": "1.0781700000",
+      "ask_after": "1.0786500000",
+      "monthly_tkc_files": "202402.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.02.04 22:10:00",
+      "m1_final_inside": "2024.02.04 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202402.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6493508,
+            "sha256": "ea417849bbb06ae1c7d0c795be9f3a77d9c7abf6016944d87c0e4c644dd9854f"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6477408,
+            "sha256": "3a0cea7817b3ceb921de010b536e338b6516c40956558e133cf800c4de3d1f3d"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "6",
+      "previous_tick": "2024.02.09 21:59:58.610",
+      "next_tick": "2024.02.11 22:17:50.652",
+      "duration_milliseconds": "173872042",
+      "duration_seconds": "173872",
+      "previous_broker_weekday_time": "FRIDAY 2024.02.09 21:59:58.610",
+      "next_broker_weekday_time": "SUNDAY 2024.02.11 22:17:50.652",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "4070",
+      "bid_before": "1.0784300000",
+      "ask_before": "1.0786800000",
+      "bid_after": "1.0781400000",
+      "ask_after": "1.0786000000",
+      "monthly_tkc_files": "202402.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.02.11 22:17:00",
+      "m1_final_inside": "2024.02.11 22:17:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202402.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6493508,
+            "sha256": "ea417849bbb06ae1c7d0c795be9f3a77d9c7abf6016944d87c0e4c644dd9854f"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6477408,
+            "sha256": "3a0cea7817b3ceb921de010b536e338b6516c40956558e133cf800c4de3d1f3d"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "7",
+      "previous_tick": "2024.02.16 21:59:58.174",
+      "next_tick": "2024.02.18 22:10:08.506",
+      "duration_milliseconds": "173410332",
+      "duration_seconds": "173410",
+      "previous_broker_weekday_time": "FRIDAY 2024.02.16 21:59:58.174",
+      "next_broker_weekday_time": "SUNDAY 2024.02.18 22:10:08.506",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3608",
+      "bid_before": "1.0776000000",
+      "ask_before": "1.0777900000",
+      "bid_after": "1.0774100000",
+      "ask_after": "1.0777200000",
+      "monthly_tkc_files": "202402.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.02.18 22:10:00",
+      "m1_final_inside": "2024.02.18 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202402.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6493508,
+            "sha256": "ea417849bbb06ae1c7d0c795be9f3a77d9c7abf6016944d87c0e4c644dd9854f"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6477408,
+            "sha256": "3a0cea7817b3ceb921de010b536e338b6516c40956558e133cf800c4de3d1f3d"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "8",
+      "previous_tick": "2024.02.23 21:59:49.023",
+      "next_tick": "2024.02.25 22:10:37.660",
+      "duration_milliseconds": "173448637",
+      "duration_seconds": "173448",
+      "previous_broker_weekday_time": "FRIDAY 2024.02.23 21:59:49.023",
+      "next_broker_weekday_time": "SUNDAY 2024.02.25 22:10:37.660",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3637",
+      "bid_before": "1.0819100000",
+      "ask_before": "1.0823800000",
+      "bid_after": "1.0823200000",
+      "ask_after": "1.0825900000",
+      "monthly_tkc_files": "202402.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.02.25 22:10:00",
+      "m1_final_inside": "2024.02.25 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202402.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6493508,
+            "sha256": "ea417849bbb06ae1c7d0c795be9f3a77d9c7abf6016944d87c0e4c644dd9854f"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202402.tkc",
+            "size_bytes": 6477408,
+            "sha256": "3a0cea7817b3ceb921de010b536e338b6516c40956558e133cf800c4de3d1f3d"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "9",
+      "previous_tick": "2024.03.01 21:59:57.096",
+      "next_tick": "2024.03.03 22:10:00.037",
+      "duration_milliseconds": "173402941",
+      "duration_seconds": "173402",
+      "previous_broker_weekday_time": "FRIDAY 2024.03.01 21:59:57.096",
+      "next_broker_weekday_time": "SUNDAY 2024.03.03 22:10:00.037",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0836500000",
+      "ask_before": "1.0841300000",
+      "bid_after": "1.0838100000",
+      "ask_after": "1.0840800000",
+      "monthly_tkc_files": "202403.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.03.03 22:10:00",
+      "m1_final_inside": "2024.03.03 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202403.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7137584,
+            "sha256": "49e4ee1eaa78f3cc7b1d91fc113a398f54cdb06c2d665b55d9fc0ff0bb910cc5"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7121484,
+            "sha256": "f7ee715e93b8c712d83f3335e38d4bb887d6f7817fb41e20c52bfc38fdf683b3"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "10",
+      "previous_tick": "2024.03.08 21:59:57.813",
+      "next_tick": "2024.03.10 21:10:12.474",
+      "duration_milliseconds": "169814661",
+      "duration_seconds": "169814",
+      "previous_broker_weekday_time": "FRIDAY 2024.03.08 21:59:57.813",
+      "next_broker_weekday_time": "SUNDAY 2024.03.10 21:10:12.474",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "12",
+      "bid_before": "1.0937100000",
+      "ask_before": "1.0940200000",
+      "bid_after": "1.0938600000",
+      "ask_after": "1.0942600000",
+      "monthly_tkc_files": "202403.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.03.10 21:10:00",
+      "m1_final_inside": "2024.03.10 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202403.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7137584,
+            "sha256": "49e4ee1eaa78f3cc7b1d91fc113a398f54cdb06c2d665b55d9fc0ff0bb910cc5"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7121484,
+            "sha256": "f7ee715e93b8c712d83f3335e38d4bb887d6f7817fb41e20c52bfc38fdf683b3"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "11",
+      "previous_tick": "2024.03.15 20:59:58.983",
+      "next_tick": "2024.03.17 21:10:00.245",
+      "duration_milliseconds": "173401262",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.03.15 20:59:58.983",
+      "next_broker_weekday_time": "SUNDAY 2024.03.17 21:10:00.245",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0888100000",
+      "ask_before": "1.0889700000",
+      "bid_after": "1.0889700000",
+      "ask_after": "1.0891700000",
+      "monthly_tkc_files": "202403.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.03.17 21:10:00",
+      "m1_final_inside": "2024.03.17 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202403.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7137584,
+            "sha256": "49e4ee1eaa78f3cc7b1d91fc113a398f54cdb06c2d665b55d9fc0ff0bb910cc5"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7121484,
+            "sha256": "f7ee715e93b8c712d83f3335e38d4bb887d6f7817fb41e20c52bfc38fdf683b3"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "12",
+      "previous_tick": "2024.03.22 20:59:57.590",
+      "next_tick": "2024.03.24 21:10:34.695",
+      "duration_milliseconds": "173437105",
+      "duration_seconds": "173437",
+      "previous_broker_weekday_time": "FRIDAY 2024.03.22 20:59:57.590",
+      "next_broker_weekday_time": "SUNDAY 2024.03.24 21:10:34.695",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "34",
+      "bid_before": "1.0807200000",
+      "ask_before": "1.0808900000",
+      "bid_after": "1.0807900000",
+      "ask_after": "1.0810200000",
+      "monthly_tkc_files": "202403.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.03.24 21:10:00",
+      "m1_final_inside": "2024.03.24 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202403.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7137584,
+            "sha256": "49e4ee1eaa78f3cc7b1d91fc113a398f54cdb06c2d665b55d9fc0ff0bb910cc5"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7121484,
+            "sha256": "f7ee715e93b8c712d83f3335e38d4bb887d6f7817fb41e20c52bfc38fdf683b3"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "13",
+      "previous_tick": "2024.03.29 20:59:00.147",
+      "next_tick": "2024.03.31 21:10:39.930",
+      "duration_milliseconds": "173499783",
+      "duration_seconds": "173499",
+      "previous_broker_weekday_time": "FRIDAY 2024.03.29 20:59:00.147",
+      "next_broker_weekday_time": "SUNDAY 2024.03.31 21:10:39.930",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "60",
+      "bid_before": "1.0792100000",
+      "ask_before": "1.0794600000",
+      "bid_after": "1.0790400000",
+      "ask_after": "1.0794700000",
+      "monthly_tkc_files": "202403.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.03.31 21:10:00",
+      "m1_final_inside": "2024.03.31 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202403.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7137584,
+            "sha256": "49e4ee1eaa78f3cc7b1d91fc113a398f54cdb06c2d665b55d9fc0ff0bb910cc5"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202403.tkc",
+            "size_bytes": 7121484,
+            "sha256": "f7ee715e93b8c712d83f3335e38d4bb887d6f7817fb41e20c52bfc38fdf683b3"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "14",
+      "previous_tick": "2024.04.05 20:59:58.257",
+      "next_tick": "2024.04.07 21:10:00.073",
+      "duration_milliseconds": "173401816",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.04.05 20:59:58.257",
+      "next_broker_weekday_time": "SUNDAY 2024.04.07 21:10:00.073",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0835900000",
+      "ask_before": "1.0839800000",
+      "bid_after": "1.0835800000",
+      "ask_after": "1.0839300000",
+      "monthly_tkc_files": "202404.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.04.07 21:10:00",
+      "m1_final_inside": "2024.04.07 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202404.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8529399,
+            "sha256": "3d4eaceed473cc655617bb2f5f05fb481d11adad962764be1f2b00d2bef875f1"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8513299,
+            "sha256": "7e083ce22a328421e6d08429eb8495338e1a16de303ab1fdb7809d7ab562e686"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "15",
+      "previous_tick": "2024.04.12 20:59:58.399",
+      "next_tick": "2024.04.14 21:10:00.004",
+      "duration_milliseconds": "173401605",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.04.12 20:59:58.399",
+      "next_broker_weekday_time": "SUNDAY 2024.04.14 21:10:00.004",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0639800000",
+      "ask_before": "1.0646400000",
+      "bid_after": "1.0634800000",
+      "ask_after": "1.0638700000",
+      "monthly_tkc_files": "202404.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.04.14 21:10:00",
+      "m1_final_inside": "2024.04.14 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202404.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8529399,
+            "sha256": "3d4eaceed473cc655617bb2f5f05fb481d11adad962764be1f2b00d2bef875f1"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8513299,
+            "sha256": "7e083ce22a328421e6d08429eb8495338e1a16de303ab1fdb7809d7ab562e686"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "16",
+      "previous_tick": "2024.04.19 20:59:59.046",
+      "next_tick": "2024.04.21 21:10:27.505",
+      "duration_milliseconds": "173428459",
+      "duration_seconds": "173428",
+      "previous_broker_weekday_time": "FRIDAY 2024.04.19 20:59:59.046",
+      "next_broker_weekday_time": "SUNDAY 2024.04.21 21:10:27.505",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "27",
+      "bid_before": "1.0650500000",
+      "ask_before": "1.0660300000",
+      "bid_after": "1.0655500000",
+      "ask_after": "1.0659900000",
+      "monthly_tkc_files": "202404.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.04.21 21:10:00",
+      "m1_final_inside": "2024.04.21 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202404.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8529399,
+            "sha256": "3d4eaceed473cc655617bb2f5f05fb481d11adad962764be1f2b00d2bef875f1"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8513299,
+            "sha256": "7e083ce22a328421e6d08429eb8495338e1a16de303ab1fdb7809d7ab562e686"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "17",
+      "previous_tick": "2024.04.26 20:59:58.993",
+      "next_tick": "2024.04.28 21:10:00.036",
+      "duration_milliseconds": "173401043",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.04.26 20:59:58.993",
+      "next_broker_weekday_time": "SUNDAY 2024.04.28 21:10:00.036",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0692700000",
+      "ask_before": "1.0695200000",
+      "bid_after": "1.0693800000",
+      "ask_after": "1.0699200000",
+      "monthly_tkc_files": "202404.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.04.28 21:10:00",
+      "m1_final_inside": "2024.04.28 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202404.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8529399,
+            "sha256": "3d4eaceed473cc655617bb2f5f05fb481d11adad962764be1f2b00d2bef875f1"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202404.tkc",
+            "size_bytes": 8513299,
+            "sha256": "7e083ce22a328421e6d08429eb8495338e1a16de303ab1fdb7809d7ab562e686"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "18",
+      "previous_tick": "2024.05.03 20:59:56.951",
+      "next_tick": "2024.05.05 21:10:00.016",
+      "duration_milliseconds": "173403065",
+      "duration_seconds": "173403",
+      "previous_broker_weekday_time": "FRIDAY 2024.05.03 20:59:56.951",
+      "next_broker_weekday_time": "SUNDAY 2024.05.05 21:10:00.016",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "4",
+      "bid_before": "1.0760500000",
+      "ask_before": "1.0765700000",
+      "bid_after": "1.0762600000",
+      "ask_after": "1.0765700000",
+      "monthly_tkc_files": "202405.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.05.05 21:10:00",
+      "m1_final_inside": "2024.05.05 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202405.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6908153,
+            "sha256": "9dabb9c2a9768061f0930f70b970702247fb1685287cf5e21233ebd343761299"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6892053,
+            "sha256": "7583ef22f4bc0323294c1ae0a232d61111b5f705706c6d9c36f05d91a3c2923f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "19",
+      "previous_tick": "2024.05.10 20:59:58.747",
+      "next_tick": "2024.05.12 21:11:48.994",
+      "duration_milliseconds": "173510247",
+      "duration_seconds": "173510",
+      "previous_broker_weekday_time": "FRIDAY 2024.05.10 20:59:58.747",
+      "next_broker_weekday_time": "SUNDAY 2024.05.12 21:11:48.994",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "108",
+      "bid_before": "1.0769000000",
+      "ask_before": "1.0772700000",
+      "bid_after": "1.0770200000",
+      "ask_after": "1.0775700000",
+      "monthly_tkc_files": "202405.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.05.12 21:11:00",
+      "m1_final_inside": "2024.05.12 21:11:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202405.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6908153,
+            "sha256": "9dabb9c2a9768061f0930f70b970702247fb1685287cf5e21233ebd343761299"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6892053,
+            "sha256": "7583ef22f4bc0323294c1ae0a232d61111b5f705706c6d9c36f05d91a3c2923f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "20",
+      "previous_tick": "2024.05.17 20:59:59.007",
+      "next_tick": "2024.05.19 21:10:00.104",
+      "duration_milliseconds": "173401097",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.05.17 20:59:59.007",
+      "next_broker_weekday_time": "SUNDAY 2024.05.19 21:10:00.104",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "1",
+      "bid_before": "1.0865700000",
+      "ask_before": "1.0872200000",
+      "bid_after": "1.0866900000",
+      "ask_after": "1.0870900000",
+      "monthly_tkc_files": "202405.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.05.19 21:10:00",
+      "m1_final_inside": "2024.05.19 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202405.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6908153,
+            "sha256": "9dabb9c2a9768061f0930f70b970702247fb1685287cf5e21233ebd343761299"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6892053,
+            "sha256": "7583ef22f4bc0323294c1ae0a232d61111b5f705706c6d9c36f05d91a3c2923f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "21",
+      "previous_tick": "2024.05.24 20:59:55.421",
+      "next_tick": "2024.05.26 21:10:05.883",
+      "duration_milliseconds": "173410462",
+      "duration_seconds": "173410",
+      "previous_broker_weekday_time": "FRIDAY 2024.05.24 20:59:55.421",
+      "next_broker_weekday_time": "SUNDAY 2024.05.26 21:10:05.883",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "5",
+      "bid_before": "1.0846400000",
+      "ask_before": "1.0848000000",
+      "bid_after": "1.0845500000",
+      "ask_after": "1.0850200000",
+      "monthly_tkc_files": "202405.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.05.26 21:10:00",
+      "m1_final_inside": "2024.05.26 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202405.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6908153,
+            "sha256": "9dabb9c2a9768061f0930f70b970702247fb1685287cf5e21233ebd343761299"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6892053,
+            "sha256": "7583ef22f4bc0323294c1ae0a232d61111b5f705706c6d9c36f05d91a3c2923f"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "22",
+      "previous_tick": "2024.05.31 20:59:57.160",
+      "next_tick": "2024.06.02 21:10:39.674",
+      "duration_milliseconds": "173442514",
+      "duration_seconds": "173442",
+      "previous_broker_weekday_time": "FRIDAY 2024.05.31 20:59:57.160",
+      "next_broker_weekday_time": "SUNDAY 2024.06.02 21:10:39.674",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "39",
+      "bid_before": "1.0845800000",
+      "ask_before": "1.0850700000",
+      "bid_after": "1.0846100000",
+      "ask_after": "1.0852500000",
+      "monthly_tkc_files": "202405.tkc,202406.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.06.02 21:10:00",
+      "m1_final_inside": "2024.06.02 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202405.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6908153,
+            "sha256": "9dabb9c2a9768061f0930f70b970702247fb1685287cf5e21233ebd343761299"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202405.tkc",
+            "size_bytes": 6892053,
+            "sha256": "7583ef22f4bc0323294c1ae0a232d61111b5f705706c6d9c36f05d91a3c2923f"
+          }
+        },
+        {
+          "file": "202406.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6895920,
+            "sha256": "0f8e742778c77dcaacf8e7809cd72b03c1b662b38e42f3d9dfb9ca2f1e6699dc"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6879820,
+            "sha256": "c6991245d7efceb55376db26c089a6276ebef52704b32ca38ced033857868d6a"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "23",
+      "previous_tick": "2024.06.07 20:59:42.123",
+      "next_tick": "2024.06.09 21:10:01.177",
+      "duration_milliseconds": "173419054",
+      "duration_seconds": "173419",
+      "previous_broker_weekday_time": "FRIDAY 2024.06.07 20:59:42.123",
+      "next_broker_weekday_time": "SUNDAY 2024.06.09 21:10:01.177",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "18",
+      "bid_before": "1.0801000000",
+      "ask_before": "1.0802600000",
+      "bid_after": "1.0766300000",
+      "ask_after": "1.0770500000",
+      "monthly_tkc_files": "202406.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.06.09 21:10:00",
+      "m1_final_inside": "2024.06.09 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202406.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6895920,
+            "sha256": "0f8e742778c77dcaacf8e7809cd72b03c1b662b38e42f3d9dfb9ca2f1e6699dc"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6879820,
+            "sha256": "c6991245d7efceb55376db26c089a6276ebef52704b32ca38ced033857868d6a"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "24",
+      "previous_tick": "2024.06.14 20:59:57.473",
+      "next_tick": "2024.06.16 21:10:07.948",
+      "duration_milliseconds": "173410475",
+      "duration_seconds": "173410",
+      "previous_broker_weekday_time": "FRIDAY 2024.06.14 20:59:57.473",
+      "next_broker_weekday_time": "SUNDAY 2024.06.16 21:10:07.948",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "7",
+      "bid_before": "1.0702200000",
+      "ask_before": "1.0708800000",
+      "bid_after": "1.0704600000",
+      "ask_after": "1.0708200000",
+      "monthly_tkc_files": "202406.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.06.16 21:10:00",
+      "m1_final_inside": "2024.06.16 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202406.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6895920,
+            "sha256": "0f8e742778c77dcaacf8e7809cd72b03c1b662b38e42f3d9dfb9ca2f1e6699dc"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6879820,
+            "sha256": "c6991245d7efceb55376db26c089a6276ebef52704b32ca38ced033857868d6a"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "25",
+      "previous_tick": "2024.06.21 20:59:57.119",
+      "next_tick": "2024.06.23 21:10:34.260",
+      "duration_milliseconds": "173437141",
+      "duration_seconds": "173437",
+      "previous_broker_weekday_time": "FRIDAY 2024.06.21 20:59:57.119",
+      "next_broker_weekday_time": "SUNDAY 2024.06.23 21:10:34.260",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "34",
+      "bid_before": "1.0691800000",
+      "ask_before": "1.0694000000",
+      "bid_after": "1.0688000000",
+      "ask_after": "1.0692800000",
+      "monthly_tkc_files": "202406.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.06.23 21:10:00",
+      "m1_final_inside": "2024.06.23 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202406.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6895920,
+            "sha256": "0f8e742778c77dcaacf8e7809cd72b03c1b662b38e42f3d9dfb9ca2f1e6699dc"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6879820,
+            "sha256": "c6991245d7efceb55376db26c089a6276ebef52704b32ca38ced033857868d6a"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "26",
+      "previous_tick": "2024.06.28 20:59:58.723",
+      "next_tick": "2024.06.30 21:10:00.028",
+      "duration_milliseconds": "173401305",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.06.28 20:59:58.723",
+      "next_broker_weekday_time": "SUNDAY 2024.06.30 21:10:00.028",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0711200000",
+      "ask_before": "1.0715700000",
+      "bid_after": "1.0744300000",
+      "ask_after": "1.0747800000",
+      "monthly_tkc_files": "202406.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.06.30 21:10:00",
+      "m1_final_inside": "2024.06.30 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202406.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6895920,
+            "sha256": "0f8e742778c77dcaacf8e7809cd72b03c1b662b38e42f3d9dfb9ca2f1e6699dc"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202406.tkc",
+            "size_bytes": 6879820,
+            "sha256": "c6991245d7efceb55376db26c089a6276ebef52704b32ca38ced033857868d6a"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "27",
+      "previous_tick": "2024.07.05 20:59:58.142",
+      "next_tick": "2024.07.07 21:10:07.752",
+      "duration_milliseconds": "173409610",
+      "duration_seconds": "173409",
+      "previous_broker_weekday_time": "FRIDAY 2024.07.05 20:59:58.142",
+      "next_broker_weekday_time": "SUNDAY 2024.07.07 21:10:07.752",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "7",
+      "bid_before": "1.0835800000",
+      "ask_before": "1.0842900000",
+      "bid_after": "1.0806300000",
+      "ask_after": "1.0810700000",
+      "monthly_tkc_files": "202407.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.07.07 21:10:00",
+      "m1_final_inside": "2024.07.07 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202407.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7566314,
+            "sha256": "c19bbe38e4e39f7523af5e8b07e9fd18685f9af4c0b284beaa852272d4d9c17c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7550214,
+            "sha256": "d60f40f8d87d872beefa63a78953791e455b778de8ff753b2007a4c2fd3dc259"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "28",
+      "previous_tick": "2024.07.12 20:59:56.089",
+      "next_tick": "2024.07.14 21:10:58.568",
+      "duration_milliseconds": "173462479",
+      "duration_seconds": "173462",
+      "previous_broker_weekday_time": "FRIDAY 2024.07.12 20:59:56.089",
+      "next_broker_weekday_time": "SUNDAY 2024.07.14 21:10:58.568",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "58",
+      "bid_before": "1.0905500000",
+      "ask_before": "1.0908500000",
+      "bid_after": "1.0888000000",
+      "ask_after": "1.0892300000",
+      "monthly_tkc_files": "202407.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.07.14 21:10:00",
+      "m1_final_inside": "2024.07.14 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202407.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7566314,
+            "sha256": "c19bbe38e4e39f7523af5e8b07e9fd18685f9af4c0b284beaa852272d4d9c17c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7550214,
+            "sha256": "d60f40f8d87d872beefa63a78953791e455b778de8ff753b2007a4c2fd3dc259"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "29",
+      "previous_tick": "2024.07.19 20:59:55.405",
+      "next_tick": "2024.07.21 21:10:00.399",
+      "duration_milliseconds": "173404994",
+      "duration_seconds": "173404",
+      "previous_broker_weekday_time": "FRIDAY 2024.07.19 20:59:55.405",
+      "next_broker_weekday_time": "SUNDAY 2024.07.21 21:10:00.399",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "5",
+      "bid_before": "1.0879300000",
+      "ask_before": "1.0887300000",
+      "bid_after": "1.0884000000",
+      "ask_after": "1.0888900000",
+      "monthly_tkc_files": "202407.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.07.21 21:10:00",
+      "m1_final_inside": "2024.07.21 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202407.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7566314,
+            "sha256": "c19bbe38e4e39f7523af5e8b07e9fd18685f9af4c0b284beaa852272d4d9c17c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7550214,
+            "sha256": "d60f40f8d87d872beefa63a78953791e455b778de8ff753b2007a4c2fd3dc259"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "30",
+      "previous_tick": "2024.07.26 20:59:58.893",
+      "next_tick": "2024.07.28 21:10:00.056",
+      "duration_milliseconds": "173401163",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.07.26 20:59:58.893",
+      "next_broker_weekday_time": "SUNDAY 2024.07.28 21:10:00.056",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0854500000",
+      "ask_before": "1.0860600000",
+      "bid_after": "1.0856600000",
+      "ask_after": "1.0861800000",
+      "monthly_tkc_files": "202407.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.07.28 21:10:00",
+      "m1_final_inside": "2024.07.28 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202407.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7566314,
+            "sha256": "c19bbe38e4e39f7523af5e8b07e9fd18685f9af4c0b284beaa852272d4d9c17c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202407.tkc",
+            "size_bytes": 7550214,
+            "sha256": "d60f40f8d87d872beefa63a78953791e455b778de8ff753b2007a4c2fd3dc259"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "31",
+      "previous_tick": "2024.08.02 20:59:57.084",
+      "next_tick": "2024.08.04 21:10:59.703",
+      "duration_milliseconds": "173462619",
+      "duration_seconds": "173462",
+      "previous_broker_weekday_time": "FRIDAY 2024.08.02 20:59:57.084",
+      "next_broker_weekday_time": "SUNDAY 2024.08.04 21:10:59.703",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "59",
+      "bid_before": "1.0910600000",
+      "ask_before": "1.0913100000",
+      "bid_after": "1.0922900000",
+      "ask_after": "1.0924900000",
+      "monthly_tkc_files": "202408.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.08.04 21:10:00",
+      "m1_final_inside": "2024.08.04 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202408.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8735384,
+            "sha256": "0252310ca37726c34487b2da3a85c054f6e863607172f1cf82a4a522a7d8d08e"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8719284,
+            "sha256": "ca72dcea2c6a9b5b1c9ff4bb3026950bb2f529f09414bab7129b6fd5f4bb6502"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "32",
+      "previous_tick": "2024.08.09 20:59:58.097",
+      "next_tick": "2024.08.11 21:10:02.791",
+      "duration_milliseconds": "173404694",
+      "duration_seconds": "173404",
+      "previous_broker_weekday_time": "FRIDAY 2024.08.09 20:59:58.097",
+      "next_broker_weekday_time": "SUNDAY 2024.08.11 21:10:02.791",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.0912000000",
+      "ask_before": "1.0920300000",
+      "bid_after": "1.0915600000",
+      "ask_after": "1.0919500000",
+      "monthly_tkc_files": "202408.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.08.11 21:10:00",
+      "m1_final_inside": "2024.08.11 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202408.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8735384,
+            "sha256": "0252310ca37726c34487b2da3a85c054f6e863607172f1cf82a4a522a7d8d08e"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8719284,
+            "sha256": "ca72dcea2c6a9b5b1c9ff4bb3026950bb2f529f09414bab7129b6fd5f4bb6502"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "33",
+      "previous_tick": "2024.08.16 20:59:57.176",
+      "next_tick": "2024.08.18 21:10:00.068",
+      "duration_milliseconds": "173402892",
+      "duration_seconds": "173402",
+      "previous_broker_weekday_time": "FRIDAY 2024.08.16 20:59:57.176",
+      "next_broker_weekday_time": "SUNDAY 2024.08.18 21:10:00.068",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "3",
+      "bid_before": "1.1027900000",
+      "ask_before": "1.1030000000",
+      "bid_after": "1.1024700000",
+      "ask_after": "1.1028000000",
+      "monthly_tkc_files": "202408.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.08.18 21:10:00",
+      "m1_final_inside": "2024.08.18 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202408.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8735384,
+            "sha256": "0252310ca37726c34487b2da3a85c054f6e863607172f1cf82a4a522a7d8d08e"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8719284,
+            "sha256": "ca72dcea2c6a9b5b1c9ff4bb3026950bb2f529f09414bab7129b6fd5f4bb6502"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "34",
+      "previous_tick": "2024.08.23 20:59:58.559",
+      "next_tick": "2024.08.25 21:12:09.690",
+      "duration_milliseconds": "173531131",
+      "duration_seconds": "173531",
+      "previous_broker_weekday_time": "FRIDAY 2024.08.23 20:59:58.559",
+      "next_broker_weekday_time": "SUNDAY 2024.08.25 21:12:09.690",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "129",
+      "bid_before": "1.1188500000",
+      "ask_before": "1.1193800000",
+      "bid_after": "1.1189900000",
+      "ask_after": "1.1193600000",
+      "monthly_tkc_files": "202408.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.08.25 21:12:00",
+      "m1_final_inside": "2024.08.25 21:12:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202408.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8735384,
+            "sha256": "0252310ca37726c34487b2da3a85c054f6e863607172f1cf82a4a522a7d8d08e"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8719284,
+            "sha256": "ca72dcea2c6a9b5b1c9ff4bb3026950bb2f529f09414bab7129b6fd5f4bb6502"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "35",
+      "previous_tick": "2024.08.30 20:59:58.837",
+      "next_tick": "2024.09.01 21:10:00.157",
+      "duration_milliseconds": "173401320",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.08.30 20:59:58.837",
+      "next_broker_weekday_time": "SUNDAY 2024.09.01 21:10:00.157",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "2",
+      "bid_before": "1.1044600000",
+      "ask_before": "1.1052300000",
+      "bid_after": "1.1046100000",
+      "ask_after": "1.1049200000",
+      "monthly_tkc_files": "202408.tkc,202409.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.09.01 21:10:00",
+      "m1_final_inside": "2024.09.01 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202408.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8735384,
+            "sha256": "0252310ca37726c34487b2da3a85c054f6e863607172f1cf82a4a522a7d8d08e"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202408.tkc",
+            "size_bytes": 8719284,
+            "sha256": "ca72dcea2c6a9b5b1c9ff4bb3026950bb2f529f09414bab7129b6fd5f4bb6502"
+          }
+        },
+        {
+          "file": "202409.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8854178,
+            "sha256": "5dc918a7d34b46aade3cc704815eb1fa85b0aaafcaceb30634ecbe6e1d9fe308"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8838078,
+            "sha256": "808939950cb376d3f1b2e96c4bfb73a4bed107ae706045ec6334081b810be0ee"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "36",
+      "previous_tick": "2024.09.06 20:54:57.601",
+      "next_tick": "2024.09.08 21:10:00.073",
+      "duration_milliseconds": "173702472",
+      "duration_seconds": "173702",
+      "previous_broker_weekday_time": "FRIDAY 2024.09.06 20:54:57.601",
+      "next_broker_weekday_time": "SUNDAY 2024.09.08 21:10:00.073",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "303",
+      "bid_before": "1.1085600000",
+      "ask_before": "1.1086900000",
+      "bid_after": "1.1081800000",
+      "ask_after": "1.1086100000",
+      "monthly_tkc_files": "202409.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.09.08 21:10:00",
+      "m1_final_inside": "2024.09.08 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202409.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8854178,
+            "sha256": "5dc918a7d34b46aade3cc704815eb1fa85b0aaafcaceb30634ecbe6e1d9fe308"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8838078,
+            "sha256": "808939950cb376d3f1b2e96c4bfb73a4bed107ae706045ec6334081b810be0ee"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "37",
+      "previous_tick": "2024.09.13 20:55:05.055",
+      "next_tick": "2024.09.15 21:10:11.173",
+      "duration_milliseconds": "173706118",
+      "duration_seconds": "173706",
+      "previous_broker_weekday_time": "FRIDAY 2024.09.13 20:55:05.055",
+      "next_broker_weekday_time": "SUNDAY 2024.09.15 21:10:11.173",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "295",
+      "bid_before": "1.1074200000",
+      "ask_before": "1.1075500000",
+      "bid_after": "1.1076400000",
+      "ask_after": "1.1081800000",
+      "monthly_tkc_files": "202409.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.09.15 21:10:00",
+      "m1_final_inside": "2024.09.15 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202409.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8854178,
+            "sha256": "5dc918a7d34b46aade3cc704815eb1fa85b0aaafcaceb30634ecbe6e1d9fe308"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8838078,
+            "sha256": "808939950cb376d3f1b2e96c4bfb73a4bed107ae706045ec6334081b810be0ee"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "38",
+      "previous_tick": "2024.09.20 20:59:56.388",
+      "next_tick": "2024.09.22 21:11:04.761",
+      "duration_milliseconds": "173468373",
+      "duration_seconds": "173468",
+      "previous_broker_weekday_time": "FRIDAY 2024.09.20 20:59:56.388",
+      "next_broker_weekday_time": "SUNDAY 2024.09.22 21:11:04.761",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "64",
+      "bid_before": "1.1162800000",
+      "ask_before": "1.1165000000",
+      "bid_after": "1.1161600000",
+      "ask_after": "1.1164500000",
+      "monthly_tkc_files": "202409.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.09.22 21:11:00",
+      "m1_final_inside": "2024.09.22 21:11:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202409.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8854178,
+            "sha256": "5dc918a7d34b46aade3cc704815eb1fa85b0aaafcaceb30634ecbe6e1d9fe308"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8838078,
+            "sha256": "808939950cb376d3f1b2e96c4bfb73a4bed107ae706045ec6334081b810be0ee"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "39",
+      "previous_tick": "2024.09.27 20:59:58.120",
+      "next_tick": "2024.09.29 21:12:11.602",
+      "duration_milliseconds": "173533482",
+      "duration_seconds": "173533",
+      "previous_broker_weekday_time": "FRIDAY 2024.09.27 20:59:58.120",
+      "next_broker_weekday_time": "SUNDAY 2024.09.29 21:12:11.602",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "131",
+      "bid_before": "1.1161500000",
+      "ask_before": "1.1167000000",
+      "bid_after": "1.1156100000",
+      "ask_after": "1.1166500000",
+      "monthly_tkc_files": "202409.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.09.29 21:12:00",
+      "m1_final_inside": "2024.09.29 21:12:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202409.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8854178,
+            "sha256": "5dc918a7d34b46aade3cc704815eb1fa85b0aaafcaceb30634ecbe6e1d9fe308"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202409.tkc",
+            "size_bytes": 8838078,
+            "sha256": "808939950cb376d3f1b2e96c4bfb73a4bed107ae706045ec6334081b810be0ee"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "40",
+      "previous_tick": "2024.10.04 20:54:45.087",
+      "next_tick": "2024.10.06 21:10:21.543",
+      "duration_milliseconds": "173736456",
+      "duration_seconds": "173736",
+      "previous_broker_weekday_time": "FRIDAY 2024.10.04 20:54:45.087",
+      "next_broker_weekday_time": "SUNDAY 2024.10.06 21:10:21.543",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "315",
+      "bid_before": "1.0974500000",
+      "ask_before": "1.0976100000",
+      "bid_after": "1.0963800000",
+      "ask_after": "1.0972200000",
+      "monthly_tkc_files": "202410.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.10.06 21:10:00",
+      "m1_final_inside": "2024.10.06 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202410.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8115504,
+            "sha256": "7552f5f7b54ab82680fb30fe9ae3f2a7b33173ea0fa64700b0c3567da430570c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8099404,
+            "sha256": "e6de7d76451e3db394b117af20786b416424b648725ff61ec0669a79297d036b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "41",
+      "previous_tick": "2024.10.11 20:59:57.362",
+      "next_tick": "2024.10.13 21:10:01.186",
+      "duration_milliseconds": "173403824",
+      "duration_seconds": "173403",
+      "previous_broker_weekday_time": "FRIDAY 2024.10.11 20:59:57.362",
+      "next_broker_weekday_time": "SUNDAY 2024.10.13 21:10:01.186",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "3",
+      "bid_before": "1.0935500000",
+      "ask_before": "1.0942800000",
+      "bid_after": "1.0931100000",
+      "ask_after": "1.0933800000",
+      "monthly_tkc_files": "202410.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.10.13 21:10:00",
+      "m1_final_inside": "2024.10.13 21:10:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202410.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8115504,
+            "sha256": "7552f5f7b54ab82680fb30fe9ae3f2a7b33173ea0fa64700b0c3567da430570c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8099404,
+            "sha256": "e6de7d76451e3db394b117af20786b416424b648725ff61ec0669a79297d036b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "42",
+      "previous_tick": "2024.10.18 20:59:56.152",
+      "next_tick": "2024.10.20 21:11:07.584",
+      "duration_milliseconds": "173471432",
+      "duration_seconds": "173471",
+      "previous_broker_weekday_time": "FRIDAY 2024.10.18 20:59:56.152",
+      "next_broker_weekday_time": "SUNDAY 2024.10.20 21:11:07.584",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "67",
+      "bid_before": "1.0866700000",
+      "ask_before": "1.0868300000",
+      "bid_after": "1.0861200000",
+      "ask_after": "1.0863200000",
+      "monthly_tkc_files": "202410.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.10.20 21:11:00",
+      "m1_final_inside": "2024.10.20 21:11:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202410.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8115504,
+            "sha256": "7552f5f7b54ab82680fb30fe9ae3f2a7b33173ea0fa64700b0c3567da430570c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8099404,
+            "sha256": "e6de7d76451e3db394b117af20786b416424b648725ff61ec0669a79297d036b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "43",
+      "previous_tick": "2024.10.25 20:54:20.790",
+      "next_tick": "2024.10.27 21:12:10.335",
+      "duration_milliseconds": "173869545",
+      "duration_seconds": "173869",
+      "previous_broker_weekday_time": "FRIDAY 2024.10.25 20:54:20.790",
+      "next_broker_weekday_time": "SUNDAY 2024.10.27 21:12:10.335",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "NO",
+      "open_segment_seconds": "340",
+      "bid_before": "1.0795100000",
+      "ask_before": "1.0796400000",
+      "bid_after": "1.0791800000",
+      "ask_after": "1.0794300000",
+      "monthly_tkc_files": "202410.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.10.27 21:12:00",
+      "m1_final_inside": "2024.10.27 21:12:00",
+      "m1_copy_error": "0",
+      "classification": "SCHEDULED_WEEKEND",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_NO_OPEN_SEGMENT;WEEKEND_CALENDAR",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202410.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8115504,
+            "sha256": "7552f5f7b54ab82680fb30fe9ae3f2a7b33173ea0fa64700b0c3567da430570c"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202410.tkc",
+            "size_bytes": 8099404,
+            "sha256": "e6de7d76451e3db394b117af20786b416424b648725ff61ec0669a79297d036b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "MT5 broker SymbolInfoSessionTrade schedule captured during inert probe plus weekend calendar",
+      "excluded_from_15_minute_failure": "YES",
+      "qualification_effect": "PERMITTED_CLOSURE_EXCLUSION"
+    },
+    {
+      "gap_number": "44",
+      "previous_tick": "2024.11.01 20:59:58.805",
+      "next_tick": "2024.11.03 22:10:00.086",
+      "duration_milliseconds": "177001281",
+      "duration_seconds": "177001",
+      "previous_broker_weekday_time": "FRIDAY 2024.11.01 20:59:58.805",
+      "next_broker_weekday_time": "SUNDAY 2024.11.03 22:10:00.086",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0833400000",
+      "ask_before": "1.0834900000",
+      "bid_after": "1.0878100000",
+      "ask_after": "1.0879800000",
+      "monthly_tkc_files": "202411.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.11.03 22:10:00",
+      "m1_final_inside": "2024.11.03 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202411.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10498692,
+            "sha256": "ffb4d4cbe22125ba36642a4bdd2e3a931fc15af75be1167517fc5855e2e34728"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10482592,
+            "sha256": "a78def07e4e973281f8907ae9ad9e7dff779988d7db16b0f93ca80881ac957af"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "45",
+      "previous_tick": "2024.11.08 21:59:58.856",
+      "next_tick": "2024.11.11 00:13:00.130",
+      "duration_milliseconds": "180781274",
+      "duration_seconds": "180781",
+      "previous_broker_weekday_time": "FRIDAY 2024.11.08 21:59:58.856",
+      "next_broker_weekday_time": "MONDAY 2024.11.11 00:13:00.130",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "MONDAY:00:00:00-21:00:00,21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "10200",
+      "bid_before": "1.0715300000",
+      "ask_before": "1.0722800000",
+      "bid_after": "1.0712100000",
+      "ask_after": "1.0712900000",
+      "monthly_tkc_files": "202411.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.11.11 00:13:00",
+      "m1_final_inside": "2024.11.11 00:13:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202411.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10498692,
+            "sha256": "ffb4d4cbe22125ba36642a4bdd2e3a931fc15af75be1167517fc5855e2e34728"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10482592,
+            "sha256": "a78def07e4e973281f8907ae9ad9e7dff779988d7db16b0f93ca80881ac957af"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "46",
+      "previous_tick": "2024.11.15 21:59:56.198",
+      "next_tick": "2024.11.17 22:12:08.374",
+      "duration_milliseconds": "173532176",
+      "duration_seconds": "173532",
+      "previous_broker_weekday_time": "FRIDAY 2024.11.15 21:59:56.198",
+      "next_broker_weekday_time": "SUNDAY 2024.11.17 22:12:08.374",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3728",
+      "bid_before": "1.0540500000",
+      "ask_before": "1.0542400000",
+      "bid_after": "1.0531800000",
+      "ask_after": "1.0535200000",
+      "monthly_tkc_files": "202411.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.11.17 22:12:00",
+      "m1_final_inside": "2024.11.17 22:12:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202411.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10498692,
+            "sha256": "ffb4d4cbe22125ba36642a4bdd2e3a931fc15af75be1167517fc5855e2e34728"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10482592,
+            "sha256": "a78def07e4e973281f8907ae9ad9e7dff779988d7db16b0f93ca80881ac957af"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "47",
+      "previous_tick": "2024.11.22 21:59:58.760",
+      "next_tick": "2024.11.24 22:10:00.238",
+      "duration_milliseconds": "173401478",
+      "duration_seconds": "173401",
+      "previous_broker_weekday_time": "FRIDAY 2024.11.22 21:59:58.760",
+      "next_broker_weekday_time": "SUNDAY 2024.11.24 22:10:00.238",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0413800000",
+      "ask_before": "1.0424100000",
+      "bid_after": "1.0471700000",
+      "ask_after": "1.0477400000",
+      "monthly_tkc_files": "202411.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.11.24 22:10:00",
+      "m1_final_inside": "2024.11.24 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202411.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10498692,
+            "sha256": "ffb4d4cbe22125ba36642a4bdd2e3a931fc15af75be1167517fc5855e2e34728"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10482592,
+            "sha256": "a78def07e4e973281f8907ae9ad9e7dff779988d7db16b0f93ca80881ac957af"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "48",
+      "previous_tick": "2024.11.29 21:55:21.477",
+      "next_tick": "2024.12.01 22:10:09.318",
+      "duration_milliseconds": "173687841",
+      "duration_seconds": "173687",
+      "previous_broker_weekday_time": "FRIDAY 2024.11.29 21:55:21.477",
+      "next_broker_weekday_time": "SUNDAY 2024.12.01 22:10:09.318",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3609",
+      "bid_before": "1.0575000000",
+      "ask_before": "1.0581200000",
+      "bid_after": "1.0566800000",
+      "ask_after": "1.0573000000",
+      "monthly_tkc_files": "202411.tkc,202412.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.12.01 22:10:00",
+      "m1_final_inside": "2024.12.01 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202411.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10498692,
+            "sha256": "ffb4d4cbe22125ba36642a4bdd2e3a931fc15af75be1167517fc5855e2e34728"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202411.tkc",
+            "size_bytes": 10482592,
+            "sha256": "a78def07e4e973281f8907ae9ad9e7dff779988d7db16b0f93ca80881ac957af"
+          }
+        },
+        {
+          "file": "202412.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 8833333,
+            "sha256": "e915d9aab33be9a65d85f76b332d1ec486b6fa7283389bf33f8c1bbe3b94db1b"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 7548652,
+            "sha256": "24e99fad2f2492127f6faac1f334b68a3cdcb14574200bb942e2e6497b0f653b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "49",
+      "previous_tick": "2024.12.06 21:59:56.301",
+      "next_tick": "2024.12.08 22:11:14.109",
+      "duration_milliseconds": "173477808",
+      "duration_seconds": "173477",
+      "previous_broker_weekday_time": "FRIDAY 2024.12.06 21:59:56.301",
+      "next_broker_weekday_time": "SUNDAY 2024.12.08 22:11:14.109",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3674",
+      "bid_before": "1.0566800000",
+      "ask_before": "1.0568900000",
+      "bid_after": "1.0559100000",
+      "ask_after": "1.0561800000",
+      "monthly_tkc_files": "202412.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.12.08 22:11:00",
+      "m1_final_inside": "2024.12.08 22:11:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202412.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 8833333,
+            "sha256": "e915d9aab33be9a65d85f76b332d1ec486b6fa7283389bf33f8c1bbe3b94db1b"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 7548652,
+            "sha256": "24e99fad2f2492127f6faac1f334b68a3cdcb14574200bb942e2e6497b0f653b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "50",
+      "previous_tick": "2024.12.13 21:59:56.363",
+      "next_tick": "2024.12.15 22:10:00.118",
+      "duration_milliseconds": "173403755",
+      "duration_seconds": "173403",
+      "previous_broker_weekday_time": "FRIDAY 2024.12.13 21:59:56.363",
+      "next_broker_weekday_time": "SUNDAY 2024.12.15 22:10:00.118",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3600",
+      "bid_before": "1.0501400000",
+      "ask_before": "1.0503600000",
+      "bid_after": "1.0487200000",
+      "ask_after": "1.0493100000",
+      "monthly_tkc_files": "202412.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.12.15 22:10:00",
+      "m1_final_inside": "2024.12.15 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202412.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 8833333,
+            "sha256": "e915d9aab33be9a65d85f76b332d1ec486b6fa7283389bf33f8c1bbe3b94db1b"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 7548652,
+            "sha256": "24e99fad2f2492127f6faac1f334b68a3cdcb14574200bb942e2e6497b0f653b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    },
+    {
+      "gap_number": "51",
+      "previous_tick": "2024.12.20 21:54:49.030",
+      "next_tick": "2024.12.22 22:10:13.272",
+      "duration_milliseconds": "173724242",
+      "duration_seconds": "173724",
+      "previous_broker_weekday_time": "FRIDAY 2024.12.20 21:54:49.030",
+      "next_broker_weekday_time": "SUNDAY 2024.12.22 22:10:13.272",
+      "previous_symbol_sessions": "FRIDAY:00:00:00-21:00:00",
+      "next_symbol_sessions": "SUNDAY:21:10:00-24:00:00",
+      "terminal_regarded_session_open": "YES",
+      "open_segment_seconds": "3613",
+      "bid_before": "1.0428000000",
+      "ask_before": "1.0429200000",
+      "bid_after": "1.0428700000",
+      "ask_after": "1.0432800000",
+      "monthly_tkc_files": "202412.tkc",
+      "m1_bars_present": "YES",
+      "m1_bars_inside": "1",
+      "m1_first_inside": "2024.12.22 22:10:00",
+      "m1_final_inside": "2024.12.22 22:10:00",
+      "m1_copy_error": "0",
+      "classification": "UNRESOLVED",
+      "supporting_evidence": "MT5_SYMBOL_SESSION_REPORTS_OPEN;BROKER_CONFIRMATION_REQUIRED",
+      "monthly_tkc_evidence": [
+        {
+          "file": "202412.tkc",
+          "terminal_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 8833333,
+            "sha256": "e915d9aab33be9a65d85f76b332d1ec486b6fa7283389bf33f8c1bbe3b94db1b"
+          },
+          "tester_cache": {
+            "logical_path": "ticks/EURUSD/202412.tkc",
+            "size_bytes": 7548652,
+            "sha256": "24e99fad2f2492127f6faac1f334b68a3cdcb14574200bb942e2e6497b0f653b"
+          }
+        }
+      ],
+      "tester_and_synchronization_messages": [
+        "Tester controller: EURUSD history check started",
+        "Tester controller: EURUSD history data begins from 2022.05.11 00:00",
+        "Tester controller: preliminary history-tick download started and completed",
+        "Tester controller: EURUSD ticks data begins from 2024.01.01 00:00",
+        "Tester agent: EURUSD,H1 (easyMarkets-Live) generating based on real ticks",
+        "Tester agent: EURUSD real ticks begin from 2024.01.02 00:00:00",
+        "Tester agent: EURUSD,M1 364234 bars from 2024.01.02 00:00 through 2024.12.23 23:59 added",
+        "Tester agent: environment synchronized in 0:00:00.033"
+      ],
+      "independent_closure_evidence": "NONE; exact easyMarkets confirmation requested and pending",
+      "excluded_from_15_minute_failure": "NO",
+      "qualification_effect": "DISQUALIFIES_INTERVAL"
+    }
+  ]
+}

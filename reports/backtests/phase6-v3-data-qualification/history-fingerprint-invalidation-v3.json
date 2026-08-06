@@ -1,0 +1,33 @@
+{
+  "schema": "SOLTRADE_PHASE6_V3_HISTORY_FINGERPRINT_INVALIDATION_V1",
+  "execution_authorized": false,
+  "fingerprints_may_be_combined": false,
+  "invalidated_identities": [
+    {
+      "aggregate_sha256": "b277ddb5368a632c316a2823939eef58b43b4e11cbe4175154fe9e6b580dbaf0",
+      "status": "INVALIDATED_DO_NOT_USE",
+      "reason": "The V3 pre-probe symbol cache already differed, and additional relevant cache files changed during the V3 probe lifecycle."
+    },
+    {
+      "aggregate_sha256": "73be596fb18a113558dbf97008a26a79108ab76991d7fda674ffb60facc85cc1",
+      "status": "INVALIDATED_DO_NOT_USE",
+      "reason": "Six inventoried terminal cache files changed between the V3 pre-probe and post-probe snapshots."
+    }
+  ],
+  "changed_since_v3_pre_probe": [
+    "terminal-cache/history/EURUSD/2026.hcc",
+    "terminal-cache/history/EURUSD/cache/Daily.hc",
+    "terminal-cache/history/EURUSD/cache/H1.hc",
+    "terminal-cache/symbols/selected-90060997.dat",
+    "terminal-cache/ticks/EURUSD/202607.tkc",
+    "terminal-cache/ticks/EURUSD/ticks.dat"
+  ],
+  "final_post_probe_identity": {
+    "inventory": "post-probe-history-inventory.csv",
+    "entry_count": 57,
+    "aggregate_sha256": "ce063f9ec9f4c08390d6f4846269c93e012b7991d3a84082889d079265f9791c",
+    "content_only_sha256": "4bbd9d1c0f06d6a5c5e82d1e0ad8f1f15113ffc11be9b24d232c34e27f983a62",
+    "status": "RECORDED_BUT_NOT_QUALIFIED"
+  },
+  "reason_final_identity_not_qualified": "The single V3 probe found 17 unexplained open-session gaps longer than 15 minutes and did not satisfy its real-tick API availability gate."
+}

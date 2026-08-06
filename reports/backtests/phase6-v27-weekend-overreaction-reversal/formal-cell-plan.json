@@ -1,0 +1,21 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_FORMAL_CELL_PLAN_V1",
+  "frozen_before_profitability_testing": true,
+  "starting_equity_usd": 10000.0,
+  "risk_per_trade_percent": 0.5,
+  "aggregation_order": "EXIT_TIME_ASCENDING_THEN_SYMBOL_ASCENDING",
+  "cells": [
+    {"cell_id":"V27_2025_DEVELOPMENT-NORMAL-NATIVE","dataset":"V27_2025_DEVELOPMENT","cost_profile":"NORMAL","supplementary_multiplier":0.0,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"01-v27-2025-development-native"},
+    {"cell_id":"V27_2025_DEVELOPMENT-HIGH-NATIVE","dataset":"V27_2025_DEVELOPMENT","cost_profile":"HIGH","supplementary_multiplier":0.5,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"01-v27-2025-development-native"},
+    {"cell_id":"V27_2025_DEVELOPMENT-STRESS-NATIVE","dataset":"V27_2025_DEVELOPMENT","cost_profile":"STRESS","supplementary_multiplier":1.0,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"01-v27-2025-development-native"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"NORMAL","supplementary_multiplier":0.0,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"02-v27-2026-preseal-development-native"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"HIGH","supplementary_multiplier":0.5,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"02-v27-2026-preseal-development-native"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"STRESS","supplementary_multiplier":1.0,"execution_layer":"NATIVE_NORMAL_EXECUTION","source_run":"02-v27-2026-preseal-development-native"},
+    {"cell_id":"V27_2025_DEVELOPMENT-NORMAL-DELAY200","dataset":"V27_2025_DEVELOPMENT","cost_profile":"NORMAL","supplementary_multiplier":0.0,"execution_layer":"FIXED_DELAY_200_MS","source_run":"03-v27-2025-development-delay200"},
+    {"cell_id":"V27_2025_DEVELOPMENT-HIGH-DELAY200","dataset":"V27_2025_DEVELOPMENT","cost_profile":"HIGH","supplementary_multiplier":0.5,"execution_layer":"FIXED_DELAY_200_MS","source_run":"03-v27-2025-development-delay200"},
+    {"cell_id":"V27_2025_DEVELOPMENT-STRESS-DELAY200","dataset":"V27_2025_DEVELOPMENT","cost_profile":"STRESS","supplementary_multiplier":1.0,"execution_layer":"FIXED_DELAY_200_MS","source_run":"03-v27-2025-development-delay200"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"NORMAL","supplementary_multiplier":0.0,"execution_layer":"FIXED_DELAY_200_MS","source_run":"04-v27-2026-preseal-development-delay200"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"HIGH","supplementary_multiplier":0.5,"execution_layer":"FIXED_DELAY_200_MS","source_run":"04-v27-2026-preseal-development-delay200"},
+    {"cell_id":"V27_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200","dataset":"V27_2026_PRESEAL_DEVELOPMENT","cost_profile":"STRESS","supplementary_multiplier":1.0,"execution_layer":"FIXED_DELAY_200_MS","source_run":"04-v27-2026-preseal-development-delay200"}
+  ]
+}

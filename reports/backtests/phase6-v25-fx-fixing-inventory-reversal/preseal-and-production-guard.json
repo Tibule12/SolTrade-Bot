@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PRESEAL_GUARD_V1",
+  "status": "FROZEN",
+  "production_ea_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_modification_authorized": false,
+  "original_oos_seal_sha256": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe",
+  "oos_status": "SEALED_UNOPENED",
+  "oos_administrative_classification": "UNASSIGNED_SINGLE_USE_FUTURE_OOS_RESERVE",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "post_cutoff_data_access_authorized": false,
+  "demo_account_execution_authorized_conditionally": true,
+  "demo_condition": "ALL_FROZEN_DEVELOPMENT_GATES_PASS",
+  "live_execution_authorized": false
+}
+

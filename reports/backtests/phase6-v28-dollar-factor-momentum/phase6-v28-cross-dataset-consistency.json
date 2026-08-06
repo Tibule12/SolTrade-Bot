@@ -1,0 +1,247 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_CROSS_DATASET_CONSISTENCY_V1",
+  "groups": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.9384392314936983,
+      "annualized_return_min_div_max": 0.9145036632915875,
+      "profit_factor_range": 0.0944067920312377
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9525838544407198,
+      "annualized_return_min_div_max": 0.8987202613830755,
+      "profit_factor_range": 0.06740556486605764
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.986607857341645,
+      "annualized_return_min_div_max": 0.8614806602395676,
+      "profit_factor_range": 0.04288028960690182
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.93322659021007,
+      "annualized_return_min_div_max": 0.9198587707297134,
+      "profit_factor_range": 0.09123098047921929
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9440923046583882,
+      "annualized_return_min_div_max": 0.9071806569601841,
+      "profit_factor_range": 0.06412623403033102
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.9703218994396969,
+      "annualized_return_min_div_max": 0.8766893807477503,
+      "profit_factor_range": 0.039519621953890915
+    }
+  ],
+  "gates": [
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.9384392314936983,
+      "annualized_return_min_div_max": 0.9145036632915875,
+      "profit_factor_range": 0.0944067920312377,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9384392314936983,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.9384392314936983,
+      "annualized_return_min_div_max": 0.9145036632915875,
+      "profit_factor_range": 0.0944067920312377,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9145036632915875,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.9384392314936983,
+      "annualized_return_min_div_max": 0.9145036632915875,
+      "profit_factor_range": 0.0944067920312377,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.0944067920312377,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9525838544407198,
+      "annualized_return_min_div_max": 0.8987202613830755,
+      "profit_factor_range": 0.06740556486605764,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9525838544407198,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9525838544407198,
+      "annualized_return_min_div_max": 0.8987202613830755,
+      "profit_factor_range": 0.06740556486605764,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.8987202613830755,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9525838544407198,
+      "annualized_return_min_div_max": 0.8987202613830755,
+      "profit_factor_range": 0.06740556486605764,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.06740556486605764,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.986607857341645,
+      "annualized_return_min_div_max": 0.8614806602395676,
+      "profit_factor_range": 0.04288028960690182,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.986607857341645,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.986607857341645,
+      "annualized_return_min_div_max": 0.8614806602395676,
+      "profit_factor_range": 0.04288028960690182,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.8614806602395676,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.986607857341645,
+      "annualized_return_min_div_max": 0.8614806602395676,
+      "profit_factor_range": 0.04288028960690182,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.04288028960690182,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.93322659021007,
+      "annualized_return_min_div_max": 0.9198587707297134,
+      "profit_factor_range": 0.09123098047921929,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.93322659021007,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.93322659021007,
+      "annualized_return_min_div_max": 0.9198587707297134,
+      "profit_factor_range": 0.09123098047921929,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9198587707297134,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "expectancy_min_div_max": 0.93322659021007,
+      "annualized_return_min_div_max": 0.9198587707297134,
+      "profit_factor_range": 0.09123098047921929,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.09123098047921929,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9440923046583882,
+      "annualized_return_min_div_max": 0.9071806569601841,
+      "profit_factor_range": 0.06412623403033102,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9440923046583882,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9440923046583882,
+      "annualized_return_min_div_max": 0.9071806569601841,
+      "profit_factor_range": 0.06412623403033102,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9071806569601841,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "expectancy_min_div_max": 0.9440923046583882,
+      "annualized_return_min_div_max": 0.9071806569601841,
+      "profit_factor_range": 0.06412623403033102,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.06412623403033102,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.9703218994396969,
+      "annualized_return_min_div_max": 0.8766893807477503,
+      "profit_factor_range": 0.039519621953890915,
+      "gate": "expectancy_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.9703218994396969,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.9703218994396969,
+      "annualized_return_min_div_max": 0.8766893807477503,
+      "profit_factor_range": 0.039519621953890915,
+      "gate": "annualized_return_min_div_max",
+      "rule": ">= 0.35",
+      "actual": 0.8766893807477503,
+      "status": "PASS"
+    },
+    {
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "expectancy_min_div_max": 0.9703218994396969,
+      "annualized_return_min_div_max": 0.8766893807477503,
+      "profit_factor_range": 0.039519621953890915,
+      "gate": "profit_factor_range",
+      "rule": "<= 0.50",
+      "actual": 0.039519621953890915,
+      "status": "PASS"
+    }
+  ]
+}

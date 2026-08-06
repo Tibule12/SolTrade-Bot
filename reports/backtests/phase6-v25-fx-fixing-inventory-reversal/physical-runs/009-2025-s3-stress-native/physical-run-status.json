@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 9,
+  "run_id": "009-2025-s3-stress-native",
+  "execution_instance_id": "V25-009-2025_S3-STRESS-NATIVE",
+  "formal_dataset": "V25_2025_DEVELOPMENT_REUSE",
+  "segment_id": "2025_S3",
+  "cost_profile": "STRESS",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "c11852988433bf52885922851f87ed610050a7fae620739e96fa26c562dd8e8d",
+  "rendered_ini_sha256": "8c4fb52040c852f949c1c35a928ca67b3281f33dd998edb7ebd25968a2c72da3",
+  "wine_return_code": 0,
+  "elapsed_seconds": 36.72280979156494,
+  "run_evidence_status": "PASS",
+  "evaluations": 2084,
+  "entry_opportunities": 99,
+  "entry_fills": 86,
+  "exit_fills": 86,
+  "seal_breach": "NO",
+  "native_reports": [
+    "009-2025-s3-stress-native.html",
+    "009-2025-s3-stress-native-holding.png",
+    "009-2025-s3-stress-native-mfemae.png",
+    "009-2025-s3-stress-native-hst.png",
+    "009-2025-s3-stress-native.png"
+  ],
+  "status": "PASS"
+}

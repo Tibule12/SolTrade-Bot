@@ -1,0 +1,29 @@
+SOLTRADE PHASE 6 V3 RELEASE COMPILE EVIDENCE
+execution_authorized=false
+compiler_cpu=AVX2 + FMA3
+release_tag=phase6-prerun-v3
+release_commit=e7cb8111c6f09a359c8156d110744bf40f20fbef
+
+2026-07-28 21:12:33.983 | MQL5/Scripts/SolTradeRiskTests.mq5 | 0 errors, 0 warnings
+2026-07-28 21:12:57.233 | MQL5/Scripts/SolTradeStrategyTests.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:04.781 | MQL5/Scripts/SolTradeExecutionTests.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:12.009 | MQL5/Scripts/SolTradePositionManagerTests.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:19.731 | MQL5/Scripts/SolTradeOneShotDemoVerification.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:40.336 | MQL5/Scripts/SolTradeOneShotPositionCloseVerification.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:47.624 | MQL5/Scripts/SolTradeOneShotPositionCloseVerificationV2.mq5 | 0 errors, 0 warnings
+2026-07-28 21:13:52.940 | MQL5/Scripts/SolTradePhase6HistoryAcquisition.mq5 | 0 errors, 0 warnings
+2026-07-28 21:14:12.560 | MQL5/Scripts/SolTradePhase6SafetyTests.mq5 | 0 errors, 0 warnings
+2026-07-28 21:14:22.605 | MQL5/Experts/SolTradeBot.mq5 | 0 errors, 0 warnings
+
+total_release_targets=10
+total_errors=0
+total_warnings=0
+
+2026-07-28 21:14:28.189 | MQL5/Experts/SolTradePhase6DataQualificationProbe.mq5 | 0 errors, 0 warnings
+observer_compile_errors=0
+observer_compile_warnings=0
+
+safety_source_sha256=1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c
+safety_ex5_sha256=8290a7cba162b077defbe9aad9c6b5e5320fc3460d40a0b204a8fd0c1997f009
+observer_source_sha256=6fa74e250105917ea25a0b40421d9712127615d34e8ce1b9a33d0f0256dd8f3f
+observer_ex5_sha256=3181262590712850f5008f38f60b7193cc0fbc667ee28b496bea70d4da68c89f

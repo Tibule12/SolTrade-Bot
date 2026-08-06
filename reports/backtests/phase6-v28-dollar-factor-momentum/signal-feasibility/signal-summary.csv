@@ -1,0 +1,12 @@
+field,value
+schema,SOLTRADE_PHASE6_V28_SIGNAL_SUMMARY_V1
+cohorts,17
+legs,119
+buy,60
+sell,59
+skips,0
+max_tick,2026.07.31 23:59:59
+seal_breach,NO
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,PASS

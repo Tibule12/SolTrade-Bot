@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "confirmations_checked": 84,
+  "real_first_tick_found": 84,
+  "first_eligible_tick_selection_mismatches": 0,
+  "outside_eligible_interval": 0,
+  "period_or_segment_suppression_errors": 0,
+  "duplicate_guard_errors": 0,
+  "submission_state_rejections": 0,
+  "all_84_reconciled_once": true
+}

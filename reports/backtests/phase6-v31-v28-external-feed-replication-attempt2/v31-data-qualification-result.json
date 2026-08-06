@@ -1,0 +1,28 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "V31_DATA_INSUFFICIENT_OR_INVALID",
+  "status": "FAIL",
+  "reason": "The single frozen provider contains 12,208 crossed bid/ask ticks across six required symbols during a synchronized 2024-10-09/10 episode.",
+  "provider_payload_defect_not_decoder_error": true,
+  "decoder_equivalence_checkpoint": {
+    "bi5_rows": 4343,
+    "jetta_rows": 4343,
+    "exact_timestamp_bid_ask_matches": 4343,
+    "mismatches": 0
+  },
+  "crossed_quotes": 12208,
+  "affected_symbols": 6,
+  "zero_or_negative_prices": 0,
+  "backward_timestamps": 0,
+  "duplicate_timestamps": 0,
+  "missing_required_open_session_files": 0,
+  "normalization_authorized": false,
+  "mt5_import_authorized": false,
+  "profitability_execution_authorized": false,
+  "performance_physical_runs": 0,
+  "formal_performance_cells": 0,
+  "combined_evidence_audit_authorized": false,
+  "profitability_metrics_calculated_or_viewed": false,
+  "data_failure_not_v28_performance_failure": true,
+  "v28_status": "UNCHANGED_AND_NOT_FAILED_EXTERNAL_REPLICATION"
+}

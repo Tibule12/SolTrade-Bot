@@ -1,0 +1,20 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_EVIDENCE_INTEGRITY_V1",
+  "status": "INVALID_TEST_EVIDENCE",
+  "pre_run_commit": "2767af78a7ac700570430ef8faa4906fde514fac",
+  "pre_run_tag": "phase6-v11-matrix-prerun",
+  "pre_run_tag_commit_matches": true,
+  "v10_commit_preserved": true,
+  "v4_through_v10_evidence_modified": false,
+  "phase_1_through_5_mql5_modified": false,
+  "strategy_matrix_runs": 0,
+  "native_mt5_reports": 0,
+  "tester_logs": 0,
+  "profitability_results": 0,
+  "optimization_runs": 0,
+  "replica_runs": 0,
+  "generated_tick_runs": 0,
+  "connected_demo_live_trades": 0,
+  "phase_7_authorized": false,
+  "evidence_defects": ["V11-BLOCK-001","V11-BLOCK-002","V11-BLOCK-003","V11-BLOCK-004","V11-BLOCK-005"]
+}

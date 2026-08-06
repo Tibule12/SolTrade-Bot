@@ -1,0 +1,42 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_COST_ASSUMPTIONS_V1",
+  "status": "FROZEN_BEFORE_PERFORMANCE",
+  "research_claim": "CONTROLLED_PRACTICAL_BACKTEST",
+  "exact_historical_2025_execution_cost_reconstruction_claimed": false,
+  "commission": {
+    "account_type": "Raw",
+    "account_currency": "USD",
+    "per_side_per_standard_lot_usd": 3.0,
+    "round_trip_per_standard_lot_usd": 6.0,
+    "formula": "executed_volume_lots * 3.00 * charged_sides",
+    "native_tester_commission_assumed": false,
+    "native_nonzero_reconciliation_gate": "STOP_IF_UNRECONCILED",
+    "source_url": "https://www.fpmarkets.com/en-za/forex-spreads/",
+    "retrieved_at": "2026-08-03T12:37:42Z",
+    "canonical_transcription_sha256": "af93e9dcb5460cbe4d122991ef9738e6ef941597737d08fbb927f88eaf072a82"
+  },
+  "current_swap_snapshot_fixed_research_assumption": {
+    "captured_from": "FPMarketsSC-Demo EURUSD tester symbol properties; build 6090",
+    "swap_mode": 1,
+    "swap_mode_interpretation": "POINTS",
+    "swap_long": -9.71,
+    "swap_short": 4.5,
+    "triple_swap_day": 3,
+    "triple_swap_day_interpretation": "WEDNESDAY",
+    "historical_2025_schedule_available": false
+  },
+  "supplementary_profiles": {
+    "normal": 0.0,
+    "high": 0.5,
+    "stress": 1.0
+  },
+  "supplementary_formula": "adjusted_trade_net = native_trade_net - supplementary_charge",
+  "native_friction_subtracted_twice": false,
+  "future_ledger_layers": [
+    "gross trading result",
+    "native tester commission",
+    "frozen external commission adjustment",
+    "swap",
+    "final adjusted net result"
+  ]
+}

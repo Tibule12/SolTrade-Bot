@@ -1,0 +1,57 @@
+{
+  "spread_failure_count": 61,
+  "by_period": {
+    "VALIDATION": 9,
+    "PROPOSED_OOS": 38,
+    "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION": 14
+  },
+  "by_hour": {
+    "0": 1,
+    "1": 5,
+    "2": 2,
+    "3": 2,
+    "4": 4,
+    "6": 2,
+    "8": 3,
+    "9": 3,
+    "10": 2,
+    "11": 5,
+    "13": 3,
+    "14": 2,
+    "15": 3,
+    "16": 5,
+    "17": 6,
+    "18": 4,
+    "19": 1,
+    "20": 5,
+    "23": 3
+  },
+  "by_weekday": {
+    "Thursday": 16,
+    "Friday": 9,
+    "Tuesday": 15,
+    "Wednesday": 13,
+    "Monday": 8
+  },
+  "by_direction": {
+    "BUY": 19,
+    "SELL": 42
+  },
+  "by_effective_limit_bucket": {
+    "LE_15": 31,
+    "LE_10": 30
+  },
+  "by_amount_above_threshold_bucket": {
+    "LE_10": 7,
+    "LE_5": 29,
+    "LE_1": 11,
+    "LE_20": 1,
+    "LE_2": 9,
+    "LE_50": 3,
+    "GT_50": 1
+  },
+  "median_spread_points_all_confirmations": 12.999999999996346,
+  "median_effective_limit_points_all_confirmations": 11.256764497003491,
+  "median_failed_spread_points": 12.999999999996346,
+  "median_failed_effective_limit_points": 10.02782220204048
+}

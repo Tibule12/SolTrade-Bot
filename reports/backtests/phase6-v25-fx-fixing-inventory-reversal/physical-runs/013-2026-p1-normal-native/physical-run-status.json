@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 13,
+  "run_id": "013-2026-p1-normal-native",
+  "execution_instance_id": "V25-013-2026_P1-NORMAL-NATIVE",
+  "formal_dataset": "V25_2026_PRESEAL_DEVELOPMENT",
+  "segment_id": "2026_P1",
+  "cost_profile": "NORMAL",
+  "execution_layer": "NATIVE_NORMAL_EXECUTION",
+  "execution_mode": 0,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "3f9926a0b44d9e5e2374b73342e64773299214cdcfec074b554983c350d50234",
+  "rendered_ini_sha256": "b8267bba4a6e9989d12a192657e09f70b1e72f70313bcd2089a7d4f9c3bca315",
+  "wine_return_code": 0,
+  "elapsed_seconds": 25.845739603042603,
+  "run_evidence_status": "PASS",
+  "evaluations": 1356,
+  "entry_opportunities": 59,
+  "entry_fills": 57,
+  "exit_fills": 57,
+  "seal_breach": "NO",
+  "native_reports": [
+    "013-2026-p1-normal-native.html",
+    "013-2026-p1-normal-native-holding.png",
+    "013-2026-p1-normal-native-mfemae.png",
+    "013-2026-p1-normal-native.png",
+    "013-2026-p1-normal-native-hst.png"
+  ],
+  "status": "PASS"
+}

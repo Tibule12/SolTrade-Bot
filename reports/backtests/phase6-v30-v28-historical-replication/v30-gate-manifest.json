@@ -1,0 +1,69 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_GATE_MANIFEST_V1",
+  "source_v28_gate_manifest_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "outcomes": [
+    "V30_HISTORICAL_REPLICATION_PASSED",
+    "V30_HISTORICAL_REPLICATION_FAILED",
+    "V30_DATA_INSUFFICIENT_OR_INVALID",
+    "INVALID_TEST_EVIDENCE"
+  ],
+  "sample_normal_native": {
+    "continuous_closed": ">= 100",
+    "BUY_closed": ">= 20",
+    "SELL_closed": ">= 20",
+    "each_symbol_closed": ">= 10"
+  },
+  "performance_every_cell": {
+    "NORMAL": {
+      "profit_factor": "> 1.15",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "< 8"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.05",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 10"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "drawdown_percent": "<= 12"
+    }
+  },
+  "concentration_every_cell": {
+    "best_trade_percent": "<= 15",
+    "best_currency_percent": "<= 35",
+    "best_of_five_time_subperiods_percent": "<= 40"
+  },
+  "annual_consistency_per_cost_execution": {
+    "scope": "fixed calendar-year exit attribution 2018 through 2024 from the continuous run",
+    "expectancy_min_div_max": ">= 0.35",
+    "annualized_return_min_div_max": ">= 0.35",
+    "profit_factor_range": "<= 0.50"
+  },
+  "uncertainty": {
+    "bootstrap_paths": 100000,
+    "monte_carlo_paths": 100000,
+    "reporting_only": true
+  },
+  "additional_reporting_only": [
+    "best_week",
+    "best_month",
+    "best_year",
+    "top_5_trades",
+    "top_10_trades",
+    "rolling_12_month_profitability",
+    "losing_year_count",
+    "longest_negative_period",
+    "symbol_currency_direction_contribution",
+    "bootstrap",
+    "monte_carlo"
+  ],
+  "concentration_subperiod_formula": "same V28 elapsed-time quintile formula over the exact continuous interval",
+  "all_mandatory": true,
+  "no_gate_weakened": true,
+  "failure_policy": "permanently retire V28 unchanged as period-specific or insufficiently robust; no rescue, tuning, demo or live"
+}

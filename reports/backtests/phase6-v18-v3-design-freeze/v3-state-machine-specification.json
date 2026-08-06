@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V18_V3_STATE_MACHINE_V1",
+  "namespace": "SOLTRADE_TREND_BREAKOUT_V3_RETEST_HOLD_STATE_V1",
+  "states": ["FLAT_NO_SETUP", "BUY_SETUP_ACTIVE", "SELL_SETUP_ACTIVE", "CONFIRMED_TERMINAL", "CANCELLED_TERMINAL", "POSITION_OPEN", "RESET_REQUIRED"],
+  "evaluation_order": ["validate_segment_and_inputs", "evaluate_existing_position_exit", "evaluate_active_setup_retest", "evaluate_confirmation_guards_once", "evaluate_cancellation", "evaluate_opposite_setup_after_cancellation", "evaluate_flat_setup_creation", "persist_last_processed_candle"],
+  "transitions": [
+    {"from": "FLAT_NO_SETUP", "event": "valid_buy_setup", "to": "BUY_SETUP_ACTIVE", "actions": ["freeze_setup_fields", "set_retest_count_0", "persist"]},
+    {"from": "FLAT_NO_SETUP", "event": "valid_sell_setup", "to": "SELL_SETUP_ACTIVE", "actions": ["freeze_setup_fields", "set_retest_count_0", "persist"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "next_completed_market_h1", "to": "BUY_SETUP_ACTIVE", "actions": ["increment_retest_count", "evaluate_buy_retest_hold"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "next_completed_market_h1", "to": "SELL_SETUP_ACTIVE", "actions": ["increment_retest_count", "evaluate_sell_retest_hold"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "buy_retest_hold_and_all_entry_guards_pass", "to": "CONFIRMED_TERMINAL", "actions": ["mark_confirmed", "submit_once_at_first_tradable_tick", "clear_active_setup"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "sell_retest_hold_and_all_entry_guards_pass", "to": "CONFIRMED_TERMINAL", "actions": ["mark_confirmed", "submit_once_at_first_tradable_tick", "clear_active_setup"]},
+    {"from": "CONFIRMED_TERMINAL", "event": "submission_accepted", "to": "POSITION_OPEN", "actions": ["no_retry"]},
+    {"from": "CONFIRMED_TERMINAL", "event": "submission_rejected_or_not_sent", "to": "FLAT_NO_SETUP", "actions": ["no_retry", "persist_terminal_status"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "otherwise_valid_confirmation_blocked_by_position_risk_spread_or_execution", "to": "CANCELLED_TERMINAL", "actions": ["cancel", "no_postponement", "no_retry"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "otherwise_valid_confirmation_blocked_by_position_risk_spread_or_execution", "to": "CANCELLED_TERMINAL", "actions": ["cancel", "no_postponement", "no_retry"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "wrong_side_ema_close_or_sixth_candle_without_confirmation", "to": "CANCELLED_TERMINAL", "actions": ["cancel"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "wrong_side_ema_close_or_sixth_candle_without_confirmation", "to": "CANCELLED_TERMINAL", "actions": ["cancel"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "accepted_opposite_sell_breakout_after_retest_evaluation", "to": "SELL_SETUP_ACTIVE", "actions": ["cancel_buy", "freeze_sell_setup", "set_retest_count_0", "persist"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "accepted_opposite_buy_breakout_after_retest_evaluation", "to": "BUY_SETUP_ACTIVE", "actions": ["cancel_sell", "freeze_buy_setup", "set_retest_count_0", "persist"]},
+    {"from": "BUY_SETUP_ACTIVE", "event": "same_direction_breakout", "to": "BUY_SETUP_ACTIVE", "actions": ["do_not_restart", "do_not_extend"]},
+    {"from": "SELL_SETUP_ACTIVE", "event": "same_direction_breakout", "to": "SELL_SETUP_ACTIVE", "actions": ["do_not_restart", "do_not_extend"]},
+    {"from": "ANY_SETUP_STATE", "event": "gap_reset_segment_end_corrupt_state_or_identity_mismatch", "to": "RESET_REQUIRED", "actions": ["cancel_setup", "clear_namespace_state", "fail_closed"]},
+    {"from": "RESET_REQUIRED", "event": "new_valid_segment_with_300_clean_bars", "to": "FLAT_NO_SETUP", "actions": ["initialize_segment_state"]},
+    {"from": "POSITION_OPEN", "event": "initial_stop_or_completed_close_donchian10_exit", "to": "FLAT_NO_SETUP", "actions": ["existing_position_management_only"]}
+  ],
+  "restart_rules": {"restore_only_when_identity_and_segment_match": true, "reprocess_last_completed_candle": false, "duplicate_setup": false, "duplicate_entry": false},
+  "precedence": {"valid_retest_confirmation_before_opposite_setup": true, "active_setup_fully_evaluated_before_replacement": true, "expiry_after_evaluating_retest_candle_6": true}
+}

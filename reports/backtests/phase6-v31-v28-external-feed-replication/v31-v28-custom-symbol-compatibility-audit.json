@@ -1,0 +1,62 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_V28_CUSTOM_SYMBOL_COMPATIBILITY_AUDIT_V1",
+  "status": "FAIL",
+  "required_custom_symbols": [
+    "EURUSD.V31",
+    "GBPUSD.V31",
+    "AUDUSD.V31",
+    "NZDUSD.V31",
+    "USDCAD.V31",
+    "USDCHF.V31",
+    "USDJPY.V31"
+  ],
+  "frozen_v28_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "frozen_v28_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "candidate_specification_sha256": "b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7",
+  "gate_manifest_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "source_assertions": {
+    "hardcoded_unsuffixed_symbol_array": true,
+    "main_tester_symbol_must_equal_unsuffixed_eurusd": true,
+    "server_must_equal_fpmarkets_demo": true,
+    "child_symbols_selected_from_hardcoded_array": true,
+    "market_config_uses_hardcoded_array": true,
+    "atr_uses_hardcoded_array": true,
+    "no_v31_suffix_in_frozen_source": true
+  },
+  "official_mt5_custom_symbol_reference": "https://www.mql5.com/en/docs/customsymbols/customsymbolcreate",
+  "official_mt5_tick_import_reference": "https://www.mql5.com/en/docs/customsymbols/customticksreplace",
+  "mt5_constraints": [
+    "A custom symbol has a globally unique symbol name regardless of group.",
+    "CustomTicksReplace writes to the explicitly named custom symbol.",
+    "There is no frozen V28 input that aliases EURUSD to EURUSD.V31 or the other six names."
+  ],
+  "evaluated_routes": [
+    {
+      "route": "Run frozen EX5 with EURUSD.V31 as tester symbol",
+      "status": "INVALID",
+      "reason": "Frozen preflight requires _Symbol == EURUSD."
+    },
+    {
+      "route": "Run frozen EX5 on EURUSD and select .V31 child symbols",
+      "status": "INVALID",
+      "reason": "Frozen code selects, configures and computes ATR on the unsuffixed SYMBOLS array."
+    },
+    {
+      "route": "Create custom symbols using the unsuffixed broker names",
+      "status": "INVALID",
+      "reason": "Names collide with broker symbols and violate the explicitly required .V31 isolated names."
+    },
+    {
+      "route": "Change the source symbol array or preflight",
+      "status": "INVALID",
+      "reason": "Would change both the frozen source and executable hashes."
+    },
+    {
+      "route": "Patch broker symbol history or redirect cache files",
+      "status": "INVALID",
+      "reason": "Violates isolated custom symbols, no broker-data patching and exact import-parity requirements."
+    }
+  ],
+  "compliant_execution_route_exists": false,
+  "terminal_reason": "The V31 custom-symbol requirement and the exact frozen V28 executable requirement cannot both be satisfied."
+}

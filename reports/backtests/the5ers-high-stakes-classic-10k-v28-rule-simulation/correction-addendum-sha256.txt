@@ -1,0 +1,7 @@
+# Correction artifacts (this non-self-referential ledger is excluded)
+d3e8d2982b8fb7b7201c3b3cab313fd0c90439393048ec37251070dfa75e0a2e  reports/backtests/the5ers-high-stakes-classic-10k-v28-rule-simulation/terminal-classification-correction-addendum.md
+e299dd35d38c0776626e6ade69888d792d2ac2cd02ed8504a313127247c52f36  reports/backtests/the5ers-high-stakes-classic-10k-v28-rule-simulation/inactivity-gap-terminal-correction.csv
+# Preserved original controlling artifacts
+3e3a03a94b01249fe2bb46cf99f51dffa1f7d169e319e832895eeffd347405ec  reports/backtests/the5ers-high-stakes-classic-10k-v28-rule-simulation/terminal-outcome.md
+525de9b3f02f41b61a9976067d81afddb7424500d302d43f546b3c8d79f4b110  reports/backtests/the5ers-high-stakes-classic-10k-v28-rule-simulation/sha256-ledger.txt
+261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3  MQL5/Experts/SolTradeBot.mq5

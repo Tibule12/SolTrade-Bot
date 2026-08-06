@@ -1,0 +1,28 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_SIGNAL_FEASIBILITY_V1",
+  "status": "PASS",
+  "source_sha256": "7f080c26d26b634b2f8a1e840b3a9fa60926fb95e415956ba0a8475f838537bd",
+  "ex5_sha256": "dbfcb316d81e624710bd0c3ad28673a6f0ed4118136988621cca5d501aa9e158",
+  "cohorts": 17,
+  "legs": 119,
+  "by_dataset": {
+    "V28_2025_DEVELOPMENT": 77,
+    "V28_2026_PRESEAL_DEVELOPMENT": 42
+  },
+  "by_direction": {
+    "SELL": 59,
+    "BUY": 60
+  },
+  "by_symbol": {
+    "EURUSD": 17,
+    "GBPUSD": 17,
+    "AUDUSD": 17,
+    "NZDUSD": 17,
+    "USDCAD": 17,
+    "USDCHF": 17,
+    "USDJPY": 17
+  },
+  "orders_or_positions": 0,
+  "pnl_calculated": false,
+  "seal_breach": "NO"
+}

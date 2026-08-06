@@ -1,0 +1,72 @@
+LR	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	SOLTRADE_PHASE6_CONNECTED_PREFLIGHT | algo_trading=OFF | orders=0 | positions=0 | history_deals=5 | production_ea_detached=YES | demo_execution=DISABLED | position_management=DISABLED | live_trading=DISABLED
+RM	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	SolTrade Phase 6 deterministic safety tests started.
+JF	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	This script never calls OrderCheck, OrderSend, or Strategy Tester.
+NJ	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: SHA-256 calculation succeeds
+DG	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: SHA-256 known vector
+KO	0	21:20:27.635	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Authoritative trading-input hash calculated
+NP	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: MQL canonical hash matches independent manifest generator
+OO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Canonical material freezes tick model, delay mode, and actual schemas
+EQ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Replica trading-input hash calculated
+MG	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: ExecutionInstanceId excluded from trading-input hash
+DJ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Canonical trading inputs ignore instance identity
+OF	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Canonical material contains no authoritative instance ID
+NG	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Canonical material contains no replica instance ID
+NI	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Trading risk change changes canonical hash
+RL	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Cost profile change changes canonical hash
+NP	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Authoritative and replica risk state are isolated
+KM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Authoritative and replica execution state are isolated
+OG	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Authoritative and replica artifacts are isolated
+RI	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: State path contains canonical trading-input hash
+KI	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Valid Phase 6 configuration accepted
+KJ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Backtest capabilities cannot remain armed when research is disabled
+MH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Tester execution and management must be armed together
+LL	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Phase 6 configuration rejects demo automation
+MP	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Phase 6 configuration rejects live trading
+QS	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Fewer than 30 latency samples rejected
+FJ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Frozen D must align upward to 50 milliseconds
+LH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Exact frozen tester runtime accepted
+CJ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Connected demo cannot satisfy tester runtime gate
+IO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Terminal build mismatch rejected
+NO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Authoritative pure execution plan accepted
+CL	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Replica pure execution plan accepted
+MD	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Instance ID cannot change signal direction
+LE	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Instance ID cannot change position size
+FQ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Instance ID cannot change requested entry
+FS	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Instance ID cannot change stop-loss
+PP	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Instance ID cannot change magic number
+DK	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Default-off tester gate rejects execution
+LI	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Default-off tester rejection reason
+DS	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Warm-up-period signal rejected
+QQ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Warm-up-period rejection reason
+PE	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Normal supplementary multiplier
+EH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: High supplementary multiplier
+IM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Stress supplementary multiplier
+EP	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Normal adjusted trade does not subtract native friction twice
+DM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: High adjusted trade subtracts half native friction
+OD	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Stress adjusted trade subtracts one native friction
+DE	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Chronological cash-flow adjustment accepted 1
+KH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Chronological cash-flow adjustment accepted 2
+RJ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Chronological cash-flow adjustment accepted 3
+EL	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Chronological cash-flow adjustment accepted 4
+NR	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted chronological metrics calculated
+OM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted net rebuilt from trade cash flows
+NH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted gross profit rebuilt
+CD	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted gross loss rebuilt
+PM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted expectancy rebuilt
+IQ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted profit factor rebuilt
+FK	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Adjusted equity curve rebuilt
+PG	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Fifty-trade OOS metrics calculated
+IO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Fifty closed OOS trades can pass sample gate
+LM	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Forty-nine closed OOS trades cannot pass
+KF	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Normal profit factor must be strictly above 1.15
+HI	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Normal drawdown must be strictly below 8 percent
+OK	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: High-cost exact registered thresholds pass
+II	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Stress-cost exact registered thresholds pass
+NQ	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Best trade above 20 percent concentration is rejected
+KL	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Best period above 40 percent concentration is rejected
+JO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Permitted cross-dataset variation accepted
+PO	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Expectancy below half of maximum rejected
+IG	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	PASS: Profit-factor spread above 0.40 rejected
+ND	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	SolTrade Phase 6 safety tests complete: 66 passed, 0 failed
+KH	0	21:20:27.636	SolTradePhase6SafetyTests (USDJPY,H1)	ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED
+IQ	0	21:20:27.637	SolTradePhase6SafetyTests (USDJPY,H1)	SOLTRADE_PHASE6_CONNECTED_POSTRUN | orders=0 | positions=0 | new_orders=0 | new_positions=0 | new_deals=0 | production_ea_detached=YES

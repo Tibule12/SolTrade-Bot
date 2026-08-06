@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_SIGNAL_FEASIBILITY_POSTRUN_AUDIT_V1",
+  "raw_harness_status": "FAIL",
+  "audited_evidence_status": "PASS_WITH_FROZEN_NO_SIGNAL_SKIPS",
+  "reason_for_raw_failure": "The harness imposed an extra all-weeks-history-available integrity condition that is not a frozen strategy or gate requirement.",
+  "strategy_behavior_unchanged": true,
+  "frozen_rule_application": {
+    "threshold_minimum_observations": 260,
+    "when_fewer_than_260": "no signal",
+    "missing_current_reference": "skip symbol-week"
+  },
+  "recorded_symbol_weeks": 567,
+  "fully_evaluated_symbol_weeks": 518,
+  "threshold_history_unavailable_no_signal_skips": 48,
+  "current_reference_missing_no_signal_skips": 1,
+  "frozen_tail_signals": 93,
+  "signals_by_dataset": {"V27_2025_DEVELOPMENT": 45, "V27_2026_PRESEAL_DEVELOPMENT": 48},
+  "signals_by_direction": {"BUY": 53, "SELL": 40},
+  "signals_by_symbol": {"EURUSD": 14, "GBPUSD": 11, "AUDUSD": 14, "NZDUSD": 14, "USDCAD": 11, "USDCHF": 16, "USDJPY": 13},
+  "minimum_signal_buffer_above_frozen_all_preseal_closed_trade_gate": 43,
+  "profitability_interpreted": false,
+  "pnl_calculated": false,
+  "orders_or_positions": 0,
+  "optimization_or_tuning": false,
+  "decision": "PROCEED_TO_FROZEN_DEVELOPMENT_EXECUTION_TEST; NATURALLY_CLOSED_SAMPLE_GATES_REMAIN_UNDECIDED"
+}

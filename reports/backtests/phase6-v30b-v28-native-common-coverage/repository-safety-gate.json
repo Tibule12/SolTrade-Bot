@@ -1,0 +1,25 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30B_REPOSITORY_SAFETY_GATE_V1",
+  "status": "PASS",
+  "checked_before_bundle": {
+    "worktree_clean": true,
+    "branch": "main",
+    "head": "cfc1d509328be51e9a16f8cd10adc5c04a5ca592",
+    "v30_terminal_commit_present": true,
+    "v30_predata_freeze_present": true
+  },
+  "bundle": {
+    "path": "backups/phase6-v30b-prerun-all-refs.bundle",
+    "sha256": "fec094d4242892b615dd0b5961adafc565df154dea07732405336306f37683b2",
+    "size_bytes": 10362230,
+    "creation_scope": "--all",
+    "verified": true,
+    "complete_history": true,
+    "refs": 35,
+    "contains_main_at": "cfc1d509328be51e9a16f8cd10adc5c04a5ca592",
+    "contains_phase6_v30_terminal_tag": true,
+    "contains_phase6_v30_predata_freeze_tag": true
+  },
+  "automatic_push": false,
+  "failure_outcome": "INVALID_TEST_EVIDENCE"
+}

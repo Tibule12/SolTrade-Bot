@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "research_cutoff_exclusive": "2026-08-01 00:00:00.000",
+  "maximum_tick_timestamp_accessed": "2026.07.31 23:59:59.143",
+  "maximum_h1_timestamp_accessed": "2026.07.31 23:00:00.000",
+  "maximum_completed_h1_timestamp_processed": "2026.07.31 22:00:00.000",
+  "actual_records_at_or_after_cutoff_accessed": 0,
+  "actual_records_rejected_at_seal_boundary": 0,
+  "synthetic_boundary_rejection_fixture_passed": true,
+  "oos_seal_sha256_expected": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe",
+  "oos_seal_sha256_actual": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe",
+  "oos_seal_sha256_verified": true,
+  "post_seal_data_accessed": false
+}

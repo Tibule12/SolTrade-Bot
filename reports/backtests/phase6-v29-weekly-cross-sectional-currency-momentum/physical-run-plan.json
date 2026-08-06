@@ -1,0 +1,60 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_PHYSICAL_RUN_PLAN_V1",
+  "frozen_before_pnl": true,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "runs": [
+    {
+      "run_number": 1,
+      "run_id": "01-v29-2025-native",
+      "dataset": "V29_2025_DEVELOPMENT",
+      "schedule_dataset": "V26_2025_DEVELOPMENT",
+      "expected_schedule_legs": 204,
+      "history_from": "2024.12.02",
+      "eligible_from": "2025.01.06 10:05:00",
+      "eligible_to_exclusive": "2026.01.01 00:00:00",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "schedule_file": "SolTrade\\Phase6\\V29Signals\\V26_2025_DEVELOPMENT\\signal-schedule.csv"
+    },
+    {
+      "run_number": 2,
+      "run_id": "02-v29-2026-preseal-native",
+      "dataset": "V29_2026_PRESEAL_DEVELOPMENT",
+      "schedule_dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "expected_schedule_legs": 116,
+      "history_from": "2025.12.01",
+      "eligible_from": "2026.01.05 10:05:00",
+      "eligible_to_exclusive": "2026.08.01 00:00:00",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "schedule_file": "SolTrade\\Phase6\\V29Signals\\V26_2026_PRESEAL_DEVELOPMENT\\signal-schedule.csv"
+    },
+    {
+      "run_number": 3,
+      "run_id": "03-v29-2025-delay200",
+      "dataset": "V29_2025_DEVELOPMENT",
+      "schedule_dataset": "V26_2025_DEVELOPMENT",
+      "expected_schedule_legs": 204,
+      "history_from": "2024.12.02",
+      "eligible_from": "2025.01.06 10:05:00",
+      "eligible_to_exclusive": "2026.01.01 00:00:00",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "schedule_file": "SolTrade\\Phase6\\V29Signals\\V26_2025_DEVELOPMENT\\signal-schedule.csv"
+    },
+    {
+      "run_number": 4,
+      "run_id": "04-v29-2026-preseal-delay200",
+      "dataset": "V29_2026_PRESEAL_DEVELOPMENT",
+      "schedule_dataset": "V26_2026_PRESEAL_DEVELOPMENT",
+      "expected_schedule_legs": 116,
+      "history_from": "2025.12.01",
+      "eligible_from": "2026.01.05 10:05:00",
+      "eligible_to_exclusive": "2026.08.01 00:00:00",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "schedule_file": "SolTrade\\Phase6\\V29Signals\\V26_2026_PRESEAL_DEVELOPMENT\\signal-schedule.csv"
+    }
+  ]
+}

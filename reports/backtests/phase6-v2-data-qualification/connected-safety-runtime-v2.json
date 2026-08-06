@@ -1,0 +1,50 @@
+{
+  "schema": "SOLTRADE_PHASE6_CONNECTED_SAFETY_EVIDENCE_V2",
+  "execution_authorized": false,
+  "run_count": 1,
+  "run_timestamp_server": "2026-07-28T20:35:02.970",
+  "chart": "USDCHF,H1",
+  "preflight": {
+    "algo_trading": "OFF",
+    "orders": 0,
+    "positions": 0,
+    "history_deals": 5,
+    "production_ea_detached": true,
+    "trade_tab_empty": true,
+    "demo_execution": false,
+    "position_management": false,
+    "tester_permission_outside_strategy_tester": false,
+    "live_trading": false
+  },
+  "result": {
+    "passed": 66,
+    "failed": 0,
+    "success_marker": "ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED",
+    "status": "PASS"
+  },
+  "postrun": {
+    "orders": 0,
+    "positions": 0,
+    "new_orders": 0,
+    "new_positions": 0,
+    "new_deals": 0,
+    "production_ea_detached": true,
+    "connected_state_or_marker_changes": 0
+  },
+  "artifact_identity": {
+    "source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "connected_terminal_ex5_sha256": "300c031faf00676f0c7e46463db27a0d8f38687ae767ae4342f29f68ae481da8",
+    "runtime_log": "connected-safety-runtime-v2.log",
+    "runtime_log_sha256": "de75967ef3bfcb99b52515cf32b3f900e699d30c685bc47237888f31b215a6f2"
+  },
+  "marker_hashes_after": {
+    "v1_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b",
+    "v1_execution_sha256": "ba4c8b352e09f35168138a300fe82dc0aeaeaacd40abd165c4d51ca93f735cf9",
+    "v1_fixture_sha256": "57e477853eb6bbd98f10a0d6503a3361d05097cece1f9209e0ffa75700b498d1",
+    "v2_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b",
+    "v2_execution_sha256": "bcfbcbda0d3de6f2156ab54887aacfdc1d461330dde3bbc9e795ce5b0e790b4e",
+    "v2_fixture_sha256": "49896c0160811f3e9cb7dceaf61e4bb4c695d8b3c685b52c66557f78a5480eb7",
+    "v2_completion_sha256": "54b0cbec0ef9c04208a0a08318b4634e108679d1e613dcc1a1ae3cb0a7b645b2",
+    "v2_position_sha256": "67fb97ef15321f9dc8278778a91b1fb15db254b710091eac9d2050c5c475ab11"
+  }
+}

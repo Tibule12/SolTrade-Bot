@@ -1,0 +1,49 @@
+{
+  "schema": "SOLTRADE_PHASE6_CONNECTED_SAFETY_EVIDENCE_V4",
+  "execution_authorized": false,
+  "run_count": 1,
+  "run_timestamp_server": "2026-07-28T21:53:51.355",
+  "chart": "USDCHF,H1",
+  "preflight": {
+    "algo_trading": "OFF",
+    "orders": 0,
+    "positions": 0,
+    "history_deals": 5,
+    "production_ea_detached": true,
+    "trade_tab_empty": true,
+    "demo_execution": false,
+    "position_management": false,
+    "tester_permission_outside_strategy_tester": false,
+    "live_trading": false
+  },
+  "result": {
+    "passed": 66,
+    "failed": 0,
+    "success_marker": "ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED",
+    "status": "PASS"
+  },
+  "postrun": {
+    "orders": 0,
+    "positions": 0,
+    "new_orders": 0,
+    "new_trading_deals": 0,
+    "new_positions": 0,
+    "production_ea_detached": true
+  },
+  "artifact_identity": {
+    "source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "connected_terminal_ex5_sha256": "6dc4c4e057e175fdd5d340e3c23151ad9180225ca78964df1dd9842a2de240ee",
+    "runtime_log_sha256": "50be9fcc794e8d30637e4549e1416c1e899f1dda6d655bb3d55f2877d95102ea"
+  },
+  "connected_trade_state": {
+    "cache_sha256_changed_during_safety": false,
+    "deal_history_sha256_changed_during_safety": false,
+    "order_history_sha256_changed_during_safety": false
+  },
+  "marker_tree": {
+    "entry_count": 19,
+    "pre_sha256": "6a80fbd3a23b204c5e9e5c523a4d8cb0a0eb38783ee791dfefc4f0fc1d604d54",
+    "post_sha256": "6a80fbd3a23b204c5e9e5c523a4d8cb0a0eb38783ee791dfefc4f0fc1d604d54",
+    "changed": false
+  }
+}

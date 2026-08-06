@@ -1,0 +1,43 @@
+field,value
+schema,SOLTRADE_PHASE6_V23_RUN_SUMMARY_V1
+execution_instance_id,V23-017-2026_P2-HIGH-NATIVE
+segment_id,2026_P2
+dataset,DEVELOPMENT
+cost_profile,HIGH
+execution_layer,NATIVE_NORMAL_EXECUTION
+expected_execution_mode,0
+reset_at,2026.04.09 00:00:00
+eligible_from,2026.04.09 00:00:00
+eligible_to,2026.07.01 00:00:00
+first_evaluation,2026.04.27 11:00:00
+final_evaluation,2026.06.30 22:00:00
+indicator_eligible_h1_openings,1117
+exclusive_boundary_unobservable_final_h1,1
+expected_processable_completed_h1,1116
+evaluations,1116
+setups,38
+confirmations,19
+expired_setups,11
+entry_fills,19
+exit_fills,19
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,0
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,0
+stop_loss_exits,11
+donchian_exits,8
+retest_1,10
+retest_2,5
+retest_3,2
+retest_4,0
+retest_5,0
+retest_6,2
+censored_position,NO
+max_tick,2026.06.30 23:59:58
+max_completed_h1,2026.06.30 22:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

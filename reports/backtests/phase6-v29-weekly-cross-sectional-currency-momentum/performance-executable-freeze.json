@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_PERFORMANCE_EXECUTABLE_FREEZE_V1",
+  "design_freeze_commit": "51216f893b0774239fe29bbdd24408dfd7f86da7",
+  "selected_signal_count": 320,
+  "selected_signal_identity_set_sha256": "7e437783c8e9b5b616bd301c4a0434afa208b2339fdc80064ad4675425014db9",
+  "schedule_2025_sha256": "25876a808a49044bfdb2f2b728e0cbd7d097678c377a9b4af8b4d7b0ed8487cf",
+  "schedule_2026_preseal_sha256": "feada50576c4c6dd8ff716a2dda94abc053265ec8f545057bbd6e9a92425a11b",
+  "performance_source_sha256": "5b7edbd8b03f50c1320ed62fc1e374cee03dd2656edd0a28e831fef600fe1ed4",
+  "performance_ex5_sha256": "6d73d8febe39ff9ef87f5a36ff06ac35e6335dc0c6417199d2fedf27103c664f",
+  "compile_result": "0 errors, 0 warnings",
+  "terminal_build": 6090,
+  "real_tick_physical_runs": 4,
+  "formal_cells": 12,
+  "optimization": false,
+  "allow_live_trading": false,
+  "pnl_viewed": false
+}

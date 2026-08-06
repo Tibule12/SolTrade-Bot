@@ -1,0 +1,36 @@
+field,value
+schema,SOLTRADE_PHASE6_V25_RUN_SUMMARY_V1
+execution_instance_id,V25-040-2026_P3-NORMAL-DELAY200
+segment_id,2026_P3
+dataset,DEVELOPMENT
+cost_profile,NORMAL
+execution_layer,FIXED_DELAY_200_MS
+expected_execution_mode,200
+reset_at,2026.07.01 00:00:00
+eligible_from,2026.07.01 00:00:00
+eligible_to,2026.08.01 00:00:00
+first_evaluation,2026.07.17 11:00:00
+final_evaluation,2026.07.31 22:00:00
+expected_processable_completed_h1,252
+evaluations,252
+entry_opportunities,23
+entry_attempts,11
+entry_fills,11
+exit_fills,11
+missed_entry_windows,0
+insufficient_history_skips,12
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,0
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,0
+stop_loss_exits,0
+time_exits,11
+censored_position,NO
+max_tick,2026.07.31 23:59:56
+max_completed_h1,2026.07.31 22:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

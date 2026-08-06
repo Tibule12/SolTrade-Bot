@@ -1,0 +1,12 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_COMMISSION_RECONCILIATION_V1",
+  "native_tester_commission_total": 0.0,
+  "status": "EXTERNAL_FROZEN_COMMISSION_APPLIED",
+  "external_commission": {
+    "currency": "USD",
+    "per_side_per_standard_lot": 3.0,
+    "round_trip_per_standard_lot": 6.0,
+    "linear_pro_rata": true
+  },
+  "double_counted": false
+}

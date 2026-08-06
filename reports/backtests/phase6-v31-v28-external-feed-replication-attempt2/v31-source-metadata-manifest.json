@@ -1,0 +1,493 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_SOURCE_METADATA_MANIFEST_V1",
+  "status": "PASS",
+  "source": "Dukascopy Bank Jetta instrument service",
+  "single_provider": true,
+  "metadata_files_preserved_unchanged": true,
+  "session_timezone_all_symbols": "America/New_York",
+  "weekly_session_rule_verified": "Sunday 17:00 through Friday 17:00 America/New_York",
+  "weekly_session_rule_exact_all_symbols": true,
+  "symbols": [
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "EURUSD",
+      "provider_code": "EUR-USD",
+      "url": "https://jetta.dukascopy.com/v1/instruments/EUR-USD",
+      "retrieved_at_utc": "2026-08-04T15:23:55.684809+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/EUR-USD.json.gz",
+      "raw_bytes": 708,
+      "raw_sha256": "43bd0b30257edd739c998388a975de7ab934d3c70a40bbf1e2e607912746841b",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2147,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "GBPUSD",
+      "provider_code": "GBP-USD",
+      "url": "https://jetta.dukascopy.com/v1/instruments/GBP-USD",
+      "retrieved_at_utc": "2026-08-04T15:23:56.531098+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/GBP-USD.json.gz",
+      "raw_bytes": 718,
+      "raw_sha256": "b6d9971da8f393b1179b03a48b591a8c610d2fcff21e50c47a81750f59608be8",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2158,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "AUDUSD",
+      "provider_code": "AUD-USD",
+      "url": "https://jetta.dukascopy.com/v1/instruments/AUD-USD",
+      "retrieved_at_utc": "2026-08-04T15:23:56.695587+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/AUD-USD.json.gz",
+      "raw_bytes": 712,
+      "raw_sha256": "13404c5bd613ba525c423d2ca2f225e604c49c90328f6399b74768a0dd754330",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2161,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "NZDUSD",
+      "provider_code": "NZD-USD",
+      "url": "https://jetta.dukascopy.com/v1/instruments/NZD-USD",
+      "retrieved_at_utc": "2026-08-04T15:23:56.857405+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/NZD-USD.json.gz",
+      "raw_bytes": 715,
+      "raw_sha256": "b5ef401c00dda2742fb2f8a0839f06078c3c1482fd85815f38873405c32fa64e",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2162,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "USDCAD",
+      "provider_code": "USD-CAD",
+      "url": "https://jetta.dukascopy.com/v1/instruments/USD-CAD",
+      "retrieved_at_utc": "2026-08-04T15:23:57.018981+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/USD-CAD.json.gz",
+      "raw_bytes": 711,
+      "raw_sha256": "2da9e611665f844629c6eaeb007136b04785c1b327f667336fe97a951ecc3e8e",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2159,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "USDCHF",
+      "provider_code": "USD-CHF",
+      "url": "https://jetta.dukascopy.com/v1/instruments/USD-CHF",
+      "retrieved_at_utc": "2026-08-04T15:23:57.179436+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/USD-CHF.json.gz",
+      "raw_bytes": 713,
+      "raw_sha256": "d5a0017e5f5e95ed4b867194b61f0ce63d6677ba48023115db53fe85a4b7528c",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2155,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    },
+    {
+      "provider": "Dukascopy Bank",
+      "symbol": "USDJPY",
+      "provider_code": "USD-JPY",
+      "url": "https://jetta.dukascopy.com/v1/instruments/USD-JPY",
+      "retrieved_at_utc": "2026-08-04T15:23:57.346529+00:00",
+      "raw_path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/USD-JPY.json.gz",
+      "raw_bytes": 707,
+      "raw_sha256": "f2d8482204fdc20f1dfadd38ebf75d9fd95495a435fc48b9882208888b15fab3",
+      "content_encoding": "gzip",
+      "decoded_json_bytes": 2145,
+      "default_timezone": "America/New_York",
+      "trade_schedule": [
+        {
+          "id": "trade-147-America_New_York",
+          "from": 10800000,
+          "to": null,
+          "sessions": {
+            "MONDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "TUESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "WEDNESDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "THURSDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ],
+            "FRIDAY": [
+              {
+                "start": "17:00:00",
+                "previousDayStart": true,
+                "end": "17:00:00",
+                "previousDayEnd": false
+              }
+            ]
+          }
+        }
+      ],
+      "holiday_records": 25,
+      "attempt": 1
+    }
+  ],
+  "prior_technical_checkpoint_files": [
+    {
+      "path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/AUD-USD.json",
+      "bytes": 2161,
+      "sha256": "93c903b71798091a12a49040401e608a4591fe129418557ae5ab2eba5cc026bf",
+      "provider_code": "AUD-USD",
+      "filesystem_retrieval_time_utc": "2026-08-04T14:43:33.432355745Z"
+    },
+    {
+      "path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/EUR-USD.json",
+      "bytes": 2147,
+      "sha256": "9fea20442c400f2e1bb55619fcf75ba882f8de583e8df0b3c58a46b2f16a7fcf",
+      "provider_code": "EUR-USD",
+      "filesystem_retrieval_time_utc": "2026-08-04T14:43:31.718176456Z"
+    },
+    {
+      "path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/GBP-USD.json",
+      "bytes": 2158,
+      "sha256": "9fc247f6acb5be8157350879f72ad0520a342ee61fad4126c07c8533fb5872c0",
+      "provider_code": "GBP-USD",
+      "filesystem_retrieval_time_utc": "2026-08-04T14:43:32.455981075Z"
+    },
+    {
+      "path": "/home/tibule12/Datasets/SolTrade/V31/dukascopy-jetta-gzip-raw/_metadata/NZD-USD.json",
+      "bytes": 2162,
+      "sha256": "a1e3c14d95eef43ac59dfda13de5f46a850b55378b4e34c5f10f13e7762637a0",
+      "provider_code": "NZD-USD",
+      "filesystem_retrieval_time_utc": "2026-08-04T14:43:34.571692448Z"
+    }
+  ],
+  "prior_technical_checkpoint_files_preserved_unchanged": true,
+  "prior_technical_checkpoint_files_authoritative": false,
+  "pnl_viewed": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_WARMUP_APPLY_STATUS_V1",
+  "status": "PASS",
+  "elapsed_seconds": 13.394908666610718,
+  "wine_return_code": 0,
+  "symbols": 7,
+  "source_rates": 421907,
+  "reloaded_rates": 421907,
+  "exact_rate_mismatches": 0,
+  "tick_operations": "NONE",
+  "trade_api_calls": "NONE",
+  "pnl_calculated": false,
+  "external_data_downloaded": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "SOLTRADE_V28_LIVE_EA_EQUIVALENCE_RUN_STATUS_V1",
+  "run_id": "03-v28-2025-development-delay200",
+  "dataset": "V28_2025_DEVELOPMENT",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "elapsed_seconds": 113.69595861434937,
+  "wine_return_code": 0,
+  "schedule_signals": 77,
+  "processed_signals": 77,
+  "entry_attempts": 77,
+  "entry_fills": 70,
+  "exit_fills": 54,
+  "open_positions_at_end": 0,
+  "native_reports": [
+    "native-mt5-report.html",
+    "native-mt5-report-hst.png",
+    "native-mt5-report-holding.png",
+    "native-mt5-report.png",
+    "native-mt5-report-mfemae.png"
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_DELAY_IMPACT_V1",
+  "fixed_delay_ms": 200,
+  "comparisons": [
+    {
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "NORMAL",
+      "native_trades": 54,
+      "delay_trades": 54,
+      "net_profit_change": -0.0353425890718313,
+      "profit_factor_change": -4.2769674191811546e-05,
+      "drawdown_change_percent": -0.00038304013347678634
+    },
+    {
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "HIGH",
+      "native_trades": 54,
+      "delay_trades": 54,
+      "net_profit_change": -0.11476814771046406,
+      "profit_factor_change": -0.00012170662351096428,
+      "drawdown_change_percent": 4.0337596325379366e-05
+    },
+    {
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "STRESS",
+      "native_trades": 54,
+      "delay_trades": 54,
+      "net_profit_change": -0.19315715480860263,
+      "profit_factor_change": -0.0001800087881157486,
+      "drawdown_change_percent": 0.0004603533573117602
+    },
+    {
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "NORMAL",
+      "native_trades": 41,
+      "delay_trades": 41,
+      "net_profit_change": 0.0,
+      "profit_factor_change": 0.0,
+      "drawdown_change_percent": 0.0
+    },
+    {
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "HIGH",
+      "native_trades": 41,
+      "delay_trades": 41,
+      "net_profit_change": 0.0,
+      "profit_factor_change": 0.0,
+      "drawdown_change_percent": 0.0
+    },
+    {
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "STRESS",
+      "native_trades": 41,
+      "delay_trades": 41,
+      "net_profit_change": 0.0,
+      "profit_factor_change": 0.0,
+      "drawdown_change_percent": 0.0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "paths": 100000,
+  "sample_trades": 95,
+  "expectancy_R_95_percent_confidence_interval": [
+    -0.3643015397616436,
+    0.19281155191892319
+  ],
+  "ending_net_profit_distribution": {
+    "p05": -749.8599753926221,
+    "median": -243.52657189879483,
+    "p95": 339.3232567129255
+  },
+  "probability_negative_ending_net_profit": 0.76344,
+  "drawdown_percent": {
+    "median": 4.651559488213016,
+    "p90": 7.552793006505337,
+    "p95": 8.413548117921234
+  },
+  "schema": "SOLTRADE_PHASE6_V23_BOOTSTRAP_V1",
+  "status": "CALCULATED",
+  "seed": 1388044804,
+  "reporting_only": true,
+  "basis": "ALL_PRESEAL_NORMAL_NATIVE_CLOSED_TRADES",
+  "assumption": "IID resampling does not reproduce serial dependence or time-based risk state"
+}

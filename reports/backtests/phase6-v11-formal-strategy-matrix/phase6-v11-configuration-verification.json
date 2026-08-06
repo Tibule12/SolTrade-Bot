@@ -1,0 +1,27 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_CONFIGURATION_VERIFICATION_V1",
+  "status": "FAIL",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "matrix_started": false,
+  "checks": [
+    {"id":"CFG-001","name":"V10 commit is the requested parent","status":"PASS","evidence":"c2eaf600b5a08612f92fedf2e9312e0e0091be59"},
+    {"id":"CFG-002","name":"FP Markets source identity is frozen","status":"PASS","evidence":"/home/tibule12/.wine-fpmarkets | FPMarketsSC-Demo | EURUSD | terminal build 6090"},
+    {"id":"CFG-003","name":"V10 clean segments and quarantines are hash-frozen","status":"PASS","evidence":"clean segment 94d1fc9a32d0af1d99a67ac0150e0a9e2bfb1d7b3232d6e7b4ced3275b06caab; quarantine 97edfbb77abe30639e5e6448c537045167c9b40b5cf286ecd10a3d3a8922a03c"},
+    {"id":"CFG-004","name":"Open-position boundary behavior is frozen","status":"FAIL","evidence":"V8/V10 reset a signal-only state to flat but contain no price, size, order, trade or P&L state and specify no actual-position boundary disposition."},
+    {"id":"CFG-005","name":"Actual EA enforces clean-segment exclusion and gap reset","status":"FAIL","evidence":"Case-insensitive static search for unresolved-gap, clean-segment, quarantine and post-gap terms found zero matches in SolTradeBot.mq5, BacktestResearch.mqh, StrategyBreakout.mqh, RiskEngine.mqh, ExecutionEngine.mqh and PositionManager.mqh."},
+    {"id":"CFG-006","name":"Exactly 18 runs can preserve the clean-segment state model","status":"FAIL","evidence":"A continuous dataset run carries actual EA state across gaps; separate clean-segment tester runs require more than 18 runs and have no frozen balance, risk-state or aggregation semantics."},
+    {"id":"CFG-007","name":"Authoritative/replica delay semantics are unambiguous","status":"FAIL","evidence":"Prior profiles freeze 200/400/800 ms; V11 freezes each replica to 200 ms while requiring authoritative/replica trading-input identity."},
+    {"id":"CFG-008","name":"Normal profit-factor comparator is unambiguous","status":"FAIL","evidence":"Earlier frozen protocol is >1.15; V11 is >=1.15."},
+    {"id":"CFG-009","name":"Exact V11 deterministic seeds are frozen","status":"FAIL","evidence":"Seed algorithm exists, but exact seeds depend on V11 TradingInputHash values that cannot be frozen until the contradictory inputs are resolved."},
+    {"id":"CFG-010","name":"Current FP Markets build EX5 is frozen","status":"FAIL","evidence":"No SolTradeBot.ex5 exists in the isolated FP Markets terminal and compilation was not performed after the precheck failed."},
+    {"id":"CFG-011","name":"No generated ticks are permitted","status":"PASS","evidence":"Every tick based on real ticks; fallback prohibited."},
+    {"id":"CFG-012","name":"No optimization is permitted","status":"PASS","evidence":"Optimization prohibited and not started."}
+  ],
+  "static_delay_observation": {
+    "ResearchFrozenDelayMs_reaches_canonical_identity_and_reporting": true,
+    "sleep_or_delay_in_execution_engine": false,
+    "sleep_or_delay_in_position_manager": false,
+    "conclusion": "The repository does not itself establish how the requested fixed tester delay is applied; terminal-side configuration would need an unambiguous frozen definition."
+  },
+  "decision": "STOP_BEFORE_ANY_STRATEGY_TESTER_MATRIX_RUN"
+}

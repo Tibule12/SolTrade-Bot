@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "all_periods": {
+    "SPREAD_ABOVE_FROZEN_LIMIT": 61
+  },
+  "periods": {
+    "VALIDATION": {
+      "setups": 45,
+      "confirmations": 23,
+      "entries": 14,
+      "completed_cycles": 14,
+      "primary_blocks": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 9
+      },
+      "overlapping_combinations": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 9
+      },
+      "confirmation_to_entry_acceptance_rate": 0.6086956521739131,
+      "entry_to_completed_cycle_rate": 1.0,
+      "reconciliation": "23 confirmations = 14 entries + 9 blocked"
+    },
+    "PROPOSED_OOS": {
+      "setups": 73,
+      "confirmations": 45,
+      "entries": 7,
+      "completed_cycles": 7,
+      "primary_blocks": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 38
+      },
+      "overlapping_combinations": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 38
+      },
+      "confirmation_to_entry_acceptance_rate": 0.15555555555555556,
+      "entry_to_completed_cycle_rate": 1.0,
+      "reconciliation": "45 confirmations = 7 entries + 38 blocked"
+    },
+    "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION": {
+      "setups": 30,
+      "confirmations": 16,
+      "entries": 2,
+      "completed_cycles": 1,
+      "primary_blocks": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 14
+      },
+      "overlapping_combinations": {
+        "SPREAD_ABOVE_FROZEN_LIMIT": 14
+      },
+      "confirmation_to_entry_acceptance_rate": 0.125,
+      "entry_to_completed_cycle_rate": 0.5,
+      "reconciliation": "16 confirmations = 2 entries + 14 blocked"
+    }
+  },
+  "total_confirmations": 84,
+  "total_entries": 23,
+  "total_blocked": 61,
+  "taxonomy_zero_counts": {
+    "POSITION_ALREADY_OPEN": 0,
+    "NO_TRADABLE_TICK_AFTER_CONFIRMATION": 0,
+    "ENTRY_TICK_OUTSIDE_ELIGIBLE_INTERVAL": 0,
+    "DATA_OR_SEGMENT_INVALID": 0,
+    "RISK_ENGINE_STATE_UNAVAILABLE": 0,
+    "LOSS_LIMIT_STATE_NOT_EVALUABLE_WITHOUT_PNL": 0,
+    "DUPLICATE_OR_PROCESSED_CANDLE_PROTECTION": 0,
+    "SUBMISSION_STATE_REJECTED": 0,
+    "OTHER_EXPLICITLY_DOCUMENTED_REASON": 0
+  }
+}

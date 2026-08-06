@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_GATE_RESOLUTION_V1",
+  "status": "FROZEN_BEFORE_PERFORMANCE",
+  "normal": {"profit_factor":"> 1.15","pf_1_150000":"FAIL","net_profit":"> 0","expectancy":"> 0","relative_drawdown_percent":"< 8"},
+  "high": {"profit_factor":">= 1.05","net_profit":"> 0","expectancy":"> 0","relative_drawdown_percent":"<= 10"},
+  "stress": {"profit_factor":">= 1.00","net_profit":"> 0","expectancy":"> 0","relative_drawdown_percent":"<= 12"},
+  "concentration": {"best_trade_percent":"<= 20","best_period_percent":"<= 40"},
+  "oos_naturally_closed_minimum": 50,
+  "cross_dataset": {"minimum_normalized_expectancy_vs_max":">= 50%","minimum_annualized_return_vs_max":">= 50%","maximum_profit_factor_range":"<= 0.40"}
+}

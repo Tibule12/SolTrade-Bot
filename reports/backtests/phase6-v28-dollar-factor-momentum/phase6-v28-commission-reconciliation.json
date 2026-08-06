@@ -1,0 +1,7 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_COMMISSION_RECONCILIATION_V1",
+  "status": "PASS",
+  "native_tester_commission_total": 0.0,
+  "external_usd_per_side_per_standard_lot": 3,
+  "double_counted": false
+}

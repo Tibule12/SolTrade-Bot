@@ -1,0 +1,66 @@
+{
+  "schema": "SOLTRADE_PHASE6_CONNECTED_SAFETY_EVIDENCE_V1",
+  "execution_authorized": false,
+  "run_count": 1,
+  "run_timestamp_server": "2026-07-28T19:43:29.461",
+  "expected_before_execution": {
+    "passed": 66,
+    "failed": 0,
+    "success_marker": "ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED"
+  },
+  "connected_preflight": {
+    "algo_trading": "OFF",
+    "orders": 0,
+    "positions": 0,
+    "production_ea_detached": true,
+    "demo_execution": "DISABLED",
+    "position_management": "DISABLED",
+    "live_trading": "DISABLED"
+  },
+  "actual_result": {
+    "passed": 65,
+    "failed": 1,
+    "success_marker_seen": false,
+    "failure_marker_seen": true,
+    "failed_assertion": "Fifty closed OOS trades can pass sample gate",
+    "actual_label": "RESEARCH_REJECTED",
+    "expected_label": "PASS",
+    "status": "FAILED_TEST_FIXTURE_CONCENTRATION"
+  },
+  "trading_effects": {
+    "orders_after": 0,
+    "positions_after": 0,
+    "new_orders": 0,
+    "new_positions": 0,
+    "new_deals": 0
+  },
+  "executed_artifact_identity": {
+    "safety_test_source_sha256": "6d7ac50e4339b5a47e5d2d84f44dec885a1e62623ab35cf6aff6ce93a7264757",
+    "safety_test_ex5_sha256": "fb31f5be7945911af1280432135ab12ad7d15368e555da7302c3bd42c0a6646d"
+  },
+  "diagnosis": {
+    "cause": "The 50-trade fixture placed every profitable outcome inside the first of five registered subperiods, so best-period contribution was 100 percent and the mandatory 40 percent concentration rule correctly rejected the metrics.",
+    "acceptance_rule_changed": false,
+    "phase_1_through_5_logic_changed": false,
+    "fixture_repair": "Spread the 50 deterministic fixture outcomes one day apart across all five registered subperiods.",
+    "corrected_source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "corrected_ex5_sha256": "344ac4d3d1c6fd0239023dcbeca9a6e04ac63f4b73288a42156af5295f01807f",
+    "corrected_compile_result": "0 errors, 0 warnings",
+    "connected_rerun_performed": false,
+    "connected_rerun_authorized": false
+  },
+  "marker_state": {
+    "all_connected_terminal_state_markers_changed": false,
+    "completed_v1_markers_unchanged": true,
+    "completed_v2_markers_unchanged": true,
+    "v1_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b",
+    "v1_execution_sha256": "ba4c8b352e09f35168138a300fe82dc0aeaeaacd40abd165c4d51ca93f735cf9",
+    "v1_fixture_sha256": "57e477853eb6bbd98f10a0d6503a3361d05097cece1f9209e0ffa75700b498d1",
+    "v2_risk_sha256": "6e0e998f78cc0038a13179c0f4b53fac5f0dc31eb3cf9561390bf96561e7a67b",
+    "v2_execution_sha256": "bcfbcbda0d3de6f2156ab54887aacfdc1d461330dde3bbc9e795ce5b0e790b4e",
+    "v2_fixture_sha256": "49896c0160811f3e9cb7dceaf61e4bb4c695d8b3c685b52c66557f78a5480eb7",
+    "v2_completion_sha256": "54b0cbec0ef9c04208a0a08318b4634e108679d1e613dcc1a1ae3cb0a7b645b2",
+    "v2_position_sha256": "67fb97ef15321f9dc8278778a91b1fb15db254b710091eac9d2050c5c475ab11"
+  },
+  "gate": "INVALID_CONNECTED_SAFETY_RESULT_REVIEW_REQUIRED"
+}

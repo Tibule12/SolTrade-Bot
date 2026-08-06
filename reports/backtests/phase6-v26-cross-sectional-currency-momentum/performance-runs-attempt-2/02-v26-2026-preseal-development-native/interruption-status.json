@@ -1,0 +1,11 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_INTENTIONAL_INTERRUPTION_V1",
+  "run_id": "02-v26-2026-preseal-development-native",
+  "status": "INTERRUPTED_NOT_EVIDENCE",
+  "reason": "The completed 2025 run established that every frozen entry was operationally unexecutable. Continuing duplicate execution layers or the 2026 dataset could not create a profitability sample and was stopped before interpretation.",
+  "partial_runtime_files_excluded": true,
+  "profitability_evidence_produced": false,
+  "optimization_or_tuning": false,
+  "demo_trades": 0,
+  "live_trades": 0
+}

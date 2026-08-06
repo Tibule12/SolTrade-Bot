@@ -1,0 +1,5 @@
+# Continuous account method
+
+The required method needs one USD 10,000 account from 2025 through 2026-07-31, carrying balance, equity, positions, floating P/L, risk state, sizing, controls, cap removals and inactivity without reset. The qualified V28 evidence instead contains separate 2025 and 2026 physical runs, each initialized at USD 10,000. Its supplementary High/Stress costs are post-run closed-trade adjustments, and no timestamped intraday equity or rollover-removal stream exists.
+
+Adding the independently reset totals is prohibited and was not done. Closed trades, aggregate MT5 drawdown statistics and bitmap charts are not substituted for full intraday equity. A technically valid continuous E8 run therefore cannot be produced from the frozen artifacts. The hard common-idea risk breach is calculated directly from accepted entry transactions and their visible initial stops, so it remains dispositive under the instruction that confirmed hard failures produce FAIL even when other rules are unresolved.

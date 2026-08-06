@@ -1,0 +1,50 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_GATE_MANIFEST_V1",
+  "status": "FROZEN_BEFORE_SIGNAL_COUNTS_OR_PNL",
+  "sample": {
+    "all_closed_legs_min": 150,
+    "closed_legs_dated_2026_min": 50,
+    "long_closed_min": 50,
+    "short_closed_min": 50,
+    "each_currency_closed_min": 10
+  },
+  "performance": {
+    "NORMAL": {
+      "profit_factor": "> 1.15",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "relative_drawdown_percent": "< 5"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.05",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "relative_drawdown_percent": "<= 7"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0",
+      "relative_drawdown_percent": "<= 9"
+    }
+  },
+  "concentration": {
+    "best_leg_contribution_percent": "<= 15",
+    "best_currency_contribution_percent": "<= 40",
+    "best_five_equal_time_subperiod_percent": "<= 40",
+    "undefined_on_nonpositive_net": "FAIL"
+  },
+  "cross_dataset_per_cost_and_execution": {
+    "expectancy_min_div_max": ">= 0.35",
+    "annualized_return_min_div_max": ">= 0.35",
+    "profit_factor_range": "<= 0.50"
+  },
+  "portfolio_balance": {
+    "both_long_and_short_net_reported": true,
+    "no_numeric_side_gate": true
+  },
+  "bootstrap_paths": 100000,
+  "monte_carlo_paths": 100000,
+  "uncertainty_reporting_only": true,
+  "terminal_rule": "PASS ONLY IF EVERY SAMPLE, PERFORMANCE, CONCENTRATION, CONSISTENCY, TECHNICAL AND PORTFOLIO-RISK GATE PASSES"
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "SOLTRADE_PHASE6_V8_TESTER_REAL_TICK_PROBE_V1",
+  "requested_configuration": {
+    "expert": "SolTradePhase6V8TesterRealTickProbe.ex5",
+    "symbol": "EURUSD",
+    "period": "H1",
+    "model_code": 4,
+    "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "interval": "[2025-01-02T00:00:00,2025-12-24T00:00:00)",
+    "optimization": false,
+    "cloud": false,
+    "strategy_loaded": false,
+    "trading_permissions": false
+  },
+  "frozen_expectation": {
+    "tick_count": 20682267,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:59.877"
+  },
+  "controller_evidence": {
+    "run_started": "2026-08-03T12:31:27.750+02:00",
+    "model_message": "EURUSD,H1 (FPMarketsSC-Demo): generating based on real ticks",
+    "real_tick_start_message": "EURUSD : real ticks begin from 2025.01.02 00:00:00",
+    "generated_tick_fallback_message_in_v8_run_window": false,
+    "tester_reported_ticks": 20682265,
+    "tester_reported_bars": 6097
+  },
+  "probe_observation": {
+    "status": "FAIL",
+    "tick_count": 20682265,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:58.664",
+    "count_difference_from_connected_copyticks": -2,
+    "first_matches": true,
+    "final_matches": false,
+    "exact_connected_stream_match": false,
+    "boundary_violations": 0,
+    "out_of_order": 0
+  },
+  "connected_tail_diagnosis": {
+    "api": "CopyTicksRange(COPY_TICKS_ALL)",
+    "interval": "[2025-12-23T23:59:55.000,2025-12-23T23:59:59.999]",
+    "ticks_returned": 7,
+    "error": 0,
+    "last_tick_seen_by_tester": {
+      "timestamp": "2025-12-23T23:59:58.664",
+      "bid": 1.17942,
+      "ask": 1.17961,
+      "flags": 1158
+    },
+    "connected_trailing_ticks_not_delivered_to_on_tick": [
+      {"timestamp":"2025-12-23T23:59:59.369","bid":1.17939,"ask":1.17958,"flags":1158},
+      {"timestamp":"2025-12-23T23:59:59.877","bid":1.17938,"ask":1.17957,"flags":1158}
+    ],
+    "diagnosis": "MT5 real-tick tester omitted two trailing connected bid/ask price ticks before end-of-test deinitialization; cause not established",
+    "mismatch_hidden_or_ignored": false
+  },
+  "inert_reconciliation": {
+    "entry_permission": false,
+    "execution_permission": false,
+    "position_management_permission": false,
+    "strategy_orders_permitted": false,
+    "orders": 0,
+    "historical_orders": 0,
+    "positions": 0,
+    "nonbalance_deals": 0,
+    "trade_transactions": 0,
+    "tester_initial_balance_records": 1,
+    "tester_balance_record_is_trade": false,
+    "strategy_run": false,
+    "profitability_calculated": false
+  },
+  "preflight_attempt_note": {
+    "initial_attempt_consumed_ticks": 0,
+    "reason": "Probe initially treated MT5 tester initial-deposit DEAL_TYPE_BALANCE as a trading deal and failed closed before OnTick",
+    "correction": "Explicitly distinguish DEAL_TYPE_BALANCE from all non-balance deals; continue to require zero orders, positions, non-balance deals, and trade transactions",
+    "safety_weakened": false
+  },
+  "generated_tick_fallback": false,
+  "probe_result": "FAIL_TESTER_REAL_TICK_PROBE",
+  "failure_reason": "PRE_REGISTERED_EXACT_TICK_COUNT_AND_FINAL_TIMESTAMP_MISMATCH"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_SYMBOL_MAPPING_V1",
+  "mapping": {
+    "EURUSD": "EURUSD.V31",
+    "GBPUSD": "GBPUSD.V31",
+    "AUDUSD": "AUDUSD.V31",
+    "NZDUSD": "NZDUSD.V31",
+    "USDCAD": "USDCAD.V31",
+    "USDCHF": "USDCHF.V31",
+    "USDJPY": "USDJPY.V31"
+  },
+  "reporting": "canonical_and_resolved",
+  "strategy_label_if_passed": "STRATEGY_EQUIVALENT_EXTERNAL_FEED_REPLICATION"
+}

@@ -1,0 +1,205 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_FINAL_PRERUN_MANIFEST_V1",
+  "status": "FROZEN_NOT_EXECUTED",
+  "terminal_outcome": "V13_PRACTICAL_MATRIX_READY",
+  "future_study_name": "CONTROLLED_PRACTICAL_BACKTEST",
+  "matrix_execution_authorized_in_v13": false,
+  "profitability_viewed": false,
+  "optimization_executed": false,
+  "replica_executed": false,
+  "strategy_trades_executed": 0,
+  "v12_evidence_commit": "7b3a2347eac8d22715405b75375081969dc42a71",
+  "v10_commit": "c2eaf600b5a08612f92fedf2e9312e0e0091be59",
+  "production_ea_source_sha256_before": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_ea_source_sha256_after": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "phase_1_through_5_logic_changed": false,
+  "harness": {
+    "source_sha256": "1140e2720b6289b895e7f2805b3c8e04ae104901c87bb3af06cddedc24655ac6",
+    "support_header_sha256": "947c8f27695a867791f054a728f999550f0d28a17f1304639fb8f58632e4426f",
+    "production_strategy_source_sha256": "5a7bd101bb9c81703a08537c95664c392e1c33a07112e0e0ce2da4f6eb111555",
+    "ex5_sha256": "a7dd7145ae1addd439e323c46eb5f2c536c91571e54a1ad471cd4af428c39601",
+    "compile": {
+      "errors": 0,
+      "warnings": 0,
+      "log_sha256": "efca9e3b32a729226f34448a4a2b37b320f83d574d38192bf5372ac2fd3014da"
+    },
+    "tester_only": true,
+    "orders_permitted_in_verification": false,
+    "profitability_permitted_in_verification": false
+  },
+  "segment_intersections": [
+    {
+      "run_id": "D1",
+      "dataset": "DEVELOPMENT",
+      "reset_at": "2025-01-02T00:00:00",
+      "eligible_from": "2025-01-16T00:00:00",
+      "eligible_to": "2025-02-05T00:00:00",
+      "reference_evaluations": 335,
+      "harness_evaluations": 335,
+      "first_eligible_bar": "2025-01-16T00:00:00",
+      "final_evaluated_bar": "2025-02-04T22:00:00",
+      "reference_state_events": 8,
+      "harness_state_events": 8,
+      "divergence_count": 0,
+      "status": "PASS"
+    },
+    {
+      "run_id": "D2",
+      "dataset": "DEVELOPMENT",
+      "reset_at": "2025-02-05T01:00:00",
+      "eligible_from": "2025-02-18T05:00:00",
+      "eligible_to": "2025-03-07T23:00:00",
+      "reference_evaluations": 329,
+      "harness_evaluations": 329,
+      "first_eligible_bar": "2025-02-18T05:00:00",
+      "final_evaluated_bar": "2025-03-07T21:00:00",
+      "reference_state_events": 9,
+      "harness_state_events": 9,
+      "divergence_count": 0,
+      "status": "PASS"
+    },
+    {
+      "run_id": "D3",
+      "dataset": "DEVELOPMENT",
+      "reset_at": "2025-03-10T01:00:00",
+      "eligible_from": "2025-03-21T04:00:00",
+      "eligible_to": "2025-07-05T00:00:00",
+      "reference_evaluations": 1819,
+      "harness_evaluations": 1819,
+      "first_eligible_bar": "2025-03-21T04:00:00",
+      "final_evaluated_bar": "2025-07-04T22:00:00",
+      "reference_state_events": 78,
+      "harness_state_events": 78,
+      "divergence_count": 0,
+      "status": "PASS"
+    },
+    {
+      "run_id": "V1",
+      "dataset": "VALIDATION",
+      "reset_at": "2025-03-10T01:00:00",
+      "eligible_from": "2025-07-05T00:00:00",
+      "eligible_to": "2025-08-06T16:00:00",
+      "reference_evaluations": 543,
+      "harness_evaluations": 543,
+      "first_eligible_bar": "2025-07-07T00:00:00",
+      "final_evaluated_bar": "2025-08-06T14:00:00",
+      "reference_state_events": 25,
+      "harness_state_events": 25,
+      "divergence_count": 0,
+      "status": "PASS"
+    },
+    {
+      "run_id": "V2",
+      "dataset": "VALIDATION",
+      "reset_at": "2025-08-06T18:00:00",
+      "eligible_from": "2025-08-19T22:00:00",
+      "eligible_to": "2025-09-29T00:00:00",
+      "reference_evaluations": 673,
+      "harness_evaluations": 673,
+      "first_eligible_bar": "2025-08-19T22:00:00",
+      "final_evaluated_bar": "2025-09-26T22:00:00",
+      "reference_state_events": 32,
+      "harness_state_events": 32,
+      "divergence_count": 0,
+      "status": "PASS"
+    },
+    {
+      "run_id": "O1",
+      "dataset": "OUT_OF_SAMPLE",
+      "reset_at": "2025-08-06T18:00:00",
+      "eligible_from": "2025-09-29T00:00:00",
+      "eligible_to": "2025-12-24T00:00:00",
+      "reference_evaluations": 1487,
+      "harness_evaluations": 1487,
+      "first_eligible_bar": "2025-09-29T00:00:00",
+      "final_evaluated_bar": "2025-12-23T22:00:00",
+      "reference_state_events": 59,
+      "harness_state_events": 59,
+      "divergence_count": 0,
+      "status": "PASS"
+    }
+  ],
+  "signal_parity": {
+    "status": "PASS",
+    "reference_evaluations": 5186,
+    "harness_evaluations": 5186,
+    "state_events": 211,
+    "divergences": 0
+  },
+  "cost_assumptions": {
+    "schema": "SOLTRADE_PHASE6_V13_COST_ASSUMPTIONS_V1",
+    "status": "FROZEN_BEFORE_PERFORMANCE",
+    "research_claim": "CONTROLLED_PRACTICAL_BACKTEST",
+    "exact_historical_2025_execution_cost_reconstruction_claimed": false,
+    "commission": {
+      "account_type": "Raw",
+      "account_currency": "USD",
+      "per_side_per_standard_lot_usd": 3.0,
+      "round_trip_per_standard_lot_usd": 6.0,
+      "formula": "executed_volume_lots * 3.00 * charged_sides",
+      "native_tester_commission_assumed": false,
+      "native_nonzero_reconciliation_gate": "STOP_IF_UNRECONCILED",
+      "source_url": "https://www.fpmarkets.com/en-za/forex-spreads/",
+      "retrieved_at": "2026-08-03T12:37:42Z",
+      "canonical_transcription_sha256": "af93e9dcb5460cbe4d122991ef9738e6ef941597737d08fbb927f88eaf072a82"
+    },
+    "current_swap_snapshot_fixed_research_assumption": {
+      "captured_from": "FPMarketsSC-Demo EURUSD tester symbol properties; build 6090",
+      "swap_mode": 1,
+      "swap_mode_interpretation": "POINTS",
+      "swap_long": -9.71,
+      "swap_short": 4.5,
+      "triple_swap_day": 3,
+      "triple_swap_day_interpretation": "WEDNESDAY",
+      "historical_2025_schedule_available": false
+    },
+    "supplementary_profiles": {
+      "normal": 0.0,
+      "high": 0.5,
+      "stress": 1.0
+    },
+    "supplementary_formula": "adjusted_trade_net = native_trade_net - supplementary_charge",
+    "native_friction_subtracted_twice": false,
+    "future_ledger_layers": [
+      "gross trading result",
+      "native tester commission",
+      "frozen external commission adjustment",
+      "swap",
+      "final adjusted net result"
+    ]
+  },
+  "execution_axis": {
+    "native": {
+      "ExecutionMode": 0,
+      "label": "NATIVE_NORMAL_EXECUTION"
+    },
+    "replica": {
+      "ExecutionMode": 200,
+      "label": "FIXED_DELAY_200_MS"
+    }
+  },
+  "core_trading_input_hash": "d6185b478920f6f6cbbb26ffc3d4758e34a6bf89129230b4db4b96ac5666c3c0",
+  "complete_run_configuration_hashes": {
+    "native": "988b7eb650108821400ccd015044c886a19c814c708941cb48260c23c0e4287c",
+    "replica": "5b218e422077874a9825e4e669c00a3ddd4f53c9ba2075618c8222dcc8637366"
+  },
+  "seed_basis_sha256": "f1e404d4a2e0dabfcf37557fb86a462dc174ce1643182c08d48b292783fa5329",
+  "seed_basis_excluded_fields_verified_absent": [
+    "bootstrap_seed",
+    "monte_carlo_seed",
+    "seed_basis_sha256",
+    "final_manifest_sha256",
+    "signatures",
+    "later_artifact_hashes"
+  ],
+  "bootstrap_seed": {
+    "decimal": 4201290849,
+    "hexadecimal": "0xFA6A9C61"
+  },
+  "monte_carlo_seed": {
+    "decimal": 2000388822,
+    "hexadecimal": "0x773B82D6"
+  },
+  "final_manifest_sha256_is_external": true,
+  "next_gate": "SEPARATE_EXPLICIT_MATRIX_AUTHORIZATION_REQUIRED"
+}

@@ -1,0 +1,50 @@
+{
+  "classification": "DEVELOPMENT_REUSE_DATA",
+  "sample_interpretation": "STRUCTURAL_SAMPLE_UPPER_BOUND",
+  "eligible_completed_h1_candles": 4296,
+  "buy_setups": 79,
+  "sell_setups": 59,
+  "total_setups": 138,
+  "retest_confirmations": 60,
+  "confirmations_by_retest_candle": {
+    "1": 27,
+    "2": 17,
+    "3": 5,
+    "4": 5,
+    "5": 4,
+    "6": 2
+  },
+  "completed_cycles_by_retest_candle": {
+    "1": 24,
+    "2": 16,
+    "3": 5,
+    "4": 4,
+    "5": 3,
+    "6": 2
+  },
+  "expired_setups": 53,
+  "cancellation_reasons": {
+    "EXPIRED_SIX_CANDLES": 53,
+    "WRONG_EMA_SIDE": 24,
+    "SPREAD": 3
+  },
+  "spread_passes": 57,
+  "spread_blocks": 3,
+  "theoretical_structural_entries": 57,
+  "theoretical_initial_stop_exits": 22,
+  "theoretical_donchian_10_exits": 32,
+  "naturally_completed_structural_cycles": 54,
+  "buy_completed_cycles": 31,
+  "sell_completed_cycles": 23,
+  "open_positions_at_boundary": 3,
+  "confirmation_to_entry_acceptance_rate": 0.95,
+  "entry_to_cycle_completion_rate": 0.9473684210526315,
+  "setup_to_confirmation_duration": {
+    "average_hours": 2.1333333333333333,
+    "median_hours": 2.0
+  },
+  "structural_holding_duration": {
+    "average_hours": 24.946054079218108,
+    "median_hours": 12.597869166666666
+  }
+}

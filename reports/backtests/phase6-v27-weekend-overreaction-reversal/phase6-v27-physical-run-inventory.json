@@ -1,0 +1,33 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PHYSICAL_RUN_INVENTORY_V1",
+  "status": "PASS",
+  "valid_runs": 4,
+  "technical_prefight_failures_retained": 2,
+  "valid_result_reruns": 0,
+  "runs": [
+    {
+      "run_id": "01-v27-2025-development-native",
+      "entry_fills": 45,
+      "closed_positions": 45,
+      "seal_breach": "NO"
+    },
+    {
+      "run_id": "02-v27-2026-preseal-development-native",
+      "entry_fills": 48,
+      "closed_positions": 48,
+      "seal_breach": "NO"
+    },
+    {
+      "run_id": "03-v27-2025-development-delay200",
+      "entry_fills": 45,
+      "closed_positions": 45,
+      "seal_breach": "NO"
+    },
+    {
+      "run_id": "04-v27-2026-preseal-development-delay200",
+      "entry_fills": 48,
+      "closed_positions": 48,
+      "seal_breach": "NO"
+    }
+  ]
+}

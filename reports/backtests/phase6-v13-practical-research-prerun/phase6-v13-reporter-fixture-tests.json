@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_REPORTER_FIXTURE_TESTS_V1",
+  "status": "PASS",
+  "passed": 20,
+  "failed": 0,
+  "strategy_loaded": false,
+  "profitability_calculated": false,
+  "orders_created": 0,
+  "positions_created": 0,
+  "compile": {
+    "errors": 0,
+    "warnings": 0,
+    "log_sha256": "8471906afaf46a94e6d96422229df23e81108f66a90081b4814b48291fd17b51"
+  },
+  "source_sha256": "2f82e7a1aed70975654428ba83b45d76dfe80c3fea5fde910f783fb6257f93c3",
+  "ex5_sha256": "a0b1c5b36ad49eaf127c9a0cfadc72b701d71b4ae3c4d96a778793eab3ac65dc",
+  "terminal_marker": "SOLTRADE_V13_REPORTER_FIXTURES | passed=20 | failed=0 | strategy=NOT_LOADED | pnl=NOT_CALCULATED | trades=0",
+  "coverage": [
+    "boundary ordering",
+    "reset exclusion",
+    "inclusive start",
+    "exclusive end",
+    "right censoring",
+    "post-cutoff exclusion",
+    "commission pro-rata",
+    "negative volume",
+    "no active order",
+    "no active position"
+  ]
+}

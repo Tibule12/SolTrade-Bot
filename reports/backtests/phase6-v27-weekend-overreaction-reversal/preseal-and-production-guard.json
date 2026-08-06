@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PRESEAL_PRODUCTION_GUARD_V1",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "sealed_oos_status": "SEALED_UNOPENED",
+  "sealed_oos_assignment": "UNASSIGNED_SINGLE_USE_FUTURE_OOS_RESERVE",
+  "postseal_data_access_prohibited": true,
+  "production_phase1_5_ea": "MQL5/Experts/SolTradeBot.mq5",
+  "production_ea_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_phase1_5_modification_prohibited": true,
+  "connected_chart_orders_prohibited": true,
+  "demo_orders_authorized_only_after_all_development_gates_pass": true,
+  "live_orders_prohibited": true
+}

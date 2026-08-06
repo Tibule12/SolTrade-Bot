@@ -1,0 +1,12 @@
+{
+  "symbol": "GBPUSD",
+  "elapsed_seconds": 13.916598081588745,
+  "wine_return_code": 0,
+  "h1_timestamp_count": 10345,
+  "first_h1": "2024.12.02 00:00:00",
+  "last_h1": "2026.07.31 23:00:00",
+  "price_fields_written": "NO",
+  "returns_or_rankings_calculated": "NO",
+  "orders_or_positions": "ZERO",
+  "status": "PASS"
+}

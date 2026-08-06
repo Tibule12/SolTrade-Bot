@@ -1,0 +1,13 @@
+{
+  "label": "POST_PROPOSED_OOS_SAMPLE_ACCUMULATION",
+  "interval_start_inclusive": "2026-07-01 00:00:00",
+  "interval_end_exclusive": "2026-08-01 00:00:00",
+  "setups": 40,
+  "confirmed_entries": 0,
+  "rejected_confirmations": 40,
+  "expired_setups": 40,
+  "theoretical_stop_exits": 0,
+  "theoretical_donchian_exits": 0,
+  "naturally_completed_position_cycles": 0,
+  "positions_open_at_interval_end": 0
+}

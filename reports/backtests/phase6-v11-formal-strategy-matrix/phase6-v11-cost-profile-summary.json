@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_COST_PROFILE_SUMMARY_V1",
+  "status": "NOT_CALCULATED_PRECHECK_FAILED",
+  "normal": {"supplementary_multiplier":0.0,"metrics":null},
+  "high": {"supplementary_multiplier":0.5,"metrics":null},
+  "stress": {"supplementary_multiplier":1.0,"metrics":null},
+  "native_friction_scaled": false,
+  "profitability_calculated": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_COMMISSION_RECONCILIATION_V1",
+  "status": "EXTERNAL_FROZEN_COMMISSION_APPLIED",
+  "native_tester_commission_total": 0.0,
+  "native_nonzero_deals": 0,
+  "external_per_side_per_standard_lot_usd": 3.0,
+  "round_trip_per_standard_lot_usd": 6.0,
+  "linear_pro_rata": true,
+  "double_counted": false
+}

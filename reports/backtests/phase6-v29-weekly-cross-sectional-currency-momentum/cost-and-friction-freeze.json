@@ -1,0 +1,12 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_COST_FREEZE_V1",
+  "commission_usd_per_side_per_standard_lot": 3.0,
+  "native_nonzero_commission": "reconcile and do not double count",
+  "swap": "V26 frozen FP Markets point-mode per-symbol values; Wednesday triple",
+  "supplementary_friction": {
+    "NORMAL": 0.0,
+    "HIGH": 0.5,
+    "STRESS": 1.0
+  },
+  "supplementary_charge": "multiplier * (spread + commission + absolute swap + fee + adverse entry slippage + adverse exit slippage)"
+}

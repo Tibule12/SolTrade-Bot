@@ -1,0 +1,10 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_SOURCE_METADATA_TRANSPORT_CORRECTION_V1",
+  "status": "CORRECTED_BEFORE_METADATA_DOWNLOAD_OR_PNL",
+  "initial_attempt": "HTTP/2 client initialization failed because the task-local h2 dependency was not on this script's import path",
+  "raw_metadata_files_created_by_initial_attempt": 0,
+  "correction": "use HTTP/1.1 for the seven metadata requests",
+  "provider_endpoint_or_payload_changed": false,
+  "tick_downloader_affected": false,
+  "pnl_viewed": false
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "SOLTRADE_PHASE6_V10_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "TESTER_BAR_SIGNAL_EQUIVALENCE_PASSED",
+  "methodology_frozen_before_profitability_review": true,
+  "preserved_history": {
+    "v9_commit": "88757dd006d6d9589d9c0b54efdf30a8f161cdb3",
+    "v9_outcome": "FAIL_PERSISTENT_PRE_CUTOFF_TICK_DIVERGENCE",
+    "v4_through_v9_changed": false
+  },
+  "tester_runtime": {
+    "broker_server": "FPMarketsSC-Demo",
+    "symbol": "EURUSD",
+    "period": "H1",
+    "terminal_build": 6090,
+    "window": "[2025-01-02T00:00:00,2025-12-25T00:00:00)",
+    "research_cutoff_exclusive": "2025-12-24T00:00:00",
+    "requested_model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+    "controller_real_tick_generation_confirmed": true,
+    "generated_tick_fallback_in_v10_run_window": false,
+    "tester_h1_bars_with_guard": 6121,
+    "pre_cutoff_h1_bars_exported": 6097,
+    "runtime_h1_hours": 6121,
+    "missing_runtime_hours": 0,
+    "runtime_unique_minutes": 366685,
+    "tester_m1_bars": 366685,
+    "silent_generated_minutes": 0,
+    "runtime_csv_sha256": "d87ac46834047ce52f6a824fe1441278bc4276144294d87afe541cb9b47646b5"
+  },
+  "bar_equivalence": {
+    "eligible_h1_bar_count": 5252,
+    "exact_match_count": 5252,
+    "mismatched_bar_count": 0,
+    "missing_bar_count": 0,
+    "extra_bar_count": 0,
+    "all_6097_indicator_input_bars_point_equal": true,
+    "eurusd_point": 0.00001,
+    "status": "PASS"
+  },
+  "signal_equivalence": {
+    "source_a_signal_count": 211,
+    "source_b_signal_count": 211,
+    "source_a_decision_evaluations": 5191,
+    "source_b_decision_evaluations": 5191,
+    "complete_signal_divergence_count": 0,
+    "maximum_indicator_absolute_delta": 0.0,
+    "indicator_absolute_tolerance": 1e-12,
+    "signal_breakdown_each_source": {
+      "BUY": 53,
+      "SELL": 54,
+      "EXIT_LONG": 50,
+      "EXIT_SHORT": 54
+    },
+    "status": "PASS"
+  },
+  "quarantine_integrity": {
+    "unresolved_gaps": 3,
+    "contaminated_h1_bars": 5,
+    "post_gap_warmup_per_gap": 200,
+    "total_post_gap_warmup_h1_bars": 600,
+    "clean_segments": 4,
+    "state_reset_after_every_gap": true,
+    "state_carried_across_any_gap": false,
+    "clean_segment_boundaries_changed": false,
+    "development_eligible_h1_bars": 2526,
+    "validation_eligible_h1_bars": 1238,
+    "out_of_sample_eligible_h1_bars": 1488,
+    "status": "PASS"
+  },
+  "guard_tail": {
+    "guard_tail_h1_bars_seen_by_tester": 24,
+    "guard_tail_h1_bars_in_research_export": 0,
+    "guard_tail_signals_in_research_export": 0,
+    "final_pre_cutoff_h1_timestamp": "2025-12-23T23:00:00",
+    "final_pre_cutoff_h1": {
+      "open": 1.17890,
+      "high": 1.17960,
+      "low": 1.17878,
+      "close": 1.17938,
+      "runtime_tick_count": 918,
+      "first_runtime_tick": "2025-12-23T23:00:00.628",
+      "last_runtime_tick": "2025-12-23T23:59:59.877"
+    },
+    "final_bar_evaluation_at_cutoff_excluded": true,
+    "post_cutoff_data_influenced_pre_cutoff_signal": false,
+    "status": "PASS"
+  },
+  "compilation": {
+    "errors": 0,
+    "warnings": 0,
+    "source_sha256": "8f86f642059a7a9290b96f3f09de1086462ae1dcadf2411be6defbb10dad5473",
+    "ex5_sha256": "579fc7b89e50d8cb99e4bc13612604a0c16dc2aa7cdfe188b40fbe612e95b4f0",
+    "compile_log_sha256": "c8a6851286155d88dd8fc02ba2509d272a2caded22708c931f241fcfcbda2edd"
+  },
+  "safety": {
+    "orders": 0,
+    "historical_orders": 0,
+    "positions": 0,
+    "nonbalance_trading_deals": 0,
+    "trade_transactions": 0,
+    "trade_api_calls": 0,
+    "formal_strategy_matrix_run": false,
+    "replica_run": false,
+    "optimization_run": false,
+    "profitability_calculated": false,
+    "profit_loss_expectancy_profit_factor_drawdown_reported": false,
+    "phase7_authorized": false
+  },
+  "strategy_matrix_authorized": false,
+  "phase7_authorized": false
+}

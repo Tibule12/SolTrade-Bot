@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PRODUCTION_IMMUTABILITY_V1",
+  "status": "PASS",
+  "phase1_5_baseline_commit": "b4646fff6ba6cda02478b21576625a96a6d71acc",
+  "phase1_5_paths_checked": [
+    "MQL5/Experts/SolTradeBot.mq5",
+    "MQL5/Include/SolTrade/"
+  ],
+  "phase1_5_git_diff_against_baseline": "EMPTY_VERIFIED_BEFORE_FINAL_COMMIT",
+  "before_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "after_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_source_modified": false
+}

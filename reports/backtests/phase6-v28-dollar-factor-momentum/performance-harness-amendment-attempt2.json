@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V28_PERFORMANCE_HARNESS_AMENDMENT_V1",
+  "attempt": 2,
+  "reason": "SERIALIZE_REBALANCE_EXIT_CALLBACKS_BEFORE_REPLACEMENT_ENTRIES",
+  "invalid_attempt_retained": "performance-runs/01-v28-2025-development-native",
+  "invalid_attempt_financial_evidence_eligible": false,
+  "signal_rules_changed": false,
+  "risk_rules_changed": false,
+  "cost_rules_changed": false,
+  "position_exit_rules_changed": false,
+  "execution_change": "Replacement entries wait until a tester tick after accepted rebalance exit submissions so late exit callbacks cannot erase replacement exit targets.",
+  "entry_window_unchanged": "[scheduled_time, scheduled_time_plus_5_minutes)",
+  "performance_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "performance_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "compile_result": "0 errors, 0 warnings",
+  "optimization": false,
+  "live_trading": false,
+  "pnl_from_invalid_attempt_used": false
+}

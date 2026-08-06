@@ -1,0 +1,84 @@
+{
+  "schema": "SOLTRADE_PHASE6_V6_FP_MARKETS_INTAKE_MANIFEST_V1",
+  "status": "DATA_QUALIFICATION_COMPLETE_NOT_APPROVED",
+  "execution_authorized": false,
+  "strategy_matrix_authorized": false,
+  "collection_date": "2026-08-03",
+  "collection_instance_id": "FP_MARKETS_SC_DEMO_V6_DATA_QUALIFICATION_20260803",
+  "source": {
+    "broker_name": "FP Markets",
+    "mt5_company": "First Prudential Markets Limited",
+    "mt5_server_name": "FPMarketsSC-Demo",
+    "platform": "MetaTrader 5",
+    "account_type_user_reported": "Raw",
+    "demo_account_mt5_confirmed": true,
+    "account_currency": "USD",
+    "account_leverage": 30,
+    "terminal_build": 6090,
+    "account_login_stored": false,
+    "trading_password_stored": false
+  },
+  "symbol": {
+    "eurusd_symbol_name": "EURUSD",
+    "digits": 5,
+    "point_size": 0.00001,
+    "tick_size": 0.00001,
+    "tick_value": 1.0,
+    "tick_value_profit": 1.0,
+    "tick_value_loss": 1.0,
+    "contract_size": 100000.0
+  },
+  "time_observation": {
+    "broker_server_time": "2026-08-03T12:34:35",
+    "simultaneously_observed_utc_time": "2026-08-03T09:34:35Z",
+    "observed_utc_offset_seconds": 10800,
+    "observed_utc_offset": "+03:00",
+    "daylight_saving_status": "UNDETERMINED",
+    "broker_session_timezone": "UNRESOLVED",
+    "timezone_ambiguity": true
+  },
+  "mt5_eurusd_trade_sessions": {
+    "api": "SymbolInfoSessionTrade",
+    "sunday": [],
+    "monday": ["00:01:00-23:59:00"],
+    "tuesday": ["00:01:00-23:59:00"],
+    "wednesday": ["00:01:00-23:59:00"],
+    "thursday": ["00:01:00-23:59:00"],
+    "friday": ["00:01:00-23:59:00"],
+    "saturday": []
+  },
+  "frozen_periods": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "warmup": "[2024-01-02,2024-01-16)",
+    "research": "[2024-01-16,2024-12-24)",
+    "development": "[2024-01-16,2024-07-05)",
+    "validation": "[2024-07-05,2024-09-29)",
+    "out_of_sample": "[2024-09-29,2024-12-24)"
+  },
+  "availability": {
+    "first_available_real_tick": "2025-01-02T00:00:00.594",
+    "first_available_real_tick_day_final": "2025-01-02T23:59:58.481",
+    "first_available_real_tick_day_count": 131588,
+    "last_available_real_tick_at_final_capture": "2026-08-03T12:44:18.538",
+    "first_available_m1_bar": "2023-01-02T00:04:00",
+    "last_available_m1_bar_at_intake_capture": "2026-08-03T12:34:00",
+    "frozen_interval_has_server_real_ticks": false,
+    "complete_beginning_coverage": false,
+    "complete_ending_coverage": false
+  },
+  "safety_state": {
+    "terminal_trade_allowed": false,
+    "mql_trade_allowed": false,
+    "connected_orders_before_and_after": 0,
+    "connected_positions_before_and_after": 0,
+    "strategy_loaded": false,
+    "trade_api_calls_by_v6_observers": 0
+  },
+  "provenance": {
+    "v5_adjudication_commit": "240bd837a98a5526711bae25376ee01e540193a9",
+    "easyMarkets_v4_history_identity": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+    "easyMarkets_data_reused": false,
+    "easyMarkets_and_fpmarkets_data_combined": false
+  },
+  "terminal_outcome": "FAIL_REAL_TICK_HISTORY_UNAVAILABLE_FOR_FROZEN_INTERVAL"
+}

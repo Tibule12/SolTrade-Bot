@@ -1,0 +1,67 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_FORMAL_CELL_PLAN_V1",
+  "frozen_before_data_qualification": true,
+  "continuous_cells": [
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-NORMAL-NATIVE",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "NORMAL",
+      "supplementary_multiplier": 0.0,
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "source_run": "01-v30-2018-2024-native"
+    },
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-HIGH-NATIVE",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "HIGH",
+      "supplementary_multiplier": 0.5,
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "source_run": "01-v30-2018-2024-native"
+    },
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-STRESS-NATIVE",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "STRESS",
+      "supplementary_multiplier": 1.0,
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "source_run": "01-v30-2018-2024-native"
+    },
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-NORMAL-DELAY200",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "NORMAL",
+      "supplementary_multiplier": 0.0,
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "source_run": "02-v30-2018-2024-delay200"
+    },
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-HIGH-DELAY200",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "HIGH",
+      "supplementary_multiplier": 0.5,
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "source_run": "02-v30-2018-2024-delay200"
+    },
+    {
+      "cell_id": "V30_2018_2024_HISTORICAL-STRESS-DELAY200",
+      "dataset": "V30_2018_2024_HISTORICAL",
+      "cost_profile": "STRESS",
+      "supplementary_multiplier": 1.0,
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "source_run": "02-v30-2018-2024-delay200"
+    }
+  ],
+  "annual_attribution_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "annual_attribution_basis": "exit calendar year; continuous equity and rules are never reset",
+  "aggregation_order": "EXIT_TIME_ASCENDING_THEN_SYMBOL_ASCENDING",
+  "starting_equity_usd": 10000.0,
+  "risk_per_trade_percent": 0.5
+}

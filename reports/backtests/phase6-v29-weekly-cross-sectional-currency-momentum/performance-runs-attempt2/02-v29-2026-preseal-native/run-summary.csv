@@ -1,0 +1,21 @@
+field,value
+schema,SOLTRADE_PHASE6_V29_RUN_SUMMARY_V1
+execution_instance_id,V29-2026_PRESEAL_DEVELOPMENT-NATIVE_NORMAL_EXECUTION-R2
+dataset,V29_2026_PRESEAL_DEVELOPMENT
+schedule_dataset,V26_2026_PRESEAL_DEVELOPMENT
+execution_layer,NATIVE_NORMAL_EXECUTION
+schedule_legs,116
+processed_rebalances,29
+entry_attempts,116
+entry_fills,74
+exit_fills,74
+missed_legs,0
+spread_blocks,0
+risk_blocks,16
+execution_blocks,26
+max_portfolio_positions,4
+final_exit_target_cleared,YES
+open_positions_at_end,0
+max_tick,2026.07.31 23:59:56
+seal_breach,NO
+run_evidence_status,PASS

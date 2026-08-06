@@ -1,0 +1,46 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_DATA_QUALIFICATION_PLAN_V1",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "tester_model": 4,
+  "model_name": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "generated_tick_fallback": "PROHIBITED",
+  "synthetic_or_substitute_data": "PROHIBITED",
+  "warmup_from": "2017-11-01 00:00:00",
+  "bound_from": "2018-01-01 00:00:00",
+  "bound_to_exclusive": "2025-01-01 00:00:00",
+  "audits": [
+    "first/final tick",
+    "tick count by symbol/year",
+    "all gaps over one hour with deterministic session classification",
+    "weekend and holiday closures",
+    "tick-derived M1 and H1 versus tester series",
+    "current broker symbol specification and year-by-year observed spread availability",
+    "point/digits/contract size",
+    "commission and swap assumption availability",
+    "tester requested versus actual start",
+    "cross-symbol H1 coverage",
+    "every exact V28 formation timestamp",
+    "300 H1-bar warmup"
+  ],
+  "mandatory_pass": [
+    "every symbol has real ticks in warmup and every year",
+    "no tester log evidence of generated-tick fallback",
+    "M1 and H1 mismatches equal zero",
+    "point/digits/contract size equal frozen symbol contract",
+    "spread samples exist in every year",
+    "all exact seven-symbol V28 formation H1 timestamps exist",
+    "at least 300 H1 bars precede the first entry",
+    "no unexplained open-session gap longer than six hours",
+    "requested and actual tester periods cover the required boundaries"
+  ],
+  "data_failure_outcome": "V30_DATA_INSUFFICIENT_OR_INVALID",
+  "performance_on_data_failure": "PROHIBITED"
+}

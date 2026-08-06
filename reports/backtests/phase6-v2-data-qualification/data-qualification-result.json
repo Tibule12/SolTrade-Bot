@@ -1,0 +1,85 @@
+{
+  "schema": "SOLTRADE_PHASE6_V2_DATA_QUALIFICATION_RESULT_V1",
+  "execution_authorized": false,
+  "probe_invocations": 1,
+  "probe_repeated": false,
+  "status": "FAIL_INERT_PREFLIGHT",
+  "gate": "STOP_NO_V2_MANIFEST",
+  "scope": {
+    "data_qualification_probe_only": true,
+    "strategy_loaded": false,
+    "authoritative_run": false,
+    "replica": false,
+    "optimization": false,
+    "research_decision_generated": false,
+    "performance_statistics_generated": false,
+    "strategy_orders_permitted": false
+  },
+  "requested_configuration": {
+    "symbol": "EURUSD",
+    "period": "H1",
+    "tick_model": "REAL_TICKS",
+    "warmup_start_inclusive": "2024-01-02T00:00:00Z",
+    "warmup_end_exclusive": "2024-01-16T00:00:00Z",
+    "research_start_inclusive": "2024-01-16T00:00:00Z",
+    "research_end_exclusive": "2024-12-24T00:00:00Z",
+    "entry_permission": false,
+    "execution_permission": false,
+    "position_management_permission": false,
+    "tester_live_trading": false
+  },
+  "tester_confirmations": {
+    "MQL_TESTER": true,
+    "controller_requested_from": "2024-01-02T00:00:00Z",
+    "controller_requested_to_exclusive": "2024-12-24T00:00:00Z",
+    "fixture_exact_boundaries": true,
+    "real_tick_mode_message": "EURUSD,H1 (easyMarkets-Live): generating based on real ticks",
+    "cloud_network_mode": "OFF",
+    "history_synchronized": "2023-01-02 through 2024-12-24",
+    "history_ticks_synchronized": "2024-01-02 through 2024-12-23",
+    "m1_download_message": "preliminary downloading of M1 history completed in 0:00:06.312"
+  },
+  "failed_qualification_checks": {
+    "actual_first_processed_tick": "UNAVAILABLE",
+    "actual_final_processed_tick": "UNAVAILABLE",
+    "usable_m1_hcc_coverage": false,
+    "indicator_warmup_available": false,
+    "no_unexplained_open_session_gap_over_15_minutes": "NOT_ESTABLISHED",
+    "tick_coverage": false,
+    "raw_history_deals_total_zero": false
+  },
+  "failure": {
+    "stage": "OnInit",
+    "return_code": 1,
+    "deinit_reason": 8,
+    "message": "SOLTRADE_PHASE6_V2_PROBE_REJECTED | invalid inert tester preflight",
+    "observed_orders": 0,
+    "observed_historical_orders": 0,
+    "observed_positions": 0,
+    "observed_history_deals_total": 1,
+    "interpretation": "The one record appeared immediately with the tester's documented initial deposit initialization and no trade transaction. It was treated as non-zero evidence and therefore failed the strict requested zero-deal criterion."
+  },
+  "trading_effects": {
+    "tester_trade_transactions": 0,
+    "tester_orders": 0,
+    "tester_historical_orders": 0,
+    "tester_positions": 0,
+    "tester_raw_history_deals_total": 1,
+    "strict_zero_orders_deals_positions_confirmed": false,
+    "connected_demo_trade_log_events_during_probe": 0,
+    "connected_demo_orders_before_probe": 0,
+    "connected_demo_positions_before_probe": 0,
+    "connected_demo_deals_or_history_files_unchanged_since_pre_run_sync": true,
+    "connected_demo_state_change_detected": false
+  },
+  "artifact_identity": {
+    "probe_source": "SolTradePhase6DataQualificationProbe.mq5",
+    "probe_source_sha256": "464bb7d1a0922089767d9e7c360702d2cf2fe2ccfb82f41388a8bd260f76cc86",
+    "probe_ex5_sha256": "82585ab69b2851e2f35df7081b5bbf2149324d9196714a26b301dcdc6a2298c2",
+    "tester_config_sha256": "9bee7453b64dcd5764ec9a0647b679353ca152d6e7c532099db8a5bd61b65482",
+    "tester_controller_log_sha256": "5b0a416b0762054405a168d586a49a52dcbf1e4ec7a871f8372a52ed67039615",
+    "tester_agent_log_sha256": "9cc20d7daa3a5d28a0d658a2c071b6b896a724ca87301b273ef75fa6652f82de",
+    "terminal_probe_window_log_sha256": "7caf2f3ca8301bdc7003a1df8391c94a6867285572f26081f64032f7403f8a35"
+  },
+  "manifest_generated": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "SOLTRADE_FXIFY_V28_CONTINUOUS_PHYSICAL_RUN_V1",
+  "run_id": "stress",
+  "status": "PASS",
+  "wine_return_code": 0,
+  "elapsed_seconds": 171.68268513679504,
+  "execution_mode": 0,
+  "capture_evidence": true,
+  "summary": {
+    "field": "value",
+    "schema": "SOLTRADE_PHASE6_V28_RUN_SUMMARY_V1",
+    "execution_instance_id": "stress",
+    "dataset": "V28_FXIFY_CONTINUOUS",
+    "execution_layer": "NATIVE_NORMAL_EXECUTION",
+    "schedule_signals": "133",
+    "processed_signals": "133",
+    "entry_attempts": "133",
+    "entry_fills": "119",
+    "exit_fills": "85",
+    "missed_signals": "0",
+    "spread_blocks": "0",
+    "risk_blocks": "14",
+    "execution_blocks": "0",
+    "open_positions_at_end": "0",
+    "max_tick": "2026.07.31 23:59:56",
+    "seal_breach": "NO",
+    "capture_evidence": "YES",
+    "equity_observation_calls": "63948480",
+    "equity_hour_rows": "10345",
+    "cutoff_open_state_valid": "YES",
+    "run_evidence_status": "PASS"
+  },
+  "native_reports": [
+    "native-mt5-report.png",
+    "native-mt5-report-holding.png",
+    "native-mt5-report.html",
+    "native-mt5-report-mfemae.png",
+    "native-mt5-report-hst.png"
+  ]
+}

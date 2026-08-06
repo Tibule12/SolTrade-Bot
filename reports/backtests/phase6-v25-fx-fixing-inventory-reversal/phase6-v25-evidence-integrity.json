@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "physical_runs": 42,
+  "formal_cells": 12,
+  "technical_failures": 0,
+  "valid_result_reruns": 0,
+  "optimization_or_tuning": false,
+  "post_seal_data_accessed": false,
+  "connected_chart_trades": 0,
+  "demo_forward_trades": 0,
+  "live_trades": 0,
+  "terminal_outcome": "V25_DEVELOPMENT_GATES_FAILED_CANDIDATE_RETIRED"
+}

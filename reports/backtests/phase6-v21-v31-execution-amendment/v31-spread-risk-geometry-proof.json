@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V21_V31_SPREAD_RISK_GEOMETRY_V1",
+  "status": "PASS",
+  "confirmation_atr_symbol": "ATR",
+  "initial_stop_distance": "2.00 * ATR",
+  "v30_atr_spread_ceiling": "0.10 * ATR",
+  "v30_ceiling_as_fraction_of_stop_distance": 0.05,
+  "v31_atr_spread_ceiling": "0.20 * ATR",
+  "v31_ceiling_as_fraction_of_stop_distance": 0.10,
+  "proof": "(0.20 * ATR) / (2.00 * ATR) = 0.10",
+  "absolute_ceiling_points": 30.0,
+  "v20_observed_block_fraction": 0.7261904761904762,
+  "v20_observed_block_percent_rounded": 72.62,
+  "justification_basis": "FROZEN_RISK_GEOMETRY_AND_OPERATIONAL_ATTRIBUTION_NOT_PROFITABILITY",
+  "profitability_claim": false,
+  "parameter_sweep_used": false,
+  "alternative_thresholds_compared": false
+}

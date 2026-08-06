@@ -1,0 +1,48 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_OPERATIONAL_FEASIBILITY_CLOSURE_V1",
+  "candidate": "FX_CROSS_SECTIONAL_MOMENTUM_3W_1W_TOP2_BOTTOM2_1_0",
+  "candidate_specification_sha256": "dba62ffabb987248971934ba37b3d91244809b1b9eaacdc42811360289b7bf87",
+  "gate_manifest_sha256": "c75fb5ae91c72e5c45b61280dc8f5a03803f5a4a5aece2fd8b9e42d4f135b97a",
+  "prerun_commit": "5ef675ae6be908ae228f7825e7b910472eeab206",
+  "performance_attempt_2_commit": "32a95d515bae2d793b1a50295810271a5b6d61c8",
+  "signal_only_schedule": {
+    "2025_rebalances": 51,
+    "2025_legs": 204,
+    "2026_rebalances": 29,
+    "2026_legs": 116,
+    "all_preseal_legs": 320
+  },
+  "authoritative_operational_run": {
+    "dataset": "V26_2025_DEVELOPMENT",
+    "execution_layer": "NATIVE_NORMAL_EXECUTION",
+    "real_tick_model": true,
+    "optimization": false,
+    "scheduled_legs": 204,
+    "entry_attempts": 204,
+    "position_size_rejections": 204,
+    "entry_fills": 0,
+    "exit_fills": 0,
+    "deals": 0,
+    "seal_breach": false
+  },
+  "root_cause": {
+    "frozen_account_equity_usd": 10000.0,
+    "frozen_risk_per_leg_percent": 0.05,
+    "risk_budget_per_leg_usd": 5.0,
+    "frozen_initial_stop": "3.0_X_WILDER_D1_ATR14",
+    "broker_minimum_volume_lots": 0.01,
+    "engine_policy": "ROUNDING_UP_ABOVE_RISK_BUDGET_PROHIBITED",
+    "reason_code": "POSITION_SIZE_REJECTED",
+    "reason_text": "Risk-based volume is below the broker minimum; rounding up is prohibited"
+  },
+  "sample_gate_result": {
+    "frozen_minimum_naturally_closed_all_preseal": 150,
+    "actual_naturally_closed": 0,
+    "status": "FAIL"
+  },
+  "profitability_tested": false,
+  "pnl_calculated": false,
+  "candidate_rejected_for_financial_performance": false,
+  "candidate_rejected_for_operational_sample_infeasibility": true,
+  "terminal_outcome": "V26_RETIRED_OPERATIONALLY_INFEASIBLE_ZERO_EXECUTABLE_SAMPLE"
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_TECHNICAL_AMENDMENT_ATTEMPT2_V1",
+  "status": "FROZEN_BEFORE_ELIGIBLE_PNL",
+  "retained_attempt1_root": "performance-runs",
+  "attempt1_financial_evidence_eligible": false,
+  "failure_run": "02-v29-2026-preseal-native",
+  "failure": {
+    "scheduled_legs": 116,
+    "entry_attempts": 116,
+    "accepted_entries": 74,
+    "authoritative_closed_positions": 72,
+    "unmatched_position_identifiers": [144, 145],
+    "unmatched_symbols": ["NZDUSD", "USDCHF"]
+  },
+  "root_cause": "Inherited V26 schedule processing returned after the final entry group and never invoked that cohort's frozen scheduled exit.",
+  "correction": "Invoke the same frozen weekly close procedure for the final cohort at its already-recorded scheduled_exit timestamp.",
+  "all_four_runs_repeated_under_one_corrected_executable": true,
+  "signal_rules_changed": false,
+  "signal_files_changed": false,
+  "sizing_or_portfolio_risk_changed": false,
+  "costs_or_gates_changed": false,
+  "pnl_from_attempt1_viewed_or_used": false,
+  "corrected_source_sha256": "d0090bf1a668e821243fb3f4755031ff73529396963e6b020aee6303ac6c867c",
+  "corrected_ex5_sha256": "5fa64792a6b150a00e43c05cc141baad6c4802b8c7d32c4f3d10aef33aed46a8",
+  "corrected_runner_sha256": "afe712a05022f92cfd13bde456ac8395790ae17e7ad1123852ffaae057543ed6",
+  "compile_result": "0 errors, 0 warnings",
+  "attempt2_output_root": "performance-runs-attempt2",
+  "optimization": false,
+  "demo_or_live_trades": 0
+}

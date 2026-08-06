@@ -1,0 +1,52 @@
+{
+  "schema": "SOLTRADE_PHASE6_V24_REPOSITORY_PRESERVATION_AUDIT_V1",
+  "status": "PASS",
+  "audited_head_before_v24_artifacts": "2fc570acf37caa9942e6b3710f6aab30f4a85e77",
+  "branch": "main",
+  "origin_divergence_before_v24_commit": {
+    "behind": 0,
+    "ahead": 30
+  },
+  "worktree_clean_before_v24": true,
+  "v23_prerun_commit": {
+    "hash": "bac30558aa338b02220ebbb33b67d6b6dd1dc375",
+    "exists": true
+  },
+  "v23_final_evidence_commit": {
+    "hash": "2fc570acf37caa9942e6b3710f6aab30f4a85e77",
+    "exists": true
+  },
+  "v23_prerun_tag": {
+    "name": "phase6-v23-v31-development-prerun",
+    "object_type": "tag",
+    "peeled_commit": "bac30558aa338b02220ebbb33b67d6b6dd1dc375",
+    "exists": true
+  },
+  "v23_bundle": {
+    "path": "reports/backtests/phase6-v23-v31-development-screen/soltrade-phase6-v23-prerun.bundle",
+    "exists": true,
+    "verification": "PASS_COMPLETE_HISTORY",
+    "sha256": "34c30a1f9691c37faa2827570eac9b1e3a6c8977d86cc0814dbf58097b88f729"
+  },
+  "v23_checksum_manifest": {
+    "path": "reports/backtests/phase6-v23-v31-development-screen/artifact-sha256-v23.txt",
+    "sha256": "92f93084bd3e1183f356dbf67a22917a7fc6b8001f92024802262cac2ce488cb"
+  },
+  "production_phase1_5_ea": {
+    "path": "MQL5/Experts/SolTradeBot.mq5",
+    "expected_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "observed_sha256_before_v24": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "modified": false
+  },
+  "preservation_scope": "All V4-V23 evidence, commits, tags, reports and bundles",
+  "permitted_v24_change_scope": "New files only under reports/backtests/phase6-v24-trend-breakout-family-closure",
+  "push_performed": false,
+  "compile_performed": false,
+  "backtest_performed": false,
+  "optimization_performed": false,
+  "market_data_accessed": false,
+  "signal_count_calculated": false,
+  "pnl_calculated": false,
+  "order_or_trade_occurred": false
+}
+

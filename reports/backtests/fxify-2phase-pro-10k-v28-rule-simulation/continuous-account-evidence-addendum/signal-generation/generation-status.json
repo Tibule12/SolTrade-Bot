@@ -1,0 +1,11 @@
+{
+  "schema": "SOLTRADE_FXIFY_V28_CONTINUOUS_SIGNAL_GENERATION_V1",
+  "status": "PASS",
+  "elapsed_seconds": 17.017587900161743,
+  "generated_cohorts": 19,
+  "generated_legs": 133,
+  "frozen_overlap_legs": 119,
+  "overlap_mismatches": 0,
+  "new_seam_cohort": "2025.12.01 10:05:00",
+  "new_cutoff_open_cohort": "2026.07.06 10:05:00"
+}

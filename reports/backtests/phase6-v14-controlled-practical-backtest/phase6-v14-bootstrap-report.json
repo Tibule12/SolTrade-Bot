@@ -1,0 +1,22 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_BOOTSTRAP_REPORT_V1",
+  "status": "CALCULATED",
+  "paths": 100000,
+  "seed_decimal": 4201290849,
+  "seed_hex": "0xFA6A9C61",
+  "sample_trades": 17,
+  "reporting_only": true,
+  "assumption": "Individual-trade bootstrap assumes independently resampled historical trade returns; it does not reproduce serial dependence, market regimes, or the strategy time-based lock state.",
+  "expectancy_R_95_percent_confidence_interval": [
+    -0.7098469682627044,
+    0.22349427709154557
+  ],
+  "expectancy_money_95_percent_confidence_interval": [
+    -17.509258412704582,
+    5.576916598568027
+  ],
+  "median_simulated_drawdown_percent": 1.6127155960393789,
+  "p90_simulated_drawdown_percent": 2.5852372214654253,
+  "p95_simulated_drawdown_percent": 2.8519488528169696,
+  "probability_ending_with_negative_net_profit": 0.86424
+}

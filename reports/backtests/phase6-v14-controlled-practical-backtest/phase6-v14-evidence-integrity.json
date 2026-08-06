@@ -1,0 +1,16 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "physical_runs_valid": 36,
+  "formal_cells_valid": 18,
+  "native_html_reports_emitted": 36,
+  "native_tester_statistics_reports": 36,
+  "native_tester_caches": 36,
+  "tester_agent_logs": 36,
+  "technical_failures_preserved": 2,
+  "technical_rerun_configuration_sha256": "a7da7737d5a6bb0e601a18516dc119ccbda28d074aca8d9ec14affcce526ff78",
+  "technical_rerun_configuration_identical": true,
+  "configuration_or_history_mismatch": false,
+  "state_collision": false,
+  "phase_1_through_5_logic_changed": false
+}

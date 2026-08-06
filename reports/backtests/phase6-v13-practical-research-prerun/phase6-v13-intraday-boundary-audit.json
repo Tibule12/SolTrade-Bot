@@ -1,0 +1,77 @@
+{
+  "schema": "SOLTRADE_PHASE6_V13_INTRADAY_BOUNDARY_AUDIT_V1",
+  "status": "PASS",
+  "semantics": "START_INCLUSIVE_END_EXCLUSIVE_SERVER_TIME",
+  "outer_dates_are_transport_envelopes_only": true,
+  "actions_before_eligible_from": 0,
+  "actions_at_or_after_eligible_to": 0,
+  "post_cutoff_signals": 0,
+  "runs": [
+    {
+      "run_id": "D1",
+      "outer_from_date": "2025-01-02",
+      "outer_to_date": "2025-02-06",
+      "reset_at": "2025-01-02T00:00:00",
+      "eligible_from_inclusive": "2025-01-16T00:00:00",
+      "eligible_to_exclusive": "2025-02-05T00:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 335,
+      "status": "PASS"
+    },
+    {
+      "run_id": "D2",
+      "outer_from_date": "2025-02-05",
+      "outer_to_date": "2025-03-11",
+      "reset_at": "2025-02-05T01:00:00",
+      "eligible_from_inclusive": "2025-02-18T05:00:00",
+      "eligible_to_exclusive": "2025-03-07T23:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 329,
+      "status": "PASS"
+    },
+    {
+      "run_id": "D3",
+      "outer_from_date": "2025-03-10",
+      "outer_to_date": "2025-07-08",
+      "reset_at": "2025-03-10T01:00:00",
+      "eligible_from_inclusive": "2025-03-21T04:00:00",
+      "eligible_to_exclusive": "2025-07-05T00:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 1819,
+      "status": "PASS"
+    },
+    {
+      "run_id": "V1",
+      "outer_from_date": "2025-03-10",
+      "outer_to_date": "2025-08-07",
+      "reset_at": "2025-03-10T01:00:00",
+      "eligible_from_inclusive": "2025-07-05T00:00:00",
+      "eligible_to_exclusive": "2025-08-06T16:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 543,
+      "status": "PASS"
+    },
+    {
+      "run_id": "V2",
+      "outer_from_date": "2025-08-06",
+      "outer_to_date": "2025-09-30",
+      "reset_at": "2025-08-06T18:00:00",
+      "eligible_from_inclusive": "2025-08-19T22:00:00",
+      "eligible_to_exclusive": "2025-09-29T00:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 673,
+      "status": "PASS"
+    },
+    {
+      "run_id": "O1",
+      "outer_from_date": "2025-08-06",
+      "outer_to_date": "2025-12-25",
+      "reset_at": "2025-08-06T18:00:00",
+      "eligible_from_inclusive": "2025-09-29T00:00:00",
+      "eligible_to_exclusive": "2025-12-24T00:00:00",
+      "research_cutoff": "2025-12-24T00:00:00",
+      "evaluation_count": 1487,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_SIGNAL_CONSUMPTION_AUDIT_V1",
+  "status": "PASS",
+  "all_320_signals_attempted_once_per_execution_layer": true,
+  "schedule_2025_sha256": "25876a808a49044bfdb2f2b728e0cbd7d097678c377a9b4af8b4d7b0ed8487cf",
+  "schedule_2026_sha256": "feada50576c4c6dd8ff716a2dda94abc053265ec8f545057bbd6e9a92425a11b",
+  "runs": [
+    {
+      "run_id": "01-v29-2025-native",
+      "expected_signal_identities": 204,
+      "entry_attempts": 204,
+      "unique_matched_identities": 204,
+      "direction_parity": true,
+      "status": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "expected_signal_identities": 116,
+      "entry_attempts": 116,
+      "unique_matched_identities": 116,
+      "direction_parity": true,
+      "status": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "expected_signal_identities": 204,
+      "entry_attempts": 204,
+      "unique_matched_identities": 204,
+      "direction_parity": true,
+      "status": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "expected_signal_identities": 116,
+      "entry_attempts": 116,
+      "unique_matched_identities": 116,
+      "direction_parity": true,
+      "status": "PASS"
+    }
+  ]
+}

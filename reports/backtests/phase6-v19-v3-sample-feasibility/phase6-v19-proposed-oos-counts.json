@@ -1,0 +1,37 @@
+{
+  "label": "PROPOSED_OOS",
+  "result_classification": "STRUCTURAL_SAMPLE_UPPER_BOUND",
+  "eligible_completed_h1_candles": 1416,
+  "buy_setups": 29,
+  "sell_setups": 44,
+  "total_setups": 73,
+  "retest_confirmations": 45,
+  "confirmation_rate": 0.6164383561643836,
+  "confirmations_by_retest_candle": {
+    "1": 24,
+    "2": 8,
+    "3": 5,
+    "4": 3,
+    "5": 0,
+    "6": 5
+  },
+  "expired_setups": 19,
+  "wrong_ema_side_cancellations": 9,
+  "opposite_breakout_cancellations": 0,
+  "atr_regime_rejections": 0,
+  "atr_regime_rejection_breakdown": {
+    "setup": 0,
+    "retest": 0
+  },
+  "risk_spread_state_entry_blocks": 38,
+  "confirmations_blocked_position_open": 0,
+  "theoretical_entries": 7,
+  "initial_stop_exits": 2,
+  "donchian_10_exits": 5,
+  "naturally_completed_position_cycles": 7,
+  "positions_open_at_period_boundary": 0,
+  "average_setup_to_confirmation_hours": 3.2444444444444445,
+  "median_setup_to_confirmation_hours": 1.0,
+  "average_theoretical_holding_hours": 31.361510555555558,
+  "median_theoretical_holding_hours": 26.000011944444445
+}

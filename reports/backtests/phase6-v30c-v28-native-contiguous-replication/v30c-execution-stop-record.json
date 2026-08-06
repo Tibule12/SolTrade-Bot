@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_EXECUTION_STOP_RECORD_V1",
+  "stopped_at": "DATA_QUALIFICATION",
+  "why": "Generated-tick fallback is prohibited and occurred within the frozen window for every required symbol.",
+  "normal_native_run": "NOT_RUN",
+  "high_native_run": "NOT_RUN",
+  "stress_native_run": "NOT_RUN",
+  "normal_delay200_run": "NOT_RUN",
+  "high_delay200_run": "NOT_RUN",
+  "stress_delay200_run": "NOT_RUN",
+  "combined_evidence_audit": "NOT_RUN",
+  "v28_status": "UNCHANGED; NOT A PERFORMANCE FAILURE"
+}

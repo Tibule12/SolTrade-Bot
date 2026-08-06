@@ -1,0 +1,21 @@
+field,value
+schema,SOLTRADE_PHASE6_V27_SIGNAL_SUMMARY_V1
+weeks,81
+evaluations,518
+signals,93
+buy_signals,53
+sell_signals,40
+current_reference_missing,1
+threshold_history_unavailable,48
+signals_EURUSD,14
+signals_GBPUSD,11
+signals_AUDUSD,14
+signals_NZDUSD,14
+signals_USDCAD,11
+signals_USDCHF,16
+signals_USDJPY,13
+max_tick,2026.07.31 23:00:00
+seal_breach,NO
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,FAIL

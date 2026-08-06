@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_CONFIGURATION_VERIFICATION_V1",
+  "status": "PASS",
+  "compile_errors": 0,
+  "compile_warnings": 0,
+  "compile_log_sha256": "a46be07167f6f51b4a643218077959dbca33538ab0551e607a2105dc651ef8d2",
+  "harness_ex5_sha256": "e5cd4599da1f8f96ad3649ac2251129c1bfc081e92c4b4a93ba5cc45105b850a",
+  "all_physical_runs_same_core_hash": true,
+  "only_frozen_axes_varied": true,
+  "real_tick_model_all_runs": true,
+  "generated_tick_fallback": false,
+  "bootstrap_seed": 4201290849,
+  "monte_carlo_seed": 2000388822,
+  "production_ea_unchanged": true
+}

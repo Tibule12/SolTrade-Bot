@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V16_2026_DATA_MANIFEST_V1",
+  "broker": "FP Markets",
+  "server": "FPMarketsSC-Demo",
+  "symbol": "EURUSD",
+  "qualified_interval": "[2026-01-02 00:00:00, 2026-08-01 00:00:00)",
+  "latest_complete_qualified_broker_day": "2026-07-31",
+  "tick_mode": "BROKER_REAL_TICKS_ONLY",
+  "tick_count": 9259175,
+  "first_real_tick": "2026.01.02 00:00:01.129",
+  "final_real_tick": "2026.07.31 23:59:59.143",
+  "tick_source_chain_sha256": "624bd8e29a8e2f19f471f7a82e7241ec3ff1be9c2d6132be49d108760270ccd1",
+  "derived_h1_rows": 3624,
+  "derived_h1_sha256": "13eb0f6f169ce6bbcf0fca942519f8bc600977877c3b10d5d7f89f5bf94a6b00",
+  "derived_m1_rows": 217157,
+  "derived_m1_sha256": "22395e05b713e8a5a12d8b0bc467f572284a7f612ae95a8141aa53f4487e0144",
+  "production_ea_expected_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3"
+}

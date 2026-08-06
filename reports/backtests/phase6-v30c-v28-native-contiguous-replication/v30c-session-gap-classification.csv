@@ -1,0 +1,32 @@
+symbol,kind,date,minutes,day_minute_bars,classification,note
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.01.06,12,1438,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.04.28,10,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.05.04,6,1440,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.02,20,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.22,2,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.08.15,9,1440,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.12.27,124,1440,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+EURUSD,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1417,1438,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.01.06,12,1426,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.04.28,10,1434,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.05.01,1,1439,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.05.04,6,1439,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.02,20,1437,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.22,2,1434,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.08.15,9,1439,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.12.27,124,1438,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+GBPUSD,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1377,1433,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.01.02,1,1314,HOLIDAY_AFFECTED_BUT_UNRESOLVED_NATIVE_GAP,"Observed New Year holiday, but MT5 still reports minute bars and generated fallback; native-only gate remains failed."
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.01.06,12,1438,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.04.28,10,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.05.04,7,1436,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.02,20,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.06.22,2,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.07.05,1,1436,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.08.15,9,1435,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,ABSENT_REAL_TICKS_GENERATED_FALLBACK,2023.12.27,123,1440,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+AUDUSD,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1378,1434,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+NZDUSD,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1382,1426,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+USDCAD,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1371,1423,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+USDCHF,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1387,1428,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.
+USDJPY,DISCARDED_REAL_TICKS_GENERATED_FALLBACK,2023.04.17,1380,1429,OPEN_SESSION_UNRESOLVED,Weekday within the broker's reported trading-day minute bars; native-only evidence is unavailable.

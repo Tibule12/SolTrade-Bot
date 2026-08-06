@@ -1,0 +1,15 @@
+{
+  "day_boundary": "00:00 UTC+3",
+  "minimum_day_profit_usd": 50,
+  "minimum_days": 3,
+  "official_formula": "minimum(midnight balance, midnight equity) minus previous-day balance",
+  "realized_exit_date_proxy_not_substituted": true,
+  "result": "INSUFFICIENT_EVIDENCE",
+  "schema": "SOLTRADE_THE5ERS_V28_PROFITABLE_DAY_AUDIT_V1",
+  "status_by_condition": {
+    "DELAY_200_MS": "UNRESOLVED_MISSING_MIDNIGHT_EQUITY",
+    "HIGH": "UNRESOLVED_MISSING_MIDNIGHT_EQUITY",
+    "NORMAL": "UNRESOLVED_MISSING_MIDNIGHT_EQUITY",
+    "STRESS": "UNRESOLVED_MISSING_MIDNIGHT_EQUITY"
+  }
+}

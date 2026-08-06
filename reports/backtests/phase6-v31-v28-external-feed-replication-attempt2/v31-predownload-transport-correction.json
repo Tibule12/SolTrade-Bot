@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_PREDOWNLOAD_TRANSPORT_CORRECTION_V1",
+  "status": "APPLIED_BEFORE_ANY_NETWORK_REQUEST",
+  "failed_launcher_reason": "httpx HTTP/2 requested but optional h2 package is not installed",
+  "network_requests_completed_before_failure": 0,
+  "raw_files_downloaded_before_failure": 0,
+  "pnl_viewed": false,
+  "strategy_or_source_change": false,
+  "old_downloader_sha256": "158e113bc222b9f08310007a77d294728312eeae72382eb16559fceea94a6912",
+  "corrected_downloader_sha256": "b3ab13285077d0dcd8b6a2b771184c74f63c6d04b1616c24fbb65c06205af9ad",
+  "correction": "use HTTP/1.1 transport supported by the installed httpx package",
+  "provider_symbols_interval_and_raw_bytes": "UNCHANGED"
+}

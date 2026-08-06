@@ -1,0 +1,92 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_QUALIFICATION_INVENTORY_V1",
+  "status": "PASS",
+  "prices_or_returns_inspected": false,
+  "orders_or_positions": 0,
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "elapsed_seconds": 12.945123195648193,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "GBPUSD",
+      "elapsed_seconds": 13.916598081588745,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "AUDUSD",
+      "elapsed_seconds": 41.77435231208801,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "NZDUSD",
+      "elapsed_seconds": 31.778558015823364,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10344,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "USDCAD",
+      "elapsed_seconds": 40.74240326881409,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "USDCHF",
+      "elapsed_seconds": 14.931907892227173,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    },
+    {
+      "symbol": "USDJPY",
+      "elapsed_seconds": 13.967469215393066,
+      "wine_return_code": 0,
+      "h1_timestamp_count": 10345,
+      "first_h1": "2024.12.02 00:00:00",
+      "last_h1": "2026.07.31 23:00:00",
+      "price_fields_written": "NO",
+      "returns_or_rankings_calculated": "NO",
+      "orders_or_positions": "ZERO",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "SOLTRADE_PHASE6_V24_UNUSED_OOS_RESERVE_MANIFEST_V1",
+  "status": "SEALED_UNOPENED",
+  "administrative_classification": "UNASSIGNED_SINGLE_USE_FUTURE_OOS_RESERVE",
+  "previous_administrative_classification": "V3.1_SPECIFIC_OOS",
+  "change_type": "ADMINISTRATIVE_REASSIGNMENT_ONLY",
+  "start_inclusive_broker_server_time": "2026-08-01 00:00:00",
+  "hard_maximum_end_exclusive_broker_server_time": "2027-08-01 00:00:00",
+  "broker_server": "FPMarketsSC-Demo",
+  "original_seal_manifest": "reports/backtests/phase6-v21-v31-execution-amendment/v31-fresh-oos-seal-manifest.json",
+  "original_seal_sha256": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe",
+  "original_seal_modified": false,
+  "post_seal_data_accessed_in_v24": false,
+  "records_retrieved_inspected_counted_or_summarized_in_v24": 0,
+  "assigned_family": null,
+  "permitted_future_family_assignments": 1,
+  "assignment_authorized_in_v24": false,
+  "opening_authorized_in_v24": false,
+  "single_use": true,
+  "may_compare_multiple_strategies": false,
+  "may_reopen_after_result_viewed": false,
+  "required_before_assignment": [
+    "Complete strategy-family hypothesis and economic rationale written",
+    "Exactly one candidate strategy fully specified and committed",
+    "All development and acceptance gates frozen",
+    "Frozen pre-seal development screen passed",
+    "Separate explicit reserve-assignment authorization"
+  ],
+  "access_audit_history_preserved": [
+    "reports/backtests/phase6-v22-v31-implementation-parity/phase6-v22-oos-seal-access-audit.json",
+    "reports/backtests/phase6-v23-v31-development-screen/phase6-v23-oos-seal-access-audit.json"
+  ]
+}
+

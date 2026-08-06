@@ -1,0 +1,2 @@
+C:\fxify-inactivity-guard-compile\FXIFYInactivityGuard.mq5 : information: compiling C:\fxify-inactivity-guard-compile\FXIFYInactivityGuard.mq5
+Result: 0 errors, 0 warnings, 864 ms elapsed, cpu='X64 Regular'

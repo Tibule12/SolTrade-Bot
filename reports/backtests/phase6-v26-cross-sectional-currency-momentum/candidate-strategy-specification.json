@@ -1,0 +1,117 @@
+{
+  "schema": "SOLTRADE_PHASE6_V26_CROSS_SECTIONAL_MOMENTUM_SPEC_V1",
+  "specification_id": "FX_CROSS_SECTIONAL_MOMENTUM_3W_1W_TOP2_BOTTOM2_1_0",
+  "status": "FROZEN_BEFORE_SIGNAL_COUNTS_OR_PNL",
+  "family": "CROSS_SECTIONAL_CURRENCY_MOMENTUM",
+  "related_to_trend_breakout_family": false,
+  "related_to_fixing_reversal_family": false,
+  "universe": {
+    "currencies": [
+      "EUR",
+      "GBP",
+      "AUD",
+      "NZD",
+      "CAD",
+      "CHF",
+      "JPY"
+    ],
+    "broker_symbols": [
+      "EURUSD",
+      "GBPUSD",
+      "AUDUSD",
+      "NZDUSD",
+      "USDCAD",
+      "USDCHF",
+      "USDJPY"
+    ],
+    "usd_quote_orientation": {
+      "EURUSD": 1,
+      "GBPUSD": 1,
+      "AUDUSD": 1,
+      "NZDUSD": 1,
+      "USDCAD": -1,
+      "USDCHF": -1,
+      "USDJPY": -1
+    },
+    "membership_frozen": true,
+    "exclusion_after_freeze": "ONLY_FAIL_CLOSED_TECHNICAL_INVALIDATION_OF_COMPLETE_CANDIDATE"
+  },
+  "signal": {
+    "rebalance_clock": "MONDAY 10:05:00 FP MARKETS BROKER SERVER TIME",
+    "observation": "LAST_COMPLETED_H1_CLOSE AT MONDAY 10:00 VERSUS EXACT MATCHING H1 CLOSE 21 CALENDAR DAYS EARLIER",
+    "formation_horizon_calendar_days": 21,
+    "holding_horizon_calendar_days": 7,
+    "foreign_currency_return": "XXXUSD: recent/anchor-1; USDXXX: anchor/recent-1",
+    "ranking": "DESCENDING FOREIGN-CURRENCY RETURN; ISO CURRENCY CODE ASCENDING TIE BREAK",
+    "long_portfolio": "TOP_TWO_CURRENCIES",
+    "short_portfolio": "BOTTOM_TWO_CURRENCIES",
+    "middle_three": "NO_POSITION",
+    "required_simultaneous_valid_currency_observations": 7,
+    "missing_exact_anchor_or_observation": "SKIP_ENTIRE_REBALANCE_FOR_ALL_SYMBOLS",
+    "no_absolute_trend_or_breakout_condition": true
+  },
+  "execution": {
+    "entry": "FIRST_TRADABLE REAL TICK AT OR AFTER TARGET WITHIN FIVE MINUTES",
+    "exit": "FIRST_TRADABLE REAL TICK AT OR AFTER NEXT MONDAY 10:05 WITHIN FIVE MINUTES",
+    "rebalance_sequence": "CLOSE PRIOR WEEK BEFORE OPENING CURRENT WEEK",
+    "spread_maximum_points_inclusive": 30,
+    "failed_leg_entry": "NO RETRY; OTHER LEGS REMAIN VALID",
+    "maximum_portfolio_legs": 4,
+    "maximum_position_per_symbol": 1,
+    "execution_layers": {
+      "NATIVE_NORMAL_EXECUTION": 0,
+      "FIXED_DELAY_200_MS": 200
+    }
+  },
+  "risk": {
+    "risk_per_leg_current_portfolio_equity_percent": 0.05,
+    "maximum_initial_portfolio_risk_percent": 0.2,
+    "initial_stop": "3.0 * WILDER ATR14 FROM LAST COMPLETED D1 BAR",
+    "take_profit": false,
+    "trailing_stop": false,
+    "breakeven_move": false,
+    "partial_close": false,
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_limit_percent": 5.0,
+    "consecutive_loss_pause_count": 3,
+    "portfolio_gate_semantics": "FAIL CLOSED IF AGGREGATED CHRONOLOGICAL EVIDENCE REQUIRES A TRADE THAT FROZEN PORTFOLIO RISK STATE WOULD HAVE BLOCKED"
+  },
+  "datasets": {
+    "V26_2025_DEVELOPMENT": {
+      "history_from": "2024.12.02 00:00:00",
+      "eligible_from": "2025.01.06 10:05:00",
+      "eligible_to_exclusive": "2026.01.01 00:00:00"
+    },
+    "V26_2026_PRESEAL_DEVELOPMENT": {
+      "history_from": "2025.12.01 00:00:00",
+      "eligible_from": "2026.01.05 10:05:00",
+      "eligible_to_exclusive": "2026.08.01 00:00:00"
+    },
+    "research_cutoff_exclusive": "2026.08.01 00:00:00",
+    "all_classification": "DEVELOPMENT_EVIDENCE"
+  },
+  "costs": {
+    "commission_per_side_per_standard_lot_usd": 3.0,
+    "native_nonzero_commission_rule": "RECONCILE_NO_DOUBLE_COUNT",
+    "swap": "FROZEN POINT-MODE PER-SYMBOL VALUES IN symbol-specification-inventory.json; WEDNESDAY TRIPLE; NO HISTORICAL SCHEDULE CLAIM",
+    "supplementary_friction_multiplier": {
+      "NORMAL": 0.0,
+      "HIGH": 0.5,
+      "STRESS": 1.0
+    }
+  },
+  "prohibited_after_freeze": [
+    "Change 3-week formation or 1-week holding horizon",
+    "Change top-two/bottom-two breadth",
+    "Change universe",
+    "Add absolute trend, volatility, carry, weekday, macro, or V25 fixing filter",
+    "Tune rebalance clock or spread ceiling",
+    "Tune ATR stop or risk after results",
+    "Run a competing cross-sectional portfolio or parameter variant"
+  ],
+  "demo_authorization": {
+    "permitted_only_after_all_frozen_development_gates_pass": true,
+    "live_trading_permitted": false
+  }
+}

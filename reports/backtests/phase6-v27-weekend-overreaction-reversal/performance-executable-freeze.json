@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_PERFORMANCE_EXECUTABLE_FREEZE_V1",
+  "strategy_specification_sha256": "105db9cb0275d2f386e75bd3786c37077c6299073c9cba15fdff68100a3ba706",
+  "gate_manifest_sha256": "57086360416a385e2c427e3360fca51863eb9cb48aca85a3b7e6622a1d7d2fbb",
+  "performance_source": "research/weekend_overreaction/SolTradeWeekendOverreactionPerformanceHarness.mq5",
+  "performance_source_sha256": "2bc571d362b2cf11abf8361c90b34396f90e4449565ac5aabd7da8effc715a89",
+  "compiled_ex5_sha256": "e1eadddab748518a928743b843e65122785c5e39439a48902a83bbc001bc9a9c",
+  "compile_result": "0 errors, 0 warnings",
+  "terminal_build": 6090,
+  "physical_runs": 4,
+  "formal_cells": 12,
+  "real_tick_model": true,
+  "optimization": false,
+  "performance_viewed": false,
+  "demo_trades": 0,
+  "live_trades": 0
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_OOS_SEAL_AUDIT_V1",
+  "status": "PASS",
+  "research_cutoff_exclusive": "2026.08.01 00:00:00",
+  "maximum_tick_timestamp_accessed": "2026.07.31 23:59:56",
+  "maximum_completed_h1_timestamp_processed": "2026.07.31 22:00:00",
+  "post_seal_data_accessed": false,
+  "seal_breach_runs": 0
+}

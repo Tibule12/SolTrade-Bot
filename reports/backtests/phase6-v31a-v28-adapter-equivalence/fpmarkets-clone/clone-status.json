@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_FP_MARKETS_CLONE_STATUS_V1",
+  "status": "PASS",
+  "elapsed_seconds": 349.9164397716522,
+  "wine_return_code": 0,
+  "symbols": 7,
+  "source_ticks": 202101002,
+  "imported_ticks": 202101002,
+  "reloaded_ticks": 202101002,
+  "exact_tick_mismatches": 0,
+  "property_or_session_mismatches": 0,
+  "warmup_m1_rates": 210958,
+  "orders_or_positions": 0,
+  "trade_api_calls": "NONE",
+  "pnl_calculated": false,
+  "external_data_downloaded": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_EVIDENCE_INTEGRITY_V1",
+  "status": "INVALID_TEST_EVIDENCE",
+  "v4_through_v11_evidence_modified": false,
+  "v11_tag_modified": false,
+  "v12_successful_prerun_tag_created": false,
+  "phase_1_through_5_mql5_modified": false,
+  "strategy_runs": 0,
+  "profitability_results": 0,
+  "optimization_runs": 0,
+  "replica_runs": 0,
+  "generated_tick_runs": 0,
+  "connected_demo_live_trades": 0,
+  "phase_7_authorized": false
+}

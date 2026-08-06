@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_REPOSITORY_SAFETY_GATE_V1",
+  "status": "PASS",
+  "worktree_clean_before_bundle": true,
+  "source_head": "55672b7fcb4be06528a82444846e5f8d3d7dceca",
+  "bundle_path": "backups/phase6-v31-prerun-all-refs.bundle",
+  "bundle_sha256": "75794a22a8b5abe5028c6be9c819d3d2f0cebfe9a430176bbe46f59f0cc1b4f2",
+  "bundle_size_bytes": 17320333,
+  "listed_ref_count": 40,
+  "complete_history_verified": true,
+  "current_branch_and_all_tags_included": true,
+  "automatic_push": false
+}

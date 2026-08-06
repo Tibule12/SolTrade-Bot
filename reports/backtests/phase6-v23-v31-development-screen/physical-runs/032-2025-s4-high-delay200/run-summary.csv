@@ -1,0 +1,43 @@
+field,value
+schema,SOLTRADE_PHASE6_V23_RUN_SUMMARY_V1
+execution_instance_id,V23-032-2025_S4-HIGH-DELAY200
+segment_id,2025_S4
+dataset,DEVELOPMENT
+cost_profile,HIGH
+execution_layer,FIXED_DELAY_200_MS
+expected_execution_mode,200
+reset_at,2025.08.19 02:00:00
+eligible_from,2025.08.19 02:00:00
+eligible_to,2025.12.24 00:00:00
+first_evaluation,2025.09.04 13:00:00
+final_evaluation,2025.12.23 22:00:00
+indicator_eligible_h1_openings,1883
+exclusive_boundary_unobservable_final_h1,1
+expected_processable_completed_h1,1882
+evaluations,1882
+setups,59
+confirmations,26
+expired_setups,21
+entry_fills,26
+exit_fills,25
+spread_blocks,0
+execution_blocks,0
+risk_engine_blocks,0
+daily_limit_pauses,0
+weekly_limit_pauses,0
+emergency_stops,0
+consecutive_loss_pauses,0
+stop_loss_exits,9
+donchian_exits,16
+retest_1,11
+retest_2,10
+retest_3,1
+retest_4,1
+retest_5,2
+retest_6,1
+censored_position,YES
+max_tick,2025.12.23 23:59:58
+max_completed_h1,2025.12.23 22:00:00
+seal_breach,NO
+native_tester_commission_inspection,DEALS_LEDGER_REQUIRED
+run_evidence_status,PASS

@@ -1,0 +1,9 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_AUTHORITATIVE_MATRIX_V1",
+  "result_layer": "NATIVE_MT5",
+  "status": "NOT_PRODUCED_PRECHECK_FAILED",
+  "executed_runs": 0,
+  "expected_runs": 9,
+  "metrics": null,
+  "reason": "INVALID_TEST_EVIDENCE was established before any Strategy Tester run."
+}

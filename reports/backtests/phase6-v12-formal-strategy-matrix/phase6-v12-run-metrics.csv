@@ -1,0 +1,2 @@
+artifact_status,physical_runs_executed,formal_cells_produced,development_metrics,validation_metrics,oos_metrics,naturally_closed_oos_trades,maximum_drawdown
+NOT_PRODUCED_PRERUN_AUDIT_FAILED,0,0,,,,,

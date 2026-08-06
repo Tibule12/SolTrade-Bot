@@ -1,0 +1,11 @@
+OK	0	21:52:30.193	Terminal	MetaTrader 5 x64 build 6067 started for MetaQuotes Ltd.
+MR	0	21:52:30.193	Terminal	Windows 11 build 22000 on Wine 11.14 Linux 7.0.0-28-generic, 8 x Intel Core i7-7820HQ  @ 2.90GHz, AVX2, 17 / 23 Gb memory, 9 / 232 Gb disk, GMT+2
+JK	0	21:52:30.193	Terminal	C:\Program Files\MetaTrader 5
+PL	0	21:52:30.201	MCP	started on 127.0.0.1:22346
+EG	0	21:52:33.984	Network '<REDACTED_ACCOUNT>': authorized on easyMarkets-Live through Access Server 2
+HP	0	21:52:33.984	Network '<REDACTED_ACCOUNT>': previous successful authorization performed from <REDACTED_IP> on 2026.07.28 19:22:45
+DP	0	21:52:34.838	Network '<REDACTED_ACCOUNT>': terminal synchronized with Blue Capital Markets Limited: 0 positions, 0 orders, 144 symbols, 0 spreads
+FM	0	21:52:34.838	Network '<REDACTED_ACCOUNT>': trading has been enabled, demo account - hedging mode
+JQ	0	21:52:34.838	Network '<REDACTED_ACCOUNT>': balance management has been disabled - demo account
+MF	0	21:53:51.318	Scripts	script SolTradePhase6SafetyTests (USDCHF,H1) loaded successfully
+GE	0	21:53:51.356	Scripts	script SolTradePhase6SafetyTests (USDCHF,H1) removed

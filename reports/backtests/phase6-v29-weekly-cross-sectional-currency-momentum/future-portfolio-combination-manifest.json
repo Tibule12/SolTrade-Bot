@@ -1,0 +1,56 @@
+{
+  "schema": "SOLTRADE_FUTURE_V28_V29_COMBINATION_MANIFEST_V1",
+  "status": "IMMUTABLE_PROSPECTIVE_ONLY_NOT_AUTHORIZED_TO_RUN",
+  "v28_status": "RETIRED_STANDALONE",
+  "eligibility": "Combination may be evaluated only after V29_INDEPENDENT_DEVELOPMENT_PASSED and explicit user approval",
+  "weights": {
+    "basis": "capital",
+    "V28_percent": 50.0,
+    "V29_percent": 50.0,
+    "later_optimization": "PROHIBITED"
+  },
+  "accounting": "Scale each standalone sleeve cash flow to 50 percent capital, merge chronologically, and maintain no cross-sleeve netting assumption",
+  "combined_sample": {
+    "closed_legs_or_trades": ">= 300",
+    "dated_2026": ">= 100"
+  },
+  "profitability_every_cell": {
+    "NORMAL": {
+      "profit_factor": "> 1.20",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.10",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "net_profit": "> 0",
+      "expectancy_R": "> 0"
+    }
+  },
+  "drawdown": {
+    "NORMAL": "< 6 percent",
+    "HIGH": "<= 8 percent",
+    "STRESS": "<= 10 percent",
+    "diversification_requirement": "combined drawdown <= 85 percent of the worse contemporaneous standalone drawdown"
+  },
+  "concentration_every_cell": {
+    "best_trade_percent": "<= 10",
+    "best_currency_percent": "<= 30",
+    "best_direction_percent": "<= 65",
+    "best_week_percent": "<= 15",
+    "best_month_percent": "<= 30"
+  },
+  "correlation": {
+    "V28_V29_weekly_return_absolute_Pearson": "<= 0.50",
+    "minimum_complete_overlapping_weeks": 25
+  },
+  "authorization": {
+    "automatic_combined_test": false,
+    "demo_authorized_before_every_combined_gate_passes": false,
+    "live_trading": false
+  }
+}

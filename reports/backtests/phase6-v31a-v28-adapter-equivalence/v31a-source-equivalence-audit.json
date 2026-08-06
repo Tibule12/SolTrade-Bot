@@ -1,0 +1,42 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_SOURCE_EQUIVALENCE_AUDIT_V1",
+  "status": "PASS",
+  "centralized_resolver": "ResearchSymbol(canonical_symbol)",
+  "mapping": {
+    "EURUSD": "EURUSD.V31",
+    "GBPUSD": "GBPUSD.V31",
+    "AUDUSD": "AUDUSD.V31",
+    "NZDUSD": "NZDUSD.V31",
+    "USDCAD": "USDCAD.V31",
+    "USDCHF": "USDCHF.V31",
+    "USDJPY": "USDJPY.V31"
+  },
+  "market_data_and_symbol_properties": "resolved through g_config.symbol, SymbolSelect(resolved), SymbolInfoDouble(resolved), and iATR(ResearchSymbol(...))",
+  "positions_and_orders": "resolved through per-symbol execution and position engines initialized from resolved g_config.symbol",
+  "history": "global HistorySelect plus resolved DEAL_SYMBOL reporting; canonical identity recovered from frozen magic mapping",
+  "canonical_names_used_for": [
+    "frozen signal schedule lookup",
+    "magic identity",
+    "canonical reporting"
+  ],
+  "resolved_names_used_for": [
+    "chart preflight",
+    "market data",
+    "symbol properties",
+    "indicators",
+    "orders",
+    "positions",
+    "deal-symbol reporting"
+  ],
+  "other_preflight_rules_weakened": false,
+  "strategy_rules_changed": false,
+  "original_v28": {
+    "source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+    "ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca"
+  },
+  "research_adapter": {
+    "source_sha256": "c16c13ff9642faee88424ab7477e7cdf873164210e185ae257d7e61cab0cfca1",
+    "ex5_sha256": "92bf94431803c0213b1d796c3a412b581978c680869b20de299bcef90ec8e886"
+  },
+  "dynamic_equivalence_divergences": 0
+}

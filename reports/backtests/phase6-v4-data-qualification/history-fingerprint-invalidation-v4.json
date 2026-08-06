@@ -1,0 +1,39 @@
+{
+  "schema": "SOLTRADE_PHASE6_V4_HISTORY_FINGERPRINT_INVALIDATION_V1",
+  "execution_authorized": false,
+  "fingerprints_may_be_combined": false,
+  "invalidated_identities": [
+    {
+      "aggregate_sha256": "ce063f9ec9f4c08390d6f4846269c93e012b7991d3a84082889d079265f9791c",
+      "status": "INVALIDATED_DO_NOT_USE",
+      "reason": "Seven inventoried terminal cache or symbol-specification files changed between the V4 pre-probe and post-probe snapshots."
+    }
+  ],
+  "pre_probe_identity": {
+    "inventory": "pre-probe-history-inventory.csv",
+    "entry_count": 57,
+    "aggregate_sha256": "b610c5afd8c45379108a810eb0d9e2e42026c4e724a25c6bfde96dc253edc406"
+  },
+  "changed_during_v4_probe": [
+    "terminal-cache/history/EURUSD/2026.hcc",
+    "terminal-cache/history/EURUSD/cache/Daily.hc",
+    "terminal-cache/history/EURUSD/cache/H1.hc",
+    "terminal-cache/symbols/selected-90060997.dat",
+    "terminal-cache/symbols/symbols-90060997.dat",
+    "terminal-cache/ticks/EURUSD/202607.tkc",
+    "terminal-cache/ticks/EURUSD/ticks.dat"
+  ],
+  "unchanged_research_interval_material": {
+    "terminal_2024_hcc": true,
+    "terminal_2024_monthly_tkc": true,
+    "tester_2024_hcs": true,
+    "tester_2024_monthly_tkc": true
+  },
+  "final_post_probe_identity": {
+    "inventory": "post-probe-history-inventory.csv",
+    "entry_count": 57,
+    "aggregate_sha256": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+    "status": "RECORDED_BUT_NOT_QUALIFIED"
+  },
+  "reason_final_identity_not_qualified": "The single V4 probe preserved 17 unresolved open-session gaps longer than 15 minutes."
+}

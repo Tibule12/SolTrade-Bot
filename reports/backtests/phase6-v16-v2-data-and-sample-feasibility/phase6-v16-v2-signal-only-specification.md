@@ -1,0 +1,5 @@
+# Phase 6 V16 V2 signal-only evaluator
+
+This is a direct, non-monetary evaluator of frozen specification `SOLTRADE_TREND_BREAKOUT_V2_1_0`. It uses completed broker-server H1 candles derived solely from connected FP Markets real ticks, a 300-bar clean-history minimum, SMA-seeded EMA 200, Wilder ATR 14, the preceding/latest 100 ATR-value mean, Donchian 20 setup, immediate next-market-candle confirmation, the inclusive 0.50–2.00 ATR regime, the inclusive two-ATR EMA-distance cap, a two-confirmation-ATR theoretical stop, and Donchian 10 theoretical exit. Stop takes precedence if a bar also closes through the Donchian exit. Entry-bar ranges are not applied retroactively.
+
+The spread guard is evaluated at the confirmation candle's final observed spread. Broker stop and symbol metadata were qualified; monetary sizing, margin outcomes, loss-derived locks, P&L, optimization, orders and positions are outside this evaluator and were never calculated or created. Isolated risk-lock state begins inactive because the evaluator creates no monetary outcomes.

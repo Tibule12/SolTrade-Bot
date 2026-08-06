@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_QUALIFICATION_HARNESS_FREEZE_V1",
+  "status": "PASS",
+  "source_path": "research/factor_momentum/SolTradeV31ExternalQualificationHarness.mq5",
+  "source_sha256": "bbfaad0ae16f33cc07d3ca5d40ce2baf1ac69f7947ac2e3887d6f2d20a1843e1",
+  "executable_path": "qualification-harness-freeze/SolTradeV31ExternalQualificationHarness.ex5",
+  "executable_sha256": "fd91da3d01a7a9a7762b50fc85ca142e247f73995859fb75903b02e57cd02bd8",
+  "compile_log_sha256": "3ffec5246b40840ee2719bdcdbc2f0b0caf27e7ee4cda6b86efca66b7609a949",
+  "compile_errors": 0,
+  "compile_warnings": 0,
+  "data_interval_server_civil": "[2018-01-01 00:00:00, 2025-01-01 00:00:00)",
+  "first_strategy_eligible_timestamp": "2018-02-05 10:05:00",
+  "minimum_completed_h1_warmup_bars": 300,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "audits": [
+    "exact imported tick count",
+    "first and final tester tick",
+    "millisecond monotonicity and retained duplicates",
+    "tick-derived M1 and H1 versus MT5 series",
+    "annual coverage",
+    "spread availability",
+    "tester generated-tick fallback",
+    "orders, positions and P&L prohibition"
+  ],
+  "pnl_calculated": false
+}

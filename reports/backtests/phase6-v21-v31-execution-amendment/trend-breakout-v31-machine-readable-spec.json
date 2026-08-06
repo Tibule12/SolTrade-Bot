@@ -1,0 +1,61 @@
+{
+  "schema": "SOLTRADE_PHASE6_V21_V31_SPECIFICATION_V1",
+  "specification_id": "TREND_BREAKOUT_V3_RETEST_HOLD_1_1",
+  "strategy_name": "TREND_BREAKOUT_V3_RETEST_HOLD",
+  "status": "FROZEN_UNIMPLEMENTED_UNTESTED",
+  "base_specification": {
+    "id": "TREND_BREAKOUT_V3_RETEST_HOLD_1_0",
+    "path": "reports/backtests/phase6-v18-v3-design-freeze/trend-breakout-v3-machine-readable-spec.json",
+    "sha256": "eb91a76d197ffcf4aab7e8e52172abb5528d1c28a27431730d052f458d4dddb6",
+    "incorporated_unchanged_except_declared_amendment": true
+  },
+  "configuration_id": "SOLTRADE_V31_SPREAD_POLICY_20PCT_ATR_CAP30_V1",
+  "spread_policy_namespace": "SOLTRADE_TREND_BREAKOUT_V31_SPREAD_POLICY_STATE_V1",
+  "behavioural_amendment_register": [
+    {
+      "field": "risk.spread_limit.atr_fraction",
+      "old": 0.10,
+      "new": 0.20
+    }
+  ],
+  "spread_policy": {
+    "evaluation_tick": "FIRST_TRADABLE_REAL_TICK_AFTER_COMPLETED_RETEST_HOLD_CANDLE",
+    "atr_limit_points_formula": "0.20 * confirmation_atr_price / symbol_point",
+    "effective_limit_formula": "min(30.0, atr_limit_points)",
+    "absolute_limit_points": 30.0,
+    "atr_fraction": 0.20,
+    "pass_operator": "LESS_THAN_OR_EQUAL",
+    "equality_passes": true,
+    "submission_opportunities": 1,
+    "delayed_retry": false,
+    "uncontrolled_retry": false
+  },
+  "unchanged_rules": {
+    "donchian_entry_period": 20,
+    "donchian_exit_period": 10,
+    "ema_period": 200,
+    "wilder_atr_period": 14,
+    "atr_mean_preceding_values": 100,
+    "atr_regime_inclusive": [0.50, 2.00],
+    "retest_window_completed_h1_candles": 6,
+    "initial_stop_atr_multiple": 2.0,
+    "risk_equity_percent": 0.25,
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_limit_percent": 5.0,
+    "consecutive_loss_pause_count": 3,
+    "maximum_positions": 1,
+    "magic_number": 2607202601,
+    "live_trading_enabled": false,
+    "real_accounts_allowed": false
+  },
+  "fresh_oos": {
+    "start_inclusive_broker_server_time": "2026-08-01 00:00:00",
+    "dynamic_completion": "IMMEDIATELY_AFTER_EXIT_TIMESTAMP_OF_50TH_NATURALLY_COMPLETED_V31_POSITION_CYCLE",
+    "hard_maximum_end_exclusive_broker_server_time": "2027-08-01 00:00:00",
+    "right_censored_positions_count": false,
+    "blocked_confirmations_count": false,
+    "automatic_extension": false
+  },
+  "research_authorized_in_v21": false
+}

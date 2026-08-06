@@ -1,0 +1,17 @@
+{
+  "checkout_price_status": "CHECKOUT_PRICE_REVERIFICATION_REQUIRED",
+  "connected_demo_or_live_trade": false,
+  "initial_source_commit": "7fc7d898bd6d708218c2c89724a5576f597eacea",
+  "initial_worktree_clean_observed": true,
+  "production_phase1_5_expected_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_phase1_5_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_phase1_5_unchanged": true,
+  "purchase_or_registration": false,
+  "schema": "SOLTRADE_THE5ERS_V28_SOURCE_INTEGRITY_V1",
+  "status": "PASS",
+  "strategy_redesign_optimization_or_tuning": false,
+  "v28_sha256_ledger_entries_checked": 92,
+  "v28_sha256_ledger_failures": 0,
+  "v29_used_or_combined": false,
+  "v31_used_for_pnl": false
+}

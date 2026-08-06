@@ -1,0 +1,52 @@
+{
+  "schema": "SOLTRADE_PHASE6_V18_V3_SPECIFICATION_V1",
+  "specification_id": "TREND_BREAKOUT_V3_RETEST_HOLD_1_0",
+  "strategy_name": "TREND_BREAKOUT_V3_RETEST_HOLD",
+  "status": "FROZEN_UNIMPLEMENTED_UNTESTED",
+  "market": {"symbol": "EURUSD", "timeframe": "H1", "completed_candles_only": true, "broker_server_time": true},
+  "data": {"minimum_clean_segment_local_h1_bars": 300, "state_crosses_unresolved_gap": false, "pre_reset_history_allowed": false, "missing_or_quarantined_periods_count_as_retest_candles": false},
+  "indicators": {
+    "ema_close_period": 200,
+    "donchian_entry_period": 20,
+    "donchian_exit_period": 10,
+    "donchian_excludes_current_candle": true,
+    "atr_method": "WILDER",
+    "atr_period": 14,
+    "atr_mean_values": 100,
+    "atr_mean_window": "100_COMPLETED_ATR14_VALUES_IMMEDIATELY_PRECEDING_EVALUATED_CANDLE",
+    "atr_mean_includes_evaluated_candle": false,
+    "atr_regime_minimum_inclusive": 0.5,
+    "atr_regime_maximum_inclusive": 2.0
+  },
+  "setup": {
+    "buy": ["close_strictly_above_preceding_donchian20_high", "close_strictly_above_ema200", "atr_regime_pass"],
+    "sell": ["close_strictly_below_preceding_donchian20_low", "close_strictly_below_ema200", "atr_regime_pass"],
+    "persist": ["direction", "setup_candle_timestamp", "frozen_breakout_boundary", "setup_close", "setup_ema200", "setup_atr14", "clean_segment_id"],
+    "creates_order": false,
+    "maximum_active_setups": 1
+  },
+  "retest": {
+    "window_completed_market_h1_candles": 6,
+    "same_direction_breakout_restarts_window": false,
+    "buy": ["low_less_than_or_equal_frozen_boundary", "close_strictly_above_frozen_boundary", "close_strictly_above_ema200", "atr_regime_pass"],
+    "sell": ["high_greater_than_or_equal_frozen_boundary", "close_strictly_below_frozen_boundary", "close_strictly_below_ema200", "atr_regime_pass"],
+    "entry_time": "FIRST_TRADABLE_TICK_AFTER_COMPLETED_CONFIRMATION_CANDLE",
+    "submission_attempts": 1,
+    "retry": false
+  },
+  "opposite_breakout": {
+    "accepted_definition": "ALL_V3_SETUP_CONDITIONS_AND_GUARDS_PASS",
+    "active_setup_evaluated_first": true,
+    "confirmed_retest_precedence": true,
+    "may_create_opposite_setup_after_cancellation_on_same_completed_candle": true
+  },
+  "cancellation": ["six_retest_candles_expired", "accepted_opposite_breakout", "data_gap_reset", "clean_segment_end", "retest_close_wrong_side_ema200", "position_open_when_confirmation_otherwise_valid", "risk_spread_loss_pause_or_execution_block"],
+  "removed_v2_rules": ["immediate_next_candle_only_confirmation", "confirmation_beyond_setup_close", "absolute_confirmation_ema_distance_cap_2_atr"],
+  "replacement_ema_distance_threshold": null,
+  "position": {"initial_stop_atr_multiple": 2.0, "risk_equity_percent": 0.25, "maximum_positions": 1, "take_profit": false, "trailing_stop": false, "breakeven_move": false, "scaling": false, "partial_closure": false},
+  "exit": {"buy": "completed_close_strictly_below_preceding_donchian10_low", "sell": "completed_close_strictly_above_preceding_donchian10_high", "initial_stop_remains_active": true},
+  "risk": {"daily_loss_limit_percent": 1.0, "weekly_loss_limit_percent": 2.5, "emergency_drawdown_limit_percent": 5.0, "consecutive_loss_pause_count": 3, "spread_limit": "MINIMUM_OF_30_POINTS_AND_10_PERCENT_OF_CONFIRMATION_ATR", "adaptive_parameters": false, "machine_learning": false},
+  "execution": {"magic_number": 2607202601, "existing_phase1_to_5_validation_unchanged": true, "live_trading_enabled": false, "real_accounts_allowed": false},
+  "state": {"namespace": "SOLTRADE_TREND_BREAKOUT_V3_RETEST_HOLD_STATE_V1", "persist": ["setup_identity", "frozen_boundary", "retest_candle_count", "last_processed_completed_h1_candle", "confirmed_or_cancelled_status"], "duplicate_setup_or_entry_after_restart": false, "fail_closed_on_corruption_or_identity_mismatch": true},
+  "research_authorized_in_v18": false
+}

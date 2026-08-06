@@ -1,0 +1,14 @@
+field,value
+classification,RIGHT_CENSORED_OPEN_POSITION
+eligible_to,2025.12.24 00:00:00
+observation_time,2025.12.23 23:59:58
+position_open,YES
+position_ticket,52
+position_identifier,52
+position_type,0
+volume,0.14000000
+entry_price,1.1771700000
+stop_loss,1.1753800000
+unrealized_result_reporting_only,31.50000000
+formal_pnl_included,NO
+naturally_closed_trade_included,NO

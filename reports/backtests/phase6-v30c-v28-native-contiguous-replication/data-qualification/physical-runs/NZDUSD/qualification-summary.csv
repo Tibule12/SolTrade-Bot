@@ -1,0 +1,29 @@
+field,value
+schema,SOLTRADE_PHASE6_V30C_QUALIFICATION_V1
+symbol,NZDUSD
+model,EVERY_TICK_BASED_ON_REAL_TICKS
+bound_start_inclusive,2022.11.14 00:05:00.354
+bound_end_exclusive,2024.01.01 00:00:00.000
+first_processed_tick,2022.11.14 00:05:00.354
+final_processed_tick,2023.12.29 23:58:58.281
+processed_tick_count,30604472
+processed_ticks_2022,4302650
+processed_ticks_2023,26301822
+m1_count,417642
+h1_count,7007
+m1_mismatches,1
+h1_mismatches,0
+spread_samples,30604472
+zero_or_negative_spread_samples,1770
+mean_spread_points,16.069296572082667
+maximum_spread_points,513.9999999999922
+digits,5
+point,0.0000100000
+contract_size,100000.00
+swap_mode,1
+swap_rollover3day,3
+swap_long,-2.76000000
+swap_short,0.46000000
+orders_or_positions,ZERO
+pnl_calculated,NO
+local_status,FAIL

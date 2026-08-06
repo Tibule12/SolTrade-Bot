@@ -1,0 +1,35 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30B_V28_IMMUTABILITY_FREEZE_V1",
+  "status": "PASS",
+  "v28_terminal_commit": "af122b428bb03396b7ecac453d930f8cb19796fa",
+  "v28_terminal_tag": "phase6-v28-terminal",
+  "candidate_specification_sha256": "b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7",
+  "gate_manifest_sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649",
+  "performance_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "performance_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "authoritative_attempt": "V28 attempt-2 serialized rebalance",
+  "exact_symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "rules_or_parameters_changed": false,
+  "directions_removed": false,
+  "sizing_or_risk_changed": false,
+  "cost_or_swap_changed": false,
+  "latency_changed": false,
+  "gates_changed_or_weakened": false,
+  "v29_used": false,
+  "optimization": false,
+  "warmup_assessment": {
+    "common_clean_native_segment_begins": "2022.11.14 00:05:00.354",
+    "minimum_history_bars": 300,
+    "atr_warmup": "unchanged Wilder D1 ATR14",
+    "formation_anchor_rule": "unchanged preceding calendar-month first Monday 09:00 H1 close",
+    "profitability_interval": "NOT_OPENED because common native coverage fails before qualification_end_exclusive"
+  }
+}

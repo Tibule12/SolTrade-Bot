@@ -1,0 +1,75 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_CONDITIONAL_EXECUTION_PLAN_V1",
+  "authorized_only_if_data_passes": true,
+  "history_from": "2022.11.14",
+  "eligible_from": "TO_BE_FROZEN_AFTER_WARMUP",
+  "eligible_to_exclusive": "2024.01.01 00:00:00",
+  "physical_runs": [
+    {
+      "run": 1,
+      "id": "01-v30c-native",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0
+    },
+    {
+      "run": 2,
+      "id": "02-v30c-delay200",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200
+    }
+  ],
+  "formal_cells": [
+    {
+      "cell_id": "V30C-NORMAL-NATIVE",
+      "source_run": "01-v30c-native",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "NORMAL",
+      "supplementary_multiplier": 0.0
+    },
+    {
+      "cell_id": "V30C-HIGH-NATIVE",
+      "source_run": "01-v30c-native",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "HIGH",
+      "supplementary_multiplier": 0.5
+    },
+    {
+      "cell_id": "V30C-STRESS-NATIVE",
+      "source_run": "01-v30c-native",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "cost_profile": "STRESS",
+      "supplementary_multiplier": 1.0
+    },
+    {
+      "cell_id": "V30C-NORMAL-DELAY200",
+      "source_run": "02-v30c-delay200",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "NORMAL",
+      "supplementary_multiplier": 0.0
+    },
+    {
+      "cell_id": "V30C-HIGH-DELAY200",
+      "source_run": "02-v30c-delay200",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "HIGH",
+      "supplementary_multiplier": 0.5
+    },
+    {
+      "cell_id": "V30C-STRESS-DELAY200",
+      "source_run": "02-v30c-delay200",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "cost_profile": "STRESS",
+      "supplementary_multiplier": 1.0
+    }
+  ],
+  "combined_evidence": {
+    "authorized_only_if_independent_valid": true,
+    "sources": [
+      "V30C untouched",
+      "V28 2025 preserved",
+      "V28 Jan-Jul 2026 preserved"
+    ],
+    "chronological_no_reweighting": true,
+    "missing_2024_acknowledged": true
+  }
+}

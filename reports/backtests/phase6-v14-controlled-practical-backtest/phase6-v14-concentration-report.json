@@ -1,0 +1,118 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_CONCENTRATION_V1",
+  "rules": {
+    "best_trade_max_percent": 20.0,
+    "best_registered_subperiod_max_percent": 40.0,
+    "subperiod_semantics": "Five equal chronological subperiods for intervals shorter than four years"
+  },
+  "cells": [
+    {
+      "cell_id": "DEVELOPMENT-NORMAL-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "DEVELOPMENT-HIGH-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "DEVELOPMENT-STRESS-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-NORMAL-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-HIGH-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-STRESS-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-NORMAL-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-HIGH-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-STRESS-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "DEVELOPMENT-NORMAL-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "DEVELOPMENT-HIGH-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "DEVELOPMENT-STRESS-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-NORMAL-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-HIGH-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "VALIDATION-STRESS-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-NORMAL-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-HIGH-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "OUT_OF_SAMPLE-STRESS-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    }
+  ]
+}

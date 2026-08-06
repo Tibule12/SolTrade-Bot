@@ -1,0 +1,2 @@
+deal_ticket,order_ticket,position_identifier,time,time_msc,entry,type,reason,volume,price,profit,commission,swap,fee,magic,symbol,comment,in_research_window
+2,2,2,2025.03.05 23:00:00,1741215600965,0,0,3,0.05000000,1.0792900000,0.00000000,0.00000000,0.00000000,0.00000000,2607202601,EURUSD,SolTrade TBV1,YES

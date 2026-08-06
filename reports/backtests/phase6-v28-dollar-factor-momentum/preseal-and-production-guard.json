@@ -1,0 +1,9 @@
+{
+  "schema":"SOLTRADE_PHASE6_V28_GUARD_V1",
+  "research_cutoff_exclusive":"2026.08.01 00:00:00",
+  "sealed_oos":"SEALED_UNOPENED_UNASSIGNED_SINGLE_USE_FUTURE_OOS_RESERVE",
+  "production_ea_sha256":"261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_modification":false,
+  "demo_authorized_only_after_all_development_gates":true,
+  "live_authorized":false
+}

@@ -1,0 +1,14 @@
+field,value
+classification,NO_OPEN_POSITION_AT_CUTOFF
+eligible_to,2026.07.01 00:00:00
+observation_time,2026.06.30 23:59:58
+position_open,NO
+position_ticket,94
+position_identifier,94
+position_type,0
+volume,0.09000000
+entry_price,1.1428800000
+stop_loss,1.1401800000
+unrealized_result_reporting_only,-6.93000000
+formal_pnl_included,NO
+naturally_closed_trade_included,NO

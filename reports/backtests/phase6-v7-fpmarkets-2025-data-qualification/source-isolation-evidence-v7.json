@@ -1,0 +1,30 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_SOURCE_ISOLATION_V1",
+  "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+  "terminal_executable": "/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Terminal/terminal64.exe",
+  "server_data_root": "/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Terminal/Bases/FPMarketsSC-Demo",
+  "broker": "FP Markets",
+  "server": "FPMarketsSC-Demo",
+  "symbol": "EURUSD",
+  "easymarkets_named_paths_in_prefix": 0,
+  "easymarkets_cache_history_tester_symbol_or_account_files_reused": false,
+  "cross_broker_streams_combined": false,
+  "strategy_tester_process_started": false,
+  "connected_copyticks_only": true,
+  "pre_and_post_trade_files": {
+    "account_cache_dat_sha256": "5e618fd9d387663fd36a569e53f1aac7a281f1eff26228331e9d78c7d6744caa",
+    "deal_history_dat_sha256": "d82d6e641add5fa41388548c0846b7bfc49f570cdd2df9a813e18cccae11e8de",
+    "unchanged": true
+  },
+  "mql5_files_before_count": 0,
+  "mql5_files_after_count": 0,
+  "soltrade_markers_before_count": 0,
+  "soltrade_markers_after_count": 0,
+  "orders_before_and_after": 0,
+  "positions_before_and_after": 0,
+  "trade_transactions": 0,
+  "terminal_processes_after_collection": 0,
+  "credentials_stored": false,
+  "v4_v5_v6_evidence_modified": false,
+  "phase1_through_phase5_mql5_modified": false
+}

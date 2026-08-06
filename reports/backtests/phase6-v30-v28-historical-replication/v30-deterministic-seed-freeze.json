@@ -1,0 +1,7 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_DETERMINISTIC_SEED_FREEZE_V1",
+  "basis_sha256": "23ef8d595af3952bff18b0f06caba03c5ebedf0717123472a30c78ce34da5cfc",
+  "bootstrap_seed": 12515868335771120090,
+  "monte_carlo_seed": 9100462148186279712,
+  "paths_each": 100000
+}

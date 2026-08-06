@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V10_H1_COMPARISON_V1",
+  "normalization_point": 1e-05,
+  "source_a_sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee",
+  "source_b_csv_sha256": "d87ac46834047ce52f6a824fe1441278bc4276144294d87afe541cb9b47646b5",
+  "eligible_h1_bar_count": 5252,
+  "exact_match_count": 5252,
+  "mismatched_bar_count": 0,
+  "missing_bar_count": 0,
+  "extra_bar_count": 0,
+  "first_mismatch": null,
+  "mismatches": [],
+  "missing_timestamps": [],
+  "extra_timestamps": [],
+  "all_6097_indicator_input_bars_point_equal": true,
+  "all_input_bar_mismatch_timestamps": [],
+  "status": "PASS"
+}

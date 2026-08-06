@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V21_CONFIGURATION_VERIFICATION_V1",
+  "status": "PASS",
+  "v20_commit_expected": "a0d535aa2e646d4bf3f081407e7c4fa88e97328c",
+  "v20_commit_observed_before_v21": "a0d535aa2e646d4bf3f081407e7c4fa88e97328c",
+  "v30_specification_sha256": "eb91a76d197ffcf4aab7e8e52172abb5528d1c28a27431730d052f458d4dddb6",
+  "v31_specification_sha256": "bcddb6b3d3ed43f9abad9fdb1793fdae11f0d2f34a76b637844345f64bfd5e95",
+  "production_ea_sha256_expected": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_ea_sha256_observed": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "behavioural_change_count": 1,
+  "behavioural_change_field": "risk.spread_limit.atr_fraction",
+  "old_value": 0.10,
+  "new_value": 0.20,
+  "signal_replay_run": false,
+  "profitability_calculated": false,
+  "optimization_run": false,
+  "orders_or_positions_created": false
+}

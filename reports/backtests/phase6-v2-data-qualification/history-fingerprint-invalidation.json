@@ -1,0 +1,23 @@
+{
+  "schema": "SOLTRADE_PHASE6_V2_HISTORY_FINGERPRINT_INVALIDATION_V1",
+  "execution_authorized": false,
+  "cache_changed_during_probe": true,
+  "pre_probe_v2_inventory_sha256": "7dbc590cca7f791c269e9e4003eddb16e22dc2f6debed4b76ffd19285437804b",
+  "pre_probe_v2_fingerprint_status": "INVALIDATED_DO_NOT_USE",
+  "original_v1_history_identity_sha256": "12d5b2474e69004f7e0f1b43f6c42c94f7d9f9a4c97c51a9878968024ad98dc9",
+  "original_v1_matrix_fingerprint_sha256": "bb021bcb6f7bc409577de135ba8b6d93efb5dbc31b1f5869155a88a7e3765b27",
+  "original_v1_manifest_status": "HISTORY_UNAVAILABLE_FOR_PROPOSED_MATRIX",
+  "original_v1_artifacts_modified": false,
+  "original_v1_artifacts_reactivated": false,
+  "post_probe_inventory": {
+    "file": "post-probe-history-inventory.csv",
+    "entry_count": 57,
+    "terminal_cache_entries": 42,
+    "tester_cache_entries": 14,
+    "symbol_specification_entries": 1,
+    "aggregate_sha256": "b277ddb5368a632c316a2823939eef58b43b4e11cbe4175154fe9e6b580dbaf0"
+  },
+  "post_probe_fingerprint_status": "RECORDED_BUT_NOT_QUALIFIED",
+  "mixing_fingerprints_permitted": false,
+  "reason_not_qualified": "The single inert probe failed during OnInit before tick processing; M1/HCC, warm-up, tick boundaries, and gap criteria were not established."
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "SOLTRADE_PHASE6_V9_STREAM_COMPARISON_V1",
+  "canonical_record_fields": ["time_msc","bid","ask","last","volume","flags","volume_real"],
+  "research_cutoff_exclusive": "2025-12-24T00:00:00",
+  "findings": {
+    "v8_two_tick_omission": {
+      "probe_a_tester_ontick_count_delta_vs_connected": -2,
+      "omitted": ["2025-12-23T23:59:59.369","2025-12-23T23:59:59.877"],
+      "probe_b_restored_both": true,
+      "probe_c_restored_both": true,
+      "probe_b_and_c_research_tail_hashes_identical": true,
+      "classification": "DETERMINISTIC_TESTER_END_BOUNDARY_BEHAVIOUR_FOR_THE_TWO_V8_TAIL_TICKS"
+    },
+    "next_boundary_observation": {
+      "connected_final_tick": "2025-12-24T23:59:59.608",
+      "probe_b_and_c_tester_final_tick": "2025-12-24T23:59:56.583",
+      "count_delta": -1,
+      "classification": "CONSISTENT_TERMINAL_BOUNDARY_TRUNCATION; OUTSIDE_RESEARCH"
+    },
+    "pre_final_h1": {
+      "interval": "[2025-01-02T00:00:00,2025-12-23T23:00:00)",
+      "connected": {"count":20681349,"sha256":"47c3433ad0f5385e25ba1e280227e0b39a9e846dddd184883a2a12962a5d57fc"},
+      "probe_a_tester_copyticks": {"count":20681349,"sha256":"dc5e3952339851956f88b2cd1329c84dc7db2eae5612675d9520f044da0ffd86"},
+      "probe_b_tester_copyticks": {"count":20681349,"sha256":"cace2424ee80f2ae9d51e41f75c6d0431cfbbe10665bddd5b86fd7072008431b"},
+      "probe_a_and_b_tester_ontick": {"count":20681349,"sha256":"71278ef4b9df631c8ef580b498d7226625ca2125b85eadd0207e06c2ea188eaa"},
+      "same_count_first_final_all_sources": true,
+      "canonical_hashes_equal": false,
+      "tester_copyticks_reproducible_between_a_and_b": false,
+      "price_only_identity_proven": false,
+      "impact_resolved": false
+    },
+    "narrow_pre_final_h1": {
+      "interval": "[2025-12-23T00:00:00,2025-12-23T23:00:00)",
+      "connected": {"count":36558,"sha256":"6992d672e87055ab46484abc4520a1368e7dc8f13f4b19a5df8b14be7f689b93"},
+      "probe_c_tester_copyticks_and_ontick": {"count":36558,"sha256":"142a0f6652e4174e3a68109ba488447a6ee42b5e30ae4bcafbdf90d711221906"},
+      "same_count_first_final": true,
+      "canonical_hashes_equal": false,
+      "impact_resolved": false
+    }
+  },
+  "mismatch_locations": [
+    {"comparison":"CONNECTED_COPYTICKS vs TESTER_ONTICK","probes":["A","B"],"interval":"[2025-01-02T00:00:00,2025-12-01T00:00:00)","granularity":"each calendar month 2025-01 through 2025-11","count_and_outer_boundaries":"MATCH","canonical_hash":"MISMATCH_EACH_MONTH","interpretation":"at least one canonical record field differs; exact field-level cause not proven"},
+    {"comparison":"CONNECTED_COPYTICKS vs TESTER_COPYTICKS","probes":["A","B"],"interval":"[2025-01-02T00:00:00,2025-12-01T00:00:00)","granularity":"calendar months 2025-01 through 2025-11","count_and_outer_boundaries":"MATCH","canonical_hash":"MATCH_EACH_MONTH","interpretation":"connected and tester database agree in these monthly scopes"},
+    {"comparison":"CONNECTED_COPYTICKS vs TESTER_COPYTICKS","probes":["A","B"],"interval":"[2025-12-01T00:00:00,2025-12-23T23:00:00)","granularity":"pre-final-H1 prefix plus December month","count_and_outer_boundaries":"MATCH_BEFORE_FINAL_H1","canonical_hash":"MISMATCH","interpretation":"persistent database reconciliation divergence before final H1; not explained by the final two ticks"},
+    {"comparison":"PROBE_A_TESTER_COPYTICKS vs PROBE_B_TESTER_COPYTICKS","interval":"[2025-01-02T00:00:00,2025-12-23T23:00:00)","count_and_outer_boundaries":"MATCH","probe_a_sha256":"dc5e3952339851956f88b2cd1329c84dc7db2eae5612675d9520f044da0ffd86","probe_b_sha256":"cace2424ee80f2ae9d51e41f75c6d0431cfbbe10665bddd5b86fd7072008431b","canonical_hash":"MISMATCH","interpretation":"tester CopyTicksRange reconstruction before the final H1 changes with the test end boundary"},
+    {"comparison":"CONNECTED_COPYTICKS vs PROBE_C_TESTER_COPYTICKS_AND_ONTICK","interval":"[2025-12-23T00:00:00,2025-12-23T23:00:00)","count_and_outer_boundaries":"MATCH","canonical_hash":"MISMATCH","interpretation":"narrow probe independently confirms pre-final-H1 canonical divergence"},
+    {"comparison":"PROBE_A_TESTER vs CONNECTED","interval":"[2025-12-23T23:59:59.369,2025-12-24T00:00:00)","count_delta":-2,"canonical_hash":"MISMATCH","interpretation":"two connected price-changing tail ticks omitted at original terminal boundary"},
+    {"comparison":"PROBE_B_AND_C_TESTER vs CONNECTED","interval":"[2025-12-24T23:59:59.608,2025-12-25T00:00:00)","count_delta":-1,"canonical_hash":"MISMATCH","interpretation":"one connected guard-day tail tick omitted at extended terminal boundary; not research data"}
+  ],
+  "monthly_hash_conclusion": {
+    "tester_ontick_vs_connected_mismatch_months": ["2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12"],
+    "tester_copyticks_vs_connected_match_months": ["2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11"],
+    "tester_copyticks_vs_connected_mismatch_months": ["2025-12"],
+    "note": "A matching count and outer timestamps do not prove identical inner records. No unmatched hash is reclassified as harmless."
+  },
+  "passing_condition_no_pre_final_h1_divergence": false,
+  "comparison_status": "FAIL_PERSISTENT_PRE_CUTOFF_TICK_DIVERGENCE"
+}

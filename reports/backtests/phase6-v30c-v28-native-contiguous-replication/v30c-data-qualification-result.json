@@ -1,0 +1,18 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "V30C_DATA_INSUFFICIENT_OR_INVALID",
+  "status": "FAIL",
+  "reason": "The tester discarded native ticks and explicitly used every-tick generation on all seven symbols inside the frozen interval.",
+  "data_failure_not_v28_performance_failure": true,
+  "eligible_profitability_start": "NOT_FROZEN",
+  "warmup_completion": "NOT_EVALUATED_ON_A_CONTIGUOUS_NATIVE_SERIES",
+  "performance_execution_authorized": false,
+  "performance_physical_runs": 0,
+  "formal_performance_cells": 0,
+  "combined_evidence_ledger_authorized": false,
+  "combined_gates_evaluated": false,
+  "v28_pnl_viewed": false,
+  "profitability_metrics_calculated": false,
+  "orders_or_positions": 0,
+  "demo_or_live_trades": 0
+}

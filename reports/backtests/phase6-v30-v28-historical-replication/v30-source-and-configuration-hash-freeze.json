@@ -1,0 +1,53 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_SOURCE_CONFIGURATION_HASH_FREEZE_V1",
+  "exact_v28": {
+    "candidate_specification": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/candidate-strategy-specification.json",
+      "sha256": "b046bb957b715b533cfa1f05d21a8191a814ecd774fbbbf4849a8048294b64f7"
+    },
+    "gate_manifest": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/gate-manifest.json",
+      "sha256": "3514535968ac55bb8e72a008d5d6a05987089d51e285aa84c5ab4d6e7bcda649"
+    },
+    "prerun_freeze": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/prerun-freeze-manifest.json",
+      "sha256": "4068cddc252402404e4e715b27c1160defd20b61b3e85be3b0e693c2f72dfdbe"
+    },
+    "physical_run_plan": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/physical-run-plan.json",
+      "sha256": "072b2583ffbe5f4961de5d5e5e2896c4371f8c3ff6c84036484edd893e4b6cda"
+    },
+    "formal_cell_plan": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/formal-cell-plan.json",
+      "sha256": "1f206f37f3866be07db0823f7a5d633105a4c532602694b52b577881bd2d9152"
+    },
+    "attempt2_amendment": {
+      "path": "reports/backtests/phase6-v28-dollar-factor-momentum/performance-harness-amendment-attempt2.json",
+      "sha256": "373a03ce95f86445a648a606eb21c6d86152b7925d5a3b98cc49be8b13dc75bd"
+    },
+    "performance_source": {
+      "path": "research/factor_momentum/SolTradeDollarFactorPerformanceHarness.mq5",
+      "sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846"
+    },
+    "v28_signal_source": {
+      "path": "research/factor_momentum/SolTradeDollarFactorSignalHarness.mq5",
+      "sha256": "7f080c26d26b634b2f8a1e840b3a9fa60926fb95e415956ba0a8475f838537bd"
+    },
+    "production_ea": {
+      "path": "MQL5/Experts/SolTradeBot.mq5",
+      "sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3"
+    },
+    "performance_ex5": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v28/SolTradeDollarFactorPerformanceHarness.ex5",
+      "sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca"
+    },
+    "v28_signal_ex5": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v28/SolTradeDollarFactorSignalHarness.ex5",
+      "sha256": "dbfcb316d81e624710bd0c3ad28673a6f0ed4118136988621cca5d501aa9e158"
+    }
+  },
+  "authoritative_performance_source": "V28 attempt-2 serialized-rebalance source",
+  "authoritative_performance_source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+  "authoritative_performance_ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca",
+  "superseded_attempt1_not_eligible": true
+}

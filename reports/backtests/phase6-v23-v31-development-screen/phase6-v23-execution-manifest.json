@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_EXECUTION_MANIFEST_V1",
+  "research_classification": "CONTROLLED_PRESEAL_DEVELOPMENT_EVIDENCE",
+  "prerun_commit": "bac30558aa338b02220ebbb33b67d6b6dd1dc375",
+  "prerun_tag": "phase6-v23-v31-development-prerun",
+  "physical_runs": 42,
+  "formal_cells": 12,
+  "real_tick_model_runs": 42,
+  "optimization": false,
+  "technical_failures_retained": 2,
+  "valid_results_rerun": 0,
+  "native_commission_total": 0.0,
+  "bootstrap_paths": 100000,
+  "monte_carlo_paths": 100000,
+  "connected_chart_trades": 0,
+  "demo_forward_trades": 0,
+  "live_trades": 0,
+  "terminal_outcome": "V31_DEVELOPMENT_SCREEN_FAILED"
+}

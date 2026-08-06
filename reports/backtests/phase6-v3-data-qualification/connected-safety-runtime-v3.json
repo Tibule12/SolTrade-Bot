@@ -1,0 +1,44 @@
+{
+  "schema": "SOLTRADE_PHASE6_CONNECTED_SAFETY_EVIDENCE_V3",
+  "execution_authorized": false,
+  "run_count": 1,
+  "run_timestamp_server": "2026-07-28T21:20:27.635",
+  "chart": "USDJPY,H1",
+  "preflight": {
+    "algo_trading": "OFF",
+    "orders": 0,
+    "positions": 0,
+    "history_deals": 5,
+    "production_ea_detached": true,
+    "trade_tab_empty": true,
+    "demo_execution": false,
+    "position_management": false,
+    "tester_permission_outside_strategy_tester": false,
+    "live_trading": false
+  },
+  "result": {
+    "passed": 66,
+    "failed": 0,
+    "success_marker": "ALL SOLTRADE PHASE 6 SAFETY TESTS PASSED",
+    "status": "PASS"
+  },
+  "postrun": {
+    "orders": 0,
+    "positions": 0,
+    "new_orders": 0,
+    "new_trading_deals": 0,
+    "new_positions": 0,
+    "production_ea_detached": true
+  },
+  "artifact_identity": {
+    "source_sha256": "1e6c8dad31ed4e54eb7f7cdaaecdc4dfb6f52975a2622cd2d660fd65e42b5a7c",
+    "connected_terminal_ex5_sha256": "8290a7cba162b077defbe9aad9c6b5e5320fc3460d40a0b204a8fd0c1997f009",
+    "runtime_log_sha256": "88b5303fc77bf038a47ce0b6cb4d727a5b7724b03df4ca5d7b7c2081ba1e66f0"
+  },
+  "marker_tree": {
+    "entry_count": 19,
+    "pre_sha256": "6a80fbd3a23b204c5e9e5c523a4d8cb0a0eb38783ee791dfefc4f0fc1d604d54",
+    "post_sha256": "6a80fbd3a23b204c5e9e5c523a4d8cb0a0eb38783ee791dfefc4f0fc1d604d54",
+    "changed": false
+  }
+}

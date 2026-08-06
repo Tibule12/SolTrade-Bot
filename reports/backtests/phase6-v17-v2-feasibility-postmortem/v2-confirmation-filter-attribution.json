@@ -1,0 +1,336 @@
+{
+  "schema": "SOLTRADE_PHASE6_V17_V2_FILTER_ATTRIBUTION_V1",
+  "status": "PASS",
+  "strategy": "SOLTRADE_TREND_BREAKOUT_V2_1_0",
+  "source_role": "PREVIOUSLY_QUALIFIED_2025_DATA_ONLY",
+  "source_h1_path": "/home/tibule12/.wine-fpmarkets/drive_c/v8/derived/SolTradePhase6V8DerivedH1.csv",
+  "source_h1_sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee",
+  "total_setups": 365,
+  "total_confirmations": 5,
+  "confirmation_rate_descriptive_non_profitability": 0.0136986301369863,
+  "conditions": {
+    "immediate_next_completed_h1": {
+      "description": "Immediate next completed market H1 candle is available in the same clean segment",
+      "pass_count": 364,
+      "failure_count": 1,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "continued_direction_beyond_setup_close": {
+      "description": "Confirmation close continues strictly beyond setup close",
+      "pass_count": 169,
+      "failure_count": 196,
+      "exclusive_failure_count": 16,
+      "would_confirm_if_removed_alone": 16
+    },
+    "beyond_frozen_donchian_boundary": {
+      "description": "Confirmation close remains strictly beyond the frozen Donchian boundary",
+      "pass_count": 267,
+      "failure_count": 98,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "correct_side_ema200": {
+      "description": "Confirmation close remains strictly on the directional side of EMA 200",
+      "pass_count": 356,
+      "failure_count": 9,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "ema_distance_at_most_2_atr": {
+      "description": "Absolute EMA distance is no greater than two ATR",
+      "pass_count": 70,
+      "failure_count": 295,
+      "exclusive_failure_count": 89,
+      "would_confirm_if_removed_alone": 89
+    },
+    "atr_regime_0_50_to_2_00": {
+      "description": "ATR/ATR mean 100 is within the inclusive frozen band",
+      "pass_count": 360,
+      "failure_count": 5,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "strict_equality_rejection": {
+      "description": "No strict directional condition is met only by equality",
+      "pass_count": 363,
+      "failure_count": 2,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "minimum_300_clean_segment_h1": {
+      "description": "At least 300 clean segment-local completed H1 bars are available",
+      "pass_count": 329,
+      "failure_count": 36,
+      "exclusive_failure_count": 3,
+      "would_confirm_if_removed_alone": 3
+    },
+    "no_position_already_open": {
+      "description": "No canonical simulated V2 position is already open",
+      "pass_count": 362,
+      "failure_count": 3,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    },
+    "risk_or_spread_entry_state": {
+      "description": "Observable spread/risk entry state permits entry",
+      "pass_count": 239,
+      "failure_count": 126,
+      "exclusive_failure_count": 4,
+      "would_confirm_if_removed_alone": 4
+    },
+    "other_frozen_no_trade_conditions": {
+      "description": "All other observable frozen no-trade conditions pass",
+      "pass_count": 364,
+      "failure_count": 1,
+      "exclusive_failure_count": 0,
+      "would_confirm_if_removed_alone": 0
+    }
+  },
+  "first_failure_counts": {
+    "ema_distance_at_most_2_atr": 156,
+    "continued_direction_beyond_setup_close": 195,
+    "minimum_300_clean_segment_h1": 4,
+    "immediate_next_completed_h1": 1,
+    "risk_or_spread_entry_state": 4
+  },
+  "partition_counts": {
+    "DEVELOPMENT_2025": {
+      "setups": 162,
+      "confirmations": 3,
+      "rejections": 159,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 89,
+        "beyond_frozen_donchian_boundary": 38,
+        "correct_side_ema200": 3,
+        "ema_distance_at_most_2_atr": 132,
+        "atr_regime_0_50_to_2_00": 4,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 29,
+        "no_position_already_open": 2,
+        "risk_or_spread_entry_state": 19,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "ema_distance_at_most_2_atr": 67,
+        "continued_direction_beyond_setup_close": 89,
+        "minimum_300_clean_segment_h1": 3
+      }
+    },
+    "OOS_EQUIVALENT_2025": {
+      "setups": 112,
+      "confirmations": 1,
+      "rejections": 111,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 61,
+        "beyond_frozen_donchian_boundary": 37,
+        "correct_side_ema200": 2,
+        "ema_distance_at_most_2_atr": 91,
+        "atr_regime_0_50_to_2_00": 0,
+        "strict_equality_rejection": 0,
+        "minimum_300_clean_segment_h1": 0,
+        "no_position_already_open": 0,
+        "risk_or_spread_entry_state": 75,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "continued_direction_beyond_setup_close": 61,
+        "ema_distance_at_most_2_atr": 47,
+        "risk_or_spread_entry_state": 3
+      }
+    },
+    "VALIDATION_EQUIVALENT_2025": {
+      "setups": 91,
+      "confirmations": 1,
+      "rejections": 90,
+      "failure_counts": {
+        "immediate_next_completed_h1": 1,
+        "continued_direction_beyond_setup_close": 46,
+        "beyond_frozen_donchian_boundary": 23,
+        "correct_side_ema200": 4,
+        "ema_distance_at_most_2_atr": 72,
+        "atr_regime_0_50_to_2_00": 1,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 7,
+        "no_position_already_open": 1,
+        "risk_or_spread_entry_state": 32,
+        "other_frozen_no_trade_conditions": 1
+      },
+      "first_failure_counts": {
+        "continued_direction_beyond_setup_close": 45,
+        "ema_distance_at_most_2_atr": 42,
+        "immediate_next_completed_h1": 1,
+        "minimum_300_clean_segment_h1": 1,
+        "risk_or_spread_entry_state": 1
+      }
+    }
+  },
+  "volatility_regime_counts": {
+    "ABOVE_2_00": {
+      "setups": 4,
+      "confirmations": 0,
+      "rejections": 4,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 1,
+        "beyond_frozen_donchian_boundary": 1,
+        "correct_side_ema200": 0,
+        "ema_distance_at_most_2_atr": 4,
+        "atr_regime_0_50_to_2_00": 4,
+        "strict_equality_rejection": 0,
+        "minimum_300_clean_segment_h1": 3,
+        "no_position_already_open": 0,
+        "risk_or_spread_entry_state": 0,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "continued_direction_beyond_setup_close": 1,
+        "ema_distance_at_most_2_atr": 3
+      }
+    },
+    "UNAVAILABLE": {
+      "setups": 1,
+      "confirmations": 0,
+      "rejections": 1,
+      "failure_counts": {
+        "immediate_next_completed_h1": 1,
+        "continued_direction_beyond_setup_close": 1,
+        "beyond_frozen_donchian_boundary": 1,
+        "correct_side_ema200": 1,
+        "ema_distance_at_most_2_atr": 1,
+        "atr_regime_0_50_to_2_00": 1,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 0,
+        "no_position_already_open": 0,
+        "risk_or_spread_entry_state": 1,
+        "other_frozen_no_trade_conditions": 1
+      },
+      "first_failure_counts": {
+        "immediate_next_completed_h1": 1
+      }
+    },
+    "WITHIN_0_50_TO_2_00": {
+      "setups": 360,
+      "confirmations": 5,
+      "rejections": 355,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 194,
+        "beyond_frozen_donchian_boundary": 96,
+        "correct_side_ema200": 8,
+        "ema_distance_at_most_2_atr": 290,
+        "atr_regime_0_50_to_2_00": 0,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 33,
+        "no_position_already_open": 3,
+        "risk_or_spread_entry_state": 125,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "ema_distance_at_most_2_atr": 153,
+        "continued_direction_beyond_setup_close": 194,
+        "minimum_300_clean_segment_h1": 4,
+        "risk_or_spread_entry_state": 4
+      }
+    }
+  },
+  "distance_bucket_counts": {
+    "AT_MOST_1_ATR": {
+      "setups": 37,
+      "confirmations": 3,
+      "rejections": 34,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 32,
+        "beyond_frozen_donchian_boundary": 20,
+        "correct_side_ema200": 7,
+        "ema_distance_at_most_2_atr": 0,
+        "atr_regime_0_50_to_2_00": 0,
+        "strict_equality_rejection": 0,
+        "minimum_300_clean_segment_h1": 1,
+        "no_position_already_open": 1,
+        "risk_or_spread_entry_state": 16,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "continued_direction_beyond_setup_close": 32,
+        "risk_or_spread_entry_state": 2
+      }
+    },
+    "OVER_1_TO_2_ATR": {
+      "setups": 33,
+      "confirmations": 2,
+      "rejections": 31,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 25,
+        "beyond_frozen_donchian_boundary": 12,
+        "correct_side_ema200": 1,
+        "ema_distance_at_most_2_atr": 0,
+        "atr_regime_0_50_to_2_00": 0,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 4,
+        "no_position_already_open": 2,
+        "risk_or_spread_entry_state": 11,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "continued_direction_beyond_setup_close": 25,
+        "minimum_300_clean_segment_h1": 4,
+        "risk_or_spread_entry_state": 2
+      }
+    },
+    "OVER_2_ATR": {
+      "setups": 294,
+      "confirmations": 0,
+      "rejections": 294,
+      "failure_counts": {
+        "immediate_next_completed_h1": 0,
+        "continued_direction_beyond_setup_close": 138,
+        "beyond_frozen_donchian_boundary": 65,
+        "correct_side_ema200": 0,
+        "ema_distance_at_most_2_atr": 294,
+        "atr_regime_0_50_to_2_00": 4,
+        "strict_equality_rejection": 0,
+        "minimum_300_clean_segment_h1": 31,
+        "no_position_already_open": 0,
+        "risk_or_spread_entry_state": 98,
+        "other_frozen_no_trade_conditions": 0
+      },
+      "first_failure_counts": {
+        "ema_distance_at_most_2_atr": 156,
+        "continued_direction_beyond_setup_close": 138
+      }
+    },
+    "UNAVAILABLE": {
+      "setups": 1,
+      "confirmations": 0,
+      "rejections": 1,
+      "failure_counts": {
+        "immediate_next_completed_h1": 1,
+        "continued_direction_beyond_setup_close": 1,
+        "beyond_frozen_donchian_boundary": 1,
+        "correct_side_ema200": 1,
+        "ema_distance_at_most_2_atr": 1,
+        "atr_regime_0_50_to_2_00": 1,
+        "strict_equality_rejection": 1,
+        "minimum_300_clean_segment_h1": 0,
+        "no_position_already_open": 0,
+        "risk_or_spread_entry_state": 1,
+        "other_frozen_no_trade_conditions": 1
+      },
+      "first_failure_counts": {
+        "immediate_next_completed_h1": 1
+      }
+    }
+  },
+  "guardrails": {
+    "pnl_calculated": false,
+    "profitability_tested": false,
+    "optimization_run": false,
+    "orders_or_positions_placed": false,
+    "2026_used_for_design_or_tuning": false
+  }
+}

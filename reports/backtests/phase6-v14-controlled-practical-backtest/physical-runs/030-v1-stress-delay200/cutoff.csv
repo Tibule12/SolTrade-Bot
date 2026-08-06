@@ -1,0 +1,15 @@
+field,value
+classification,RIGHT_CENSORED_OPEN_POSITION
+eligible_to,2025.08.06 16:00:00
+observation_time,2025.08.06 16:00:00
+position_open,YES
+position_ticket,26
+position_identifier,26
+position_type,0
+volume,0.09000000
+entry_price,1.1607500000
+stop_loss,1.1580900000
+unrealized_result_reporting_only,24.84000000
+formal_pnl_included,NO
+naturally_closed_trade_included,NO
+later_deals,POST_CUTOFF_EXCLUDED

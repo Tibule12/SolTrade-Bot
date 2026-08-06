@@ -1,0 +1,19 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30C_DATA_WINDOW_FREEZE_V1",
+  "qualification_start_inclusive": "2022-11-14 00:05:00.354",
+  "qualification_end_exclusive": "2024-01-01 00:00:00.000",
+  "last_expected_common_native_tick": "2023-12-29 23:57:52.904",
+  "symbols": [
+    "EURUSD",
+    "GBPUSD",
+    "AUDUSD",
+    "NZDUSD",
+    "USDCAD",
+    "USDCHF",
+    "USDJPY"
+  ],
+  "generated_or_synthetic_ticks": "PROHIBITED",
+  "partial_portfolio_or_symbol_exclusion": "PROHIBITED",
+  "profitability_start": "TO_BE_FROZEN_ONLY_AFTER_ALL_SYMBOLS_PASS_NATIVE_COVERAGE_AND_UNCHANGED_V28_WARMUP",
+  "include_2024": false
+}

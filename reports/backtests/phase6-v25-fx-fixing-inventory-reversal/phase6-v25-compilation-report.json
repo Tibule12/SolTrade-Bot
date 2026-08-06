@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_COMPILATION_REPORT_V1",
+  "status": "PASS",
+  "compiler": "MetaEditor64 build 6090 under the frozen FP Markets terminal",
+  "source": "research/fixing/SolTradeFixingReversalHarness.mq5",
+  "source_sha256": "19c2d1f338bb005475c39421ca0933dee1fb78e252ca03e0a511330e52824385",
+  "compiled_executable": "SolTradeFixingReversalHarness.ex5",
+  "compiled_executable_sha256": "20e515772e71fa536bc4a1a4bd5ef9554bd6300ea2071f628e2c018e32c6a1e2",
+  "errors": 0,
+  "warnings": 0,
+  "optimization": false,
+  "profitability_viewed_before_compile": false,
+  "run_1_started_before_compile": false
+}

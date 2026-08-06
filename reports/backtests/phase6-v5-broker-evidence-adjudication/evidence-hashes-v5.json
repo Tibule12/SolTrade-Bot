@@ -1,0 +1,59 @@
+{
+  "schema": "SOLTRADE_PHASE6_V5_EVIDENCE_HASHES_V1",
+  "hash_algorithm": "SHA-256",
+  "created_date": "2026-08-03",
+  "self_hash_included": false,
+  "self_hash_exclusion_reason": "A file cannot contain its own final cryptographic hash without recursion; the committed Git object and externally reported SHA-256 identify this manifest.",
+  "v5_artifacts": [
+    {
+      "path": "reports/backtests/phase6-v5-broker-evidence-adjudication/easymarkets-response-transcription-v5.md",
+      "sha256": "fc661cfbb0cf8bc0dd40dc3ea88aeef7d594ff8a81fb94ceff33cec96390d43b",
+      "evidence_role": "USER_SUPPLIED_BROKER_RESPONSE_TRANSCRIPTION"
+    },
+    {
+      "path": "reports/backtests/phase6-v5-broker-evidence-adjudication/broker-evidence-summary-v5.md",
+      "sha256": "7b94589422e8444b1d87cb9c9fb0a3cb1703ee98a2eee27ae247e7887c057d7d",
+      "evidence_role": "HUMAN_READABLE_ADJUDICATION"
+    },
+    {
+      "path": "reports/backtests/phase6-v5-broker-evidence-adjudication/gap-adjudication-v5.json",
+      "sha256": "1ace7ff67fb6ec38e82cf98aa995477d32ca7128ce1e187fa69d73893c9dbd9e",
+      "evidence_role": "INTERVAL_LEVEL_ADJUDICATION"
+    },
+    {
+      "path": "reports/backtests/phase6-v5-broker-evidence-adjudication/data-qualification-result-v5.json",
+      "sha256": "76f7c953a5c06ab302cf751eeb51f138b2f3b3e891e3fd991f2c94a776aa287c",
+      "evidence_role": "MACHINE_READABLE_TERMINAL_RESULT"
+    },
+    {
+      "path": "reports/backtests/phase6-v5-broker-evidence-adjudication/phase6-v5-terminal-outcome.md",
+      "sha256": "daf4fbd7397f9a93aa2031124cc405614a39ebaa755ed737364e0bf2f9913a0d",
+      "evidence_role": "HUMAN_READABLE_TERMINAL_RESULT"
+    }
+  ],
+  "referenced_v4_evidence": {
+    "immutable_commit": "366918a7a6216d80147ba7d5b233f19586e7260b",
+    "history_identity_sha256": "0360f7831290a6fc7bee78c8653c65056bfccbb58dca9f3d2bea8d83c64414b6",
+    "files": [
+      {
+        "path": "reports/backtests/phase6-v4-data-qualification/gap-classification-report-v4.json",
+        "sha256": "a09acce5edb229eded8b8a72b7caab0eb15848108cd271b81878535cb32cecf0"
+      },
+      {
+        "path": "reports/backtests/phase6-v4-data-qualification/data-qualification-result-v4.json",
+        "sha256": "6dbccf62daf45a3c46496ec51d734c966758e5425829111ce2e421d4dddf6f34"
+      },
+      {
+        "path": "reports/backtests/phase6-v4-data-qualification/easymarkets-support-request-v4.md",
+        "sha256": "078346907e40b2b4c33003e28d63d13c38d9c84e5ba1399b3e21f2f0e4be0b61"
+      },
+      {
+        "path": "reports/backtests/phase6-v4-data-qualification/aggregate-history-identity-v4.sha256",
+        "sha256": "5169ee2885a3869563d95d41023a42aa878532ee1fa10f019ae8aa203df26570"
+      }
+    ]
+  },
+  "adjudication_terminal_outcome": "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+  "adjudication_reason": "INSUFFICIENT_INTERVAL_SPECIFIC_BROKER_EVIDENCE",
+  "execution_authorized": false
+}

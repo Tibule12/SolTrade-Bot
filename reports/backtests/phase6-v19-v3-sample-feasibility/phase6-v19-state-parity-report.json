@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "implementation_a": "DIRECT_REFERENCE_FROM_V18_MACHINE_READABLE_SPEC",
+  "implementation_b": "INDEPENDENT_TESTER_EVENT_STATE_EVALUATOR",
+  "numerical_tolerance": 1e-12,
+  "event_count_a": 403,
+  "event_count_b": 403,
+  "exact_full_ledger_agreement": true,
+  "divergence_count": 0,
+  "compared_fields": [
+    "sequence",
+    "event",
+    "timestamp",
+    "period",
+    "direction",
+    "setup_timestamp",
+    "frozen_boundary",
+    "retest_candle_number",
+    "confirmation_timestamp",
+    "entry_timestamp",
+    "stop_level",
+    "exit_timestamp",
+    "exit_type",
+    "cancellation_reason"
+  ]
+}

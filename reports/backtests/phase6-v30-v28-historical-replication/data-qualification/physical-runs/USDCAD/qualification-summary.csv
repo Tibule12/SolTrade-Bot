@@ -1,0 +1,52 @@
+field,value
+schema,SOLTRADE_PHASE6_V30_REAL_TICK_QUALIFICATION_V1
+symbol,USDCAD
+model,EVERY_TICK_BASED_ON_REAL_TICKS
+warmup_from,2017.11.01 00:00:00
+bound_from,2018.01.01 00:00:00
+bound_to_exclusive,2025.01.01 00:00:00
+warmup_first_tick,2017.11.01 00:00:00
+warmup_last_tick,2017.12.30 00:59:59
+warmup_tick_count,3123822
+first_tick,2018.01.02 01:01:30
+final_tick,2024.12.31 23:59:59
+tick_count,153810916
+m1_count,2601994
+h1_count,43517
+m1_mismatches,1
+h1_mismatches,0
+spread_samples,153810916
+zero_or_negative_spread_samples,28054
+mean_spread_points,12.483751848925989
+maximum_spread_points,802.9999999999981
+digits,5
+point,0.0000100000
+contract_size,100000.00
+swap_mode,1
+swap_rollover3day,3
+swap_long,3.49000000
+swap_short,-9.10000000
+ticks_2018,21492718
+m1_2018,371781
+h1_2018,6202
+ticks_2019,12182333
+m1_2019,371302
+h1_2019,6194
+ticks_2020,20148117
+m1_2020,373251
+h1_2020,6234
+ticks_2021,15789249
+m1_2021,372429
+h1_2021,6240
+ticks_2022,30515261
+m1_2022,369820
+h1_2022,6216
+ticks_2023,32829609
+m1_2023,370027
+h1_2023,6191
+ticks_2024,20853629
+m1_2024,373384
+h1_2024,6240
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,FAIL

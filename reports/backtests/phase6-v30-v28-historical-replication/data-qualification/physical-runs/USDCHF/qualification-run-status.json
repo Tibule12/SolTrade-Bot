@@ -1,0 +1,24 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_QUALIFICATION_RUN_STATUS_V1",
+  "symbol": "USDCHF",
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "model_code": 4,
+  "optimization": false,
+  "elapsed_seconds": 197.93787693977356,
+  "wine_return_code": 0,
+  "tick_count": 135235633,
+  "first_tick": "2018.01.02 01:05:00",
+  "final_tick": "2024.12.31 23:59:59",
+  "m1_mismatches": 1,
+  "h1_mismatches": 0,
+  "orders_or_positions": "ZERO",
+  "pnl_calculated": "NO",
+  "native_reports": [
+    "native-mt5-report-holding.png",
+    "native-mt5-report.html",
+    "native-mt5-report-hst.png",
+    "native-mt5-report-mfemae.png",
+    "native-mt5-report.png"
+  ],
+  "status": "DATA_FAIL"
+}

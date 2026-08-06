@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_SIGNAL_ADAPTER_PARITY_V1",
+  "status": "PASS",
+  "classification": "SIGNAL_ONLY_NO_PNL",
+  "original_v28_schedule_sha256": "cc0a379aa8aa54dde6079c63d0d4eda97abcc929ed7a6bf0dec1404c64b4ea21",
+  "signal_adapter_source_sha256": "618f714d7ffb228aca533c6ca58de4d0601a5da7421237499b51f2c7d0be1861",
+  "signal_adapter_executable_sha256": "fe4cbd2a0b28a6743ffda29e6b0cb04ffa041665a1f05f4ce3ff011687e7ee71",
+  "original_signals": 119,
+  "adapter_signals": 119,
+  "exact_decision_fields_compared_per_signal": 11,
+  "exact_decision_values_compared": 1309,
+  "divergence_count": 0,
+  "divergences": [],
+  "mapping": {
+    "EURUSD": "EURUSD.V31",
+    "GBPUSD": "GBPUSD.V31",
+    "AUDUSD": "AUDUSD.V31",
+    "NZDUSD": "NZDUSD.V31",
+    "USDCAD": "USDCAD.V31",
+    "USDCHF": "USDCHF.V31",
+    "USDJPY": "USDJPY.V31"
+  },
+  "orders_or_positions": "ZERO",
+  "pnl_calculated": false,
+  "wine_return_codes": [
+    0,
+    0
+  ]
+}

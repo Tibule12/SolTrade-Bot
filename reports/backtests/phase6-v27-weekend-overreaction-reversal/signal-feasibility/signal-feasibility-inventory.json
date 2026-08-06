@@ -1,0 +1,33 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_SIGNAL_FEASIBILITY_V1",
+  "status": "FAIL",
+  "source_sha256": "81f9f2f54aa91d1caa2079fcd1e8f9c8daf1426416baefe9230b2c395e051dde",
+  "executable_sha256": "2cae4954e82f945d0a6799eccd35a9a17add1055bd13e4d261ef803d1ef751fd",
+  "tester_model": "OPEN_PRICES_ONLY_SIGNAL_EVALUATION",
+  "optimization": false,
+  "orders_or_positions": 0,
+  "pnl_calculated": false,
+  "weeks": 81,
+  "evaluations": 518,
+  "signals": 93,
+  "by_dataset": {
+    "V27_2025_DEVELOPMENT": 45,
+    "V27_2026_PRESEAL_DEVELOPMENT": 48
+  },
+  "by_direction": {
+    "BUY": 53,
+    "SELL": 40
+  },
+  "by_symbol": {
+    "EURUSD": 14,
+    "GBPUSD": 11,
+    "AUDUSD": 14,
+    "NZDUSD": 14,
+    "USDCAD": 11,
+    "USDCHF": 16,
+    "USDJPY": 13
+  },
+  "current_reference_missing": 1,
+  "threshold_history_unavailable": 48,
+  "seal_breach": "NO"
+}

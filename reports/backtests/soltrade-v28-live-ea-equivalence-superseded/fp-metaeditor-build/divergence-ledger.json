@@ -1,0 +1,6 @@
+{
+  "schema": "SOLTRADE_V28_LIVE_EA_DIVERGENCE_LEDGER_V1",
+  "numeric_metric_tolerance": 1e-10,
+  "count": 0,
+  "divergences": []
+}

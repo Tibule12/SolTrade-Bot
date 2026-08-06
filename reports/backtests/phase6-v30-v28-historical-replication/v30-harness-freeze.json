@@ -1,0 +1,32 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30_HARNESS_FREEZE_V1",
+  "purpose": {
+    "signal": "date-bounded signal-only extraction of unchanged V28 rules",
+    "qualification": "no-trade real-tick availability and consistency audit"
+  },
+  "artifacts": {
+    "signal_source": {
+      "path": "/home/tibule12/Projects/SolTrade-Bot/research/factor_momentum/SolTradeV30HistoricalSignalHarness.mq5",
+      "sha256": "70696a83cff489df6588698a8d99c88f2607dddfae751eff280588f43dba1340"
+    },
+    "qualification_source": {
+      "path": "/home/tibule12/Projects/SolTrade-Bot/research/factor_momentum/SolTradeV30RealTickQualificationHarness.mq5",
+      "sha256": "7609b3f4a7c2f90f0359245a42acb673610786afadd1c6ee2b390f98758762f7"
+    },
+    "signal_ex5": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v30/SolTradeV30HistoricalSignalHarness.ex5",
+      "sha256": "1848055296d355cf1aef66d88021bf4171a0ee56c8f5c8e00385a11067417bd9"
+    },
+    "qualification_ex5": {
+      "path": "/home/tibule12/.wine-fpmarkets/drive_c/v30/SolTradeV30RealTickQualificationHarness.ex5",
+      "sha256": "c312df39fe46abfe02c15d833a16726adfdf3a8abe2593ccdc31dd21176401c7"
+    }
+  },
+  "compile_result": {
+    "signal": "0 errors, 0 warnings",
+    "qualification": "0 errors, 0 warnings"
+  },
+  "trading_logic_source": "unchanged V28 performance executable in v30-source-and-configuration-hash-freeze.json",
+  "pnl_calculation": false,
+  "orders_or_positions": 0
+}

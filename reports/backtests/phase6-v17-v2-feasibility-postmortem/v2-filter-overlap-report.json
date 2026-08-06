@@ -1,0 +1,86 @@
+{
+  "total_rejected_setups": 360,
+  "single_failure_setups": 112,
+  "multiple_failure_setups": 248,
+  "failure_combinations": {
+    "ema_distance_at_most_2_atr": 89,
+    "continued_direction_beyond_setup_close|ema_distance_at_most_2_atr": 48,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|ema_distance_at_most_2_atr": 32,
+    "NONE_CONFIRMED": 5,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|no_position_already_open": 1,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary": 11,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|correct_side_ema200": 4,
+    "ema_distance_at_most_2_atr|risk_or_spread_entry_state": 49,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|ema_distance_at_most_2_atr|atr_regime_0_50_to_2_00": 1,
+    "continued_direction_beyond_setup_close": 16,
+    "continued_direction_beyond_setup_close|ema_distance_at_most_2_atr|minimum_300_clean_segment_h1": 6,
+    "ema_distance_at_most_2_atr|minimum_300_clean_segment_h1|risk_or_spread_entry_state": 4,
+    "ema_distance_at_most_2_atr|minimum_300_clean_segment_h1": 11,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|ema_distance_at_most_2_atr|minimum_300_clean_segment_h1": 6,
+    "minimum_300_clean_segment_h1": 3,
+    "minimum_300_clean_segment_h1|risk_or_spread_entry_state": 1,
+    "ema_distance_at_most_2_atr|atr_regime_0_50_to_2_00|minimum_300_clean_segment_h1": 3,
+    "continued_direction_beyond_setup_close|ema_distance_at_most_2_atr|risk_or_spread_entry_state": 19,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|risk_or_spread_entry_state": 11,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|no_position_already_open|risk_or_spread_entry_state": 1,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|strict_equality_rejection": 1,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|ema_distance_at_most_2_atr|risk_or_spread_entry_state": 25,
+    "continued_direction_beyond_setup_close|risk_or_spread_entry_state": 6,
+    "continued_direction_beyond_setup_close|correct_side_ema200|risk_or_spread_entry_state": 1,
+    "continued_direction_beyond_setup_close|no_position_already_open": 1,
+    "immediate_next_completed_h1|continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|correct_side_ema200|ema_distance_at_most_2_atr|atr_regime_0_50_to_2_00|strict_equality_rejection|risk_or_spread_entry_state|other_frozen_no_trade_conditions": 1,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|ema_distance_at_most_2_atr|minimum_300_clean_segment_h1|risk_or_spread_entry_state": 1,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|minimum_300_clean_segment_h1|risk_or_spread_entry_state": 1,
+    "continued_direction_beyond_setup_close|correct_side_ema200": 1,
+    "risk_or_spread_entry_state": 4,
+    "continued_direction_beyond_setup_close|beyond_frozen_donchian_boundary|correct_side_ema200|risk_or_spread_entry_state": 2
+  },
+  "individual_failure_counts": {
+    "immediate_next_completed_h1": 1,
+    "continued_direction_beyond_setup_close": 196,
+    "beyond_frozen_donchian_boundary": 98,
+    "correct_side_ema200": 9,
+    "ema_distance_at_most_2_atr": 295,
+    "atr_regime_0_50_to_2_00": 5,
+    "strict_equality_rejection": 2,
+    "minimum_300_clean_segment_h1": 36,
+    "no_position_already_open": 3,
+    "risk_or_spread_entry_state": 126,
+    "other_frozen_no_trade_conditions": 1
+  },
+  "exclusive_failure_counts": {
+    "immediate_next_completed_h1": 0,
+    "continued_direction_beyond_setup_close": 16,
+    "beyond_frozen_donchian_boundary": 0,
+    "correct_side_ema200": 0,
+    "ema_distance_at_most_2_atr": 89,
+    "atr_regime_0_50_to_2_00": 0,
+    "strict_equality_rejection": 0,
+    "minimum_300_clean_segment_h1": 3,
+    "no_position_already_open": 0,
+    "risk_or_spread_entry_state": 4,
+    "other_frozen_no_trade_conditions": 0
+  },
+  "first_failure_counts": {
+    "ema_distance_at_most_2_atr": 156,
+    "continued_direction_beyond_setup_close": 195,
+    "minimum_300_clean_segment_h1": 4,
+    "immediate_next_completed_h1": 1,
+    "risk_or_spread_entry_state": 4
+  },
+  "dominant_individual_failure": {
+    "condition": "ema_distance_at_most_2_atr",
+    "count": 295
+  },
+  "dominant_exclusive_failure": {
+    "condition": "ema_distance_at_most_2_atr",
+    "count": 89
+  },
+  "dominant_overlapping_combination": {
+    "conditions": [
+      "ema_distance_at_most_2_atr",
+      "risk_or_spread_entry_state"
+    ],
+    "count": 49
+  }
+}

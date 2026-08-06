@@ -1,0 +1,6 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_DIVERGENCE_LEDGER_V1",
+  "numeric_tolerance": 1e-10,
+  "count": 0,
+  "divergences": []
+}

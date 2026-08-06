@@ -1,0 +1,184 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_TIMEZONE_AND_CALENDAR_AUDIT_V1",
+  "status": "PASS_NOT_TERMINAL_BLOCKER",
+  "v28_time_basis": "FP Markets broker-server civil time",
+  "v28_evidence": {
+    "candidate_rule": "first Monday 10:05 broker-server time; exact H1 closes at 09:00 broker-server time",
+    "source_clock": "TimeCurrent() and server-timestamped MT5 H1/D1 series"
+  },
+  "fp_markets_official_rule": "Server time is UTC+2 in winter and UTC+3 during daylight saving so daily candles follow the 17:00 New York close.",
+  "fp_markets_reference": "https://www.fpmarkets.com/en-au/education/faq/",
+  "deterministic_conversion": "Convert Dukascopy UTC to America/New_York civil time using IANA tzdata, then add seven civil hours. Equivalent server UTC offset is +2 in New York standard time and +3 in New York daylight time.",
+  "iana_zone": "America/New_York",
+  "decision_examples": {
+    "winter_server_10_05_utc": "08:05",
+    "summer_server_10_05_utc": "07:05",
+    "winter_server_09_00_utc": "07:00",
+    "summer_server_09_00_utc": "06:00"
+  },
+  "dst_transition_tests": [
+    {
+      "year": 2018,
+      "transitions": [
+        {
+          "transition_utc": "2018-03-11T07:00:00+00:00",
+          "new_york_before": "2018-03-11T01:59:59-05:00",
+          "new_york_after": "2018-03-11T03:00:00-04:00",
+          "server_before": "2018-03-11 08:59:59",
+          "server_after": "2018-03-11 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2018-11-04T06:00:00+00:00",
+          "new_york_before": "2018-11-04T01:59:59-04:00",
+          "new_york_after": "2018-11-04T01:00:00-05:00",
+          "server_before": "2018-11-04 08:59:59",
+          "server_after": "2018-11-04 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "transitions": [
+        {
+          "transition_utc": "2019-03-10T07:00:00+00:00",
+          "new_york_before": "2019-03-10T01:59:59-05:00",
+          "new_york_after": "2019-03-10T03:00:00-04:00",
+          "server_before": "2019-03-10 08:59:59",
+          "server_after": "2019-03-10 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2019-11-03T06:00:00+00:00",
+          "new_york_before": "2019-11-03T01:59:59-04:00",
+          "new_york_after": "2019-11-03T01:00:00-05:00",
+          "server_before": "2019-11-03 08:59:59",
+          "server_after": "2019-11-03 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "transitions": [
+        {
+          "transition_utc": "2020-03-08T07:00:00+00:00",
+          "new_york_before": "2020-03-08T01:59:59-05:00",
+          "new_york_after": "2020-03-08T03:00:00-04:00",
+          "server_before": "2020-03-08 08:59:59",
+          "server_after": "2020-03-08 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2020-11-01T06:00:00+00:00",
+          "new_york_before": "2020-11-01T01:59:59-04:00",
+          "new_york_after": "2020-11-01T01:00:00-05:00",
+          "server_before": "2020-11-01 08:59:59",
+          "server_after": "2020-11-01 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "transitions": [
+        {
+          "transition_utc": "2021-03-14T07:00:00+00:00",
+          "new_york_before": "2021-03-14T01:59:59-05:00",
+          "new_york_after": "2021-03-14T03:00:00-04:00",
+          "server_before": "2021-03-14 08:59:59",
+          "server_after": "2021-03-14 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2021-11-07T06:00:00+00:00",
+          "new_york_before": "2021-11-07T01:59:59-04:00",
+          "new_york_after": "2021-11-07T01:00:00-05:00",
+          "server_before": "2021-11-07 08:59:59",
+          "server_after": "2021-11-07 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "transitions": [
+        {
+          "transition_utc": "2022-03-13T07:00:00+00:00",
+          "new_york_before": "2022-03-13T01:59:59-05:00",
+          "new_york_after": "2022-03-13T03:00:00-04:00",
+          "server_before": "2022-03-13 08:59:59",
+          "server_after": "2022-03-13 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2022-11-06T06:00:00+00:00",
+          "new_york_before": "2022-11-06T01:59:59-04:00",
+          "new_york_after": "2022-11-06T01:00:00-05:00",
+          "server_before": "2022-11-06 08:59:59",
+          "server_after": "2022-11-06 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "transitions": [
+        {
+          "transition_utc": "2023-03-12T07:00:00+00:00",
+          "new_york_before": "2023-03-12T01:59:59-05:00",
+          "new_york_after": "2023-03-12T03:00:00-04:00",
+          "server_before": "2023-03-12 08:59:59",
+          "server_after": "2023-03-12 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2023-11-05T06:00:00+00:00",
+          "new_york_before": "2023-11-05T01:59:59-04:00",
+          "new_york_after": "2023-11-05T01:00:00-05:00",
+          "server_before": "2023-11-05 08:59:59",
+          "server_after": "2023-11-05 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "transitions": [
+        {
+          "transition_utc": "2024-03-10T07:00:00+00:00",
+          "new_york_before": "2024-03-10T01:59:59-05:00",
+          "new_york_after": "2024-03-10T03:00:00-04:00",
+          "server_before": "2024-03-10 08:59:59",
+          "server_after": "2024-03-10 10:00:00",
+          "server_utc_offset_before_hours": 2,
+          "server_utc_offset_after_hours": 3
+        },
+        {
+          "transition_utc": "2024-11-03T06:00:00+00:00",
+          "new_york_before": "2024-11-03T01:59:59-04:00",
+          "new_york_after": "2024-11-03T01:00:00-05:00",
+          "server_before": "2024-11-03 08:59:59",
+          "server_after": "2024-11-03 08:00:00",
+          "server_utc_offset_before_hours": 3,
+          "server_utc_offset_after_hours": 2
+        }
+      ]
+    }
+  ],
+  "ambiguity_assessment": "The Sunday clock changes occur while FX is closed and do not make first-Monday 09:00/10:05 decisions ambiguous.",
+  "weekly_and_daily_boundaries_reconstructable": true
+}

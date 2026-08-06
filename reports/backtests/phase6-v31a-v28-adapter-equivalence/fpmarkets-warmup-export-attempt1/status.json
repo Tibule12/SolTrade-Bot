@@ -1,0 +1,11 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_WARMUP_EXPORT_STATUS_V1",
+  "status": "FAIL",
+  "elapsed_seconds": 14.43298864364624,
+  "wine_return_code": 0,
+  "symbols": 0,
+  "m1_rates": 0,
+  "trade_api_calls": "NONE",
+  "pnl_calculated": false,
+  "external_data_downloaded": false
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_MONTE_CARLO_REPORT_V1",
+  "status": "NOT_CALCULATED_PRECHECK_FAILED",
+  "reporting_only": true,
+  "trade_order_reshuffles": 0,
+  "planned_trade_order_reshuffles": 100000,
+  "results": null
+}

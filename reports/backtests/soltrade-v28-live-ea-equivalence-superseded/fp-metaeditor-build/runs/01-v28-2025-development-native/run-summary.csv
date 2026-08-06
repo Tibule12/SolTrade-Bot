@@ -1,0 +1,18 @@
+field,value
+schema,SOLTRADE_V28_LIVE_EQUIVALENCE_SUMMARY_V1
+execution_instance_id,SOLTRADEV28-2025_DEVELOPMENT-NATIVE_NORMAL_EXECUTION-R1
+dataset,V28_2025_DEVELOPMENT
+execution_layer,NATIVE_NORMAL_EXECUTION
+schedule_signals,77
+processed_signals,77
+entry_attempts,77
+entry_fills,70
+exit_fills,54
+missed_signals,0
+spread_blocks,0
+risk_blocks,7
+execution_blocks,0
+open_positions_at_end,0
+max_tick,2025.12.31 23:59:58
+seal_breach,NO
+run_evidence_status,PASS

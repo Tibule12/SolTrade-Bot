@@ -1,0 +1,27 @@
+{
+  "schema": "SOLTRADE_PHASE6_V6_FP_MARKETS_COMPILE_EVIDENCE_V1",
+  "metaeditor_build": 6090,
+  "targets": [
+    {
+      "source": "SolTradePhase6V6ConnectedIntakeObserver.mq5",
+      "source_sha256": "fdbc6eca9513f9786f72b7244450a16387cebd07e53b1f728ae297fa448607fa",
+      "compiled_ex5_sha256": "b2eb9704698d9978e9007c863bc387a3d536d95cf133e1525136efcb6a081f34",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "source": "SolTradePhase6V6CoverageInspector.mq5",
+      "source_sha256": "5dd893127ac15011d361f6f210ceb39733edc4f5db0519f8455e1317d4a2d590",
+      "compiled_ex5_sha256": "991d6f05656b28e9bc86d2e8b786a5ebed457479d7dae9fa328f817ea92b3a07",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "source": "MQL5/Experts/SolTradePhase6DataQualificationProbe.mq5",
+      "source_sha256": "83026914e142a52e0376a8d20badbd8f8c0645d879b96b6689ff489056e50483",
+      "compiled_ex5_sha256": "afc6428946066baa549d7458e0c630160921ae8b8538dd7daa25e52c9503584d",
+      "errors": 0,
+      "warnings": 0
+    }
+  ]
+}

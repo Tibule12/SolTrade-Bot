@@ -1,0 +1,217 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_FORMAL_CELL_PLAN_V1",
+  "status": "FROZEN_BEFORE_PERFORMANCE",
+  "formal_cell_count": 12,
+  "cells": [
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-NATIVE",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "NORMAL",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "001-2025-s1-normal-native",
+        "004-2025-s2-normal-native",
+        "007-2025-s3-normal-native",
+        "010-2025-s4-normal-native"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-NATIVE",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "HIGH",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "002-2025-s1-high-native",
+        "005-2025-s2-high-native",
+        "008-2025-s3-high-native",
+        "011-2025-s4-high-native"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-NATIVE",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "STRESS",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "003-2025-s1-stress-native",
+        "006-2025-s2-stress-native",
+        "009-2025-s3-stress-native",
+        "012-2025-s4-stress-native"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-DELAY200",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "NORMAL",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "022-2025-s1-normal-delay200",
+        "025-2025-s2-normal-delay200",
+        "028-2025-s3-normal-delay200",
+        "031-2025-s4-normal-delay200"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-DELAY200",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "HIGH",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "023-2025-s1-high-delay200",
+        "026-2025-s2-high-delay200",
+        "029-2025-s3-high-delay200",
+        "032-2025-s4-high-delay200"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-DELAY200",
+      "formal_dataset": "V31_2025_DEVELOPMENT_REUSE",
+      "cost_profile": "STRESS",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "024-2025-s1-stress-delay200",
+        "027-2025-s2-stress-delay200",
+        "030-2025-s3-stress-delay200",
+        "033-2025-s4-stress-delay200"
+      ],
+      "member_count": 4,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "NORMAL",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "013-2026-p1-normal-native",
+        "016-2026-p2-normal-native",
+        "019-2026-p3-normal-native"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "HIGH",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "014-2026-p1-high-native",
+        "017-2026-p2-high-native",
+        "020-2026-p3-high-native"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "STRESS",
+      "execution_layer": "NATIVE_NORMAL_EXECUTION",
+      "execution_mode": 0,
+      "member_physical_runs": [
+        "015-2026-p1-stress-native",
+        "018-2026-p2-stress-native",
+        "021-2026-p3-stress-native"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "NORMAL",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "034-2026-p1-normal-delay200",
+        "037-2026-p2-normal-delay200",
+        "040-2026-p3-normal-delay200"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "HIGH",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "035-2026-p1-high-delay200",
+        "038-2026-p2-high-delay200",
+        "041-2026-p3-high-delay200"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "formal_dataset": "V31_2026_PRESEAL_DEVELOPMENT",
+      "cost_profile": "STRESS",
+      "execution_layer": "FIXED_DELAY_200_MS",
+      "execution_mode": 200,
+      "member_physical_runs": [
+        "036-2026-p1-stress-delay200",
+        "039-2026-p2-stress-delay200",
+        "042-2026-p3-stress-delay200"
+      ],
+      "member_count": 3,
+      "synthetic_starting_equity_usd": 10000.0,
+      "aggregation_order": "NATURALLY_CLOSED_EXIT_TIMESTAMP_ASCENDING_THEN_SEGMENT_ID",
+      "segment_account_balances_summed": false,
+      "right_censored_pnl_included": false
+    }
+  ]
+}

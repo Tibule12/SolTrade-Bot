@@ -1,0 +1,227 @@
+{
+  "schema": "SOLTRADE_PHASE6_V11_PRERUN_MANIFEST_V1",
+  "manifest_id": "PHASE6-V11-FORMAL-STRATEGY-MATRIX-PRERUN",
+  "created_at": "2026-08-03T13:55:48+02:00",
+  "status": "PRECHECK_FAILED",
+  "terminal_outcome": "INVALID_TEST_EVIDENCE",
+  "execution_authorized": false,
+  "profitability_viewed": false,
+  "expected_run_count": 18,
+  "actual_run_count": 0,
+  "source_freeze": {
+    "v10_commit": "c2eaf600b5a08612f92fedf2e9312e0e0091be59",
+    "v10_parent_commit": "88757dd006d6d9589d9c0b54efdf30a8f161cdb3",
+    "v10_git_tree": "6a56b6493a8fbe29cc4fb0bb2ebfc15dbaab01e2",
+    "ea_source_path": "MQL5/Experts/SolTradeBot.mq5",
+    "ea_source_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "aggregate_trading_source_sha256": "73e6ee6a6c7984d7c555ca38013e38d5b5c4c92822d5c5fb8bf40829e4f858e1",
+    "compiled_ex5_sha256": null,
+    "compiled_ex5_status": "NOT_FROZEN_FOR_FP_MARKETS_BUILD_6090_BECAUSE_PRERUN_PRECHECK_FAILED",
+    "phase_1_through_5_logic_changed": false
+  },
+  "v10_evidence": {
+    "directory": "reports/backtests/phase6-v10-tester-bar-signal-equivalence",
+    "directory_aggregate_sha256": "f6b5568cf7c7834f7e02766a7b086c12ee7ee18d9334fee4f684b80193c8b3ac",
+    "artifact_manifest_sha256": "696f54ce1f45951bfd6fdfcc077c113a4857655db5b7e23726f14b13024545a1",
+    "data_qualification_result_sha256": "710d6c9a389ca7f00948bf03af9c7518daa6d3560564183331fbb0e1915dfce2",
+    "signal_equivalence_report_sha256": "f81d9b590096fe3a80fc41a1c230611a6dea2cebdfa09b4ab05798be0f083a1f",
+    "quarantine_integrity_sha256": "bb0931cbdc6939a9336f49dbaf53f47e0345ac2229e1652b26fc453ffd783f86",
+    "outcome": "TESTER_BAR_SIGNAL_EQUIVALENCE_PASSED"
+  },
+  "environment": {
+    "wine_prefix": "/home/tibule12/.wine-fpmarkets",
+    "broker": "FP Markets",
+    "broker_company": "First Prudential Markets Limited",
+    "server": "FPMarketsSC-Demo",
+    "account_environment": "DEMO",
+    "account_currency": "USD",
+    "account_leverage": 30,
+    "terminal_build": 6090,
+    "os": "Linux tibule12-ThinkPad-P51 7.0.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul 1 15:50:57 UTC 2026 x86_64 GNU/Linux",
+    "wine_version": "wine-11.14 (Staging)"
+  },
+  "symbol": {
+    "name": "EURUSD",
+    "timeframe": "H1",
+    "digits": 5,
+    "point_size": 0.00001,
+    "tick_size": 0.00001,
+    "tick_value": 1.0,
+    "tick_value_profit": 1.0,
+    "tick_value_loss": 1.0,
+    "contract_size": 100000.0,
+    "symbol_database_sha256": "5cd66c4072f58da8d84448bf5f8c778f83705a2652169b011570081fcc4bd731"
+  },
+  "tester": {
+    "mode": "Every tick based on real ticks",
+    "optimization": false,
+    "execution_window": "[2025-01-02T00:00:00,2025-12-25T00:00:00)",
+    "research_cutoff_exclusive": "2025-12-24T00:00:00",
+    "initial_deposit": 10000.0,
+    "deposit_currency": "USD",
+    "authoritative_execution_mode": "AMBIGUOUS_DUE_TO_COST_PROFILE_DELAY_CONFLICT",
+    "generated_tick_fallback_permitted": false
+  },
+  "strategy_inputs": {
+    "strategy_version": "1.0.0",
+    "ema_period": 200,
+    "donchian_entry_period": 20,
+    "donchian_exit_period": 10,
+    "atr_period": 14,
+    "initial_stop_atr_multiple": 2.0,
+    "completed_candles_only": true,
+    "minimum_history_bars": 222,
+    "one_position_maximum": 1,
+    "take_profit": "NONE",
+    "martingale": false,
+    "grid": false,
+    "averaging_down": false,
+    "parameter_adaptation": false
+  },
+  "risk_inputs": {
+    "risk_profile": "CONSERVATIVE_V1",
+    "risk_per_trade_percent": 0.25,
+    "daily_loss_limit_percent": 1.0,
+    "weekly_loss_limit_percent": 2.5,
+    "emergency_drawdown_percent": 5.0,
+    "production_baseline_equity": 0.0,
+    "consecutive_loss_limit": 3,
+    "reset_emergency_lock": false
+  },
+  "execution_inputs": {
+    "magic_number": 2607202601,
+    "max_tick_age_seconds": 120,
+    "max_spread_points": 30,
+    "max_spread_atr_percent": 10.0,
+    "max_slippage_points": 10,
+    "one_synchronous_attempt": true,
+    "uncontrolled_retry": false,
+    "enable_demo_execution": false,
+    "allow_live_trading": false,
+    "strategy_tester_execution_only": true
+  },
+  "dataset_boundaries": {
+    "semantics": "START_INCLUSIVE_END_EXCLUSIVE",
+    "development": "[2025-01-16T00:00:00,2025-07-05T00:00:00)",
+    "validation": "[2025-07-05T00:00:00,2025-09-29T00:00:00)",
+    "out_of_sample": "[2025-09-29T00:00:00,2025-12-24T00:00:00)"
+  },
+  "clean_segments": [
+    "[2025-01-16T00:00:00,2025-02-05T00:00:00)",
+    "[2025-02-17T09:00:00,2025-03-07T23:00:00)",
+    "[2025-03-20T08:00:00,2025-08-06T16:00:00)",
+    "[2025-08-19T02:00:00,2025-12-24T00:00:00)"
+  ],
+  "quarantine": {
+    "unresolved_gaps": 3,
+    "contaminated_h1_bars": 5,
+    "post_gap_warmup_h1_bars_per_gap": 200,
+    "post_gap_warmup_h1_bars_total": 600,
+    "indicator_reset_required": true,
+    "strategy_state_across_gap": false,
+    "position_state_across_gap": false,
+    "forced_exit_at_gap_permitted": false,
+    "unresolved_gap_quarantine_sha256": "97edfbb77abe30639e5e6448c537045167c9b40b5cf286ecd10a3d3a8922a03c",
+    "clean_segment_manifest_sha256": "94d1fc9a32d0af1d99a67ac0150e0a9e2bfb1d7b3232d6e7b4ced3275b06caab"
+  },
+  "history": {
+    "v8_history_identity_file_sha256": "dcd2f489cc6bd06f6a6e3bc3644179f4348cd54ea7dbad52819611008e2b7f26",
+    "tick_derived_h1_csv_sha256": "7bebaec4b2e7e91170e9fc0ef3f6af46bb7232cb1089e094400901f4e7f820ee",
+    "eligible_h1_bars": 5252,
+    "first_real_tick": "2025-01-02T00:00:00.594",
+    "final_pre_cutoff_real_tick": "2025-12-23T23:59:59.877"
+  },
+  "cost_profiles_as_previously_registered": {
+    "source_manifest": "reports/backtests/phase6-proposed-manifest/proposed-frozen-manifest.json",
+    "source_manifest_sha256": "d35ddb9ea9e84b00291da8d631dd280d806e7c07e1cb00b7a6e96dc5717a1492",
+    "native_layer": "MT5_REAL_TICK_NATIVE_SPREAD_COMMISSION_SWAP_FEES_SLIPPAGE",
+    "supplementary_formula": "adjusted_trade_net = native_trade_net - native_friction * supplementary_multiplier",
+    "normal": {"supplementary_multiplier": 0.0, "registered_delay_ms": 200},
+    "high": {"supplementary_multiplier": 0.5, "registered_delay_ms": 400},
+    "stress": {"supplementary_multiplier": 1.0, "registered_delay_ms": 800},
+    "base_delay_ms": 200,
+    "latency_sample_count": 30,
+    "latency_evidence_sha256": "e301e77895e8f095d485b00bd1b5da9f10f07d6c8b6ae9162048a7643ddf4dfe"
+  },
+  "acceptance_gates": {
+    "normal": {"profit_factor": "AMBIGUOUS: earlier >1.15; V11 >=1.15", "net_profit": ">0", "expectancy": ">0", "relative_drawdown_percent": "<8"},
+    "high": {"profit_factor": ">=1.05", "net_profit": ">0", "expectancy": ">0", "relative_drawdown_percent": "<=10"},
+    "stress": {"profit_factor": ">=1.00", "net_profit": ">0", "expectancy": ">0", "relative_drawdown_percent": "<=12"},
+    "best_trade_contribution_percent": "<=20",
+    "best_registered_subperiod_contribution_percent": "<=40",
+    "out_of_sample_naturally_closed_trades": ">=50",
+    "cross_dataset": {
+      "each_normalized_expectancy_vs_max": ">=50%",
+      "each_annualized_return_vs_max": ">=50%",
+      "maximum_profit_factor_range": "<=0.40"
+    }
+  },
+  "uncertainty_analysis": {
+    "reporting_only": true,
+    "bootstrap_paths": 100000,
+    "trade_order_reshuffles": 100000,
+    "prng": "Python random.Random (MT19937)",
+    "seed_rule": "uint64(first 8 bytes of SHA-256(TradingInputHash|DATASET|PROFILE|uncertainty-v1))",
+    "exact_seed_values": null,
+    "exact_seed_status": "NOT_FREEZABLE_UNTIL_UNAMBIGUOUS_V11_TRADING_INPUT_HASHES_EXIST",
+    "independence_assumption": "Individual-trade bootstrap assumes independently resampled historical trade returns; it does not reproduce serial dependence, market regimes, or the strategy time-based lock state."
+  },
+  "planned_run_order": [
+    "01 DEVELOPMENT NORMAL AUTHORITATIVE",
+    "02 DEVELOPMENT HIGH AUTHORITATIVE",
+    "03 DEVELOPMENT STRESS AUTHORITATIVE",
+    "04 VALIDATION NORMAL AUTHORITATIVE",
+    "05 VALIDATION HIGH AUTHORITATIVE",
+    "06 VALIDATION STRESS AUTHORITATIVE",
+    "07 OUT_OF_SAMPLE NORMAL AUTHORITATIVE",
+    "08 OUT_OF_SAMPLE HIGH AUTHORITATIVE",
+    "09 OUT_OF_SAMPLE STRESS AUTHORITATIVE",
+    "10 DEVELOPMENT NORMAL REPLICA",
+    "11 DEVELOPMENT HIGH REPLICA",
+    "12 DEVELOPMENT STRESS REPLICA",
+    "13 VALIDATION NORMAL REPLICA",
+    "14 VALIDATION HIGH REPLICA",
+    "15 VALIDATION STRESS REPLICA",
+    "16 OUT_OF_SAMPLE NORMAL REPLICA",
+    "17 OUT_OF_SAMPLE HIGH REPLICA",
+    "18 OUT_OF_SAMPLE STRESS REPLICA"
+  ],
+  "blocking_findings": [
+    {
+      "id": "V11-BLOCK-001",
+      "finding": "No frozen rule defines how an actual open Phase 1-5 position is handled at any unresolved-gap boundary while simultaneously requiring no position state across the gap and prohibiting an invented forced exit.",
+      "required_disposition": "FAIL_CLOSED_BEFORE_MATRIX"
+    },
+    {
+      "id": "V11-BLOCK-002",
+      "finding": "The actual Phase 1-5 EA has no frozen clean-segment scheduler or unresolved-gap reset path. A continuous dataset run would carry strategy, risk, execution and position state; separate segment runs would exceed the 18-run matrix and lack a frozen aggregation/equity/state rule.",
+      "required_disposition": "FAIL_CLOSED_BEFORE_MATRIX"
+    },
+    {
+      "id": "V11-BLOCK-003",
+      "finding": "Previously registered cost-profile delays are Normal=200 ms, High=400 ms and Stress=800 ms, while V11 defines all nine replicas at D=200 ms and also requires authoritative/replica trading-input identity. High and Stress pairs cannot satisfy both definitions.",
+      "required_disposition": "FAIL_CLOSED_BEFORE_MATRIX"
+    },
+    {
+      "id": "V11-BLOCK-004",
+      "finding": "The previously registered Normal profit-factor gate is strictly >1.15, while V11 states >=1.15 and also says to apply the previously registered gate exactly.",
+      "required_disposition": "FAIL_CLOSED_BEFORE_MATRIX"
+    },
+    {
+      "id": "V11-BLOCK-005",
+      "finding": "Exact deterministic seed values and V11 trading-input hashes cannot be frozen while the delay and acceptance inputs remain ambiguous.",
+      "required_disposition": "FAIL_CLOSED_BEFORE_MATRIX"
+    }
+  ],
+  "prohibited_actions_observed": {
+    "strategy_matrix_run": false,
+    "profitability_calculation": false,
+    "optimization": false,
+    "replica_run": false,
+    "generated_ticks_used": false,
+    "connected_trade": false,
+    "demo_trade": false,
+    "live_trade": false,
+    "phase_7_started": false
+  }
+}

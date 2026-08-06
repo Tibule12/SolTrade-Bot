@@ -1,0 +1,90 @@
+{
+  "schema": "SOLTRADE_PHASE6_V9_PROBE_RESULT_V1",
+  "probe": "B",
+  "interval": "[2025-01-02T00:00:00,2025-12-25T00:00:00)",
+  "research_cutoff_exclusive": "2025-12-24T00:00:00",
+  "guard_tail_is_research": false,
+  "copy_mode": "COPY_TICKS_ALL",
+  "hash_method": "phase6-v9-methodology-correction.md; 256-record bounded chunks",
+  "monthly_tuple_semantics": ["tick_count","sha256"],
+  "streams": {
+    "connected_copyticks": {
+      "complete": {"count":20713935,"first":"2025-01-02T00:00:00.594","final":"2025-12-24T23:59:59.608","sha256":"5d19afa56249c8199336718c8c357b741cae0d0c1b17b574a49804aca709b451"},
+      "calendar_months": {
+        "2025-01":[2821006,"08c60dc2f8864c57b42db9c6778860b1062aab4168286ebd23326434e7b96bae"],
+        "2025-02":[2227344,"378c39877957f34e0b1d0a28de6c7f4aa3807c8916dea004dbf6a0e0b748ab7e"],
+        "2025-03":[2065851,"d7345261d84218a2c73cf4a0e652b5267acbab45184018ef9e7f1e0d5c3f2279"],
+        "2025-04":[2984580,"9ded2285de09d0313dec0857f977ba1893b08c2575c5621a255184c01b4d671e"],
+        "2025-05":[1725127,"d401de4533535e8b9baa4068e3146dea3563e5a86e10cb417ac8f30f0d8cbcc0"],
+        "2025-06":[1509698,"6efcdd6991e86dae23e6f9473a1401c04be1577ec3bc0c0629a003f7090d6b26"],
+        "2025-07":[1469430,"3a14a7075f8a8884fc2866dad41de6e86c66f33629d66c25213f05c8f2ff7db9"],
+        "2025-08":[1249096,"159c239ffbd31dd9a1c2187c647277f7e540c0d1df770fa780cec24a94e0d8ae"],
+        "2025-09":[1382024,"7b16aabde8b29f4352a9c62342e6f5c8dfa5e0d2418ebafe090852a460fdcc13"],
+        "2025-10":[1459073,"e7c31c317a0286c95a825872f04949af2b4c829a8bcd8671597bfaa888e5bc47"],
+        "2025-11":[1106712,"ee442a632a8e27f6dbb624e35c7e1d8e329615db94c1e5d396618934b13bf9e5"],
+        "2025-12":[713994,"3181b6a77efa4fd53abb3acd8bed865d66f8b0e038d63ce97785e9b1f4eba9df"]
+      },
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"47c3433ad0f5385e25ba1e280227e0b39a9e846dddd184883a2a12962a5d57fc"},
+      "final_day": {"count":37476,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:59.877","sha256":"4370166242e1401d702dd511b531aecadfc5c0856f59b98ef903b0d6ba3e7f16"},
+      "final_h1": {"count":918,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:59.877","sha256":"01eb6942c73e1942907dc8366031e7a6dcee7b308c7ac2c76a1e6009e631f2fd"},
+      "final_m1": {"count":39,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:59.877","sha256":"7ac2b716d842e2e4af5fda8871a3e9d9b9a1cc9a4f45ec20cfd2f26b8a5990e4"},
+      "guard_day": {"count":31668,"first":"2025-12-24T00:00:00.987","final":"2025-12-24T23:59:59.608","sha256":"53b6233f78ff07154bc8375d7d81fb60d0f82082377613569c73630fbbc9c213"}
+    },
+    "tester_copyticks": {
+      "complete": {"count":20713934,"first":"2025-01-02T00:00:00.594","final":"2025-12-24T23:59:56.583","sha256":"fcf9db68787f1b9dfdb928968cc2d506af3a015a124d5acaa16aae4c5d500b"},
+      "calendar_months": {
+        "2025-01":[2821006,"08c60dc2f8864c57b42db9c6778860b1062aab4168286ebd23326434e7b96bae"],
+        "2025-02":[2227344,"378c39877957f34e0b1d0a28de6c7f4aa3807c8916dea004dbf6a0e0b748ab7e"],
+        "2025-03":[2065851,"d7345261d84218a2c73cf4a0e652b5267acbab45184018ef9e7f1e0d5c3f2279"],
+        "2025-04":[2984580,"9ded2285de09d0313dec0857f977ba1893b08c2575c5621a255184c01b4d671e"],
+        "2025-05":[1725127,"d401de4533535e8b9baa4068e3146dea3563e5a86e10cb417ac8f30f0d8cbcc0"],
+        "2025-06":[1509698,"6efcdd6991e86dae23e6f9473a1401c04be1577ec3bc0c0629a003f7090d6b26"],
+        "2025-07":[1469430,"3a14a7075f8a8884fc2866dad41de6e86c66f33629d66c25213f05c8f2ff7db9"],
+        "2025-08":[1249096,"159c239ffbd31dd9a1c2187c647277f7e540c0d1df770fa780cec24a94e0d8ae"],
+        "2025-09":[1382024,"7b16aabde8b29f4352a9c62342e6f5c8dfa5e0d2418ebafe090852a460fdcc13"],
+        "2025-10":[1459073,"e7c31c317a0286c95a825872f04949af2b4c829a8bcd8671597bfaa888e5bc47"],
+        "2025-11":[1106712,"ee442a632a8e27f6dbb624e35c7e1d8e329615db94c1e5d396618934b13bf9e5"],
+        "2025-12":[713993,"bda2b7748c907d126a0250348d8861f8d78e909e3159bababbc4e839ede33699"]
+      },
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"cace2424ee80f2ae9d51e41f75c6d0431cfbbe10665bddd5b86fd7072008431b"},
+      "final_day": {"count":37476,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:59.877","sha256":"a39ecd81503dc9beef9268b9cf906b1535dd0eec7ec10f8264b3cf50504d6ad9"},
+      "final_h1": {"count":918,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:59.877","sha256":"d5cfa9eab148ffbca90454e80a0b7535c2ac4a3d71a2e38d3d0519daeba00cd8"},
+      "final_m1": {"count":39,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:59.877","sha256":"6faed7b11b87e514d8998b91f2c615e9baa58782ae62efd744a7684eb9f84e84"},
+      "guard_day": {"count":31667,"first":"2025-12-24T00:00:00.987","final":"2025-12-24T23:59:56.583","sha256":"f8f08f1044f1b78b61642f290967f23abcc4625d6103112968fede60d0d6ac17"}
+    },
+    "tester_ontick": {
+      "complete": {"count":20713934,"first":"2025-01-02T00:00:00.594","final":"2025-12-24T23:59:56.583","sha256":"1fb81dd05aa2431d760ebb488bccea9219ca57aae894046727e8c69c135a8dcf"},
+      "calendar_months": {
+        "2025-01":[2821006,"3f5b1a03636152f46099c32cdce2eadbf72ec167fa3cd1dad2193f9c598e642c"],
+        "2025-02":[2227344,"1a7143840d0c454a0b7bf4dc693cb0c04362be95aa1dad1cdf4c4a5f615e49f4"],
+        "2025-03":[2065851,"d70e845115d6a769a28323ec75a82460707069730ed87906dab5b0378571feb7"],
+        "2025-04":[2984580,"81d3003faee8ebfb9182e9622d40babcfdbe12c9f7af8f627ed55fe4c849dc3d"],
+        "2025-05":[1725127,"b1a7cdf3f9c6775b57f6aee8307e3f39604b6b9c33958e0e4584199565d815d9"],
+        "2025-06":[1509698,"a97f2d6698e8043f4bf9b943bd873aec91e420ae2495633df8a54e161fb1b37c"],
+        "2025-07":[1469430,"deade59c48e4b9cc51cfd71dc19263b199bf5215104b104e5a8ae47272811c01"],
+        "2025-08":[1249096,"9021bc59e969a1c6e1c2696648c138241f18a62c2666a103d0213f2f11c21bea"],
+        "2025-09":[1382024,"2d26cb9db6751ed390fbad8f22caf5f8343b874937772d6ea9b3b40aa451b487"],
+        "2025-10":[1459073,"f8d515b8b2ef6c5d79848e60f9cbae2a469d871e7ba0c07b40588b3c2fd4b136"],
+        "2025-11":[1106712,"5d9feda8b65d87f5209e322f41812192a263f6e110bf3d9c9a46695c6122f718"],
+        "2025-12":[713993,"f42baa56bd0a2bf5fa2e1c3727ce847e2aa35953fc57dcea4b46d410d6ca80c4"]
+      },
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"71278ef4b9df631c8ef580b498d7226625ca2125b85eadd0207e06c2ea188eaa"},
+      "final_day": {"count":37476,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:59.877","sha256":"a39ecd81503dc9beef9268b9cf906b1535dd0eec7ec10f8264b3cf50504d6ad9"},
+      "final_h1": {"count":918,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:59.877","sha256":"d5cfa9eab148ffbca90454e80a0b7535c2ac4a3d71a2e38d3d0519daeba00cd8"},
+      "final_m1": {"count":39,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:59.877","sha256":"6faed7b11b87e514d8998b91f2c615e9baa58782ae62efd744a7684eb9f84e84"},
+      "guard_day": {"count":31667,"first":"2025-12-24T00:00:00.987","final":"2025-12-24T23:59:56.583","sha256":"f8f08f1044f1b78b61642f290967f23abcc4625d6103112968fede60d0d6ac17"}
+    }
+  },
+  "tail_reconciliation": {
+    "missing_v8_ticks_observed_by_tester_ontick": ["2025-12-23T23:59:59.369","2025-12-23T23:59:59.877"],
+    "both_ticks_restored": true,
+    "boundary_explanation": "Extending the exclusive tester end by one day includes both formerly omitted Dec 23 ticks. The tester then omits the connected database's final Dec 24 tick at 23:59:59.608, showing the same terminal-boundary truncation pattern.",
+    "guard_tail_research_observations": false
+  },
+  "tester_bars": {
+    "m1_2025-12-23T23:59:00": {"open":1.17920,"high":1.17942,"low":1.17919,"close":1.17938,"tick_volume":39,"spread_points":19,"first_tick":"2025-12-23T23:59:00.402","final_tick":"2025-12-23T23:59:59.877"},
+    "h1_2025-12-23T23:00:00": {"open":1.17890,"high":1.17960,"low":1.17878,"close":1.17938,"tick_volume":704,"spread_points":11,"database_tick_count":918,"first_tick":"2025-12-23T23:00:00.628","final_tick":"2025-12-23T23:59:59.877"}
+  },
+  "safety": {"tester_model":"EVERY_TICK_BASED_ON_REAL_TICKS","controller_real_tick_message":true,"generated_fallback_detected":false,"runtime_unique_minutes":366685,"tester_m1_bars":366685,"silent_generated_minutes":0,"orders":0,"historical_orders":0,"positions":0,"nonbalance_deals":0,"trade_transactions":0,"strategy_run":false,"profitability_calculated":false},
+  "probe_status": "COMPLETED_INERT_BOUNDARY_TAIL_RESTORED_WITH_PRE_FINAL_HASH_DIVERGENCE"
+}

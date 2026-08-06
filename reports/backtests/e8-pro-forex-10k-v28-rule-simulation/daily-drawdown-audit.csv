@@ -1,0 +1,5 @@
+condition,server_day_opening_balance,cap_removal,daily_loss_level,minimum_intraday_equity,minimum_intraday_balance,minimum_timestamp,breach_margin_or_remaining_margin,status
+NORMAL,,,,,,,,UNRESOLVED_MISSING_INTRADAY_EQUITY_AND_EXACT_SERVER_DAY
+HIGH,,,,,,,,UNRESOLVED_MISSING_INTRADAY_EQUITY_AND_EXACT_SERVER_DAY
+STRESS,,,,,,,,UNRESOLVED_MISSING_INTRADAY_EQUITY_AND_EXACT_SERVER_DAY
+200MS,,,,,,,,UNRESOLVED_MISSING_INTRADAY_EQUITY_AND_EXACT_SERVER_DAY

@@ -1,0 +1,74 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "FAIL_M1_HISTORY_UNAVAILABLE",
+  "dataset_qualified": false,
+  "primary_reason": "CONNECTED_COPYRATES_ERROR_4401_AFTER_120_BOUNDED_ATTEMPTS",
+  "real_ticks": {
+    "source": "CONNECTED_FP_MARKETS_COPYTICKSRANGE",
+    "generated_tick_fallback": false,
+    "tick_count": 20682267,
+    "first": "2025-01-02T00:00:00.594",
+    "final": "2025-12-23T23:59:59.877",
+    "chunks": 356,
+    "memory_errors": 0,
+    "timeout_errors": 0,
+    "retrieval_failures": 0,
+    "duplicates": 0,
+    "out_of_order": 0,
+    "boundary_violations": 0,
+    "beginning_coverage_complete": true,
+    "ending_coverage_complete": true,
+    "daily_boundary_count_chain_sha256": "e99a26088b65bee930c50c07e6d714c459cf8e5528ac5aeebcfed65d0a9c2eb6",
+    "canonical_identity_uses_native_tkc_file_sha256": true
+  },
+  "real_tick_gaps": {
+    "over_15_minutes": 53,
+    "scheduled_weekend_closures": 50,
+    "scheduled_non_weekend_closures": 0,
+    "unresolved_open_session_gaps": 3,
+    "maximum_open_segment_seconds": 3625,
+    "unsupported_gaps_preserved": true,
+    "would_independently_disqualify_dataset": true
+  },
+  "m1": {
+    "copy_result": -1,
+    "copy_error": 4401,
+    "initial_blocking_attempts": 120,
+    "timer_deferred_attempts": 120,
+    "series_reported_synchronized": true,
+    "first_bar": null,
+    "last_bar": null,
+    "coverage_complete": false,
+    "gap_enumeration_complete": false
+  },
+  "timezone_and_sessions": {
+    "observed_current_offset": "+03:00",
+    "dst_status": "UNDETERMINED",
+    "session_timezone": "UNRESOLVED",
+    "ambiguity_reported": true,
+    "would_require_resolution_before_any_pass": true
+  },
+  "holidays": {
+    "officially_classified_intervals": 0,
+    "unsupported_holiday_assumptions_made": false
+  },
+  "instrumentation": {
+    "initial_partial_pass_aborted": true,
+    "reason": "Per-tick string hashing was operationally unbounded; stopped after one daily chunk",
+    "data_or_performance_decision_from_partial_pass": false,
+    "final_pass_completed": true,
+    "full_identity_preserved_by_native_tkc_sha256": true
+  },
+  "prohibited_activity": {
+    "strategy_run": false,
+    "profitability_calculation": false,
+    "optimization": false,
+    "replica": false,
+    "strategy_tester": false,
+    "demo_trade": false,
+    "live_trade": false,
+    "phase7": false
+  },
+  "authoritative_strategy_matrix": "UNAUTHORIZED",
+  "next_action": "STOP_AND_WAIT_FOR_SEPARATE_AUTHORIZATION"
+}

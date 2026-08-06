@@ -1,0 +1,52 @@
+field,value
+schema,SOLTRADE_PHASE6_V30_REAL_TICK_QUALIFICATION_V1
+symbol,AUDUSD
+model,EVERY_TICK_BASED_ON_REAL_TICKS
+warmup_from,2017.11.01 00:00:00
+bound_from,2018.01.01 00:00:00
+bound_to_exclusive,2025.01.01 00:00:00
+warmup_first_tick,2017.11.01 00:00:00
+warmup_last_tick,2017.12.29 23:59:59
+warmup_tick_count,2389356
+first_tick,2018.01.02 00:00:00
+final_tick,2024.12.31 23:59:59
+tick_count,151434786
+m1_count,2608456
+h1_count,43560
+m1_mismatches,0
+h1_mismatches,0
+spread_samples,151434786
+zero_or_negative_spread_samples,28812
+mean_spread_points,11.159845123035339
+maximum_spread_points,329.99999999999693
+digits,5
+point,0.0000100000
+contract_size,100000.00
+swap_mode,1
+swap_rollover3day,3
+swap_long,-1.83000000
+swap_short,-0.51000000
+ticks_2018,18588607
+m1_2018,372901
+h1_2018,6216
+ticks_2019,10763927
+m1_2019,372831
+h1_2019,6216
+ticks_2020,21778790
+m1_2020,373866
+h1_2020,6240
+ticks_2021,18180033
+m1_2021,372635
+h1_2021,6240
+ticks_2022,32223648
+m1_2022,371802
+h1_2022,6216
+ticks_2023,30310280
+m1_2023,370760
+h1_2023,6192
+ticks_2024,19589501
+m1_2024,373661
+h1_2024,6240
+orders_or_positions,ZERO
+pnl_calculated,NO
+status,PASS

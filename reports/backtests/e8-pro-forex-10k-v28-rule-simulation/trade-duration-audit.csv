@@ -1,0 +1,5 @@
+condition,trade_count,under_one_minute_count,under_one_minute_percent,minimum_seconds,median_seconds,average_seconds
+NORMAL,105,0,0.0,108708.0,2419199.0,2248436.6476190477
+HIGH,105,0,0.0,108708.0,2419199.0,2248436.6476190477
+STRESS,105,0,0.0,108708.0,2419199.0,2248436.6476190477
+200MS,105,0,0.0,108703.0,2419199.0,2248437.8285714285

@@ -1,0 +1,11 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_DELAY_RESOLUTION_V1",
+  "historical_200_400_800_preserved": true,
+  "historical_values_used_in_v12": false,
+  "native": {"terminal_execution_mode":0,"meaning":"NORMAL_NO_DELAY"},
+  "replica": {"terminal_execution_mode":200,"meaning":"FIXED_200_MILLISECONDS"},
+  "random_delay": false,
+  "delay_is_strategy_input": false,
+  "specification_status": "PASS",
+  "frozen_code_representation_status": "FAIL_RESEARCH_CONFIG_REJECTS_ZERO_AND_LABELS_ALL_RUNS_FIXED"
+}

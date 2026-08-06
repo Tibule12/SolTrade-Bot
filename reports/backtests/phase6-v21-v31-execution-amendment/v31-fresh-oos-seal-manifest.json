@@ -1,0 +1,51 @@
+{
+  "schema": "SOLTRADE_PHASE6_V21_V31_FRESH_OOS_SEAL_V1",
+  "status": "SEALED_UNOPENED",
+  "seal_creation_timestamp": "2026-08-04T07:16:11+02:00",
+  "time_basis": "FP_MARKETS_BROKER_SERVER_TIME",
+  "broker": "FP Markets",
+  "server": "FPMarketsSC-Demo",
+  "symbol": "EURUSD",
+  "timeframe": "H1",
+  "oos_start_inclusive": "2026-08-01 00:00:00",
+  "dynamic_completion_condition": "COMPLETE_IMMEDIATELY_AFTER_EXIT_TIMESTAMP_OF_50TH_NATURALLY_COMPLETED_V31_POSITION_CYCLE",
+  "hard_maximum_end_exclusive": "2027-08-01 00:00:00",
+  "insufficient_sample_outcome": "INCONCLUSIVE_INSUFFICIENT_SAMPLE",
+  "data_before_oos_classification": "DESIGN_AND_OPERATIONAL_FEASIBILITY_DATA",
+  "permitted_accumulation_reporting": [
+    "LATEST_QUALIFIED_COMPLETE_DAY",
+    "NATURALLY_COMPLETED_CYCLE_COUNT",
+    "OPEN_POSITION_STATUS",
+    "DATA_GAPS",
+    "EXECUTION_FAILURES",
+    "INTEGRITY_FAILURES"
+  ],
+  "prohibited_metrics": [
+    "BALANCE",
+    "EQUITY_CURVE",
+    "NET_PROFIT",
+    "INDIVIDUAL_TRADE_RESULT",
+    "WIN_RATE",
+    "PROFIT_FACTOR",
+    "EXPECTANCY",
+    "DRAWDOWN",
+    "FAVOURABLE_EXCURSION",
+    "ADVERSE_EXCURSION",
+    "BOOTSTRAP_RESULTS",
+    "MONTE_CARLO_RESULTS"
+  ],
+  "cycle_count_rules": {
+    "right_censored_positions_count": false,
+    "blocked_confirmations_count": false,
+    "performance_dependent_risk_pauses_active_in_eventual_test": true,
+    "stop_early_for_performance": false,
+    "extend_after_hard_maximum": false
+  },
+  "hashes": {
+    "production_ea_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+    "v30_machine_readable_specification_sha256": "eb91a76d197ffcf4aab7e8e52172abb5528d1c28a27431730d052f458d4dddb6",
+    "v31_machine_readable_specification_sha256": "bcddb6b3d3ed43f9abad9fdb1793fdae11f0d2f34a76b637844345f64bfd5e95"
+  },
+  "opened_in_v21": false,
+  "profitability_exposed_in_v21": false
+}

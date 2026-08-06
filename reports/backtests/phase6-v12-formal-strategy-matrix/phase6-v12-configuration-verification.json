@@ -1,0 +1,33 @@
+{
+  "schema": "SOLTRADE_PHASE6_V12_CONFIGURATION_VERIFICATION_V1",
+  "status": "FAIL",
+  "checks": [
+    {"id":"V12-CFG-001","name":"Exactly 36 physical runs planned","status":"PASS"},
+    {"id":"V12-CFG-002","name":"Exactly 18 formal cells planned","status":"PASS"},
+    {"id":"V12-CFG-003","name":"Every tick based on real ticks frozen","status":"PASS"},
+    {"id":"V12-CFG-004","name":"No generated-tick fallback permitted","status":"PASS"},
+    {"id":"V12-CFG-005","name":"FPMarketsSC-Demo and EURUSD frozen","status":"PASS"},
+    {"id":"V12-CFG-006","name":"All six eligible intervals exact","status":"PASS"},
+    {"id":"V12-CFG-007","name":"No indicator input crosses unresolved gap","status":"FAIL","finding":"Production 221-bar CopyRates window can include pre-reset bars during the first 20 eligible bars after a 200-bar quarantine."},
+    {"id":"V12-CFG-008","name":"Intraday physical boundaries exact","status":"FAIL","finding":"No frozen tester-only intraday termination mechanism."},
+    {"id":"V12-CFG-009","name":"Core trading-input hash identical","status":"NOT_EVALUABLE"},
+    {"id":"V12-CFG-010","name":"Only permitted complete-hash fields differ","status":"NOT_EVALUABLE"},
+    {"id":"V12-CFG-011","name":"Censoring reliably implemented","status":"FAIL"},
+    {"id":"V12-CFG-012","name":"Aggregation deterministic and input-complete","status":"FAIL","finding":"Frozen reporter does not export initial risk amount."},
+    {"id":"V12-CFG-013","name":"Only replica delay is 200 ms","status":"PASS_SPECIFICATION_ONLY"},
+    {"id":"V12-CFG-014","name":"Native no-delay accurately represented","status":"FAIL"},
+    {"id":"V12-CFG-015","name":"Normal PF strictly greater than 1.15","status":"PASS"},
+    {"id":"V12-CFG-016","name":"Exact deterministic seeds frozen","status":"FAIL"},
+    {"id":"V12-CFG-017","name":"FP Raw tester commission frozen","status":"FAIL"},
+    {"id":"V12-CFG-018","name":"Phase 1-5 production logic unchanged","status":"PASS"}
+  ],
+  "blocking_findings": [
+    {"id":"V12-BLOCK-001","finding":"Seed derivation is self-referential."},
+    {"id":"V12-BLOCK-002","finding":"Separate subruns do not enforce V10's 221-clean-bar indicator reset."},
+    {"id":"V12-BLOCK-003","finding":"Intraday physical boundaries lack a frozen execution mechanism."},
+    {"id":"V12-BLOCK-004","finding":"Right-censored position capture is absent from the frozen reporter."},
+    {"id":"V12-BLOCK-005","finding":"Native no-delay cannot be truthfully represented by the frozen research configuration."},
+    {"id":"V12-BLOCK-006","finding":"FP Markets Raw Strategy Tester commission input is not frozen."}
+  ],
+  "decision": "STOP_BEFORE_COMPILATION_TAG_OR_STRATEGY_EXECUTION"
+}

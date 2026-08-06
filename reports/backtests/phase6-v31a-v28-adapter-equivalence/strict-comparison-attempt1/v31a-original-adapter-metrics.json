@@ -1,0 +1,90 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_METRICS_V1",
+  "cost_profile": "NORMAL_WITH_FROZEN_EXTERNAL_COMMISSION",
+  "runs": [
+    {
+      "run_id": "01-v28-2025-development-native",
+      "original": {
+        "closed_trades": 70,
+        "adjusted_net_profit": 492.1189176934587,
+        "profit_factor": 1.4449597739646503,
+        "expectancy_R": 0.13941815751680559,
+        "relative_drawdown_percent": 4.432586657910742,
+        "buy_trades": 36,
+        "sell_trades": 34
+      },
+      "adapter": {
+        "closed_trades": 70,
+        "adjusted_net_profit": 492.1189176934587,
+        "profit_factor": 1.4449597739646503,
+        "expectancy_R": 0.13941815751680559,
+        "relative_drawdown_percent": 4.432586657910742,
+        "buy_trades": 36,
+        "sell_trades": 34
+      }
+    },
+    {
+      "run_id": "02-v28-2026-preseal-development-native",
+      "original": {
+        "closed_trades": 35,
+        "adjusted_net_profit": 257.6137980115924,
+        "profit_factor": 1.3505529819334126,
+        "expectancy_R": 0.1485638631016054,
+        "relative_drawdown_percent": 6.174049195718751,
+        "buy_trades": 18,
+        "sell_trades": 17
+      },
+      "adapter": {
+        "closed_trades": 35,
+        "adjusted_net_profit": 257.6137980115924,
+        "profit_factor": 1.3505529819334126,
+        "expectancy_R": 0.1485638631016054,
+        "relative_drawdown_percent": 6.174049195718751,
+        "buy_trades": 18,
+        "sell_trades": 17
+      }
+    },
+    {
+      "run_id": "03-v28-2025-development-delay200",
+      "original": {
+        "closed_trades": 70,
+        "adjusted_net_profit": 491.5097303307668,
+        "profit_factor": 1.4439659948636936,
+        "expectancy_R": 0.13925410911537892,
+        "relative_drawdown_percent": 4.434802954890146,
+        "buy_trades": 36,
+        "sell_trades": 34
+      },
+      "adapter": {
+        "closed_trades": 70,
+        "adjusted_net_profit": 491.5097303307668,
+        "profit_factor": 1.4439659948636936,
+        "expectancy_R": 0.13925410911537892,
+        "relative_drawdown_percent": 4.434802954890146,
+        "buy_trades": 36,
+        "sell_trades": 34
+      }
+    },
+    {
+      "run_id": "04-v28-2026-preseal-development-delay200",
+      "original": {
+        "closed_trades": 35,
+        "adjusted_net_profit": 258.790119596238,
+        "profit_factor": 1.3527350143844743,
+        "expectancy_R": 0.14921789689257858,
+        "relative_drawdown_percent": 6.160953776314904,
+        "buy_trades": 18,
+        "sell_trades": 17
+      },
+      "adapter": {
+        "closed_trades": 35,
+        "adjusted_net_profit": 258.790119596238,
+        "profit_factor": 1.3527350143844743,
+        "expectancy_R": 0.14921789689257858,
+        "relative_drawdown_percent": 6.160953776314904,
+        "buy_trades": 18,
+        "sell_trades": 17
+      }
+    }
+  ]
+}

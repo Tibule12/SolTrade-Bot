@@ -1,0 +1,35 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31A_EVIDENCE_INTEGRITY_V1",
+  "status": "PASS",
+  "terminal_outcome": "V28_ADAPTER_EQUIVALENCE_PASSED",
+  "original_v28": {
+    "source_sha256": "726273d332176ae3cb61c927c7959de12d947eed13c30cb2c080d95bc1f7f846",
+    "ex5_sha256": "03f766bc7ab1cc2c3aed81f72f94f31cc5e122323357216f70ac3a50a5e043ca"
+  },
+  "research_adapter": {
+    "source_sha256": "c16c13ff9642faee88424ab7477e7cdf873164210e185ae257d7e61cab0cfca1",
+    "ex5_sha256": "92bf94431803c0213b1d796c3a412b581978c680869b20de299bcef90ec8e886"
+  },
+  "original_source_unchanged": true,
+  "original_executable_unchanged": true,
+  "production_phase1_5_source_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "production_phase1_5_unchanged": true,
+  "fp_markets_clone_status": "PASS",
+  "fp_markets_source_ticks": 202101002,
+  "fp_markets_tick_mismatches": 0,
+  "fp_markets_warmup_m1_rates": 421907,
+  "fp_markets_warmup_apply_status": "PASS",
+  "fp_markets_warmup_apply_rate_mismatches": 0,
+  "canonical_physical_strategy_tester_runs": 8,
+  "total_physical_strategy_tester_executions": 10,
+  "technical_data_setup_reruns": 2,
+  "optimization_or_tuning": false,
+  "external_data_downloaded": false,
+  "dukascopy_data_accessed": false,
+  "historical_2018_2024_profitability_run": false,
+  "connected_trade_api_calls": 0,
+  "demo_forward_trades": 0,
+  "live_trades": 0,
+  "strategy_tester_simulated_trades_only": true,
+  "external_replication_started": false
+}

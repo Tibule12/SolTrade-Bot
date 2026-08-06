@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_PHASE6_V25_PHYSICAL_RUN_STATUS_V1",
+  "run_number": 34,
+  "run_id": "034-2026-p1-normal-delay200",
+  "execution_instance_id": "V25-034-2026_P1-NORMAL-DELAY200",
+  "formal_dataset": "V25_2026_PRESEAL_DEVELOPMENT",
+  "segment_id": "2026_P1",
+  "cost_profile": "NORMAL",
+  "execution_layer": "FIXED_DELAY_200_MS",
+  "execution_mode": 200,
+  "model": "EVERY_TICK_BASED_ON_REAL_TICKS",
+  "optimization": false,
+  "frozen_complete_run_configuration_sha256": "5996a71db25ce088c8cf16703edb31f0b070356f962c675b4506bf238bd69cc7",
+  "rendered_ini_sha256": "954ae15fa4fecb9eab5ad5271bc3a9d6b1141cf632ec009e3a47bb0ca38877ea",
+  "wine_return_code": 0,
+  "elapsed_seconds": 25.829872131347656,
+  "run_evidence_status": "PASS",
+  "evaluations": 1356,
+  "entry_opportunities": 59,
+  "entry_fills": 57,
+  "exit_fills": 57,
+  "seal_breach": "NO",
+  "native_reports": [
+    "034-2026-p1-normal-delay200-holding.png",
+    "034-2026-p1-normal-delay200-mfemae.png",
+    "034-2026-p1-normal-delay200-hst.png",
+    "034-2026-p1-normal-delay200.png",
+    "034-2026-p1-normal-delay200.html"
+  ],
+  "status": "PASS"
+}

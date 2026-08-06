@@ -1,0 +1,9 @@
+# Safety and failure modes
+
+The guard resets its timer only from executed `DEAL_ENTRY_IN` or `DEAL_ENTRY_INOUT` BUY/SELL deals with positive volume. Submitted, rejected, or merely accepted orders never reset it. All account entries count; audit rows distinguish guard magic/comment from non-guard entries. State is rebuilt from complete account history after EA, chart, terminal, or VPS restart.
+
+Before entry it requires terminal, program, account, expert, symbol, session, tick, spread, volume, SL/TP, margin, daily-floor, static-floor, and projected-loss checks. Dry-run also performs broker `OrderCheck` preflight, which submits no order and provides a second read-only/account-permission rejection beyond MT5's account flags. Default projected risk at the captured 0.6-pip EURUSD RAW snapshot is USD 1.22: USD 1.00 stop + USD 0.06 spread + USD 0.10 configured slippage + USD 0.06 commission. This is an estimate; gaps and slippage can exceed it.
+
+The guard blocks when any position already exists on the maintenance symbol, avoiding V28 merge or hedge interference. In the captured FXIFY hedging mode the guard position retains its own ticket. In a netting account, if another strategy later changes ownership of the guard's position identifier, the guard raises a critical alert and refuses an automatic close rather than reducing V28 exposure. That mixed-ownership state requires manual review; the guard does not assume that its original stop remains attributable after a netting merge.
+
+A missing server-side stop causes an immediate critical alert and close attempt; the guard never removes or widens a stop. At the maximum holding time it requests a natural market close. Rejections are logged and retried only after the configured interval. Closed market, excessive spread, stale prices, read-only access, disabled Algo Trading, invalid specifications, insufficient margin, and loss-buffer proximity all block entry and alert. No check is bypassed near day 60.

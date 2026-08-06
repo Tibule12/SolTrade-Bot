@@ -1,0 +1,14 @@
+{
+  "schema": "SOLTRADE_PHASE6_V14_MONTE_CARLO_REPORT_V1",
+  "status": "CALCULATED",
+  "reshuffles": 100000,
+  "seed_decimal": 2000388822,
+  "seed_hex": "0x773B82D6",
+  "sample_trades": 17,
+  "reporting_only": true,
+  "method": "Chronological completed-trade outcome reshuffling; trading decisions and time-based risk state are not replayed.",
+  "median_simulated_drawdown_percent": 1.5488223744297478,
+  "p90_simulated_drawdown_percent": 1.953586956198155,
+  "p95_simulated_drawdown_percent": 2.0766151336567242,
+  "probability_ending_with_negative_net_profit": 1.0
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "SOLTRADE_PHASE6_V30B_EXACT_NATIVE_COMMON_COVERAGE_V1",
+  "status": "FAIL",
+  "qualification_start": "2022.11.14 00:05:00.354",
+  "qualification_start_basis": "latest exact first connected COPY_TICKS_ALL tick across all seven symbols",
+  "qualification_end_exclusive": "2025.01.01 00:00:00.000",
+  "latest_common_native_tick_before_2024": "2023.12.29 23:57:52.904",
+  "per_symbol_exact_first_native_tick": {
+    "EURUSD": "2022.11.11 08:05:05.373",
+    "GBPUSD": "2022.11.11 09:05:26.309",
+    "AUDUSD": "2022.11.11 08:05:05.480",
+    "NZDUSD": "2022.11.14 00:05:00.354",
+    "USDCAD": "2022.11.11 08:39:39.534",
+    "USDCHF": "2022.11.11 08:39:47.533",
+    "USDJPY": "2022.11.11 08:35:07.000"
+  },
+  "per_symbol_exact_last_native_tick_2023": {
+    "EURUSD": "2023.12.29 23:57:52.904",
+    "GBPUSD": "2023.12.29 23:57:57.034",
+    "AUDUSD": "2023.12.29 23:57:59.894",
+    "NZDUSD": "2023.12.29 23:58:58.281",
+    "USDCAD": "2023.12.29 23:57:56.148",
+    "USDCHF": "2023.12.29 23:57:59.046",
+    "USDJPY": "2023.12.29 23:57:59.847"
+  },
+  "ticks_before_reported_calendar_start": {
+    "EURUSD": 0,
+    "GBPUSD": 0,
+    "AUDUSD": 0,
+    "NZDUSD": 0,
+    "USDCAD": 0,
+    "USDCHF": 0,
+    "USDJPY": 0
+  },
+  "full_2024_native_tick_count": {
+    "EURUSD": 0,
+    "GBPUSD": 0,
+    "AUDUSD": 0,
+    "NZDUSD": 0,
+    "USDCAD": 0,
+    "USDCHF": 0,
+    "USDJPY": 0
+  },
+  "full_2024_copy_error": {
+    "EURUSD": 0,
+    "GBPUSD": 0,
+    "AUDUSD": 0,
+    "NZDUSD": 0,
+    "USDCAD": 0,
+    "USDCHF": 0,
+    "USDJPY": 0
+  },
+  "complete_common_native_coverage_to_end": false,
+  "failure_reason": "all seven symbols return zero native ticks with error 0 for the entire 2024 interval",
+  "generated_or_synthetic_ticks_accepted": false,
+  "symbol_substitution_or_exclusion": false,
+  "orders": 0,
+  "positions": 0,
+  "trade_api_calls": "NONE"
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "SOLTRADE_PHASE6_V10_GUARD_TAIL_BOUNDARY_V1",
+  "tester_window": "[2025-01-02T00:00:00,2025-12-25T00:00:00)",
+  "research_cutoff_exclusive": "2025-12-24T00:00:00",
+  "guard_tail_interval": "[2025-12-24T00:00:00,2025-12-25T00:00:00)",
+  "guard_tail_h1_bars_seen_by_tester": 24,
+  "guard_tail_h1_bars_exported_as_research": 0,
+  "guard_tail_signals_exported_as_research": 0,
+  "final_pre_cutoff_h1": {
+    "timestamp": "2025-12-23T23:00:00",
+    "open": 1.1789,
+    "high": 1.1796,
+    "low": 1.17878,
+    "close": 1.17938,
+    "tick_volume": 704,
+    "spread": 11.0,
+    "runtime_tick_count": 918,
+    "first_runtime_tick": "2025.12.23 23:00:00.628",
+    "last_runtime_tick": "2025.12.23 23:59:59.877",
+    "eligible": true,
+    "clean_segment_id": 4
+  },
+  "final_close_expected": 1.17938,
+  "final_close_match": true,
+  "final_bar_signal_evaluation_timestamp": "2025-12-24T00:00:00",
+  "final_bar_signal_included": false,
+  "post_cutoff_data_influenced_pre_cutoff_signal": false,
+  "status": "PASS"
+}

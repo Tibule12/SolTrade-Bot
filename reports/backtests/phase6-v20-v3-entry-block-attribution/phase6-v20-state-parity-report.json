@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "reference_confirmations": 84,
+  "tester_confirmations": 84,
+  "reference_entry_or_block_events": 84,
+  "tester_entry_or_block_events": 84,
+  "exact_v19_ledger_agreement": true,
+  "exact_reconstructed_block_reason_agreement": true,
+  "divergences": 0
+}

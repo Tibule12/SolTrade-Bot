@@ -1,0 +1,35 @@
+{
+  "schema": "SOLTRADE_PHASE6_V27_GATE_MANIFEST_V1",
+  "terminal_outcomes": [
+    "V27_DEVELOPMENT_GATES_PASSED_DEMO_AUTHORIZED",
+    "V27_DEVELOPMENT_GATES_FAILED_CANDIDATE_RETIRED",
+    "V27_SAMPLE_GATE_INFEASIBLE_CANDIDATE_RETIRED",
+    "V27_INVALID_TEST_EVIDENCE"
+  ],
+  "sample_gates_normal_native": {
+    "all_preseal_naturally_closed": ">= 50",
+    "dated_2026_naturally_closed": ">= 15",
+    "BUY_naturally_closed": ">= 20",
+    "SELL_naturally_closed": ">= 20",
+    "each_symbol_naturally_closed": ">= 4"
+  },
+  "performance_gates_every_formal_cell": {
+    "NORMAL": {"profit_factor": "> 1.15", "net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "< 8"},
+    "HIGH": {"profit_factor": ">= 1.05", "net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "<= 10"},
+    "STRESS": {"profit_factor": ">= 1.00", "net_profit": "> 0", "expectancy_R": "> 0", "relative_drawdown_percent": "<= 12"}
+  },
+  "concentration_gates_every_formal_cell": {
+    "best_trade_contribution_percent": "<= 20",
+    "best_currency_contribution_percent": "<= 40",
+    "best_of_five_equal_time_subperiods_contribution_percent": "<= 40"
+  },
+  "cross_dataset_per_cost_and_execution": {
+    "expectancy_min_div_max": ">= 0.35",
+    "annualized_return_min_div_max": ">= 0.35",
+    "profit_factor_range": "<= 0.50"
+  },
+  "uncertainty": {"bootstrap_paths": 100000, "monte_carlo_paths": 100000, "reporting_only": true},
+  "decision_order": ["evidence_integrity", "sample", "performance", "concentration", "cross_dataset_consistency"],
+  "all_mandatory": true,
+  "failure_policy": "Retire V27 unchanged. Do not inspect sealed OOS, tune, selectively rerun, or authorize demo/live."
+}

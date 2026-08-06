@@ -1,0 +1,18 @@
+{
+  "absolute_floor_usd": 9000,
+  "result": "INSUFFICIENT_EVIDENCE",
+  "schema": "SOLTRADE_THE5ERS_V28_TOTAL_LOSS_AUDIT_V1",
+  "source_segment_closed_trade_path_max_drawdown_percent_non_authoritative": {
+    "DELAY_200_MS": 6.160953776314904,
+    "HIGH": 6.535585931096902,
+    "NORMAL": 6.174049195718751,
+    "STRESS": 6.8958314528169415
+  },
+  "status_by_condition": {
+    "DELAY_200_MS": "UNRESOLVED_NO_CONTINUOUS_PROP_ACCOUNT_EQUITY",
+    "HIGH": "UNRESOLVED_NO_CONTINUOUS_PROP_ACCOUNT_EQUITY",
+    "NORMAL": "UNRESOLVED_NO_CONTINUOUS_PROP_ACCOUNT_EQUITY",
+    "STRESS": "UNRESOLVED_NO_CONTINUOUS_PROP_ACCOUNT_EQUITY"
+  },
+  "warning": "The listed drawdowns are segment-local realized-cash-flow reconstructions. They cannot establish the absolute minimum equity of a continuous USD 10,000 prop account."
+}

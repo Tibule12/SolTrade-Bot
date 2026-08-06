@@ -1,0 +1,26 @@
+{
+  "schema": "SOLTRADE_PHASE6_V7_FP_MARKETS_M1_COVERAGE_REPORT_V1",
+  "interval": "[2025-01-02T00:00:00,2025-12-24T00:00:00)",
+  "status": "FAIL_M1_HISTORY_UNAVAILABLE",
+  "copyrates_result": -1,
+  "copyrates_error": 4401,
+  "blocking_attempts": 120,
+  "timer_deferred_attempts": 120,
+  "timer_deferred_series_synchronized": true,
+  "first_m1_bar": null,
+  "last_m1_bar": null,
+  "bar_count": null,
+  "complete_beginning_coverage": false,
+  "complete_ending_coverage": false,
+  "individual_gap_enumeration_completed": false,
+  "generated_or_interpolated_m1_used": false,
+  "m1_used_to_replace_ticks": false,
+  "prior_v6_tester_aggregate": {
+    "gaps_over_15_minutes": 54,
+    "unresolved_open_session_gaps": 3,
+    "max_open_gap_seconds": 5880,
+    "accepted_as_v7_connected_m1_evidence": false,
+    "note": "Preserved for disclosure only; V7 did not hide or reclassify the prior three-gap finding."
+  },
+  "qualification_effect": "FAIL_CLOSED"
+}

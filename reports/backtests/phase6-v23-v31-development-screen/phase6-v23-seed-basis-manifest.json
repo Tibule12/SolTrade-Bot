@@ -1,0 +1,21 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_SEED_BASIS_V1",
+  "canonicalization": "UTF-8 JSON; keys sorted; separators comma/colon; no whitespace",
+  "v22_commit": "81370eb7b33464e9bfef38f6dac26c9e24e041a5",
+  "strategy_specification_sha256": "bcddb6b3d3ed43f9abad9fdb1793fdae11f0d2f34a76b637844345f64bfd5e95",
+  "oos_seal_sha256": "28ab1fa0c4690a16e219d9eba783336b050a3c8f86dc28831dd5ff55db752dbe",
+  "production_ea_sha256": "261a9cfe1c1e8d84e2a2a468ac4d0775086b21c89824b117e5127697fd03ced3",
+  "data_partition_manifest_sha256": "3eac8666efed5e762efda7ddb9f26a28753d7219fc73ece3cd38269ccf87c4f3",
+  "physical_run_plan_sha256": "0eed5eefab4964abe118da2ac91780121273bdeeb423e7849fde04f360c815bc",
+  "formal_cell_plan_sha256": "258bc14f6c44f6e26507aecfe89d64b36fbf33c64ae49f5bd26c117fa12c2684",
+  "cost_manifest_sha256": "f5c28d7c15622a4234af7accaae097658dbcb615035b3725b4a7634620eee09f",
+  "gate_manifest_sha256": "af2a6fa422a68ca5293a34bee78afd0834f0f1ce4c0b6d5f9a5167c4b6678699",
+  "excluded_fields": [
+    "bootstrap_seed",
+    "monte_carlo_seed",
+    "seed_basis_sha256",
+    "final_manifest_sha256",
+    "later_artifact_hashes",
+    "signatures"
+  ]
+}

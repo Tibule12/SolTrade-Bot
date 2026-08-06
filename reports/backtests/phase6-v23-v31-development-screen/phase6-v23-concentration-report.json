@@ -1,0 +1,118 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_CONCENTRATION_V1",
+  "rules": {
+    "best_trade_max_percent": 20,
+    "best_registered_subperiod_max_percent": 40,
+    "undefined_if_nonpositive_net": "FAIL"
+  },
+  "cells": [
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-NORMAL-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-HIGH-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2025_DEVELOPMENT_REUSE-STRESS-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-NATIVE",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-NORMAL-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-HIGH-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    },
+    {
+      "cell_id": "V31_2026_PRESEAL_DEVELOPMENT-STRESS-DELAY200",
+      "best_trade_contribution_percent": null,
+      "best_day_contribution_percent": null,
+      "best_week_contribution_percent": null,
+      "best_month_contribution_percent": null,
+      "best_registered_subperiod_contribution_percent": null,
+      "clean_segment_contribution_percent": null
+    }
+  ]
+}

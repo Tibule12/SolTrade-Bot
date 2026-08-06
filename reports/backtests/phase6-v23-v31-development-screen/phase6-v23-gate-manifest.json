@@ -1,0 +1,49 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_GATE_MANIFEST_V1",
+  "status": "FROZEN_BEFORE_PERFORMANCE",
+  "sample": {
+    "all_preseal_closed_min": 50,
+    "closed_dated_2026_min": 15,
+    "buy_closed_min": 5,
+    "sell_closed_min": 5
+  },
+  "performance": {
+    "NORMAL": {
+      "profit_factor": "> 1.15",
+      "adjusted_net_profit": "> 0",
+      "expectancy": "> 0",
+      "relative_drawdown_percent": "< 8"
+    },
+    "HIGH": {
+      "profit_factor": ">= 1.05",
+      "adjusted_net_profit": "> 0",
+      "expectancy": "> 0",
+      "relative_drawdown_percent": "<= 10"
+    },
+    "STRESS": {
+      "profit_factor": ">= 1.00",
+      "adjusted_net_profit": "> 0",
+      "expectancy": "> 0",
+      "relative_drawdown_percent": "<= 12"
+    }
+  },
+  "concentration": {
+    "best_trade_contribution_percent": "<= 20",
+    "best_registered_subperiod_contribution_percent": "<= 40",
+    "subperiod_semantics": "five equal chronological subperiods for intervals shorter than four years",
+    "undefined_if_net_nonpositive": "FAIL"
+  },
+  "cross_dataset": {
+    "normalized_expectancy_min_div_max": ">= 0.50",
+    "annualized_return_min_div_max": ">= 0.50",
+    "profit_factor_range": "<= 0.40",
+    "applied_per_cost_profile_and_execution_layer": true
+  },
+  "direction_and_segment_consistency": {
+    "numeric_gate": "NONE_FOUND_IN_V14_FROZEN_GATE_EVALUATION",
+    "report_all_without_hiding": true
+  },
+  "bootstrap_paths": 100000,
+  "monte_carlo_paths": 100000,
+  "uncertainty_reporting_only": true
+}

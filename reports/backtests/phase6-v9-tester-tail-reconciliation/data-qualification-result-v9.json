@@ -1,0 +1,78 @@
+{
+  "schema": "SOLTRADE_PHASE6_V9_DATA_QUALIFICATION_RESULT_V1",
+  "terminal_outcome": "FAIL_PERSISTENT_PRE_CUTOFF_TICK_DIVERGENCE",
+  "v8_preserved": {
+    "commit": "00b011134fcfdbcb0e7ca6820f541b54e34085c0",
+    "history_identity": "dcd2f489cc6bd06f6a6e3bc3644179f4348cd54ea7dbad52819611008e2b7f26",
+    "outcome": "FAIL_TESTER_REAL_TICK_PROBE",
+    "evidence_changed": false
+  },
+  "probes": {
+    "A": {"interval":"[2025-01-02T00:00:00,2025-12-24T00:00:00)","connected":[20682267,"049f73a638ca5815102546bd2684901434e497dac6e47af24fddbbf63cad9468"],"tester_copyticks":[20682265,"9249429664265d1f17f17e4dc146165c00093e7db2f73e33cf108a8be1a73d78"],"tester_ontick":[20682265,"afdda41b732eb7f276fabbf8dc7bfcd69bf61a550031f9fd29840358a158e935"]},
+    "B": {"interval":"[2025-01-02T00:00:00,2025-12-25T00:00:00)","connected":[20713935,"5d19afa56249c8199336718c8c357b741cae0d0c1b17b574a49804aca709b451"],"tester_copyticks":[20713934,"fcf9db68787f1b9dfdb928968cc2d506af3a015a124d5acaa16aae4c5d500b"],"tester_ontick":[20713934,"1fb81dd05aa2431d760ebb488bccea9219ca57aae894046727e8c69c135a8dcf"]},
+    "C": {"interval":"[2025-12-23T00:00:00,2025-12-25T00:00:00)","connected":[69144,"cd747382a3e3785241c9053f5208c15c39babe73d827b64f6bace4822331abea"],"tester_copyticks":[69143,"a252566567bf3d2accc94cf7adb9566343a4bcc37fe03682edec39233859ca29"],"tester_ontick":[69143,"a252566567bf3d2accc94cf7adb9566343a4bcc37fe03682edec39233859ca29"]},
+    "tuple_semantics": ["tick_count","sha256"]
+  },
+  "gates": {
+    "three_inert_real_tick_probes_completed": "PASS",
+    "tester_every_tick_based_on_real_ticks": "PASS",
+    "generated_fallback_absent": "PASS",
+    "silent_generated_minute_absent": "PASS",
+    "zero_orders_positions_nonbalance_deals": "PASS",
+    "two_v8_tail_ticks_restored_by_guard_boundary": "PASS",
+    "guard_tail_reproduced_by_narrow_probe": "PASS",
+    "final_m1_h1_impact_resolved": "PASS",
+    "no_divergence_before_final_h1": "FAIL",
+    "tester_copyticks_fixed-boundary_reproducibility_before_final_h1": "FAIL",
+    "earlier_clean_segments_proven_unchanged_at_canonical_tick_level": "FAIL"
+  },
+  "pre_cutoff_failure": {
+    "scope": "[2025-01-02T00:00:00,2025-12-23T23:00:00)",
+    "counts_and_outer_boundaries_match": true,
+    "connected_hash": "47c3433ad0f5385e25ba1e280227e0b39a9e846dddd184883a2a12962a5d57fc",
+    "tester_ontick_a_and_b_hash": "71278ef4b9df631c8ef580b498d7226625ca2125b85eadd0207e06c2ea188eaa",
+    "tester_copyticks_a_hash": "dc5e3952339851956f88b2cd1329c84dc7db2eae5612675d9520f044da0ffd86",
+    "tester_copyticks_b_hash": "cace2424ee80f2ae9d51e41f75c6d0431cfbbe10665bddd5b86fd7072008431b",
+    "exact_canonical_identity": false,
+    "field_level_cause_proven": false,
+    "accepted_as_harmless": false
+  },
+  "tail_conclusion": {
+    "probe_a_missing_ticks": ["2025-12-23T23:59:59.369","2025-12-23T23:59:59.877"],
+    "probe_b_ontick_contains_both": true,
+    "probe_c_ontick_contains_both": true,
+    "boundary_behavior_deterministically_reproduced": true,
+    "final_m1_close_probe_a": 1.17942,
+    "final_m1_close_probe_b_c_and_v8": 1.17938,
+    "final_h1_close_probe_a": 1.17942,
+    "final_h1_close_probe_b_c_and_v8": 1.17938,
+    "h1_high_or_low_changed": false,
+    "closing_spread_changed": false
+  },
+  "clean_coverage": {
+    "recalculation_required_by_persistent_tail_omission_rule": false,
+    "development_eligible_h1_bars_preserved_not_reapproved": 2526,
+    "validation_eligible_h1_bars_preserved_not_reapproved": 1238,
+    "out_of_sample_eligible_h1_bars_preserved_not_reapproved": 1488,
+    "matrix_authorized": false
+  },
+  "compilation": {
+    "metaeditor_build": 6090,
+    "connected_probe": {"errors":0,"warnings":0,"ex5_sha256":"45d688c18d8846fbe201f26b9f0d4b5d64cdd3dac985a2a8113840a94b1810e8"},
+    "tester_probe": {"errors":0,"warnings":0,"ex5_sha256":"ced3d7e4d4ccfd05ce3bfc27b95285910f80f9da79c62b11c3802b6a5f4779af"}
+  },
+  "safety": {
+    "strategy_loaded": false,
+    "strategy_run": false,
+    "profitability_calculated": false,
+    "optimization": false,
+    "replicas": false,
+    "generated_synthetic_or_interpolated_ticks": false,
+    "orders": 0,
+    "positions": 0,
+    "nonbalance_trading_deals": 0,
+    "phase7_authorized": false
+  },
+  "qualification_authorized": false,
+  "strategy_matrix_authorized": false
+}

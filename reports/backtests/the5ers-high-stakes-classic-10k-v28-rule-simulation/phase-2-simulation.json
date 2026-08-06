@@ -1,0 +1,14 @@
+{
+  "condition_status": {
+    "DELAY_200_MS": "NOT_REACHED",
+    "HIGH": "NOT_REACHED",
+    "NORMAL": "NOT_REACHED",
+    "STRESS": "NOT_REACHED"
+  },
+  "phase": 2,
+  "reason": "No condition produced a valid Phase 1 pass. Phase 2 cannot chronologically begin or reset under the frozen programme contract.",
+  "schema": "SOLTRADE_THE5ERS_V28_PHASE2_SIMULATION_V1",
+  "starting_balance_usd": 10000,
+  "status": "NOT_REACHED_AND_NOT_SIMULATED",
+  "target_usd": 500
+}

@@ -1,0 +1,15 @@
+{
+  "classification": "NON_BINDING_STRUCTURAL_SAMPLE_UPPER_BOUND",
+  "completed_cycles": 96,
+  "calendar_days_envelope": 576,
+  "cycles_per_30_calendar_days": 5.0,
+  "cycles_per_1000_completed_h1_candles": 13.669372063220846,
+  "buy_cycles": 45,
+  "sell_cycles": 51,
+  "spread_blocks": 5,
+  "spread_block_rate": 0.047619047619047616,
+  "non_binding_estimated_months_to_50": 10.0,
+  "not_a_promise": true,
+  "performance_dependent_pauses_may_reduce_count": true,
+  "fresh_oos_rule_unchanged": true
+}

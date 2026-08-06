@@ -1,0 +1,22 @@
+{
+  "paths": 100000,
+  "sample_trades": 93,
+  "expectancy_R_95_percent_interval": [
+    -0.11056975635298706,
+    0.11460703200870268
+  ],
+  "ending_net_profit": {
+    "p05": -422.45069514202476,
+    "median": 5.735330954070378,
+    "p95": 452.52421922365215
+  },
+  "probability_negative_ending_net_profit": 0.49141,
+  "drawdown_percent": {
+    "median": 2.6879314051391514,
+    "p90": 4.746205598394114,
+    "p95": 5.450687781988815
+  },
+  "schema": "SOLTRADE_PHASE6_V27_BOOTSTRAP_V1",
+  "seed": 11692519660313443886,
+  "reporting_only": true
+}

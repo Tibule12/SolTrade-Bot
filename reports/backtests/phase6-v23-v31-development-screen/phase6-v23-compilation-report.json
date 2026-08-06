@@ -1,0 +1,12 @@
+{
+  "schema": "SOLTRADE_PHASE6_V23_COMPILATION_V1",
+  "status": "PASS",
+  "source": "research/v31/SolTradeV31PerformanceHarness.mq5",
+  "source_sha256": "14b2ef68fcdea3190c7e54213e70dc3af62f1efdf4d69ec4df4e216470e941f9",
+  "ex5_sha256": "c8bbf3cd8e88d5907e93835ed3c935cf57b7b4461c4fc8d682e598edefbb3c55",
+  "compile_log": "/home/tibule12/.wine-fpmarkets/drive_c/v23/performance-compile.log",
+  "compile_log_sha256": "612c0ea1ca6cc87ea2955bcc0e4e6f2bdbf426853400a2613bd1a7c53e5242a1",
+  "errors": 0,
+  "warnings": 0,
+  "unchanged_phase1_5_modules_linked": true
+}

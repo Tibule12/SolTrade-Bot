@@ -1,0 +1,79 @@
+{
+  "schema": "SOLTRADE_PHASE6_V9_PROBE_RESULT_V1",
+  "probe": "A",
+  "interval": "[2025-01-02T00:00:00,2025-12-24T00:00:00)",
+  "research_cutoff_exclusive": "2025-12-24T00:00:00",
+  "copy_mode": "COPY_TICKS_ALL",
+  "hash_method": "phase6-v9-methodology-correction.md; 256-record bounded chunks",
+  "streams": {
+    "connected_copyticks": {
+      "complete": {"count":20682267,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T23:59:59.877","sha256":"049f73a638ca5815102546bd2684901434e497dac6e47af24fddbbf63cad9468"},
+      "calendar_months": [
+        {"month":"2025-01","count":2821006,"sha256":"08c60dc2f8864c57b42db9c6778860b1062aab4168286ebd23326434e7b96bae"},
+        {"month":"2025-02","count":2227344,"sha256":"378c39877957f34e0b1d0a28de6c7f4aa3807c8916dea004dbf6a0e0b748ab7e"},
+        {"month":"2025-03","count":2065851,"sha256":"d7345261d84218a2c73cf4a0e652b5267acbab45184018ef9e7f1e0d5c3f2279"},
+        {"month":"2025-04","count":2984580,"sha256":"9ded2285de09d0313dec0857f977ba1893b08c2575c5621a255184c01b4d671e"},
+        {"month":"2025-05","count":1725127,"sha256":"d401de4533535e8b9baa4068e3146dea3563e5a86e10cb417ac8f30f0d8cbcc0"},
+        {"month":"2025-06","count":1509698,"sha256":"6efcdd6991e86dae23e6f9473a1401c04be1577ec3bc0c0629a003f7090d6b26"},
+        {"month":"2025-07","count":1469430,"sha256":"3a14a7075f8a8884fc2866dad41de6e86c66f33629d66c25213f05c8f2ff7db9"},
+        {"month":"2025-08","count":1249096,"sha256":"159c239ffbd31dd9a1c2187c647277f7e540c0d1df770fa780cec24a94e0d8ae"},
+        {"month":"2025-09","count":1382024,"sha256":"7b16aabde8b29f4352a9c62342e6f5c8dfa5e0d2418ebafe090852a460fdcc13"},
+        {"month":"2025-10","count":1459073,"sha256":"e7c31c317a0286c95a825872f04949af2b4c829a8bcd8671597bfaa888e5bc47"},
+        {"month":"2025-11","count":1106712,"sha256":"ee442a632a8e27f6dbb624e35c7e1d8e329615db94c1e5d396618934b13bf9e5"},
+        {"month":"2025-12","count":682326,"sha256":"3e58c8a664778d8eb007b97ca17822b2deabc11cb8be85240acce27ae9641c97"}
+      ],
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"47c3433ad0f5385e25ba1e280227e0b39a9e846dddd184883a2a12962a5d57fc"},
+      "final_day": {"count":37476,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:59.877","sha256":"4370166242e1401d702dd511b531aecadfc5c0856f59b98ef903b0d6ba3e7f16"},
+      "final_h1": {"count":918,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:59.877","sha256":"01eb6942c73e1942907dc8366031e7a6dcee7b308c7ac2c76a1e6009e631f2fd"},
+      "final_m1": {"count":39,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:59.877","sha256":"7ac2b716d842e2e4af5fda8871a3e9d9b9a1cc9a4f45ec20cfd2f26b8a5990e4"}
+    },
+    "tester_copyticks": {
+      "complete": {"count":20682265,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T23:59:58.664","sha256":"9249429664265d1f17f17e4dc146165c00093e7db2f73e33cf108a8be1a73d78"},
+      "calendar_months": [
+        {"month":"2025-01","count":2821006,"sha256":"08c60dc2f8864c57b42db9c6778860b1062aab4168286ebd23326434e7b96bae"},
+        {"month":"2025-02","count":2227344,"sha256":"378c39877957f34e0b1d0a28de6c7f4aa3807c8916dea004dbf6a0e0b748ab7e"},
+        {"month":"2025-03","count":2065851,"sha256":"d7345261d84218a2c73cf4a0e652b5267acbab45184018ef9e7f1e0d5c3f2279"},
+        {"month":"2025-04","count":2984580,"sha256":"9ded2285de09d0313dec0857f977ba1893b08c2575c5621a255184c01b4d671e"},
+        {"month":"2025-05","count":1725127,"sha256":"d401de4533535e8b9baa4068e3146dea3563e5a86e10cb417ac8f30f0d8cbcc0"},
+        {"month":"2025-06","count":1509698,"sha256":"6efcdd6991e86dae23e6f9473a1401c04be1577ec3bc0c0629a003f7090d6b26"},
+        {"month":"2025-07","count":1469430,"sha256":"3a14a7075f8a8884fc2866dad41de6e86c66f33629d66c25213f05c8f2ff7db9"},
+        {"month":"2025-08","count":1249096,"sha256":"159c239ffbd31dd9a1c2187c647277f7e540c0d1df770fa780cec24a94e0d8ae"},
+        {"month":"2025-09","count":1382024,"sha256":"7b16aabde8b29f4352a9c62342e6f5c8dfa5e0d2418ebafe090852a460fdcc13"},
+        {"month":"2025-10","count":1459073,"sha256":"e7c31c317a0286c95a825872f04949af2b4c829a8bcd8671597bfaa888e5bc47"},
+        {"month":"2025-11","count":1106712,"sha256":"ee442a632a8e27f6dbb624e35c7e1d8e329615db94c1e5d396618934b13bf9e5"},
+        {"month":"2025-12","count":682324,"sha256":"2633c4275466963bf18c11bf89a0a60ae6bb24c7564d4452456d1be0df334e37"}
+      ],
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"dc5e3952339851956f88b2cd1329c84dc7db2eae5612675d9520f044da0ffd86"},
+      "final_day": {"count":37474,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:58.664","sha256":"54ba0c5c9941829df294b89505c1db2c53842d458a8ae39bb2a5b1f2d03896f2"},
+      "final_h1": {"count":916,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:58.664","sha256":"c964c4a13eef40b9b35ff7d8360281530a3a92a45edd801fdd01c55613ec9eb1"},
+      "final_m1": {"count":37,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:58.664","sha256":"d1ec59a1daa4c49223b31e81afd5a54ca9e835b29bacf4515698238e3d59d3ec"}
+    },
+    "tester_ontick": {
+      "complete": {"count":20682265,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T23:59:58.664","sha256":"afdda41b732eb7f276fabbf8dc7bfcd69bf61a550031f9fd29840358a158e935"},
+      "calendar_months": [
+        {"month":"2025-01","count":2821006,"sha256":"3f5b1a03636152f46099c32cdce2eadbf72ec167fa3cd1dad2193f9c598e642c"},
+        {"month":"2025-02","count":2227344,"sha256":"1a7143840d0c454a0b7bf4dc693cb0c04362be95aa1dad1cdf4c4a5f615e49f4"},
+        {"month":"2025-03","count":2065851,"sha256":"d70e845115d6a769a28323ec75a82460707069730ed87906dab5b0378571feb7"},
+        {"month":"2025-04","count":2984580,"sha256":"81d3003faee8ebfb9182e9622d40babcfdbe12c9f7af8f627ed55fe4c849dc3d"},
+        {"month":"2025-05","count":1725127,"sha256":"b1a7cdf3f9c6775b57f6aee8307e3f39604b6b9c33958e0e4584199565d815d9"},
+        {"month":"2025-06","count":1509698,"sha256":"a97f2d6698e8043f4bf9b943bd873aec91e420ae2495633df8a54e161fb1b37c"},
+        {"month":"2025-07","count":1469430,"sha256":"deade59c48e4b9cc51cfd71dc19263b199bf5215104b104e5a8ae47272811c01"},
+        {"month":"2025-08","count":1249096,"sha256":"9021bc59e969a1c6e1c2696648c138241f18a62c2666a103d0213f2f11c21bea"},
+        {"month":"2025-09","count":1382024,"sha256":"2d26cb9db6751ed390fbad8f22caf5f8343b874937772d6ea9b3b40aa451b487"},
+        {"month":"2025-10","count":1459073,"sha256":"f8d515b8b2ef6c5d79848e60f9cbae2a469d871e7ba0c07b40588b3c2fd4b136"},
+        {"month":"2025-11","count":1106712,"sha256":"5d9feda8b65d87f5209e322f41812192a263f6e110bf3d9c9a46695c6122f718"},
+        {"month":"2025-12","count":682324,"sha256":"3c9ecf7c6a8527c65b62ced3ed9d1428b79e9cae188318bf1a8020b8db4cb429"}
+      ],
+      "pre_final_h1": {"count":20681349,"first":"2025-01-02T00:00:00.594","final":"2025-12-23T22:59:55.387","sha256":"71278ef4b9df631c8ef580b498d7226625ca2125b85eadd0207e06c2ea188eaa"},
+      "final_day": {"count":37474,"first":"2025-12-23T00:00:00.053","final":"2025-12-23T23:59:58.664","sha256":"54ba0c5c9941829df294b89505c1db2c53842d458a8ae39bb2a5b1f2d03896f2"},
+      "final_h1": {"count":916,"first":"2025-12-23T23:00:00.628","final":"2025-12-23T23:59:58.664","sha256":"c964c4a13eef40b9b35ff7d8360281530a3a92a45edd801fdd01c55613ec9eb1"},
+      "final_m1": {"count":37,"first":"2025-12-23T23:59:00.402","final":"2025-12-23T23:59:58.664","sha256":"d1ec59a1daa4c49223b31e81afd5a54ca9e835b29bacf4515698238e3d59d3ec"}
+    }
+  },
+  "tester_bars": {
+    "m1_2025-12-23T23:59:00": {"open":1.17920,"high":1.17942,"low":1.17919,"close":1.17942,"tick_volume":37,"spread_points":19,"first_tick":"2025-12-23T23:59:00.402","final_tick":"2025-12-23T23:59:58.664"},
+    "h1_2025-12-23T23:00:00": {"open":1.17890,"high":1.17960,"low":1.17878,"close":1.17942,"tick_volume":702,"spread_points":11,"database_tick_count":916,"first_tick":"2025-12-23T23:00:00.628","final_tick":"2025-12-23T23:59:58.664"}
+  },
+  "safety": {"tester_model":"EVERY_TICK_BASED_ON_REAL_TICKS","controller_real_tick_message":true,"generated_fallback_detected":false,"runtime_unique_minutes":365245,"tester_m1_bars":365245,"silent_generated_minutes":0,"orders":0,"historical_orders":0,"positions":0,"nonbalance_deals":0,"trade_transactions":0,"strategy_run":false,"profitability_calculated":false},
+  "probe_status": "COMPLETED_INERT_WITH_STREAM_DIVERGENCE"
+}

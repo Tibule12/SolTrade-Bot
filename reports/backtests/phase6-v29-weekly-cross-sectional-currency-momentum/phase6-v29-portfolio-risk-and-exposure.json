@@ -1,0 +1,1177 @@
+{
+  "schema": "SOLTRADE_PHASE6_V29_PORTFOLIO_RISK_EXPOSURE_V1",
+  "status": "PASS",
+  "maximum_filled_legs": 4,
+  "maximum_initial_risk_percent": 0.8583477426624079,
+  "maximum_gross_exposure_percent": 52.56091983407198,
+  "maximum_absolute_net_usd_exposure_percent": 22.96966161026839,
+  "risk_limit_blocks": {
+    "01-v29-2025-native": 32,
+    "02-v29-2026-preseal-native": 16,
+    "03-v29-2025-delay200": 28,
+    "04-v29-2026-preseal-delay200": 8
+  },
+  "weeks": [
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.01.06 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.313786059,
+      "gross_exposure_percent": 15.6272,
+      "net_usd_exposure_percent": -4.3728,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.01.13 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5985127182451222,
+      "gross_exposure_percent": 29.989024017209704,
+      "net_usd_exposure_percent": -9.9963413390699,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.01.27 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.44680629446251213,
+      "gross_exposure_percent": 19.98876631333191,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.02.03 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.43552743931568016,
+      "gross_exposure_percent": 19.94636422659469,
+      "net_usd_exposure_percent": 19.94636422659469,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.02.10 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.21950499111948577,
+      "gross_exposure_percent": 10.01750057350191,
+      "net_usd_exposure_percent": 10.01750057350191,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.02.17 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.22099980432942462,
+      "gross_exposure_percent": 10.02924527923425,
+      "net_usd_exposure_percent": 10.02924527923425,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.02.24 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.595973048870536,
+      "gross_exposure_percent": 26.945812214824898,
+      "net_usd_exposure_percent": 14.164549799549745,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.03.03 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5690769734056113,
+      "gross_exposure_percent": 24.50513082448427,
+      "net_usd_exposure_percent": -0.7851275330498142,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.03.10 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3887599681385303,
+      "gross_exposure_percent": 16.357225425412786,
+      "net_usd_exposure_percent": 16.357225425412786,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.03.24 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6574535275896752,
+      "gross_exposure_percent": 33.03210163260764,
+      "net_usd_exposure_percent": 7.078644136460771,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.03.31 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7336254102504942,
+      "gross_exposure_percent": 39.37692485178015,
+      "net_usd_exposure_percent": -6.699537533982728,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.04.07 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.4754554450143114,
+      "gross_exposure_percent": 15.617973471438576,
+      "net_usd_exposure_percent": -4.439913590622538,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.05.05 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.39884391327547575,
+      "gross_exposure_percent": 12.451658696128796,
+      "net_usd_exposure_percent": -12.451658696128796,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.05.12 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.21242676537163163,
+      "gross_exposure_percent": 6.451160381205844,
+      "net_usd_exposure_percent": -6.451160381205844,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.06.02 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3903955674316884,
+      "gross_exposure_percent": 12.508795176134054,
+      "net_usd_exposure_percent": 12.508795176134054,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.06.09 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5223831132886525,
+      "gross_exposure_percent": 22.63586141448554,
+      "net_usd_exposure_percent": -9.55957959277439,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.06.16 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.1666297380945459,
+      "gross_exposure_percent": 6.520516411826101,
+      "net_usd_exposure_percent": 6.520516411826101,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.06.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.42020706084120235,
+      "gross_exposure_percent": 15.957917851253914,
+      "net_usd_exposure_percent": -4.077384351226863,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.06.30 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.4186672578738365,
+      "gross_exposure_percent": 20.02056111626641,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.07.07 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6437978483280457,
+      "gross_exposure_percent": 31.783051254591506,
+      "net_usd_exposure_percent": -11.76563610340997,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.07.14 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3785256944068711,
+      "gross_exposure_percent": 16.590117088791505,
+      "net_usd_exposure_percent": -16.590117088791505,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.07.28 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.379961153467794,
+      "gross_exposure_percent": 16.59525139412707,
+      "net_usd_exposure_percent": -16.59525139412707,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.08.04 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3416678655622427,
+      "gross_exposure_percent": 16.566864862255414,
+      "net_usd_exposure_percent": -3.5477077433058715,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.08.18 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3988608047699013,
+      "gross_exposure_percent": 16.03170945941188,
+      "net_usd_exposure_percent": 16.03170945941188,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.08.25 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8583451521486318,
+      "gross_exposure_percent": 51.415754888192296,
+      "net_usd_exposure_percent": 0.6433420386548462,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.09.01 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8464293878328071,
+      "gross_exposure_percent": 47.96911262248584,
+      "net_usd_exposure_percent": 4.200377127385253,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.09.15 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.786198516793739,
+      "gross_exposure_percent": 42.88186775314378,
+      "net_usd_exposure_percent": 17.492878295580674,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.09.29 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.848473137855695,
+      "gross_exposure_percent": 47.90038988654274,
+      "net_usd_exposure_percent": 4.09698465559014,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.10.06 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8098841198087681,
+      "gross_exposure_percent": 37.87362039703507,
+      "net_usd_exposure_percent": -5.917686969121517,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.10.13 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.34942412957694247,
+      "gross_exposure_percent": 15.861288833057433,
+      "net_usd_exposure_percent": -4.3025626238816645,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.10.20 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3876577541082037,
+      "gross_exposure_percent": 16.61626276383976,
+      "net_usd_exposure_percent": -3.531866280897157,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.10.27 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8152636588858083,
+      "gross_exposure_percent": 46.14227375850771,
+      "net_usd_exposure_percent": -14.35684396269222,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.11.03 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.84893302779695,
+      "gross_exposure_percent": 50.132991068005076,
+      "net_usd_exposure_percent": -3.44989728004004,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.11.10 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.4948422313355386,
+      "gross_exposure_percent": 26.785779188524504,
+      "net_usd_exposure_percent": -6.593793791368334,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.11.17 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5053514667221057,
+      "gross_exposure_percent": 22.428985056762514,
+      "net_usd_exposure_percent": -10.949728676342218,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.11.24 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7714309975278775,
+      "gross_exposure_percent": 40.681290359125434,
+      "net_usd_exposure_percent": -9.112564534140386,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.12.01 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8257502900383417,
+      "gross_exposure_percent": 49.5211888840555,
+      "net_usd_exposure_percent": 11.177452478022037,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.12.08 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.6706312797297819,
+      "gross_exposure_percent": 32.82745032126896,
+      "net_usd_exposure_percent": 7.672890894105784,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "01-v29-2025-native",
+      "signal_time": "2025.12.15 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.6508151025379643,
+      "gross_exposure_percent": 32.8613959106413,
+      "net_usd_exposure_percent": 7.6714488668029945,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.01.05 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7639714905,
+      "gross_exposure_percent": 42.515699999999995,
+      "net_usd_exposure_percent": -11.0231,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.01.12 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8251463954463754,
+      "gross_exposure_percent": 52.560315558218505,
+      "net_usd_exposure_percent": -1.1187337727181956,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.01.26 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7338582227468495,
+      "gross_exposure_percent": 44.695996697647885,
+      "net_usd_exposure_percent": 18.960038940568662,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.02.02 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5502971721168395,
+      "gross_exposure_percent": 23.027664859528812,
+      "net_usd_exposure_percent": -2.9632178557526783,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.02.09 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.21038725688695023,
+      "gross_exposure_percent": 6.034375613921845,
+      "net_usd_exposure_percent": -6.034375613921845,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.02.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3938357193965596,
+      "gross_exposure_percent": 13.079053752061881,
+      "net_usd_exposure_percent": -1.1020385257516456,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.03.02 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.779263890088507,
+      "gross_exposure_percent": 36.4407722221276,
+      "net_usd_exposure_percent": 2.252899039381644,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.03.09 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8319483090247182,
+      "gross_exposure_percent": 38.63771489989304,
+      "net_usd_exposure_percent": 4.553316028045395,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.03.16 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.36934838710000717,
+      "gross_exposure_percent": 20.04349438281071,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.03.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.400157988697032,
+      "gross_exposure_percent": 15.828865964916508,
+      "net_usd_exposure_percent": -4.215411844765089,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.03.30 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3608206269167436,
+      "gross_exposure_percent": 15.780426702930612,
+      "net_usd_exposure_percent": 15.780426702930612,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.04.06 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5451624919815901,
+      "gross_exposure_percent": 25.76645979168172,
+      "net_usd_exposure_percent": 5.720434116732019,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.04.20 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8314237815998687,
+      "gross_exposure_percent": 43.21634737057766,
+      "net_usd_exposure_percent": 17.040830263564903,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.04.27 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7693261992742237,
+      "gross_exposure_percent": 34.9478668130407,
+      "net_usd_exposure_percent": 8.709019377816709,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.05.04 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7450598944689208,
+      "gross_exposure_percent": 39.13821313175096,
+      "net_usd_exposure_percent": 4.5557165685001735,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.05.11 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5574237414837248,
+      "gross_exposure_percent": 27.898654307665065,
+      "net_usd_exposure_percent": 15.919898690547146,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.05.18 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.19181733598209583,
+      "gross_exposure_percent": 11.701159252646672,
+      "net_usd_exposure_percent": 11.701159252646672,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.05.25 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6161049440711386,
+      "gross_exposure_percent": 37.38522512372754,
+      "net_usd_exposure_percent": 22.96966161026839,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.06.01 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6489313062136829,
+      "gross_exposure_percent": 36.17101930457674,
+      "net_usd_exposure_percent": 4.048943672947352,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.06.08 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8186787747854221,
+      "gross_exposure_percent": 50.797207253718845,
+      "net_usd_exposure_percent": -16.41908134619729,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.06.22 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8361901031817397,
+      "gross_exposure_percent": 47.568737424851534,
+      "net_usd_exposure_percent": -15.857993056703593,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.06.29 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.49974594315578963,
+      "gross_exposure_percent": 24.160705068232428,
+      "net_usd_exposure_percent": 1.157672516695163,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.07.06 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.4154056444315777,
+      "gross_exposure_percent": 22.811855979486182,
+      "net_usd_exposure_percent": 2.636959804545609,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "02-v29-2026-preseal-native",
+      "signal_time": "2026.07.20 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5307681353399405,
+      "gross_exposure_percent": 26.103524351395162,
+      "net_usd_exposure_percent": 14.284401678118336,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.01.06 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3137909715,
+      "gross_exposure_percent": 15.6275,
+      "net_usd_exposure_percent": -4.3725,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.01.13 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5985156103334489,
+      "gross_exposure_percent": 29.98911395163556,
+      "net_usd_exposure_percent": -9.996371317211853,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.01.27 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.44681010719050934,
+      "gross_exposure_percent": 19.988906157082827,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.02.03 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.43555663341887146,
+      "gross_exposure_percent": 19.94668251763038,
+      "net_usd_exposure_percent": 19.94668251763038,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.02.10 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.21950828950610982,
+      "gross_exposure_percent": 10.017651101240387,
+      "net_usd_exposure_percent": 10.017651101240387,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.02.17 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.22100312907130806,
+      "gross_exposure_percent": 10.029396160145389,
+      "net_usd_exposure_percent": 10.029396160145389,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.02.24 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5959814197655965,
+      "gross_exposure_percent": 26.946190689265638,
+      "net_usd_exposure_percent": 14.164748751432171,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.03.03 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5690849683696737,
+      "gross_exposure_percent": 24.505575447159703,
+      "net_usd_exposure_percent": -0.7852389133296932,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.03.10 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3887662043437766,
+      "gross_exposure_percent": 16.35748781615096,
+      "net_usd_exposure_percent": 16.35748781615096,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.03.24 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6574635362767042,
+      "gross_exposure_percent": 33.03259849341774,
+      "net_usd_exposure_percent": 7.078750611698076,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.03.31 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7336364497925896,
+      "gross_exposure_percent": 39.377718031931714,
+      "net_usd_exposure_percent": -6.699638348138823,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.04.07 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.4754602133779426,
+      "gross_exposure_percent": 15.618130104783454,
+      "net_usd_exposure_percent": -4.43995811871179,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.05.05 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3988471076076282,
+      "gross_exposure_percent": 12.45145808451274,
+      "net_usd_exposure_percent": -12.45145808451274,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.05.12 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.2124278296489129,
+      "gross_exposure_percent": 6.449990280424775,
+      "net_usd_exposure_percent": -6.449990280424775,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.06.02 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.39039282839854744,
+      "gross_exposure_percent": 12.50840672618278,
+      "net_usd_exposure_percent": 12.50840672618278,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.06.09 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5223799139687435,
+      "gross_exposure_percent": 22.635770584653415,
+      "net_usd_exposure_percent": -9.559541233509254,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.06.16 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.1666285686786415,
+      "gross_exposure_percent": 6.52047065051312,
+      "net_usd_exposure_percent": 6.52047065051312,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.06.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.4202061678121748,
+      "gross_exposure_percent": 15.957773977783054,
+      "net_usd_exposure_percent": -4.077347590325842,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.06.30 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.4186512864198668,
+      "gross_exposure_percent": 20.020541075143097,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.07.07 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6437978483280455,
+      "gross_exposure_percent": 31.7830512545915,
+      "net_usd_exposure_percent": -11.765636103409967,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.07.14 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.37852569440687106,
+      "gross_exposure_percent": 16.5901170887915,
+      "net_usd_exposure_percent": -16.5901170887915,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.07.28 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.37996115346779397,
+      "gross_exposure_percent": 16.595251394127068,
+      "net_usd_exposure_percent": -16.595251394127068,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.08.04 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.34166786556224266,
+      "gross_exposure_percent": 16.566965435118437,
+      "net_usd_exposure_percent": -3.5476071704428436,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.08.18 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3988612060794972,
+      "gross_exposure_percent": 16.03172558954742,
+      "net_usd_exposure_percent": 16.03172558954742,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.08.25 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8583477426624079,
+      "gross_exposure_percent": 51.41591006262419,
+      "net_usd_exposure_percent": 0.6433439802821855,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.09.01 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8464345901598064,
+      "gross_exposure_percent": 47.969660493671725,
+      "net_usd_exposure_percent": 4.200792735440917,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.09.15 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7861903865059506,
+      "gross_exposure_percent": 42.88152255833916,
+      "net_usd_exposure_percent": 17.492737479636272,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.09.22 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8281958144458786,
+      "gross_exposure_percent": 32.70547668978869,
+      "net_usd_exposure_percent": -0.7438699790288756,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.09.29 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8478221847985979,
+      "gross_exposure_percent": 47.865980212384414,
+      "net_usd_exposure_percent": 4.094041549962723,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.10.06 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8081478700974735,
+      "gross_exposure_percent": 37.84659377933552,
+      "net_usd_exposure_percent": -5.913230936144771,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.10.13 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.34917207416959695,
+      "gross_exposure_percent": 15.849847369004328,
+      "net_usd_exposure_percent": -4.299458991124232,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.10.20 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.38737833694396023,
+      "gross_exposure_percent": 16.604286042175886,
+      "net_usd_exposure_percent": -3.5293205713112217,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.10.27 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8146802819441676,
+      "gross_exposure_percent": 46.10868281633831,
+      "net_usd_exposure_percent": -14.346788706111852,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.11.03 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8483192508036255,
+      "gross_exposure_percent": 50.09699966524026,
+      "net_usd_exposure_percent": -3.4474205348896314,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.11.10 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7443816601375902,
+      "gross_exposure_percent": 40.0412830014316,
+      "net_usd_exposure_percent": 6.685788135071687,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.11.17 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5051037276735506,
+      "gross_exposure_percent": 22.417989668831694,
+      "net_usd_exposure_percent": -10.944360777873834,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.11.24 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7710511747417634,
+      "gross_exposure_percent": 40.66126046520564,
+      "net_usd_exposure_percent": -9.108077859815538,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.12.01 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8253390151863693,
+      "gross_exposure_percent": 49.49670316558797,
+      "net_usd_exposure_percent": 11.171925794177636,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.12.08 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.6703007606248136,
+      "gross_exposure_percent": 32.81120494669252,
+      "net_usd_exposure_percent": 7.669093797912232,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "03-v29-2025-delay200",
+      "signal_time": "2025.12.15 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.6504914565830588,
+      "gross_exposure_percent": 32.84515544212004,
+      "net_usd_exposure_percent": 7.667532625374113,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.01.05 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7639750812,
+      "gross_exposure_percent": 42.5159,
+      "net_usd_exposure_percent": -11.0231,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.01.12 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8251514125252898,
+      "gross_exposure_percent": 52.56091983407198,
+      "net_usd_exposure_percent": -1.1184364258766246,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.01.19 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7485444641679162,
+      "gross_exposure_percent": 50.0624687656172,
+      "net_usd_exposure_percent": 9.90754622688656,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.01.26 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.6099328404810729,
+      "gross_exposure_percent": 34.677914738523285,
+      "net_usd_exposure_percent": 8.959237059506844,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.02.02 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5492183373950935,
+      "gross_exposure_percent": 22.981919326835857,
+      "net_usd_exposure_percent": -2.956807837027633,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.02.09 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.20997538116183717,
+      "gross_exposure_percent": 6.022562099793828,
+      "net_usd_exposure_percent": -6.022562099793828,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.02.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3930648557011908,
+      "gross_exposure_percent": 13.053553836383006,
+      "net_usd_exposure_percent": -1.0997814639415522,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.03.02 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.774519626343933,
+      "gross_exposure_percent": 36.369363882646965,
+      "net_usd_exposure_percent": 2.2482966767570987,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.03.09 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8303272136610166,
+      "gross_exposure_percent": 38.56185082154223,
+      "net_usd_exposure_percent": 4.544599435627514,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.03.16 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.36862338913510767,
+      "gross_exposure_percent": 20.004220890607925,
+      "net_usd_exposure_percent": 0.0,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.03.23 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.39937348369744086,
+      "gross_exposure_percent": 15.797833660581492,
+      "net_usd_exposure_percent": -4.207147579747359,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.03.30 10:05:00",
+      "filled_legs": 2,
+      "initial_risk_percent": 0.3601127771761218,
+      "gross_exposure_percent": 15.749469018931162,
+      "net_usd_exposure_percent": 15.749469018931162,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.04.06 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.5440902558454528,
+      "gross_exposure_percent": 25.7159891403729,
+      "net_usd_exposure_percent": 5.709306908507446,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.04.20 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8297853157675292,
+      "gross_exposure_percent": 43.13127445634746,
+      "net_usd_exposure_percent": 17.00728478414268,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.04.27 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7678077395368051,
+      "gross_exposure_percent": 34.878788121797314,
+      "net_usd_exposure_percent": 8.691930167844173,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.05.04 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.7435773199849459,
+      "gross_exposure_percent": 39.06059465562667,
+      "net_usd_exposure_percent": 4.546681721239498,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.05.11 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.556317272340024,
+      "gross_exposure_percent": 27.84322550699946,
+      "net_usd_exposure_percent": 15.888426970581687,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.05.18 10:05:00",
+      "filled_legs": 1,
+      "initial_risk_percent": 0.19143626387084745,
+      "gross_exposure_percent": 11.67791325437634,
+      "net_usd_exposure_percent": 11.67791325437634,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.05.25 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6148791811858063,
+      "gross_exposure_percent": 37.31095001601249,
+      "net_usd_exposure_percent": 22.92402662787536,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.06.01 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.6476411390753735,
+      "gross_exposure_percent": 36.09918615969737,
+      "net_usd_exposure_percent": 4.040902750599596,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.06.08 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8170516119260901,
+      "gross_exposure_percent": 50.695037773463916,
+      "net_usd_exposure_percent": -16.385642561490698,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.06.15 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8021511927325411,
+      "gross_exposure_percent": 42.37238687350357,
+      "net_usd_exposure_percent": -8.02076416973502,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.06.22 10:05:00",
+      "filled_legs": 4,
+      "initial_risk_percent": 0.8316415933064449,
+      "gross_exposure_percent": 47.54760059930862,
+      "net_usd_exposure_percent": -15.85094667181205,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.06.29 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.4995218416101596,
+      "gross_exposure_percent": 24.149870660422913,
+      "net_usd_exposure_percent": 1.1571533805143137,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.07.06 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.41522008679379246,
+      "gross_exposure_percent": 22.80151969799634,
+      "net_usd_exposure_percent": 2.6356757977607863,
+      "risk_gate": "PASS"
+    },
+    {
+      "run_id": "04-v29-2026-preseal-delay200",
+      "signal_time": "2026.07.20 10:05:00",
+      "filled_legs": 3,
+      "initial_risk_percent": 0.530523764641529,
+      "gross_exposure_percent": 26.09164289909836,
+      "net_usd_exposure_percent": 14.27789989564474,
+      "risk_gate": "PASS"
+    }
+  ]
+}

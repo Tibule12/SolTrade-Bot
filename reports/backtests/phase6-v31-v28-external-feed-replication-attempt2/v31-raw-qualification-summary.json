@@ -1,0 +1,205 @@
+{
+  "schema": "SOLTRADE_PHASE6_V31_RAW_QUALIFICATION_SUMMARY_V1",
+  "status": "FAIL",
+  "source": "Dukascopy Bank Jetta historical tick service",
+  "requested_interval_utc": "[2017-12-31T22:00:00+00:00, 2025-01-01T00:00:00+00:00)",
+  "strategy_evaluation_interval_server_civil": "[2018-01-01 00:00:00, 2025-01-01 00:00:00)",
+  "symbols": {
+    "EURUSD": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 61370,
+      "predictable_closed_session_hours_without_file": 0,
+      "tick_count": 189989869,
+      "raw_bytes": 913431243,
+      "first_tick_utc": "2018-01-01T22:00:08.661Z",
+      "final_tick_utc": "2024-12-31T21:59:58.249Z",
+      "empty_source_hours": 17715,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 3464,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 61370
+      }
+    },
+    "GBPUSD": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 48355,
+      "predictable_closed_session_hours_without_file": 13015,
+      "tick_count": 204504608,
+      "raw_bytes": 863481054,
+      "first_tick_utc": "2018-01-01T22:00:07.594Z",
+      "final_tick_utc": "2024-12-31T21:59:59.120Z",
+      "empty_source_hours": 4704,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 0,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 48355
+      }
+    },
+    "AUDUSD": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 43850,
+      "predictable_closed_session_hours_without_file": 17520,
+      "tick_count": 135904538,
+      "raw_bytes": 624676336,
+      "first_tick_utc": "2018-01-01T22:00:08.438Z",
+      "final_tick_utc": "2024-12-31T21:59:59.725Z",
+      "empty_source_hours": 197,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 1710,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 43850
+      }
+    },
+    "NZDUSD": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 43850,
+      "predictable_closed_session_hours_without_file": 17520,
+      "tick_count": 119133873,
+      "raw_bytes": 511854553,
+      "first_tick_utc": "2018-01-01T22:01:00.796Z",
+      "final_tick_utc": "2024-12-31T21:59:59.147Z",
+      "empty_source_hours": 202,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 2382,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 43850
+      }
+    },
+    "USDCAD": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 43850,
+      "predictable_closed_session_hours_without_file": 17520,
+      "tick_count": 154951862,
+      "raw_bytes": 649959485,
+      "first_tick_utc": "2018-01-01T22:04:04.210Z",
+      "final_tick_utc": "2024-12-31T21:59:58.138Z",
+      "empty_source_hours": 198,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 2071,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 43850
+      }
+    },
+    "USDCHF": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 43850,
+      "predictable_closed_session_hours_without_file": 17520,
+      "tick_count": 120465834,
+      "raw_bytes": 534745907,
+      "first_tick_utc": "2018-01-01T22:04:04.213Z",
+      "final_tick_utc": "2024-12-31T21:59:58.132Z",
+      "empty_source_hours": 204,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 5,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0000100000": 43850
+      }
+    },
+    "USDJPY": {
+      "calendar_hours": 61370,
+      "required_open_session_hourly_files": 43850,
+      "manifested_raw_files": 43850,
+      "predictable_closed_session_hours_without_file": 17520,
+      "tick_count": 203615007,
+      "raw_bytes": 909485253,
+      "first_tick_utc": "2018-01-01T22:00:13.088Z",
+      "final_tick_utc": "2024-12-31T21:59:58.315Z",
+      "empty_source_hours": 196,
+      "duplicate_timestamp_count_retained": 0,
+      "backward_timestamp_count": 0,
+      "crossed_quote_count": 2576,
+      "zero_or_negative_price_count": 0,
+      "multiplier_hours": {
+        "0.0010000000": 43850
+      }
+    }
+  },
+  "required_open_session_hourly_files": 306950,
+  "manifested_hourly_files": 328975,
+  "calendar_hours_per_symbol": 61370,
+  "required_open_session_hours_per_symbol": 43850,
+  "predictable_closed_session_hours_without_file": 100615,
+  "predictable_closed_session_rule": "Friday 17:00 through Sunday 17:00 America/New_York",
+  "total_tick_count": 1128565591,
+  "total_raw_bytes": 5007633831,
+  "duplicate_timestamp_count_retained": 0,
+  "download_journal_rows_loaded": 328974,
+  "raw_manifest_path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-raw-data-manifest.jsonl.gz",
+  "raw_manifest_sha256": "40a3993e1587dcf4e21ca051cc9742963ad12f12cf7b8a07857aa6691c7595ff",
+  "predictable_closed_session_manifest_path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-predictable-closed-session-hours.jsonl.gz",
+  "predictable_closed_session_manifest_sha256": "ead979701e874110694954ae41f59a86e646f20953e5633fa46bcced133bd238",
+  "tick_gap_audit_path": "/home/tibule12/Datasets/SolTrade/V31/manifests/v31-tick-gap-audit.jsonl.gz",
+  "tick_gap_audit_sha256": "d3644d2f91038886d11902d68c480bad60c9b12105c69ca7e6dc48176739482c",
+  "tick_gaps_over_one_hour": 2605,
+  "tick_gap_classifications": {
+    "UNRESOLVED_OPEN_SESSION_NO_SOURCE_TICKS": 2605
+  },
+  "unresolved_open_session_gap_count": 2605,
+  "unresolved_open_session_gap_minutes": 9872,
+  "unresolved_gap_interpretation": "reported source no-tick intervals, not missing source files; every required open-session hourly response remains mandatory",
+  "parsing_version": "DUKASCOPY_JETTA_DELTA_JSON_V1",
+  "failures": [
+    {
+      "symbol": "EURUSD",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 3464,
+      "zero_or_negative": 0,
+      "backward": 0
+    },
+    {
+      "symbol": "AUDUSD",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 1710,
+      "zero_or_negative": 0,
+      "backward": 0
+    },
+    {
+      "symbol": "NZDUSD",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 2382,
+      "zero_or_negative": 0,
+      "backward": 0
+    },
+    {
+      "symbol": "USDCAD",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 2071,
+      "zero_or_negative": 0,
+      "backward": 0
+    },
+    {
+      "symbol": "USDCHF",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 5,
+      "zero_or_negative": 0,
+      "backward": 0
+    },
+    {
+      "symbol": "USDJPY",
+      "reason": "INVALID_TICK_VALUES",
+      "crossed": 2576,
+      "zero_or_negative": 0,
+      "backward": 0
+    }
+  ],
+  "failure_count": 6,
+  "pnl_viewed": false
+}

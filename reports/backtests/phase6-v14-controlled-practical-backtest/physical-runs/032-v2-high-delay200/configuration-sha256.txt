@@ -1,0 +1,1 @@
+ffa1cf3e0a75b32e9f85d6dceb0d81a58665903eb6cacf6572cf723145b50cef  strategy-tester.ini
