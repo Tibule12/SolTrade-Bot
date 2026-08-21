@@ -1,5 +1,5 @@
 #property strict
-#property version   "1.000"
+#property version   "1.010"
 #property description "Exact-account demo-only fast multi-market scanner, execution, and management"
 
 #include <Trade/Trade.mqh>
@@ -61,6 +61,10 @@ struct MarketScore
 CTrade g_trade;
 MarketScore g_ranked[];
 string g_suffix=".r";
+string g_symbols[SYMBOL_COUNT];
+string g_cached_symbols[SYMBOL_COUNT];
+string g_mapping_status[SYMBOL_COUNT];
+string g_mapping_source[SYMBOL_COUNT];
 long g_last_scan_bucket=-1;
 bool g_initialised=false;
 bool g_immediate_rescan_requested=false;
@@ -86,14 +90,228 @@ bool DemoIdentitySafe(string &reason)
    return true;
   }
 
+string ConfiguredSymbol(const int index)
+  { return BASE_SYMBOLS[index]+g_suffix; }
+
+bool IsIndexAliasMarket(const int index)
+  { return index==1 || index==4 || index==10 || index==15 || index==16; }
+
+string NormalizedMetadata(string value)
+  {
+   StringToUpper(value);
+   string normalized="";
+   for(int i=0;i<StringLen(value);i++)
+     {
+      ushort character=StringGetCharacter(value,i);
+      if((character>='A' && character<='Z') || (character>='0' && character<='9'))
+         normalized+=ShortToString(character);
+     }
+   return normalized;
+  }
+
+bool ContainsText(const string text,const string token)
+  { return StringFind(text,token)>=0; }
+
+bool StartsWithText(const string text,const string prefix)
+  { return StringFind(text,prefix)==0; }
+
+bool AliasNameMatches(const int index,const string symbol)
+  {
+   string name=NormalizedMetadata(symbol);
+   if(index==1)
+      return StartsWithText(name,"USTEC") || StartsWithText(name,"NAS100") || StartsWithText(name,"US100") ||
+             StartsWithText(name,"NASDAQ") || StartsWithText(name,"NDX");
+   if(index==4)
+      return StartsWithText(name,"DE30") || StartsWithText(name,"DE40") || StartsWithText(name,"GER30") ||
+             StartsWithText(name,"GER40") || StartsWithText(name,"DAX");
+   if(index==10)
+      return StartsWithText(name,"US500") || StartsWithText(name,"SPX500") || StartsWithText(name,"SP500");
+   if(index==15)
+      return StartsWithText(name,"STOXX50") || StartsWithText(name,"EU50") || StartsWithText(name,"ESTX50") ||
+             StartsWithText(name,"EURO50");
+   if(index==16)
+      return StartsWithText(name,"UK100") || StartsWithText(name,"FTSE100");
+   return false;
+  }
+
+bool MarketMetadataMatches(const int index,const string symbol)
+  {
+   if(!AliasNameMatches(index,symbol)) return false;
+   string description=NormalizedMetadata(SymbolInfoString(symbol,SYMBOL_DESCRIPTION));
+   string path=NormalizedMetadata(SymbolInfoString(symbol,SYMBOL_PATH));
+   string metadata=description+path;
+   if(ContainsText(metadata,"FUTURE")) return false;
+   bool index_context=ContainsText(metadata,"INDEX") || ContainsText(metadata,"INDICES") ||
+                      ContainsText(metadata,"CASH") || ContainsText(metadata,"CFD");
+   bool identity_context=false;
+   if(index==1)
+      identity_context=ContainsText(metadata,"USTEC") || ContainsText(metadata,"NAS100") ||
+                       ContainsText(metadata,"US100") || ContainsText(metadata,"NASDAQ") ||
+                       ContainsText(metadata,"NDX") || ContainsText(metadata,"USTECH100");
+   else if(index==4)
+      identity_context=ContainsText(metadata,"DE30") || ContainsText(metadata,"DE40") ||
+                       ContainsText(metadata,"GER30") || ContainsText(metadata,"GER40") ||
+                       ContainsText(metadata,"DAX") || ContainsText(metadata,"GERMANY30") ||
+                       ContainsText(metadata,"GERMANY40");
+   else if(index==10)
+      identity_context=ContainsText(metadata,"US500") || ContainsText(metadata,"SPX500") ||
+                       ContainsText(metadata,"SP500") || ContainsText(metadata,"STANDARDPOORS500");
+   else if(index==15)
+      identity_context=ContainsText(metadata,"STOXX50") || ContainsText(metadata,"EU50") ||
+                       ContainsText(metadata,"ESTX50") || ContainsText(metadata,"EURO50") ||
+                       ContainsText(metadata,"EUROSTOXX50") ||
+                       ContainsText(metadata,"EUROPE50");
+   else if(index==16)
+      identity_context=ContainsText(metadata,"UK100") || ContainsText(metadata,"FTSE100") ||
+                       ContainsText(metadata,"UKFOOTSIE100");
+   return index_context && (identity_context || AliasNameMatches(index,description));
+  }
+
+bool VerifyResolvedSymbol(const int index,const string symbol,string &reason)
+  {
+   reason="";
+   if(symbol=="" || !SymbolSelect(symbol,true) || !SymbolInfoInteger(symbol,SYMBOL_EXIST))
+     { reason="NOT_IN_BROKER_CATALOGUE"; return false; }
+   if(!MarketMetadataMatches(index,symbol))
+     { reason="METADATA_IDENTITY_MISMATCH"; return false; }
+   if((ENUM_SYMBOL_TRADE_MODE)SymbolInfoInteger(symbol,SYMBOL_TRADE_MODE)!=SYMBOL_TRADE_MODE_FULL)
+     { reason="TRADE_NOT_FULLY_ENABLED"; return false; }
+   double point=SymbolInfoDouble(symbol,SYMBOL_POINT);
+   double tick_size=SymbolInfoDouble(symbol,SYMBOL_TRADE_TICK_SIZE);
+   double contract_size=SymbolInfoDouble(symbol,SYMBOL_TRADE_CONTRACT_SIZE);
+   double min_volume=SymbolInfoDouble(symbol,SYMBOL_VOLUME_MIN);
+   double max_volume=SymbolInfoDouble(symbol,SYMBOL_VOLUME_MAX);
+   double volume_step=SymbolInfoDouble(symbol,SYMBOL_VOLUME_STEP);
+   if(point<=0 || tick_size<=0 || contract_size<=0 || min_volume<=0 || max_volume<min_volume || volume_step<=0)
+     { reason="INVALID_CONTRACT_SPECIFICATION"; return false; }
+   MqlTick tick;
+   if(!SymbolInfoTick(symbol,tick) || tick.bid<=0 || tick.ask<=tick.bid)
+     { reason="INVALID_BID_ASK"; return false; }
+   long reference_msc=(long)TimeTradeServer()*1000;
+   double tick_age=MathMax(0.0,(reference_msc-tick.time_msc)/1000.0);
+   if(tick_age>MaxTickAgeSeconds)
+     { reason="STALE_TICK"; return false; }
+   double test_distance=MathMax(100.0*point,10.0*tick_size);
+   double buy_risk=0,sell_risk=0;
+   if(!OrderCalcProfit(ORDER_TYPE_BUY,symbol,min_volume,tick.ask,tick.ask-test_distance,buy_risk) || buy_risk>=0 ||
+      !OrderCalcProfit(ORDER_TYPE_SELL,symbol,min_volume,tick.bid,tick.bid+test_distance,sell_risk) || sell_risk>=0)
+     { reason="RISK_CALCULATOR_UNUSABLE"; return false; }
+   reason="FULL_TRADE_FRESH_CONTRACT_RISK_OK";
+   return true;
+  }
+
+int AliasCandidateScore(const int index,const string symbol)
+  {
+   string name=NormalizedMetadata(symbol);
+   string configured=NormalizedMetadata(ConfiguredSymbol(index));
+   int score=name==configured?1000:100;
+   if(StringFind(symbol,".r")>=0 || StringFind(symbol,".R")>=0) score+=30;
+   string metadata=NormalizedMetadata(SymbolInfoString(symbol,SYMBOL_DESCRIPTION)+SymbolInfoString(symbol,SYMBOL_PATH));
+   if(ContainsText(metadata,"CASH")) score+=20;
+   if(ContainsText(metadata,"INDEX") || ContainsText(metadata,"INDICES")) score+=10;
+   return score;
+  }
+
+bool DiscoverIndexSymbol(const int index)
+  {
+   string cached_reason;
+   if(g_cached_symbols[index]!="" && VerifyResolvedSymbol(index,g_cached_symbols[index],cached_reason))
+     {
+      g_symbols[index]=g_cached_symbols[index];
+      g_mapping_status[index]=cached_reason;
+      g_mapping_source[index]="CACHE_REVALIDATED";
+      return true;
+     }
+   string best="",best_status="";
+   int best_score=-1,best_count=0;
+   int total=SymbolsTotal(false);
+   for(int position=0;position<total;position++)
+     {
+      string candidate=SymbolName(position,false);
+      if(candidate=="" || !AliasNameMatches(index,candidate) || !MarketMetadataMatches(index,candidate)) continue;
+      string validation;
+      if(!VerifyResolvedSymbol(index,candidate,validation)) continue;
+      int score=AliasCandidateScore(index,candidate);
+      if(score>best_score) { best=candidate; best_status=validation; best_score=score; best_count=1; }
+      else if(score==best_score && candidate!=best) best_count++;
+     }
+   if(best=="" || best_count!=1)
+     {
+      g_symbols[index]="";
+      g_mapping_status[index]=best_count>1?"AMBIGUOUS_VERIFIED_ALIASES":"NO_VERIFIED_ALIAS";
+      g_mapping_source[index]="BROKER_ENUMERATION";
+      return false;
+     }
+   g_symbols[index]=best;
+   g_cached_symbols[index]=best;
+   g_mapping_status[index]=best_status;
+   g_mapping_source[index]="BROKER_ENUMERATION";
+   return true;
+  }
+
+void LoadMappingCache()
+  {
+   int handle=FileOpen("SolTradeFastMultiMarketV1\\symbol-map.csv",FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(handle==INVALID_HANDLE) return;
+   while(!FileIsEnding(handle))
+     {
+      string schema=FileReadString(handle);
+      string server=FileReadString(handle);
+      string intended=FileReadString(handle);
+      string actual=FileReadString(handle);
+      if(schema!="SOLTRADE_FAST_SYMBOL_MAP_V1" || server!=AccountInfoString(ACCOUNT_SERVER)) continue;
+      for(int i=0;i<SYMBOL_COUNT;i++)
+         if(IsIndexAliasMarket(i) && intended==ConfiguredSymbol(i)) g_cached_symbols[i]=actual;
+     }
+   FileClose(handle);
+  }
+
+void SaveMappingCache()
+  {
+   int handle=FileOpen("SolTradeFastMultiMarketV1\\symbol-map.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(handle==INVALID_HANDLE) return;
+   for(int i=0;i<SYMBOL_COUNT;i++)
+      if(IsIndexAliasMarket(i) && g_cached_symbols[i]!="")
+         FileWrite(handle,"SOLTRADE_FAST_SYMBOL_MAP_V1",AccountInfoString(ACCOUNT_SERVER),ConfiguredSymbol(i),g_cached_symbols[i]);
+   FileFlush(handle);
+   FileClose(handle);
+  }
+
+void WriteBrokerSymbolCatalogue()
+  {
+   int handle=FileOpen("SolTradeFastMultiMarketV1\\broker-symbol-catalogue.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(handle==INVALID_HANDLE) return;
+   FileWrite(handle,"symbol","description","path","trade_mode");
+   int total=SymbolsTotal(false);
+   for(int i=0;i<total;i++)
+     {
+      string symbol=SymbolName(i,false);
+      if(symbol!="")
+         FileWrite(handle,symbol,SymbolInfoString(symbol,SYMBOL_DESCRIPTION),SymbolInfoString(symbol,SYMBOL_PATH),
+                   EnumToString((ENUM_SYMBOL_TRADE_MODE)SymbolInfoInteger(symbol,SYMBOL_TRADE_MODE)));
+     }
+   FileFlush(handle);
+   FileClose(handle);
+  }
+
 bool SelectUniverse()
   {
+   WriteBrokerSymbolCatalogue();
+   LoadMappingCache();
    int selected=0;
    for(int i=0;i<SYMBOL_COUNT;i++)
      {
-      string symbol=BASE_SYMBOLS[i]+g_suffix;
-      if(SymbolSelect(symbol,true) && SymbolInfoInteger(symbol,SYMBOL_EXIST)) selected++;
+      if(IsIndexAliasMarket(i))
+        {
+         if(DiscoverIndexSymbol(i)) selected++;
+         continue;
+        }
+      g_symbols[i]=ConfiguredSymbol(i);
+      g_mapping_status[i]="CONFIGURED_EXACT";
+      g_mapping_source[i]="CONFIGURATION";
+      if(SymbolSelect(g_symbols[i],true) && SymbolInfoInteger(g_symbols[i],SYMBOL_EXIST)) selected++;
      }
+   SaveMappingCache();
    return selected>0;
   }
 
@@ -136,19 +354,33 @@ double Clamp(const double value,const double low,const double high)
 
 string ThemeForSymbol(const string symbol)
   {
-   if(StringFind(symbol,"XAUUSD")==0 || StringFind(symbol,"XAGUSD")==0) return "METALS_USD";
-   if(StringFind(symbol,"USTEC")==0 || StringFind(symbol,"US500")==0) return "US_RISK_INDEX";
-   if(StringFind(symbol,"DE30")==0 || StringFind(symbol,"STOXX50")==0 || StringFind(symbol,"UK100")==0) return "EUROPE_INDEX";
-   if(StringFind(symbol,"JPY")>=0) return "JPY_FACTOR";
-   if(StringFind(symbol,"USD")>=0) return "USD_FX";
-   if(StringFind(symbol,"AUD")>=0 || StringFind(symbol,"NZD")>=0) return "ANTIPODEAN_FX";
+   string intended=symbol;
+   for(int i=0;i<SYMBOL_COUNT;i++)
+      if(g_symbols[i]!="" && g_symbols[i]==symbol) { intended=BASE_SYMBOLS[i]; break; }
+   if(StringFind(intended,"XAUUSD")==0 || StringFind(intended,"XAGUSD")==0) return "METALS_USD";
+   if(StringFind(intended,"USTEC")==0 || StringFind(intended,"US500")==0) return "US_RISK_INDEX";
+   if(StringFind(intended,"DE30")==0 || StringFind(intended,"STOXX50")==0 || StringFind(intended,"UK100")==0) return "EUROPE_INDEX";
+   if(StringFind(intended,"JPY")>=0) return "JPY_FACTOR";
+   if(StringFind(intended,"USD")>=0) return "USD_FX";
+   if(StringFind(intended,"AUD")>=0 || StringFind(intended,"NZD")>=0) return "ANTIPODEAN_FX";
    return "EUROPE_FX";
   }
 
 bool ScoreSymbol(const int index,MarketScore &out)
   {
    ZeroMemory(out);
-   out.symbol=BASE_SYMBOLS[index]+g_suffix;
+   if(IsIndexAliasMarket(index) && g_symbols[index]=="")
+     {
+      if(DiscoverIndexSymbol(index)) SaveMappingCache();
+      else
+        {
+         out.symbol=ConfiguredSymbol(index);
+         out.priority=index<PRIORITY_COUNT?2:1;
+         out.reason=g_mapping_status[index];
+         return false;
+        }
+     }
+   out.symbol=g_symbols[index];
    out.priority=index<PRIORITY_COUNT?2:1;
    out.reason="NO_DATA";
    if(!SymbolSelect(out.symbol,true) || !SymbolInfoInteger(out.symbol,SYMBOL_EXIST)) return false;
@@ -519,6 +751,10 @@ void WriteRuntimeStatus()
    FileWrite(h,"correlation_group","open_count","maximum");
    string themes[7]={"METALS_USD","US_RISK_INDEX","EUROPE_INDEX","EUROPE_FX","JPY_FACTOR","USD_FX","ANTIPODEAN_FX"};
    for(int i=0;i<7;i++) FileWrite(h,themes[i],ThemePositionCount(themes[i]),MaxStronglyCorrelatedTrades);
+   FileWrite(h,"intended_market","configured_symbol","actual_broker_symbol","trade_status","mapping_source");
+   for(int i=0;i<SYMBOL_COUNT;i++)
+      if(IsIndexAliasMarket(i))
+         FileWrite(h,BASE_SYMBOLS[i],ConfiguredSymbol(i),g_symbols[i],g_mapping_status[i],g_mapping_source[i]);
    FileFlush(h); FileClose(h);
   }
 
@@ -555,6 +791,10 @@ int OnInit()
    ScanAndAct();
    Print("SOLTRADE_FAST_MULTI_MARKET_SETUP_ACTIVE account=",AccountInfoInteger(ACCOUNT_LOGIN),
          " server=",AccountInfoString(ACCOUNT_SERVER)," real_accounts_blocked=true universe=19 max_positions=6 dry_run=",DryRunOnly);
+   for(int i=0;i<SYMBOL_COUNT;i++)
+      if(IsIndexAliasMarket(i))
+         Print("SOLTRADE_FAST_INDEX_MAPPING intended=",ConfiguredSymbol(i)," actual=",g_symbols[i],
+               " status=",g_mapping_status[i]," source=",g_mapping_source[i]);
    return INIT_SUCCEEDED;
   }
 
