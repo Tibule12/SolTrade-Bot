@@ -46,6 +46,19 @@ required_patterns=(
   'TIGHTEN_STOP'
   'PROTECT_PROFIT'
   'TRAIL'
+  'RUNNER_MODE_ENTERED'
+  'RUNNER_TRAIL_UPDATE'
+  'RUNNER_PEAK_R'
+  'RUNNER_PEAK_DOLLARS'
+  'PROTECTED_R'
+  'PROTECTED_DOLLARS'
+  'TRAIL_UPDATES'
+  'FINAL_CAPTURE_RATIO'
+  'SOLTRADE_FAST_MULTI_V2_RUNNER_V1'
+  'SOLTRADE_FAST_MULTI_V2_SPREAD_AUDIT_V1'
+  'FX_PIP_AND_POINT'
+  'METAL_TICK_AND_POINT'
+  'INDEX_TICK_AND_POINT'
   'broker_sl_confirmed=true'
 )
 
@@ -71,6 +84,11 @@ done
 
 if rg -ni 'martingale|averaging down|revenge sizing|recovery sizing|17:00|PERIOD_D1' "$source_file"; then
   echo "forbidden lifecycle or sizing construct found" >&2
+  exit 1
+fi
+
+if rg -n 'g_trade\.(Buy|Sell)\([^;]*,[[:space:]]*[1-9][0-9.]*[[:space:]]*,' "$source_file"; then
+  echo "non-zero fixed take-profit found" >&2
   exit 1
 fi
 

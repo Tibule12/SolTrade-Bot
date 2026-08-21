@@ -50,6 +50,16 @@ struct MarketScore
    double sell_score;
    double no_trade_score;
    double spread;
+   double bid;
+   double ask;
+   double point;
+   double tick_size;
+   int digits;
+   double spread_points;
+   double spread_pips;
+   double recent_median_spread;
+   double spread_median_ratio;
+   int spread_samples;
    double spread_atr_pct;
    double movement_spread;
    double atr;
@@ -103,6 +113,20 @@ long g_last_exit_time[SYMBOL_COUNT];
 long g_last_setup_key[SYMBOL_COUNT];
 bool g_last_exit_invalidated[SYMBOL_COUNT];
 long g_v2_start_server=0;
+double g_recent_median_spread[SYMBOL_COUNT];
+double g_spread_median_ratio[SYMBOL_COUNT];
+int g_spread_samples[SYMBOL_COUNT];
+long g_spread_audit_msc[SYMBOL_COUNT];
+
+struct RunnerState
+  {
+   bool active;
+   double peak_r;
+   double peak_dollars;
+   double protected_r;
+   double protected_dollars;
+   int trail_updates;
+  };
 
 string BoolText(const bool value) { return value?"true":"false"; }
 string DirectionText(const int direction) { return direction>0?"BUY":direction<0?"SELL":"NONE"; }
@@ -140,6 +164,50 @@ bool IsPriorityMarket(const int index)
    string market=BASE_SYMBOLS[index];
    return market=="XAUUSD" || market=="XAGUSD" || market=="USTEC" || market=="US500" || market=="DE30" ||
           market=="GBPJPY" || market=="EURJPY" || market=="AUDJPY" || market=="USDJPY" || market=="GBPUSD";
+  }
+
+bool IsFxMarket(const int index)
+  {
+   string market=BASE_SYMBOLS[index];
+   return StringLen(market)==6 && market!="XAUUSD" && market!="XAGUSD";
+  }
+
+string SpreadRepresentation(const int index)
+  {
+   if(IsFxMarket(index)) return "FX_PIP_AND_POINT";
+   if(BASE_SYMBOLS[index]=="XAUUSD" || BASE_SYMBOLS[index]=="XAGUSD") return "METAL_TICK_AND_POINT";
+   return "INDEX_TICK_AND_POINT";
+  }
+
+void UpdateRecentSpreadAudit(const int index,const string symbol,const MqlTick &current)
+  {
+   bool refresh=g_spread_audit_msc[index]<=0 || current.time_msc-g_spread_audit_msc[index]>=300000;
+   if(refresh)
+     {
+      MqlTick ticks[];
+      ulong end_msc=(ulong)current.time_msc;
+      ulong start_msc=end_msc>3600000?end_msc-3600000:0;
+      int copied=CopyTicksRange(symbol,ticks,COPY_TICKS_INFO,start_msc,end_msc);
+      double spreads[]; int count=0;
+      if(copied>0)
+        {
+         ArrayResize(spreads,copied);
+         for(int i=0;i<copied;i++)
+           {
+            double value=ticks[i].ask-ticks[i].bid;
+            if(ticks[i].bid>0 && ticks[i].ask>ticks[i].bid && value>0) spreads[count++]=value;
+           }
+        }
+      if(count>0)
+        {
+         ArrayResize(spreads,count); ArraySort(spreads);
+         g_recent_median_spread[index]=count%2==1?spreads[count/2]:0.5*(spreads[count/2-1]+spreads[count/2]);
+         g_spread_samples[index]=count;
+        }
+      g_spread_audit_msc[index]=current.time_msc;
+     }
+   double current_spread=current.ask-current.bid;
+   g_spread_median_ratio[index]=g_recent_median_spread[index]>0?current_spread/g_recent_median_spread[index]:0;
   }
 
 string NormalizedMetadata(string value)
@@ -573,7 +641,18 @@ bool ScoreSymbol(const int index,MarketScore &out)
 
    long reference_msc=(long)TimeTradeServer()*1000;
    out.fresh=MathMax(0.0,(reference_msc-tick.time_msc)/1000.0)<=MaxTickAgeSeconds;
+   out.bid=tick.bid; out.ask=tick.ask;
+   out.point=SymbolInfoDouble(out.symbol,SYMBOL_POINT);
+   out.tick_size=SymbolInfoDouble(out.symbol,SYMBOL_TRADE_TICK_SIZE);
+   out.digits=(int)SymbolInfoInteger(out.symbol,SYMBOL_DIGITS);
+   UpdateRecentSpreadAudit(index,out.symbol,tick);
    out.spread=tick.ask-tick.bid;
+   out.spread_points=out.point>0?out.spread/out.point:0;
+   double pip_size=(IsFxMarket(index) && (out.digits==3 || out.digits==5))?10.0*out.point:out.point;
+   out.spread_pips=(IsFxMarket(index) && pip_size>0)?out.spread/pip_size:0;
+   out.recent_median_spread=g_recent_median_spread[index];
+   out.spread_median_ratio=g_spread_median_ratio[index];
+   out.spread_samples=g_spread_samples[index];
    out.atr=AverageRange(m5,1,14);
    double atr15=AverageRange(m15,1,14);
    if(out.atr<=0 || atr15<=0) { out.reason="ATR_INVALID"; return true; }
@@ -1017,6 +1096,51 @@ bool FindScore(const string symbol,MarketScore &score)
    return false;
   }
 
+string RunnerStatePath(const long identifier)
+  { return "SolTradeFastMultiMarketV2\\runner-state-"+IntegerToString(identifier)+".csv"; }
+
+void ResetRunnerState(RunnerState &state)
+  {
+   state.active=false; state.peak_r=0; state.peak_dollars=0;
+   state.protected_r=0; state.protected_dollars=0; state.trail_updates=0;
+  }
+
+bool LoadRunnerState(const long identifier,const string symbol,RunnerState &state)
+  {
+   ResetRunnerState(state);
+   int h=FileOpen(RunnerStatePath(identifier),FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return false;
+   string schema=FileReadString(h); long account=(long)StringToInteger(FileReadString(h));
+   long saved_identifier=(long)StringToInteger(FileReadString(h)); string saved_symbol=FileReadString(h);
+   state.active=FileReadString(h)=="true";
+   state.peak_r=StringToDouble(FileReadString(h)); state.peak_dollars=StringToDouble(FileReadString(h));
+   state.protected_r=StringToDouble(FileReadString(h)); state.protected_dollars=StringToDouble(FileReadString(h));
+   state.trail_updates=(int)StringToInteger(FileReadString(h)); FileClose(h);
+   if(schema!="SOLTRADE_FAST_MULTI_V2_RUNNER_V1" || account!=AccountInfoInteger(ACCOUNT_LOGIN) ||
+      saved_identifier!=identifier || saved_symbol!=symbol) { ResetRunnerState(state); return false; }
+   return true;
+  }
+
+void SaveRunnerState(const long identifier,const string symbol,const RunnerState &state)
+  {
+   if(identifier<=0) return;
+   string path=RunnerStatePath(identifier);
+   int h=FileOpen(path+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return;
+   FileWrite(h,"SOLTRADE_FAST_MULTI_V2_RUNNER_V1",AccountInfoInteger(ACCOUNT_LOGIN),identifier,symbol,
+             BoolText(state.active),DoubleToString(state.peak_r,8),DoubleToString(state.peak_dollars,8),
+             DoubleToString(state.protected_r,8),DoubleToString(state.protected_dollars,8),state.trail_updates);
+   FileFlush(h); FileClose(h); FileDelete(path,FILE_COMMON);
+   FileMove(path+".tmp",FILE_COMMON,path,FILE_COMMON|FILE_REWRITE);
+  }
+
+double NetProfitAtPrice(const string symbol,const int direction,const double volume,const double entry,const double price)
+  {
+   double gross=0; ENUM_ORDER_TYPE type=direction>0?ORDER_TYPE_BUY:ORDER_TYPE_SELL;
+   if(!OrderCalcProfit(type,symbol,volume,entry,price,gross)) return 0;
+   return gross-EstimatedRoundTripCommissionPerLot(symbol)*volume;
+  }
+
 void ManageFastPositions()
   {
    for(int i=PositionsTotal()-1;i>=0;i--)
@@ -1034,6 +1158,10 @@ void ManageFastPositions()
       double net_floating=PositionGetDouble(POSITION_PROFIT)+PositionGetDouble(POSITION_SWAP);
       if(!GlobalVariableCheck(MfeKey(identifier)) || net_floating>GlobalVariableGet(MfeKey(identifier))) GlobalVariableSet(MfeKey(identifier),net_floating);
       if(!GlobalVariableCheck(MaeKey(identifier)) || net_floating<GlobalVariableGet(MaeKey(identifier))) GlobalVariableSet(MaeKey(identifier),net_floating);
+      RunnerState runner; LoadRunnerState(identifier,symbol,runner);
+      bool runner_changed=false;
+      if(current_r>runner.peak_r) { runner.peak_r=current_r; runner_changed=true; }
+      if(net_floating>runner.peak_dollars) { runner.peak_dollars=net_floating; runner_changed=true; }
       MarketScore score; ZeroMemory(score); bool scored=FindScore(symbol,score);
       if(!scored) score.atr=MathMax(initial/5.0,SymbolInfoDouble(symbol,SYMBOL_POINT));
       double held_score=scored?(direction>0?score.buy_score:score.sell_score):50.0;
@@ -1042,6 +1170,14 @@ void ManageFastPositions()
       bool structure_broken=scored && score.fresh && score.direction==-direction && score.structural_reversal;
       bool thesis_bad=scored && score.fresh && (structure_broken || opposite_score>=held_score+MinDirectionalDominance ||
                        (score.no_trade_score>=held_score && held_score<MinEntryScore) || score.expected_net_move<=0);
+      if(current_r>=0.75 && !runner.active)
+        {
+         runner.active=true; runner_changed=true;
+         AppendEvidence("RUNNER_MODE_ENTERED",score,ticket,StringFormat(
+            "current_r=%.5f;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;no_fixed_take_profit=true",
+            current_r,runner.peak_r,runner.peak_dollars));
+        }
+      if(runner_changed) SaveRunnerState(identifier,symbol,runner);
       if(thesis_bad)
         {
          GlobalVariableSet("SFM2_INV_"+IntegerToString(identifier),1.0);
@@ -1059,25 +1195,36 @@ void ManageFastPositions()
       double minute_atr=minute_ready?AverageRange(minute,1,12):score.atr/5.0;
       double minute_structure=direction>0?(minute_ready?LowestLow(minute,1,10):entry):(minute_ready?HighestHigh(minute,1,10):entry);
       bool strong_continuation=would_open_now && score.path_efficiency>0.48 && score.score>=78 && score.expected_net_move>score.expected_cost_move*4.0;
-      if(current_r>=1.00)
+      if(runner.active)
         {
-         double trail=MathMax(0.45*score.atr,2.5*(tick.ask-tick.bid));
+         MqlRates m5[],m15[]; ArraySetAsSeries(m5,true); ArraySetAsSeries(m15,true);
+         bool m5_ready=CopyRates(symbol,PERIOD_M5,0,18,m5)>=16;
+         bool m15_ready=CopyRates(symbol,PERIOD_M15,0,12,m15)>=10;
+         double atr5=m5_ready?AverageRange(m5,1,14):score.atr;
+         double atr15=m15_ready?AverageRange(m15,1,8):3.0*score.atr;
+         double m5_structure=direction>0?(m5_ready?LowestLow(m5,1,8):minute_structure):(m5_ready?HighestHigh(m5,1,8):minute_structure);
+         double m15_structure=direction>0?(m15_ready?LowestLow(m15,1,6):m5_structure):(m15_ready?HighestHigh(m15,1,6):m5_structure);
+         double structure_anchor=direction>0?MathMin(m5_structure,m15_structure):MathMax(m5_structure,m15_structure);
+         double breathing=MathMax(MathMax(0.25*atr5,0.12*atr15),2.5*(tick.ask-tick.bid));
+         double trail=MathMax(0.55*score.atr,3.0*(tick.ask-tick.bid));
          double price_trail=direction>0?current-trail:current+trail;
-         double structure_trail=direction>0?minute_structure-0.35*minute_atr:minute_structure+0.35*minute_atr;
-         desired=direction>0?MathMax(entry+0.50*initial,MathMin(price_trail,structure_trail)):
-                              MathMin(entry-0.50*initial,MathMax(price_trail,structure_trail));
-         management="TRAIL";
-        }
-      else if(current_r>=0.75)
-        {
-         double structural=direction>0?minute_structure-0.30*minute_atr:minute_structure+0.30*minute_atr;
-         desired=direction>0?MathMax(entry+0.30*initial,structural):MathMin(entry-0.30*initial,structural);
-         management="PROTECT_PROFIT";
+         double structure_trail=direction>0?structure_anchor-breathing:structure_anchor+breathing;
+         bool confirmed_profitable_structure=direction>0?structure_trail>entry:structure_trail<entry;
+         if(confirmed_profitable_structure)
+           {
+            desired=direction>0?MathMin(price_trail,structure_trail):MathMax(price_trail,structure_trail);
+            management="RUNNER_TRAIL";
+           }
         }
       else if(current_r>=0.50)
         {
-         desired=entry+direction*(strong_continuation?0.05:0.15)*initial;
-         management=strong_continuation?"TIGHTEN_STOP":"PROTECT_PROFIT";
+         double structural=direction>0?minute_structure-0.30*minute_atr:minute_structure+0.30*minute_atr;
+         bool structure_permits=minute_ready && (direction>0?structural>entry:structural<entry);
+         if(structure_permits)
+           {
+            desired=structural;
+            management=strong_continuation?"TIGHTEN_STOP":"PROTECT_PROFIT";
+           }
         }
       else if(current_r>=0.25 && !strong_continuation && (!would_open_now || score.volatility_expansion<0.85))
         {
@@ -1112,6 +1259,19 @@ void ManageFastPositions()
            }
          else if(scored) AppendEvidence(management,score,ticket,StringFormat("current_r=%.5f;old_stop=%.8f;new_stop=%.8f;structure_aware=true",
             current_r,sl,desired));
+         if(g_trade.ResultRetcode()==TRADE_RETCODE_DONE || g_trade.ResultRetcode()==TRADE_RETCODE_DONE_PARTIAL)
+           {
+            if(runner.active)
+              {
+               runner.trail_updates++;
+               runner.protected_r=direction*(desired-entry)/initial;
+               runner.protected_dollars=NetProfitAtPrice(symbol,direction,PositionGetDouble(POSITION_VOLUME),entry,desired);
+               SaveRunnerState(identifier,symbol,runner);
+               if(scored) AppendEvidence("RUNNER_TRAIL_UPDATE",score,ticket,StringFormat(
+                  "RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;old_stop=%.8f;new_stop=%.8f",
+                  runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,runner.trail_updates,sl,desired));
+              }
+           }
         }
      }
   }
@@ -1165,6 +1325,7 @@ bool OpenCandidate(const MarketScore &candidate,string &reason)
      }
    PersistInitialDistance(live.symbol,stop_distance);
    long identifier=PositionGetInteger(POSITION_IDENTIFIER);
+   RunnerState runner; ResetRunnerState(runner); SaveRunnerState(identifier,live.symbol,runner);
    GlobalVariableSet(MfeKey(identifier),0.0); GlobalVariableSet(MaeKey(identifier),0.0);
    int index=SymbolIndexByActual(live.symbol);
    if(index>=0) { g_last_setup_key[index]=live.setup_key; SaveReversalState(); }
@@ -1209,6 +1370,32 @@ void AggregateMagicHistoryBefore(const long magic,const datetime before,double &
       swap+=HistoryDealGetDouble(deal,DEAL_SWAP);
      }
    net=gross+commission+swap;
+  }
+
+void WriteSpreadAudit()
+  {
+   string path="SolTradeFastMultiMarketV2\\spread-audit.csv";
+   int h=FileOpen(path+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return;
+   FileWrite(h,"schema","utc","base_market","broker_symbol","representation","point","tick_size","digits",
+             "bid","ask","raw_spread","spread_points","spread_pips","median_raw_spread","median_points","median_pips",
+             "current_median_ratio","median_sample_count","spread_atr_percent","spread_filter_result");
+   for(int i=0;i<ArraySize(g_ranked);i++)
+     {
+      MarketScore s=g_ranked[i]; int index=SymbolIndexByActual(s.symbol); if(index<0) continue;
+      string current_pips=IsFxMarket(index)?DoubleToString(s.spread_pips,4):"NOT_APPLICABLE";
+      string median_pips="NOT_APPLICABLE";
+      double pip_size=(IsFxMarket(index) && (s.digits==3 || s.digits==5))?10.0*s.point:s.point;
+      if(IsFxMarket(index) && pip_size>0) median_pips=DoubleToString(s.recent_median_spread/pip_size,4);
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SPREAD_AUDIT_V1",TimeToString(TimeGMT(),TIME_DATE|TIME_SECONDS),BASE_SYMBOLS[index],s.symbol,
+                SpreadRepresentation(index),DoubleToString(s.point,10),DoubleToString(s.tick_size,10),s.digits,
+                DoubleToString(s.bid,s.digits),DoubleToString(s.ask,s.digits),DoubleToString(s.spread,10),
+                DoubleToString(s.spread_points,4),current_pips,DoubleToString(s.recent_median_spread,10),
+                DoubleToString(s.point>0?s.recent_median_spread/s.point:0,4),median_pips,DoubleToString(s.spread_median_ratio,4),
+                s.spread_samples,DoubleToString(s.spread_atr_pct,4),s.spread_atr_pct>MaxSpreadAtrPercent?"ABNORMAL_SPREAD":"PASS");
+     }
+   FileFlush(h); FileClose(h); FileDelete(path,FILE_COMMON);
+   FileMove(path+".tmp",FILE_COMMON,path,FILE_COMMON|FILE_REWRITE);
   }
 
 void WriteRuntimeStatus()
@@ -1261,6 +1448,7 @@ void WriteRuntimeStatus()
       if(IsIndexAliasMarket(i))
          FileWrite(h,BASE_SYMBOLS[i],ConfiguredSymbol(i),g_symbols[i],g_mapping_status[i],g_mapping_source[i]);
    FileFlush(h); FileClose(h);
+   WriteSpreadAudit();
   }
 
 void ScanAndAct()
@@ -1361,8 +1549,11 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
          net=gross+commission+swap;
          double mfe=GlobalVariableCheck(MfeKey(position_id))?GlobalVariableGet(MfeKey(position_id)):0;
          double mae=GlobalVariableCheck(MaeKey(position_id))?GlobalVariableGet(MaeKey(position_id)):0;
-         AppendEvidence("EXIT",score,0,StringFormat("position_id=%I64d;gross=%.2f;commission=%.2f;swap=%.2f;net=%.2f;mfe=%.2f;mae=%.2f;invalidated=%s;reason=%s",
-            position_id,gross,commission,swap,net,mfe,mae,BoolText(invalidated),EnumToString((ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON))));
+         RunnerState runner; LoadRunnerState(position_id,symbol,runner);
+         double capture_ratio=runner.peak_dollars>0?MathMax(0.0,net)/runner.peak_dollars:0;
+         AppendEvidence("EXIT",score,0,StringFormat("position_id=%I64d;gross=%.2f;commission=%.2f;swap=%.2f;net=%.2f;mfe=%.2f;mae=%.2f;invalidated=%s;reason=%s;RUNNER_MODE_ENTERED=%s;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;FINAL_CAPTURE_RATIO=%.6f",
+            position_id,gross,commission,swap,net,mfe,mae,BoolText(invalidated),EnumToString((ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON)),
+            BoolText(runner.active),runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,runner.trail_updates,capture_ratio));
         }
       g_immediate_rescan_requested=true;
      }
