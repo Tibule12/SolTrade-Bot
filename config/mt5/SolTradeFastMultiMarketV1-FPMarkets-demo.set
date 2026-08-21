@@ -1,0 +1,17 @@
+SetupEnabled=true
+DemoExecutionConfirmed=true
+DryRunOnly=false
+ApprovedDemoAccount=7404213
+ApprovedDemoServer=FPMarketsSC-Demo
+FastMagic=2108202601
+RiskPerTradePercent=0.25
+MaxPortfolioRiskPercent=1.50
+MaxSimultaneousTrades=6
+MaxStronglyCorrelatedTrades=2
+ScanSeconds=10
+MaxTickAgeSeconds=8
+MaxSpreadAtrPercent=8.0
+MinMovementToSpread=5.0
+MinRewardRisk=1.25
+MinEntryScore=66.0
+MaxSlippagePoints=12
