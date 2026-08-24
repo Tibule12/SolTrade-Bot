@@ -3,6 +3,10 @@ set -euo pipefail
 
 source_file="MQL5/Experts/SolTradeFastMultiMarketV2.mq5"
 demo_set="config/mt5/SolTradeFastMultiMarketV2-FPMarkets-demo.set"
+service_file="ops/fast-multi-v2/soltrade-fast-multi-v2.service"
+watchdog_timer="ops/fast-multi-v2/soltrade-fast-multi-v2-watchdog.timer"
+launcher="ops/fast-multi-v2/soltrade-fast-multi-v2-launch"
+watchdog="ops/fast-multi-v2/soltrade-fast-multi-v2-watchdog"
 
 required_patterns=(
   '#define REQUIRED_DEMO_LOGIN 7404213'
@@ -60,11 +64,39 @@ required_patterns=(
   'METAL_TICK_AND_POINT'
   'INDEX_TICK_AND_POINT'
   'broker_sl_confirmed=true'
+  'BROKER_RECONCILIATION_PASS'
+  'AMBIGUOUS_PENDING_FAST_MULTI_ORDER'
+  'DUPLICATE_FAST_MULTI_POSITION_'
+  'BROKER_DISCONNECTED_RECONCILIATION_REQUIRED'
+  'RUNTIME_TIMER_GAP_RECOVERY'
+  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V1'
+  'scan-history-'
+  'FIRST_SUCCESSFUL_SCAN_AFTER_RECOVERY'
+  'INDEX_ALIAS_RETRY_FAILED'
+  'REASON_TERMINAL_CLOSE_OR_UPDATE'
 )
 
 for pattern in "${required_patterns[@]}"; do
   rg -q "$pattern" "$source_file"
 done
+
+rg -q '^Restart=always$' "$service_file"
+rg -q '^RestartSec=30$' "$service_file"
+rg -q '^StartLimitIntervalSec=900$' "$service_file"
+rg -q '^ExecStart=/home/tibule12/.local/libexec/soltrade-fast-multi-v2-launch$' "$service_file"
+rg -Fq "/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Fast Multi/terminal64.exe" "$launcher"
+rg -q 'WAITING_FOR_GRAPHICS' "$launcher"
+rg -q 'UPDATE_GRACE_STARTED' "$launcher"
+rg -q '^OnUnitActiveSec=1min$' "$watchdog_timer"
+rg -q 'isolated_terminal_missing' "$watchdog"
+rg -q 'runtime_stale' "$watchdog"
+
+if rg -Fq '/Program Files/MetaTrader 5/terminal64.exe' "$service_file" "$launcher" "$watchdog"; then
+  echo "normal MetaTrader terminal referenced by Fast Multi operations files" >&2
+  exit 1
+fi
+
+bash -n "$launcher" "$watchdog"
 
 for setting in \
   'DemoExecutionConfirmed=true' \

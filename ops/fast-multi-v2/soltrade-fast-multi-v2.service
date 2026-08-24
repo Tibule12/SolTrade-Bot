@@ -1,0 +1,21 @@
+[Unit]
+Description=SolTrade Fast Multi-Market V2 isolated FP Markets demo terminal
+After=graphical-session.target network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=900
+StartLimitBurst=20
+
+[Service]
+Type=simple
+Environment=WINEPREFIX=/home/tibule12/.wine-fpmarkets
+Environment=DISPLAY=:1
+Environment=XAUTHORITY=/run/user/1000/gdm/Xauthority
+ExecStart=/home/tibule12/.local/libexec/soltrade-fast-multi-v2-launch
+Restart=always
+RestartSec=30
+TimeoutStartSec=infinity
+TimeoutStopSec=20
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

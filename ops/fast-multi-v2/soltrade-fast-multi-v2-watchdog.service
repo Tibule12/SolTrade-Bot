@@ -1,0 +1,7 @@
+[Unit]
+Description=SolTrade Fast Multi-Market V2 isolated-terminal health check
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/tibule12/.local/libexec/soltrade-fast-multi-v2-watchdog

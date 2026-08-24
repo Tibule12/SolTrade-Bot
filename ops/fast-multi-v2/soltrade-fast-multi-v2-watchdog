@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+set -u
+
+readonly unit='soltrade-fast-multi-v2.service'
+readonly terminal_fragment='/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Fast Multi/terminal64.exe'
+readonly state_dir='/home/tibule12/.local/state/soltrade-fast-multi-v2'
+readonly service_state="$state_dir/launcher-state"
+readonly watchdog_log="$state_dir/watchdog.log"
+readonly runtime_file='/home/tibule12/.wine-fpmarkets/drive_c/users/tibule12/AppData/Roaming/MetaQuotes/Terminal/Common/Files/SolTradeFastMultiMarketV2/runtime.csv'
+
+mkdir -p "$state_dir"
+chmod 700 "$state_dir"
+
+log_event() {
+  printf '%s event=%s %s\n' "$(date --utc --iso-8601=seconds)" "$1" "${2:-}" >> "$watchdog_log"
+}
+
+if ! systemctl --user is-active --quiet "$unit"; then
+  log_event SERVICE_RECOVERY "reason=unit_not_active"
+  systemctl --user reset-failed "$unit" >/dev/null 2>&1 || true
+  systemctl --user start "$unit"
+  exit $?
+fi
+
+mode='UNKNOWN'
+since_epoch=0
+until_epoch=0
+if [[ -r "$service_state" ]]; then
+  while IFS='=' read -r key value; do
+    case "$key" in
+      mode) mode="$value" ;;
+      since_epoch) since_epoch="$value" ;;
+      until_epoch) until_epoch="$value" ;;
+    esac
+  done < "$service_state"
+fi
+
+now_epoch=$(date +%s)
+if [[ "$mode" == 'WAITING_FOR_GRAPHICS' || "$mode" == 'TERMINAL_STARTING' ]]; then
+  log_event HEALTHY_TRANSITION "mode=$mode"
+  exit 0
+fi
+if [[ "$mode" == 'UPDATE_GRACE' ]] && (( now_epoch <= until_epoch + 30 )); then
+  log_event HEALTHY_UPDATE_GRACE "until_epoch=$until_epoch"
+  exit 0
+fi
+
+if ! pgrep -f -- "$terminal_fragment" >/dev/null 2>&1; then
+  if (( now_epoch - since_epoch < 180 )); then
+    log_event HEALTHY_STARTUP_GRACE "mode=$mode age_seconds=$((now_epoch-since_epoch))"
+    exit 0
+  fi
+  log_event SERVICE_RECOVERY "reason=isolated_terminal_missing mode=$mode"
+  systemctl --user restart "$unit"
+  exit $?
+fi
+
+if [[ -f "$runtime_file" ]]; then
+  runtime_age=$(( now_epoch - $(stat -c %Y "$runtime_file") ))
+  if (( runtime_age > 180 )); then
+    log_event SERVICE_RECOVERY "reason=runtime_stale age_seconds=$runtime_age"
+    systemctl --user restart "$unit"
+    exit $?
+  fi
+  log_event HEALTHY "isolated_terminal=true runtime_age_seconds=$runtime_age"
+else
+  if (( now_epoch - since_epoch > 180 )); then
+    log_event SERVICE_RECOVERY "reason=runtime_missing"
+    systemctl --user restart "$unit"
+    exit $?
+  fi
+  log_event HEALTHY_STARTUP_GRACE "runtime_missing=true age_seconds=$((now_epoch-since_epoch))"
+fi

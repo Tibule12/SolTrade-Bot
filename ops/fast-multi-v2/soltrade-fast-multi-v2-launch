@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+set -u
+
+readonly terminal_path='/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Fast Multi/terminal64.exe'
+readonly terminal_args=(/portable '/config:C:\soltrade-fast-multi-v2\run-demo.ini')
+readonly state_dir="${SOLTRADE_FAST_MULTI_STATE_DIR:-/home/tibule12/.local/state/soltrade-fast-multi-v2}"
+readonly service_state="$state_dir/launcher-state"
+readonly lifecycle_log="$state_dir/service-lifecycle.log"
+readonly update_grace_seconds=120
+
+mkdir -p "$state_dir"
+chmod 700 "$state_dir"
+
+log_event() {
+  local event="$1"
+  local detail="${2:-}"
+  printf '%s event=%s %s\n' "$(date --utc --iso-8601=seconds)" "$event" "$detail" >> "$lifecycle_log"
+}
+
+write_state() {
+  local mode="$1"
+  local until_epoch="${2:-0}"
+  local temp_file="$service_state.tmp"
+  printf 'mode=%s\nsince_epoch=%s\nuntil_epoch=%s\nlauncher_pid=%s\n' \
+    "$mode" "$(date +%s)" "$until_epoch" "$$" > "$temp_file"
+  mv -f "$temp_file" "$service_state"
+}
+
+wait_for_graphics() {
+  write_state WAITING_FOR_GRAPHICS
+  while true; do
+    local candidates=("$DISPLAY")
+    local socket
+    shopt -s nullglob
+    for socket in /tmp/.X11-unix/X*; do
+      candidates+=(":${socket##*X}")
+    done
+    shopt -u nullglob
+    local candidate
+    for candidate in "${candidates[@]}"; do
+      if [[ -S "/tmp/.X11-unix/X${candidate#:}" ]] && [[ -r "$XAUTHORITY" ]]; then
+        if ! command -v xset >/dev/null 2>&1 || timeout 5 xset -display "$candidate" q >/dev/null 2>&1; then
+          export DISPLAY="$candidate"
+          log_event GRAPHICS_READY "display=$DISPLAY xauthority=$XAUTHORITY"
+          return 0
+        fi
+      fi
+    done
+    log_event GRAPHICS_WAIT "display=$DISPLAY xauthority=$XAUTHORITY retry_seconds=15"
+    sleep 15
+  done
+}
+
+terminate_child() {
+  if [[ -n "${terminal_pid:-}" ]] && kill -0 "$terminal_pid" 2>/dev/null; then
+    kill -TERM "$terminal_pid" 2>/dev/null || true
+    wait "$terminal_pid" 2>/dev/null || true
+  fi
+  log_event LAUNCHER_STOPPED_BY_SYSTEMD
+  exit 0
+}
+
+trap terminate_child TERM INT
+
+if [[ ! -x "$terminal_path" ]]; then
+  log_event TERMINAL_BINARY_MISSING "path=$terminal_path"
+  write_state TERMINAL_BINARY_MISSING
+  exit 66
+fi
+
+wait_for_graphics
+if [[ "${SOLTRADE_GRAPHICS_PROBE_ONLY:-false}" == 'true' ]]; then
+  write_state GRAPHICS_PROBE_PASS
+  log_event GRAPHICS_PROBE_PASS "display=$DISPLAY"
+  exit 0
+fi
+write_state TERMINAL_STARTING
+log_event TERMINAL_START "path=$terminal_path prefix=$WINEPREFIX"
+/usr/bin/wine "$terminal_path" "${terminal_args[@]}" &
+terminal_pid=$!
+write_state TERMINAL_RUNNING
+wait "$terminal_pid"
+terminal_status=$?
+terminal_pid=''
+log_event TERMINAL_EXIT "status=$terminal_status update_grace_seconds=$update_grace_seconds"
+
+# MT5 LiveUpdate starts a sibling process and then exits the terminal with status 0.
+# Keep the service cgroup alive long enough for that updater to finish before systemd
+# tears it down. If LiveUpdate has already relaunched the isolated terminal, adopt
+# that process lifetime so systemd does not destroy the successful relaunch.
+isolated_terminal_running() {
+  pgrep -f -- 'FP Markets MT5 Fast Multi.*terminal64\.exe' >/dev/null 2>&1
+}
+
+while true; do
+  grace_until=$(( $(date +%s) + update_grace_seconds ))
+  write_state UPDATE_GRACE "$grace_until"
+  log_event UPDATE_GRACE_STARTED "terminal_status=$terminal_status until_epoch=$grace_until"
+  while (( $(date +%s) < grace_until )); do
+    if isolated_terminal_running; then
+      write_state TERMINAL_RUNNING_RELAUNCHED
+      log_event UPDATED_TERMINAL_ADOPTED
+      while isolated_terminal_running; do
+        sleep 5
+      done
+      log_event ADOPTED_TERMINAL_EXIT "new_update_grace_seconds=$update_grace_seconds"
+      break
+    fi
+    sleep 5
+  done
+  if isolated_terminal_running; then
+    continue
+  fi
+  if (( $(date +%s) >= grace_until )); then
+    log_event UPDATE_GRACE_COMPLETED "terminal_status=$terminal_status relaunch_detected=false"
+    break
+  fi
+done
+exit "$terminal_status"

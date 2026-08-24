@@ -2,6 +2,8 @@
 """Deterministic policy regressions for Fast Multi-Market V2."""
 
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 
 def eligible(score, opposite, no_trade, spread_atr, movement_spread, net_move, cost_multiple):
@@ -59,6 +61,25 @@ def runner_decision(current_r, thesis_invalidated=False, trailing_stop_hit=False
 
 def ratchet_stop(direction, current_stop, candidate_stop):
     return max(current_stop, candidate_stop) if direction == 1 else min(current_stop, candidate_stop)
+
+
+def reconciliation_safe(positions, pending_orders):
+    if any(order["magic"] == 2108202601 for order in pending_orders):
+        return False, "AMBIGUOUS_PENDING_FAST_MULTI_ORDER"
+    seen = set()
+    for position in positions:
+        if position["magic"] != 2108202601:
+            continue
+        if position["symbol"] in seen:
+            return False, "DUPLICATE_FAST_MULTI_POSITION"
+        seen.add(position["symbol"])
+        if not position["known_symbol"]:
+            return False, "UNRESOLVED_OPEN_POSITION_SYMBOL"
+        if position["stop"] <= 0:
+            return False, "OPEN_POSITION_WITHOUT_BROKER_STOP"
+        if not position["persistent_state"]:
+            return False, "PERSISTENT_STATE_UNRECOVERABLE"
+    return True, "BROKER_RECONCILIATION_PASS"
 
 
 class FastMultiV2PolicyTests(unittest.TestCase):
@@ -149,6 +170,43 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         _, points, pips = spread_units(26000.0, 26000.5, 0.1, 1, False)
         self.assertAlmostEqual(points, 5.0)
         self.assertIsNone(pips)
+
+    def test_restart_reconciliation_accepts_one_persisted_stopped_position(self):
+        positions = [{"magic": 2108202601, "symbol": "EURUSD.r", "known_symbol": True,
+                      "stop": 1.08, "persistent_state": True}]
+        self.assertEqual(reconciliation_safe(positions, []), (True, "BROKER_RECONCILIATION_PASS"))
+
+    def test_restart_reconciliation_rejects_duplicate_position(self):
+        position = {"magic": 2108202601, "symbol": "EURUSD.r", "known_symbol": True,
+                    "stop": 1.08, "persistent_state": True}
+        safe, reason = reconciliation_safe([position, position.copy()], [])
+        self.assertFalse(safe)
+        self.assertEqual(reason, "DUPLICATE_FAST_MULTI_POSITION")
+
+    def test_restart_reconciliation_rejects_pending_order(self):
+        safe, reason = reconciliation_safe([], [{"magic": 2108202601}])
+        self.assertFalse(safe)
+        self.assertEqual(reason, "AMBIGUOUS_PENDING_FAST_MULTI_ORDER")
+
+    def test_restart_reconciliation_rejects_missing_stop_or_state(self):
+        base = {"magic": 2108202601, "symbol": "EURUSD.r", "known_symbol": True,
+                "stop": 1.08, "persistent_state": True}
+        no_stop = dict(base, stop=0)
+        no_state = dict(base, persistent_state=False)
+        self.assertFalse(reconciliation_safe([no_stop], [])[0])
+        self.assertFalse(reconciliation_safe([no_state], [])[0])
+
+    def test_append_only_scan_history_survives_subsequent_scans(self):
+        with TemporaryDirectory() as directory:
+            audit = Path(directory) / "scan-history.csv"
+            with audit.open("a", encoding="utf-8") as stream:
+                stream.write("scan,symbol,reason\n")
+                stream.write("1,EURUSD.r,ABNORMAL_SPREAD\n")
+            first_size = audit.stat().st_size
+            with audit.open("a", encoding="utf-8") as stream:
+                stream.write("2,EURUSD.r,QUALIFIED_CONTEXT_COST_STRUCTURE\n")
+            self.assertGreater(audit.stat().st_size, first_size)
+            self.assertEqual(len(audit.read_text(encoding="utf-8").splitlines()), 3)
 
 
 if __name__ == "__main__":
