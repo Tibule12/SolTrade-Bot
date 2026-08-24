@@ -6,12 +6,21 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 
-def eligible(score, opposite, no_trade, spread_atr, movement_spread, net_move, cost_multiple):
+def spread_filter(median_spread, current_spread, samples, minimum_samples=100, maximum_ratio=1.75):
+    baseline_ready = samples >= minimum_samples and median_spread > 0 and current_spread > 0
+    ratio = current_spread / median_spread if baseline_ready else 0.0
+    return baseline_ready, ratio, baseline_ready and ratio <= maximum_ratio
+
+
+def eligible(score, opposite, no_trade, median_spread, current_spread, spread_samples,
+             movement_spread, net_move, cost_multiple, reward_r=1.25):
+    _, _, spread_ok = spread_filter(median_spread, current_spread, spread_samples)
     return (
-        spread_atr <= 8.0
+        spread_ok
         and movement_spread >= 5.0
         and net_move > 0.0
         and cost_multiple >= 3.0
+        and reward_r >= 1.25
         and score >= 68.0
         and score >= opposite + 12.0
         and score >= no_trade + 8.0
@@ -63,6 +72,21 @@ def ratchet_stop(direction, current_stop, candidate_stop):
     return max(current_stop, candidate_stop) if direction == 1 else min(current_stop, candidate_stop)
 
 
+def structural_stop(direction, entry, m5_swing, m15_swing, expansion_buffer,
+                    atr5, atr15, broker_minimum):
+    invalidation = max(m5_swing, m15_swing) if direction == 1 else min(m5_swing, m15_swing)
+    raw_distance = entry - invalidation + expansion_buffer if direction == 1 else invalidation - entry + expansion_buffer
+    return max(raw_distance, 1.15 * atr5, 0.55 * atr15, broker_minimum), invalidation
+
+
+def estimated_round_trip_commission(deal_commissions, fallback=6.0):
+    observations = [(abs(commission + fee), volume)
+                    for commission, fee, volume in deal_commissions if volume > 0]
+    if not observations:
+        return fallback
+    return 2.0 * sum(cost / volume for cost, volume in observations) / len(observations)
+
+
 def reconciliation_safe(positions, pending_orders):
     if any(order["magic"] == 2108202601 for order in pending_orders):
         return False, "AMBIGUOUS_PENDING_FAST_MULTI_ORDER"
@@ -109,20 +133,51 @@ class HistoryWarmup:
 
 class FastMultiV2PolicyTests(unittest.TestCase):
     def test_no_trade_overrides_moderate_direction(self):
-        self.assertFalse(eligible(72, 50, 68, 3, 20, 2, 4))
+        self.assertFalse(eligible(72, 50, 68, 1.0, 1.0, 100, 20, 2, 4))
 
     def test_direction_must_dominate_opposite(self):
-        self.assertFalse(eligible(75, 66, 30, 3, 20, 2, 4))
+        self.assertFalse(eligible(75, 66, 30, 1.0, 1.0, 100, 20, 2, 4))
 
     def test_abnormal_spread_rejected(self):
-        self.assertFalse(eligible(90, 30, 20, 8.01, 20, 2, 4))
+        self.assertFalse(eligible(90, 30, 20, 1.0, 1.751, 100, 20, 2, 4))
+
+    def test_normal_symbol_relative_spread_passes_even_above_legacy_atr_ratio(self):
+        self.assertTrue(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4))
+
+    def test_spread_ratio_boundary_and_missing_baseline(self):
+        self.assertTrue(spread_filter(1.0, 1.75, 100)[2])
+        self.assertFalse(spread_filter(1.0, 1.750001, 100)[2])
+        self.assertFalse(spread_filter(1.0, 1.0, 99)[2])
 
     def test_insufficient_net_move_rejected(self):
-        self.assertFalse(eligible(90, 30, 20, 3, 20, 0, 4))
-        self.assertFalse(eligible(90, 30, 20, 3, 20, 2, 2.99))
+        self.assertFalse(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 0, 4))
+        self.assertFalse(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 2.99))
 
     def test_clean_candidate_accepted(self):
-        self.assertTrue(eligible(82, 55, 42, 4, 12, 3, 4))
+        self.assertTrue(eligible(82, 55, 42, 1.0, 1.1, 100, 12, 3, 4))
+
+    def test_reward_threshold_remains_one_point_two_five(self):
+        self.assertFalse(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.249999))
+        self.assertTrue(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.25))
+
+    def test_nearest_confirmed_structure_is_selected(self):
+        buy_distance, buy_invalidation = structural_stop(1, 1.1050, 1.1000, 1.1020, 0.0002,
+                                                         0.0010, 0.0020, 0.0003)
+        sell_distance, sell_invalidation = structural_stop(-1, 1.1000, 1.1050, 1.1030, 0.0002,
+                                                            0.0010, 0.0020, 0.0003)
+        self.assertEqual(buy_invalidation, 1.1020)
+        self.assertEqual(sell_invalidation, 1.1030)
+        self.assertAlmostEqual(buy_distance, 0.0032)
+        self.assertAlmostEqual(sell_distance, 0.0032)
+
+    def test_atr_and_broker_stop_floors_are_preserved(self):
+        distance, _ = structural_stop(1, 1.1050, 1.1048, 1.1049, 0.0,
+                                      0.0010, 0.0030, 0.0020)
+        self.assertAlmostEqual(distance, 0.0020)
+
+    def test_broker_confirmed_zero_commission_is_not_replaced_by_fallback(self):
+        self.assertEqual(estimated_round_trip_commission([(0.0, 0.0, 9.82), (0.0, 0.0, 9.82)]), 0.0)
+        self.assertEqual(estimated_round_trip_commission([]), 6.0)
 
     def test_wider_stop_reduces_lot(self):
         narrow = sized_lots(100_000, 100, 6)

@@ -31,6 +31,14 @@ required_patterns=(
   'NO_TRADE_CASE_DOMINATES'
   'EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS'
   'ABNORMAL_SPREAD'
+  'SPREAD_BASELINE_WARMUP'
+  'MaxSpreadMedianRatio=1.75'
+  'MinSpreadBaselineSamples=100'
+  'out.direction>0\?MathMax\(m5_swing,m15_swing\):MathMin\(m5_swing,m15_swing\)'
+  'LowestLow\(m5,1,8\):HighestHigh\(m5,1,8\)'
+  'LowestLow\(m15,1,6\):HighestHigh\(m15,1,6\)'
+  'if\(volume<=0\) continue'
+  'stop_distance=MathMax\(stop_distance,MathMax\(1.15\*out.atr,0.55\*atr15\)\)'
   'NO_GENUINE_STRUCTURAL_REVERSAL'
   'M5_M15_REVERSAL_NOT_CONFIRMED'
   'SAME_STRUCTURAL_SETUP_ALREADY_CONSUMED'
@@ -75,8 +83,8 @@ required_patterns=(
   'HISTORY_WARMUP_SYMBOL_READY'
   'POST_RECOVERY_HISTORY_WARMUP'
   'POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED'
-  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V1'
-  'scan-history-'
+  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V2'
+  'scan-history-v2-'
   'FIRST_SUCCESSFUL_SCAN_AFTER_RECOVERY'
   'INDEX_ALIAS_RETRY_FAILED'
   'REASON_TERMINAL_CLOSE_OR_UPDATE'
@@ -117,6 +125,13 @@ for setting in \
   'MinDirectionalDominance=12.0' \
   'MinNoTradeDominance=8.0' \
   'MinExpectedMoveCostMultiple=3.0'; do
+  rg -q "^${setting}$" "$demo_set"
+done
+
+for setting in \
+  'MaxSpreadMedianRatio=1.75' \
+  'MinSpreadBaselineSamples=100' \
+  'MinRewardRisk=1.25'; do
   rg -q "^${setting}$" "$demo_set"
 done
 

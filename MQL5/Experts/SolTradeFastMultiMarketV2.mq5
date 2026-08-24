@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.001"
+#property version   "2.002"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -17,6 +17,8 @@ input int    MaxStronglyCorrelatedTrades=2;
 input int    ScanSeconds=10;
 input int    MaxTickAgeSeconds=8;
 input double MaxSpreadAtrPercent=8.0;
+input double MaxSpreadMedianRatio=1.75;
+input int    MinSpreadBaselineSamples=100;
 input double MinMovementToSpread=5.0;
 input double MinRewardRisk=1.25;
 input double MinEntryScore=68.0;
@@ -63,6 +65,8 @@ struct MarketScore
    double recent_median_spread;
    double spread_median_ratio;
    int spread_samples;
+   bool spread_baseline_ready;
+   bool spread_abnormal;
    double spread_atr_pct;
    double movement_spread;
    double atr;
@@ -78,6 +82,10 @@ struct MarketScore
    double factor_alignment;
    double entry;
    double stop;
+   double stop_distance;
+   double m5_invalidation_swing;
+   double m15_invalidation_swing;
+   double selected_invalidation;
    long setup_key;
    bool m5_confirmed;
    bool m15_confirmed;
@@ -237,6 +245,7 @@ void PruneRotatedAuditFiles()
    datetime expired=(datetime)((utc_day-8)*86400);
    string day=CompactUtcDay(expired);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v2-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\lifecycle-"+day+".csv",FILE_COMMON);
   }
 
@@ -731,7 +740,10 @@ double EstimatedRoundTripCommissionPerLot(const string symbol)
       ulong deal=HistoryDealGetTicket(i); if(deal==0 || HistoryDealGetString(deal,DEAL_SYMBOL)!=symbol) continue;
       double volume=HistoryDealGetDouble(deal,DEAL_VOLUME);
       double commission=MathAbs(HistoryDealGetDouble(deal,DEAL_COMMISSION)+HistoryDealGetDouble(deal,DEAL_FEE));
-      if(volume<=0 || commission<=0) continue;
+      // A broker-confirmed zero is evidence of a commission-free instrument,
+      // not missing data. Ignoring it incorrectly applies the $6 fallback to
+      // index CFDs whose completed deals explicitly record zero commission.
+      if(volume<=0) continue;
       total+=commission/volume; count++;
      }
    return count>0?2.0*total/count:6.0;
@@ -809,6 +821,9 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.recent_median_spread=g_recent_median_spread[index];
    out.spread_median_ratio=g_spread_median_ratio[index];
    out.spread_samples=g_spread_samples[index];
+   out.spread_baseline_ready=out.spread_samples>=MinSpreadBaselineSamples &&
+                             out.recent_median_spread>0 && out.spread_median_ratio>0;
+   out.spread_abnormal=!out.spread_baseline_ready || out.spread_median_ratio>MaxSpreadMedianRatio;
    out.atr=AverageRange(m5,1,14);
    double atr15=AverageRange(m15,1,14);
    if(out.atr<=0 || atr15<=0) { out.reason="ATR_INVALID"; return true; }
@@ -843,7 +858,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
    bool lh=HighestHigh(m5,1,5)<HighestHigh(m5,6,5),ll=LowestLow(m5,1,5)<LowestLow(m5,6,5);
    out.m5_confirmed=MathAbs(t5)>=0.20; out.m15_confirmed=MathAbs(t15)>=0.16;
 
-   double spread_quality=Clamp(1.0-out.spread_atr_pct/MaxSpreadAtrPercent,0.0,1.0);
+   double spread_quality=out.spread_baseline_ready?
+                         Clamp(1.0-(out.spread_median_ratio-1.0)/MathMax(MaxSpreadMedianRatio-1.0,0.01),0.0,1.0):0.0;
    double movement_quality=Clamp(out.movement_spread/18.0,0.0,1.0);
    double factor_buy=CrossMarketAlignment(index,1); out.factor_alignment=factor_buy;
    out.buy_score=16+10*Clamp(t1,0,1)+17*Clamp(t5,0,1.5)/1.5+15*Clamp(t15,0,1.5)/1.5+
@@ -857,7 +873,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
                  ((out.path_impulse>0 && upper_wick>body) || (out.path_impulse<0 && lower_wick>body));
    bool timeframe_conflict=(t5>0.20 && t15<-0.16)||(t5<-0.20 && t15>0.16);
    out.no_trade_score=12+(e5<0.25?24:0)+(timeframe_conflict?24:0)+(out.exhausted?25:0)+
-                      (out.spread_atr_pct>MaxSpreadAtrPercent?30:0)+(out.movement_spread<MinMovementToSpread?18:0)+
+                      (out.spread_abnormal?30:0)+(out.movement_spread<MinMovementToSpread?18:0)+
                       (MathAbs(t5)<0.16 && MathAbs(recent_momentum)<0.16?18:0);
    out.direction=out.buy_score>=out.sell_score?1:-1; out.score=MathMax(out.buy_score,out.sell_score);
    double opposite=out.direction>0?out.sell_score:out.buy_score;
@@ -867,9 +883,18 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.structural_reversal=(out.direction>0 && (breakout_up||failed_down) && t5>0.20 && t15>0.16) ||
                            (out.direction<0 && (breakout_down||failed_up) && t5<-0.20 && t15<-0.16);
 
-   double m5_swing=out.direction>0?LowestLow(m5,1,20):HighestHigh(m5,1,20);
-   double m15_swing=out.direction>0?LowestLow(m15,1,12):HighestHigh(m15,1,12);
-   double invalidation=out.direction>0?MathMin(m5_swing,m15_swing):MathMax(m5_swing,m15_swing);
+   // Match the live manager's confirmed-structure horizon. The previous
+   // 20xM5/12xM15 entry horizon used several-hour-old range extremes while
+   // management used 8xM5/6xM15, making otherwise valid entries fail R:R.
+   double m5_swing=out.direction>0?LowestLow(m5,1,8):HighestHigh(m5,1,8);
+   double m15_swing=out.direction>0?LowestLow(m15,1,6):HighestHigh(m15,1,6);
+   // The nearest confirmed M5/M15 structural boundary is the first point at
+   // which the entry thesis is invalid. ATR and broker floors below retain
+   // volatility breathing room and a valid server-side protective stop.
+   double invalidation=out.direction>0?MathMax(m5_swing,m15_swing):MathMin(m5_swing,m15_swing);
+   out.m5_invalidation_swing=m5_swing;
+   out.m15_invalidation_swing=m15_swing;
+   out.selected_invalidation=invalidation;
    double expansion_buffer=(0.18+0.22*Clamp(out.volatility_expansion-1.0,0.0,1.5))*out.atr+2.0*out.spread;
    double stop_distance=out.direction>0?out.entry-invalidation+expansion_buffer:invalidation-out.entry+expansion_buffer;
    stop_distance=MathMax(stop_distance,MathMax(1.15*out.atr,0.55*atr15));
@@ -877,6 +902,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
    double broker_min=MathMax((double)SymbolInfoInteger(out.symbol,SYMBOL_TRADE_STOPS_LEVEL),
                              (double)SymbolInfoInteger(out.symbol,SYMBOL_TRADE_FREEZE_LEVEL))*point;
    stop_distance=MathMax(stop_distance,broker_min+2.0*point);
+   out.stop_distance=stop_distance;
    out.stop=out.direction>0?out.entry-stop_distance:out.entry+stop_distance;
 
    double opposing=out.direction>0?MathMin(HighestHigh(m15,2,32),HighestHigh(h1,2,24)):
@@ -925,7 +951,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
 
    if(!history_ready) out.reason="POST_RECOVERY_HISTORY_WARMUP";
    else if(!out.fresh) out.reason="STALE_TICK";
-   else if(out.spread_atr_pct>MaxSpreadAtrPercent) out.reason="ABNORMAL_SPREAD";
+   else if(!out.spread_baseline_ready) out.reason="SPREAD_BASELINE_WARMUP";
+   else if(out.spread_abnormal) out.reason="ABNORMAL_SPREAD";
    else if(out.movement_spread<MinMovementToSpread) out.reason="MOVEMENT_WEAK_RELATIVE_TO_SPREAD";
    else if(out.exhausted) out.reason="MOVE_EXHAUSTED_OR_LATE_CHASE";
    else if(out.expected_net_move<=0 || out.cost_multiple<MinExpectedMoveCostMultiple) out.reason="EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS";
@@ -1588,7 +1615,8 @@ void WriteSpreadAudit()
                 DoubleToString(s.bid,s.digits),DoubleToString(s.ask,s.digits),DoubleToString(s.spread,10),
                 DoubleToString(s.spread_points,4),current_pips,DoubleToString(s.recent_median_spread,10),
                 DoubleToString(s.point>0?s.recent_median_spread/s.point:0,4),median_pips,DoubleToString(s.spread_median_ratio,4),
-                s.spread_samples,DoubleToString(s.spread_atr_pct,4),s.spread_atr_pct>MaxSpreadAtrPercent?"ABNORMAL_SPREAD":"PASS");
+                s.spread_samples,DoubleToString(s.spread_atr_pct,4),
+                !s.spread_baseline_ready?"SPREAD_BASELINE_WARMUP":s.spread_abnormal?"ABNORMAL_SPREAD":"PASS");
      }
    FileFlush(h); FileClose(h); FileDelete(path,FILE_COMMON);
    FileMove(path+".tmp",FILE_COMMON,path,FILE_COMMON|FILE_REWRITE);
@@ -1597,15 +1625,17 @@ void WriteSpreadAudit()
 void AppendScanAudit()
   {
    PruneRotatedAuditFiles();
-   string path="SolTradeFastMultiMarketV2\\scan-history-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2\\scan-history-v2-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
       FileWrite(h,"schema","scan_sequence","utc","sast","rank","intended_market","configured_symbol",
          "resolved_broker_symbol","mapping_status","mapping_source","available","candidate_direction","decision",
          "score","buy_score","sell_score","no_trade_score","tick_state","raw_spread","spread_points","spread_pips",
+         "median_raw_spread","spread_median_ratio","spread_sample_count","spread_baseline_ready","spread_filter_result",
          "spread_to_m5_atr_percent","movement_to_spread","structural_reversal","m5_confirmed","m15_confirmed",
-         "reward_r","reward_check","expected_net_move","cost_multiple","primary_rejection_reason","eligible",
+         "entry","stop","stop_distance","m5_invalidation_swing","m15_invalidation_swing","selected_invalidation",
+         "reward_r","reward_check","available_move","expected_cost_move","expected_net_move","cost_multiple","primary_rejection_reason","eligible",
          "order_attempt_status","order_result","setup_key");
    FileSeek(h,0,SEEK_END);
    for(int rank=0;rank<ArraySize(g_ranked);rank++)
@@ -1620,13 +1650,18 @@ void AppendScanAudit()
       string spread_pips=index>=0 && index<SYMBOL_COUNT && IsFxMarket(index)?DoubleToString(s.spread_pips,4):"NOT_APPLICABLE";
       string order_status=rank<ArraySize(g_scan_order_status)?g_scan_order_status[rank]:"NOT_ATTEMPTED";
       string order_result=rank<ArraySize(g_scan_order_result)?g_scan_order_result[rank]:"NOT_APPLICABLE";
-      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V1",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V2",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
          intended,configured,resolved,mapping_status,mapping_source,BoolText(s.available),DirectionText(s.direction),s.decision,
          DoubleToString(s.score,4),DoubleToString(s.buy_score,4),DoubleToString(s.sell_score,4),DoubleToString(s.no_trade_score,4),
          s.fresh?"FRESH":"STALE_OR_UNAVAILABLE",DoubleToString(s.spread,10),DoubleToString(s.spread_points,4),spread_pips,
+         DoubleToString(s.recent_median_spread,10),DoubleToString(s.spread_median_ratio,4),s.spread_samples,
+         BoolText(s.spread_baseline_ready),!s.spread_baseline_ready?"SPREAD_BASELINE_WARMUP":s.spread_abnormal?"ABNORMAL_SPREAD":"PASS",
          DoubleToString(s.spread_atr_pct,4),DoubleToString(s.movement_spread,4),BoolText(s.structural_reversal),
-         BoolText(s.m5_confirmed),BoolText(s.m15_confirmed),DoubleToString(s.reward_r,4),
-         s.reward_r>=MinRewardRisk?"PASS":"FAIL",DoubleToString(s.expected_net_move,10),DoubleToString(s.cost_multiple,4),
+         BoolText(s.m5_confirmed),BoolText(s.m15_confirmed),DoubleToString(s.entry,s.digits),DoubleToString(s.stop,s.digits),
+         DoubleToString(s.stop_distance,10),DoubleToString(s.m5_invalidation_swing,s.digits),
+         DoubleToString(s.m15_invalidation_swing,s.digits),DoubleToString(s.selected_invalidation,s.digits),
+         DoubleToString(s.reward_r,4),s.reward_r>=MinRewardRisk?"PASS":"FAIL",DoubleToString(s.available_move,10),
+         DoubleToString(s.expected_cost_move,10),DoubleToString(s.expected_net_move,10),DoubleToString(s.cost_multiple,4),
          s.reason,BoolText(s.eligible),order_status,order_result,s.setup_key);
      }
    FileFlush(h); FileClose(h);
@@ -1745,7 +1780,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.001;isolated_fast_multi_expected=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.002;isolated_fast_multi_expected=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -1754,7 +1789,8 @@ int OnInit()
      }
    if(RiskPerTradePercent!=0.25 || MaxPortfolioRiskPercent!=1.50 || MaxSimultaneousTrades!=6 ||
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
-      MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0)
+      MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
+      MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.25)
      { AppendLifecycle("EA_INITIALIZATION_REFUSED","FROZEN_PORTFOLIO_POLICY_MISMATCH"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED FROZEN_PORTFOLIO_POLICY_MISMATCH"); return INIT_PARAMETERS_INCORRECT; }
    if(!SelectUniverse()) { AppendLifecycle("EA_INITIALIZATION_REFUSED","NO_UNIVERSE_SYMBOL_AVAILABLE"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED NO_UNIVERSE_SYMBOL_AVAILABLE"); return INIT_FAILED; }
    LoadReversalState();
