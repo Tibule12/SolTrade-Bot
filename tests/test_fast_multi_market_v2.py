@@ -82,6 +82,31 @@ def reconciliation_safe(positions, pending_orders):
     return True, "BROKER_RECONCILIATION_PASS"
 
 
+class HistoryWarmup:
+    """Deterministic reference for the MQL5 post-recovery history interlock."""
+
+    def __init__(self, started_at=0, minimum_seconds=30, stable_scans=3):
+        self.started_at = started_at
+        self.minimum_seconds = minimum_seconds
+        self.required_stable_scans = stable_scans
+        self.fingerprint = None
+        self.stable_scans = 0
+        self.ready = False
+
+    def observe(self, fingerprint, timestamp):
+        if fingerprint == self.fingerprint:
+            self.stable_scans += 1
+        else:
+            self.fingerprint = fingerprint
+            self.stable_scans = 1
+            self.ready = False
+        self.ready = (
+            self.stable_scans >= self.required_stable_scans
+            and timestamp - self.started_at >= self.minimum_seconds
+        )
+        return self.ready
+
+
 class FastMultiV2PolicyTests(unittest.TestCase):
     def test_no_trade_overrides_moderate_direction(self):
         self.assertFalse(eligible(72, 50, 68, 3, 20, 2, 4))
@@ -207,6 +232,25 @@ class FastMultiV2PolicyTests(unittest.TestCase):
                 stream.write("2,EURUSD.r,QUALIFIED_CONTEXT_COST_STRUCTURE\n")
             self.assertGreater(audit.stat().st_size, first_size)
             self.assertEqual(len(audit.read_text(encoding="utf-8").splitlines()), 3)
+
+    def test_post_update_first_scan_cannot_trade(self):
+        warmup = HistoryWarmup(started_at=0)
+        self.assertFalse(warmup.observe("incomplete-history", 0))
+
+    def test_history_rebuild_resets_warmup(self):
+        warmup = HistoryWarmup(started_at=0)
+        self.assertFalse(warmup.observe("incomplete-history", 0))
+        self.assertFalse(warmup.observe("rebuilt-history", 1))
+        self.assertFalse(warmup.observe("rebuilt-history", 11))
+        self.assertFalse(warmup.observe("rebuilt-history", 21))
+        self.assertTrue(warmup.observe("rebuilt-history", 31))
+
+    def test_completed_bar_change_relocks_ready_symbol(self):
+        warmup = HistoryWarmup(started_at=0)
+        for timestamp in (0, 10, 20, 30):
+            warmup.observe("stable-bar-set", timestamp)
+        self.assertTrue(warmup.ready)
+        self.assertFalse(warmup.observe("new-completed-bar-set", 40))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.000"
+#property version   "2.001"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -31,6 +31,8 @@ input int    MaxSlippagePoints=12;
 #define LEGACY_PILOT_MAGIC 2082026032
 #define SYMBOL_COUNT 19
 #define V1_MAGIC 2108202601
+#define RECOVERY_HISTORY_STABLE_SCANS 3
+#define RECOVERY_HISTORY_MIN_SECONDS 30
 
 string BASE_SYMBOLS[SYMBOL_COUNT]={
    "XAUUSD","USTEC","GBPJPY","XAGUSD","DE30","EURJPY","AUDJPY","USDJPY","GBPUSD",
@@ -129,6 +131,11 @@ long g_scan_sequence=0;
 long g_last_audit_prune_day=-1;
 long g_alias_attempts[SYMBOL_COUNT];
 long g_last_alias_log_utc[SYMBOL_COUNT];
+string g_history_fingerprint[SYMBOL_COUNT];
+int g_history_stable_scans[SYMBOL_COUNT];
+long g_history_last_scan[SYMBOL_COUNT];
+bool g_history_ready[SYMBOL_COUNT];
+long g_history_warmup_started_utc=0;
 
 struct RunnerState
   {
@@ -167,6 +174,44 @@ void AppendLifecycle(const string event_name,const string detail)
              AccountInfoInteger(ACCOUNT_LOGIN),AccountInfoString(ACCOUNT_SERVER),
              BoolText((bool)TerminalInfoInteger(TERMINAL_CONNECTED)),PositionsTotal(),OrdersTotal(),detail);
    FileFlush(h); FileClose(h);
+  }
+
+void ResetHistoryWarmup(const string reason)
+  {
+   g_history_warmup_started_utc=(long)TimeGMT();
+   for(int i=0;i<SYMBOL_COUNT;i++)
+     {
+      g_history_fingerprint[i]="";
+      g_history_stable_scans[i]=0;
+      g_history_last_scan[i]=-1;
+      g_history_ready[i]=false;
+     }
+   AppendLifecycle("HISTORY_WARMUP_STARTED",StringFormat(
+      "reason=%s;minimum_seconds=%d;stable_scans=%d;new_entries_and_unstable_management_blocked=true",
+      reason,RECOVERY_HISTORY_MIN_SECONDS,RECOVERY_HISTORY_STABLE_SCANS));
+  }
+
+bool UpdateHistoryReadiness(const int index,const string fingerprint)
+  {
+   if(index<0 || index>=SYMBOL_COUNT || fingerprint=="") return false;
+   if(g_history_last_scan[index]==g_scan_sequence) return g_history_ready[index];
+   g_history_last_scan[index]=g_scan_sequence;
+   if(g_history_fingerprint[index]==fingerprint) g_history_stable_scans[index]++;
+   else
+     {
+      g_history_fingerprint[index]=fingerprint;
+      g_history_stable_scans[index]=1;
+      g_history_ready[index]=false;
+     }
+   bool ready=g_history_stable_scans[index]>=RECOVERY_HISTORY_STABLE_SCANS &&
+              (long)TimeGMT()-g_history_warmup_started_utc>=RECOVERY_HISTORY_MIN_SECONDS;
+   if(ready && !g_history_ready[index])
+      AppendLifecycle("HISTORY_WARMUP_SYMBOL_READY",StringFormat(
+         "intended=%s;actual=%s;stable_scans=%d;elapsed_seconds=%I64d",
+         BASE_SYMBOLS[index],g_symbols[index],g_history_stable_scans[index],
+         (long)TimeGMT()-g_history_warmup_started_utc));
+   g_history_ready[index]=ready;
+   return ready;
   }
 
 string DeinitReasonText(const int reason)
@@ -722,10 +767,33 @@ bool ScoreSymbol(const int index,MarketScore &out)
    MqlTick tick; if(!SymbolInfoTick(out.symbol,tick) || tick.bid<=0 || tick.ask<=tick.bid) return false;
    MqlRates m1[],m5[],m15[],h1[];
    ArraySetAsSeries(m1,true); ArraySetAsSeries(m5,true); ArraySetAsSeries(m15,true); ArraySetAsSeries(h1,true);
-   if(CopyRates(out.symbol,PERIOD_M1,0,82,m1)<75) { out.reason="INSUFFICIENT_M1_HISTORY"; return false; }
-   if(CopyRates(out.symbol,PERIOD_M5,0,102,m5)<90) { out.reason="INSUFFICIENT_M5_HISTORY"; return false; }
-   if(CopyRates(out.symbol,PERIOD_M15,0,82,m15)<72) { out.reason="INSUFFICIENT_M15_HISTORY"; return false; }
-   if(CopyRates(out.symbol,PERIOD_H1,0,52,h1)<48) { out.reason="INSUFFICIENT_H1_HISTORY"; return false; }
+   if(CopyRates(out.symbol,PERIOD_M1,0,82,m1)<75)
+     { g_history_ready[index]=false; out.reason="INSUFFICIENT_M1_HISTORY"; return false; }
+   if(CopyRates(out.symbol,PERIOD_M5,0,102,m5)<90)
+     { g_history_ready[index]=false; out.reason="INSUFFICIENT_M5_HISTORY"; return false; }
+   if(CopyRates(out.symbol,PERIOD_M15,0,82,m15)<72)
+     { g_history_ready[index]=false; out.reason="INSUFFICIENT_M15_HISTORY"; return false; }
+   if(CopyRates(out.symbol,PERIOD_H1,0,52,h1)<48)
+     { g_history_ready[index]=false; out.reason="INSUFFICIENT_H1_HISTORY"; return false; }
+   bool series_synchronised=(bool)SeriesInfoInteger(out.symbol,PERIOD_M1,SERIES_SYNCHRONIZED) &&
+                            (bool)SeriesInfoInteger(out.symbol,PERIOD_M5,SERIES_SYNCHRONIZED) &&
+                            (bool)SeriesInfoInteger(out.symbol,PERIOD_M15,SERIES_SYNCHRONIZED) &&
+                            (bool)SeriesInfoInteger(out.symbol,PERIOD_H1,SERIES_SYNCHRONIZED);
+   if(!series_synchronised)
+     {
+      g_history_ready[index]=false;
+      g_history_stable_scans[index]=0;
+      g_history_fingerprint[index]="";
+      out.reason="POST_RECOVERY_HISTORY_NOT_SYNCHRONISED";
+      return true;
+     }
+   string history_fingerprint=StringFormat(
+      "%I64d:%.8f:%.8f:%.8f|%I64d:%.8f:%.8f:%.8f:%.8f:%.8f:%.8f|%I64d:%.8f:%.8f:%.8f|%I64d:%.8f:%.8f:%.8f",
+      (long)m1[1].time,m1[1].close,m1[8].close,m1[30].close,
+      (long)m5[1].time,m5[1].open,m5[1].high,m5[1].low,m5[1].close,m5[13].close,m5[30].close,
+      (long)m15[1].time,m15[1].close,m15[12].close,m15[30].close,
+      (long)h1[1].time,h1[1].close,h1[8].close,h1[24].close);
+   bool history_ready=UpdateHistoryReadiness(index,history_fingerprint);
 
    long reference_msc=(long)TimeTradeServer()*1000;
    out.fresh=MathMax(0.0,(reference_msc-tick.time_msc)/1000.0)<=MaxTickAgeSeconds;
@@ -855,7 +923,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.volatility_expansion>1.25 && e5>0.32) out.regime="VOLATILITY_EXPANSION";
    else if(e5<0.25) out.regime="RANGE_CHOP"; else out.regime="DIRECTIONAL_TRANSITION";
 
-   if(!out.fresh) out.reason="STALE_TICK";
+   if(!history_ready) out.reason="POST_RECOVERY_HISTORY_WARMUP";
+   else if(!out.fresh) out.reason="STALE_TICK";
    else if(out.spread_atr_pct>MaxSpreadAtrPercent) out.reason="ABNORMAL_SPREAD";
    else if(out.movement_spread<MinMovementToSpread) out.reason="MOVEMENT_WEAK_RELATIVE_TO_SPREAD";
    else if(out.exhausted) out.reason="MOVE_EXHAUSTED_OR_LATE_CHASE";
@@ -1629,7 +1698,17 @@ void ScanAndAct()
       g_scan_order_status[audit_index]="NOT_ATTEMPTED";
       g_scan_order_result[audit_index]="NOT_APPLICABLE";
      }
-   ManageFastPositions();
+   bool owned_position_history_ready=true;
+   for(int position_index=PositionsTotal()-1;position_index>=0;position_index--)
+     {
+      ulong ticket=PositionGetTicket(position_index);
+      if(ticket==0 || PositionGetInteger(POSITION_MAGIC)!=FastMagic) continue;
+      int symbol_index=SymbolIndexByActual(PositionGetString(POSITION_SYMBOL));
+      if(symbol_index<0 || !g_history_ready[symbol_index]) { owned_position_history_ready=false; break; }
+     }
+   if(owned_position_history_ready) ManageFastPositions();
+   else AppendLifecycle("POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED",
+                        "broker_stops_remain_active;no_modification_or_exit_from_unstable_history=true");
    string reason=DryRunOnly?"DRY_RUN_SCAN_COMPLETE":"NO_QUALIFYING_REPLACEMENT";
    if(!DryRunOnly && LegacyPilotPositionCount()==0)
       for(int i=0;i<ArraySize(g_ranked);i++)
@@ -1666,7 +1745,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.000;isolated_fast_multi_expected=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.001;isolated_fast_multi_expected=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -1688,6 +1767,7 @@ int OnInit()
      { AppendLifecycle("BROKER_RECONCILIATION_FAILED",reason); Print("SOLTRADE_FAST_MULTI_V2_INIT_REFUSED ",reason); return INIT_FAILED; }
    AppendLifecycle("BROKER_RECONCILIATION_PASS",reason);
    g_reconciliation_required=false;
+   ResetHistoryWarmup("EA_INITIALIZATION");
    g_connection_seen=(bool)TerminalInfoInteger(TERMINAL_CONNECTED);
    g_first_scan_after_recovery=true;
    g_last_timer_utc=(long)TimeGMT();
@@ -1727,6 +1807,7 @@ void OnTimer()
          "gap_seconds=%I64d;reconciliation_required_before_scan=true",timer_gap));
       g_reconciliation_required=true;
       g_first_scan_after_recovery=true;
+      ResetHistoryWarmup("RUNTIME_TIMER_GAP");
      }
    bool connected=(bool)TerminalInfoInteger(TERMINAL_CONNECTED);
    if(!connected)
@@ -1745,6 +1826,7 @@ void OnTimer()
       g_connection_seen=true;
       g_reconciliation_required=true;
       g_first_scan_after_recovery=true;
+      ResetHistoryWarmup("BROKER_RECONNECT");
      }
    string reason;
    if(!DemoIdentitySafe(reason)) { g_status_reason=reason; g_initialised=false; EventKillTimer(); WriteRuntimeStatus(); return; }
