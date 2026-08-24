@@ -116,14 +116,25 @@ class HistoryWarmup:
         self.fingerprint = None
         self.stable_scans = 0
         self.ready = False
+        self.bar_times = None
 
-    def observe(self, fingerprint, timestamp):
-        if fingerprint == self.fingerprint:
+    def observe(self, fingerprint, timestamp, bar_times=(60, 300, 900, 3600)):
+        normal_progression = (
+            self.ready
+            and self.bar_times is not None
+            and any(current > previous for previous, current in zip(self.bar_times, bar_times))
+            and all(
+                current >= previous and current - previous in (0, period)
+                for previous, current, period in zip(self.bar_times, bar_times, (60, 300, 900, 3600))
+            )
+        )
+        if fingerprint == self.fingerprint or normal_progression:
             self.stable_scans += 1
         else:
             self.fingerprint = fingerprint
             self.stable_scans = 1
             self.ready = False
+        self.bar_times = bar_times
         self.ready = (
             self.stable_scans >= self.required_stable_scans
             and timestamp - self.started_at >= self.minimum_seconds
@@ -300,12 +311,24 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         self.assertFalse(warmup.observe("rebuilt-history", 21))
         self.assertTrue(warmup.observe("rebuilt-history", 31))
 
-    def test_completed_bar_change_relocks_ready_symbol(self):
+    def test_expected_completed_bar_advance_keeps_ready_symbol_live(self):
         warmup = HistoryWarmup(started_at=0)
         for timestamp in (0, 10, 20, 30):
             warmup.observe("stable-bar-set", timestamp)
         self.assertTrue(warmup.ready)
-        self.assertFalse(warmup.observe("new-completed-bar-set", 40))
+        self.assertTrue(warmup.observe("new-completed-bar-set", 40, (120, 300, 900, 3600)))
+
+    def test_same_timestamp_history_rewrite_relocks_ready_symbol(self):
+        warmup = HistoryWarmup(started_at=0)
+        for timestamp in (0, 10, 20, 30):
+            warmup.observe("stable-bar-set", timestamp)
+        self.assertFalse(warmup.observe("rewritten-bar-values", 40, (60, 300, 900, 3600)))
+
+    def test_skipped_completed_bar_relocks_ready_symbol(self):
+        warmup = HistoryWarmup(started_at=0)
+        for timestamp in (0, 10, 20, 30):
+            warmup.observe("stable-bar-set", timestamp)
+        self.assertFalse(warmup.observe("skipped-bar-set", 40, (180, 300, 900, 3600)))
 
 
 if __name__ == "__main__":

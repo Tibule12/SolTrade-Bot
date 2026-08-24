@@ -144,6 +144,10 @@ int g_history_stable_scans[SYMBOL_COUNT];
 long g_history_last_scan[SYMBOL_COUNT];
 bool g_history_ready[SYMBOL_COUNT];
 long g_history_warmup_started_utc=0;
+datetime g_history_m1_time[SYMBOL_COUNT];
+datetime g_history_m5_time[SYMBOL_COUNT];
+datetime g_history_m15_time[SYMBOL_COUNT];
+datetime g_history_h1_time[SYMBOL_COUNT];
 
 struct RunnerState
   {
@@ -193,24 +197,49 @@ void ResetHistoryWarmup(const string reason)
       g_history_stable_scans[i]=0;
       g_history_last_scan[i]=-1;
       g_history_ready[i]=false;
+      g_history_m1_time[i]=0;
+      g_history_m5_time[i]=0;
+      g_history_m15_time[i]=0;
+      g_history_h1_time[i]=0;
      }
    AppendLifecycle("HISTORY_WARMUP_STARTED",StringFormat(
       "reason=%s;minimum_seconds=%d;stable_scans=%d;new_entries_and_unstable_management_blocked=true",
       reason,RECOVERY_HISTORY_MIN_SECONDS,RECOVERY_HISTORY_STABLE_SCANS));
   }
 
-bool UpdateHistoryReadiness(const int index,const string fingerprint)
+bool ExpectedBarAdvance(const datetime previous,const datetime current,const int period_seconds)
+  {
+   if(previous<=0 || current<previous) return false;
+   long delta=(long)current-(long)previous;
+   return delta==0 || delta==period_seconds;
+  }
+
+bool UpdateHistoryReadiness(const int index,const string fingerprint,
+                            const datetime m1_time,const datetime m5_time,
+                            const datetime m15_time,const datetime h1_time)
   {
    if(index<0 || index>=SYMBOL_COUNT || fingerprint=="") return false;
    if(g_history_last_scan[index]==g_scan_sequence) return g_history_ready[index];
    g_history_last_scan[index]=g_scan_sequence;
-   if(g_history_fingerprint[index]==fingerprint) g_history_stable_scans[index]++;
+   bool unchanged=g_history_fingerprint[index]==fingerprint;
+   bool normal_progression=g_history_ready[index] &&
+      (m1_time>g_history_m1_time[index] || m5_time>g_history_m5_time[index] ||
+       m15_time>g_history_m15_time[index] || h1_time>g_history_h1_time[index]) &&
+      ExpectedBarAdvance(g_history_m1_time[index],m1_time,60) &&
+      ExpectedBarAdvance(g_history_m5_time[index],m5_time,300) &&
+      ExpectedBarAdvance(g_history_m15_time[index],m15_time,900) &&
+      ExpectedBarAdvance(g_history_h1_time[index],h1_time,3600);
+   if(unchanged || normal_progression) g_history_stable_scans[index]++;
    else
      {
-      g_history_fingerprint[index]=fingerprint;
       g_history_stable_scans[index]=1;
       g_history_ready[index]=false;
      }
+   g_history_fingerprint[index]=fingerprint;
+   g_history_m1_time[index]=m1_time;
+   g_history_m5_time[index]=m5_time;
+   g_history_m15_time[index]=m15_time;
+   g_history_h1_time[index]=h1_time;
    bool ready=g_history_stable_scans[index]>=RECOVERY_HISTORY_STABLE_SCANS &&
               (long)TimeGMT()-g_history_warmup_started_utc>=RECOVERY_HISTORY_MIN_SECONDS;
    if(ready && !g_history_ready[index])
@@ -805,7 +834,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
       (long)m5[1].time,m5[1].open,m5[1].high,m5[1].low,m5[1].close,m5[13].close,m5[30].close,
       (long)m15[1].time,m15[1].close,m15[12].close,m15[30].close,
       (long)h1[1].time,h1[1].close,h1[8].close,h1[24].close);
-   bool history_ready=UpdateHistoryReadiness(index,history_fingerprint);
+   bool history_ready=UpdateHistoryReadiness(index,history_fingerprint,m1[1].time,m5[1].time,m15[1].time,h1[1].time);
 
    long reference_msc=(long)TimeTradeServer()*1000;
    out.fresh=MathMax(0.0,(reference_msc-tick.time_msc)/1000.0)<=MaxTickAgeSeconds;
