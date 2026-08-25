@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.002"
+#property version   "2.003"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -25,6 +25,7 @@ input double MinEntryScore=68.0;
 input double MinDirectionalDominance=12.0;
 input double MinNoTradeDominance=8.0;
 input double MinExpectedMoveCostMultiple=3.0;
+input int    MinConsecutiveM5Signals=2;
 input int    MaxSlippagePoints=12;
 
 #define REQUIRED_DEMO_LOGIN 7404213
@@ -91,6 +92,9 @@ struct MarketScore
    bool m15_confirmed;
    bool structural_reversal;
    bool exhausted;
+   datetime completed_m5_bar_time;
+   bool directional_core_qualified;
+   int directional_persistence_count;
    string buy_case;
    string sell_case;
    string no_trade_case;
@@ -275,6 +279,7 @@ void PruneRotatedAuditFiles()
    string day=CompactUtcDay(expired);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v2-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v3-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\lifecycle-"+day+".csv",FILE_COMMON);
   }
 
@@ -372,6 +377,53 @@ string NormalizedMetadata(string value)
 
 bool ContainsText(const string text,const string token)
   { return StringFind(text,token)>=0; }
+
+string EntryPersistenceKey(const int index,const string field)
+  { return "SFM2_P"+field+"_"+IntegerToString(index); }
+
+void UpdateDirectionalPersistence(const int index,const datetime completed_bar,const int direction,
+                                  const bool core_qualified,int &count)
+  {
+   count=0;
+   if(index<0 || index>=SYMBOL_COUNT || completed_bar<=0) return;
+   string bar_key=EntryPersistenceKey(index,"BAR");
+   string direction_key=EntryPersistenceKey(index,"DIR");
+   string count_key=EntryPersistenceKey(index,"CNT");
+   datetime prior_bar=GlobalVariableCheck(bar_key)?(datetime)GlobalVariableGet(bar_key):0;
+   int prior_direction=GlobalVariableCheck(direction_key)?(int)GlobalVariableGet(direction_key):0;
+   int prior_count=GlobalVariableCheck(count_key)?(int)GlobalVariableGet(count_key):0;
+   if(prior_bar==completed_bar)
+     {
+      count=core_qualified && prior_direction==direction?prior_count:0;
+      return;
+     }
+   if(core_qualified)
+      count=(prior_bar>0 && completed_bar-prior_bar==300 && prior_direction==direction)?prior_count+1:1;
+   GlobalVariableSet(bar_key,(double)completed_bar);
+   GlobalVariableSet(direction_key,core_qualified?(double)direction:0.0);
+   GlobalVariableSet(count_key,(double)count);
+   GlobalVariablesFlush();
+  }
+
+string ExitPersistenceKey(const long identifier,const string field)
+  { return "SFM2_X"+field+"_"+IntegerToString(identifier); }
+
+int UpdateSoftExitPersistence(const long identifier,const datetime completed_bar,const bool soft_bad,bool &advanced)
+  {
+   advanced=false;
+   if(identifier<=0 || completed_bar<=0) return 0;
+   string bar_key=ExitPersistenceKey(identifier,"BAR");
+   string count_key=ExitPersistenceKey(identifier,"CNT");
+   datetime prior_bar=GlobalVariableCheck(bar_key)?(datetime)GlobalVariableGet(bar_key):0;
+   int prior_count=GlobalVariableCheck(count_key)?(int)GlobalVariableGet(count_key):0;
+   if(prior_bar==completed_bar) return prior_count;
+   int count=soft_bad && prior_bar>0 && completed_bar-prior_bar==300?prior_count+1:(soft_bad?1:0);
+   GlobalVariableSet(bar_key,(double)completed_bar);
+   GlobalVariableSet(count_key,(double)count);
+   GlobalVariablesFlush();
+   advanced=true;
+   return count;
+  }
 
 bool StartsWithText(const string text,const string prefix)
   { return StringFind(text,prefix)==0; }
@@ -816,6 +868,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
      { g_history_ready[index]=false; out.reason="INSUFFICIENT_M15_HISTORY"; return false; }
    if(CopyRates(out.symbol,PERIOD_H1,0,52,h1)<48)
      { g_history_ready[index]=false; out.reason="INSUFFICIENT_H1_HISTORY"; return false; }
+   out.completed_m5_bar_time=m5[1].time;
    bool series_synchronised=(bool)SeriesInfoInteger(out.symbol,PERIOD_M1,SERIES_SYNCHRONIZED) &&
                             (bool)SeriesInfoInteger(out.symbol,PERIOD_M5,SERIES_SYNCHRONIZED) &&
                             (bool)SeriesInfoInteger(out.symbol,PERIOD_M15,SERIES_SYNCHRONIZED) &&
@@ -978,6 +1031,17 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.volatility_expansion>1.25 && e5>0.32) out.regime="VOLATILITY_EXPANSION";
    else if(e5<0.25) out.regime="RANGE_CHOP"; else out.regime="DIRECTIONAL_TRANSITION";
 
+   // Confirm direction across distinct completed M5 states. Execution price,
+   // spread and reward remain live entry checks and cannot manufacture the
+   // second directional confirmation.
+   out.directional_core_qualified=!out.exhausted && out.m5_confirmed && out.m15_confirmed &&
+      out.score>=MinEntryScore && out.score>=opposite+MinDirectionalDominance &&
+      out.score>=out.no_trade_score+MinNoTradeDominance &&
+      !((out.direction>0 && t5<-0.20 && !out.structural_reversal) ||
+        (out.direction<0 && t5>0.20 && !out.structural_reversal));
+   UpdateDirectionalPersistence(index,out.completed_m5_bar_time,out.direction,
+                                out.directional_core_qualified,out.directional_persistence_count);
+
    if(!history_ready) out.reason="POST_RECOVERY_HISTORY_WARMUP";
    else if(!out.fresh) out.reason="STALE_TICK";
    else if(!out.spread_baseline_ready) out.reason="SPREAD_BASELINE_WARMUP";
@@ -991,6 +1055,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.score<out.no_trade_score+MinNoTradeDominance) out.reason="NO_TRADE_CASE_DOMINATES";
    else if(out.direction>0 && t5<-0.20 && !out.structural_reversal) out.reason="BUY_FIGHTS_OBVIOUS_M5_MOMENTUM";
    else if(out.direction<0 && t5>0.20 && !out.structural_reversal) out.reason="SELL_FIGHTS_OBVIOUS_M5_MOMENTUM";
+   else if(out.directional_persistence_count<MinConsecutiveM5Signals) out.reason="DIRECTIONAL_PERSISTENCE_PENDING";
    else { out.eligible=true; out.reason="QUALIFIED_CONTEXT_COST_STRUCTURE"; }
    out.decision=out.eligible?DirectionText(out.direction):"NO_TRADE";
    return true;
@@ -1381,8 +1446,13 @@ void ManageFastPositions()
       double opposite_score=scored?(direction>0?score.sell_score:score.buy_score):0.0;
       bool would_open_now=scored && score.fresh && score.eligible && score.direction==direction;
       bool structure_broken=scored && score.fresh && score.direction==-direction && score.structural_reversal;
-      bool thesis_bad=scored && score.fresh && (structure_broken || opposite_score>=held_score+MinDirectionalDominance ||
-                       (score.no_trade_score>=held_score && held_score<MinEntryScore) || score.expected_net_move<=0);
+      bool soft_thesis_bad=scored && score.fresh && !structure_broken &&
+                           (opposite_score>=held_score+MinDirectionalDominance ||
+                            (score.no_trade_score>=held_score && held_score<MinEntryScore));
+      bool exit_state_advanced=false;
+      int soft_bad_bars=scored && score.fresh?
+         UpdateSoftExitPersistence(identifier,score.completed_m5_bar_time,soft_thesis_bad,exit_state_advanced):0;
+      bool thesis_bad=structure_broken || soft_bad_bars>=2;
       if(current_r>=0.75 && !runner.active)
         {
          runner.active=true; runner_changed=true;
@@ -1391,11 +1461,16 @@ void ManageFastPositions()
             current_r,runner.peak_r,runner.peak_dollars));
         }
       if(runner_changed) SaveRunnerState(identifier,symbol,runner);
+      if(soft_thesis_bad && soft_bad_bars==1 && exit_state_advanced)
+         AppendEvidence("THESIS_INVALIDATION_PENDING",score,ticket,StringFormat(
+            "completed_m5=%s;soft_bad_bars=1;required=2;current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f",
+            TimeToString(score.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),current_r,held_score,opposite_score,score.no_trade_score));
       if(thesis_bad)
         {
          GlobalVariableSet("SFM2_INV_"+IntegerToString(identifier),1.0);
-         AppendEvidence("THESIS_INVALIDATION_EXIT",score,ticket,StringFormat("current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f;would_open_now=false",
-            current_r,held_score,opposite_score,score.no_trade_score));
+         AppendEvidence("THESIS_INVALIDATION_EXIT",score,ticket,StringFormat(
+            "current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f;hard_structural=%s;soft_bad_bars=%d;would_open_now=false",
+            current_r,held_score,opposite_score,score.no_trade_score,BoolText(structure_broken),soft_bad_bars));
          g_trade.SetExpertMagicNumber(FastMagic);
          if(!g_trade.PositionClose(ticket)) g_status_reason="THESIS_EXIT_FAILED_"+symbol;
          else g_status_reason="THESIS_EXIT_"+symbol;
@@ -1654,7 +1729,7 @@ void WriteSpreadAudit()
 void AppendScanAudit()
   {
    PruneRotatedAuditFiles();
-   string path="SolTradeFastMultiMarketV2\\scan-history-v2-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2\\scan-history-v3-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
@@ -1663,6 +1738,7 @@ void AppendScanAudit()
          "score","buy_score","sell_score","no_trade_score","tick_state","raw_spread","spread_points","spread_pips",
          "median_raw_spread","spread_median_ratio","spread_sample_count","spread_baseline_ready","spread_filter_result",
          "spread_to_m5_atr_percent","movement_to_spread","structural_reversal","m5_confirmed","m15_confirmed",
+         "completed_m5_bar_time","directional_core_qualified","directional_persistence_count","directional_persistence_required",
          "entry","stop","stop_distance","m5_invalidation_swing","m15_invalidation_swing","selected_invalidation",
          "reward_r","reward_check","available_move","expected_cost_move","expected_net_move","cost_multiple","primary_rejection_reason","eligible",
          "order_attempt_status","order_result","setup_key");
@@ -1679,14 +1755,16 @@ void AppendScanAudit()
       string spread_pips=index>=0 && index<SYMBOL_COUNT && IsFxMarket(index)?DoubleToString(s.spread_pips,4):"NOT_APPLICABLE";
       string order_status=rank<ArraySize(g_scan_order_status)?g_scan_order_status[rank]:"NOT_ATTEMPTED";
       string order_result=rank<ArraySize(g_scan_order_result)?g_scan_order_result[rank]:"NOT_APPLICABLE";
-      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V2",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V3",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
          intended,configured,resolved,mapping_status,mapping_source,BoolText(s.available),DirectionText(s.direction),s.decision,
          DoubleToString(s.score,4),DoubleToString(s.buy_score,4),DoubleToString(s.sell_score,4),DoubleToString(s.no_trade_score,4),
          s.fresh?"FRESH":"STALE_OR_UNAVAILABLE",DoubleToString(s.spread,10),DoubleToString(s.spread_points,4),spread_pips,
          DoubleToString(s.recent_median_spread,10),DoubleToString(s.spread_median_ratio,4),s.spread_samples,
          BoolText(s.spread_baseline_ready),!s.spread_baseline_ready?"SPREAD_BASELINE_WARMUP":s.spread_abnormal?"ABNORMAL_SPREAD":"PASS",
          DoubleToString(s.spread_atr_pct,4),DoubleToString(s.movement_spread,4),BoolText(s.structural_reversal),
-         BoolText(s.m5_confirmed),BoolText(s.m15_confirmed),DoubleToString(s.entry,s.digits),DoubleToString(s.stop,s.digits),
+         BoolText(s.m5_confirmed),BoolText(s.m15_confirmed),TimeToString(s.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),
+         BoolText(s.directional_core_qualified),s.directional_persistence_count,MinConsecutiveM5Signals,
+         DoubleToString(s.entry,s.digits),DoubleToString(s.stop,s.digits),
          DoubleToString(s.stop_distance,10),DoubleToString(s.m5_invalidation_swing,s.digits),
          DoubleToString(s.m15_invalidation_swing,s.digits),DoubleToString(s.selected_invalidation,s.digits),
          DoubleToString(s.reward_r,4),s.reward_r>=MinRewardRisk?"PASS":"FAIL",DoubleToString(s.available_move,10),
@@ -1809,7 +1887,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.002;isolated_fast_multi_expected=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.003;isolated_fast_multi_expected=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -1819,7 +1897,8 @@ int OnInit()
    if(RiskPerTradePercent!=0.25 || MaxPortfolioRiskPercent!=1.50 || MaxSimultaneousTrades!=6 ||
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
       MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
-      MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.25)
+      MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.25 ||
+      MinConsecutiveM5Signals!=2)
      { AppendLifecycle("EA_INITIALIZATION_REFUSED","FROZEN_PORTFOLIO_POLICY_MISMATCH"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED FROZEN_PORTFOLIO_POLICY_MISMATCH"); return INIT_PARAMETERS_INCORRECT; }
    if(!SelectUniverse()) { AppendLifecycle("EA_INITIALIZATION_REFUSED","NO_UNIVERSE_SYMBOL_AVAILABLE"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED NO_UNIVERSE_SYMBOL_AVAILABLE"); return INIT_FAILED; }
    LoadReversalState();

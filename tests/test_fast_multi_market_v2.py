@@ -142,7 +142,94 @@ class HistoryWarmup:
         return self.ready
 
 
+class DirectionalPersistence:
+    """Reference for completed-M5 entry confirmation and restart state."""
+
+    def __init__(self, state=None):
+        self.bar, self.direction, self.count = state or (None, 0, 0)
+
+    def observe(self, bar, direction, qualified):
+        if self.bar == bar:
+            return self.count if qualified and self.direction == direction else 0
+        consecutive = self.bar is not None and bar - self.bar == 300 and self.direction == direction
+        self.count = self.count + 1 if qualified and consecutive else (1 if qualified else 0)
+        self.bar = bar
+        self.direction = direction if qualified else 0
+        return self.count
+
+    def state(self):
+        return self.bar, self.direction, self.count
+
+
+class SoftExitPersistence:
+    """Reference for persistent non-structural thesis deterioration."""
+
+    def __init__(self, state=None):
+        self.bar, self.count = state or (None, 0)
+
+    def observe(self, bar, soft_bad=False, structural_reversal=False):
+        if structural_reversal:
+            return "EXIT"
+        if self.bar != bar:
+            consecutive = self.bar is not None and bar - self.bar == 300
+            self.count = self.count + 1 if soft_bad and consecutive else (1 if soft_bad else 0)
+            self.bar = bar
+        if self.count >= 2:
+            return "EXIT"
+        return "PENDING" if self.count == 1 else "HOLD"
+
+    def state(self):
+        return self.bar, self.count
+
+
 class FastMultiV2PolicyTests(unittest.TestCase):
+    def test_first_directional_m5_state_is_blocked(self):
+        persistence = DirectionalPersistence()
+        self.assertEqual(persistence.observe(1_000, -1, True), 1)
+
+    def test_two_consecutive_directional_m5_states_permit_entry(self):
+        persistence = DirectionalPersistence()
+        persistence.observe(1_000, -1, True)
+        self.assertEqual(persistence.observe(1_300, -1, True), 2)
+
+    def test_direction_change_or_missing_core_resets_entry_confirmation(self):
+        persistence = DirectionalPersistence()
+        persistence.observe(1_000, -1, True)
+        self.assertEqual(persistence.observe(1_300, 1, True), 1)
+        self.assertEqual(persistence.observe(1_600, 1, False), 0)
+
+    def test_repeated_scans_in_same_m5_bar_do_not_increment_entry_confirmation(self):
+        persistence = DirectionalPersistence()
+        self.assertEqual(persistence.observe(1_000, 1, True), 1)
+        self.assertEqual(persistence.observe(1_000, 1, True), 1)
+
+    def test_entry_confirmation_survives_restart(self):
+        before = DirectionalPersistence()
+        before.observe(1_000, 1, True)
+        after = DirectionalPersistence(before.state())
+        self.assertEqual(after.observe(1_300, 1, True), 2)
+
+    def test_hard_structural_reversal_exits_immediately(self):
+        persistence = SoftExitPersistence()
+        self.assertEqual(persistence.observe(1_000, structural_reversal=True), "EXIT")
+
+    def test_one_soft_bad_bar_is_pending_and_second_exits(self):
+        persistence = SoftExitPersistence()
+        self.assertEqual(persistence.observe(1_000, soft_bad=True), "PENDING")
+        self.assertEqual(persistence.observe(1_300, soft_bad=True), "EXIT")
+
+    def test_repeated_scans_do_not_accelerate_soft_exit(self):
+        persistence = SoftExitPersistence()
+        self.assertEqual(persistence.observe(1_000, soft_bad=True), "PENDING")
+        self.assertEqual(persistence.observe(1_000, soft_bad=True), "PENDING")
+
+    def test_soft_exit_recovery_resets_and_survives_restart(self):
+        before = SoftExitPersistence()
+        before.observe(1_000, soft_bad=True)
+        after = SoftExitPersistence(before.state())
+        self.assertEqual(after.observe(1_300, soft_bad=False), "HOLD")
+        self.assertEqual(after.observe(1_600, soft_bad=True), "PENDING")
+
     def test_no_trade_overrides_moderate_direction(self):
         self.assertFalse(eligible(72, 50, 68, 1.0, 1.0, 100, 20, 2, 4))
 

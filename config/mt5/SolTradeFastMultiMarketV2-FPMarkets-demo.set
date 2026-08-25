@@ -19,4 +19,5 @@ MinEntryScore=68.0
 MinDirectionalDominance=12.0
 MinNoTradeDominance=8.0
 MinExpectedMoveCostMultiple=3.0
+MinConsecutiveM5Signals=2
 MaxSlippagePoints=12

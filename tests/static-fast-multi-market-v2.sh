@@ -85,8 +85,13 @@ required_patterns=(
   'POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED'
   'ExpectedBarAdvance'
   'normal_progression'
-  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V2'
-  'scan-history-v2-'
+  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V3'
+  'scan-history-v3-'
+  'MinConsecutiveM5Signals=2'
+  'DIRECTIONAL_PERSISTENCE_PENDING'
+  'THESIS_INVALIDATION_PENDING'
+  'UpdateDirectionalPersistence'
+  'UpdateSoftExitPersistence'
   'FIRST_SUCCESSFUL_SCAN_AFTER_RECOVERY'
   'INDEX_ALIAS_RETRY_FAILED'
   'REASON_TERMINAL_CLOSE_OR_UPDATE'
@@ -129,6 +134,8 @@ for setting in \
   'MinExpectedMoveCostMultiple=3.0'; do
   rg -q "^${setting}$" "$demo_set"
 done
+
+rg -q '^MinConsecutiveM5Signals=2$' "$demo_set"
 
 for setting in \
   'MaxSpreadMedianRatio=1.75' \
