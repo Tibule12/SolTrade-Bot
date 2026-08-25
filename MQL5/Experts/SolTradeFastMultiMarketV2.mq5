@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.003"
+#property version   "2.100"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -25,7 +25,12 @@ input double MinEntryScore=68.0;
 input double MinDirectionalDominance=12.0;
 input double MinNoTradeDominance=8.0;
 input double MinExpectedMoveCostMultiple=3.0;
-input int    MinConsecutiveM5Signals=2;
+input int    MinStableSignalScans=3;
+input int    MinSignalPersistenceSeconds=30;
+input double MaxEntryDriftM5Atr=0.60;
+input double MaxM5SwingExtensionAtr=1.75;
+input int    MinSameSymbolReentryMinutes=30;
+input double MinReentrySeparationAtr=0.50;
 input int    MaxSlippagePoints=12;
 
 #define REQUIRED_DEMO_LOGIN 7404213
@@ -36,6 +41,9 @@ input int    MaxSlippagePoints=12;
 #define V1_MAGIC 2108202601
 #define RECOVERY_HISTORY_STABLE_SCANS 3
 #define RECOVERY_HISTORY_MIN_SECONDS 30
+#define TRADE_PHASE_INITIAL_RISK 0
+#define TRADE_PHASE_CONFIRMED_PROFIT 1
+#define TRADE_PHASE_RUNNER 2
 
 string BASE_SYMBOLS[SYMBOL_COUNT]={
    "XAUUSD","USTEC","GBPJPY","XAGUSD","DE30","EURJPY","AUDJPY","USDJPY","GBPUSD",
@@ -81,6 +89,10 @@ struct MarketScore
    double path_impulse;
    double path_efficiency;
    double factor_alignment;
+   double trend_m5;
+   double trend_m15;
+   bool bullish_structure;
+   bool bearish_structure;
    double entry;
    double stop;
    double stop_distance;
@@ -95,6 +107,11 @@ struct MarketScore
    datetime completed_m5_bar_time;
    bool directional_core_qualified;
    int directional_persistence_count;
+   int directional_persistence_seconds;
+   double signal_reference_entry;
+   double entry_drift_m5_atr;
+   double m5_swing_extension_atr;
+   double m15_swing_extension_atr;
    string buy_case;
    string sell_case;
    string no_trade_case;
@@ -152,15 +169,19 @@ datetime g_history_m1_time[SYMBOL_COUNT];
 datetime g_history_m5_time[SYMBOL_COUNT];
 datetime g_history_m15_time[SYMBOL_COUNT];
 datetime g_history_h1_time[SYMBOL_COUNT];
+double g_last_exit_price[SYMBOL_COUNT];
 
 struct RunnerState
   {
+   int phase;
    bool active;
    double peak_r;
    double peak_dollars;
    double protected_r;
    double protected_dollars;
    int trail_updates;
+   double max_giveback_r;
+   double max_giveback_dollars;
   };
 
 string BoolText(const bool value) { return value?"true":"false"; }
@@ -280,6 +301,7 @@ void PruneRotatedAuditFiles()
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v2-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v3-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v4-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\lifecycle-"+day+".csv",FILE_COMMON);
   }
 
@@ -381,27 +403,54 @@ bool ContainsText(const string text,const string token)
 string EntryPersistenceKey(const int index,const string field)
   { return "SFM2_P"+field+"_"+IntegerToString(index); }
 
-void UpdateDirectionalPersistence(const int index,const datetime completed_bar,const int direction,
-                                  const bool core_qualified,int &count)
+void UpdateDirectionalPersistence(const int index,const datetime completed_bar,const int direction,const long setup_key,
+                                  const bool core_qualified,const double entry,const double atr,
+                                  int &count,int &elapsed_seconds,double &reference_entry)
   {
-   count=0;
+   count=0; elapsed_seconds=0; reference_entry=entry;
    if(index<0 || index>=SYMBOL_COUNT || completed_bar<=0) return;
    string bar_key=EntryPersistenceKey(index,"BAR");
    string direction_key=EntryPersistenceKey(index,"DIR");
    string count_key=EntryPersistenceKey(index,"CNT");
+   string setup_state_key=EntryPersistenceKey(index,"SET");
+   string first_time_key=EntryPersistenceKey(index,"FIRST");
+   string last_seen_key=EntryPersistenceKey(index,"SEEN");
+   string reference_key=EntryPersistenceKey(index,"REF");
+   string atr_key=EntryPersistenceKey(index,"ATR");
    datetime prior_bar=GlobalVariableCheck(bar_key)?(datetime)GlobalVariableGet(bar_key):0;
    int prior_direction=GlobalVariableCheck(direction_key)?(int)GlobalVariableGet(direction_key):0;
    int prior_count=GlobalVariableCheck(count_key)?(int)GlobalVariableGet(count_key):0;
-   if(prior_bar==completed_bar)
+   long prior_setup=GlobalVariableCheck(setup_state_key)?(long)GlobalVariableGet(setup_state_key):0;
+   datetime first_time=GlobalVariableCheck(first_time_key)?(datetime)GlobalVariableGet(first_time_key):0;
+   datetime last_seen=GlobalVariableCheck(last_seen_key)?(datetime)GlobalVariableGet(last_seen_key):0;
+   reference_entry=GlobalVariableCheck(reference_key)?GlobalVariableGet(reference_key):entry;
+   datetime now_utc=TimeGMT();
+   bool same_signal=core_qualified && prior_bar==completed_bar && prior_direction==direction &&
+                    prior_setup==setup_key && last_seen>0 && now_utc-last_seen<=3*ScanSeconds;
+   if(!core_qualified)
      {
-      count=core_qualified && prior_direction==direction?prior_count:0;
+      if(prior_count!=0 || prior_setup!=0)
+        {
+         GlobalVariableSet(direction_key,0.0); GlobalVariableSet(count_key,0.0);
+         GlobalVariableSet(setup_state_key,0.0); GlobalVariableSet(first_time_key,0.0);
+         GlobalVariableSet(last_seen_key,(double)now_utc); GlobalVariablesFlush();
+        }
       return;
      }
-   if(core_qualified)
-      count=(prior_bar>0 && completed_bar-prior_bar==300 && prior_direction==direction)?prior_count+1:1;
+   if(!same_signal)
+     {
+      count=1; first_time=now_utc; reference_entry=entry;
+     }
+   else count=prior_count+1;
+   elapsed_seconds=(int)MathMax(0,(long)now_utc-(long)first_time);
    GlobalVariableSet(bar_key,(double)completed_bar);
-   GlobalVariableSet(direction_key,core_qualified?(double)direction:0.0);
+   GlobalVariableSet(direction_key,(double)direction);
    GlobalVariableSet(count_key,(double)count);
+   GlobalVariableSet(setup_state_key,(double)setup_key);
+   GlobalVariableSet(first_time_key,(double)first_time);
+   GlobalVariableSet(last_seen_key,(double)now_utc);
+   GlobalVariableSet(reference_key,reference_entry);
+   GlobalVariableSet(atr_key,atr);
    GlobalVariablesFlush();
   }
 
@@ -938,6 +987,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
    bool reject_down=upper_wick>MathMax(body,0.18*out.atr) && m5[1].close<m5[1].open;
    bool hh=HighestHigh(m5,1,5)>HighestHigh(m5,6,5),hl=LowestLow(m5,1,5)>LowestLow(m5,6,5);
    bool lh=HighestHigh(m5,1,5)<HighestHigh(m5,6,5),ll=LowestLow(m5,1,5)<LowestLow(m5,6,5);
+   out.trend_m5=t5; out.trend_m15=t15;
+   out.bullish_structure=hh&&hl; out.bearish_structure=lh&&ll;
    out.m5_confirmed=MathAbs(t5)>=0.20; out.m15_confirmed=MathAbs(t15)>=0.16;
 
    double spread_quality=out.spread_baseline_ready?
@@ -977,6 +1028,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.m5_invalidation_swing=m5_swing;
    out.m15_invalidation_swing=m15_swing;
    out.selected_invalidation=invalidation;
+   out.m5_swing_extension_atr=out.direction*(out.entry-m5_swing)/out.atr;
+   out.m15_swing_extension_atr=out.direction*(out.entry-m15_swing)/atr15;
    double expansion_buffer=(0.18+0.22*Clamp(out.volatility_expansion-1.0,0.0,1.5))*out.atr+2.0*out.spread;
    double stop_distance=out.direction>0?out.entry-invalidation+expansion_buffer:invalidation-out.entry+expansion_buffer;
    stop_distance=MathMax(stop_distance,MathMax(1.15*out.atr,0.55*atr15));
@@ -1031,16 +1084,18 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.volatility_expansion>1.25 && e5>0.32) out.regime="VOLATILITY_EXPANSION";
    else if(e5<0.25) out.regime="RANGE_CHOP"; else out.regime="DIRECTIONAL_TRANSITION";
 
-   // Confirm direction across distinct completed M5 states. Execution price,
-   // spread and reward remain live entry checks and cannot manufacture the
-   // second directional confirmation.
+   // Confirm one unchanged setup identity across repeated scans and real elapsed
+   // time. A new structure/direction cannot inherit confirmation from the old one.
    out.directional_core_qualified=!out.exhausted && out.m5_confirmed && out.m15_confirmed &&
       out.score>=MinEntryScore && out.score>=opposite+MinDirectionalDominance &&
       out.score>=out.no_trade_score+MinNoTradeDominance &&
       !((out.direction>0 && t5<-0.20 && !out.structural_reversal) ||
         (out.direction<0 && t5>0.20 && !out.structural_reversal));
-   UpdateDirectionalPersistence(index,out.completed_m5_bar_time,out.direction,
-                                out.directional_core_qualified,out.directional_persistence_count);
+   UpdateDirectionalPersistence(index,out.completed_m5_bar_time,out.direction,out.setup_key,
+                                out.directional_core_qualified,out.entry,out.atr,
+                                out.directional_persistence_count,out.directional_persistence_seconds,
+                                out.signal_reference_entry);
+   out.entry_drift_m5_atr=out.direction*(out.entry-out.signal_reference_entry)/out.atr;
 
    if(!history_ready) out.reason="POST_RECOVERY_HISTORY_WARMUP";
    else if(!out.fresh) out.reason="STALE_TICK";
@@ -1055,7 +1110,10 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.score<out.no_trade_score+MinNoTradeDominance) out.reason="NO_TRADE_CASE_DOMINATES";
    else if(out.direction>0 && t5<-0.20 && !out.structural_reversal) out.reason="BUY_FIGHTS_OBVIOUS_M5_MOMENTUM";
    else if(out.direction<0 && t5>0.20 && !out.structural_reversal) out.reason="SELL_FIGHTS_OBVIOUS_M5_MOMENTUM";
-   else if(out.directional_persistence_count<MinConsecutiveM5Signals) out.reason="DIRECTIONAL_PERSISTENCE_PENDING";
+   else if(out.directional_persistence_count<MinStableSignalScans ||
+           out.directional_persistence_seconds<MinSignalPersistenceSeconds) out.reason="SETUP_SPECIFIC_CONFIRMATION_PENDING";
+   else if(out.entry_drift_m5_atr>MaxEntryDriftM5Atr) out.reason="LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED";
+   else if(out.m5_swing_extension_atr>MaxM5SwingExtensionAtr) out.reason="LATE_ENTRY_M5_EXTENSION_EXCEEDED";
    else { out.eligible=true; out.reason="QUALIFIED_CONTEXT_COST_STRUCTURE"; }
    out.decision=out.eligible?DirectionText(out.direction):"NO_TRADE";
    return true;
@@ -1303,6 +1361,7 @@ int SymbolIndexByActual(const string symbol)
   }
 
 string ReversalStatePath() { return "SolTradeFastMultiMarketV2\\reversal-state.csv"; }
+string ExitPriceKey(const int index) { return "SFM2_EXITPX_"+IntegerToString(index); }
 
 void SaveReversalState()
   {
@@ -1314,12 +1373,17 @@ void SaveReversalState()
    FileFlush(h); FileClose(h);
    FileDelete(ReversalStatePath(),FILE_COMMON);
    FileMove(ReversalStatePath()+".tmp",FILE_COMMON,ReversalStatePath(),FILE_COMMON|FILE_REWRITE);
+   for(int i=0;i<SYMBOL_COUNT;i++) GlobalVariableSet(ExitPriceKey(i),g_last_exit_price[i]);
+   GlobalVariablesFlush();
   }
 
 void LoadReversalState()
   {
    ArrayInitialize(g_last_exit_direction,0); ArrayInitialize(g_last_exit_time,0); ArrayInitialize(g_last_setup_key,0);
    ArrayInitialize(g_last_exit_invalidated,false);
+   ArrayInitialize(g_last_exit_price,0.0);
+   for(int i=0;i<SYMBOL_COUNT;i++) if(GlobalVariableCheck(ExitPriceKey(i)))
+      g_last_exit_price[i]=GlobalVariableGet(ExitPriceKey(i));
    int h=FileOpen(ReversalStatePath(),FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    for(int header=0;header<6 && !FileIsEnding(h);header++) FileReadString(h);
@@ -1356,6 +1420,16 @@ bool ReversalAndDistinctSetupAllowed(const int index,const MarketScore &candidat
    reason="";
    if(g_last_setup_key[index]!=0 && candidate.setup_key==g_last_setup_key[index])
      { reason="SAME_STRUCTURAL_SETUP_ALREADY_CONSUMED"; return false; }
+   if(g_last_exit_time[index]>0)
+     {
+      long elapsed=(long)TimeTradeServer()-g_last_exit_time[index];
+      if(elapsed<MinSameSymbolReentryMinutes*60)
+        { reason="SAME_SYMBOL_CHURN_COOLDOWN"; return false; }
+      if(candidate.completed_m5_bar_time<=(datetime)g_last_exit_time[index])
+        { reason="NO_NEW_COMPLETED_M5_STATE_AFTER_EXIT"; return false; }
+      if(g_last_exit_price[index]>0 && MathAbs(candidate.entry-g_last_exit_price[index])<MinReentrySeparationAtr*candidate.atr)
+        { reason="INSUFFICIENT_STRUCTURAL_PRICE_RESET"; return false; }
+     }
    if(g_last_exit_direction[index]==0 || g_last_exit_direction[index]==candidate.direction) return true;
    if(!g_last_exit_invalidated[index]) { reason="PREVIOUS_OPPOSITE_THESIS_NOT_EXPLICITLY_INVALIDATED"; return false; }
    double opposite=candidate.direction>0?candidate.sell_score:candidate.buy_score;
@@ -1379,8 +1453,17 @@ string RunnerStatePath(const long identifier)
 
 void ResetRunnerState(RunnerState &state)
   {
-   state.active=false; state.peak_r=0; state.peak_dollars=0;
-   state.protected_r=0; state.protected_dollars=0; state.trail_updates=0;
+   state.phase=TRADE_PHASE_INITIAL_RISK; state.active=false; state.peak_r=0; state.peak_dollars=0;
+   state.protected_r=-1.0; state.protected_dollars=0; state.trail_updates=0;
+   state.max_giveback_r=0; state.max_giveback_dollars=0;
+  }
+
+double MinimumProtectedR(const double peak_r)
+  {
+   if(peak_r<0.50) return -1.0;
+   if(peak_r<0.75) return -0.05;
+   if(peak_r<1.00) return 0.10;
+   return MathMax(0.25,peak_r-MathMax(0.75,0.40*peak_r));
   }
 
 bool LoadRunnerState(const long identifier,const string symbol,RunnerState &state)
@@ -1390,11 +1473,14 @@ bool LoadRunnerState(const long identifier,const string symbol,RunnerState &stat
    if(h==INVALID_HANDLE) return false;
    string schema=FileReadString(h); long account=(long)StringToInteger(FileReadString(h));
    long saved_identifier=(long)StringToInteger(FileReadString(h)); string saved_symbol=FileReadString(h);
+   state.phase=(int)StringToInteger(FileReadString(h));
    state.active=FileReadString(h)=="true";
    state.peak_r=StringToDouble(FileReadString(h)); state.peak_dollars=StringToDouble(FileReadString(h));
    state.protected_r=StringToDouble(FileReadString(h)); state.protected_dollars=StringToDouble(FileReadString(h));
-   state.trail_updates=(int)StringToInteger(FileReadString(h)); FileClose(h);
-   if(schema!="SOLTRADE_FAST_MULTI_V2_RUNNER_V1" || account!=AccountInfoInteger(ACCOUNT_LOGIN) ||
+   state.trail_updates=(int)StringToInteger(FileReadString(h));
+   state.max_giveback_r=StringToDouble(FileReadString(h));
+   state.max_giveback_dollars=StringToDouble(FileReadString(h)); FileClose(h);
+   if(schema!="SOLTRADE_FAST_MULTI_V2_RUNNER_V2" || account!=AccountInfoInteger(ACCOUNT_LOGIN) ||
       saved_identifier!=identifier || saved_symbol!=symbol) { ResetRunnerState(state); return false; }
    return true;
   }
@@ -1405,9 +1491,10 @@ void SaveRunnerState(const long identifier,const string symbol,const RunnerState
    string path=RunnerStatePath(identifier);
    int h=FileOpen(path+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
-   FileWrite(h,"SOLTRADE_FAST_MULTI_V2_RUNNER_V1",AccountInfoInteger(ACCOUNT_LOGIN),identifier,symbol,
+   FileWrite(h,"SOLTRADE_FAST_MULTI_V2_RUNNER_V2",AccountInfoInteger(ACCOUNT_LOGIN),identifier,symbol,state.phase,
              BoolText(state.active),DoubleToString(state.peak_r,8),DoubleToString(state.peak_dollars,8),
-             DoubleToString(state.protected_r,8),DoubleToString(state.protected_dollars,8),state.trail_updates);
+             DoubleToString(state.protected_r,8),DoubleToString(state.protected_dollars,8),state.trail_updates,
+             DoubleToString(state.max_giveback_r,8),DoubleToString(state.max_giveback_dollars,8));
    FileFlush(h); FileClose(h); FileDelete(path,FILE_COMMON);
    FileMove(path+".tmp",FILE_COMMON,path,FILE_COMMON|FILE_REWRITE);
   }
@@ -1440,31 +1527,65 @@ void ManageFastPositions()
       bool runner_changed=false;
       if(current_r>runner.peak_r) { runner.peak_r=current_r; runner_changed=true; }
       if(net_floating>runner.peak_dollars) { runner.peak_dollars=net_floating; runner_changed=true; }
+      double giveback_r=MathMax(0.0,runner.peak_r-current_r);
+      double giveback_dollars=MathMax(0.0,runner.peak_dollars-net_floating);
+      if(giveback_r>runner.max_giveback_r) { runner.max_giveback_r=giveback_r; runner_changed=true; }
+      if(giveback_dollars>runner.max_giveback_dollars)
+        { runner.max_giveback_dollars=giveback_dollars; runner_changed=true; }
+      double broker_protected_r=direction*(sl-entry)/initial;
+      if(broker_protected_r>runner.protected_r)
+        {
+         runner.protected_r=broker_protected_r;
+         runner.protected_dollars=NetProfitAtPrice(symbol,direction,PositionGetDouble(POSITION_VOLUME),entry,sl);
+         runner_changed=true;
+        }
       MarketScore score; ZeroMemory(score); bool scored=FindScore(symbol,score);
       if(!scored) score.atr=MathMax(initial/5.0,SymbolInfoDouble(symbol,SYMBOL_POINT));
       double held_score=scored?(direction>0?score.buy_score:score.sell_score):50.0;
       double opposite_score=scored?(direction>0?score.sell_score:score.buy_score):0.0;
       bool would_open_now=scored && score.fresh && score.eligible && score.direction==direction;
       bool structure_broken=scored && score.fresh && score.direction==-direction && score.structural_reversal;
-      bool soft_thesis_bad=scored && score.fresh && !structure_broken &&
-                           (opposite_score>=held_score+MinDirectionalDominance ||
-                            (score.no_trade_score>=held_score && held_score<MinEntryScore));
+      bool m15_support=scored && direction*score.trend_m15>0.16;
+      bool opposite_structure=scored && (direction>0?score.bearish_structure:score.bullish_structure);
+      bool normal_pullback=scored && score.fresh && !structure_broken && m15_support &&
+                           (score.direction!=direction || score.no_trade_score>=held_score);
+      bool structural_deterioration=scored && score.fresh && !structure_broken && !normal_pullback &&
+         ((score.direction==-direction && direction*score.trend_m5<-0.20 && direction*score.trend_m15<=0.05 &&
+           opposite_score>=held_score+MinDirectionalDominance) ||
+          (opposite_structure && direction*score.trend_m15<=0.05 && opposite_score>held_score));
       bool exit_state_advanced=false;
       int soft_bad_bars=scored && score.fresh?
-         UpdateSoftExitPersistence(identifier,score.completed_m5_bar_time,soft_thesis_bad,exit_state_advanced):0;
+         UpdateSoftExitPersistence(identifier,score.completed_m5_bar_time,structural_deterioration,exit_state_advanced):0;
       bool thesis_bad=structure_broken || soft_bad_bars>=2;
-      if(current_r>=0.75 && !runner.active)
+      if(runner.peak_r>=0.50 && runner.phase<TRADE_PHASE_CONFIRMED_PROFIT)
         {
-         runner.active=true; runner_changed=true;
+         runner.phase=TRADE_PHASE_CONFIRMED_PROFIT; runner_changed=true;
+         if(scored) AppendEvidence("CONFIRMED_PROFIT_ENTERED",score,ticket,StringFormat(
+            "current_r=%.5f;peak_r=%.5f;original_full_downside_retired=true",current_r,runner.peak_r));
+        }
+      if(runner.peak_r>=0.75 && !runner.active)
+        {
+         runner.active=true; runner.phase=TRADE_PHASE_RUNNER; runner_changed=true;
          AppendEvidence("RUNNER_MODE_ENTERED",score,ticket,StringFormat(
             "current_r=%.5f;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;no_fixed_take_profit=true",
             current_r,runner.peak_r,runner.peak_dollars));
         }
       if(runner_changed) SaveRunnerState(identifier,symbol,runner);
-      if(soft_thesis_bad && soft_bad_bars==1 && exit_state_advanced)
-         AppendEvidence("THESIS_INVALIDATION_PENDING",score,ticket,StringFormat(
+      if(normal_pullback && exit_state_advanced)
+         AppendEvidence("NORMAL_PULLBACK",score,ticket,StringFormat(
+            "completed_m5=%s;current_r=%.5f;m15_support=true;held=%.2f;opposite=%.2f;exit=false",
+            TimeToString(score.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),current_r,held_score,opposite_score));
+      else if(scored && score.fresh && !structure_broken && !structural_deterioration &&
+              (score.direction!=direction || score.no_trade_score>=held_score) && exit_state_advanced)
+         AppendEvidence("TEMPORARY_SCORE_WEAKNESS",score,ticket,StringFormat(
+            "completed_m5=%s;current_r=%.5f;structural_failure=false;exit=false",
+            TimeToString(score.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),current_r));
+      if(structural_deterioration && soft_bad_bars==1 && exit_state_advanced)
+         AppendEvidence("STRUCTURAL_DETERIORATION",score,ticket,StringFormat(
             "completed_m5=%s;soft_bad_bars=1;required=2;current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f",
             TimeToString(score.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),current_r,held_score,opposite_score,score.no_trade_score));
+      // Evidence after this point describes the held position, not a transient opposing score.
+      score.direction=direction; score.entry=entry; score.stop=sl;
       if(thesis_bad)
         {
          GlobalVariableSet("SFM2_INV_"+IntegerToString(identifier),1.0);
@@ -1483,6 +1604,8 @@ void ManageFastPositions()
       double minute_atr=minute_ready?AverageRange(minute,1,12):score.atr/5.0;
       double minute_structure=direction>0?(minute_ready?LowestLow(minute,1,10):entry):(minute_ready?HighestHigh(minute,1,10):entry);
       bool strong_continuation=would_open_now && score.path_efficiency>0.48 && score.score>=78 && score.expected_net_move>score.expected_cost_move*4.0;
+      double floor_r=MinimumProtectedR(runner.peak_r);
+      double floor_price=floor_r>-1.0?entry+direction*floor_r*initial:0;
       if(runner.active)
         {
          MqlRates m5[],m15[]; ArraySetAsSeries(m5,true); ArraySetAsSeries(m15,true);
@@ -1498,26 +1621,17 @@ void ManageFastPositions()
          double price_trail=direction>0?current-trail:current+trail;
          double structure_trail=direction>0?structure_anchor-breathing:structure_anchor+breathing;
          bool confirmed_profitable_structure=direction>0?structure_trail>entry:structure_trail<entry;
-         if(confirmed_profitable_structure)
-           {
-            desired=direction>0?MathMin(price_trail,structure_trail):MathMax(price_trail,structure_trail);
-            management="RUNNER_TRAIL";
-           }
+         double structural_candidate=confirmed_profitable_structure?
+            (direction>0?MathMin(price_trail,structure_trail):MathMax(price_trail,structure_trail)):floor_price;
+         desired=direction>0?MathMax(floor_price,structural_candidate):MathMin(floor_price,structural_candidate);
+         management="RUNNER_PROFIT_PROTECTION";
         }
-      else if(current_r>=0.50)
+      else if(runner.phase==TRADE_PHASE_CONFIRMED_PROFIT && floor_price>0)
         {
          double structural=direction>0?minute_structure-0.30*minute_atr:minute_structure+0.30*minute_atr;
-         bool structure_permits=minute_ready && (direction>0?structural>entry:structural<entry);
-         if(structure_permits)
-           {
-            desired=structural;
-            management=strong_continuation?"TIGHTEN_STOP":"PROTECT_PROFIT";
-           }
-        }
-      else if(current_r>=0.25 && !strong_continuation && (!would_open_now || score.volatility_expansion<0.85))
-        {
-         desired=entry-direction*0.03*initial;
-         management="TIGHTEN_STOP";
+         bool structure_permits=minute_ready && (direction>0?structural>floor_price:structural<floor_price);
+         desired=structure_permits?structural:floor_price;
+         management=strong_continuation?"TIGHTEN_STOP":"PROTECT_PROFIT";
         }
       if(desired==0)
         {
@@ -1545,22 +1659,28 @@ void ManageFastPositions()
             g_status_reason="PROTECTION_FAILED_"+symbol;
             if(scored) AppendEvidence("PROTECTION_FAILED",score,ticket,"action="+management+";retcode="+IntegerToString((int)g_trade.ResultRetcode()));
            }
-         else if(scored) AppendEvidence(management,score,ticket,StringFormat("current_r=%.5f;old_stop=%.8f;new_stop=%.8f;structure_aware=true",
-            current_r,sl,desired));
+         else if(scored) AppendEvidence(management,score,ticket,StringFormat(
+            "current_r=%.5f;peak_r=%.5f;floor_r=%.5f;old_stop=%.8f;new_stop=%.8f;structure_aware=true;monotonic=true",
+            current_r,runner.peak_r,floor_r,sl,desired));
          if(g_trade.ResultRetcode()==TRADE_RETCODE_DONE || g_trade.ResultRetcode()==TRADE_RETCODE_DONE_PARTIAL)
            {
-            if(runner.active)
-              {
-               runner.trail_updates++;
-               runner.protected_r=direction*(desired-entry)/initial;
-               runner.protected_dollars=NetProfitAtPrice(symbol,direction,PositionGetDouble(POSITION_VOLUME),entry,desired);
-               SaveRunnerState(identifier,symbol,runner);
-               if(scored) AppendEvidence("RUNNER_TRAIL_UPDATE",score,ticket,StringFormat(
-                  "RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;old_stop=%.8f;new_stop=%.8f",
-                  runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,runner.trail_updates,sl,desired));
-              }
+            runner.trail_updates++;
+            runner.protected_r=MathMax(runner.protected_r,direction*(desired-entry)/initial);
+            runner.protected_dollars=NetProfitAtPrice(symbol,direction,PositionGetDouble(POSITION_VOLUME),entry,desired);
+            SaveRunnerState(identifier,symbol,runner);
+            if(scored) AppendEvidence("PROTECTION_ADVANCED",score,ticket,StringFormat(
+               "phase=%d;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;MAX_GIVEBACK_R=%.5f;MAX_GIVEBACK_DOLLARS=%.2f;old_stop=%.8f;new_stop=%.8f",
+               runner.phase,runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,
+               runner.trail_updates,runner.max_giveback_r,runner.max_giveback_dollars,sl,desired));
            }
         }
+      else if(tighter && !correct_side && scored)
+         AppendEvidence("PROTECTION_DEFERRED_BROKER_DISTANCE",score,ticket,StringFormat(
+            "current_r=%.5f;peak_r=%.5f;floor_r=%.5f;requested_stop=%.8f;broker_min_distance=%.8f;will_retry=true",
+            current_r,runner.peak_r,floor_r,desired,min_distance));
+      else if(!tighter && scored && floor_r>-1.0)
+         AppendEvidence("PROTECTION_ALREADY_MONOTONIC",score,ticket,StringFormat(
+            "current_r=%.5f;peak_r=%.5f;protected_r=%.5f;floor_r=%.5f",current_r,runner.peak_r,runner.protected_r,floor_r));
      }
   }
 
@@ -1656,8 +1776,11 @@ bool OpenCandidate(const MarketScore &candidate,string &reason,bool &broker_atte
    GlobalVariableSet(MfeKey(identifier),0.0); GlobalVariableSet(MaeKey(identifier),0.0);
    int index=SymbolIndexByActual(live.symbol);
    if(index>=0) { g_last_setup_key[index]=live.setup_key; SaveReversalState(); }
-   AppendEvidence("ENTRY",live,(ulong)PositionGetInteger(POSITION_TICKET),StringFormat("lot=%.4f;initial_risk=%.2f;broker_sl_confirmed=true;net_cost_gate=%.2f",
-      lots,actual_risk,live.cost_multiple));
+   AppendEvidence("ENTRY",live,(ulong)PositionGetInteger(POSITION_TICKET),StringFormat(
+      "lot=%.4f;initial_risk=%.2f;broker_sl_confirmed=true;net_cost_gate=%.2f;spread=%.8f;spread_points=%.2f;spread_median_ratio=%.4f;persistence_scans=%d;persistence_seconds=%d;signal_reference_entry=%.8f;entry_drift_m5_atr=%.5f;m5_extension_atr=%.5f;m15_extension_atr=%.5f",
+      lots,actual_risk,live.cost_multiple,live.spread,live.spread_points,live.spread_median_ratio,
+      live.directional_persistence_count,live.directional_persistence_seconds,live.signal_reference_entry,
+      live.entry_drift_m5_atr,live.m5_swing_extension_atr,live.m15_swing_extension_atr));
    reason="OPENED_"+live.symbol+"_RISK_"+DoubleToString(actual_risk,2);
    return true;
   }
@@ -1729,7 +1852,7 @@ void WriteSpreadAudit()
 void AppendScanAudit()
   {
    PruneRotatedAuditFiles();
-   string path="SolTradeFastMultiMarketV2\\scan-history-v3-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2\\scan-history-v4-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
@@ -1739,6 +1862,8 @@ void AppendScanAudit()
          "median_raw_spread","spread_median_ratio","spread_sample_count","spread_baseline_ready","spread_filter_result",
          "spread_to_m5_atr_percent","movement_to_spread","structural_reversal","m5_confirmed","m15_confirmed",
          "completed_m5_bar_time","directional_core_qualified","directional_persistence_count","directional_persistence_required",
+         "directional_persistence_seconds","directional_persistence_seconds_required","signal_reference_entry","entry_drift_m5_atr",
+         "m5_swing_extension_atr","m15_swing_extension_atr",
          "entry","stop","stop_distance","m5_invalidation_swing","m15_invalidation_swing","selected_invalidation",
          "reward_r","reward_check","available_move","expected_cost_move","expected_net_move","cost_multiple","primary_rejection_reason","eligible",
          "order_attempt_status","order_result","setup_key");
@@ -1755,7 +1880,7 @@ void AppendScanAudit()
       string spread_pips=index>=0 && index<SYMBOL_COUNT && IsFxMarket(index)?DoubleToString(s.spread_pips,4):"NOT_APPLICABLE";
       string order_status=rank<ArraySize(g_scan_order_status)?g_scan_order_status[rank]:"NOT_ATTEMPTED";
       string order_result=rank<ArraySize(g_scan_order_result)?g_scan_order_result[rank]:"NOT_APPLICABLE";
-      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V3",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V4",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
          intended,configured,resolved,mapping_status,mapping_source,BoolText(s.available),DirectionText(s.direction),s.decision,
          DoubleToString(s.score,4),DoubleToString(s.buy_score,4),DoubleToString(s.sell_score,4),DoubleToString(s.no_trade_score,4),
          s.fresh?"FRESH":"STALE_OR_UNAVAILABLE",DoubleToString(s.spread,10),DoubleToString(s.spread_points,4),spread_pips,
@@ -1763,7 +1888,9 @@ void AppendScanAudit()
          BoolText(s.spread_baseline_ready),!s.spread_baseline_ready?"SPREAD_BASELINE_WARMUP":s.spread_abnormal?"ABNORMAL_SPREAD":"PASS",
          DoubleToString(s.spread_atr_pct,4),DoubleToString(s.movement_spread,4),BoolText(s.structural_reversal),
          BoolText(s.m5_confirmed),BoolText(s.m15_confirmed),TimeToString(s.completed_m5_bar_time,TIME_DATE|TIME_SECONDS),
-         BoolText(s.directional_core_qualified),s.directional_persistence_count,MinConsecutiveM5Signals,
+         BoolText(s.directional_core_qualified),s.directional_persistence_count,MinStableSignalScans,
+         s.directional_persistence_seconds,MinSignalPersistenceSeconds,DoubleToString(s.signal_reference_entry,s.digits),
+         DoubleToString(s.entry_drift_m5_atr,5),DoubleToString(s.m5_swing_extension_atr,5),DoubleToString(s.m15_swing_extension_atr,5),
          DoubleToString(s.entry,s.digits),DoubleToString(s.stop,s.digits),
          DoubleToString(s.stop_distance,10),DoubleToString(s.m5_invalidation_swing,s.digits),
          DoubleToString(s.m15_invalidation_swing,s.digits),DoubleToString(s.selected_invalidation,s.digits),
@@ -1887,7 +2014,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.003;isolated_fast_multi_expected=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.100;isolated_fast_multi_expected=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -1898,7 +2025,8 @@ int OnInit()
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
       MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
       MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.25 ||
-      MinConsecutiveM5Signals!=2)
+      MinStableSignalScans!=3 || MinSignalPersistenceSeconds!=30 || MaxEntryDriftM5Atr!=0.60 ||
+      MaxM5SwingExtensionAtr!=1.75 || MinSameSymbolReentryMinutes!=30 || MinReentrySeparationAtr!=0.50)
      { AppendLifecycle("EA_INITIALIZATION_REFUSED","FROZEN_PORTFOLIO_POLICY_MISMATCH"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED FROZEN_PORTFOLIO_POLICY_MISMATCH"); return INIT_PARAMETERS_INCORRECT; }
    if(!SelectUniverse()) { AppendLifecycle("EA_INITIALIZATION_REFUSED","NO_UNIVERSE_SYMBOL_AVAILABLE"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED NO_UNIVERSE_SYMBOL_AVAILABLE"); return INIT_FAILED; }
    LoadReversalState();
@@ -2007,29 +2135,51 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
       string symbol=HistoryDealGetString(transaction.deal,DEAL_SYMBOL); int index=SymbolIndexByActual(symbol);
       int prior_direction=HistoryDealGetInteger(transaction.deal,DEAL_TYPE)==DEAL_TYPE_SELL?1:-1;
       long position_id=HistoryDealGetInteger(transaction.deal,DEAL_POSITION_ID);
-      bool invalidated=HistoryDealGetInteger(transaction.deal,DEAL_REASON)==DEAL_REASON_SL ||
-                       (GlobalVariableCheck("SFM2_INV_"+IntegerToString(position_id)) && GlobalVariableGet("SFM2_INV_"+IntegerToString(position_id))>0);
+      bool invalidated=GlobalVariableCheck("SFM2_INV_"+IntegerToString(position_id)) &&
+                       GlobalVariableGet("SFM2_INV_"+IntegerToString(position_id))>0;
       if(index>=0)
         {
          g_last_exit_direction[index]=prior_direction; g_last_exit_time[index]=(long)HistoryDealGetInteger(transaction.deal,DEAL_TIME);
-         g_last_exit_invalidated[index]=invalidated; SaveReversalState();
+         g_last_exit_price[index]=HistoryDealGetDouble(transaction.deal,DEAL_PRICE);
+         // A broker stop completes the prior thesis for reversal eligibility, but is not mislabeled as a thesis-invalidation exit.
+         g_last_exit_invalidated[index]=invalidated ||
+            HistoryDealGetInteger(transaction.deal,DEAL_REASON)==DEAL_REASON_SL;
+         SaveReversalState();
          MarketScore score; if(!FindScore(symbol,score)) { ZeroMemory(score); score.symbol=symbol; score.direction=prior_direction; }
+         score.direction=prior_direction;
          double gross=0,commission=0,swap=0,net=0;
+         double entry_price=0,exit_price=HistoryDealGetDouble(transaction.deal,DEAL_PRICE);
+         datetime entry_time=0,exit_time=(datetime)HistoryDealGetInteger(transaction.deal,DEAL_TIME);
          if(HistorySelectByPosition((ulong)position_id))
             for(int i=0;i<HistoryDealsTotal();i++)
               {
                ulong deal=HistoryDealGetTicket(i); if(deal==0) continue;
                gross+=HistoryDealGetDouble(deal,DEAL_PROFIT); commission+=HistoryDealGetDouble(deal,DEAL_COMMISSION)+HistoryDealGetDouble(deal,DEAL_FEE);
                swap+=HistoryDealGetDouble(deal,DEAL_SWAP);
+               ENUM_DEAL_ENTRY deal_entry=(ENUM_DEAL_ENTRY)HistoryDealGetInteger(deal,DEAL_ENTRY);
+               if((deal_entry==DEAL_ENTRY_IN || deal_entry==DEAL_ENTRY_INOUT) &&
+                  (entry_time==0 || (datetime)HistoryDealGetInteger(deal,DEAL_TIME)<entry_time))
+                 {
+                  entry_time=(datetime)HistoryDealGetInteger(deal,DEAL_TIME);
+                  entry_price=HistoryDealGetDouble(deal,DEAL_PRICE);
+                 }
               }
          net=gross+commission+swap;
          double mfe=GlobalVariableCheck(MfeKey(position_id))?GlobalVariableGet(MfeKey(position_id)):0;
          double mae=GlobalVariableCheck(MaeKey(position_id))?GlobalVariableGet(MaeKey(position_id)):0;
          RunnerState runner; LoadRunnerState(position_id,symbol,runner);
          double capture_ratio=runner.peak_dollars>0?MathMax(0.0,net)/runner.peak_dollars:0;
-         AppendEvidence("EXIT",score,0,StringFormat("position_id=%I64d;gross=%.2f;commission=%.2f;swap=%.2f;net=%.2f;mfe=%.2f;mae=%.2f;invalidated=%s;reason=%s;RUNNER_MODE_ENTERED=%s;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;FINAL_CAPTURE_RATIO=%.6f",
-            position_id,gross,commission,swap,net,mfe,mae,BoolText(invalidated),EnumToString((ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON)),
-            BoolText(runner.active),runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,runner.trail_updates,capture_ratio));
+         ENUM_DEAL_REASON deal_reason=(ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON);
+         string exit_class=invalidated?"THESIS_INVALIDATION":
+            deal_reason==DEAL_REASON_SL?(runner.protected_r>-0.50?"PROTECTED_STOP_EXIT":"INITIAL_STRUCTURAL_STOP_EXIT"):
+            "BROKER_OR_EXTERNAL_EXIT";
+         AppendEvidence("EXIT",score,0,StringFormat(
+            "position_id=%I64d;entry_time=%s;entry_price=%.8f;exit_time=%s;exit_price=%.8f;holding_seconds=%I64d;gross=%.2f;commission=%.2f;swap=%.2f;net=%.2f;mfe=%.2f;mae=%.2f;invalidated=%s;reason=%s;exit_class=%s;RUNNER_MODE_ENTERED=%s;RUNNER_PEAK_R=%.5f;RUNNER_PEAK_DOLLARS=%.2f;PROTECTED_R=%.5f;PROTECTED_DOLLARS=%.2f;TRAIL_UPDATES=%d;MAX_GIVEBACK_R=%.5f;MAX_GIVEBACK_DOLLARS=%.2f;FINAL_CAPTURE_RATIO=%.6f",
+            position_id,TimeToString(entry_time,TIME_DATE|TIME_SECONDS),entry_price,
+            TimeToString(exit_time,TIME_DATE|TIME_SECONDS),exit_price,(long)exit_time-(long)entry_time,
+            gross,commission,swap,net,mfe,mae,BoolText(invalidated),EnumToString(deal_reason),exit_class,
+            BoolText(runner.active),runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,
+            runner.trail_updates,runner.max_giveback_r,runner.max_giveback_dollars,capture_ratio));
         }
       g_immediate_rescan_requested=true;
      }

@@ -34,8 +34,11 @@ def sized_lots(equity, stop_loss_per_lot, commission_per_lot, step=0.01):
 
 
 def reversal_allowed(previous_direction, previous_invalidated, previous_setup, direction,
-                     setup, structural_reversal, m5, m15, dominates, cost_ok):
+                     setup, structural_reversal, m5, m15, dominates, cost_ok,
+                     elapsed_seconds=1800, new_bar=True, separation_atr=0.5):
     if previous_setup and setup == previous_setup:
+        return False
+    if elapsed_seconds < 1800 or not new_bar or separation_atr < 0.5:
         return False
     if not previous_direction or previous_direction == direction:
         return True
@@ -70,6 +73,35 @@ def runner_decision(current_r, thesis_invalidated=False, trailing_stop_hit=False
 
 def ratchet_stop(direction, current_stop, candidate_stop):
     return max(current_stop, candidate_stop) if direction == 1 else min(current_stop, candidate_stop)
+
+
+def minimum_protected_r(peak_r):
+    if peak_r < 0.50:
+        return -1.0
+    if peak_r < 0.75:
+        return -0.05
+    if peak_r < 1.00:
+        return 0.10
+    return max(0.25, peak_r - max(0.75, 0.40 * peak_r))
+
+
+def contextual_exit(direction, score_direction, trend_m5, trend_m15, opposite_structure,
+                    structural_reversal, opposite_dominates):
+    if score_direction == -direction and structural_reversal:
+        return "THESIS_INVALIDATION"
+    if direction * trend_m15 > 0.16 and score_direction != direction:
+        return "NORMAL_PULLBACK"
+    if ((score_direction == -direction and direction * trend_m5 < -0.20 and
+         direction * trend_m15 <= 0.05 and opposite_dominates) or
+            (opposite_structure and direction * trend_m15 <= 0.05 and opposite_dominates)):
+        return "STRUCTURAL_DETERIORATION"
+    if score_direction != direction:
+        return "TEMPORARY_SCORE_WEAKNESS"
+    return "HOLD"
+
+
+def entry_not_late(entry_drift_atr, m5_extension_atr):
+    return entry_drift_atr <= 0.60 and m5_extension_atr <= 1.75
 
 
 def structural_stop(direction, entry, m5_swing, m15_swing, expansion_buffer,
@@ -143,22 +175,24 @@ class HistoryWarmup:
 
 
 class DirectionalPersistence:
-    """Reference for completed-M5 entry confirmation and restart state."""
+    """Reference for setup-specific, elapsed-time entry confirmation and restart state."""
 
     def __init__(self, state=None):
-        self.bar, self.direction, self.count = state or (None, 0, 0)
+        self.bar, self.direction, self.setup, self.count, self.first, self.last = state or (None, 0, None, 0, None, None)
 
-    def observe(self, bar, direction, qualified):
-        if self.bar == bar:
-            return self.count if qualified and self.direction == direction else 0
-        consecutive = self.bar is not None and bar - self.bar == 300 and self.direction == direction
-        self.count = self.count + 1 if qualified and consecutive else (1 if qualified else 0)
+    def observe(self, bar, direction, setup, qualified, now):
+        same = (qualified and self.bar == bar and self.direction == direction and self.setup == setup
+                and self.last is not None and now - self.last <= 30)
+        self.count = self.count + 1 if same else (1 if qualified else 0)
         self.bar = bar
         self.direction = direction if qualified else 0
-        return self.count
+        self.setup = setup if qualified else None
+        self.first = self.first if same else (now if qualified else None)
+        self.last = now
+        return self.count, 0 if self.first is None else now - self.first
 
     def state(self):
-        return self.bar, self.direction, self.count
+        return self.bar, self.direction, self.setup, self.count, self.first, self.last
 
 
 class SoftExitPersistence:
@@ -185,29 +219,32 @@ class SoftExitPersistence:
 class FastMultiV2PolicyTests(unittest.TestCase):
     def test_first_directional_m5_state_is_blocked(self):
         persistence = DirectionalPersistence()
-        self.assertEqual(persistence.observe(1_000, -1, True), 1)
+        self.assertEqual(persistence.observe(1_000, -1, 101, True, 0), (1, 0))
 
-    def test_two_consecutive_directional_m5_states_permit_entry(self):
+    def test_three_stable_scans_and_30_seconds_permit_entry(self):
         persistence = DirectionalPersistence()
-        persistence.observe(1_000, -1, True)
-        self.assertEqual(persistence.observe(1_300, -1, True), 2)
+        persistence.observe(1_000, -1, 101, True, 0)
+        persistence.observe(1_000, -1, 101, True, 15)
+        self.assertEqual(persistence.observe(1_000, -1, 101, True, 30), (3, 30))
 
-    def test_direction_change_or_missing_core_resets_entry_confirmation(self):
+    def test_direction_setup_change_or_missing_core_resets_entry_confirmation(self):
         persistence = DirectionalPersistence()
-        persistence.observe(1_000, -1, True)
-        self.assertEqual(persistence.observe(1_300, 1, True), 1)
-        self.assertEqual(persistence.observe(1_600, 1, False), 0)
+        persistence.observe(1_000, -1, 101, True, 0)
+        self.assertEqual(persistence.observe(1_000, 1, 101, True, 10), (1, 0))
+        self.assertEqual(persistence.observe(1_000, 1, 202, True, 20), (1, 0))
+        self.assertEqual(persistence.observe(1_000, 1, 202, False, 30), (0, 0))
 
-    def test_repeated_scans_in_same_m5_bar_do_not_increment_entry_confirmation(self):
+    def test_repeated_scans_are_required_but_elapsed_time_cannot_be_bypassed(self):
         persistence = DirectionalPersistence()
-        self.assertEqual(persistence.observe(1_000, 1, True), 1)
-        self.assertEqual(persistence.observe(1_000, 1, True), 1)
+        self.assertEqual(persistence.observe(1_000, 1, 101, True, 0), (1, 0))
+        self.assertEqual(persistence.observe(1_000, 1, 101, True, 10), (2, 10))
+        self.assertEqual(persistence.observe(1_000, 1, 101, True, 20), (3, 20))
 
     def test_entry_confirmation_survives_restart(self):
         before = DirectionalPersistence()
-        before.observe(1_000, 1, True)
+        before.observe(1_000, 1, 101, True, 0)
         after = DirectionalPersistence(before.state())
-        self.assertEqual(after.observe(1_300, 1, True), 2)
+        self.assertEqual(after.observe(1_000, 1, 101, True, 30), (2, 30))
 
     def test_hard_structural_reversal_exits_immediately(self):
         persistence = SoftExitPersistence()
@@ -285,6 +322,13 @@ class FastMultiV2PolicyTests(unittest.TestCase):
     def test_same_setup_rejected(self):
         self.assertFalse(reversal_allowed(1, True, 123, 1, 123, True, True, True, True, True))
 
+    def test_same_symbol_churn_requires_time_new_bar_and_separation(self):
+        base = (1, True, 123, 1, 456, True, True, True, True, True)
+        self.assertFalse(reversal_allowed(*base, elapsed_seconds=1799))
+        self.assertFalse(reversal_allowed(*base, new_bar=False))
+        self.assertFalse(reversal_allowed(*base, separation_atr=0.4999))
+        self.assertTrue(reversal_allowed(*base, elapsed_seconds=1800, new_bar=True, separation_atr=0.5))
+
     def test_opposite_reentry_needs_every_reversal_condition(self):
         base = (-1, True, 123, 1, 456)
         self.assertTrue(reversal_allowed(*base, True, True, True, True, True))
@@ -320,6 +364,68 @@ class FastMultiV2PolicyTests(unittest.TestCase):
     def test_sell_protected_stop_never_moves_up(self):
         self.assertEqual(ratchet_stop(-1, 158.20, 158.50), 158.20)
         self.assertEqual(ratchet_stop(-1, 158.20, 157.90), 157.90)
+
+    def test_profit_floor_improves_monotonically_with_mfe(self):
+        peaks = (0.0, 0.49, 0.50, 0.74, 0.75, 0.99, 1.0, 1.5, 2.0, 2.76, 4.0)
+        floors = [minimum_protected_r(value) for value in peaks]
+        self.assertEqual(floors, sorted(floors))
+        self.assertEqual(minimum_protected_r(0.50), -0.05)
+        self.assertEqual(minimum_protected_r(0.75), 0.10)
+        self.assertGreaterEqual(minimum_protected_r(1.0), 0.25)
+        self.assertGreater(minimum_protected_r(2.0), 1.0)
+        self.assertGreater(minimum_protected_r(2.76), 1.5)
+
+    def test_historical_runner_failures_cannot_return_to_scratch(self):
+        self.assertGreater(minimum_protected_r(2.76122), 1.5)  # US100
+        self.assertGreater(minimum_protected_r(2.06923), 1.2)  # XAUUSD
+        self.assertGreater(minimum_protected_r(1.03319), 0.25)  # GER40
+
+    def test_recorded_failure_envelope_replay(self):
+        # Immutable facts from the 25-Aug forensic snapshot. Rapid churn trades
+        # 2/5/10/11/12 are rejected; retained trades use the monotonic floor.
+        facts = [
+            (242.75, -0.25, -1.50, .96815, False),
+            (245.88, -245.88, -2.16, .00295, True),
+            (249.09, -7.46, 0, 1.39290, False),
+            (249.41, -249.42, 0, 0, False),
+            (248.51, -7.48, 0, .32419, True),
+            (243.66, -8.99, -1.86, 2.06923, False),
+            (248.08, 204.12, -1.68, .92591, False),
+            (248.77, -7.47, 0, 2.76122, False),
+            (249.96, -7.49, 0, 1.03319, False),
+            (249.68, -7.48, 0, .82234, True),
+            (249.35, -7.49, 0, .35171, True),
+            (248.72, 5.19, 0, 1.06103, True),
+            (248.99, -248.99, 0, .13438, False),
+            (246.33, -246.33, -1.26, .05054, False),
+        ]
+        replay = 0.0
+        for risk, actual, commission, peak, churn in facts:
+            if churn:
+                continue
+            floor = minimum_protected_r(peak)
+            replay += round(actual if floor < -0.5 else max(actual, floor * risk + commission), 2)
+        self.assertAlmostEqual(replay, 425.89, places=2)
+
+    def test_late_entry_drift_and_extension_are_rejected(self):
+        self.assertFalse(entry_not_late(.600001, 1.0))
+        self.assertFalse(entry_not_late(.2, 1.750001))
+        self.assertTrue(entry_not_late(.60, 1.75))
+
+    def test_normal_pullback_is_not_thesis_exit(self):
+        self.assertEqual(contextual_exit(1, -1, -0.1, 0.25, False, False, True), "NORMAL_PULLBACK")
+
+    def test_temporary_score_weakness_is_not_thesis_exit(self):
+        self.assertEqual(contextual_exit(1, -1, -0.1, 0.10, False, False, False),
+                         "TEMPORARY_SCORE_WEAKNESS")
+
+    def test_true_structural_reversal_exits_immediately(self):
+        self.assertEqual(contextual_exit(1, -1, -0.4, -0.2, True, True, True),
+                         "THESIS_INVALIDATION")
+
+    def test_structural_deterioration_is_distinct_from_noise(self):
+        self.assertEqual(contextual_exit(1, -1, -0.4, 0.0, False, False, True),
+                         "STRUCTURAL_DETERIORATION")
 
     def test_runner_can_exit_on_structural_invalidation(self):
         self.assertEqual(runner_decision(2.0, thesis_invalidated=True), "EXIT")

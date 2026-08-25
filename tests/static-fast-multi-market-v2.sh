@@ -59,14 +59,18 @@ required_patterns=(
   'PROTECT_PROFIT'
   'TRAIL'
   'RUNNER_MODE_ENTERED'
-  'RUNNER_TRAIL_UPDATE'
+  'PROTECTION_ADVANCED'
+  'MinimumProtectedR'
+  'MAX_GIVEBACK_R'
+  'MAX_GIVEBACK_DOLLARS'
+  'PROTECTION_DEFERRED_BROKER_DISTANCE'
   'RUNNER_PEAK_R'
   'RUNNER_PEAK_DOLLARS'
   'PROTECTED_R'
   'PROTECTED_DOLLARS'
   'TRAIL_UPDATES'
   'FINAL_CAPTURE_RATIO'
-  'SOLTRADE_FAST_MULTI_V2_RUNNER_V1'
+  'SOLTRADE_FAST_MULTI_V2_RUNNER_V2'
   'SOLTRADE_FAST_MULTI_V2_SPREAD_AUDIT_V1'
   'FX_PIP_AND_POINT'
   'METAL_TICK_AND_POINT'
@@ -85,11 +89,18 @@ required_patterns=(
   'POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED'
   'ExpectedBarAdvance'
   'normal_progression'
-  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V3'
-  'scan-history-v3-'
-  'MinConsecutiveM5Signals=2'
-  'DIRECTIONAL_PERSISTENCE_PENDING'
-  'THESIS_INVALIDATION_PENDING'
+  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V4'
+  'scan-history-v4-'
+  'MinStableSignalScans=3'
+  'MinSignalPersistenceSeconds=30'
+  'MaxEntryDriftM5Atr=0.60'
+  'MaxM5SwingExtensionAtr=1.75'
+  'MinSameSymbolReentryMinutes=30'
+  'MinReentrySeparationAtr=0.50'
+  'SETUP_SPECIFIC_CONFIRMATION_PENDING'
+  'STRUCTURAL_DETERIORATION'
+  'TEMPORARY_SCORE_WEAKNESS'
+  'NORMAL_PULLBACK'
   'UpdateDirectionalPersistence'
   'UpdateSoftExitPersistence'
   'FIRST_SUCCESSFUL_SCAN_AFTER_RECOVERY'
@@ -135,7 +146,15 @@ for setting in \
   rg -q "^${setting}$" "$demo_set"
 done
 
-rg -q '^MinConsecutiveM5Signals=2$' "$demo_set"
+for setting in \
+  'MinStableSignalScans=3' \
+  'MinSignalPersistenceSeconds=30' \
+  'MaxEntryDriftM5Atr=0.60' \
+  'MaxM5SwingExtensionAtr=1.75' \
+  'MinSameSymbolReentryMinutes=30' \
+  'MinReentrySeparationAtr=0.50'; do
+  rg -q "^${setting}$" "$demo_set"
+done
 
 for setting in \
   'MaxSpreadMedianRatio=1.75' \
