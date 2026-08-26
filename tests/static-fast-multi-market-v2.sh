@@ -61,6 +61,10 @@ required_patterns=(
   'RUNNER_MODE_ENTERED'
   'PROTECTION_ADVANCED'
   'MinimumProtectedR'
+  'PROFIT_THRESHOLD_TOLERANCE_R 0.005'
+  'ReachedApproximateR'
+  'NetProtectedFloorPrice'
+  'M5_M15_DIRECTIONAL_CONFLICT'
   'MAX_GIVEBACK_R'
   'MAX_GIVEBACK_DOLLARS'
   'PROTECTION_DEFERRED_BROKER_DISTANCE'
@@ -133,6 +137,7 @@ bash -n "$launcher" "$watchdog"
 for setting in \
   'DemoExecutionConfirmed=true' \
   'DryRunOnly=false' \
+  'NewEntriesEnabled=false' \
   'ApprovedDemoAccount=7404213' \
   'ApprovedDemoServer=FPMarketsSC-Demo' \
   'RiskPerTradePercent=0.25' \
@@ -145,6 +150,9 @@ for setting in \
   'MinExpectedMoveCostMultiple=3.0'; do
   rg -q "^${setting}$" "$demo_set"
 done
+
+rg -q 'ENTRY_PAUSED_MANAGEMENT_ONLY' "$source_file"
+rg -q '!DryRunOnly && NewEntriesEnabled && LegacyPilotPositionCount\(\)==0' "$source_file"
 
 for setting in \
   'MinStableSignalScans=3' \

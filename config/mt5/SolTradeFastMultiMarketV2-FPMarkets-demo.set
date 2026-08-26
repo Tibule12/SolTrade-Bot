@@ -1,6 +1,7 @@
 SetupEnabled=true
 DemoExecutionConfirmed=true
 DryRunOnly=false
+NewEntriesEnabled=false
 ApprovedDemoAccount=7404213
 ApprovedDemoServer=FPMarketsSC-Demo
 FastMagic=2108202601

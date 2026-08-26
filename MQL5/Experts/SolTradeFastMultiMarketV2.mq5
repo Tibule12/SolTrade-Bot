@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.100"
+#property version   "2.110"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -7,6 +7,7 @@
 input bool   SetupEnabled=true;
 input bool   DemoExecutionConfirmed=false;
 input bool   DryRunOnly=true;
+input bool   NewEntriesEnabled=false;
 input long   ApprovedDemoAccount=0;
 input string ApprovedDemoServer="FPMarketsSC-Demo";
 input long   FastMagic=2108202601;
@@ -44,6 +45,7 @@ input int    MaxSlippagePoints=12;
 #define TRADE_PHASE_INITIAL_RISK 0
 #define TRADE_PHASE_CONFIRMED_PROFIT 1
 #define TRADE_PHASE_RUNNER 2
+#define PROFIT_THRESHOLD_TOLERANCE_R 0.005
 
 string BASE_SYMBOLS[SYMBOL_COUNT]={
    "XAUUSD","USTEC","GBPJPY","XAGUSD","DE30","EURJPY","AUDJPY","USDJPY","GBPUSD",
@@ -1009,6 +1011,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
                       (out.spread_abnormal?30:0)+(out.movement_spread<MinMovementToSpread?18:0)+
                       (MathAbs(t5)<0.16 && MathAbs(recent_momentum)<0.16?18:0);
    out.direction=out.buy_score>=out.sell_score?1:-1; out.score=MathMax(out.buy_score,out.sell_score);
+   bool direction_conflicts_m15=(out.direction>0 && t15<-0.16)||(out.direction<0 && t15>0.16);
    double opposite=out.direction>0?out.sell_score:out.buy_score;
    out.entry=out.direction>0?tick.ask:tick.bid;
    out.behaviour=breakout_up?"BREAKOUT_UP":breakout_down?"BREAKOUT_DOWN":failed_up?"FAILED_BREAKOUT_UP":
@@ -1086,7 +1089,8 @@ bool ScoreSymbol(const int index,MarketScore &out)
 
    // Confirm one unchanged setup identity across repeated scans and real elapsed
    // time. A new structure/direction cannot inherit confirmation from the old one.
-   out.directional_core_qualified=!out.exhausted && out.m5_confirmed && out.m15_confirmed &&
+   out.directional_core_qualified=!out.exhausted && !timeframe_conflict && !direction_conflicts_m15 &&
+      out.m5_confirmed && out.m15_confirmed &&
       out.score>=MinEntryScore && out.score>=opposite+MinDirectionalDominance &&
       out.score>=out.no_trade_score+MinNoTradeDominance &&
       !((out.direction>0 && t5<-0.20 && !out.structural_reversal) ||
@@ -1103,6 +1107,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.spread_abnormal) out.reason="ABNORMAL_SPREAD";
    else if(out.movement_spread<MinMovementToSpread) out.reason="MOVEMENT_WEAK_RELATIVE_TO_SPREAD";
    else if(out.exhausted) out.reason="MOVE_EXHAUSTED_OR_LATE_CHASE";
+   else if(timeframe_conflict || direction_conflicts_m15) out.reason="M5_M15_DIRECTIONAL_CONFLICT";
    else if(out.expected_net_move<=0 || out.cost_multiple<MinExpectedMoveCostMultiple) out.reason="EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS";
    else if(out.reward_r<MinRewardRisk) out.reason="OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS";
    else if(out.score<MinEntryScore) out.reason="DIRECTIONAL_EVIDENCE_WEAK";
@@ -1466,6 +1471,9 @@ double MinimumProtectedR(const double peak_r)
    return MathMax(0.25,peak_r-MathMax(0.75,0.40*peak_r));
   }
 
+bool ReachedApproximateR(const double observed_r,const double threshold_r)
+  { return observed_r+PROFIT_THRESHOLD_TOLERANCE_R>=threshold_r; }
+
 bool LoadRunnerState(const long identifier,const string symbol,RunnerState &state)
   {
    ResetRunnerState(state);
@@ -1504,6 +1512,15 @@ double NetProfitAtPrice(const string symbol,const int direction,const double vol
    double gross=0; ENUM_ORDER_TYPE type=direction>0?ORDER_TYPE_BUY:ORDER_TYPE_SELL;
    if(!OrderCalcProfit(type,symbol,volume,entry,price,gross)) return 0;
    return gross-EstimatedRoundTripCommissionPerLot(symbol)*volume;
+  }
+
+double NetProtectedFloorPrice(const string symbol,const int direction,const double entry,
+                              const double initial_distance,const double target_net_r)
+  {
+   double commission_move=CommissionAsPriceMove(symbol,entry,EstimatedRoundTripCommissionPerLot(symbol));
+   if(commission_move==DBL_MAX) return 0;
+   double modeled_initial_risk_move=initial_distance+commission_move;
+   return entry+direction*(target_net_r*modeled_initial_risk_move+commission_move);
   }
 
 void ManageFastPositions()
@@ -1557,13 +1574,13 @@ void ManageFastPositions()
       int soft_bad_bars=scored && score.fresh?
          UpdateSoftExitPersistence(identifier,score.completed_m5_bar_time,structural_deterioration,exit_state_advanced):0;
       bool thesis_bad=structure_broken || soft_bad_bars>=2;
-      if(runner.peak_r>=0.50 && runner.phase<TRADE_PHASE_CONFIRMED_PROFIT)
+      if(ReachedApproximateR(runner.peak_r,0.50) && runner.phase<TRADE_PHASE_CONFIRMED_PROFIT)
         {
          runner.phase=TRADE_PHASE_CONFIRMED_PROFIT; runner_changed=true;
          if(scored) AppendEvidence("CONFIRMED_PROFIT_ENTERED",score,ticket,StringFormat(
             "current_r=%.5f;peak_r=%.5f;original_full_downside_retired=true",current_r,runner.peak_r));
         }
-      if(runner.peak_r>=0.75 && !runner.active)
+      if(ReachedApproximateR(runner.peak_r,0.75) && !runner.active)
         {
          runner.active=true; runner.phase=TRADE_PHASE_RUNNER; runner_changed=true;
          AppendEvidence("RUNNER_MODE_ENTERED",score,ticket,StringFormat(
@@ -1605,7 +1622,8 @@ void ManageFastPositions()
       double minute_structure=direction>0?(minute_ready?LowestLow(minute,1,10):entry):(minute_ready?HighestHigh(minute,1,10):entry);
       bool strong_continuation=would_open_now && score.path_efficiency>0.48 && score.score>=78 && score.expected_net_move>score.expected_cost_move*4.0;
       double floor_r=MinimumProtectedR(runner.peak_r);
-      double floor_price=floor_r>-1.0?entry+direction*floor_r*initial:0;
+      double floor_price=floor_r>-1.0?
+         NetProtectedFloorPrice(symbol,direction,entry,initial,floor_r):0;
       if(runner.active)
         {
          MqlRates m5[],m15[]; ArraySetAsSeries(m5,true); ArraySetAsSeries(m15,true);
@@ -1978,8 +1996,9 @@ void ScanAndAct()
    if(owned_position_history_ready) ManageFastPositions();
    else AppendLifecycle("POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED",
                         "broker_stops_remain_active;no_modification_or_exit_from_unstable_history=true");
-   string reason=DryRunOnly?"DRY_RUN_SCAN_COMPLETE":"NO_QUALIFYING_REPLACEMENT";
-   if(!DryRunOnly && LegacyPilotPositionCount()==0)
+   string reason=DryRunOnly?"DRY_RUN_SCAN_COMPLETE":
+                 (!NewEntriesEnabled?"ENTRY_PAUSED_MANAGEMENT_ONLY":"NO_QUALIFYING_REPLACEMENT");
+   if(!DryRunOnly && NewEntriesEnabled && LegacyPilotPositionCount()==0)
       for(int i=0;i<ArraySize(g_ranked);i++)
         {
          if(!g_ranked[i].eligible) continue;
@@ -2014,7 +2033,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.100;isolated_fast_multi_expected=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.110;isolated_fast_multi_expected=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -2048,10 +2067,11 @@ int OnInit()
    g_status_reason="SOLTRADE_FAST_MULTI_MARKET_V2_ACTIVE";
    ScanAndAct();
    Print("SOLTRADE_FAST_MULTI_MARKET_V2_ACTIVE account=",AccountInfoInteger(ACCOUNT_LOGIN),
-         " server=",AccountInfoString(ACCOUNT_SERVER)," real_accounts_blocked=true universe=19 max_positions=6 dry_run=",DryRunOnly);
+         " server=",AccountInfoString(ACCOUNT_SERVER)," real_accounts_blocked=true universe=19 max_positions=6 dry_run=",DryRunOnly,
+         " new_entries_enabled=",NewEntriesEnabled);
    AppendLifecycle("EA_INITIALIZED_ACTIVE",StringFormat(
-      "account=%I64d;server=%s;epoch=%I64d;real_accounts_blocked=true;universe=19;dry_run=%s",
-      AccountInfoInteger(ACCOUNT_LOGIN),AccountInfoString(ACCOUNT_SERVER),g_v2_start_server,BoolText(DryRunOnly)));
+      "account=%I64d;server=%s;epoch=%I64d;real_accounts_blocked=true;universe=19;dry_run=%s;new_entries_enabled=%s",
+      AccountInfoInteger(ACCOUNT_LOGIN),AccountInfoString(ACCOUNT_SERVER),g_v2_start_server,BoolText(DryRunOnly),BoolText(NewEntriesEnabled)));
    for(int i=0;i<SYMBOL_COUNT;i++)
       if(IsIndexAliasMarket(i))
          Print("SOLTRADE_FAST_INDEX_MAPPING intended=",ConfiguredSymbol(i)," actual=",g_symbols[i],
