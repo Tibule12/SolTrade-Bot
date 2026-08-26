@@ -29,6 +29,19 @@ required_patterns=(
   'sell_score'
   'no_trade_score'
   'NO_TRADE_CASE_DOMINATES'
+  'ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD'
+  'MinAbsoluteAdmissionScore=60.0'
+  'directional_score'
+  'structure_score'
+  'timing_score'
+  'remaining_room_score'
+  'cost_penalty'
+  'extension_penalty'
+  'conflict_penalty'
+  'NearestOpposingSwing'
+  'HIGH_SPREAD_RELATIVE_TO_M5_ATR'
+  'CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY'
+  'EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED'
   'EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS'
   'ABNORMAL_SPREAD'
   'SPREAD_BASELINE_WARMUP'
@@ -93,12 +106,14 @@ required_patterns=(
   'POSITION_MANAGEMENT_HISTORY_WARMUP_BLOCKED'
   'ExpectedBarAdvance'
   'normal_progression'
-  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V4'
-  'scan-history-v4-'
+  'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V5'
+  'scan-history-v5-'
   'MinStableSignalScans=3'
   'MinSignalPersistenceSeconds=30'
   'MaxEntryDriftM5Atr=0.60'
   'MaxM5SwingExtensionAtr=1.75'
+  'MaxBreakoutExtensionM5Atr=0.75'
+  'MaxConfirmationOpportunityConsumed=0.35'
   'MinSameSymbolReentryMinutes=30'
   'MinReentrySeparationAtr=0.50'
   'SETUP_SPECIFIC_CONFIRMATION_PENDING'
@@ -137,7 +152,6 @@ bash -n "$launcher" "$watchdog"
 for setting in \
   'DemoExecutionConfirmed=true' \
   'DryRunOnly=false' \
-  'NewEntriesEnabled=false' \
   'ApprovedDemoAccount=7404213' \
   'ApprovedDemoServer=FPMarketsSC-Demo' \
   'RiskPerTradePercent=0.25' \
@@ -151,14 +165,21 @@ for setting in \
   rg -q "^${setting}$" "$demo_set"
 done
 
-rg -q 'ENTRY_PAUSED_MANAGEMENT_ONLY' "$source_file"
-rg -q '!DryRunOnly && NewEntriesEnabled && LegacyPilotPositionCount\(\)==0' "$source_file"
+if rg -q 'ENTRY_PAUSED_MANAGEMENT_ONLY|NewEntriesEnabled' "$source_file" "$demo_set"; then
+  echo "manual entry pause remains present" >&2
+  exit 1
+fi
+rg -q '!DryRunOnly && LegacyPilotPositionCount\(\)==0' "$source_file"
+rg -q 'entry_permission.*ENABLED' "$source_file"
 
 for setting in \
   'MinStableSignalScans=3' \
   'MinSignalPersistenceSeconds=30' \
   'MaxEntryDriftM5Atr=0.60' \
   'MaxM5SwingExtensionAtr=1.75' \
+  'MaxBreakoutExtensionM5Atr=0.75' \
+  'MaxConfirmationOpportunityConsumed=0.35' \
+  'MinAbsoluteAdmissionScore=60.0' \
   'MinSameSymbolReentryMinutes=30' \
   'MinReentrySeparationAtr=0.50'; do
   rg -q "^${setting}$" "$demo_set"

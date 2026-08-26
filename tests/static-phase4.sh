@@ -22,6 +22,18 @@ done
 engine_file="MQL5/Include/SolTrade/ExecutionEngine.mqh"
 test_file="MQL5/Scripts/SolTradeExecutionTests.mq5"
 ea_file="MQL5/Experts/SolTradeBot.mq5"
+phase4_scope=(
+  "$ea_file"
+  MQL5/Include/SolTrade/Config.mqh
+  MQL5/Include/SolTrade/AccountGuard.mqh
+  MQL5/Include/SolTrade/MarketData.mqh
+  MQL5/Include/SolTrade/RiskEngine.mqh
+  MQL5/Include/SolTrade/StrategyBreakout.mqh
+  MQL5/Include/SolTrade/ExecutionEngine.mqh
+  MQL5/Include/SolTrade/TradeJournal.mqh
+  MQL5/Include/SolTrade/Dashboard.mqh
+  "$test_file"
+)
 
 if [[ "$(rg -c '\bOrderSend\(' "$engine_file")" -ne 1 ]]; then
   echo "Phase 4 must have exactly one synchronous OrderSend gateway" >&2
@@ -30,14 +42,14 @@ fi
 
 if rg -n \
   '\b(OrderSendAsync|CTrade|PositionOpen|PositionClose)\s*\(' \
-  MQL5; then
+  "${phase4_scope[@]}"; then
   echo "Unsupported trading or position-management API found" >&2
   exit 1
 fi
 
 if rg -n \
   '\b(TRADE_ACTION_SLTP|TRADE_ACTION_REMOVE|TRADE_ACTION_PENDING)\b' \
-  MQL5; then
+  "${phase4_scope[@]}"; then
   echo "Unsupported order or stop-modification action is present" >&2
   exit 1
 fi

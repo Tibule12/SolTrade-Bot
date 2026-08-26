@@ -1,0 +1,262 @@
+{
+  "schema": "SOLTRADE_FAST_MULTI_V2_200_ADMISSION_REGRESSION_V1",
+  "look_ahead_used": false,
+  "classifier_embeds_trade_timestamps_symbols_or_prices": false,
+  "counts": {
+    "ACCEPT": 0,
+    "REJECT": 6,
+    "UNKNOWN": 8
+  },
+  "rows": [
+    {
+      "trade": "1",
+      "symbol": "XAUUSD.r",
+      "direction": "SELL",
+      "entry_timestamp_utc": "2026.08.25 03:50:11",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 84.5062,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 1.135,
+      "reward_r": 1.6015,
+      "cost_multiple": 58.2222,
+      "mfe_r_observation_only_not_used_for_classification": 0.96815,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "2",
+      "symbol": "XAUUSD.r",
+      "direction": "SELL",
+      "entry_timestamp_utc": "2026.08.25 05:05:51",
+      "classification": "REJECT",
+      "exact_gate": "SAME_SYMBOL_CHURN_COOLDOWN",
+      "candidate_score": 68.8916,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 3.9274,
+      "reward_r": 1.3149,
+      "cost_multiple": 27.9951,
+      "mfe_r_observation_only_not_used_for_classification": 0.00295,
+      "missing_evidence": []
+    },
+    {
+      "trade": "3",
+      "symbol": "US100",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 06:46:21",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 74.428,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 3.0854,
+      "reward_r": 1.2713,
+      "cost_multiple": 40.4861,
+      "mfe_r_observation_only_not_used_for_classification": 1.3929,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "4",
+      "symbol": "GER40",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 07:10:20",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 81.3459,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 3.096,
+      "reward_r": 1.3579,
+      "cost_multiple": 41.6774,
+      "mfe_r_observation_only_not_used_for_classification": 0.0,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "5",
+      "symbol": "US100",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 07:13:11",
+      "classification": "REJECT",
+      "exact_gate": "SAME_SYMBOL_CHURN_COOLDOWN",
+      "candidate_score": 93.3253,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 3.0407,
+      "reward_r": 1.3319,
+      "cost_multiple": 44.6528,
+      "mfe_r_observation_only_not_used_for_classification": 0.32419,
+      "missing_evidence": []
+    },
+    {
+      "trade": "6",
+      "symbol": "XAUUSD.r",
+      "direction": "SELL",
+      "entry_timestamp_utc": "2026.08.25 07:40:11",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 82.9793,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 2.8358,
+      "reward_r": 1.254,
+      "cost_multiple": 32.5336,
+      "mfe_r_observation_only_not_used_for_classification": 2.06923,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "7",
+      "symbol": "XAGUSD.r",
+      "direction": "SELL",
+      "entry_timestamp_utc": "2026.08.25 08:24:41",
+      "classification": "REJECT",
+      "exact_gate": "HIGH_SPREAD_RELATIVE_TO_M5_ATR",
+      "candidate_score": 69.689,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 17.0826,
+      "reward_r": 1.4095,
+      "cost_multiple": 8.0491,
+      "mfe_r_observation_only_not_used_for_classification": 0.92591,
+      "missing_evidence": []
+    },
+    {
+      "trade": "8",
+      "symbol": "US100",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 09:26:21",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 79.2753,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 2.0239,
+      "reward_r": 1.3109,
+      "cost_multiple": 65.881,
+      "mfe_r_observation_only_not_used_for_classification": 2.76122,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "9",
+      "symbol": "GER40",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 10:30:01",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 75.4092,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 2.4823,
+      "reward_r": 1.333,
+      "cost_multiple": 51.9816,
+      "mfe_r_observation_only_not_used_for_classification": 1.03319,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "10",
+      "symbol": "GER40",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 10:43:50",
+      "classification": "REJECT",
+      "exact_gate": "SAME_SYMBOL_CHURN_COOLDOWN",
+      "candidate_score": 107.9,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 2.5,
+      "reward_r": 1.3233,
+      "cost_multiple": 51.6129,
+      "mfe_r_observation_only_not_used_for_classification": 0.82234,
+      "missing_evidence": []
+    },
+    {
+      "trade": "11",
+      "symbol": "GER40",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 11:03:11",
+      "classification": "REJECT",
+      "exact_gate": "SAME_SYMBOL_CHURN_COOLDOWN",
+      "candidate_score": 75.5455,
+      "no_trade_score": 12.0,
+      "spread_atr_percent": 3.0303,
+      "reward_r": 1.4012,
+      "cost_multiple": 49.1935,
+      "mfe_r_observation_only_not_used_for_classification": 0.35171,
+      "missing_evidence": []
+    },
+    {
+      "trade": "12",
+      "symbol": "GER40",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 11:25:51",
+      "classification": "REJECT",
+      "exact_gate": "SAME_SYMBOL_CHURN_COOLDOWN",
+      "candidate_score": 70.1546,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 2.9486,
+      "reward_r": 1.2762,
+      "cost_multiple": 60.1705,
+      "mfe_r_observation_only_not_used_for_classification": 1.06103,
+      "missing_evidence": []
+    },
+    {
+      "trade": "13",
+      "symbol": "US100",
+      "direction": "BUY",
+      "entry_timestamp_utc": "2026.08.25 12:21:20",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 103.3992,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 2.9947,
+      "reward_r": 1.3241,
+      "cost_multiple": 54.375,
+      "mfe_r_observation_only_not_used_for_classification": 0.13438,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    },
+    {
+      "trade": "14",
+      "symbol": "XAUUSD.r",
+      "direction": "SELL",
+      "entry_timestamp_utc": "2026.08.25 14:00:41",
+      "classification": "UNKNOWN",
+      "exact_gate": "INSUFFICIENT_RETAINED_PRE_ENTRY_EVIDENCE",
+      "candidate_score": 73.5632,
+      "no_trade_score": 36.0,
+      "spread_atr_percent": 1.4919,
+      "reward_r": 1.2588,
+      "cost_multiple": 46.9214,
+      "mfe_r_observation_only_not_used_for_classification": 0.05054,
+      "missing_evidence": [
+        "V2.200 absolute admission components",
+        "nearest opposing swing selected by V2.200",
+        "M5 impulse and breakout extension",
+        "setup-specific first/stable timestamps and confirmation movement"
+      ]
+    }
+  ]
+}

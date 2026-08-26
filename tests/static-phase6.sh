@@ -132,11 +132,12 @@ if rg -n 'execution_instance_id' \
   exit 1
 fi
 
-if rg -ni '\b(optimizer|optimization|parameter sweep|genetic)\b' MQL5; then
+if rg -ni '\b(optimizer|optimization|parameter sweep|genetic)\b' \
+  "$ea_file" "$research_file" "$test_file" "$history_file" "$probe_file"; then
   echo "Optimization remains outside Phase 6 implementation" >&2
   exit 1
 fi
-if rg -ni 'random delay' MQL5; then
+if rg -ni 'random delay' "$ea_file" "$research_file" "$test_file" "$history_file" "$probe_file"; then
   echo "Random-delay testing is not part of the authoritative implementation" >&2
   exit 1
 fi

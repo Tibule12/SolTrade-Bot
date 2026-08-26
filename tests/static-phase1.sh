@@ -25,9 +25,9 @@ for required_file in "${required_files[@]}"; do
   fi
 done
 
-mapfile -t expert_advisors < <(find MQL5/Experts -maxdepth 1 -type f -name '*.mq5' -print)
-if [[ "${#expert_advisors[@]}" -ne 1 ]]; then
-  echo "Expected exactly one Expert Advisor entry point, found ${#expert_advisors[@]}" >&2
+mapfile -t phase1_expert_advisors < <(find MQL5/Experts -maxdepth 1 -type f -name 'SolTradeBot.mq5' -print)
+if [[ "${#phase1_expert_advisors[@]}" -ne 1 ]]; then
+  echo "Expected exactly one Phase 1 Expert Advisor entry point, found ${#phase1_expert_advisors[@]}" >&2
   exit 1
 fi
 

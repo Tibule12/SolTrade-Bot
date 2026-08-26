@@ -1,7 +1,6 @@
 SetupEnabled=true
 DemoExecutionConfirmed=true
 DryRunOnly=false
-NewEntriesEnabled=false
 ApprovedDemoAccount=7404213
 ApprovedDemoServer=FPMarketsSC-Demo
 FastMagic=2108202601
@@ -24,6 +23,9 @@ MinStableSignalScans=3
 MinSignalPersistenceSeconds=30
 MaxEntryDriftM5Atr=0.60
 MaxM5SwingExtensionAtr=1.75
+MaxBreakoutExtensionM5Atr=0.75
+MaxConfirmationOpportunityConsumed=0.35
+MinAbsoluteAdmissionScore=60.0
 MinSameSymbolReentryMinutes=30
 MinReentrySeparationAtr=0.50
 MaxSlippagePoints=12

@@ -104,6 +104,64 @@ def entry_not_late(entry_drift_atr, m5_extension_atr):
     return entry_drift_atr <= 0.60 and m5_extension_atr <= 1.75
 
 
+def normalized_extension(direction, entry, anchor, atr):
+    return direction * (entry - anchor) / atr
+
+
+def absolute_admission(*, t5, t15, structure=True, trigger=True, range_chop=False,
+                       exhausted=False, spread_atr=2.0, spread_ratio=1.1,
+                       movement_spread=12.0, cost_multiple=6.0, reward_r=1.5,
+                       raw_score=80.0, opposite=45.0, no_trade=30.0,
+                       path_efficiency=.45, momentum=.5, volatility_expansion=1.15,
+                       impulse_extension=.8, breakout_extension=0.0,
+                       persistence_scans=3, persistence_seconds=30,
+                       confirmation_drift=.2, confirmation_consumed=.12,
+                       correlated_count=0):
+    direction = 1
+    conflict = t5 > .20 and t15 < -.16
+    directional = 35 * (.50 * min(max(t5 / .80, 0), 1)
+                        + .38 * min(max(t15 / .65, 0), 1))
+    structure_score = min(25, (10 if structure else 0) + (8 if trigger else 0)
+                          + (7 if t5 > .20 and t15 > .16 else 0))
+    timing = (8 * min(max(path_efficiency / .55, 0), 1)
+              + 6 * min(max(momentum / .80, 0), 1)
+              + 6 * min(max(1 - abs(volatility_expansion - 1.15) / .85, 0), 1))
+    room = 20 * min(max(reward_r / 2, 0), 1)
+    cost_penalty = (8 * min(max(spread_atr / 8, 0), 1.5)
+                    + 6 * min(max((spread_ratio - 1) / .75, 0), 1.5)
+                    + 6 * min(max(3 / max(cost_multiple, .01), 0), 1))
+    extension_penalty = (12 * min(max((max(0, impulse_extension) - .75) / 1.0, 0), 1)
+                         + 8 * min(max((breakout_extension - .25) / .5, 0), 1))
+    score = directional + structure_score + timing + room - cost_penalty - extension_penalty - (100 if conflict else 0)
+    gates = [
+        (not conflict, "M5_M15_DIRECTIONAL_CONFLICT"),
+        (t5 >= .20, "M5_DIRECTION_UNCONFIRMED"),
+        (t15 >= .16, "M15_DIRECTION_UNCONFIRMED"),
+        (not range_chop, "RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER"),
+        (trigger, "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER"),
+        (not exhausted, "MOVE_EXHAUSTED_OR_LATE_CHASE"),
+        (spread_atr <= 8, "HIGH_SPREAD_RELATIVE_TO_M5_ATR"),
+        (spread_ratio <= 1.75, "ABNORMAL_SPREAD"),
+        (movement_spread >= 5, "MOVEMENT_WEAK_RELATIVE_TO_SPREAD"),
+        (cost_multiple >= 3, "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS"),
+        (reward_r >= 1.25, "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS"),
+        (raw_score >= 68, "DIRECTIONAL_EVIDENCE_WEAK"),
+        (raw_score >= opposite + 12, "OPPOSITE_CASE_NOT_CLEARLY_DEFEATED"),
+        (raw_score >= no_trade + 8, "NO_TRADE_CASE_DOMINATES"),
+        (score >= 60, "ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD"),
+        (persistence_scans >= 3 and persistence_seconds >= 30, "SETUP_SPECIFIC_CONFIRMATION_PENDING"),
+        (confirmation_drift <= .60, "LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED"),
+        (confirmation_consumed <= .35, "CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY"),
+        (impulse_extension <= 1.75, "LATE_ENTRY_M5_IMPULSE_EXTENSION_EXCEEDED"),
+        (breakout_extension <= .75, "EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED"),
+        (correlated_count < 2, "CORRELATION_LIMIT"),
+    ]
+    for passed, reason in gates:
+        if not passed:
+            return False, reason, score
+    return True, "QUALIFIED_CONTEXT_COST_STRUCTURE", score
+
+
 def structural_stop(direction, entry, m5_swing, m15_swing, expansion_buffer,
                     atr5, atr15, broker_minimum):
     invalidation = max(m5_swing, m15_swing) if direction == 1 else min(m5_swing, m15_swing)
@@ -411,6 +469,63 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         self.assertFalse(entry_not_late(.600001, 1.0))
         self.assertFalse(entry_not_late(.2, 1.750001))
         self.assertTrue(entry_not_late(.60, 1.75))
+
+    def test_atr_extension_threshold_is_scale_invariant_across_assets(self):
+        self.assertAlmostEqual(normalized_extension(1, 1.1060, 1.1000, .0100), .60)  # FX
+        self.assertAlmostEqual(normalized_extension(1, 2430.0, 2424.0, 10.0), .60)   # metal
+        self.assertAlmostEqual(normalized_extension(1, 21060.0, 21000.0, 100.0), .60)  # index
+
+    def test_m5_m15_agreement_and_clean_early_continuation_pass(self):
+        accepted, reason, score = absolute_admission(t5=.75, t15=.55)
+        self.assertTrue(accepted, (reason, score))
+
+    def test_m5_m15_genuine_conflict_is_hard_reject(self):
+        self.assertEqual(absolute_admission(t5=.65, t15=-.30)[1], "M5_M15_DIRECTIONAL_CONFLICT")
+
+    def test_late_continuation_and_exhausted_breakout_rejected(self):
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, impulse_extension=1.75001)[1],
+                         "LATE_ENTRY_M5_IMPULSE_EXTENSION_EXCEEDED")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, breakout_extension=.75001)[1],
+                         "EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED")
+
+    def test_failed_breakout_and_clean_pullback_can_pass_with_alignment(self):
+        self.assertTrue(absolute_admission(t5=.75, t15=.55, structure=False, trigger=True)[0])
+        self.assertTrue(absolute_admission(t5=.55, t15=.40, structure=True, trigger=True,
+                                           momentum=.15, impulse_extension=.1)[0])
+
+    def test_range_chop_and_missing_structure_rejected(self):
+        self.assertEqual(absolute_admission(t5=.55, t15=.40, range_chop=True)[1],
+                         "RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER")
+        self.assertEqual(absolute_admission(t5=.55, t15=.40, structure=False, trigger=False)[1],
+                         "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER")
+
+    def test_high_spread_commission_cost_and_insufficient_room_rejected(self):
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, spread_atr=8.01)[1],
+                         "HIGH_SPREAD_RELATIVE_TO_M5_ATR")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, cost_multiple=2.99)[1],
+                         "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, reward_r=1.249)[1],
+                         "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS")
+
+    def test_transient_signal_and_confirmation_chase_rejected(self):
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, persistence_scans=2)[1],
+                         "SETUP_SPECIFIC_CONFIRMATION_PENDING")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, confirmation_drift=.601)[1],
+                         "LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, confirmation_consumed=.351)[1],
+                         "CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY")
+
+    def test_best_relative_candidate_still_needs_absolute_threshold(self):
+        accepted, reason, score = absolute_admission(t5=.21, t15=.17, path_efficiency=.1,
+                                                     momentum=.01, volatility_expansion=2.0,
+                                                     reward_r=1.25, raw_score=80)
+        self.assertLess(score, 60)
+        self.assertFalse(accepted)
+        self.assertEqual(reason, "ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD")
+
+    def test_correlated_index_exposure_is_rejected(self):
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, correlated_count=2)[1],
+                         "CORRELATION_LIMIT")
 
     def test_normal_pullback_is_not_thesis_exit(self):
         self.assertEqual(contextual_exit(1, -1, -0.1, 0.25, False, False, True), "NORMAL_PULLBACK")

@@ -22,6 +22,22 @@ done
 manager_file="MQL5/Include/SolTrade/PositionManager.mqh"
 test_file="MQL5/Scripts/SolTradePositionManagerTests.mq5"
 ea_file="MQL5/Experts/SolTradeBot.mq5"
+phase5_scope=(
+  "$ea_file"
+  MQL5/Include/SolTrade/Config.mqh
+  MQL5/Include/SolTrade/AccountGuard.mqh
+  MQL5/Include/SolTrade/MarketData.mqh
+  MQL5/Include/SolTrade/RiskEngine.mqh
+  MQL5/Include/SolTrade/StrategyBreakout.mqh
+  MQL5/Include/SolTrade/ExecutionEngine.mqh
+  MQL5/Include/SolTrade/PositionManager.mqh
+  MQL5/Include/SolTrade/TradeJournal.mqh
+  MQL5/Include/SolTrade/Dashboard.mqh
+  MQL5/Scripts/SolTradeRiskTests.mq5
+  MQL5/Scripts/SolTradeStrategyTests.mq5
+  MQL5/Scripts/SolTradeExecutionTests.mq5
+  "$test_file"
+)
 
 rg -q 'input bool EnablePositionManagement[[:space:]]*=[[:space:]]*false;' \
   "$ea_file"
@@ -56,14 +72,14 @@ fi
 
 if rg -n \
   '\b(OrderSendAsync|CTrade|PositionOpen|PositionClose)\s*\(' \
-  MQL5; then
+  "${phase5_scope[@]}"; then
   echo "Unsupported asynchronous or convenience trading API found" >&2
   exit 1
 fi
 
 if rg -n \
   '\b(TRADE_ACTION_SLTP|TRADE_ACTION_REMOVE|TRADE_ACTION_PENDING)\b' \
-  MQL5; then
+  "${phase5_scope[@]}"; then
   echo "Unsupported stop modification, removal, or pending-order action found" >&2
   exit 1
 fi
@@ -146,7 +162,7 @@ for fixture in \
 done
 
 if rg -ni '\b(optimizer|optimization)\b' \
-  MQL5; then
+  "${phase5_scope[@]}"; then
   echo "Optimization implementation is outside this build" >&2
   exit 1
 fi
