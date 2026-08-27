@@ -1,0 +1,949 @@
+{
+  "actual_order_attempts": 0,
+  "assessment": "POSSIBLE_OVER_FILTERING",
+  "assessment_constraint": "MFE is diagnostic only. CONFIRMED_OVER_FILTERING requires manual structural-entry review and sufficient liquid-session evidence.",
+  "asset_class_spread_atr_metrics": {
+    "INDICES": {
+      "eligible": 0,
+      "evaluations": 43215,
+      "high_spread_primary_rejects": 14862,
+      "median_spread_atr_percent": 10.3321,
+      "opposing_structure_primary_rejects": 3044,
+      "p75_spread_atr_percent": 46.6667,
+      "scans_approx": 2274.4736842105262,
+      "score_qualified": 878,
+      "spread_atr_gate_pass_percent": 0.43505727178063175,
+      "stale_tick_primary_rejects": 10446
+    },
+    "JPY_FX": {
+      "eligible": 0,
+      "evaluations": 34575,
+      "high_spread_primary_rejects": 30763,
+      "median_spread_atr_percent": 21.9731,
+      "opposing_structure_primary_rejects": 5,
+      "p75_spread_atr_percent": 31.9218,
+      "scans_approx": 1819.7368421052631,
+      "score_qualified": 2,
+      "spread_atr_gate_pass_percent": 0.046073752711496746,
+      "stale_tick_primary_rejects": 1408
+    },
+    "METALS": {
+      "eligible": 0,
+      "evaluations": 17291,
+      "high_spread_primary_rejects": 7995,
+      "median_spread_atr_percent": 8.0506,
+      "opposing_structure_primary_rejects": 1703,
+      "p75_spread_atr_percent": 19.9147,
+      "scans_approx": 910.0526315789474,
+      "score_qualified": 495,
+      "spread_atr_gate_pass_percent": 0.48886704065698916,
+      "stale_tick_primary_rejects": 761
+    },
+    "NON_JPY_FX": {
+      "eligible": 0,
+      "evaluations": 69003,
+      "high_spread_primary_rejects": 51812,
+      "median_spread_atr_percent": 20.0409,
+      "opposing_structure_primary_rejects": 48,
+      "p75_spread_atr_percent": 33.2613,
+      "scans_approx": 3631.7368421052633,
+      "score_qualified": 91,
+      "spread_atr_gate_pass_percent": 0.09812616842745968,
+      "stale_tick_primary_rejects": 7850
+    }
+  },
+  "complete_60m_observations": 1444,
+  "complete_60m_unique_episodes": 54,
+  "data_end_utc": "2026-08-27T16:08:00+00:00",
+  "data_start_utc": "2026-08-26T16:06:59+00:00",
+  "evaluations": 164084,
+  "generated_utc": "2026-08-27T16:08:43.062415+00:00",
+  "implementation_review": {
+    "cost_subtraction": "PASS: expected_net_move subtracts expected_cost_move once; reward_r divides that net move by stop distance. Cost also affects the independent quality score, which is calibration rather than duplicate arithmetic subtraction.",
+    "cross_asset_normalization": "PARTIAL: price-unit and point/tick reporting are internally consistent; exact rejected-candidate USD values need tick value and proposed volume instrumentation.",
+    "opposing_direction": "PASS: BUY selects completed swing highs strictly above entry; SELL selects completed swing lows strictly below entry.",
+    "spread_atr_units": "PASS: raw spread and completed-M5 ATR are both price distances; the ratio is dimensionless before percentage scaling.",
+    "structure_relevance": "OPEN: V5 lacks selected swing timeframe and creation time, so micro-swing/staleness claims cannot yet be proved from the immutable feed."
+  },
+  "instrumentation_gaps": [
+    "V5 does not record the selected opposing swing timeframe or creation timestamp.",
+    "V5 does not record tick value or a proposed volume for rejected candidates, so exact USD costs are unavailable.",
+    "V5 records M5/M15 confirmation booleans but not the underlying signed trend values/context labels.",
+    "Exact opposing level is inferable only when actual room, rather than the unopposed ATR cap, limits available_move."
+  ],
+  "live_admission_rate": 0.0,
+  "live_eligible_count": 0,
+  "london_rejection_episode_groups": {
+    "OPPOSING_STRUCTURE_REJECTS": {
+      "admitted_episodes": 12,
+      "complete_60m_episodes": 12,
+      "false_rejection_count": 5,
+      "false_rejection_rate": 0.4166666666666667,
+      "mean_60m_gross_expectancy_r_proxy": -0.3631537428948192,
+      "mean_60m_net_expectancy_r_proxy": -0.3955485204404808,
+      "median_expected_cost_move": 0.62,
+      "median_expected_cost_r": 0.02251255928471424,
+      "median_mae_60m_r": -0.9471526607752776,
+      "median_mfe_60m_r": 0.309051961165539,
+      "mfe_ge_0_5r": 5,
+      "mfe_ge_0_5r_rate": 0.4166666666666667,
+      "mfe_ge_1_5r": 1,
+      "mfe_ge_1_5r_rate": 0.08333333333333333,
+      "mfe_ge_1r": 4,
+      "mfe_ge_1r_rate": 0.3333333333333333,
+      "mfe_ge_2r": 1,
+      "mfe_ge_2r_rate": 0.08333333333333333,
+      "theoretical_stop_hit_rate": 0.4166666666666667,
+      "theoretical_stop_hits": 5
+    },
+    "WIDE_STOP_1_25R_REJECTS": {
+      "admitted_episodes": 3,
+      "complete_60m_episodes": 3,
+      "false_rejection_count": 0,
+      "false_rejection_rate": 0.0,
+      "mean_60m_gross_expectancy_r_proxy": -0.39595710493542025,
+      "mean_60m_net_expectancy_r_proxy": -0.5379646324166427,
+      "median_expected_cost_move": 0.00019,
+      "median_expected_cost_r": 0.2016881938737317,
+      "median_mae_60m_r": -0.9123382598849942,
+      "median_mfe_60m_r": 0.025134186483049752,
+      "mfe_ge_0_5r": 0,
+      "mfe_ge_0_5r_rate": 0.0,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1_5r_rate": 0.0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_1r_rate": 0.0,
+      "mfe_ge_2r": 0,
+      "mfe_ge_2r_rate": 0.0,
+      "theoretical_stop_hit_rate": 0.3333333333333333,
+      "theoretical_stop_hits": 1
+    }
+  },
+  "median_remaining_r": 0.31284999999999996,
+  "median_score_of_rejected": 62.8568,
+  "median_spread_atr": 2.6945,
+  "parameter_sensitivity": {
+    "absolute_score": {
+      "55": {
+        "eligible": 0,
+        "rejected": 27943,
+        "unknown": 0
+      },
+      "60": {
+        "eligible": 0,
+        "rejected": 27943,
+        "unknown": 0
+      },
+      "65": {
+        "eligible": 0,
+        "rejected": 27943,
+        "unknown": 0
+      },
+      "70": {
+        "eligible": 0,
+        "rejected": 27943,
+        "unknown": 0
+      }
+    },
+    "breakout_extension": {
+      "0.6": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "0.75": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "0.9": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "1.0": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      }
+    },
+    "impulse_extension": {
+      "1.5": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "1.75": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "2.0": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "2.25": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      }
+    },
+    "min_reward_r": {
+      "1.0": {
+        "eligible": 35,
+        "rejected": 1431,
+        "unknown": 0
+      },
+      "1.1": {
+        "eligible": 19,
+        "rejected": 1447,
+        "unknown": 0
+      },
+      "1.15": {
+        "eligible": 8,
+        "rejected": 1458,
+        "unknown": 0
+      },
+      "1.2": {
+        "eligible": 1,
+        "rejected": 1465,
+        "unknown": 0
+      },
+      "1.25": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "1.35": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "1.5": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      }
+    },
+    "signal_drift": {
+      "0.4": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "0.6": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "0.8": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "1.0": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      }
+    },
+    "spread_atr": {
+      "10": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "12": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "15": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "6": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      },
+      "8": {
+        "eligible": 0,
+        "rejected": 1466,
+        "unknown": 0
+      }
+    }
+  },
+  "post_decision_observation_outcomes": {
+    "ABNORMAL_SPREAD": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 0,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 3
+    },
+    "DIRECTIONAL_EVIDENCE_WEAK": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 6,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 6
+    },
+    "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS": {
+      "failed_immediately": 9,
+      "mfe_ge_0_5r": 30,
+      "mfe_ge_1_5r": 29,
+      "mfe_ge_1r": 29,
+      "mfe_ge_2r": 29,
+      "n": 89
+    },
+    "HIGH_SPREAD_RELATIVE_TO_M5_ATR": {
+      "failed_immediately": 45,
+      "mfe_ge_0_5r": 3,
+      "mfe_ge_1_5r": 1,
+      "mfe_ge_1r": 1,
+      "mfe_ge_2r": 0,
+      "n": 84
+    },
+    "MOVEMENT_WEAK_RELATIVE_TO_SPREAD": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 14,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 14,
+      "mfe_ge_2r": 0,
+      "n": 14
+    },
+    "MOVE_EXHAUSTED_OR_LATE_CHASE": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 0,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 26
+    },
+    "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER": {
+      "failed_immediately": 14,
+      "mfe_ge_0_5r": 5,
+      "mfe_ge_1_5r": 1,
+      "mfe_ge_1r": 5,
+      "mfe_ge_2r": 0,
+      "n": 19
+    },
+    "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS": {
+      "failed_immediately": 288,
+      "mfe_ge_0_5r": 413,
+      "mfe_ge_1_5r": 110,
+      "mfe_ge_1r": 227,
+      "mfe_ge_2r": 34,
+      "n": 1149
+    },
+    "POST_RECOVERY_HISTORY_WARMUP": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 4,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 6
+    },
+    "RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 13,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 13
+    },
+    "SETUP_SPECIFIC_CONFIRMATION_PENDING": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 2,
+      "mfe_ge_1_5r": 2,
+      "mfe_ge_1r": 2,
+      "mfe_ge_2r": 0,
+      "n": 2
+    },
+    "STALE_TICK": {
+      "failed_immediately": 19,
+      "mfe_ge_0_5r": 1,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 33
+    }
+  },
+  "post_decision_unique_episode_outcomes": {
+    "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 3,
+      "mfe_ge_1_5r": 2,
+      "mfe_ge_1r": 2,
+      "mfe_ge_2r": 2,
+      "n": 6
+    },
+    "HIGH_SPREAD_RELATIVE_TO_M5_ATR": {
+      "failed_immediately": 4,
+      "mfe_ge_0_5r": 0,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 10
+    },
+    "MOVEMENT_WEAK_RELATIVE_TO_SPREAD": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 1,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 1,
+      "mfe_ge_2r": 0,
+      "n": 1
+    },
+    "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER": {
+      "failed_immediately": 1,
+      "mfe_ge_0_5r": 1,
+      "mfe_ge_1_5r": 1,
+      "mfe_ge_1r": 1,
+      "mfe_ge_2r": 0,
+      "n": 2
+    },
+    "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS": {
+      "failed_immediately": 6,
+      "mfe_ge_0_5r": 16,
+      "mfe_ge_1_5r": 5,
+      "mfe_ge_1r": 9,
+      "mfe_ge_2r": 3,
+      "n": 32
+    },
+    "POST_RECOVERY_HISTORY_WARMUP": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 1,
+      "mfe_ge_1_5r": 0,
+      "mfe_ge_1r": 0,
+      "mfe_ge_2r": 0,
+      "n": 2
+    },
+    "SETUP_SPECIFIC_CONFIRMATION_PENDING": {
+      "failed_immediately": 0,
+      "mfe_ge_0_5r": 1,
+      "mfe_ge_1_5r": 1,
+      "mfe_ge_1r": 1,
+      "mfe_ge_2r": 0,
+      "n": 1
+    }
+  },
+  "production_parameters_changed": false,
+  "requested_gate_counts": {
+    "ACTUAL_TRADES": 0,
+    "DRIFT_REJECTS": 0,
+    "EXTENSION_REJECTS": 26,
+    "LIVE_ELIGIBLE": 0,
+    "M5_M15_CONFLICT_REJECTS": 0,
+    "OPPOSING_STRUCTURE_REJECTS": 1032,
+    "REWARD_ROOM_REJECTS": 1171,
+    "SCORE_QUALIFIED": 1466,
+    "SPREAD_REJECTS": 87,
+    "TOTAL_EVALUATIONS": 164084,
+    "WIDE_STOP_ONLY_REJECTS": 139
+  },
+  "research_only": true,
+  "rr_reject_with_opposing_structure": 1032,
+  "rr_reject_without_opposing_structure": 139,
+  "rr_threshold_episode_sensitivity": {
+    "1.0": {
+      "admitted_observations": 35,
+      "all_sessions": {
+        "admitted_episodes": 5,
+        "complete_60m_episodes": 5,
+        "false_rejection_count": 2,
+        "false_rejection_rate": 0.4,
+        "mean_60m_gross_expectancy_r_proxy": -0.3477097756610968,
+        "mean_60m_net_expectancy_r_proxy": -0.3684520875206503,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.02257849555093881,
+        "median_mae_60m_r": -0.8013139393354654,
+        "median_mfe_60m_r": 0.28268897478708177,
+        "mfe_ge_0_5r": 2,
+        "mfe_ge_0_5r_rate": 0.4,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 2,
+        "mfe_ge_1r_rate": 0.4,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.4,
+        "theoretical_stop_hits": 2
+      },
+      "london": {
+        "admitted_episodes": 2,
+        "complete_60m_episodes": 2,
+        "false_rejection_count": 2,
+        "false_rejection_rate": 1.0,
+        "mean_60m_gross_expectancy_r_proxy": 0.12126361740923666,
+        "mean_60m_net_expectancy_r_proxy": 0.09806384039508911,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.023199777014147556,
+        "median_mae_60m_r": -0.42370585054262655,
+        "median_mfe_60m_r": 1.3628107753461456,
+        "mfe_ge_0_5r": 2,
+        "mfe_ge_0_5r_rate": 1.0,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 2,
+        "mfe_ge_1r_rate": 1.0,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.1": {
+      "admitted_observations": 19,
+      "all_sessions": {
+        "admitted_episodes": 3,
+        "complete_60m_episodes": 3,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 0.3333333333333333,
+        "mean_60m_gross_expectancy_r_proxy": -0.30329398780891753,
+        "mean_60m_net_expectancy_r_proxy": -0.31968326458307567,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.016427774020328207,
+        "median_mae_60m_r": -0.30654041599473586,
+        "median_mfe_60m_r": 0.28268897478708177,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 0.3333333333333333,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 0.3333333333333333,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.3333333333333333,
+        "theoretical_stop_hits": 1
+      },
+      "london": {
+        "admitted_episodes": 1,
+        "complete_60m_episodes": 1,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 1.0,
+        "mean_60m_gross_expectancy_r_proxy": 0.10191682019514145,
+        "mean_60m_net_expectancy_r_proxy": 0.07933832464420264,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.02257849555093881,
+        "median_mae_60m_r": -0.046097761749787775,
+        "median_mfe_60m_r": 1.4591352749794664,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 1.0,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 1.0,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.15": {
+      "admitted_observations": 8,
+      "all_sessions": {
+        "admitted_episodes": 2,
+        "complete_60m_episodes": 2,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 0.5,
+        "mean_60m_gross_expectancy_r_proxy": 0.08334910701035161,
+        "mean_60m_net_expectancy_r_proxy": 0.0665724941108365,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.01677661289951511,
+        "median_mae_60m_r": -0.14857235808742836,
+        "median_mfe_60m_r": 0.9222351240673491,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 0.5,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 0.5,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      },
+      "london": {
+        "admitted_episodes": 1,
+        "complete_60m_episodes": 1,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 1.0,
+        "mean_60m_gross_expectancy_r_proxy": 0.10191682019514145,
+        "mean_60m_net_expectancy_r_proxy": 0.07933832464420264,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.02257849555093881,
+        "median_mae_60m_r": -0.046097761749787775,
+        "median_mfe_60m_r": 1.4591352749794664,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 1.0,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 1.0,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.2": {
+      "admitted_observations": 1,
+      "all_sessions": {
+        "admitted_episodes": 1,
+        "complete_60m_episodes": 1,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 1.0,
+        "mean_60m_gross_expectancy_r_proxy": 0.10191682019514145,
+        "mean_60m_net_expectancy_r_proxy": 0.07933832464420264,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.02257849555093881,
+        "median_mae_60m_r": -0.046097761749787775,
+        "median_mfe_60m_r": 1.4591352749794664,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 1.0,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 1.0,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      },
+      "london": {
+        "admitted_episodes": 1,
+        "complete_60m_episodes": 1,
+        "false_rejection_count": 1,
+        "false_rejection_rate": 1.0,
+        "mean_60m_gross_expectancy_r_proxy": 0.10191682019514145,
+        "mean_60m_net_expectancy_r_proxy": 0.07933832464420264,
+        "median_expected_cost_move": 0.72,
+        "median_expected_cost_r": 0.02257849555093881,
+        "median_mae_60m_r": -0.046097761749787775,
+        "median_mfe_60m_r": 1.4591352749794664,
+        "mfe_ge_0_5r": 1,
+        "mfe_ge_0_5r_rate": 1.0,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": 0.0,
+        "mfe_ge_1r": 1,
+        "mfe_ge_1r_rate": 1.0,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": 0.0,
+        "theoretical_stop_hit_rate": 0.0,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.25": {
+      "admitted_observations": 0,
+      "all_sessions": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      },
+      "london": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.35": {
+      "admitted_observations": 0,
+      "all_sessions": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      },
+      "london": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      }
+    },
+    "1.5": {
+      "admitted_observations": 0,
+      "all_sessions": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      },
+      "london": {
+        "admitted_episodes": 0,
+        "complete_60m_episodes": 0,
+        "false_rejection_count": 0,
+        "false_rejection_rate": null,
+        "mean_60m_gross_expectancy_r_proxy": null,
+        "mean_60m_net_expectancy_r_proxy": null,
+        "median_expected_cost_move": null,
+        "median_expected_cost_r": null,
+        "median_mae_60m_r": null,
+        "median_mfe_60m_r": null,
+        "mfe_ge_0_5r": 0,
+        "mfe_ge_0_5r_rate": null,
+        "mfe_ge_1_5r": 0,
+        "mfe_ge_1_5r_rate": null,
+        "mfe_ge_1r": 0,
+        "mfe_ge_1r_rate": null,
+        "mfe_ge_2r": 0,
+        "mfe_ge_2r_rate": null,
+        "theoretical_stop_hit_rate": null,
+        "theoretical_stop_hits": 0
+      }
+    }
+  },
+  "runtime": {
+    "account_mode_demo": "true",
+    "autonomous_entry": "true",
+    "connected": "true",
+    "demo_only": "true",
+    "entry_permission": "ENABLED",
+    "equity": "98653.34",
+    "login": "7404213",
+    "orders": "0",
+    "portfolio_risk_amount": "0.00",
+    "portfolio_risk_percent": "0.0000",
+    "positions": "0",
+    "real_accounts_blocked": "true",
+    "scanner_active": "true",
+    "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+    "server": "FPMarketsSC-Demo",
+    "setup_active": "true",
+    "status": "NO_TRADE",
+    "timestamp_utc": "2026.08.27 16:08:00",
+    "v1_commission": "-126.78",
+    "v1_gross": "-135.45",
+    "v1_net": "-262.23",
+    "v1_swap": "0.00",
+    "v2_epoch_server": "1787320873"
+  },
+  "scans": 8643,
+  "schema": "SOLTRADE_FAST_MULTI_V220_SHADOW_V1",
+  "score_qualified_count": 1466,
+  "score_qualified_opposing_structure_found": 1265,
+  "score_qualified_rejection_distribution": {
+    "ABNORMAL_SPREAD": 3,
+    "DIRECTIONAL_EVIDENCE_WEAK": 6,
+    "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS": 89,
+    "HIGH_SPREAD_RELATIVE_TO_M5_ATR": 84,
+    "MOVEMENT_WEAK_RELATIVE_TO_SPREAD": 14,
+    "MOVE_EXHAUSTED_OR_LATE_CHASE": 26,
+    "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER": 19,
+    "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS": 1171,
+    "POST_RECOVERY_HISTORY_WARMUP": 6,
+    "RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER": 13,
+    "SETUP_SPECIFIC_CONFIRMATION_PENDING": 2,
+    "STALE_TICK": 33
+  },
+  "session_spread_atr_metrics": {
+    "ASIA_OVERNIGHT": {
+      "eligible": 0,
+      "evaluations": 61483,
+      "high_spread_primary_rejects": 42724,
+      "median_spread_atr_percent": 24.911,
+      "opposing_structure_primary_rejects": 2154,
+      "p75_spread_atr_percent": 42.0601,
+      "scans_approx": 3235.9473684210525,
+      "score_qualified": 714,
+      "spread_atr_gate_pass_percent": 0.1534245238521217,
+      "stale_tick_primary_rejects": 8609
+    },
+    "LONDON_NEW_YORK_OVERLAP": {
+      "eligible": 0,
+      "evaluations": 10260,
+      "high_spread_primary_rejects": 6322,
+      "median_spread_atr_percent": 11.2,
+      "opposing_structure_primary_rejects": 120,
+      "p75_spread_atr_percent": 16.4127,
+      "scans_approx": 540.0,
+      "score_qualified": 5,
+      "spread_atr_gate_pass_percent": 0.3473684210526316,
+      "stale_tick_primary_rejects": 410
+    },
+    "LONDON_OPEN": {
+      "eligible": 0,
+      "evaluations": 13674,
+      "high_spread_primary_rejects": 9888,
+      "median_spread_atr_percent": 14.433,
+      "opposing_structure_primary_rejects": 527,
+      "p75_spread_atr_percent": 22.125025,
+      "scans_approx": 719.6842105263158,
+      "score_qualified": 190,
+      "spread_atr_gate_pass_percent": 0.22202720491443614,
+      "stale_tick_primary_rejects": 474
+    },
+    "LONDON_SESSION": {
+      "eligible": 0,
+      "evaluations": 23933,
+      "high_spread_primary_rejects": 16363,
+      "median_spread_atr_percent": 14.7368,
+      "opposing_structure_primary_rejects": 425,
+      "p75_spread_atr_percent": 20.9476,
+      "scans_approx": 1259.6315789473683,
+      "score_qualified": 214,
+      "spread_atr_gate_pass_percent": 0.259432582626499,
+      "stale_tick_primary_rejects": 1347
+    },
+    "NEW_YORK_LATE": {
+      "eligible": 0,
+      "evaluations": 41054,
+      "high_spread_primary_rejects": 21871,
+      "median_spread_atr_percent": 25.2252,
+      "opposing_structure_primary_rejects": 900,
+      "p75_spread_atr_percent": 51.2195,
+      "scans_approx": 2160.7368421052633,
+      "score_qualified": 260,
+      "spread_atr_gate_pass_percent": 0.20407268475666196,
+      "stale_tick_primary_rejects": 9227
+    },
+    "NEW_YORK_OPEN_OVERLAP": {
+      "eligible": 0,
+      "evaluations": 13680,
+      "high_spread_primary_rejects": 8264,
+      "median_spread_atr_percent": 11.0526,
+      "opposing_structure_primary_rejects": 674,
+      "p75_spread_atr_percent": 16.4983,
+      "scans_approx": 720.0,
+      "score_qualified": 83,
+      "spread_atr_gate_pass_percent": 0.3653508771929825,
+      "stale_tick_primary_rejects": 398
+    }
+  },
+  "shadow_eligible_by_gate_ablation": {
+    "LIVE_ALL_GATES": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_60_POINT_THRESHOLD": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_EXTENSION_GATE": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_M5_M15_CONFLICT_GATE": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_MIN_RR_GATE": {
+      "eligible": 588,
+      "rejected": 878,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_OPPOSING_STRUCTURE_GATE": {
+      "eligible": 168,
+      "rejected": 1298,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_SIGNAL_DRIFT_GATE": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    },
+    "SHADOW_WITHOUT_SPREAD_ATR_GATE": {
+      "eligible": 0,
+      "rejected": 1466,
+      "unknown": 0
+    }
+  },
+  "source_files": [
+    "/home/tibule12/.wine-fpmarkets/drive_c/users/tibule12/AppData/Roaming/MetaQuotes/Terminal/Common/Files/SolTradeFastMultiMarketV2/scan-history-v5-20260826.csv",
+    "/home/tibule12/.wine-fpmarkets/drive_c/users/tibule12/AppData/Roaming/MetaQuotes/Terminal/Common/Files/SolTradeFastMultiMarketV2/scan-history-v5-20260827.csv"
+  ],
+  "top_rejecting_gate": "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS",
+  "top_rejecting_gate_count": 1171,
+  "top_rejecting_gate_percent": 0.7987721691678036
+}
