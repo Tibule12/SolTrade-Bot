@@ -39,6 +39,15 @@ required_patterns=(
   'extension_penalty'
   'conflict_penalty'
   'NearestOpposingSwing'
+  'INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS'
+  'initial_clean_room_required_r'
+  'stop_anchor_timeframe'
+  'stop_anchor_age_seconds'
+  'opposing_structure_timeframe'
+  'opposing_structure_age_seconds'
+  'opposing_reaction_count'
+  'proposed_risk_usd'
+  'expected_cost_usd'
   'HIGH_SPREAD_RELATIVE_TO_M5_ATR'
   'CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY'
   'EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED'
@@ -108,6 +117,8 @@ required_patterns=(
   'normal_progression'
   'SOLTRADE_FAST_MULTI_V2_SCAN_AUDIT_V5'
   'scan-history-v5-'
+  'SOLTRADE_FAST_MULTI_V2_STRUCTURE_TELEMETRY_V6'
+  'structure-telemetry-v6-'
   'MinStableSignalScans=3'
   'MinSignalPersistenceSeconds=30'
   'MaxEntryDriftM5Atr=0.60'
@@ -188,7 +199,7 @@ done
 for setting in \
   'MaxSpreadMedianRatio=1.75' \
   'MinSpreadBaselineSamples=100' \
-  'MinRewardRisk=1.25'; do
+  'MinRewardRisk=1.20'; do
   rg -q "^${setting}$" "$demo_set"
 done
 

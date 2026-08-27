@@ -1,0 +1,13 @@
+[Unit]
+Description=Refresh SolTrade V2.200 shadow admission evidence every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=15s
+Persistent=true
+Unit=soltrade-fast-multi-v220-shadow-audit.service
+
+[Install]
+WantedBy=timers.target
+

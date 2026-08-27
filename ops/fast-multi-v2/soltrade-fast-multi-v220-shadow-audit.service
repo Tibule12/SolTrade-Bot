@@ -1,0 +1,12 @@
+[Unit]
+Description=SolTrade Fast Multi V2.200 research-only shadow admission audit
+After=soltrade-fast-multi-v2.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/tibule12/Projects/SolTrade-Bot
+ExecStart=/usr/bin/python3 /home/tibule12/Projects/SolTrade-Bot/tools/shadow_fast_multi_v220.py
+Nice=10
+IOSchedulingClass=idle
+IOSchedulingPriority=7
+

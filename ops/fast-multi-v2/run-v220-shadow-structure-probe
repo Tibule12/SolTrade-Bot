@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly shadow_prefix='/home/tibule12/.wine-fpmarkets-shadow'
+readonly shadow_terminal="$shadow_prefix/drive_c/Program Files/FP Markets MT5 V220 Shadow"
+readonly production_common='/home/tibule12/.wine-fpmarkets/drive_c/users/tibule12/AppData/Roaming/MetaQuotes/Terminal/Common/Files'
+readonly shadow_common="$shadow_prefix/drive_c/users/tibule12/AppData/Roaming/MetaQuotes/Terminal/Common/Files"
+readonly request_relative='SolTradeFastMultiMarketV220Shadow/structure-probe-requests.csv'
+readonly compiled_probe="$shadow_prefix/drive_c/v220-shadow/SolTradeFastMultiMarketV220StructureProbe.ex5"
+readonly config_source='/home/tibule12/Projects/SolTrade-Bot/ops/fast-multi-v2/run-v220-shadow-structure-probe.ini'
+
+mkdir -p "$shadow_common/SolTradeFastMultiMarketV220Shadow" "$shadow_prefix/drive_c/v220-shadow"
+install -m 0644 "$production_common/$request_relative" "$shadow_common/$request_relative"
+install -m 0644 "$compiled_probe" "$shadow_terminal/MQL5/Experts/SolTradeFastMultiMarketV220StructureProbe.ex5"
+install -m 0644 "$config_source" "$shadow_prefix/drive_c/v220-shadow/run.ini"
+
+export WINEPREFIX="$shadow_prefix"
+export DISPLAY=:1
+export XAUTHORITY=/run/user/1000/gdm/Xauthority
+timeout 180 /usr/bin/wine "$shadow_terminal/terminal64.exe" /portable '/config:C:\v220-shadow\run.ini'

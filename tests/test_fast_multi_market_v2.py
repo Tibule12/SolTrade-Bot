@@ -20,7 +20,7 @@ def eligible(score, opposite, no_trade, median_spread, current_spread, spread_sa
         and movement_spread >= 5.0
         and net_move > 0.0
         and cost_multiple >= 3.0
-        and reward_r >= 1.25
+        and reward_r >= 1.20
         and score >= 68.0
         and score >= opposite + 12.0
         and score >= no_trade + 8.0
@@ -144,7 +144,7 @@ def absolute_admission(*, t5, t15, structure=True, trigger=True, range_chop=Fals
         (spread_ratio <= 1.75, "ABNORMAL_SPREAD"),
         (movement_spread >= 5, "MOVEMENT_WEAK_RELATIVE_TO_SPREAD"),
         (cost_multiple >= 3, "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS"),
-        (reward_r >= 1.25, "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS"),
+        (reward_r >= 1.20, "INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS"),
         (raw_score >= 68, "DIRECTIONAL_EVIDENCE_WEAK"),
         (raw_score >= opposite + 12, "OPPOSITE_CASE_NOT_CLEARLY_DEFEATED"),
         (raw_score >= no_trade + 8, "NO_TRADE_CASE_DOMINATES"),
@@ -350,8 +350,8 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         self.assertTrue(eligible(82, 55, 42, 1.0, 1.1, 100, 12, 3, 4))
 
     def test_reward_threshold_remains_one_point_two_five(self):
-        self.assertFalse(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.249999))
-        self.assertTrue(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.25))
+        self.assertFalse(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.199999))
+        self.assertTrue(eligible(90, 30, 20, 1.0, 1.0, 100, 20, 2, 4, reward_r=1.20))
 
     def test_nearest_confirmed_structure_is_selected(self):
         buy_distance, buy_invalidation = structural_stop(1, 1.1050, 1.1000, 1.1020, 0.0002,
@@ -504,8 +504,8 @@ class FastMultiV2PolicyTests(unittest.TestCase):
                          "HIGH_SPREAD_RELATIVE_TO_M5_ATR")
         self.assertEqual(absolute_admission(t5=.75, t15=.55, cost_multiple=2.99)[1],
                          "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS")
-        self.assertEqual(absolute_admission(t5=.75, t15=.55, reward_r=1.249)[1],
-                         "OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS")
+        self.assertEqual(absolute_admission(t5=.75, t15=.55, reward_r=1.199)[1],
+                         "INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS")
 
     def test_transient_signal_and_confirmation_chase_rejected(self):
         self.assertEqual(absolute_admission(t5=.75, t15=.55, persistence_scans=2)[1],

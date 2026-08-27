@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.200"
+#property version   "2.201"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -20,7 +20,9 @@ input double MaxSpreadAtrPercent=8.0;
 input double MaxSpreadMedianRatio=1.75;
 input int    MinSpreadBaselineSamples=100;
 input double MinMovementToSpread=5.0;
-input double MinRewardRisk=1.25;
+// Clean executable room to the first structural obstacle. This is not a fixed
+// take-profit and does not cap continuation once Runner Mode is managing.
+input double MinRewardRisk=1.20;
 input double MinEntryScore=68.0;
 input double MinDirectionalDominance=12.0;
 input double MinNoTradeDominance=8.0;
@@ -103,6 +105,23 @@ struct MarketScore
    double m5_invalidation_swing;
    double m15_invalidation_swing;
    double selected_invalidation;
+   string stop_anchor_timeframe;
+   datetime stop_anchor_time;
+   int stop_anchor_shift;
+   double expansion_buffer;
+   double volatility_stop_floor;
+   double broker_stop_floor;
+   double opposing_structure_price;
+   string opposing_structure_timeframe;
+   datetime opposing_structure_time;
+   int opposing_structure_shift;
+   int opposing_structure_reactions;
+   double commission_cost_move;
+   double slippage_cost_move;
+   double proposed_volume;
+   double proposed_risk_usd;
+   double expected_cost_usd;
+   string proposed_volume_diagnostic;
    long setup_key;
    bool m5_confirmed;
    bool m15_confirmed;
@@ -328,6 +347,7 @@ void PruneRotatedAuditFiles()
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v3-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v4-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\scan-history-v5-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v6-"+day+".csv",FILE_COMMON);
    FileDelete("SolTradeFastMultiMarketV2\\lifecycle-"+day+".csv",FILE_COMMON);
   }
 
@@ -773,25 +793,56 @@ double LowestLow(MqlRates &rates[],const int from,const int count)
    return value;
   }
 
+double InvalidationExtreme(MqlRates &rates[],const int direction,const int from,const int count,
+                           int &selected_shift,datetime &selected_time)
+  {
+   double value=direction>0?DBL_MAX:-DBL_MAX;
+   selected_shift=-1; selected_time=0;
+   int limit=MathMin(from+count,ArraySize(rates));
+   for(int i=from;i<limit;i++)
+     {
+      double candidate=direction>0?rates[i].low:rates[i].high;
+      bool better=direction>0?candidate<value:candidate>value;
+      if(better) { value=candidate; selected_shift=i; selected_time=rates[i].time; }
+     }
+   return value;
+  }
+
 double NearestOpposingSwing(MqlRates &rates[],const int direction,const double entry,
-                            const int from,const int count)
+                            const int from,const int count,int &selected_shift,datetime &selected_time)
   {
    double nearest=0;
+   selected_shift=-1; selected_time=0;
    int limit=MathMin(from+count,ArraySize(rates)-1);
    for(int i=MathMax(from,2);i<limit;i++)
      {
       if(direction>0)
         {
          bool swing=rates[i].high>=rates[i-1].high && rates[i].high>=rates[i+1].high;
-         if(swing && rates[i].high>entry && (nearest<=0 || rates[i].high<nearest)) nearest=rates[i].high;
+         if(swing && rates[i].high>entry && (nearest<=0 || rates[i].high<nearest))
+           { nearest=rates[i].high; selected_shift=i; selected_time=rates[i].time; }
         }
       else
         {
          bool swing=rates[i].low<=rates[i-1].low && rates[i].low<=rates[i+1].low;
-         if(swing && rates[i].low<entry && (nearest<=0 || rates[i].low>nearest)) nearest=rates[i].low;
+         if(swing && rates[i].low<entry && (nearest<=0 || rates[i].low>nearest))
+           { nearest=rates[i].low; selected_shift=i; selected_time=rates[i].time; }
         }
      }
    return nearest;
+  }
+
+int LevelReactionCount(MqlRates &rates[],const int direction,const double level,const double tolerance,
+                       const int from,const int count)
+  {
+   if(level<=0 || tolerance<=0) return 0;
+   int reactions=0,limit=MathMin(from+count,ArraySize(rates));
+   for(int i=from;i<limit;i++)
+     {
+      double test=direction>0?rates[i].high:rates[i].low;
+      if(MathAbs(test-level)<=tolerance) reactions++;
+     }
+   return reactions;
   }
 
 double NearestPositiveRoom(const int direction,const double entry,const double left,const double right)
@@ -953,6 +1004,16 @@ double CommissionAsPriceMove(const string symbol,const double entry,const double
    return round_trip_per_lot/(MathAbs(pnl)/tick_size);
   }
 
+double AdversePriceMoveCostUsd(const string symbol,const int direction,const double volume,
+                               const double entry,const double price_move)
+  {
+   if(volume<=0 || entry<=0 || price_move<0) return 0;
+   ENUM_ORDER_TYPE type=direction>0?ORDER_TYPE_BUY:ORDER_TYPE_SELL;
+   double exit_price=entry-direction*price_move,pnl=0;
+   if(!OrderCalcProfit(type,symbol,volume,entry,exit_price,pnl)) return 0;
+   return MathAbs(pnl);
+  }
+
 long SetupKey(const int direction,const string behaviour,const double anchor,const double atr)
   {
    int code=behaviour=="BREAKOUT_UP"?11:behaviour=="BREAKOUT_DOWN"?12:behaviour=="BULL_REJECTION"?21:
@@ -1095,8 +1156,10 @@ bool ScoreSymbol(const int index,MarketScore &out)
    // Match the live manager's confirmed-structure horizon. The previous
    // 20xM5/12xM15 entry horizon used several-hour-old range extremes while
    // management used 8xM5/6xM15, making otherwise valid entries fail R:R.
-   double m5_swing=out.direction>0?LowestLow(m5,1,8):HighestHigh(m5,1,8);
-   double m15_swing=out.direction>0?LowestLow(m15,1,6):HighestHigh(m15,1,6);
+   int m5_stop_shift=-1,m15_stop_shift=-1;
+   datetime m5_stop_time=0,m15_stop_time=0;
+   double m5_swing=InvalidationExtreme(m5,out.direction,1,8,m5_stop_shift,m5_stop_time);
+   double m15_swing=InvalidationExtreme(m15,out.direction,1,6,m15_stop_shift,m15_stop_time);
    // The nearest confirmed M5/M15 structural boundary is the first point at
    // which the entry thesis is invalid. ATR and broker floors below retain
    // volatility breathing room and a valid server-side protective stop.
@@ -1104,39 +1167,77 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.m5_invalidation_swing=m5_swing;
    out.m15_invalidation_swing=m15_swing;
    out.selected_invalidation=invalidation;
+   if(invalidation==m5_swing && invalidation==m15_swing)
+     { out.stop_anchor_timeframe="M5_M15"; out.stop_anchor_shift=MathMin(m5_stop_shift,m15_stop_shift); out.stop_anchor_time=MathMax(m5_stop_time,m15_stop_time); }
+   else if(invalidation==m5_swing)
+     { out.stop_anchor_timeframe="M5"; out.stop_anchor_shift=m5_stop_shift; out.stop_anchor_time=m5_stop_time; }
+   else
+     { out.stop_anchor_timeframe="M15"; out.stop_anchor_shift=m15_stop_shift; out.stop_anchor_time=m15_stop_time; }
    out.m5_swing_extension_atr=out.direction*(out.entry-m5_swing)/out.atr;
    out.m15_swing_extension_atr=out.direction*(out.entry-m15_swing)/atr15;
    out.impulse_extension_m5_atr=out.direction*(out.entry-m5[7].close)/out.atr;
    double breakout_anchor=out.direction>0?prior_high:prior_low;
    out.breakout_extension_m5_atr=aligned_breakout?out.direction*(out.entry-breakout_anchor)/out.atr:0;
    double expansion_buffer=(0.18+0.22*Clamp(out.volatility_expansion-1.0,0.0,1.5))*out.atr+2.0*out.spread;
+   out.expansion_buffer=expansion_buffer;
    double stop_distance=out.direction>0?out.entry-invalidation+expansion_buffer:invalidation-out.entry+expansion_buffer;
-   stop_distance=MathMax(stop_distance,MathMax(1.15*out.atr,0.55*atr15));
+   out.volatility_stop_floor=MathMax(1.15*out.atr,0.55*atr15);
+   stop_distance=MathMax(stop_distance,out.volatility_stop_floor);
    double point=SymbolInfoDouble(out.symbol,SYMBOL_POINT);
    double broker_min=MathMax((double)SymbolInfoInteger(out.symbol,SYMBOL_TRADE_STOPS_LEVEL),
                              (double)SymbolInfoInteger(out.symbol,SYMBOL_TRADE_FREEZE_LEVEL))*point;
-   stop_distance=MathMax(stop_distance,broker_min+2.0*point);
+   out.broker_stop_floor=broker_min+2.0*point;
+   stop_distance=MathMax(stop_distance,out.broker_stop_floor);
    out.stop_distance=stop_distance;
    out.stop=out.direction>0?out.entry-stop_distance:out.entry+stop_distance;
 
    // Remaining opportunity is the nearest actual swing ahead of price. Only
    // when no opposing swing exists in any retained horizon is an ATR projection
    // used; a level behind price is never converted into fictional room.
-   double opposing_m5=NearestOpposingSwing(m5,out.direction,out.entry,2,32);
-   double opposing_m15=NearestOpposingSwing(m15,out.direction,out.entry,2,40);
-   double opposing_h1=NearestOpposingSwing(h1,out.direction,out.entry,2,36);
-   double room=NearestPositiveRoom(out.direction,out.entry,opposing_m5,opposing_m15);
+   int opposing_m5_shift=-1,opposing_m15_shift=-1,opposing_h1_shift=-1;
+   datetime opposing_m5_time=0,opposing_m15_time=0,opposing_h1_time=0;
+   double opposing_m5=NearestOpposingSwing(m5,out.direction,out.entry,2,32,opposing_m5_shift,opposing_m5_time);
+   double opposing_m15=NearestOpposingSwing(m15,out.direction,out.entry,2,40,opposing_m15_shift,opposing_m15_time);
+   double opposing_h1=NearestOpposingSwing(h1,out.direction,out.entry,2,36,opposing_h1_shift,opposing_h1_time);
+   double room=0;
+   out.opposing_structure_price=0; out.opposing_structure_timeframe="NONE";
+   out.opposing_structure_time=0; out.opposing_structure_shift=-1; out.opposing_structure_reactions=0;
+   double m5_room=opposing_m5>0?out.direction*(opposing_m5-out.entry):0;
+   double m15_room=opposing_m15>0?out.direction*(opposing_m15-out.entry):0;
    double h1_room=opposing_h1>0?out.direction*(opposing_h1-out.entry):0;
-   if(h1_room>0 && (room<=0 || h1_room<room)) room=h1_room;
+   if(m5_room>0)
+     { room=m5_room; out.opposing_structure_price=opposing_m5; out.opposing_structure_timeframe="M5"; out.opposing_structure_time=opposing_m5_time; out.opposing_structure_shift=opposing_m5_shift; }
+   if(m15_room>0 && (room<=0 || m15_room<room))
+     { room=m15_room; out.opposing_structure_price=opposing_m15; out.opposing_structure_timeframe="M15"; out.opposing_structure_time=opposing_m15_time; out.opposing_structure_shift=opposing_m15_shift; }
+   if(h1_room>0 && (room<=0 || h1_room<room))
+     { room=h1_room; out.opposing_structure_price=opposing_h1; out.opposing_structure_timeframe="H1"; out.opposing_structure_time=opposing_h1_time; out.opposing_structure_shift=opposing_h1_shift; }
    out.opposing_structure_found=room>0;
+   if(out.opposing_structure_timeframe=="M5") out.opposing_structure_reactions=LevelReactionCount(m5,out.direction,out.opposing_structure_price,0.18*out.atr,2,32);
+   else if(out.opposing_structure_timeframe=="M15") out.opposing_structure_reactions=LevelReactionCount(m15,out.direction,out.opposing_structure_price,0.18*out.atr,2,40);
+   else if(out.opposing_structure_timeframe=="H1") out.opposing_structure_reactions=LevelReactionCount(h1,out.direction,out.opposing_structure_price,0.18*out.atr,2,36);
    double unopposed_projection=MathMax(2.20*out.atr,0.75*atr15);
    out.available_move=out.opposing_structure_found?MathMin(room,unopposed_projection):unopposed_projection;
-   double commission_move=CommissionAsPriceMove(out.symbol,out.entry,EstimatedRoundTripCommissionPerLot(out.symbol));
+   double round_trip_commission=EstimatedRoundTripCommissionPerLot(out.symbol);
+   double commission_move=CommissionAsPriceMove(out.symbol,out.entry,round_trip_commission);
    double slippage_move=MaxSlippagePoints*point;
+   out.commission_cost_move=commission_move;
+   out.slippage_cost_move=slippage_move;
    out.expected_cost_move=out.spread+commission_move+slippage_move;
    out.expected_net_move=out.available_move-out.expected_cost_move;
    out.cost_multiple=out.available_move/MathMax(out.expected_cost_move,point);
    out.reward_r=out.expected_net_move/stop_distance;
+   string volume_reason="";
+   if(CalculateLots(out,out.proposed_volume,out.proposed_risk_usd,volume_reason))
+     {
+      out.expected_cost_usd=AdversePriceMoveCostUsd(out.symbol,out.direction,out.proposed_volume,out.entry,out.spread+slippage_move)+
+                            round_trip_commission*out.proposed_volume;
+      out.proposed_volume_diagnostic="PASS";
+     }
+   else
+     {
+      out.proposed_volume=0; out.proposed_risk_usd=0; out.expected_cost_usd=0;
+      out.proposed_volume_diagnostic=volume_reason;
+     }
    out.setup_key=SetupKey(out.direction,out.behaviour,out.direction>0?prior_high:prior_low,out.atr);
 
    // An explicit absolute admission score ranks the independent quality of this
@@ -1229,7 +1330,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.range_chop) out.reason="RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER";
    else if(!out.directional_trigger) out.reason="NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER";
    else if(out.expected_net_move<=0 || out.cost_multiple<MinExpectedMoveCostMultiple) out.reason="EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS";
-   else if(out.reward_r<MinRewardRisk) out.reason="OPPOSING_STRUCTURE_TOO_CLOSE_AFTER_COSTS";
+   else if(out.reward_r<MinRewardRisk) out.reason="INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS";
    else if(out.score<MinEntryScore) out.reason="DIRECTIONAL_EVIDENCE_WEAK";
    else if(out.score<opposite+MinDirectionalDominance) out.reason="OPPOSITE_CASE_NOT_CLEARLY_DEFEATED";
    else if(out.score<out.no_trade_score+MinNoTradeDominance) out.reason="NO_TRADE_CASE_DOMINATES";
@@ -2056,6 +2157,52 @@ void AppendScanAudit()
    FileFlush(h); FileClose(h);
   }
 
+void AppendStructureTelemetry()
+  {
+   string path="SolTradeFastMultiMarketV2\\structure-telemetry-v6-"+CompactUtcDay(TimeGMT())+".csv";
+   int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return;
+   if(FileSize(h)==0)
+      FileWrite(h,"schema","scan_sequence","utc","sast","rank","intended_market","resolved_broker_symbol",
+         "candidate_direction","primary_rejection_reason","eligible","initial_clean_room_r","initial_clean_room_required_r",
+         "entry","stop","stop_distance","stop_anchor_price","stop_anchor_timeframe","stop_anchor_time_server","stop_anchor_shift",
+         "stop_anchor_age_seconds","stop_distance_m5_atr","stop_distance_m15_atr","expansion_buffer","volatility_stop_floor",
+         "broker_stop_floor","opposing_structure_found","opposing_structure_price","opposing_structure_timeframe",
+         "opposing_structure_time_server","opposing_structure_shift","opposing_structure_age_seconds","opposing_distance_m5_atr",
+         "opposing_reaction_count","spread_cost_move","commission_cost_move","slippage_cost_move","expected_cost_move",
+         "tick_value_profit","tick_value_loss","proposed_volume","proposed_risk_usd","expected_cost_usd","volume_diagnostic",
+         "trend_m5","trend_m15","volatility_expansion","path_efficiency","regime","behaviour");
+   FileSeek(h,0,SEEK_END);
+   for(int rank=0;rank<ArraySize(g_ranked);rank++)
+     {
+      MarketScore s=g_ranked[rank];
+      int index=s.source_index;
+      string intended=index>=0 && index<SYMBOL_COUNT?BASE_SYMBOLS[index]:"UNKNOWN";
+      double atr15=0;
+      if(MathAbs(s.m15_swing_extension_atr)>0.0000001)
+         atr15=s.direction*(s.entry-s.m15_invalidation_swing)/s.m15_swing_extension_atr;
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V2_STRUCTURE_TELEMETRY_V6",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
+         intended,s.symbol,DirectionText(s.direction),s.reason,BoolText(s.eligible),DoubleToString(s.reward_r,5),
+         DoubleToString(MinRewardRisk,5),DoubleToString(s.entry,s.digits),DoubleToString(s.stop,s.digits),
+         DoubleToString(s.stop_distance,10),DoubleToString(s.selected_invalidation,s.digits),s.stop_anchor_timeframe,
+         TimeToString(s.stop_anchor_time,TIME_DATE|TIME_SECONDS),s.stop_anchor_shift,
+         s.stop_anchor_time>0?(long)(TimeCurrent()-s.stop_anchor_time):-1,
+         DoubleToString(s.atr>0?s.stop_distance/s.atr:0,5),DoubleToString(atr15>0?s.stop_distance/atr15:0,5),
+         DoubleToString(s.expansion_buffer,10),DoubleToString(s.volatility_stop_floor,10),DoubleToString(s.broker_stop_floor,10),
+         BoolText(s.opposing_structure_found),DoubleToString(s.opposing_structure_price,s.digits),s.opposing_structure_timeframe,
+         TimeToString(s.opposing_structure_time,TIME_DATE|TIME_SECONDS),s.opposing_structure_shift,
+         s.opposing_structure_time>0?(long)(TimeCurrent()-s.opposing_structure_time):-1,
+         DoubleToString(s.atr>0?s.direction*(s.opposing_structure_price-s.entry)/s.atr:0,5),s.opposing_structure_reactions,
+         DoubleToString(s.spread,10),DoubleToString(s.commission_cost_move,10),DoubleToString(s.slippage_cost_move,10),
+         DoubleToString(s.expected_cost_move,10),DoubleToString(SymbolInfoDouble(s.symbol,SYMBOL_TRADE_TICK_VALUE_PROFIT),8),
+         DoubleToString(SymbolInfoDouble(s.symbol,SYMBOL_TRADE_TICK_VALUE_LOSS),8),DoubleToString(s.proposed_volume,4),
+         DoubleToString(s.proposed_risk_usd,2),DoubleToString(s.expected_cost_usd,2),s.proposed_volume_diagnostic,
+         DoubleToString(s.trend_m5,5),DoubleToString(s.trend_m15,5),DoubleToString(s.volatility_expansion,5),
+         DoubleToString(s.path_efficiency,5),s.regime,s.behaviour);
+     }
+   FileFlush(h); FileClose(h);
+  }
+
 void WriteRuntimeStatus()
   {
    int h=FileOpen("SolTradeFastMultiMarketV2\\runtime.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
@@ -2156,6 +2303,7 @@ void ScanAndAct()
      }
    g_status_reason=reason;
    AppendScanAudit();
+   AppendStructureTelemetry();
    WriteRuntimeStatus();
    if(g_first_scan_after_recovery)
      {
@@ -2171,7 +2319,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.200;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.201;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -2181,7 +2329,7 @@ int OnInit()
    if(RiskPerTradePercent!=0.25 || MaxPortfolioRiskPercent!=1.50 || MaxSimultaneousTrades!=6 ||
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
       MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
-      MaxSpreadAtrPercent!=8.0 || MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.25 ||
+      MaxSpreadAtrPercent!=8.0 || MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.20 ||
       MinStableSignalScans!=3 || MinSignalPersistenceSeconds!=30 || MaxEntryDriftM5Atr!=0.60 ||
       MaxM5SwingExtensionAtr!=1.75 || MaxBreakoutExtensionM5Atr!=0.75 ||
       MaxConfirmationOpportunityConsumed!=0.35 || MinAbsoluteAdmissionScore!=60.0 ||
