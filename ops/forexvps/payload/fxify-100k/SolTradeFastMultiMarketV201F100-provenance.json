@@ -1,0 +1,24 @@
+{
+  "account": 7198096,
+  "approved_preset_sha256": "b6411be64672842e6c126dd310c2fb3f4941067f39f5716b8a2dfdac8f918c45",
+  "approved_source_sha256": "c2530ad8e3429c05d4d03e5643f609786ada0bc4a8ecdd4f8216ab9cc00abc61",
+  "generated_preset_sha256": "dd87e2cc97e8433889493275fa339f8706cd8c99632507ca9044cd39f6239b2e",
+  "generated_source_sha256": "c244f2e59c26389e2cae3a51fadedd23b258901c2d7b5496a544f4d4f876a529",
+  "magic": 2108202620,
+  "min_reward_r": 1.2,
+  "order_permission": "DISABLED_DRY_RUN",
+  "portability_changes": [
+    "account_and_server_guard",
+    "account_unique_magic",
+    "account_unique_file_common_namespace",
+    "account_unique_terminal_global_prefix",
+    "legacy_cleanup_suppressed_while_dry_run",
+    "order_permission_forced_off_by_deployment_preset"
+  ],
+  "runtime_folder": "SolTradeFastMultiMarketV2F100",
+  "schema": "SOLTRADE_FXIFY_V201_RUNTIME_PORT_V1",
+  "server": "FXIFY-Server",
+  "strategy_changes": [],
+  "strategy_version": "2.201",
+  "target": "fxify-100k"
+}

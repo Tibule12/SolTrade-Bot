@@ -11,6 +11,11 @@ config/mt5/*-preflight.set
 !config/mt5/*.example.set
 reports/deployment/
 
+# Ephemeral encrypted broker session transfer; never commit.
+ops/forexvps/secret-transfer/
+ops/forexvps/remote-output/
+ops/forexvps/installers/
+
 # Local editor/OS metadata
 .vscode/
 *~
