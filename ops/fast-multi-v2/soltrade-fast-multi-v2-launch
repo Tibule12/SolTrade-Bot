@@ -29,24 +29,45 @@ write_state() {
 wait_for_graphics() {
   write_state WAITING_FOR_GRAPHICS
   while true; do
-    local candidates=("$DISPLAY")
+    local candidates=()
+    local authorities=()
     local socket
+    local authority
+    local runtime_dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+
+    if [[ -n "${DISPLAY:-}" ]]; then
+      candidates+=("$DISPLAY")
+    fi
+    if [[ -n "${XAUTHORITY:-}" ]]; then
+      authorities+=("$XAUTHORITY")
+    fi
     shopt -s nullglob
     for socket in /tmp/.X11-unix/X*; do
       candidates+=(":${socket##*X}")
     done
+    for authority in "$runtime_dir"/.mutter-Xwaylandauth.* "$runtime_dir"/gdm/Xauthority; do
+      authorities+=("$authority")
+    done
     shopt -u nullglob
     local candidate
     for candidate in "${candidates[@]}"; do
-      if [[ -S "/tmp/.X11-unix/X${candidate#:}" ]] && [[ -r "$XAUTHORITY" ]]; then
-        if ! command -v xset >/dev/null 2>&1 || timeout 5 xset -display "$candidate" q >/dev/null 2>&1; then
+      if [[ ! -S "/tmp/.X11-unix/X${candidate#:}" ]]; then
+        continue
+      fi
+      for authority in "${authorities[@]}"; do
+        if [[ ! -r "$authority" ]]; then
+          continue
+        fi
+        if ! command -v xset >/dev/null 2>&1 || \
+           DISPLAY="$candidate" XAUTHORITY="$authority" timeout 5 xset -display "$candidate" q >/dev/null 2>&1; then
           export DISPLAY="$candidate"
+          export XAUTHORITY="$authority"
           log_event GRAPHICS_READY "display=$DISPLAY xauthority=$XAUTHORITY"
           return 0
         fi
-      fi
+      done
     done
-    log_event GRAPHICS_WAIT "display=$DISPLAY xauthority=$XAUTHORITY retry_seconds=15"
+    log_event GRAPHICS_WAIT "display=${DISPLAY:-unset} xauthority=${XAUTHORITY:-unset} retry_seconds=15"
     sleep 15
   done
 }

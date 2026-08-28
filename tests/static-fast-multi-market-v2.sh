@@ -57,10 +57,10 @@ required_patterns=(
   'MaxSpreadMedianRatio=1.75'
   'MinSpreadBaselineSamples=100'
   'out.direction>0\?MathMax\(m5_swing,m15_swing\):MathMin\(m5_swing,m15_swing\)'
-  'LowestLow\(m5,1,8\):HighestHigh\(m5,1,8\)'
-  'LowestLow\(m15,1,6\):HighestHigh\(m15,1,6\)'
+  'InvalidationExtreme\(m5,out.direction,1,8'
+  'InvalidationExtreme\(m15,out.direction,1,6'
   'if\(volume<=0\) continue'
-  'stop_distance=MathMax\(stop_distance,MathMax\(1.15\*out.atr,0.55\*atr15\)\)'
+  'out.volatility_stop_floor=MathMax\(1.15\*out.atr,0.55\*atr15\)'
   'NO_GENUINE_STRUCTURAL_REVERSAL'
   'M5_M15_REVERSAL_NOT_CONFIRMED'
   'SAME_STRUCTURAL_SETUP_ALREADY_CONSUMED'
@@ -148,10 +148,12 @@ rg -q '^StartLimitIntervalSec=900$' "$service_file"
 rg -q '^ExecStart=/home/tibule12/.local/libexec/soltrade-fast-multi-v2-launch$' "$service_file"
 rg -Fq "/home/tibule12/.wine-fpmarkets/drive_c/Program Files/FP Markets MT5 Fast Multi/terminal64.exe" "$launcher"
 rg -q 'WAITING_FOR_GRAPHICS' "$launcher"
+rg -q '\.mutter-Xwaylandauth\.\*' "$launcher"
 rg -q 'UPDATE_GRACE_STARTED' "$launcher"
 rg -q '^OnUnitActiveSec=1min$' "$watchdog_timer"
 rg -q 'isolated_terminal_missing' "$watchdog"
 rg -q 'runtime_stale' "$watchdog"
+rg -q 'graphics_wait_timeout' "$watchdog"
 
 if rg -Fq '/Program Files/MetaTrader 5/terminal64.exe' "$service_file" "$launcher" "$watchdog"; then
   echo "normal MetaTrader terminal referenced by Fast Multi operations files" >&2
@@ -199,7 +201,7 @@ done
 for setting in \
   'MaxSpreadMedianRatio=1.75' \
   'MinSpreadBaselineSamples=100' \
-  'MinRewardRisk=1.20'; do
+  'MinRewardRisk=1.15'; do
   rg -q "^${setting}$" "$demo_set"
 done
 

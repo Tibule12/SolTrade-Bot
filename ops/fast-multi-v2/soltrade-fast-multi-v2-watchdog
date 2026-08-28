@@ -37,8 +37,19 @@ fi
 
 now_epoch=$(date +%s)
 if [[ "$mode" == 'WAITING_FOR_GRAPHICS' || "$mode" == 'TERMINAL_STARTING' ]]; then
-  log_event HEALTHY_TRANSITION "mode=$mode"
-  exit 0
+  transition_age=$(( now_epoch - since_epoch ))
+  if (( transition_age <= 180 )); then
+    log_event HEALTHY_TRANSITION "mode=$mode age_seconds=$transition_age"
+    exit 0
+  fi
+  if [[ "$mode" == 'WAITING_FOR_GRAPHICS' ]]; then
+    recovery_reason='graphics_wait_timeout'
+  else
+    recovery_reason='terminal_start_timeout'
+  fi
+  log_event SERVICE_RECOVERY "reason=$recovery_reason mode=$mode age_seconds=$transition_age"
+  systemctl --user restart "$unit"
+  exit $?
 fi
 if [[ "$mode" == 'UPDATE_GRACE' ]] && (( now_epoch <= until_epoch + 30 )); then
   log_event HEALTHY_UPDATE_GRACE "until_epoch=$until_epoch"

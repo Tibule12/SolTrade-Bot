@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Research-only shadow audit for the live Fast Multi V2.200 CSV feed.
+"""Research-only shadow audit for the live Fast Multi V2.202 CSV feed.
 
 This process never connects to MetaTrader and has no order path.  It consumes
 the production audit CSVs, evaluates one-gate-at-a-time counterfactuals, and
@@ -26,7 +26,7 @@ from typing import Any, Iterable
 
 SAST = timezone(timedelta(hours=2))
 UTC = timezone.utc
-SCHEMA = "SOLTRADE_FAST_MULTI_V220_SHADOW_V1"
+SCHEMA = "SOLTRADE_FAST_MULTI_V202_SHADOW_V1"
 AUDIT_DIR = Path(
     "/home/tibule12/.wine-fpmarkets/drive_c/users/tibule12/AppData/Roaming/"
     "MetaQuotes/Terminal/Common/Files/SolTradeFastMultiMarketV2"
@@ -37,7 +37,7 @@ CURRENT = {
     "spread_atr": 8.0,
     "spread_median_ratio": 1.75,
     "movement_to_spread": 5.0,
-    "min_reward_r": 1.25,
+    "min_reward_r": 1.15,
     "min_entry_score": 68.0,
     "directional_dominance": 12.0,
     "no_trade_dominance": 8.0,
@@ -1062,10 +1062,22 @@ def main() -> int:
     if not observations:
         raise SystemExit("no complete V5 audit observations found")
     meaningful = [obs for obs in observations if obs.meaningful and not b(obs.row.get("eligible"))]
-    score_candidates = [obs for obs in observations if obs.score_qualified and not b(obs.row.get("eligible"))]
+    score_candidates = [obs for obs in observations if obs.score_qualified]
     candidate_rows = [candidate_row(obs) for obs in meaningful]
+    # Threshold sensitivity includes both previously rejected candidates and
+    # observations that production admitted.  Keep the outcome vector aligned
+    # with that same population; the old rejected-only vector silently shifted
+    # post-decision labels onto the wrong observations after the first live
+    # admission.
     outcomes = outcome_rows(observations, score_candidates)
-    probe_requests = structure_probe_requests(score_candidates, outcomes)
+    rejected_pairs = [
+        (obs, outcome) for obs, outcome in zip(score_candidates, outcomes)
+        if not b(obs.row.get("eligible"))
+    ]
+    probe_requests = structure_probe_requests(
+        [obs for obs, _ in rejected_pairs],
+        [outcome for _, outcome in rejected_pairs],
+    )
     runtime = runtime_state(args.audit_dir)
     summary = make_summary(observations, candidate_rows, outcomes, paths, runtime)
     args.report_dir.mkdir(parents=True, exist_ok=True)

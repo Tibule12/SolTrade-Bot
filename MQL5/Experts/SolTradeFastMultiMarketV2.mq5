@@ -1,5 +1,5 @@
 #property strict
-#property version   "2.201"
+#property version   "2.202"
 #property description "Demo-only active intraday multi-market context, execution, and management engine"
 
 #include <Trade/Trade.mqh>
@@ -22,7 +22,7 @@ input int    MinSpreadBaselineSamples=100;
 input double MinMovementToSpread=5.0;
 // Clean executable room to the first structural obstacle. This is not a fixed
 // take-profit and does not cap continuation once Runner Mode is managing.
-input double MinRewardRisk=1.20;
+input double MinRewardRisk=1.15;
 input double MinEntryScore=68.0;
 input double MinDirectionalDominance=12.0;
 input double MinNoTradeDominance=8.0;
@@ -2319,7 +2319,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.201;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.202;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -2329,7 +2329,7 @@ int OnInit()
    if(RiskPerTradePercent!=0.25 || MaxPortfolioRiskPercent!=1.50 || MaxSimultaneousTrades!=6 ||
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
       MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
-      MaxSpreadAtrPercent!=8.0 || MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.20 ||
+      MaxSpreadAtrPercent!=8.0 || MaxSpreadMedianRatio!=1.75 || MinSpreadBaselineSamples!=100 || MinRewardRisk!=1.15 ||
       MinStableSignalScans!=3 || MinSignalPersistenceSeconds!=30 || MaxEntryDriftM5Atr!=0.60 ||
       MaxM5SwingExtensionAtr!=1.75 || MaxBreakoutExtensionM5Atr!=0.75 ||
       MaxConfirmationOpportunityConsumed!=0.35 || MinAbsoluteAdmissionScore!=60.0 ||

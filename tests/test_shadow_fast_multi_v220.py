@@ -114,12 +114,12 @@ class ShadowAuditTests(unittest.TestCase):
             opposing_structure_time="2026.08.27 07:30:00",
             opposing_structure_age_seconds="1800",
             opposing_reaction_count="3",
-            initial_clean_room_required_r="1.20",
+            initial_clean_room_required_r="1.15",
         ))
         output = shadow.candidate_row(observation)
         self.assertEqual(output["stop_anchor_timeframe"], "M5")
         self.assertEqual(output["opposing_structure_timeframe"], "M15")
-        self.assertEqual(output["required_minimum_reward_r"], 1.20)
+        self.assertEqual(output["required_minimum_reward_r"], 1.15)
 
 
 if __name__ == "__main__":
