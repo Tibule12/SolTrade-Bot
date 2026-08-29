@@ -21,7 +21,14 @@ foreach ($instance in $instances) {
         Where-Object { $_.ExecutablePath -eq $terminal } | Select-Object -First 1
     if (-not $process -and (Test-Path $terminal)) {
         $startup = Join-Path $root "state\$($instance.id).ini"
-        Start-Process -FilePath $terminal -ArgumentList @('/portable', "/config:$startup") -WorkingDirectory $instance.home
+        $arguments = @('/portable', "/config:$startup")
+        if ($instance.id -like 'fxify-*') {
+            # Reuse the credential saved interactively inside this isolated MT5
+            # data directory.  The account selector prevents MT5 from reopening
+            # the login dialog without putting a password in automation files.
+            $arguments = @('/portable', "/login:$($instance.account)", "/config:$startup")
+        }
+        Start-Process -FilePath $terminal -ArgumentList $arguments -WorkingDirectory $instance.home
         $events += [ordered]@{ id=$instance.id; action='STARTED'; at_utc=[DateTime]::UtcNow.ToString('o') }
     } else {
         $events += [ordered]@{ id=$instance.id; action='HEALTHY'; at_utc=[DateTime]::UtcNow.ToString('o') }

@@ -74,6 +74,21 @@ class FxifyV201RuntimePortTests(unittest.TestCase):
                     Path(temporary) / "out",
                 )
 
+    def test_watchdog_reuses_saved_account_without_enabling_orders(self):
+        watchdog = (ROOT / "ops" / "forexvps" / "Watch-SolTrade.ps1").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('if ($instance.id -like \'fxify-*\')', watchdog)
+        self.assertIn('"/login:$($instance.account)"', watchdog)
+
+        for name in ("fxify-10k.ini", "fxify-100k.ini"):
+            startup = (ROOT / "ops" / "forexvps" / "runtime" / name).read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("AllowLiveTrading=0", startup)
+            self.assertIn("Enabled=1", startup)
+            self.assertNotRegex(startup, r"(?m)^Account=")
+
 
 if __name__ == "__main__":
     unittest.main()
