@@ -49,12 +49,15 @@ foreach ($instance in $instances) {
 $instances | ConvertTo-Json -Depth 6 | Set-Content -Encoding UTF8 (Join-Path $root 'state\instances.json')
 Copy-Item -Force (Join-Path $shareRoot 'Watch-SolTrade.ps1') (Join-Path $root 'watchdogs\Watch-SolTrade.ps1')
 Copy-Item -Force (Join-Path $shareRoot 'status.ps1') (Join-Path $root 'status.ps1')
+Copy-Item -Force (Join-Path $shareRoot 'Run-AccountOwnershipAuthority.ps1') (Join-Path $root 'ownership\Run-AccountOwnershipAuthority.ps1')
 
 $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument '-NoProfile -ExecutionPolicy Bypass -File C:\SolTrade\watchdogs\Watch-SolTrade.ps1'
 $triggerStartup = New-ScheduledTaskTrigger -AtStartup
 $triggerMinute = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
 $principal = New-ScheduledTaskPrincipal -GroupId 'BUILTIN\Users' -RunLevel Highest
 Register-ScheduledTask -TaskName 'SolTrade-Watchdog' -Action $action -Trigger @($triggerStartup,$triggerMinute) -Principal $principal -Force | Out-Null
+
+& (Join-Path $shareRoot 'Install-AccountOwnershipAuthority.ps1')
 
 [ordered]@{
     schema='SOLTRADE_FOREXVPS_DEPLOY_V1'

@@ -38,6 +38,17 @@ input int    MinSameSymbolReentryMinutes=30;
 input double MinReentrySeparationAtr=0.50;
 input int    MaxSlippagePoints=12;
 
+// Execution infrastructure only. These controls do not participate in setup
+// scoring or strategy admission. A valid, fresh, runtime-specific lease is a
+// mandatory precondition for every broker order request.
+input bool   OwnershipLeaseRequired=true;
+input bool   OwnershipEligible=false;
+input string OwnershipInstanceId="UNASSIGNED";
+input string OwnershipHost="UNASSIGNED";
+input string OwnershipClaimSecret="";
+input int    OwnershipLeaseTtlSeconds=15;
+input int    OwnershipClaimHeartbeatSeconds=2;
+
 #define REQUIRED_DEMO_LOGIN 7404213
 #define FORBIDDEN_LIVE_LOGIN 7196820
 #define FORBIDDEN_OBSERVATION_LOGIN 2100139002
@@ -214,6 +225,14 @@ datetime g_history_m5_time[SYMBOL_COUNT];
 datetime g_history_m15_time[SYMBOL_COUNT];
 datetime g_history_h1_time[SYMBOL_COUNT];
 double g_last_exit_price[SYMBOL_COUNT];
+string g_ownership_runtime_id="";
+string g_ownership_lease_id="";
+string g_ownership_permit_state="NOT_INITIALIZED";
+long g_ownership_acquired_epoch=0;
+long g_ownership_renewed_epoch=0;
+long g_ownership_expires_epoch=0;
+long g_ownership_last_claim_epoch=0;
+string g_ownership_last_logged_state="";
 
 struct RunnerState
   {
@@ -255,6 +274,166 @@ void AppendLifecycle(const string event_name,const string detail)
              AccountInfoInteger(ACCOUNT_LOGIN),AccountInfoString(ACCOUNT_SERVER),
              BoolText((bool)TerminalInfoInteger(TERMINAL_CONNECTED)),PositionsTotal(),OrdersTotal(),detail);
    FileFlush(h); FileClose(h);
+  }
+
+string OwnershipDirectory() { return "SolTradeOwnership\\"; }
+
+string OwnershipClaimPath()
+  { return OwnershipDirectory()+"claim-"+g_ownership_runtime_id+".txt"; }
+
+string OwnershipPermitPath()
+  { return OwnershipDirectory()+"permit-"+g_ownership_runtime_id+".txt"; }
+
+string OwnershipReleasePath()
+  { return OwnershipDirectory()+"release-"+g_ownership_runtime_id+".txt"; }
+
+string OwnershipSafeFragment(string value)
+  {
+   for(int i=0;i<StringLen(value);i++)
+     {
+      ushort c=StringGetCharacter(value,i);
+      bool safe=(c>='a' && c<='z') || (c>='A' && c<='Z') ||
+                (c>='0' && c<='9') || c=='-' || c=='_';
+      if(!safe) StringSetCharacter(value,i,'_');
+     }
+   return value;
+  }
+
+void LogOwnershipState(const string state,const string detail)
+  {
+   string fingerprint=state+"|"+detail;
+   if(fingerprint==g_ownership_last_logged_state) return;
+   g_ownership_last_logged_state=fingerprint;
+   Print("SOLTRADE_ACCOUNT_OWNERSHIP state=",state," instance=",OwnershipInstanceId,
+         " runtime=",g_ownership_runtime_id," host=",OwnershipHost,
+         " account=",ApprovedDemoAccount," lease=",g_ownership_lease_id,
+         " acquired_epoch=",g_ownership_acquired_epoch,
+         " renewed_epoch=",g_ownership_renewed_epoch,
+         " expires_epoch=",g_ownership_expires_epoch," detail=",detail);
+   AppendLifecycle("ACCOUNT_OWNERSHIP_"+state,StringFormat(
+      "owner_instance=%s;runtime_id=%s;host=%s;account=%I64d;lease_id=%s;acquired_epoch=%I64d;renewed_epoch=%I64d;expires_epoch=%I64d;permit_state=%s;detail=%s",
+      OwnershipInstanceId,g_ownership_runtime_id,OwnershipHost,ApprovedDemoAccount,
+      g_ownership_lease_id,g_ownership_acquired_epoch,g_ownership_renewed_epoch,
+      g_ownership_expires_epoch,state,detail));
+  }
+
+bool WriteOwnershipMessage(const string path,const string state,const bool include_secret)
+  {
+   string temporary=path+".tmp";
+   int h=FileOpen(temporary,FILE_WRITE|FILE_TXT|FILE_ANSI);
+   if(h==INVALID_HANDLE) return false;
+   FileWriteString(h,"schema=SOLTRADE_ACCOUNT_OWNERSHIP_V1\r\n");
+   FileWriteString(h,"state="+state+"\r\n");
+   FileWriteString(h,"account="+IntegerToString((int)ApprovedDemoAccount)+"\r\n");
+   FileWriteString(h,"instance_id="+OwnershipInstanceId+"\r\n");
+   FileWriteString(h,"host="+OwnershipHost+"\r\n");
+   FileWriteString(h,"runtime_id="+g_ownership_runtime_id+"\r\n");
+   FileWriteString(h,"requested_epoch="+IntegerToString((int)TimeGMT())+"\r\n");
+   FileWriteString(h,"requested_ttl_seconds="+IntegerToString(OwnershipLeaseTtlSeconds)+"\r\n");
+   if(include_secret) FileWriteString(h,"claim_secret="+OwnershipClaimSecret+"\r\n");
+   FileFlush(h); FileClose(h);
+   FileDelete(path);
+   return FileMove(temporary,0,path,FILE_REWRITE);
+  }
+
+void RefreshOwnershipClaim(const bool force=false)
+  {
+   if(!OwnershipLeaseRequired || !OwnershipEligible || g_ownership_runtime_id=="") return;
+   long now=(long)TimeGMT();
+   if(!force && now-g_ownership_last_claim_epoch<OwnershipClaimHeartbeatSeconds) return;
+   g_ownership_last_claim_epoch=now;
+   if(!WriteOwnershipMessage(OwnershipClaimPath(),"CLAIM",true))
+     {
+      g_ownership_permit_state="CLAIM_WRITE_FAILED";
+      LogOwnershipState(g_ownership_permit_state,"fail_closed=true");
+     }
+  }
+
+string OwnershipValue(const string line,const string key)
+  {
+   string prefix=key+"=";
+   if(StringFind(line,prefix)!=0) return "";
+   return StringSubstr(line,StringLen(prefix));
+  }
+
+bool ReadOwnershipPermit(string &reason)
+  {
+   g_ownership_lease_id="";
+   g_ownership_acquired_epoch=0;
+   g_ownership_renewed_epoch=0;
+   g_ownership_expires_epoch=0;
+   int h=FileOpen(OwnershipPermitPath(),FILE_READ|FILE_TXT|FILE_ANSI);
+   if(h==INVALID_HANDLE) { reason="PERMIT_FILE_MISSING"; return false; }
+   string schema="",state="",account="",instance="",host="",runtime="";
+   while(!FileIsEnding(h))
+     {
+      string line=FileReadString(h);
+      string value;
+      if((value=OwnershipValue(line,"schema"))!="") schema=value;
+      else if((value=OwnershipValue(line,"state"))!="") state=value;
+      else if((value=OwnershipValue(line,"account"))!="") account=value;
+      else if((value=OwnershipValue(line,"instance_id"))!="") instance=value;
+      else if((value=OwnershipValue(line,"host"))!="") host=value;
+      else if((value=OwnershipValue(line,"runtime_id"))!="") runtime=value;
+      else if((value=OwnershipValue(line,"lease_id"))!="") g_ownership_lease_id=value;
+      else if((value=OwnershipValue(line,"acquired_epoch"))!="") g_ownership_acquired_epoch=(long)StringToInteger(value);
+      else if((value=OwnershipValue(line,"renewed_epoch"))!="") g_ownership_renewed_epoch=(long)StringToInteger(value);
+      else if((value=OwnershipValue(line,"expires_epoch"))!="") g_ownership_expires_epoch=(long)StringToInteger(value);
+     }
+   FileClose(h);
+   long now=(long)TimeGMT();
+   if(schema!="SOLTRADE_ACCOUNT_OWNERSHIP_PERMIT_V1") reason="PERMIT_SCHEMA_INVALID";
+   else if(state!="GRANTED") reason="PERMIT_NOT_GRANTED_"+state;
+   else if((long)StringToInteger(account)!=ApprovedDemoAccount) reason="PERMIT_ACCOUNT_MISMATCH";
+   else if(instance!=OwnershipInstanceId) reason="PERMIT_INSTANCE_MISMATCH";
+   else if(host!=OwnershipHost) reason="PERMIT_HOST_MISMATCH";
+   else if(runtime!=g_ownership_runtime_id) reason="PERMIT_RUNTIME_MISMATCH";
+   else if(g_ownership_lease_id=="") reason="PERMIT_LEASE_ID_MISSING";
+   else if(g_ownership_expires_epoch<=now) reason="PERMIT_EXPIRED";
+   else if(g_ownership_renewed_epoch<=0 || now-g_ownership_renewed_epoch>OwnershipLeaseTtlSeconds) reason="PERMIT_RENEWAL_STALE";
+   else { reason="PERMIT_CURRENT"; return true; }
+   return false;
+  }
+
+bool VerifyOrderOwnership(const string action,string &reason)
+  {
+   if(!OwnershipLeaseRequired) { reason="OWNERSHIP_LEASE_DISABLED_FAIL_CLOSED"; return false; }
+   if(!OwnershipEligible) { reason="INSTANCE_NOT_OWNERSHIP_ELIGIBLE"; return false; }
+   if(ApprovedDemoAccount!=REQUIRED_DEMO_LOGIN) { reason="OWNERSHIP_ACCOUNT_NOT_APPROVED"; return false; }
+   RefreshOwnershipClaim();
+   if(!ReadOwnershipPermit(reason))
+     {
+      g_ownership_permit_state="BLOCKED";
+      LogOwnershipState("BLOCKED",action+";reason="+reason+";order_sending=false");
+      return false;
+     }
+   g_ownership_permit_state="GRANTED";
+   LogOwnershipState("GRANTED",action+";reason="+reason+";order_sending=true");
+   return true;
+  }
+
+void InitializeOwnership()
+  {
+   g_ownership_runtime_id=OwnershipSafeFragment(StringFormat("%s-%I64d-%I64d",
+      OwnershipInstanceId,ChartID(),GetTickCount64()));
+   if(!OwnershipLeaseRequired)
+     { g_ownership_permit_state="BLOCKED"; LogOwnershipState("BLOCKED","lease_required=false;fail_closed=true"); return; }
+   if(!OwnershipEligible || OwnershipClaimSecret=="")
+     { g_ownership_permit_state="BLOCKED"; LogOwnershipState("BLOCKED","instance_ineligible_or_secret_missing;order_sending=false"); return; }
+   RefreshOwnershipClaim(true);
+   string reason;
+   if(ReadOwnershipPermit(reason))
+     { g_ownership_permit_state="GRANTED"; LogOwnershipState("GRANTED","startup_permit_current=true"); }
+   else
+     { g_ownership_permit_state="PENDING"; LogOwnershipState("PENDING","startup_fail_closed=true;reason="+reason); }
+  }
+
+void ReleaseOwnership()
+  {
+   if(g_ownership_runtime_id=="" || !OwnershipEligible) return;
+   WriteOwnershipMessage(OwnershipReleasePath(),"RELEASE",true);
+   g_ownership_permit_state="RELEASED";
+   LogOwnershipState("RELEASED","deinitialization_release_requested=true");
   }
 
 void ResetHistoryWarmup(const string reason)
@@ -1834,6 +2013,9 @@ void ManageFastPositions()
             "current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f;hard_structural=%s;soft_bad_bars=%d;would_open_now=false",
             current_r,held_score,opposite_score,score.no_trade_score,BoolText(structure_broken),soft_bad_bars));
          g_trade.SetExpertMagicNumber(FastMagic);
+         string ownership_reason;
+         if(!VerifyOrderOwnership("POSITION_CLOSE_THESIS_INVALIDATION",ownership_reason))
+           { g_status_reason="OWNERSHIP_BLOCKED_THESIS_EXIT_"+symbol; continue; }
          if(!g_trade.PositionClose(ticket)) g_status_reason="THESIS_EXIT_FAILED_"+symbol;
          else g_status_reason="THESIS_EXIT_"+symbol;
          continue;
@@ -1896,6 +2078,9 @@ void ManageFastPositions()
       if(tighter && correct_side)
         {
          g_trade.SetExpertMagicNumber(FastMagic);
+         string ownership_reason;
+         if(!VerifyOrderOwnership("POSITION_MODIFY_PROFIT_PROTECTION",ownership_reason))
+           { g_status_reason="OWNERSHIP_BLOCKED_PROTECTION_"+symbol; continue; }
          if(!g_trade.PositionModify(ticket,desired,0))
            {
             g_status_reason="PROTECTION_FAILED_"+symbol;
@@ -2002,14 +2187,18 @@ bool OpenCandidate(const MarketScore &candidate,string &reason,bool &broker_atte
    g_trade.SetDeviationInPoints(MaxSlippagePoints);
    g_trade.SetTypeFillingBySymbol(live.symbol);
    string comment="SFM2-"+DirectionText(live.direction);
+   string ownership_reason;
+   if(!VerifyOrderOwnership("MARKET_ENTRY_"+DirectionText(live.direction),ownership_reason))
+     { reason="OWNERSHIP_BLOCKED_"+ownership_reason; return false; }
    broker_attempted=true;
    bool sent=live.direction>0?g_trade.Buy(lots,live.symbol,0,live.stop,0,comment):
                               g_trade.Sell(lots,live.symbol,0,live.stop,0,comment);
    if(!sent) { reason="ORDER_REJECTED_"+IntegerToString((int)g_trade.ResultRetcode()); return false; }
    if(!PositionSelect(live.symbol) || PositionGetDouble(POSITION_SL)<=0)
      {
-      g_trade.PositionClose(live.symbol);
-      reason="PROTECTIVE_STOP_NOT_CONFIRMED_FLATTENED";
+      if(VerifyOrderOwnership("POSITION_CLOSE_UNPROTECTED_ENTRY",ownership_reason))
+        { g_trade.PositionClose(live.symbol); reason="PROTECTIVE_STOP_NOT_CONFIRMED_FLATTENED"; }
+      else reason="PROTECTIVE_STOP_NOT_CONFIRMED_OWNERSHIP_BLOCKED_BROKER_SL_WAS_IN_ENTRY_REQUEST";
       return false;
      }
    PersistInitialDistance(live.symbol,stop_distance);
@@ -2046,6 +2235,9 @@ bool CloseLegacySlowDemoPositions(string &reason)
       string symbol=PositionGetString(POSITION_SYMBOL); MarketScore empty; ZeroMemory(empty); empty.symbol=symbol;
       AppendEvidence("LEGACY_SLOW_DEMO_V1_RETIRE",empty,ticket,"classification=LEGACY_SLOW_DEMO_V1_COMPLETED;excluded_from_fast_multi_v2=true");
       g_trade.SetExpertMagicNumber(LEGACY_PILOT_MAGIC);
+      string ownership_reason;
+      if(!VerifyOrderOwnership("POSITION_CLOSE_LEGACY_CLEANUP",ownership_reason))
+        { all_closed=false; reason="OWNERSHIP_BLOCKED_LEGACY_CLOSE_"+symbol; continue; }
       if(!g_trade.PositionClose(ticket)) { all_closed=false; reason="LEGACY_CLOSE_FAILED_"+symbol; }
      }
    if(LegacyPilotPositionCount()>0) { reason="LEGACY_EXPOSURE_REMAINS"; return false; }
@@ -2210,13 +2402,16 @@ void WriteRuntimeStatus()
    double equity=AccountInfoDouble(ACCOUNT_EQUITY),risk=PortfolioRiskAmount();
    double v1_gross=0,v1_commission=0,v1_swap=0,v1_net=0;
    AggregateMagicHistoryBefore(V1_MAGIC,(datetime)g_v2_start_server,v1_gross,v1_commission,v1_swap,v1_net);
+   string ownership_reason; bool ownership_current=ReadOwnershipPermit(ownership_reason);
    FileWrite(h,"schema","timestamp_utc","setup_active","login","server","account_mode_demo","real_accounts_blocked",
-             "entry_permission","demo_only","scanner_active","autonomous_entry","connected","positions","orders","equity","portfolio_risk_amount","portfolio_risk_percent","status",
+             "entry_permission","demo_only","scanner_active","autonomous_entry","ownership_permit","owner_instance_id","owner_runtime_id","owner_host","owner_account","lease_id","lease_acquired_epoch","lease_renewed_epoch","lease_expires_epoch","connected","positions","orders","equity","portfolio_risk_amount","portfolio_risk_percent","status",
              "v1_gross","v1_commission","v1_swap","v1_net","v2_epoch_server");
    FileWrite(h,"SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",TimeToString(TimeGMT(),TIME_DATE|TIME_SECONDS),BoolText(g_initialised),
              AccountInfoInteger(ACCOUNT_LOGIN),AccountInfoString(ACCOUNT_SERVER),
              BoolText((ENUM_ACCOUNT_TRADE_MODE)AccountInfoInteger(ACCOUNT_TRADE_MODE)==ACCOUNT_TRADE_MODE_DEMO),"true",
-             DryRunOnly?"DISABLED_DRY_RUN":"ENABLED","true",BoolText(g_initialised),BoolText(g_initialised&&!DryRunOnly),
+             DryRunOnly?"DISABLED_DRY_RUN":(ownership_current?"ENABLED_OWNERSHIP_GRANTED":"BLOCKED_NO_OWNERSHIP"),"true",BoolText(g_initialised),BoolText(g_initialised&&!DryRunOnly&&ownership_current),
+             ownership_current?"GRANTED":"BLOCKED",OwnershipInstanceId,g_ownership_runtime_id,OwnershipHost,ApprovedDemoAccount,
+             g_ownership_lease_id,g_ownership_acquired_epoch,g_ownership_renewed_epoch,g_ownership_expires_epoch,
              BoolText((bool)TerminalInfoInteger(TERMINAL_CONNECTED)),PositionsTotal(),OrdersTotal(),DoubleToString(equity,2),
              DoubleToString(risk,2),DoubleToString(equity>0?100.0*risk/equity:0,4),g_status_reason,
              DoubleToString(v1_gross,2),DoubleToString(v1_commission,2),DoubleToString(v1_swap,2),DoubleToString(v1_net,2),g_v2_start_server);
@@ -2326,6 +2521,10 @@ int OnInit()
       AppendLifecycle("EA_INITIALIZATION_REFUSED",reason);
       Print("SOLTRADE_FAST_MULTI_INIT_REFUSED ",reason," REAL_ACCOUNTS_BLOCKED=true"); return INIT_FAILED;
      }
+   if(!OwnershipLeaseRequired || OwnershipLeaseTtlSeconds<10 || OwnershipLeaseTtlSeconds>60 ||
+      OwnershipClaimHeartbeatSeconds<1 || OwnershipClaimHeartbeatSeconds>=OwnershipLeaseTtlSeconds)
+     { AppendLifecycle("EA_INITIALIZATION_REFUSED","OWNERSHIP_POLICY_INVALID_FAIL_CLOSED"); return INIT_PARAMETERS_INCORRECT; }
+   InitializeOwnership();
    if(RiskPerTradePercent!=0.25 || MaxPortfolioRiskPercent!=1.50 || MaxSimultaneousTrades!=6 ||
       MaxStronglyCorrelatedTrades!=2 || ScanSeconds<5 || FastMagic!=V1_MAGIC || MinEntryScore!=68.0 ||
       MinDirectionalDominance!=12.0 || MinNoTradeDominance!=8.0 || MinExpectedMoveCostMultiple!=3.0 ||
@@ -2371,6 +2570,7 @@ int OnInit()
 void OnDeinit(const int reason)
   {
    EventKillTimer();
+   ReleaseOwnership();
    AppendLifecycle("EA_REMOVED",DeinitReasonText(reason));
    g_initialised=false;
    WriteRuntimeStatus();
@@ -2379,6 +2579,7 @@ void OnDeinit(const int reason)
 void OnTimer()
   {
    if(!g_initialised) return;
+   RefreshOwnershipClaim();
    long timer_now=(long)TimeGMT();
    long timer_gap=g_last_timer_utc>0?timer_now-g_last_timer_utc:0;
    g_last_timer_utc=timer_now;

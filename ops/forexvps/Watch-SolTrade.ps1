@@ -3,6 +3,17 @@ $root = 'C:\SolTrade'
 $instances = Get-Content -Raw (Join-Path $root 'state\instances.json') | ConvertFrom-Json
 $events = @()
 
+$ownershipTask = Get-ScheduledTask -TaskName 'SolTrade-AccountOwnership-7404213' -ErrorAction SilentlyContinue
+if (-not $ownershipTask) {
+    throw 'Account ownership authority is not installed; watchdog fails closed before starting FP runtime.'
+}
+if ($ownershipTask.State -ne 'Running') {
+    Start-ScheduledTask -TaskName 'SolTrade-AccountOwnership-7404213'
+    $events += [ordered]@{ id='ownership-7404213'; action='AUTHORITY_STARTED'; at_utc=[DateTime]::UtcNow.ToString('o') }
+} else {
+    $events += [ordered]@{ id='ownership-7404213'; action='AUTHORITY_HEALTHY'; at_utc=[DateTime]::UtcNow.ToString('o') }
+}
+
 foreach ($instance in $instances) {
     $terminal = Join-Path $instance.home 'terminal64.exe'
     $escaped = $terminal.Replace('\','\\')
