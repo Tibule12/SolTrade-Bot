@@ -134,12 +134,14 @@ struct MarketScore
    double expected_cost_usd;
    string proposed_volume_diagnostic;
    long setup_key;
+   long admission_state_key;
    bool m5_confirmed;
    bool m15_confirmed;
    bool structural_reversal;
    bool exhausted;
    datetime completed_m5_bar_time;
    bool directional_core_qualified;
+   bool complete_admission_qualified;
    int directional_persistence_count;
    int directional_persistence_seconds;
    double signal_reference_entry;
@@ -245,6 +247,16 @@ struct RunnerState
    int trail_updates;
    double max_giveback_r;
    double max_giveback_dollars;
+  };
+
+struct ScratchState
+  {
+   bool valid;
+   int direction;
+   double fill_price;
+   double reference_close_price;
+   double fill_spread;
+   long created_msc;
   };
 
 string BoolText(const bool value) { return value?"true":"false"; }
@@ -626,10 +638,35 @@ bool ContainsText(const string text,const string token)
   { return StringFind(text,token)>=0; }
 
 string EntryPersistenceKey(const int index,const string field)
-  { return "SFM2A_P"+field+"_"+IntegerToString(index); }
+  { return "SFM2C_P"+field+"_"+IntegerToString(index); }
 
-void UpdateDirectionalPersistence(const int index,const datetime completed_bar,const int direction,const long setup_key,
-                                  const bool core_qualified,const double entry,const double atr,const double available_move,
+bool LoadCompleteAdmissionReference(const int index,const datetime completed_bar,const int direction,
+                                    const long admission_state_key,const double entry,
+                                    double &reference_entry)
+  {
+   reference_entry=entry;
+   if(index<0 || index>=SYMBOL_COUNT || completed_bar<=0) return false;
+   string bar_key=EntryPersistenceKey(index,"BAR");
+   string direction_key=EntryPersistenceKey(index,"DIR");
+   string count_key=EntryPersistenceKey(index,"CNT");
+   string setup_state_key=EntryPersistenceKey(index,"SET");
+   string last_seen_key=EntryPersistenceKey(index,"SEEN");
+   string reference_key=EntryPersistenceKey(index,"REF");
+   datetime prior_bar=GlobalVariableCheck(bar_key)?(datetime)GlobalVariableGet(bar_key):0;
+   int prior_direction=GlobalVariableCheck(direction_key)?(int)GlobalVariableGet(direction_key):0;
+   int prior_count=GlobalVariableCheck(count_key)?(int)GlobalVariableGet(count_key):0;
+   long prior_state=(GlobalVariableCheck(setup_state_key)?(long)GlobalVariableGet(setup_state_key):0);
+   datetime last_seen=GlobalVariableCheck(last_seen_key)?(datetime)GlobalVariableGet(last_seen_key):0;
+   datetime now_utc=TimeGMT();
+   bool same_state=prior_count>0 && prior_bar==completed_bar && prior_direction==direction &&
+                   prior_state==admission_state_key && last_seen>0 && now_utc-last_seen<=3*ScanSeconds;
+   if(same_state && GlobalVariableCheck(reference_key)) reference_entry=GlobalVariableGet(reference_key);
+   return same_state;
+  }
+
+void UpdateCompleteAdmissionPersistence(const int index,const datetime completed_bar,const int direction,
+                                  const long admission_state_key,const bool complete_qualified,
+                                  const double entry,const double atr,const double available_move,
                                   int &count,int &elapsed_seconds,double &reference_entry,
                                   datetime &first_seen_utc,datetime &stable_utc,double &reference_room)
   {
@@ -648,22 +685,23 @@ void UpdateDirectionalPersistence(const int index,const datetime completed_bar,c
    datetime prior_bar=GlobalVariableCheck(bar_key)?(datetime)GlobalVariableGet(bar_key):0;
    int prior_direction=GlobalVariableCheck(direction_key)?(int)GlobalVariableGet(direction_key):0;
    int prior_count=GlobalVariableCheck(count_key)?(int)GlobalVariableGet(count_key):0;
-   long prior_setup=GlobalVariableCheck(setup_state_key)?(long)GlobalVariableGet(setup_state_key):0;
+   long prior_state=GlobalVariableCheck(setup_state_key)?(long)GlobalVariableGet(setup_state_key):0;
    datetime first_time=GlobalVariableCheck(first_time_key)?(datetime)GlobalVariableGet(first_time_key):0;
    stable_utc=GlobalVariableCheck(stable_key)?(datetime)GlobalVariableGet(stable_key):0;
    datetime last_seen=GlobalVariableCheck(last_seen_key)?(datetime)GlobalVariableGet(last_seen_key):0;
    reference_entry=GlobalVariableCheck(reference_key)?GlobalVariableGet(reference_key):entry;
    reference_room=GlobalVariableCheck(room_key)?GlobalVariableGet(room_key):available_move;
    datetime now_utc=TimeGMT();
-   bool same_signal=core_qualified && prior_bar==completed_bar && prior_direction==direction &&
-                    prior_setup==setup_key && last_seen>0 && now_utc-last_seen<=3*ScanSeconds;
-   if(!core_qualified)
+   bool same_signal=complete_qualified && prior_bar==completed_bar && prior_direction==direction &&
+                    prior_state==admission_state_key && last_seen>0 && now_utc-last_seen<=3*ScanSeconds;
+   if(!complete_qualified)
      {
-      if(prior_count!=0 || prior_setup!=0)
+      if(prior_count!=0 || prior_state!=0)
         {
          GlobalVariableSet(direction_key,0.0); GlobalVariableSet(count_key,0.0);
          GlobalVariableSet(setup_state_key,0.0); GlobalVariableSet(first_time_key,0.0);
          GlobalVariableSet(stable_key,0.0); GlobalVariableSet(room_key,0.0);
+         GlobalVariableSet(reference_key,0.0); GlobalVariableSet(atr_key,0.0);
          GlobalVariableSet(last_seen_key,(double)now_utc); GlobalVariablesFlush();
         }
       return;
@@ -680,7 +718,7 @@ void UpdateDirectionalPersistence(const int index,const datetime completed_bar,c
    GlobalVariableSet(bar_key,(double)completed_bar);
    GlobalVariableSet(direction_key,(double)direction);
    GlobalVariableSet(count_key,(double)count);
-   GlobalVariableSet(setup_state_key,(double)setup_key);
+   GlobalVariableSet(setup_state_key,(double)admission_state_key);
    GlobalVariableSet(first_time_key,(double)first_time);
    GlobalVariableSet(last_seen_key,(double)now_utc);
    GlobalVariableSet(reference_key,reference_entry);
@@ -1201,6 +1239,21 @@ long SetupKey(const int direction,const string behaviour,const double anchor,con
    return direction*(long)(code*100000000+MathAbs(zone)%100000000);
   }
 
+long AdmissionStateKey(const MarketScore &score)
+  {
+   // Keep the key exactly representable in a terminal global-variable double.
+   // It binds persistence to the complete structural opportunity, not merely
+   // to directional bias. A changed stop or opposing-room anchor starts over.
+   long key=MathAbs(score.setup_key)%2000000000;
+   key=(key*131+((long)score.stop_anchor_time)%1000003)%2000000000;
+   key=(key*131+((long)score.opposing_structure_time)%1000003)%2000000000;
+   int stop_tf=score.stop_anchor_timeframe=="M5"?5:score.stop_anchor_timeframe=="M15"?15:20;
+   int room_tf=score.opposing_structure_timeframe=="M5"?5:score.opposing_structure_timeframe=="M15"?15:
+               score.opposing_structure_timeframe=="H1"?60:0;
+   key=(key*131+stop_tf*100+room_tf)%2000000000;
+   return score.direction>0?key:-key;
+  }
+
 bool ScoreSymbol(const int index,MarketScore &out)
   {
    ZeroMemory(out);
@@ -1418,6 +1471,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
       out.proposed_volume_diagnostic=volume_reason;
      }
    out.setup_key=SetupKey(out.direction,out.behaviour,out.direction>0?prior_high:prior_low,out.atr);
+   out.admission_state_key=AdmissionStateKey(out);
 
    // An explicit absolute admission score ranks the independent quality of this
    // setup. Cross-sectional rank is never itself permission to trade.
@@ -1475,19 +1529,16 @@ bool ScoreSymbol(const int index,MarketScore &out)
    else if(out.volatility_expansion>1.25 && e5>0.32) out.regime="VOLATILITY_EXPANSION";
    else if(e5<0.25) out.regime="RANGE_CHOP"; else out.regime="DIRECTIONAL_TRANSITION";
 
-   // Confirm one unchanged setup identity across repeated scans and real elapsed
-   // time. A new structure/direction cannot inherit confirmation from the old one.
+   // First calculate every non-persistence gate against the same structural
+   // opportunity. Persistence is updated only after this complete state passes.
    out.directional_core_qualified=!out.exhausted && !timeframe_conflict && !direction_conflicts_m15 &&
       !out.range_chop && out.directional_trigger && out.m5_confirmed && out.m15_confirmed &&
       out.score>=MinEntryScore && out.score>=opposite+MinDirectionalDominance &&
       out.score>=out.no_trade_score+MinNoTradeDominance &&
       !((out.direction>0 && t5<-0.20 && !out.structural_reversal) ||
         (out.direction<0 && t5>0.20 && !out.structural_reversal));
-   UpdateDirectionalPersistence(index,out.completed_m5_bar_time,out.direction,out.setup_key,
-                                out.directional_core_qualified,out.entry,out.atr,out.available_move,
-                                out.directional_persistence_count,out.directional_persistence_seconds,
-                                out.signal_reference_entry,out.signal_first_seen_utc,out.signal_stable_utc,
-                                out.remaining_room_after_confirmation);
+   LoadCompleteAdmissionReference(index,out.completed_m5_bar_time,out.direction,out.admission_state_key,
+                                  out.entry,out.signal_reference_entry);
    out.admission_timestamp_utc=TimeGMT();
    out.entry_drift_m5_atr=out.direction*(out.entry-out.signal_reference_entry)/out.atr;
    out.confirmation_move=out.direction*(out.entry-out.signal_reference_entry);
@@ -1496,32 +1547,46 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.confirmation_opportunity_consumed=consumed/MathMax(consumed+out.available_move,out.point);
    out.remaining_room_after_confirmation=out.available_move;
 
-   if(!history_ready) out.reason="POST_RECOVERY_HISTORY_WARMUP";
-   else if(!out.fresh) out.reason="STALE_TICK";
-   else if(!out.spread_baseline_ready) out.reason="SPREAD_BASELINE_WARMUP";
-   else if(out.spread_abnormal) out.reason="ABNORMAL_SPREAD";
-   else if(out.spread_atr_pct>MaxSpreadAtrPercent) out.reason="HIGH_SPREAD_RELATIVE_TO_M5_ATR";
-   else if(out.movement_spread<MinMovementToSpread) out.reason="MOVEMENT_WEAK_RELATIVE_TO_SPREAD";
-   else if(out.exhausted) out.reason="MOVE_EXHAUSTED_OR_LATE_CHASE";
-   else if(timeframe_conflict || direction_conflicts_m15) out.reason="M5_M15_DIRECTIONAL_CONFLICT";
-   else if(out.direction*t5<0.20) out.reason="M5_DIRECTION_UNCONFIRMED";
-   else if(out.direction*t15<0.16) out.reason="M15_DIRECTION_UNCONFIRMED";
-   else if(out.range_chop) out.reason="RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER";
-   else if(!out.directional_trigger) out.reason="NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER";
-   else if(out.expected_net_move<=0 || out.cost_multiple<MinExpectedMoveCostMultiple) out.reason="EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS";
-   else if(out.reward_r<MinRewardRisk) out.reason="INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS";
-   else if(out.score<MinEntryScore) out.reason="DIRECTIONAL_EVIDENCE_WEAK";
-   else if(out.score<opposite+MinDirectionalDominance) out.reason="OPPOSITE_CASE_NOT_CLEARLY_DEFEATED";
-   else if(out.score<out.no_trade_score+MinNoTradeDominance) out.reason="NO_TRADE_CASE_DOMINATES";
-   else if(out.direction>0 && t5<-0.20 && !out.structural_reversal) out.reason="BUY_FIGHTS_OBVIOUS_M5_MOMENTUM";
-   else if(out.direction<0 && t5>0.20 && !out.structural_reversal) out.reason="SELL_FIGHTS_OBVIOUS_M5_MOMENTUM";
-   else if(out.admission_score<MinAbsoluteAdmissionScore) out.reason="ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD";
+   string complete_reason="";
+   if(!history_ready) complete_reason="POST_RECOVERY_HISTORY_WARMUP";
+   else if(!out.fresh) complete_reason="STALE_TICK";
+   else if(!out.spread_baseline_ready) complete_reason="SPREAD_BASELINE_WARMUP";
+   else if(out.spread_abnormal) complete_reason="ABNORMAL_SPREAD";
+   else if(out.spread_atr_pct>MaxSpreadAtrPercent) complete_reason="HIGH_SPREAD_RELATIVE_TO_M5_ATR";
+   else if(out.movement_spread<MinMovementToSpread) complete_reason="MOVEMENT_WEAK_RELATIVE_TO_SPREAD";
+   else if(out.exhausted) complete_reason="MOVE_EXHAUSTED_OR_LATE_CHASE";
+   else if(timeframe_conflict || direction_conflicts_m15) complete_reason="M5_M15_DIRECTIONAL_CONFLICT";
+   else if(out.direction*t5<0.20) complete_reason="M5_DIRECTION_UNCONFIRMED";
+   else if(out.direction*t15<0.16) complete_reason="M15_DIRECTION_UNCONFIRMED";
+   else if(out.range_chop) complete_reason="RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER";
+   else if(!out.directional_trigger) complete_reason="NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER";
+   else if(out.expected_net_move<=0 || out.cost_multiple<MinExpectedMoveCostMultiple) complete_reason="EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS";
+   else if(out.reward_r<MinRewardRisk) complete_reason="INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS";
+   else if(out.score<MinEntryScore) complete_reason="DIRECTIONAL_EVIDENCE_WEAK";
+   else if(out.score<opposite+MinDirectionalDominance) complete_reason="OPPOSITE_CASE_NOT_CLEARLY_DEFEATED";
+   else if(out.score<out.no_trade_score+MinNoTradeDominance) complete_reason="NO_TRADE_CASE_DOMINATES";
+   else if(out.direction>0 && t5<-0.20 && !out.structural_reversal) complete_reason="BUY_FIGHTS_OBVIOUS_M5_MOMENTUM";
+   else if(out.direction<0 && t5>0.20 && !out.structural_reversal) complete_reason="SELL_FIGHTS_OBVIOUS_M5_MOMENTUM";
+   else if(out.admission_score<MinAbsoluteAdmissionScore) complete_reason="ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD";
+   else if(out.entry_drift_m5_atr>MaxEntryDriftM5Atr) complete_reason="LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED";
+   else if(out.confirmation_opportunity_consumed>MaxConfirmationOpportunityConsumed) complete_reason="CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY";
+   else if(out.impulse_extension_m5_atr>MaxM5SwingExtensionAtr) complete_reason="LATE_ENTRY_M5_IMPULSE_EXTENSION_EXCEEDED";
+   else if(out.breakout_extension_m5_atr>MaxBreakoutExtensionM5Atr) complete_reason="EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED";
+   else
+     {
+      string reentry_reason="";
+      if(!ReversalAndDistinctSetupAllowed(index,out,reentry_reason)) complete_reason=reentry_reason;
+     }
+   out.complete_admission_qualified=(complete_reason=="");
+   UpdateCompleteAdmissionPersistence(index,out.completed_m5_bar_time,out.direction,out.admission_state_key,
+                                      out.complete_admission_qualified,out.entry,out.atr,out.available_move,
+                                      out.directional_persistence_count,out.directional_persistence_seconds,
+                                      out.signal_reference_entry,out.signal_first_seen_utc,out.signal_stable_utc,
+                                      out.remaining_room_after_confirmation);
+   if(!out.complete_admission_qualified) out.reason=complete_reason;
    else if(out.directional_persistence_count<MinStableSignalScans ||
-           out.directional_persistence_seconds<MinSignalPersistenceSeconds) out.reason="SETUP_SPECIFIC_CONFIRMATION_PENDING";
-   else if(out.entry_drift_m5_atr>MaxEntryDriftM5Atr) out.reason="LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED";
-   else if(out.confirmation_opportunity_consumed>MaxConfirmationOpportunityConsumed) out.reason="CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY";
-   else if(out.impulse_extension_m5_atr>MaxM5SwingExtensionAtr) out.reason="LATE_ENTRY_M5_IMPULSE_EXTENSION_EXCEEDED";
-   else if(out.breakout_extension_m5_atr>MaxBreakoutExtensionM5Atr) out.reason="EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED";
+           out.directional_persistence_seconds<MinSignalPersistenceSeconds)
+      out.reason="COMPLETE_ADMISSION_PERSISTENCE_PENDING";
    else { out.eligible=true; out.reason="QUALIFIED_CONTEXT_COST_STRUCTURE"; }
    out.decision=out.eligible?DirectionText(out.direction):"NO_TRADE";
    return true;
@@ -1661,6 +1726,45 @@ string LegacyRiskKey(const long identifier) { return "SFM1_R_"+IntegerToString(i
 string MfeKey(const long identifier) { return "SFM2_MFE_"+IntegerToString(identifier); }
 string MaeKey(const long identifier) { return "SFM2_MAE_"+IntegerToString(identifier); }
 string InitialRiskPath(const long identifier) { return "SolTradeFastMultiMarketV2\\initial-risk-"+IntegerToString(identifier)+".csv"; }
+string ScratchStatePath(const long identifier) { return "SolTradeFastMultiMarketV2\\scratch-state-"+IntegerToString(identifier)+".csv"; }
+
+void ResetScratchState(ScratchState &state)
+  {
+   state.valid=false; state.direction=0; state.fill_price=0; state.reference_close_price=0;
+   state.fill_spread=0; state.created_msc=0;
+  }
+
+bool SaveScratchState(const long identifier,const string symbol,const int direction,
+                      const double fill_price,const double fill_spread,const long created_msc)
+  {
+   if(identifier<=0 || (direction!=1 && direction!=-1) || fill_price<=0 || fill_spread<=0) return false;
+   double reference_close=direction>0?fill_price-fill_spread:fill_price+fill_spread;
+   string path=ScratchStatePath(identifier);
+   int h=FileOpen(path+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return false;
+   FileWrite(h,"SOLTRADE_FAST_MULTI_V2_SCRATCH_V1",AccountInfoInteger(ACCOUNT_LOGIN),identifier,symbol,direction,
+             DoubleToString(fill_price,10),DoubleToString(reference_close,10),DoubleToString(fill_spread,10),created_msc);
+   FileFlush(h); FileClose(h); FileDelete(path,FILE_COMMON);
+   bool moved=FileMove(path+".tmp",FILE_COMMON,path,FILE_COMMON|FILE_REWRITE);
+   return moved;
+  }
+
+bool LoadScratchState(const long identifier,const string symbol,ScratchState &state)
+  {
+   ResetScratchState(state);
+   int h=FileOpen(ScratchStatePath(identifier),FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return false;
+   string schema=FileReadString(h); long account=(long)StringToInteger(FileReadString(h));
+   long saved_identifier=(long)StringToInteger(FileReadString(h)); string saved_symbol=FileReadString(h);
+   state.direction=(int)StringToInteger(FileReadString(h)); state.fill_price=StringToDouble(FileReadString(h));
+   state.reference_close_price=StringToDouble(FileReadString(h)); state.fill_spread=StringToDouble(FileReadString(h));
+   state.created_msc=(long)StringToInteger(FileReadString(h)); FileClose(h);
+   double point=SymbolInfoDouble(symbol,SYMBOL_POINT);
+   state.valid=schema=="SOLTRADE_FAST_MULTI_V2_SCRATCH_V1" && account==AccountInfoInteger(ACCOUNT_LOGIN) &&
+               saved_identifier==identifier && saved_symbol==symbol && (state.direction==1 || state.direction==-1) &&
+               state.fill_price>0 && state.reference_close_price>0 && state.fill_spread>=point;
+   return state.valid;
+  }
 
 void SaveInitialDistance(const long identifier,const string symbol,const double entry,const double distance)
   {
@@ -1926,6 +2030,53 @@ double NetProtectedFloorPrice(const string symbol,const int direction,const doub
    return entry+direction*(target_net_r*modeled_initial_risk_move+commission_move);
   }
 
+void ManageImmediateScratchPositions()
+  {
+   // Tick-driven and independent of the ten-second strategy scan. The close
+   // side of the market is compared with its fill-time close-side reference:
+   // BUY uses bid; SELL uses ask. Opening spread is therefore not adverse move.
+   if(g_reconciliation_required || !(bool)TerminalInfoInteger(TERMINAL_CONNECTED)) return;
+   string identity;
+   if(!DemoIdentitySafe(identity)) return;
+   for(int i=PositionsTotal()-1;i>=0;i--)
+     {
+      ulong ticket=PositionGetTicket(i);
+      if(ticket==0 || PositionGetInteger(POSITION_MAGIC)!=FastMagic) continue;
+      long identifier=PositionGetInteger(POSITION_IDENTIFIER);
+      string symbol=PositionGetString(POSITION_SYMBOL);
+      ScratchState scratch;
+      if(!LoadScratchState(identifier,symbol,scratch)) continue;
+      MqlTick tick; if(!SymbolInfoTick(symbol,tick)) continue;
+      double executable_close=scratch.direction>0?tick.bid:tick.ask;
+      bool adverse=scratch.direction>0?executable_close<scratch.reference_close_price:
+                                       executable_close>scratch.reference_close_price;
+      if(!adverse) continue;
+      string throttle_key="SFM2_SCRATCH_TRY_"+IntegerToString(identifier);
+      long now_utc=(long)TimeGMT();
+      if(GlobalVariableCheck(throttle_key) && (long)GlobalVariableGet(throttle_key)>=now_utc) continue;
+      GlobalVariableSet(throttle_key,(double)now_utc); GlobalVariablesFlush();
+      MarketScore score; if(!FindScore(symbol,score)) { ZeroMemory(score); score.symbol=symbol; }
+      score.direction=scratch.direction; score.entry=scratch.fill_price; score.stop=PositionGetDouble(POSITION_SL);
+      AppendEvidence("IMMEDIATE_DIRECTIONAL_SCRATCH_TRIGGER",score,ticket,StringFormat(
+         "position_id=%I64d;fill_price=%.10f;reference_close_price=%.10f;current_bid=%.10f;current_ask=%.10f;executable_close=%.10f;fill_spread=%.10f;trigger=STRICT_ADVERSE_CROSS;broker_sl_retained=true",
+         identifier,scratch.fill_price,scratch.reference_close_price,tick.bid,tick.ask,executable_close,scratch.fill_spread));
+      g_trade.SetExpertMagicNumber(FastMagic);
+      string ownership_reason;
+      if(!VerifyOrderOwnership("POSITION_CLOSE_IMMEDIATE_SCRATCH",ownership_reason))
+        { g_status_reason="OWNERSHIP_BLOCKED_IMMEDIATE_SCRATCH_"+symbol; continue; }
+      string marker="SFM2_SCRATCH_"+IntegerToString(identifier);
+      GlobalVariableSet(marker,1.0); GlobalVariablesFlush();
+      if(!g_trade.PositionClose(ticket))
+        {
+         GlobalVariableDel(marker);
+         g_status_reason="IMMEDIATE_SCRATCH_FAILED_"+symbol;
+         AppendEvidence("IMMEDIATE_DIRECTIONAL_SCRATCH_FAILED",score,ticket,
+                        "broker_sl_remains_active=true;retcode="+IntegerToString((int)g_trade.ResultRetcode()));
+        }
+      else g_status_reason="IMMEDIATE_DIRECTIONAL_SCRATCH_"+symbol;
+     }
+  }
+
 void ManageFastPositions()
   {
    for(int i=PositionsTotal()-1;i>=0;i--)
@@ -2161,6 +2312,8 @@ bool ReconcileBrokerState(string &reason)
         {
          RunnerState runner;
          if(!LoadRunnerState(identifier,symbol,runner)) { reason="RUNNER_STATE_UNRECOVERABLE_"+symbol; return false; }
+         ScratchState scratch;
+         if(!LoadScratchState(identifier,symbol,scratch)) { reason="SCRATCH_STATE_UNRECOVERABLE_"+symbol; return false; }
          if(!GlobalVariableCheck(MfeKey(identifier)) || !GlobalVariableCheck(MaeKey(identifier)))
            { reason="MFE_MAE_STATE_UNRECOVERABLE_"+symbol; return false; }
         }
@@ -2203,19 +2356,30 @@ bool OpenCandidate(const MarketScore &candidate,string &reason,bool &broker_atte
      }
    PersistInitialDistance(live.symbol,stop_distance);
    long identifier=PositionGetInteger(POSITION_IDENTIFIER);
+   double actual_fill=PositionGetDouble(POSITION_PRICE_OPEN);
+   double fill_spread=tick.ask-tick.bid;
+   if(!SaveScratchState(identifier,live.symbol,live.direction,actual_fill,fill_spread,(long)tick.time_msc))
+     {
+      if(VerifyOrderOwnership("POSITION_CLOSE_SCRATCH_STATE_FAILED",ownership_reason))
+        { g_trade.PositionClose((ulong)PositionGetInteger(POSITION_TICKET)); reason="SCRATCH_STATE_NOT_DURABLE_FLATTENED"; }
+      else reason="SCRATCH_STATE_NOT_DURABLE_OWNERSHIP_BLOCKED_BROKER_SL_REMAINS_ACTIVE";
+      return false;
+     }
    RunnerState runner; ResetRunnerState(runner); SaveRunnerState(identifier,live.symbol,runner);
    GlobalVariableSet(MfeKey(identifier),0.0); GlobalVariableSet(MaeKey(identifier),0.0);
    int index=SymbolIndexByActual(live.symbol);
    if(index>=0) { g_last_setup_key[index]=live.setup_key; SaveReversalState(); }
    AppendEvidence("ENTRY",live,(ulong)PositionGetInteger(POSITION_TICKET),StringFormat(
-      "lot=%.4f;initial_risk=%.2f;broker_sl_confirmed=true;net_cost_gate=%.2f;spread=%.8f;spread_points=%.2f;spread_median_ratio=%.4f;persistence_scans=%d;persistence_seconds=%d;signal_first_seen=%s;signal_stable=%s;entry_timestamp=%s;signal_reference_entry=%.8f;confirmation_move=%.8f;confirmation_move_m5_atr=%.5f;confirmation_opportunity_consumed=%.5f;remaining_room_after_confirmation=%.8f;entry_drift_m5_atr=%.5f;m5_swing_extension_atr=%.5f;m15_swing_extension_atr=%.5f;impulse_extension_m5_atr=%.5f;breakout_extension_m5_atr=%.5f;admission_score=%.4f;no_trade_threshold=%.4f",
-      lots,actual_risk,live.cost_multiple,live.spread,live.spread_points,live.spread_median_ratio,
+      "lot=%.4f;initial_risk=%.2f;broker_sl_confirmed=true;complete_admission_persistence=true;admission_state_key=%I64d;net_cost_gate=%.2f;spread=%.8f;spread_points=%.2f;spread_median_ratio=%.4f;persistence_scans=%d;persistence_seconds=%d;signal_first_seen=%s;signal_stable=%s;entry_timestamp=%s;signal_reference_entry=%.8f;confirmation_move=%.8f;confirmation_move_m5_atr=%.5f;confirmation_opportunity_consumed=%.5f;remaining_room_after_confirmation=%.8f;entry_drift_m5_atr=%.5f;m5_swing_extension_atr=%.5f;m15_swing_extension_m5_atr=%.5f;impulse_extension_m5_atr=%.5f;breakout_extension_m5_atr=%.5f;admission_score=%.4f;no_trade_threshold=%.4f;scratch_fill=%.10f;scratch_reference_close=%.10f;scratch_buy_detects_bid=true;scratch_sell_detects_ask=true",
+      lots,actual_risk,live.admission_state_key,live.cost_multiple,live.spread,live.spread_points,live.spread_median_ratio,
       live.directional_persistence_count,live.directional_persistence_seconds,
       TimeToString(live.signal_first_seen_utc,TIME_DATE|TIME_SECONDS),TimeToString(live.signal_stable_utc,TIME_DATE|TIME_SECONDS),
       TimeToString(TimeGMT(),TIME_DATE|TIME_SECONDS),live.signal_reference_entry,live.confirmation_move,
       live.confirmation_move_m5_atr,live.confirmation_opportunity_consumed,live.remaining_room_after_confirmation,
       live.entry_drift_m5_atr,live.m5_swing_extension_atr,live.m15_swing_extension_atr,
-      live.impulse_extension_m5_atr,live.breakout_extension_m5_atr,live.admission_score,MinAbsoluteAdmissionScore));
+      live.impulse_extension_m5_atr,live.breakout_extension_m5_atr,live.admission_score,MinAbsoluteAdmissionScore,
+      actual_fill,live.direction>0?actual_fill-fill_spread:actual_fill+fill_spread));
+   ManageImmediateScratchPositions();
    reason="OPENED_"+live.symbol+"_RISK_"+DoubleToString(actual_risk,2);
    return true;
   }
@@ -2576,6 +2740,11 @@ void OnDeinit(const int reason)
    WriteRuntimeStatus();
   }
 
+void OnTick()
+  {
+   if(g_initialised) ManageImmediateScratchPositions();
+  }
+
 void OnTimer()
   {
    if(!g_initialised) return;
@@ -2626,6 +2795,7 @@ void OnTimer()
       g_last_reconciliation_failure="";
       g_reconciliation_required=false;
      }
+   ManageImmediateScratchPositions();
    long bucket=(long)TimeGMT()/ScanSeconds;
    if(!g_immediate_rescan_requested && bucket==g_last_scan_bucket) return;
    g_immediate_rescan_requested=false;
@@ -2647,6 +2817,8 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
       long position_id=HistoryDealGetInteger(transaction.deal,DEAL_POSITION_ID);
       bool invalidated=GlobalVariableCheck("SFM2_INV_"+IntegerToString(position_id)) &&
                        GlobalVariableGet("SFM2_INV_"+IntegerToString(position_id))>0;
+      string scratch_marker="SFM2_SCRATCH_"+IntegerToString(position_id);
+      bool immediate_scratch=GlobalVariableCheck(scratch_marker) && GlobalVariableGet(scratch_marker)>0;
       if(index>=0)
         {
          g_last_exit_direction[index]=prior_direction; g_last_exit_time[index]=(long)HistoryDealGetInteger(transaction.deal,DEAL_TIME);
@@ -2680,7 +2852,7 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
          RunnerState runner; LoadRunnerState(position_id,symbol,runner);
          double capture_ratio=runner.peak_dollars>0?MathMax(0.0,net)/runner.peak_dollars:0;
          ENUM_DEAL_REASON deal_reason=(ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON);
-         string exit_class=invalidated?"THESIS_INVALIDATION":
+         string exit_class=immediate_scratch?"IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT":invalidated?"THESIS_INVALIDATION":
             deal_reason==DEAL_REASON_SL?(runner.protected_r>-0.50?"PROTECTED_STOP_EXIT":"INITIAL_STRUCTURAL_STOP_EXIT"):
             "BROKER_OR_EXTERNAL_EXIT";
          AppendEvidence("EXIT",score,0,StringFormat(
@@ -2690,6 +2862,7 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
             gross,commission,swap,net,mfe,mae,BoolText(invalidated),EnumToString(deal_reason),exit_class,
             BoolText(runner.active),runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,
             runner.trail_updates,runner.max_giveback_r,runner.max_giveback_dollars,capture_ratio));
+         if(immediate_scratch) GlobalVariableDel(scratch_marker);
         }
       g_immediate_rescan_requested=true;
      }

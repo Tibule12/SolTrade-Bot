@@ -2,6 +2,7 @@
 param(
     [string]$Root = 'C:\SolTrade',
     [long]$Account = 7404213,
+    [string]$TerminalHome = 'MT5-FP-DEMO',
     [string]$ExpectedInstanceId = 'vps-fp-prod',
     [string]$ExpectedHost = $env:COMPUTERNAME,
     [int]$LeaseTtlSeconds = 15,
@@ -16,7 +17,7 @@ if ($LeaseTtlSeconds -lt 10 -or $LeaseTtlSeconds -gt 60) {
 }
 
 $ownershipRoot = Join-Path $Root 'ownership'
-$exchangeRoot = Join-Path $Root 'MT5-FP-DEMO\MQL5\Files\SolTradeOwnership'
+$exchangeRoot = Join-Path $Root "$TerminalHome\MQL5\Files\SolTradeOwnership"
 $statePath = Join-Path $ownershipRoot "lease-$Account.json"
 $auditPath = Join-Path $ownershipRoot "lease-$Account-audit.jsonl"
 $secretPath = Join-Path $ownershipRoot "claim-secret-$Account.txt"

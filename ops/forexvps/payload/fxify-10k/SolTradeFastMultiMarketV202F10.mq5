@@ -1,15 +1,15 @@
 #property strict
 #property version   "2.202"
-#property description "Demo-only active intraday multi-market context, execution, and management engine"
+#property description "FXIFY 7196820 corrected V2.202 isolated runtime port"
 
 #include <Trade/Trade.mqh>
 
 input bool   SetupEnabled=true;
 input bool   DemoExecutionConfirmed=false;
 input bool   DryRunOnly=true;
-input long   ApprovedDemoAccount=0;
-input string ApprovedDemoServer="FPMarketsSC-Demo";
-input long   FastMagic=2108202601;
+input long   ApprovedDemoAccount=7196820;
+input string ApprovedDemoServer="FXIFY-Server";
+input long   FastMagic=2108202610;
 input double RiskPerTradePercent=0.25;
 input double MaxPortfolioRiskPercent=1.50;
 input int    MaxSimultaneousTrades=6;
@@ -49,12 +49,12 @@ input string OwnershipClaimSecret="";
 input int    OwnershipLeaseTtlSeconds=15;
 input int    OwnershipClaimHeartbeatSeconds=2;
 
-#define REQUIRED_DEMO_LOGIN 7404213
-#define FORBIDDEN_LIVE_LOGIN 7196820
+#define REQUIRED_DEMO_LOGIN 7196820
+#define FORBIDDEN_LIVE_LOGIN 0
 #define FORBIDDEN_OBSERVATION_LOGIN 2100139002
 #define LEGACY_PILOT_MAGIC 2082026032
 #define SYMBOL_COUNT 19
-#define V1_MAGIC 2108202601
+#define V1_MAGIC 2108202610
 #define RECOVERY_HISTORY_STABLE_SCANS 3
 #define RECOVERY_HISTORY_MIN_SECONDS 30
 #define TRADE_PHASE_INITIAL_RISK 0
@@ -276,7 +276,7 @@ string CompactUtcDay(const datetime value)
 
 void AppendLifecycle(const string event_name,const string detail)
   {
-   string path="SolTradeFastMultiMarketV2\\lifecycle-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2F10\\lifecycle-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
@@ -533,13 +533,13 @@ void PruneRotatedAuditFiles()
    g_last_audit_prune_day=utc_day;
    datetime expired=(datetime)((utc_day-8)*86400);
    string day=CompactUtcDay(expired);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v2-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v3-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v4-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v5-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\scan-history-v6-"+day+".csv",FILE_COMMON);
-   FileDelete("SolTradeFastMultiMarketV2\\lifecycle-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-v2-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-v3-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-v4-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-v5-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\scan-history-v6-"+day+".csv",FILE_COMMON);
+   FileDelete("SolTradeFastMultiMarketV2F10\\lifecycle-"+day+".csv",FILE_COMMON);
   }
 
 bool DemoIdentitySafe(string &reason)
@@ -554,8 +554,7 @@ bool DemoIdentitySafe(string &reason)
    if((ENUM_ACCOUNT_TRADE_MODE)AccountInfoInteger(ACCOUNT_TRADE_MODE)!=ACCOUNT_TRADE_MODE_DEMO)
      { reason="REAL_OR_NON_DEMO_ACCOUNT_BLOCKED"; return false; }
    if(!SetupEnabled || !DemoExecutionConfirmed) { reason="DEMO_EXECUTION_INTERLOCK_OFF"; return false; }
-   if(!(bool)AccountInfoInteger(ACCOUNT_TRADE_ALLOWED) || !(bool)TerminalInfoInteger(TERMINAL_TRADE_ALLOWED) ||
-      !(bool)MQLInfoInteger(MQL_TRADE_ALLOWED)) { reason="TRADING_PERMISSION_OFF"; return false; }
+   if(!(bool)AccountInfoInteger(ACCOUNT_TRADE_ALLOWED)) { reason="ACCOUNT_TRADING_PERMISSION_OFF"; return false; }
    if(AccountInfoInteger(ACCOUNT_MARGIN_MODE)!=ACCOUNT_MARGIN_MODE_RETAIL_HEDGING)
      { reason="HEDGING_ACCOUNT_REQUIRED"; return false; }
    return true;
@@ -638,7 +637,7 @@ bool ContainsText(const string text,const string token)
   { return StringFind(text,token)>=0; }
 
 string EntryPersistenceKey(const int index,const string field)
-  { return "SFM2C_P"+field+"_"+IntegerToString(index); }
+  { return "SFM2F10C_P"+field+"_"+IntegerToString(index); }
 
 bool LoadCompleteAdmissionReference(const int index,const datetime completed_bar,const int direction,
                                     const long admission_state_key,const double entry,
@@ -729,7 +728,7 @@ void UpdateCompleteAdmissionPersistence(const int index,const datetime completed
   }
 
 string ExitPersistenceKey(const long identifier,const string field)
-  { return "SFM2_X"+field+"_"+IntegerToString(identifier); }
+  { return "SFM2F10_X"+field+"_"+IntegerToString(identifier); }
 
 int UpdateSoftExitPersistence(const long identifier,const datetime completed_bar,const bool soft_bad,bool &advanced)
   {
@@ -912,7 +911,7 @@ bool DiscoverIndexSymbol(const int index)
 
 void LoadMappingCache()
   {
-   int handle=FileOpen("SolTradeFastMultiMarketV2\\symbol-map.csv",FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   int handle=FileOpen("SolTradeFastMultiMarketV2F10\\symbol-map.csv",FILE_READ|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(handle==INVALID_HANDLE) return;
    while(!FileIsEnding(handle))
      {
@@ -929,7 +928,7 @@ void LoadMappingCache()
 
 void SaveMappingCache()
   {
-   int handle=FileOpen("SolTradeFastMultiMarketV2\\symbol-map.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   int handle=FileOpen("SolTradeFastMultiMarketV2F10\\symbol-map.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(handle==INVALID_HANDLE) return;
    for(int i=0;i<SYMBOL_COUNT;i++)
       if(IsIndexAliasMarket(i) && g_cached_symbols[i]!="")
@@ -940,7 +939,7 @@ void SaveMappingCache()
 
 void WriteBrokerSymbolCatalogue()
   {
-   int handle=FileOpen("SolTradeFastMultiMarketV2\\broker-symbol-catalogue.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   int handle=FileOpen("SolTradeFastMultiMarketV2F10\\broker-symbol-catalogue.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(handle==INVALID_HANDLE) return;
    FileWrite(handle,"symbol","description","path","trade_mode");
    int total=SymbolsTotal(false);
@@ -1721,12 +1720,12 @@ bool CalculateLots(const MarketScore &candidate,double &lots,double &actual_risk
    return true;
   }
 
-string RiskKey(const long identifier) { return "SFM2_R_"+IntegerToString(identifier); }
-string LegacyRiskKey(const long identifier) { return "SFM1_R_"+IntegerToString(identifier); }
-string MfeKey(const long identifier) { return "SFM2_MFE_"+IntegerToString(identifier); }
-string MaeKey(const long identifier) { return "SFM2_MAE_"+IntegerToString(identifier); }
-string InitialRiskPath(const long identifier) { return "SolTradeFastMultiMarketV2\\initial-risk-"+IntegerToString(identifier)+".csv"; }
-string ScratchStatePath(const long identifier) { return "SolTradeFastMultiMarketV2\\scratch-state-"+IntegerToString(identifier)+".csv"; }
+string RiskKey(const long identifier) { return "SFM2F10_R_"+IntegerToString(identifier); }
+string LegacyRiskKey(const long identifier) { return "SFM1F10_R_"+IntegerToString(identifier); }
+string MfeKey(const long identifier) { return "SFM2F10_MFE_"+IntegerToString(identifier); }
+string MaeKey(const long identifier) { return "SFM2F10_MAE_"+IntegerToString(identifier); }
+string InitialRiskPath(const long identifier) { return "SolTradeFastMultiMarketV2F10\\initial-risk-"+IntegerToString(identifier)+".csv"; }
+string ScratchStatePath(const long identifier) { return "SolTradeFastMultiMarketV2F10\\scratch-state-"+IntegerToString(identifier)+".csv"; }
 
 void ResetScratchState(ScratchState &state)
   {
@@ -1840,7 +1839,7 @@ double InitialDistanceForSelectedPosition()
    return distance;
   }
 
-string EpochStatePath() { return "SolTradeFastMultiMarketV2\\epoch-state.csv"; }
+string EpochStatePath() { return "SolTradeFastMultiMarketV2F10\\epoch-state.csv"; }
 
 long LoadOrCreateV2Epoch()
   {
@@ -1852,7 +1851,7 @@ long LoadOrCreateV2Epoch()
       if(schema=="SOLTRADE_FAST_MULTI_V2_EPOCH_V1" && account==AccountInfoInteger(ACCOUNT_LOGIN) &&
          server==AccountInfoString(ACCOUNT_SERVER) && saved>0) epoch=saved;
      }
-   string key="SFM2_EPOCH_"+IntegerToString((long)AccountInfoInteger(ACCOUNT_LOGIN));
+   string key="SFM2F10_EPOCH_"+IntegerToString((long)AccountInfoInteger(ACCOUNT_LOGIN));
    if(epoch<=0 && GlobalVariableCheck(key)) epoch=(long)GlobalVariableGet(key);
    if(epoch<=0) epoch=(long)TimeTradeServer();
    int out=FileOpen(EpochStatePath()+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
@@ -1872,8 +1871,8 @@ int SymbolIndexByActual(const string symbol)
    return -1;
   }
 
-string ReversalStatePath() { return "SolTradeFastMultiMarketV2\\reversal-state.csv"; }
-string ExitPriceKey(const int index) { return "SFM2_EXITPX_"+IntegerToString(index); }
+string ReversalStatePath() { return "SolTradeFastMultiMarketV2F10\\reversal-state.csv"; }
+string ExitPriceKey(const int index) { return "SFM2F10_EXITPX_"+IntegerToString(index); }
 
 void SaveReversalState()
   {
@@ -1913,7 +1912,7 @@ void LoadReversalState()
 
 void AppendEvidence(const string event_name,const MarketScore &score,const ulong ticket,const string detail)
   {
-   int h=FileOpen("SolTradeFastMultiMarketV2\\evidence.csv",FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   int h=FileOpen("SolTradeFastMultiMarketV2F10\\evidence.csv",FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0) FileWrite(h,"schema","utc","event","ticket","symbol","direction","entry","stop","buy_case","sell_case",
       "no_trade_case","regime","m1","m5","m15","h1","session","previous_session","levels","available_move","expected_cost_move","expected_net_move",
@@ -1961,7 +1960,7 @@ bool FindScore(const string symbol,MarketScore &score)
   }
 
 string RunnerStatePath(const long identifier)
-  { return "SolTradeFastMultiMarketV2\\runner-state-"+IntegerToString(identifier)+".csv"; }
+  { return "SolTradeFastMultiMarketV2F10\\runner-state-"+IntegerToString(identifier)+".csv"; }
 
 void ResetRunnerState(RunnerState &state)
   {
@@ -2051,7 +2050,7 @@ void ManageImmediateScratchPositions()
       bool adverse=scratch.direction>0?executable_close<scratch.reference_close_price:
                                        executable_close>scratch.reference_close_price;
       if(!adverse) continue;
-      string throttle_key="SFM2_SCRATCH_TRY_"+IntegerToString(identifier);
+      string throttle_key="SFM2F10_SCRATCH_TRY_"+IntegerToString(identifier);
       long now_utc=(long)TimeGMT();
       if(GlobalVariableCheck(throttle_key) && (long)GlobalVariableGet(throttle_key)>=now_utc) continue;
       GlobalVariableSet(throttle_key,(double)now_utc); GlobalVariablesFlush();
@@ -2064,7 +2063,7 @@ void ManageImmediateScratchPositions()
       string ownership_reason;
       if(!VerifyOrderOwnership("POSITION_CLOSE_IMMEDIATE_SCRATCH",ownership_reason))
         { g_status_reason="OWNERSHIP_BLOCKED_IMMEDIATE_SCRATCH_"+symbol; continue; }
-      string marker="SFM2_SCRATCH_"+IntegerToString(identifier);
+      string marker="SFM2F10_SCRATCH_"+IntegerToString(identifier);
       GlobalVariableSet(marker,1.0); GlobalVariablesFlush();
       if(!g_trade.PositionClose(ticket))
         {
@@ -2159,7 +2158,7 @@ void ManageFastPositions()
       score.direction=direction; score.entry=entry; score.stop=sl;
       if(thesis_bad)
         {
-         GlobalVariableSet("SFM2_INV_"+IntegerToString(identifier),1.0);
+         GlobalVariableSet("SFM2F10_INV_"+IntegerToString(identifier),1.0);
          AppendEvidence("THESIS_INVALIDATION_EXIT",score,ticket,StringFormat(
             "current_r=%.5f;held=%.2f;opposite=%.2f;no_trade=%.2f;hard_structural=%s;soft_bad_bars=%d;would_open_now=false",
             current_r,held_score,opposite_score,score.no_trade_score,BoolText(structure_broken),soft_bad_bars));
@@ -2210,7 +2209,7 @@ void ManageFastPositions()
         }
       if(desired==0)
         {
-         string hold_key="SFM2_HOLD_"+IntegerToString(identifier);
+         string hold_key="SFM2F10_HOLD_"+IntegerToString(identifier);
          long completed_bar=minute_ready?(long)minute[1].time:(long)TimeGMT()/60;
          if(!GlobalVariableCheck(hold_key) || (long)GlobalVariableGet(hold_key)!=completed_bar)
            {
@@ -2328,6 +2327,8 @@ bool OpenCandidate(const MarketScore &candidate,string &reason,bool &broker_atte
    reason=""; broker_attempted=false; string identity;
    if(!DemoIdentitySafe(identity)) { reason=identity; return false; }
    if(!candidate.eligible) { reason="NOT_ELIGIBLE"; return false; }
+   if(!(bool)TerminalInfoInteger(TERMINAL_TRADE_ALLOWED) || !(bool)MQLInfoInteger(MQL_TRADE_ALLOWED))
+     { reason="FINAL_MANUAL_ALGO_SWITCH_OFF"; return false; }
    if(!CandidatePortfolioSafe(candidate,reason)) return false;
    MarketScore live=candidate; MqlTick tick;
    if(!SymbolInfoTick(live.symbol,tick)) { reason="TICK_LOST"; return false; }
@@ -2426,7 +2427,7 @@ void AggregateMagicHistoryBefore(const long magic,const datetime before,double &
 
 void WriteSpreadAudit()
   {
-   string path="SolTradeFastMultiMarketV2\\spread-audit.csv";
+   string path="SolTradeFastMultiMarketV2F10\\spread-audit.csv";
    int h=FileOpen(path+".tmp",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    FileWrite(h,"schema","utc","base_market","broker_symbol","representation","point","tick_size","digits",
@@ -2454,7 +2455,7 @@ void WriteSpreadAudit()
 void AppendScanAudit()
   {
    PruneRotatedAuditFiles();
-   string path="SolTradeFastMultiMarketV2\\scan-history-v5-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2F10\\scan-history-v5-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
@@ -2515,7 +2516,7 @@ void AppendScanAudit()
 
 void AppendStructureTelemetry()
   {
-   string path="SolTradeFastMultiMarketV2\\structure-telemetry-v6-"+CompactUtcDay(TimeGMT())+".csv";
+   string path="SolTradeFastMultiMarketV2F10\\structure-telemetry-v6-"+CompactUtcDay(TimeGMT())+".csv";
    int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
@@ -2561,7 +2562,7 @@ void AppendStructureTelemetry()
 
 void WriteRuntimeStatus()
   {
-   int h=FileOpen("SolTradeFastMultiMarketV2\\runtime.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   int h=FileOpen("SolTradeFastMultiMarketV2F10\\runtime.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE) return;
    double equity=AccountInfoDouble(ACCOUNT_EQUITY),risk=PortfolioRiskAmount();
    double v1_gross=0,v1_commission=0,v1_swap=0,v1_net=0;
@@ -2678,7 +2679,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.202;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.202;fxify_isolated_port=true;final_manual_algo_gate=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
    string reason;
    if(!DemoIdentitySafe(reason))
      {
@@ -2703,7 +2704,7 @@ int OnInit()
    g_v2_start_server=LoadOrCreateV2Epoch();
    g_trade.SetAsyncMode(false);
    g_trade.SetExpertMagicNumber(FastMagic);
-   if(!CloseLegacySlowDemoPositions(reason))
+   if(!DryRunOnly && !CloseLegacySlowDemoPositions(reason))
      { AppendLifecycle("EA_INITIALIZATION_REFUSED",reason); Print("SOLTRADE_FAST_MULTI_V2_INIT_REFUSED ",reason); return INIT_FAILED; }
    if(!ReconcileBrokerState(reason))
      { AppendLifecycle("BROKER_RECONCILIATION_FAILED",reason); Print("SOLTRADE_FAST_MULTI_V2_INIT_REFUSED ",reason); return INIT_FAILED; }
@@ -2815,9 +2816,9 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
       string symbol=HistoryDealGetString(transaction.deal,DEAL_SYMBOL); int index=SymbolIndexByActual(symbol);
       int prior_direction=HistoryDealGetInteger(transaction.deal,DEAL_TYPE)==DEAL_TYPE_SELL?1:-1;
       long position_id=HistoryDealGetInteger(transaction.deal,DEAL_POSITION_ID);
-      bool invalidated=GlobalVariableCheck("SFM2_INV_"+IntegerToString(position_id)) &&
-                       GlobalVariableGet("SFM2_INV_"+IntegerToString(position_id))>0;
-      string scratch_marker="SFM2_SCRATCH_"+IntegerToString(position_id);
+      bool invalidated=GlobalVariableCheck("SFM2F10_INV_"+IntegerToString(position_id)) &&
+                       GlobalVariableGet("SFM2F10_INV_"+IntegerToString(position_id))>0;
+      string scratch_marker="SFM2F10_SCRATCH_"+IntegerToString(position_id);
       bool immediate_scratch=GlobalVariableCheck(scratch_marker) && GlobalVariableGet(scratch_marker)>0;
       if(index>=0)
         {

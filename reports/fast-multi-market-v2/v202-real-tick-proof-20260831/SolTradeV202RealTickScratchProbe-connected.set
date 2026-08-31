@@ -1,0 +1,3 @@
+OutputTag=v202-20260831-connected
+ConnectedHistoricalReadOnly=true
+CloseIsolatedTerminalWhenDone=true

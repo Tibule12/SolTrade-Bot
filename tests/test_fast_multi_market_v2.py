@@ -108,6 +108,16 @@ def normalized_extension(direction, entry, anchor, atr):
     return direction * (entry - anchor) / atr
 
 
+def scratch_reference(direction, fill_price, fill_spread):
+    """Fill-time executable close-side reference; spread is already embedded."""
+    return fill_price - fill_spread if direction == 1 else fill_price + fill_spread
+
+
+def immediate_scratch(direction, reference_close, current_bid, current_ask):
+    executable_close = current_bid if direction == 1 else current_ask
+    return executable_close < reference_close if direction == 1 else executable_close > reference_close
+
+
 def absolute_admission(*, t5, t15, structure=True, trigger=True, range_chop=False,
                        exhausted=False, spread_atr=2.0, spread_ratio=1.1,
                        movement_spread=12.0, cost_multiple=6.0, reward_r=1.5,
@@ -149,11 +159,11 @@ def absolute_admission(*, t5, t15, structure=True, trigger=True, range_chop=Fals
         (raw_score >= opposite + 12, "OPPOSITE_CASE_NOT_CLEARLY_DEFEATED"),
         (raw_score >= no_trade + 8, "NO_TRADE_CASE_DOMINATES"),
         (score >= 60, "ABSOLUTE_ADMISSION_SCORE_BELOW_NO_TRADE_THRESHOLD"),
-        (persistence_scans >= 3 and persistence_seconds >= 30, "SETUP_SPECIFIC_CONFIRMATION_PENDING"),
         (confirmation_drift <= .60, "LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED"),
         (confirmation_consumed <= .35, "CONFIRMATION_CONSUMED_TOO_MUCH_REMAINING_OPPORTUNITY"),
         (impulse_extension <= 1.75, "LATE_ENTRY_M5_IMPULSE_EXTENSION_EXCEEDED"),
         (breakout_extension <= .75, "EXHAUSTED_BREAKOUT_EXTENSION_EXCEEDED"),
+        (persistence_scans >= 3 and persistence_seconds >= 30, "COMPLETE_ADMISSION_PERSISTENCE_PENDING"),
         (correlated_count < 2, "CORRELATION_LIMIT"),
     ]
     for passed, reason in gates:
@@ -232,20 +242,20 @@ class HistoryWarmup:
         return self.ready
 
 
-class DirectionalPersistence:
-    """Reference for setup-specific, elapsed-time entry confirmation and restart state."""
+class CompleteAdmissionPersistence:
+    """Reference for complete-admission, elapsed-time confirmation and restart state."""
 
     def __init__(self, state=None):
         self.bar, self.direction, self.setup, self.count, self.first, self.last = state or (None, 0, None, 0, None, None)
 
-    def observe(self, bar, direction, setup, qualified, now):
-        same = (qualified and self.bar == bar and self.direction == direction and self.setup == setup
+    def observe(self, bar, direction, admission_state, complete_qualified, now):
+        same = (complete_qualified and self.bar == bar and self.direction == direction and self.setup == admission_state
                 and self.last is not None and now - self.last <= 30)
-        self.count = self.count + 1 if same else (1 if qualified else 0)
+        self.count = self.count + 1 if same else (1 if complete_qualified else 0)
         self.bar = bar
-        self.direction = direction if qualified else 0
-        self.setup = setup if qualified else None
-        self.first = self.first if same else (now if qualified else None)
+        self.direction = direction if complete_qualified else 0
+        self.setup = admission_state if complete_qualified else None
+        self.first = self.first if same else (now if complete_qualified else None)
         self.last = now
         return self.count, 0 if self.first is None else now - self.first
 
@@ -276,33 +286,59 @@ class SoftExitPersistence:
 
 class FastMultiV2PolicyTests(unittest.TestCase):
     def test_first_directional_m5_state_is_blocked(self):
-        persistence = DirectionalPersistence()
+        persistence = CompleteAdmissionPersistence()
         self.assertEqual(persistence.observe(1_000, -1, 101, True, 0), (1, 0))
 
     def test_three_stable_scans_and_30_seconds_permit_entry(self):
-        persistence = DirectionalPersistence()
+        persistence = CompleteAdmissionPersistence()
         persistence.observe(1_000, -1, 101, True, 0)
         persistence.observe(1_000, -1, 101, True, 15)
         self.assertEqual(persistence.observe(1_000, -1, 101, True, 30), (3, 30))
 
     def test_direction_setup_change_or_missing_core_resets_entry_confirmation(self):
-        persistence = DirectionalPersistence()
+        persistence = CompleteAdmissionPersistence()
         persistence.observe(1_000, -1, 101, True, 0)
         self.assertEqual(persistence.observe(1_000, 1, 101, True, 10), (1, 0))
         self.assertEqual(persistence.observe(1_000, 1, 202, True, 20), (1, 0))
         self.assertEqual(persistence.observe(1_000, 1, 202, False, 30), (0, 0))
 
     def test_repeated_scans_are_required_but_elapsed_time_cannot_be_bypassed(self):
-        persistence = DirectionalPersistence()
+        persistence = CompleteAdmissionPersistence()
         self.assertEqual(persistence.observe(1_000, 1, 101, True, 0), (1, 0))
         self.assertEqual(persistence.observe(1_000, 1, 101, True, 10), (2, 10))
         self.assertEqual(persistence.observe(1_000, 1, 101, True, 20), (3, 20))
 
     def test_entry_confirmation_survives_restart(self):
-        before = DirectionalPersistence()
+        before = CompleteAdmissionPersistence()
         before.observe(1_000, 1, 101, True, 0)
-        after = DirectionalPersistence(before.state())
+        after = CompleteAdmissionPersistence(before.state())
         self.assertEqual(after.observe(1_000, 1, 101, True, 30), (2, 30))
+
+    def test_one_scan_complete_eligibility_flash_never_orders(self):
+        persistence = CompleteAdmissionPersistence()
+        self.assertEqual(persistence.observe(1_000, 1, 501, False, 0), (0, 0))
+        self.assertEqual(persistence.observe(1_000, 1, 501, True, 10), (1, 0))
+        self.assertEqual(persistence.observe(1_000, 1, 501, False, 20), (0, 0))
+
+    def test_ger40_room_flash_resets_complete_admission(self):
+        persistence = CompleteAdmissionPersistence()
+        observations = [(0.167, False, 0), (1.530, True, 10), (0.167, False, 20)]
+        permitted = []
+        for room_r, complete, now in observations:
+            scans, elapsed = persistence.observe(1_000, 1, 901, complete, now)
+            permitted.append(complete and room_r >= 1.15 and scans >= 3 and elapsed >= 30)
+        self.assertEqual(permitted, [False, False, False])
+
+    def test_initial_spread_alone_does_not_trigger_scratch(self):
+        buy_fill, sell_fill, spread = 100.20, 100.00, 0.20
+        self.assertFalse(immediate_scratch(1, scratch_reference(1, buy_fill, spread), 100.00, 100.20))
+        self.assertFalse(immediate_scratch(-1, scratch_reference(-1, sell_fill, spread), 100.00, 100.20))
+
+    def test_first_adverse_executable_price_triggers_scratch(self):
+        self.assertTrue(immediate_scratch(1, 100.00, 99.99, 100.19))
+        self.assertTrue(immediate_scratch(-1, 100.20, 100.01, 100.21))
+        self.assertFalse(immediate_scratch(1, 100.00, 100.01, 100.21))
+        self.assertFalse(immediate_scratch(-1, 100.20, 99.99, 100.19))
 
     def test_hard_structural_reversal_exits_immediately(self):
         persistence = SoftExitPersistence()
@@ -509,7 +545,7 @@ class FastMultiV2PolicyTests(unittest.TestCase):
 
     def test_transient_signal_and_confirmation_chase_rejected(self):
         self.assertEqual(absolute_admission(t5=.75, t15=.55, persistence_scans=2)[1],
-                         "SETUP_SPECIFIC_CONFIRMATION_PENDING")
+                         "COMPLETE_ADMISSION_PERSISTENCE_PENDING")
         self.assertEqual(absolute_admission(t5=.75, t15=.55, confirmation_drift=.601)[1],
                          "LATE_ENTRY_SIGNAL_DRIFT_EXCEEDED")
         self.assertEqual(absolute_admission(t5=.75, t15=.55, confirmation_consumed=.351)[1],

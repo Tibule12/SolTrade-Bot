@@ -1,0 +1,29 @@
+{
+  "account": 7196820,
+  "approved_preset_sha256": "8b894e665e06c615ac00d73b05557f208bb0ade592d0ff317260c62a84bcc8df",
+  "approved_source_sha256": "58649a396dff714ebc3901eb03c90715eba305e6986bc58a2f7446c6a3dbe525",
+  "final_activation_gate": "GLOBAL_MT5_ALGO_TRADING_OFF",
+  "generated_preset_sha256": "8329f07011db4c368df06656d10a737d8529395e0e2488ee46cba19272433371",
+  "generated_source_sha256": "6d5f98582ec5dd365823e32917eec84816f364b3a2920c45527f3441ca81152f",
+  "magic": 2108202610,
+  "min_reward_r": 1.15,
+  "ownership_instance": "vps-fxify-10k-prod",
+  "portability_changes": [
+    "account_and_server_guard",
+    "account_unique_magic",
+    "account_unique_file_common_namespace",
+    "account_unique_terminal_global_prefix",
+    "account_unique_ownership_lease",
+    "scanner_allowed_while_global_algo_off",
+    "entry_fails_closed_when_global_algo_off"
+  ],
+  "runtime_folder": "SolTradeFastMultiMarketV2F10",
+  "schema": "SOLTRADE_FXIFY_V202_CORRECTED_RUNTIME_PORT_V1",
+  "server": "FXIFY-Server",
+  "strategy_changes": [
+    "complete_admission_persistence",
+    "immediate_directional_scratch"
+  ],
+  "strategy_version": "2.202",
+  "target": "fxify-10k"
+}

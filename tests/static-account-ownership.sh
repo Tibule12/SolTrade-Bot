@@ -19,8 +19,8 @@ for pattern in \
   rg -q "$pattern" "$source_file"
 done
 
-[[ $(rg -c 'g_trade\.(Buy|Sell|PositionModify|PositionClose)' "$source_file") -eq 6 ]]
-[[ $(rg -c 'VerifyOrderOwnership\(' "$source_file") -eq 6 ]]
+[[ $(rg -c 'g_trade\.(Buy|Sell|PositionModify|PositionClose)' "$source_file") -eq 8 ]]
+[[ $(rg -c 'VerifyOrderOwnership\(' "$source_file") -eq 8 ]]
 
 rg -q '^OwnershipEligible=false$' "$laptop_set"
 rg -q '^OwnershipClaimSecret=$' "$laptop_set"
