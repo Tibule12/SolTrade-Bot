@@ -29,6 +29,7 @@ MinAbsoluteAdmissionScore=60.0
 MinSameSymbolReentryMinutes=30
 MinReentrySeparationAtr=0.50
 MaxSlippagePoints=12
+ImmediateDirectionalScratchEnabled=false
 OwnershipLeaseRequired=true
 OwnershipEligible=true
 OwnershipInstanceId=vps-fp-prod

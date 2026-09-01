@@ -127,6 +127,7 @@ required_patterns=(
   'MaxConfirmationOpportunityConsumed=0.35'
   'MinSameSymbolReentryMinutes=30'
   'MinReentrySeparationAtr=0.50'
+  'ImmediateDirectionalScratchEnabled=false'
   'COMPLETE_ADMISSION_PERSISTENCE_PENDING'
   'STRUCTURAL_DETERIORATION'
   'TEMPORARY_SCORE_WEAKNESS'
@@ -144,6 +145,7 @@ required_patterns=(
   'broker_sl_retained=true'
   'SCRATCH_STATE_UNRECOVERABLE_'
   'void OnTick\(\)'
+  'if\(!ImmediateDirectionalScratchEnabled\) return'
   'UpdateSoftExitPersistence'
   'FIRST_SUCCESSFUL_SCAN_AFTER_RECOVERY'
   'INDEX_ALIAS_RETRY_FAILED'
@@ -206,7 +208,8 @@ for setting in \
   'MaxConfirmationOpportunityConsumed=0.35' \
   'MinAbsoluteAdmissionScore=60.0' \
   'MinSameSymbolReentryMinutes=30' \
-  'MinReentrySeparationAtr=0.50'; do
+  'MinReentrySeparationAtr=0.50' \
+  'ImmediateDirectionalScratchEnabled=false'; do
   rg -q "^${setting}$" "$demo_set"
 done
 

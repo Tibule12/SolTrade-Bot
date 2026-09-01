@@ -1,10 +1,10 @@
 {
   "account": 7196820,
-  "approved_preset_sha256": "8b894e665e06c615ac00d73b05557f208bb0ade592d0ff317260c62a84bcc8df",
-  "approved_source_sha256": "58649a396dff714ebc3901eb03c90715eba305e6986bc58a2f7446c6a3dbe525",
+  "approved_preset_sha256": "22e57d8ab8cba11c8c6ff1c540716dd4ee5ba07d34e6dd8d2d75870b84c53226",
+  "approved_source_sha256": "099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95",
   "final_activation_gate": "GLOBAL_MT5_ALGO_TRADING_OFF",
-  "generated_preset_sha256": "8329f07011db4c368df06656d10a737d8529395e0e2488ee46cba19272433371",
-  "generated_source_sha256": "6d5f98582ec5dd365823e32917eec84816f364b3a2920c45527f3441ca81152f",
+  "generated_preset_sha256": "184ad441ee5f00574c01dcf44670e7308befd2b620e10f84917f13cd526e6da7",
+  "generated_source_sha256": "0a69d32560761153e78379fcca05e29cda0c285264a34894935a47a2605c570f",
   "magic": 2108202610,
   "min_reward_r": 1.15,
   "ownership_instance": "vps-fxify-10k-prod",
@@ -22,7 +22,7 @@
   "server": "FXIFY-Server",
   "strategy_changes": [
     "complete_admission_persistence",
-    "immediate_directional_scratch"
+    "first_adverse_tick_scratch_retired"
   ],
   "strategy_version": "2.202",
   "target": "fxify-10k"

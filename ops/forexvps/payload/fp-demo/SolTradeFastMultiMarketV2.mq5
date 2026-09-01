@@ -37,6 +37,10 @@ input double MinAbsoluteAdmissionScore=60.0;
 input int    MinSameSymbolReentryMinutes=30;
 input double MinReentrySeparationAtr=0.50;
 input int    MaxSlippagePoints=12;
+// Retired after live evidence showed that the first adverse executable tick
+// converted ordinary post-fill noise into repeated cost-bearing losses. The
+// broker structural SL, thesis invalidation, and runner remain authoritative.
+input bool   ImmediateDirectionalScratchEnabled=false;
 
 // Execution infrastructure only. These controls do not participate in setup
 // scoring or strategy admission. A valid, fresh, runtime-specific lease is a
@@ -2032,6 +2036,7 @@ double NetProtectedFloorPrice(const string symbol,const int direction,const doub
 
 void ManageImmediateScratchPositions()
   {
+   if(!ImmediateDirectionalScratchEnabled) return;
    // Tick-driven and independent of the ten-second strategy scan. The close
    // side of the market is compared with its fill-time close-side reference:
    // BUY uses bid; SELL uses ask. Opening spread is therefore not adverse move.
@@ -2696,7 +2701,8 @@ int OnInit()
       MinStableSignalScans!=3 || MinSignalPersistenceSeconds!=30 || MaxEntryDriftM5Atr!=0.60 ||
       MaxM5SwingExtensionAtr!=1.75 || MaxBreakoutExtensionM5Atr!=0.75 ||
       MaxConfirmationOpportunityConsumed!=0.35 || MinAbsoluteAdmissionScore!=60.0 ||
-      MinSameSymbolReentryMinutes!=30 || MinReentrySeparationAtr!=0.50)
+      MinSameSymbolReentryMinutes!=30 || MinReentrySeparationAtr!=0.50 ||
+      ImmediateDirectionalScratchEnabled)
      { AppendLifecycle("EA_INITIALIZATION_REFUSED","FROZEN_PORTFOLIO_POLICY_MISMATCH"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED FROZEN_PORTFOLIO_POLICY_MISMATCH"); return INIT_PARAMETERS_INCORRECT; }
    if(!SelectUniverse()) { AppendLifecycle("EA_INITIALIZATION_REFUSED","NO_UNIVERSE_SYMBOL_AVAILABLE"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED NO_UNIVERSE_SYMBOL_AVAILABLE"); return INIT_FAILED; }
    LoadReversalState();

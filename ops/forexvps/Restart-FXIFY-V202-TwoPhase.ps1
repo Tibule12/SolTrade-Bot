@@ -64,7 +64,7 @@ foreach ($instance in $instances) {
     schema='SOLTRADE_FXIFY_V202_TWO_PHASE_ATTACH_V1'
     timestamp_utc=[DateTime]::UtcNow.ToString('o')
     instances=$result
-    order_sending_enabled=$false
+    order_sending_enabled=$true
     test_orders_placed=$false
 } | ConvertTo-Json -Depth 14 | Set-Content -Encoding UTF8 (Join-Path $out 'corrected-v202-fxify-final.json')
 

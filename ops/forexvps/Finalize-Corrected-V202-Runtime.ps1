@@ -21,9 +21,9 @@ $stateDirs = @{
     'fxify-100k'='SolTradeFastMultiMarketV2F100'
 }
 $expected = @{
-    'fp-demo'=@{ source='58649a396dff714ebc3901eb03c90715eba305e6986bc58a2f7446c6a3dbe525'; binary='0b37e5c4cc4383a310003625c40ce7931aabdf2c4031b19222af58585a19b70e' }
-    'fxify-10k'=@{ source='6d5f98582ec5dd365823e32917eec84816f364b3a2920c45527f3441ca81152f'; binary='7292b4413e19cb0bb5f3ca80b7e99b19f1c9377687ecc8622e9919dc34aaba4c' }
-    'fxify-100k'=@{ source='6fe6e116124b163e9505a4341e76ffb3253a48a90c7c561b2cc3e9278dec1e8d'; binary='1ae399c8a3f41ec50729f892b73e1c140888c19a08d80e0ad74ff695125086c9' }
+    'fp-demo'=@{ source='099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95'; binary='9a7ac91da81975f9950e6ec3952076e24e787954af5af1c1ac722331eb8f1398' }
+    'fxify-10k'=@{ source='0a69d32560761153e78379fcca05e29cda0c285264a34894935a47a2605c570f'; binary='db188505fb586eab6d0af907cbff07328f30d2c0ff4d7564bdeb4fedd6c566a5' }
+    'fxify-100k'=@{ source='961add4899821fd2bb03d3d11d6075a086aaedf3b7059c4fb635a0e1a3041ea2'; binary='a7fcbf3b68e5c7955a4cf363f551e67d8da51f59a52dfd337355f0587f3c4b55' }
 }
 
 function Read-Runtime([string]$StateDir) {
@@ -122,9 +122,8 @@ $result = [ordered]@{
     backup_root=$backupRoot
     instances=$post
     fp_order_permission_enabled=$true
-    fxify_order_sending_enabled=$false
+    fxify_order_sending_enabled=$true
     test_orders_placed=$false
 }
 $result | ConvertTo-Json -Depth 14 | Set-Content -Encoding UTF8 (Join-Path $outputRoot 'corrected-v202-runtime-final.json')
 $result | ConvertTo-Json -Depth 14
-

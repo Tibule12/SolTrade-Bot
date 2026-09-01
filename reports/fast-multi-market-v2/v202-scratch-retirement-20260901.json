@@ -1,0 +1,114 @@
+{
+  "schema": "SOLTRADE_V202_SCRATCH_RETIREMENT_REPLAY_V1",
+  "source": "ops/forexvps/remote-output/loss-audit",
+  "resolution_seconds": 10,
+  "orders_placed": false,
+  "admission_logic_changed": false,
+  "risk_sizing_changed": false,
+  "runner_logic_changed": false,
+  "structural_stop_changed": false,
+  "first_adverse_tick_scratch_retired": true,
+  "trades": [
+    {
+      "position_id": "158826999",
+      "market": "DE30",
+      "direction": "SELL",
+      "entry_utc": "2026.09.01 09:44:30",
+      "complete_admission_persistence": true,
+      "original_exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+      "original_net": -0.7,
+      "original_r": -0.03387,
+      "scratch_retired_outcome": {
+        "exit_class": "STRUCTURAL_SL",
+        "first_observed_exit_utc": "2026.09.01 10:15:40",
+        "modeled_capture_r": -1.0,
+        "observed_cross_r": -1.07589,
+        "peak_r_before_exit": 0.04106
+      }
+    },
+    {
+      "position_id": "158835858",
+      "market": "XAUUSD",
+      "direction": "SELL",
+      "entry_utc": "2026.09.01 10:20:40",
+      "complete_admission_persistence": true,
+      "original_exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+      "original_net": -1.77,
+      "original_r": -0.08728,
+      "scratch_retired_outcome": {
+        "exit_class": "RUNNER_PROTECTED_EXIT",
+        "first_observed_exit_utc": "2026.09.01 10:59:30",
+        "modeled_capture_r": 0.1,
+        "observed_cross_r": 0.08346,
+        "peak_r_before_exit": 0.83156
+      }
+    },
+    {
+      "position_id": "158835984",
+      "market": "DE30",
+      "direction": "SELL",
+      "entry_utc": "2026.09.01 10:21:30",
+      "complete_admission_persistence": true,
+      "original_exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+      "original_net": -1.4,
+      "original_r": -0.06312,
+      "scratch_retired_outcome": {
+        "exit_class": "RUNNER_PROTECTED_EXIT",
+        "first_observed_exit_utc": "2026.09.01 11:10:10",
+        "modeled_capture_r": 1.25279,
+        "observed_cross_r": 1.19541,
+        "peak_r_before_exit": 2.08798
+      }
+    },
+    {
+      "position_id": "158836306",
+      "market": "USTEC",
+      "direction": "SELL",
+      "entry_utc": "2026.09.01 10:22:10",
+      "complete_admission_persistence": true,
+      "original_exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+      "original_net": -1.6,
+      "original_r": -0.07194,
+      "scratch_retired_outcome": {
+        "exit_class": "RUNNER_PROTECTED_EXIT",
+        "first_observed_exit_utc": "2026.09.01 11:16:10",
+        "modeled_capture_r": 1.27943,
+        "observed_cross_r": 1.25581,
+        "peak_r_before_exit": 2.13238
+      }
+    },
+    {
+      "position_id": "158883806",
+      "market": "XAUUSD",
+      "direction": "SELL",
+      "entry_utc": "2026.09.01 13:35:50",
+      "complete_admission_persistence": true,
+      "original_exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+      "original_net": -0.54,
+      "original_r": -0.03583,
+      "scratch_retired_outcome": {
+        "exit_class": "STRUCTURAL_SL",
+        "first_observed_exit_utc": "2026.09.01 13:59:40",
+        "modeled_capture_r": -1.0,
+        "observed_cross_r": -1.04038,
+        "peak_r_before_exit": 0.22678
+      }
+    }
+  ],
+  "summary": {
+    "distinct_signals": 5,
+    "original_winners": 0,
+    "original_losses": 5,
+    "original_aggregate_r": -0.29204,
+    "modeled_winners": 3,
+    "modeled_losses": 2,
+    "modeled_aggregate_r": 0.63222,
+    "modeled_change_r": 0.92426,
+    "status": "PASS"
+  },
+  "limitations": [
+    "ten-second scan observations are not an exact intratick execution replay",
+    "runner structural trailing can tighten beyond the modeled minimum protected-R floor",
+    "broker slippage can change realized fills"
+  ]
+}

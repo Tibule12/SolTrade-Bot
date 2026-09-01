@@ -18,8 +18,8 @@ $instances = @(
         preset='payload\fp-demo\SolTradeFastMultiMarketV2-FPMarkets-demo.set';
         startup='runtime\fp-demo.ini'; state_dir='SolTradeFastMultiMarketV2';
         magic=2108202601; order_permission='ENABLED_FP_DEMO'; ownership_instance='vps-fp-prod'; profile='SolTradeV202FP';
-        expected_source_sha='58649a396dff714ebc3901eb03c90715eba305e6986bc58a2f7446c6a3dbe525';
-        expected_binary_sha='0b37e5c4cc4383a310003625c40ce7931aabdf2c4031b19222af58585a19b70e'
+        expected_source_sha='099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95';
+        expected_binary_sha='9a7ac91da81975f9950e6ec3952076e24e787954af5af1c1ac722331eb8f1398'
     },
     [ordered]@{
         id='fxify-10k'; account=7196820; server='FXIFY-Server'; version='2.202';
@@ -28,9 +28,9 @@ $instances = @(
         binary='payload\fxify-10k\SolTradeFastMultiMarketV202F10.ex5';
         preset='payload\fxify-10k\SolTradeFastMultiMarketV202F10-FINAL-ALGO-OFF.set';
         startup='runtime\fxify-10k.ini'; state_dir='SolTradeFastMultiMarketV2F10';
-        magic=2108202610; order_permission='FINAL_GLOBAL_ALGO_SWITCH_OFF'; ownership_instance='vps-fxify-10k-prod'; profile='SolTradeV202F10';
-        expected_source_sha='6d5f98582ec5dd365823e32917eec84816f364b3a2920c45527f3441ca81152f';
-        expected_binary_sha='7292b4413e19cb0bb5f3ca80b7e99b19f1c9377687ecc8622e9919dc34aaba4c'
+        magic=2108202610; order_permission='ENABLED_USER_ACTIVATED'; ownership_instance='vps-fxify-10k-prod'; profile='SolTradeV202F10';
+        expected_source_sha='0a69d32560761153e78379fcca05e29cda0c285264a34894935a47a2605c570f';
+        expected_binary_sha='db188505fb586eab6d0af907cbff07328f30d2c0ff4d7564bdeb4fedd6c566a5'
     },
     [ordered]@{
         id='fxify-100k'; account=7198096; server='FXIFY-Server'; version='2.202';
@@ -39,9 +39,9 @@ $instances = @(
         binary='payload\fxify-100k\SolTradeFastMultiMarketV202F100.ex5';
         preset='payload\fxify-100k\SolTradeFastMultiMarketV202F100-FINAL-ALGO-OFF.set';
         startup='runtime\fxify-100k.ini'; state_dir='SolTradeFastMultiMarketV2F100';
-        magic=2108202620; order_permission='FINAL_GLOBAL_ALGO_SWITCH_OFF'; ownership_instance='vps-fxify-100k-prod'; profile='SolTradeV202F100';
-        expected_source_sha='6fe6e116124b163e9505a4341e76ffb3253a48a90c7c561b2cc3e9278dec1e8d';
-        expected_binary_sha='1ae399c8a3f41ec50729f892b73e1c140888c19a08d80e0ad74ff695125086c9'
+        magic=2108202620; order_permission='ENABLED_USER_ACTIVATED'; ownership_instance='vps-fxify-100k-prod'; profile='SolTradeV202F100';
+        expected_source_sha='961add4899821fd2bb03d3d11d6075a086aaedf3b7059c4fb635a0e1a3041ea2';
+        expected_binary_sha='a7fcbf3b68e5c7955a4cf363f551e67d8da51f59a52dfd337355f0587f3c4b55'
     }
 )
 
@@ -228,7 +228,7 @@ $result = [ordered]@{
     preflight=$preflight
     instances=$post
     fp_order_permission_enabled=$true
-    fxify_order_sending_enabled=$false
+    fxify_order_sending_enabled=$true
     test_orders_placed=$false
     strategy_thresholds_changed=$false
 }

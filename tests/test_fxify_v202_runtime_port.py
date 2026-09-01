@@ -51,12 +51,14 @@ class FxifyV202RuntimePortTests(unittest.TestCase):
             self.assertEqual(result["strategy_version"], "2.202")
             self.assertIn("complete_admission_qualified", expert)
             self.assertIn("ManageImmediateScratchPositions", expert)
+            self.assertIn("ImmediateDirectionalScratchEnabled=false", expert)
             self.assertIn("COMPLETE_ADMISSION_PERSISTENCE_PENDING", expert)
             self.assertIn("RiskPerTradePercent=0.25", preset)
             self.assertIn("MaxPortfolioRiskPercent=1.50", preset)
             self.assertIn("MaxSimultaneousTrades=6", preset)
             self.assertIn("MaxStronglyCorrelatedTrades=2", preset)
             self.assertIn("MinRewardRisk=1.15", preset)
+            self.assertIn("ImmediateDirectionalScratchEnabled=false", preset)
 
     def test_global_algo_is_the_final_fail_closed_entry_gate(self):
         for target in port.ALLOWED:
@@ -68,13 +70,13 @@ class FxifyV202RuntimePortTests(unittest.TestCase):
             self.assertIn("OwnershipLeaseRequired=true", preset)
             self.assertIn("OwnershipEligible=true", preset)
 
-    def test_startup_keeps_global_algo_off_and_uses_v202(self):
+    def test_startup_preserves_user_activated_algo_and_uses_v202(self):
         for target, expert in (
             ("fxify-10k", "SolTradeFastMultiMarketV202F10"),
             ("fxify-100k", "SolTradeFastMultiMarketV202F100"),
         ):
             startup = (ROOT / "ops" / "forexvps" / "runtime" / f"{target}.ini").read_text(encoding="utf-8")
-            self.assertIn("AllowLiveTrading=0", startup)
+            self.assertIn("AllowLiveTrading=1", startup)
             self.assertIn("Enabled=1", startup)
             self.assertIn(f"Expert=SolTrade\\{expert}", startup)
             self.assertIn(f"ExpertParameters={expert}-FINAL-ALGO-OFF.set", startup)

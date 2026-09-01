@@ -113,7 +113,9 @@ def scratch_reference(direction, fill_price, fill_spread):
     return fill_price - fill_spread if direction == 1 else fill_price + fill_spread
 
 
-def immediate_scratch(direction, reference_close, current_bid, current_ask):
+def immediate_scratch(direction, reference_close, current_bid, current_ask, enabled=False):
+    if not enabled:
+        return False
     executable_close = current_bid if direction == 1 else current_ask
     return executable_close < reference_close if direction == 1 else executable_close > reference_close
 
@@ -334,9 +336,13 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         self.assertFalse(immediate_scratch(1, scratch_reference(1, buy_fill, spread), 100.00, 100.20))
         self.assertFalse(immediate_scratch(-1, scratch_reference(-1, sell_fill, spread), 100.00, 100.20))
 
-    def test_first_adverse_executable_price_triggers_scratch(self):
-        self.assertTrue(immediate_scratch(1, 100.00, 99.99, 100.19))
-        self.assertTrue(immediate_scratch(-1, 100.20, 100.01, 100.21))
+    def test_first_adverse_executable_price_does_not_close_when_scratch_is_retired(self):
+        self.assertFalse(immediate_scratch(1, 100.00, 99.99, 100.19))
+        self.assertFalse(immediate_scratch(-1, 100.20, 100.01, 100.21))
+
+    def test_legacy_scratch_model_remains_explicit_for_counterfactual_replay(self):
+        self.assertTrue(immediate_scratch(1, 100.00, 99.99, 100.19, enabled=True))
+        self.assertTrue(immediate_scratch(-1, 100.20, 100.01, 100.21, enabled=True))
         self.assertFalse(immediate_scratch(1, 100.00, 100.01, 100.21))
         self.assertFalse(immediate_scratch(-1, 100.20, 99.99, 100.19))
 
