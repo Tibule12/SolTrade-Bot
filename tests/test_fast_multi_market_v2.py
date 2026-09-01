@@ -79,7 +79,7 @@ def minimum_protected_r(peak_r):
     if peak_r < 0.50:
         return -1.0
     if peak_r < 0.75:
-        return -0.05
+        return 0.10
     if peak_r < 1.00:
         return 0.10
     return max(0.25, peak_r - max(0.75, 0.40 * peak_r))
@@ -469,11 +469,18 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         peaks = (0.0, 0.49, 0.50, 0.74, 0.75, 0.99, 1.0, 1.5, 2.0, 2.76, 4.0)
         floors = [minimum_protected_r(value) for value in peaks]
         self.assertEqual(floors, sorted(floors))
-        self.assertEqual(minimum_protected_r(0.50), -0.05)
+        self.assertEqual(minimum_protected_r(0.50), 0.10)
         self.assertEqual(minimum_protected_r(0.75), 0.10)
         self.assertGreaterEqual(minimum_protected_r(1.0), 0.25)
         self.assertGreater(minimum_protected_r(2.0), 1.0)
         self.assertGreater(minimum_protected_r(2.76), 1.5)
+
+    def test_live_ger40_confirmed_profit_cannot_finish_negative_by_policy(self):
+        # 1-Sep live evidence: peak was +0.58477R on FP and +0.61505R on
+        # FXIFY. Both are now protected at a modeled +0.10R net floor instead
+        # of the former -0.05R phase-one floor.
+        self.assertEqual(minimum_protected_r(0.58477), 0.10)
+        self.assertEqual(minimum_protected_r(0.61505), 0.10)
 
     def test_historical_runner_failures_cannot_return_to_scratch(self):
         self.assertGreater(minimum_protected_r(2.76122), 1.5)  # US100

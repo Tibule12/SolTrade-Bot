@@ -86,6 +86,7 @@ required_patterns=(
   'PROFIT_THRESHOLD_TOLERANCE_R 0.005'
   'ReachedApproximateR'
   'NetProtectedFloorPrice'
+  'ConfirmedProfitMinimumNetR=0.10'
   'M5_M15_DIRECTIONAL_CONFLICT'
   'MAX_GIVEBACK_R'
   'MAX_GIVEBACK_DOLLARS'

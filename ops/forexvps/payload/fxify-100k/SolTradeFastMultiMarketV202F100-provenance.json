@@ -1,10 +1,10 @@
 {
   "account": 7198096,
-  "approved_preset_sha256": "22e57d8ab8cba11c8c6ff1c540716dd4ee5ba07d34e6dd8d2d75870b84c53226",
-  "approved_source_sha256": "099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95",
+  "approved_preset_sha256": "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643",
+  "approved_source_sha256": "7f9e64443853387de2fe3aef86879dceb5710f6cf04f05acb7cab87f0cdb5429",
   "final_activation_gate": "GLOBAL_MT5_ALGO_TRADING_OFF",
-  "generated_preset_sha256": "eac06ea16ead74b1a24419b7b4730bf83e1da3a84e50940d461342f05ee4ab67",
-  "generated_source_sha256": "961add4899821fd2bb03d3d11d6075a086aaedf3b7059c4fb635a0e1a3041ea2",
+  "generated_preset_sha256": "172d9c0be5bde1964e6aad193ff7d9276097d06f8d1c17e06754637ec5bb1b4a",
+  "generated_source_sha256": "3ea787c24884fac8696fabb266dd59b7ada17e95faaa9432a7b6a3e8ec2a7590",
   "magic": 2108202620,
   "min_reward_r": 1.15,
   "ownership_instance": "vps-fxify-100k-prod",
@@ -22,7 +22,8 @@
   "server": "FXIFY-Server",
   "strategy_changes": [
     "complete_admission_persistence",
-    "first_adverse_tick_scratch_retired"
+    "first_adverse_tick_scratch_retired",
+    "confirmed_profit_net_floor_positive"
   ],
   "strategy_version": "2.202",
   "target": "fxify-100k"

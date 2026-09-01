@@ -42,9 +42,17 @@ function Read-KeyValueFile([string]$Path) {
 }
 
 function Write-AtomicText([string]$Path,[string[]]$Lines) {
-    $temporary = "$Path.$PID.tmp"
+    $temporary = "$Path.$PID.$([Guid]::NewGuid().ToString('N')).tmp"
     [IO.File]::WriteAllLines($temporary,$Lines,[Text.UTF8Encoding]::new($false))
-    Move-Item -Force -LiteralPath $temporary -Destination $Path
+    for ($attempt = 0; $attempt -lt 12; $attempt++) {
+        try {
+            Move-Item -Force -LiteralPath $temporary -Destination $Path -ErrorAction Stop
+            return
+        } catch [IO.IOException] {
+            if ($attempt -eq 11) { throw }
+            Start-Sleep -Milliseconds 25
+        }
+    }
 }
 
 function Write-Audit([string]$Event,[hashtable]$Lease,[string]$PermitState,[string]$Detail) {

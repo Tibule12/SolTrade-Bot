@@ -9,8 +9,8 @@ import json
 from pathlib import Path
 
 
-APPROVED_SOURCE_SHA256 = "099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95"
-APPROVED_PRESET_SHA256 = "22e57d8ab8cba11c8c6ff1c540716dd4ee5ba07d34e6dd8d2d75870b84c53226"
+APPROVED_SOURCE_SHA256 = "7f9e64443853387de2fe3aef86879dceb5710f6cf04f05acb7cab87f0cdb5429"
+APPROVED_PRESET_SHA256 = "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643"
 ALLOWED = {
     "fxify-10k": {
         "account": 7196820,
@@ -128,7 +128,10 @@ def build(source: Path, preset: Path, target: str, output: Path) -> dict[str, ob
         "approved_preset_sha256": APPROVED_PRESET_SHA256,
         "generated_source_sha256": sha256(source_out),
         "generated_preset_sha256": sha256(preset_out),
-        "strategy_changes": ["complete_admission_persistence", "first_adverse_tick_scratch_retired"],
+        "strategy_changes": [
+            "complete_admission_persistence", "first_adverse_tick_scratch_retired",
+            "confirmed_profit_net_floor_positive",
+        ],
         "portability_changes": [
             "account_and_server_guard", "account_unique_magic", "account_unique_file_common_namespace",
             "account_unique_terminal_global_prefix", "account_unique_ownership_lease",

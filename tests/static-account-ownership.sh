@@ -40,6 +40,11 @@ for pattern in \
   rg -q "$pattern" "$authority"
 done
 
+rg -q 'for \(\$attempt = 0; \$attempt -lt 12; \$attempt\+\+\)' "$authority"
+rg -q 'catch \[IO.IOException\]' "$authority"
+rg -q 'for\(int attempt=0;attempt<8;attempt\+\+\)' "$source_file"
+rg -q 'FILE_SHARE_READ|FILE_SHARE_WRITE' "$source_file"
+
 if rg -q 'OwnershipEligible=true|OwnershipClaimSecret=[^[:space:]]' "$laptop_set"; then
   echo 'laptop preset can obtain production ownership' >&2
   exit 1

@@ -37,6 +37,10 @@ input double MinAbsoluteAdmissionScore=60.0;
 input int    MinSameSymbolReentryMinutes=30;
 input double MinReentrySeparationAtr=0.50;
 input int    MaxSlippagePoints=12;
+// Once a trade has proved at least +0.50R, the broker-side floor must model a
+// positive result after round-trip commission. This prevents a confirmed
+// profitable trade from deliberately retaining a negative protection floor.
+input double ConfirmedProfitMinimumNetR=0.10;
 // Retired after live evidence showed that the first adverse executable tick
 // converted ordinary post-fill noise into repeated cost-bearing losses. The
 // broker structural SL, thesis invalidation, and runner remain authoritative.
@@ -335,7 +339,7 @@ void LogOwnershipState(const string state,const string detail)
 
 bool WriteOwnershipMessage(const string path,const string state,const bool include_secret)
   {
-   string temporary=path+".tmp";
+   string temporary=path+"."+IntegerToString((long)GetTickCount64())+".tmp";
    int h=FileOpen(temporary,FILE_WRITE|FILE_TXT|FILE_ANSI);
    if(h==INVALID_HANDLE) return false;
    FileWriteString(h,"schema=SOLTRADE_ACCOUNT_OWNERSHIP_V1\r\n");
@@ -348,8 +352,17 @@ bool WriteOwnershipMessage(const string path,const string state,const bool inclu
    FileWriteString(h,"requested_ttl_seconds="+IntegerToString(OwnershipLeaseTtlSeconds)+"\r\n");
    if(include_secret) FileWriteString(h,"claim_secret="+OwnershipClaimSecret+"\r\n");
    FileFlush(h); FileClose(h);
-   FileDelete(path);
-   return FileMove(temporary,0,path,FILE_REWRITE);
+   // The authority may be reading the previous heartbeat for a few
+   // milliseconds. Bounded retries avoid turning that harmless sharing race
+   // into a 15-second ownership outage; failure still remains fail-closed.
+   for(int attempt=0;attempt<8;attempt++)
+     {
+      FileDelete(path);
+      if(FileMove(temporary,0,path,FILE_REWRITE)) return true;
+      Sleep(10);
+     }
+   FileDelete(temporary);
+   return false;
   }
 
 void RefreshOwnershipClaim(const bool force=false)
@@ -378,7 +391,12 @@ bool ReadOwnershipPermit(string &reason)
    g_ownership_acquired_epoch=0;
    g_ownership_renewed_epoch=0;
    g_ownership_expires_epoch=0;
-   int h=FileOpen(OwnershipPermitPath(),FILE_READ|FILE_TXT|FILE_ANSI);
+   int h=INVALID_HANDLE;
+   for(int attempt=0;attempt<5 && h==INVALID_HANDLE;attempt++)
+     {
+      h=FileOpen(OwnershipPermitPath(),FILE_READ|FILE_TXT|FILE_ANSI|FILE_SHARE_READ|FILE_SHARE_WRITE);
+      if(h==INVALID_HANDLE) Sleep(10);
+     }
    if(h==INVALID_HANDLE) { reason="PERMIT_FILE_MISSING"; return false; }
    string schema="",state="",account="",instance="",host="",runtime="";
    while(!FileIsEnding(h))
@@ -1977,7 +1995,7 @@ void ResetRunnerState(RunnerState &state)
 double MinimumProtectedR(const double peak_r)
   {
    if(peak_r<0.50) return -1.0;
-   if(peak_r<0.75) return -0.05;
+   if(peak_r<0.75) return ConfirmedProfitMinimumNetR;
    if(peak_r<1.00) return 0.10;
    return MathMax(0.25,peak_r-MathMax(0.75,0.40*peak_r));
   }
@@ -2701,7 +2719,7 @@ int OnInit()
       MinStableSignalScans!=3 || MinSignalPersistenceSeconds!=30 || MaxEntryDriftM5Atr!=0.60 ||
       MaxM5SwingExtensionAtr!=1.75 || MaxBreakoutExtensionM5Atr!=0.75 ||
       MaxConfirmationOpportunityConsumed!=0.35 || MinAbsoluteAdmissionScore!=60.0 ||
-      MinSameSymbolReentryMinutes!=30 || MinReentrySeparationAtr!=0.50 ||
+      MinSameSymbolReentryMinutes!=30 || MinReentrySeparationAtr!=0.50 || ConfirmedProfitMinimumNetR!=0.10 ||
       ImmediateDirectionalScratchEnabled)
      { AppendLifecycle("EA_INITIALIZATION_REFUSED","FROZEN_PORTFOLIO_POLICY_MISMATCH"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED FROZEN_PORTFOLIO_POLICY_MISMATCH"); return INIT_PARAMETERS_INCORRECT; }
    if(!SelectUniverse()) { AppendLifecycle("EA_INITIALIZATION_REFUSED","NO_UNIVERSE_SYMBOL_AVAILABLE"); Print("SOLTRADE_FAST_MULTI_INIT_REFUSED NO_UNIVERSE_SYMBOL_AVAILABLE"); return INIT_FAILED; }

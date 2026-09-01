@@ -18,8 +18,8 @@ $instances = @(
         preset='payload\fp-demo\SolTradeFastMultiMarketV2-FPMarkets-demo.set';
         startup='runtime\fp-demo.ini'; state_dir='SolTradeFastMultiMarketV2';
         magic=2108202601; order_permission='ENABLED_FP_DEMO'; ownership_instance='vps-fp-prod'; profile='SolTradeV202FP';
-        expected_source_sha='099d7eefca731abc72c4b140e72671496184dbee88f948b7841f6e48324f2d95';
-        expected_binary_sha='9a7ac91da81975f9950e6ec3952076e24e787954af5af1c1ac722331eb8f1398'
+        expected_source_sha='7f9e64443853387de2fe3aef86879dceb5710f6cf04f05acb7cab87f0cdb5429';
+        expected_binary_sha='b53a7e6d74cff2488b338a21017f3a7c1836b3bb6330ccb312547c5e4e1975a4'
     },
     [ordered]@{
         id='fxify-10k'; account=7196820; server='FXIFY-Server'; version='2.202';
@@ -29,8 +29,8 @@ $instances = @(
         preset='payload\fxify-10k\SolTradeFastMultiMarketV202F10-FINAL-ALGO-OFF.set';
         startup='runtime\fxify-10k.ini'; state_dir='SolTradeFastMultiMarketV2F10';
         magic=2108202610; order_permission='ENABLED_USER_ACTIVATED'; ownership_instance='vps-fxify-10k-prod'; profile='SolTradeV202F10';
-        expected_source_sha='0a69d32560761153e78379fcca05e29cda0c285264a34894935a47a2605c570f';
-        expected_binary_sha='db188505fb586eab6d0af907cbff07328f30d2c0ff4d7564bdeb4fedd6c566a5'
+        expected_source_sha='7efbe782ba6be7dbe98a114a0ba844430adbb6b5eafef5bf7d77e3491bc59aed';
+        expected_binary_sha='23b2c42dc291f3ce7fe672f7cbfccad0e4d11b77a79e220638732dbe1d0bc0cc'
     },
     [ordered]@{
         id='fxify-100k'; account=7198096; server='FXIFY-Server'; version='2.202';
@@ -40,8 +40,8 @@ $instances = @(
         preset='payload\fxify-100k\SolTradeFastMultiMarketV202F100-FINAL-ALGO-OFF.set';
         startup='runtime\fxify-100k.ini'; state_dir='SolTradeFastMultiMarketV2F100';
         magic=2108202620; order_permission='ENABLED_USER_ACTIVATED'; ownership_instance='vps-fxify-100k-prod'; profile='SolTradeV202F100';
-        expected_source_sha='961add4899821fd2bb03d3d11d6075a086aaedf3b7059c4fb635a0e1a3041ea2';
-        expected_binary_sha='a7fcbf3b68e5c7955a4cf363f551e67d8da51f59a52dfd337355f0587f3c4b55'
+        expected_source_sha='3ea787c24884fac8696fabb266dd59b7ada17e95faaa9432a7b6a3e8ec2a7590';
+        expected_binary_sha='c5855b89a57ecfa7770344955ec9f5a5bb9da09ae339426c40729c1939895ba5'
     }
 )
 
