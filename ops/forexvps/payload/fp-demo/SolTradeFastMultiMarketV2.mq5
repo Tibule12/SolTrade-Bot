@@ -116,6 +116,22 @@ struct MarketScore
    double factor_alignment;
    double trend_m5;
    double trend_m15;
+   long tick_time_msc;
+   datetime completed_m1_bar_time;
+   double trend_m1;
+   double path_efficiency_m1;
+   int m1_pullback_shift;
+   datetime m1_pullback_time;
+   double m1_pullback_depth_atr;
+   double m1_reclaim_level;
+   double m1_reclaim_distance_atr;
+   bool m1_reclaim_confirmed;
+   double m1_breakout_anchor;
+   int m1_breakout_retention_bars;
+   bool m1_breakout_retained;
+   bool m1_breakout_failed;
+   bool m1_shadow_would_confirm;
+   string m1_shadow_evidence;
    bool bullish_structure;
    bool bearish_structure;
    double entry;
@@ -1120,6 +1136,59 @@ double PathEfficiency(MqlRates &rates[],const int count)
    return travelled>0?MathAbs(rates[1].close-rates[count+1].close)/travelled:0;
   }
 
+void BuildM1EntryEvidence(MqlRates &m1[],const int direction,const double atr1,
+                          const bool aligned_breakout,const double breakout_anchor,
+                          MarketScore &out)
+  {
+   // Research-only evidence. These fields are written to a separate shadow
+   // stream and are deliberately absent from every live admission/order gate.
+   out.completed_m1_bar_time=m1[1].time;
+   out.m1_pullback_shift=0;
+   out.m1_pullback_time=0;
+   out.m1_pullback_depth_atr=0;
+   out.m1_reclaim_level=0;
+   out.m1_reclaim_distance_atr=0;
+   out.m1_reclaim_confirmed=false;
+   for(int shift=2;shift<=4;shift++)
+     {
+      double signed_body=direction*(m1[shift].close-m1[shift].open);
+      double prior_close=m1[shift+1].close;
+      bool retraced=direction>0?m1[shift].low<prior_close:m1[shift].high>prior_close;
+      if(signed_body>=0 || !retraced) continue;
+      out.m1_pullback_shift=shift;
+      out.m1_pullback_time=m1[shift].time;
+      out.m1_reclaim_level=direction>0?m1[shift].high:m1[shift].low;
+      double adverse_extreme=direction>0?m1[shift].low:m1[shift].high;
+      out.m1_pullback_depth_atr=direction*(prior_close-adverse_extreme)/MathMax(atr1,DBL_EPSILON);
+      break;
+     }
+   if(out.m1_pullback_shift>0)
+     {
+      out.m1_reclaim_distance_atr=direction*(m1[1].close-out.m1_reclaim_level)/MathMax(atr1,DBL_EPSILON);
+      out.m1_reclaim_confirmed=direction*(m1[1].close-out.m1_reclaim_level)>0 &&
+                               direction*(m1[1].close-m1[1].open)>0;
+     }
+
+   out.m1_breakout_anchor=breakout_anchor;
+   out.m1_breakout_retention_bars=0;
+   if(aligned_breakout && breakout_anchor>0)
+      for(int shift=1;shift<=5;shift++)
+        {
+         if(direction*(m1[shift].close-breakout_anchor)<=0) break;
+         out.m1_breakout_retention_bars++;
+        }
+   out.m1_breakout_retained=aligned_breakout && out.m1_breakout_retention_bars>=2;
+   out.m1_breakout_failed=aligned_breakout && breakout_anchor>0 &&
+                          direction*(m1[1].close-breakout_anchor)<=0;
+   out.m1_shadow_would_confirm=out.m1_reclaim_confirmed || out.m1_breakout_retained;
+   if(out.m1_reclaim_confirmed && out.m1_breakout_retained) out.m1_shadow_evidence="PULLBACK_RECLAIM_AND_BREAKOUT_RETAINED";
+   else if(out.m1_reclaim_confirmed) out.m1_shadow_evidence="PULLBACK_RECLAIM_CONFIRMED";
+   else if(out.m1_breakout_retained) out.m1_shadow_evidence="BREAKOUT_RETAINED_TWO_COMPLETED_M1_BARS";
+   else if(out.m1_breakout_failed) out.m1_shadow_evidence="BREAKOUT_FAILED_ON_COMPLETED_M1_CLOSE";
+   else if(out.m1_pullback_shift>0) out.m1_shadow_evidence="PULLBACK_WITHOUT_RECLAIM";
+   else out.m1_shadow_evidence="NO_NEW_M1_CONFIRMATION";
+  }
+
 string ContextLabel(const double trend,const double efficiency)
   {
    if(efficiency<0.24) return "RANGE_CHOP";
@@ -1322,6 +1391,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
 
    long reference_msc=(long)TimeTradeServer()*1000;
    out.fresh=MathMax(0.0,(reference_msc-tick.time_msc)/1000.0)<=MaxTickAgeSeconds;
+   out.tick_time_msc=tick.time_msc;
    out.bid=tick.bid; out.ask=tick.ask;
    out.point=SymbolInfoDouble(out.symbol,SYMBOL_POINT);
    out.tick_size=SymbolInfoDouble(out.symbol,SYMBOL_TRADE_TICK_SIZE);
@@ -1342,13 +1412,15 @@ bool ScoreSymbol(const int index,MarketScore &out)
    if(out.atr<=0 || atr15<=0) { out.reason="ATR_INVALID"; return true; }
    out.spread_atr_pct=100.0*out.spread/out.atr;
 
-   double t1=TrendStrength(m1,8,30,AverageRange(m1,1,20));
+   double atr1=AverageRange(m1,1,20);
+   double t1=TrendStrength(m1,8,30,atr1);
    double t5=TrendStrength(m5,8,30,out.atr);
    double t15=TrendStrength(m15,6,24,atr15);
    double t60=TrendStrength(h1,4,16,AverageRange(h1,1,14));
    double e1=PathEfficiency(m1,20),e5=PathEfficiency(m5,18),e15=PathEfficiency(m15,12),e60=PathEfficiency(h1,8);
    out.context_m1=ContextLabel(t1,e1); out.context_m5=ContextLabel(t5,e5);
    out.context_m15=ContextLabel(t15,e15); out.context_h1=ContextLabel(t60,e60);
+   out.trend_m1=t1; out.path_efficiency_m1=e1;
    out.path_efficiency=e5;
    out.path_impulse=(m5[1].close-m5[13].close)/out.atr;
    double recent_momentum=(m5[1].close-m5[4].close)/out.atr;
@@ -1432,6 +1504,7 @@ bool ScoreSymbol(const int index,MarketScore &out)
    out.impulse_extension_m5_atr=out.direction*(out.entry-m5[7].close)/out.atr;
    double breakout_anchor=out.direction>0?prior_high:prior_low;
    out.breakout_extension_m5_atr=aligned_breakout?out.direction*(out.entry-breakout_anchor)/out.atr:0;
+   BuildM1EntryEvidence(m1,out.direction,atr1,aligned_breakout,breakout_anchor,out);
    double expansion_buffer=(0.18+0.22*Clamp(out.volatility_expansion-1.0,0.0,1.5))*out.atr+2.0*out.spread;
    out.expansion_buffer=expansion_buffer;
    double stop_distance=out.direction>0?out.entry-invalidation+expansion_buffer:invalidation-out.entry+expansion_buffer;
@@ -2582,6 +2655,38 @@ void AppendStructureTelemetry()
    FileFlush(h); FileClose(h);
   }
 
+void AppendM1EntryEvidenceShadow()
+  {
+   string path="SolTradeFastMultiMarketV2\\m1-entry-evidence-shadow-v1-"+CompactUtcDay(TimeGMT())+".csv";
+   int h=FileOpen(path,FILE_READ|FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(h==INVALID_HANDLE) return;
+   if(FileSize(h)==0)
+      FileWrite(h,"schema","scan_sequence","utc","sast","rank","intended_market","resolved_broker_symbol",
+         "candidate_direction","tick_time_msc","bid","ask","completed_m1_bar_time","trend_m1","path_efficiency_m1",
+         "m1_pullback_shift","m1_pullback_time","m1_pullback_depth_atr","m1_reclaim_level","m1_reclaim_distance_atr",
+         "m1_reclaim_confirmed","m1_breakout_anchor","m1_breakout_retention_bars","m1_breakout_retained",
+         "m1_breakout_failed","m1_shadow_evidence","m1_shadow_would_confirm","complete_admission_qualified",
+         "live_eligible","live_rejection_reason","setup_key","admission_state_key","live_admission_unchanged","order_influence");
+   FileSeek(h,0,SEEK_END);
+   for(int rank=0;rank<ArraySize(g_ranked);rank++)
+     {
+      MarketScore s=g_ranked[rank];
+      int index=s.source_index;
+      string intended=index>=0 && index<SYMBOL_COUNT?BASE_SYMBOLS[index]:"UNKNOWN";
+      FileWrite(h,"SOLTRADE_FAST_MULTI_V202_M1_ENTRY_EVIDENCE_SHADOW_V1",g_scan_sequence,UtcStamp(),SastStamp(),rank+1,
+         intended,s.symbol,DirectionText(s.direction),s.tick_time_msc,DoubleToString(s.bid,s.digits),DoubleToString(s.ask,s.digits),
+         TimeToString(s.completed_m1_bar_time,TIME_DATE|TIME_SECONDS),DoubleToString(s.trend_m1,6),
+         DoubleToString(s.path_efficiency_m1,6),s.m1_pullback_shift,
+         TimeToString(s.m1_pullback_time,TIME_DATE|TIME_SECONDS),DoubleToString(s.m1_pullback_depth_atr,6),
+         DoubleToString(s.m1_reclaim_level,s.digits),DoubleToString(s.m1_reclaim_distance_atr,6),
+         BoolText(s.m1_reclaim_confirmed),DoubleToString(s.m1_breakout_anchor,s.digits),s.m1_breakout_retention_bars,
+         BoolText(s.m1_breakout_retained),BoolText(s.m1_breakout_failed),s.m1_shadow_evidence,
+         BoolText(s.m1_shadow_would_confirm),BoolText(s.complete_admission_qualified),BoolText(s.eligible),s.reason,
+         s.setup_key,s.admission_state_key,"true","NONE_SHADOW_TELEMETRY_ONLY");
+     }
+   FileFlush(h); FileClose(h);
+  }
+
 void WriteRuntimeStatus()
   {
    int h=FileOpen("SolTradeFastMultiMarketV2\\runtime.csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
@@ -2686,6 +2791,7 @@ void ScanAndAct()
    g_status_reason=reason;
    AppendScanAudit();
    AppendStructureTelemetry();
+   AppendM1EntryEvidenceShadow();
    WriteRuntimeStatus();
    if(g_first_scan_after_recovery)
      {
@@ -2701,7 +2807,7 @@ void ScanAndAct()
 
 int OnInit()
   {
-   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.202;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit");
+   AppendLifecycle("EA_INITIALIZATION_STARTED","version=2.202;isolated_fast_multi_expected=true;entry_permission=enabled;demo_only=true;room_semantics=initial_clean_room_not_take_profit;m1_entry_evidence=shadow_only;live_admission_unchanged=true");
    string reason;
    if(!DemoIdentitySafe(reason))
      {

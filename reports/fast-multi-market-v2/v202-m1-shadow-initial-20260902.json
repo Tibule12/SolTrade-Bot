@@ -1,0 +1,21 @@
+{
+  "complete_admission_rows": 0,
+  "decision": "COLLECT_REAL_TICK_OUTCOMES_BEFORE_ANY_LIVE_ADMISSION_CHANGE",
+  "evidence_counts": {
+    "BREAKOUT_FAILED_ON_COMPLETED_M1_CLOSE": 15,
+    "BREAKOUT_RETAINED_TWO_COMPLETED_M1_BARS": 78,
+    "NO_NEW_M1_CONFIRMATION": 25,
+    "PULLBACK_RECLAIM_AND_BREAKOUT_RETAINED": 7,
+    "PULLBACK_RECLAIM_CONFIRMED": 11,
+    "PULLBACK_WITHOUT_RECLAIM": 168
+  },
+  "independent_complete_admission_events": 0,
+  "live_eligible_rows": 0,
+  "outcome_labels_available": false,
+  "rows": 304,
+  "safe_to_promote_to_live_gate": false,
+  "schema": "SOLTRADE_V202_M1_SHADOW_SUMMARY_V1",
+  "shadow_confirmed_complete_rows": 0,
+  "shadow_is_non_intervening": true,
+  "source": "ops/forexvps/remote-output/m1-entry-evidence-shadow-v1-20260902.csv"
+}
