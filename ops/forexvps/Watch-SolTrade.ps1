@@ -23,7 +23,6 @@ foreach ($account in @(7404213,7196820,7198096)) {
     }
 }
 
-$deferredFxifyAttach = @()
 foreach ($instance in $instances) {
     $terminal = Join-Path $instance.home 'terminal64.exe'
     $escaped = $terminal.Replace('\','\\')
@@ -34,39 +33,21 @@ foreach ($instance in $instances) {
     $runtimeFresh = (Test-Path -LiteralPath $runtime) -and
         (([DateTime]::UtcNow - (Get-Item -LiteralPath $runtime).LastWriteTimeUtc).TotalSeconds -le 45)
     if (-not $process -and (Test-Path $terminal)) {
-        $arguments = @('/portable', "/profile:$($instance.profile)", "/config:$startup")
-        if ($instance.id -like 'fxify-*') {
-            # Reuse the credential saved interactively inside this isolated MT5
-            # data directory.  The account selector prevents MT5 from reopening
-            # the login dialog without putting a password in automation files.
-            # FXIFY restores the broker session asynchronously. Start the clean
-            # profile first, then attach the EA only after the terminal has had
-            # time to authenticate; otherwise OnInit correctly fails closed.
-            $arguments = @('/portable', "/login:$($instance.account)", "/profile:$($instance.profile)")
-            $deferredFxifyAttach += [ordered]@{ instance=$instance; terminal=$terminal; startup=$startup }
-        }
+        # Launch one fully configured process. Starting a second copy later to
+        # "reattach" the EA is unsafe across Windows sessions because MT5's
+        # portable single-instance guard is session-local, not machine-global.
+        $arguments = @('/portable', "/login:$($instance.account)", "/profile:$($instance.profile)", "/config:$startup")
         Start-Process -FilePath $terminal -ArgumentList $arguments -WorkingDirectory $instance.home
         $events += [ordered]@{ id=$instance.id; action='STARTED'; at_utc=[DateTime]::UtcNow.ToString('o') }
     } elseif ($process -and -not $runtimeFresh) {
-        # A terminal window without a fresh EA heartbeat is not healthy. MT5 is
-        # single-instance per portable directory, so this command attaches the
-        # configured EA to the existing authenticated terminal without creating
-        # a second account sender. The EA still needs its ownership permit.
-        $arguments = @('/portable', "/login:$($instance.account)", "/profile:$($instance.profile)", "/config:$startup")
-        Start-Process -FilePath $terminal -ArgumentList $arguments -WorkingDirectory $instance.home
-        $events += [ordered]@{ id=$instance.id; action='EA_REATTACH_REQUESTED_RUNTIME_STALE'; at_utc=[DateTime]::UtcNow.ToString('o') }
+        # Never launch a second process against the same portable directory.
+        # Cross-session MT5 duplicates contend for history/config files and can
+        # each believe they are the directory's primary process. Ownership still
+        # fails closed, but resource usage and scanner health are damaged. Leave
+        # the existing process untouched and make the stale condition auditable.
+        $events += [ordered]@{ id=$instance.id; action='RUNTIME_STALE_EXISTING_PROCESS_FAIL_CLOSED'; at_utc=[DateTime]::UtcNow.ToString('o') }
     } else {
         $events += [ordered]@{ id=$instance.id; action='HEALTHY'; at_utc=[DateTime]::UtcNow.ToString('o') }
-    }
-}
-
-if ($deferredFxifyAttach.Count -gt 0) {
-    Start-Sleep -Seconds 20
-    foreach ($pending in $deferredFxifyAttach) {
-        $instance = $pending.instance
-        $arguments = @('/portable', "/login:$($instance.account)", "/profile:$($instance.profile)", "/config:$($pending.startup)")
-        Start-Process -FilePath $pending.terminal -ArgumentList $arguments -WorkingDirectory $instance.home
-        $events += [ordered]@{ id=$instance.id; action='EA_ATTACHED_AFTER_AUTH_DELAY'; at_utc=[DateTime]::UtcNow.ToString('o') }
     }
 }
 

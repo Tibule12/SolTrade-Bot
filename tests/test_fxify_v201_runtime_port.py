@@ -74,18 +74,23 @@ class FxifyV201RuntimePortTests(unittest.TestCase):
                     Path(temporary) / "out",
                 )
 
-    def test_watchdog_reuses_saved_account_without_enabling_orders(self):
+    def test_watchdog_uses_one_fully_configured_process_and_never_reattaches(self):
         watchdog = (ROOT / "ops" / "forexvps" / "Watch-SolTrade.ps1").read_text(
             encoding="utf-8"
         )
-        self.assertIn('if ($instance.id -like \'fxify-*\')', watchdog)
         self.assertIn('"/login:$($instance.account)"', watchdog)
+        self.assertIn('"/config:$startup"', watchdog)
+        self.assertIn("RUNTIME_STALE_EXISTING_PROCESS_FAIL_CLOSED", watchdog)
+        self.assertNotIn("EA_REATTACH_REQUESTED_RUNTIME_STALE", watchdog)
+        self.assertNotIn("deferredFxifyAttach", watchdog)
 
         for name in ("fxify-10k.ini", "fxify-100k.ini"):
             startup = (ROOT / "ops" / "forexvps" / "runtime" / name).read_text(
                 encoding="utf-8"
             )
-            self.assertIn("AllowLiveTrading=0", startup)
+            # The user has since manually activated both challenge terminals;
+            # watchdog recovery must preserve that explicit runtime state.
+            self.assertIn("AllowLiveTrading=1", startup)
             self.assertIn("Enabled=1", startup)
             self.assertNotRegex(startup, r"(?m)^Account=")
 
