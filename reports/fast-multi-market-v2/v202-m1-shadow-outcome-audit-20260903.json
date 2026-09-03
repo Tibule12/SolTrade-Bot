@@ -1,0 +1,134 @@
+{
+  "admission": {
+    "candidate_rows": 66937,
+    "complete_admission_rows": 21,
+    "eligible_order_rows": 1,
+    "eligible_per_scan_percent": 0.02838489923360772,
+    "independent_complete_states": 3,
+    "one_scan_flash_orders": 0,
+    "persistence_episodes": [
+      {
+        "admission_state_key": "-1337484774",
+        "complete_rows": 9,
+        "direction": "SELL",
+        "eligible_rows": 1,
+        "first_utc": "2026.09.03 01:56:20",
+        "last_utc": "2026.09.03 01:58:20",
+        "m1_confirmed_rows": 0,
+        "m1_evidence": {
+          "PULLBACK_WITHOUT_RECLAIM": 9
+        },
+        "market": "USDJPY"
+      },
+      {
+        "admission_state_key": "-865385664",
+        "complete_rows": 6,
+        "direction": "SELL",
+        "eligible_rows": 0,
+        "first_utc": "2026.09.03 02:00:10",
+        "last_utc": "2026.09.03 02:02:20",
+        "m1_confirmed_rows": 4,
+        "m1_evidence": {
+          "PULLBACK_RECLAIM_CONFIRMED": 4,
+          "PULLBACK_WITHOUT_RECLAIM": 2
+        },
+        "market": "USDJPY"
+      },
+      {
+        "admission_state_key": "209465802",
+        "complete_rows": 6,
+        "direction": "BUY",
+        "eligible_rows": 0,
+        "first_utc": "2026.09.03 02:35:00",
+        "last_utc": "2026.09.03 02:38:20",
+        "m1_confirmed_rows": 3,
+        "m1_evidence": {
+          "BREAKOUT_FAILED_ON_COMPLETED_M1_CLOSE": 1,
+          "BREAKOUT_RETAINED_TWO_COMPLETED_M1_BARS": 3,
+          "PULLBACK_WITHOUT_RECLAIM": 2
+        },
+        "market": "XAUUSD"
+      }
+    ],
+    "scans": 3523,
+    "shadow_order_influence_violations": 0,
+    "top_rejection_gates": {
+      "ABNORMAL_SPREAD": 3483,
+      "EXPECTED_NET_MOVE_INSUFFICIENT_AFTER_COSTS": 783,
+      "HIGH_SPREAD_RELATIVE_TO_M5_ATR": 39070,
+      "INITIAL_CLEAN_ROOM_TOO_SMALL_AFTER_COSTS": 1807,
+      "M15_DIRECTION_UNCONFIRMED": 1004,
+      "M5_DIRECTION_UNCONFIRMED": 1331,
+      "M5_M15_DIRECTIONAL_CONFLICT": 4177,
+      "MOVEMENT_WEAK_RELATIVE_TO_SPREAD": 823,
+      "NO_VALID_DIRECTIONAL_STRUCTURE_OR_TRIGGER": 441,
+      "POST_RECOVERY_HISTORY_WARMUP": 285,
+      "RANGE_CHOP_WITHOUT_STRUCTURAL_TRIGGER": 1656,
+      "STALE_TICK": 11720
+    }
+  },
+  "closed_trades_since_shadow_deployment": [
+    {
+      "admission_score": 66.4097,
+      "behaviour": "STRUCTURE_INSIDE",
+      "direction": "SELL",
+      "entry_price": 158.506,
+      "entry_utc": "2026.09.03 01:58:20",
+      "exit_class": "PROTECTED_STOP_EXIT",
+      "exit_price": 158.141,
+      "exit_utc": "2026.09.03 02:45:17",
+      "final_capture_ratio": 0.647996,
+      "initial_risk_usd": 245.74,
+      "m1_path_efficiency": 0.362998,
+      "m1_shadow_evidence": "PULLBACK_WITHOUT_RECLAIM",
+      "m1_shadow_match_found": true,
+      "m1_shadow_would_confirm": false,
+      "m1_trend": 2.141255,
+      "mae_r_on_initial_risk": -0.16619191014893792,
+      "mae_usd": -40.84,
+      "market": "USDJPY",
+      "mfe_r_on_initial_risk": 3.6564661837714656,
+      "mfe_usd": 898.54,
+      "net_r": 2.369374135264914,
+      "net_usd": 582.25,
+      "protected_r": 2.59328,
+      "regime": "DIRECTIONAL_TRANSITION",
+      "reward_room_r": 1.54067,
+      "runner_peak_r": 3.89347,
+      "strict_m1_gate_counterfactual": "REJECT",
+      "ticket": "394912924",
+      "trend_m15": -0.99199,
+      "trend_m5": -2.42585
+    }
+  ],
+  "fxify_touched_by_audit": false,
+  "generated_utc": "2026-09-03T03:12:41Z",
+  "m1_gate_assessment": {
+    "closed_trade_sample": 1,
+    "decision": "REJECT_CURRENT_STRICT_M1_GATE_KEEP_COLLECTING_SHADOW_DATA",
+    "losing_trades_observed": 0,
+    "outcome_sample_sufficient": false,
+    "reason": "The only closed post-deployment trade was a material winner and the strict M1 gate was false at entry.",
+    "safe_to_promote_to_live_admission": false,
+    "winning_trades_rejected_by_strict_gate": 1
+  },
+  "runtime": {
+    "autonomous_entry": true,
+    "connected": true,
+    "equity": 98923.75,
+    "fp_terminal_count": 1,
+    "healthy": true,
+    "ownership_consistent": true,
+    "ownership_permit": "GRANTED",
+    "pending_orders": 0,
+    "positions": 0,
+    "scanner_live": true,
+    "timestamp_utc": "2026.09.03 03:08:50"
+  },
+  "schema": "SOLTRADE_FP_V202_M1_SHADOW_OUTCOME_AUDIT_V1",
+  "strategy_or_runtime_changes_made_by_audit": false,
+  "telemetry_window": {
+    "end_utc": "2026.09.03 03:08:40",
+    "start_utc": "2026.09.02 17:21:57"
+  }
+}
