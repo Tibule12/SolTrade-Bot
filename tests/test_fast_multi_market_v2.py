@@ -35,12 +35,15 @@ def sized_lots(equity, stop_loss_per_lot, commission_per_lot, step=0.01):
 
 def reversal_allowed(previous_direction, previous_invalidated, previous_setup, direction,
                      setup, structural_reversal, m5, m15, dominates, cost_ok,
-                     elapsed_seconds=1800, new_bar=True, separation_atr=0.5):
+                     elapsed_seconds=1800, new_bar=True, separation_atr=0.5,
+                     opposite_thesis_max_age_seconds=86400):
     if previous_setup and setup == previous_setup:
         return False
     if elapsed_seconds < 1800 or not new_bar or separation_atr < 0.5:
         return False
     if not previous_direction or previous_direction == direction:
+        return True
+    if elapsed_seconds >= opposite_thesis_max_age_seconds:
         return True
     return all((previous_invalidated, structural_reversal, m5, m15, dominates, cost_ok))
 
@@ -436,6 +439,16 @@ class FastMultiV2PolicyTests(unittest.TestCase):
             gates = [True] * 5
             gates[missing] = False
             self.assertFalse(reversal_allowed(*base, *gates))
+
+    def test_opposite_thesis_expires_after_one_day_without_bypassing_churn(self):
+        base = (-1, False, 123, 1, 456, False, True, True, True, True)
+        self.assertFalse(reversal_allowed(*base, elapsed_seconds=86399))
+        self.assertTrue(reversal_allowed(*base, elapsed_seconds=86400))
+        self.assertFalse(reversal_allowed(*base, elapsed_seconds=1799))
+
+    def test_expired_thesis_does_not_allow_same_consumed_setup(self):
+        self.assertFalse(reversal_allowed(-1, False, 123, 1, 123, False, True, True, True, True,
+                                          elapsed_seconds=172800))
 
     def test_six_position_cap(self):
         self.assertTrue(portfolio_safe(5, 0, 0, 1000, 100_000))

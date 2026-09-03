@@ -69,6 +69,7 @@ input int    OwnershipClaimHeartbeatSeconds=2;
 #define TRADE_PHASE_CONFIRMED_PROFIT 1
 #define TRADE_PHASE_RUNNER 2
 #define PROFIT_THRESHOLD_TOLERANCE_R 0.005
+#define OPPOSITE_THESIS_MAX_AGE_SECONDS 86400
 
 string BASE_SYMBOLS[SYMBOL_COUNT]={
    "XAUUSD","USTEC","GBPJPY","XAGUSD","DE30","EURJPY","AUDJPY","USDJPY","GBPUSD",
@@ -1953,6 +1954,7 @@ bool ReversalAndDistinctSetupAllowed(const int index,const MarketScore &candidat
    reason="";
    if(g_last_setup_key[index]!=0 && candidate.setup_key==g_last_setup_key[index])
      { reason="SAME_STRUCTURAL_SETUP_ALREADY_CONSUMED"; return false; }
+   bool prior_thesis_expired=false;
    if(g_last_exit_time[index]>0)
      {
       long elapsed=(long)TimeTradeServer()-g_last_exit_time[index];
@@ -1962,8 +1964,13 @@ bool ReversalAndDistinctSetupAllowed(const int index,const MarketScore &candidat
         { reason="NO_NEW_COMPLETED_M5_STATE_AFTER_EXIT"; return false; }
       if(g_last_exit_price[index]>0 && MathAbs(candidate.entry-g_last_exit_price[index])<MinReentrySeparationAtr*candidate.atr)
         { reason="INSUFFICIENT_STRUCTURAL_PRICE_RESET"; return false; }
+      // A prior direction is intraday context, not a permanent market regime.
+      // Retaining it indefinitely caused a scratch from two days earlier to
+      // suppress a new, fully qualified and persistent opposite setup.
+      prior_thesis_expired=elapsed>=OPPOSITE_THESIS_MAX_AGE_SECONDS;
      }
    if(g_last_exit_direction[index]==0 || g_last_exit_direction[index]==candidate.direction) return true;
+   if(prior_thesis_expired) return true;
    if(!g_last_exit_invalidated[index]) { reason="PREVIOUS_OPPOSITE_THESIS_NOT_EXPLICITLY_INVALIDATED"; return false; }
    double opposite=candidate.direction>0?candidate.sell_score:candidate.buy_score;
    if(!candidate.structural_reversal) { reason="NO_GENUINE_STRUCTURAL_REVERSAL"; return false; }

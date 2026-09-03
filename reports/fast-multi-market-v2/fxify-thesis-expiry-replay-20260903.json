@@ -1,0 +1,76 @@
+{
+  "schema": "SOLTRADE_FXIFY_V202_THESIS_EXPIRY_REPLAY_V1",
+  "strategy_version": "2.202",
+  "scope": "FXIFY 7196820 scan history; 7198096 independently mirrored the same market decisions",
+  "retained_days_utc": [
+    "2026.09.01",
+    "2026.09.02",
+    "2026.09.03"
+  ],
+  "scan_resolution_seconds": 10,
+  "method": "Replay only the bounded prior-opposite-thesis state change. All other recorded admission gates and the complete 30-second persistence requirement remain authoritative. Outcomes use the recorded executable-side scan prices, not invented ticks.",
+  "baseline": {
+    "candidate_rows": 394820,
+    "market_scans": 19888,
+    "broker_orders_submitted": 9,
+    "orders_per_market_scan": 0.0004525342
+  },
+  "corrected": {
+    "candidate_rows": 394820,
+    "market_scans": 19888,
+    "broker_orders_or_replayed_admissions": 10,
+    "orders_per_market_scan": 0.0005028158,
+    "relative_admission_increase": 0.1111111111
+  },
+  "new_admissions": [
+    {
+      "utc": "2026.09.03 14:54:20",
+      "market": "USTEC",
+      "direction": "BUY",
+      "original_gate": "PREVIOUS_OPPOSITE_THESIS_NOT_EXPLICITLY_INVALIDATED",
+      "stale_state_source": "USTEC SELL immediate scratch on 2026.09.01 10:22:12 UTC",
+      "prior_state_age_hours": 52.5356,
+      "complete_persistence_scans": 4,
+      "complete_persistence_seconds": 30,
+      "entry": 29271.30,
+      "structural_stop": 29215.18,
+      "initial_clean_room_r": 1.2202,
+      "admission_score": 68.1560,
+      "spread_to_m5_atr_percent": 1.8441,
+      "movement_to_spread": 55.2778,
+      "maximum_favourable_excursion_r_through_capture": 4.36,
+      "maximum_adverse_excursion_r_through_capture": -0.06,
+      "theoretical_stop_hit_through_capture": false
+    }
+  ],
+  "preserved_rejections": [
+    {
+      "utc": "2026.09.03 02:36:50",
+      "market": "XAUUSD",
+      "direction": "BUY",
+      "reason": "Only one complete scan; still rejected by complete-admission persistence"
+    }
+  ],
+  "retained_history_effects": {
+    "2026.09.01": 0,
+    "2026.09.02": 0,
+    "2026.09.03": 1
+  },
+  "unchanged_controls": [
+    "spread baseline and spread-to-ATR gate",
+    "expected movement after costs",
+    "MinRewardRisk 1.15R",
+    "M5/M15 conflict rejection",
+    "structural stop",
+    "complete admission persistence",
+    "same-setup consumed rejection",
+    "30-minute same-symbol churn cooldown",
+    "new-completed-M5-state requirement",
+    "0.5 ATR re-entry separation",
+    "0.25% risk sizing",
+    "runner and profit protection",
+    "single-writer ownership"
+  ],
+  "decision": "PASS_FOR_FXIFY_DEPLOYMENT_AS_A_BOUNDED_STATE_FIX",
+  "limitations": "This removes one proven indefinite veto. It does not establish future profitability and does not justify loosening other gates."
+}

@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 
-APPROVED_SOURCE_SHA256 = "7f9e64443853387de2fe3aef86879dceb5710f6cf04f05acb7cab87f0cdb5429"
+APPROVED_SOURCE_SHA256 = "155cb0b9dcea6192c82584404eb36759e9baf0afbc71b699071d8bb387eee011"
 APPROVED_PRESET_SHA256 = "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643"
 ALLOWED = {
     "fxify-10k": {
@@ -130,7 +130,7 @@ def build(source: Path, preset: Path, target: str, output: Path) -> dict[str, ob
         "generated_preset_sha256": sha256(preset_out),
         "strategy_changes": [
             "complete_admission_persistence", "first_adverse_tick_scratch_retired",
-            "confirmed_profit_net_floor_positive",
+            "confirmed_profit_net_floor_positive", "bounded_opposite_thesis_lifetime",
         ],
         "portability_changes": [
             "account_and_server_guard", "account_unique_magic", "account_unique_file_common_namespace",

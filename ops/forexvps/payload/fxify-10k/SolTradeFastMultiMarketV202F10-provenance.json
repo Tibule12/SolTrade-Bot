@@ -1,10 +1,10 @@
 {
   "account": 7196820,
   "approved_preset_sha256": "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643",
-  "approved_source_sha256": "7f9e64443853387de2fe3aef86879dceb5710f6cf04f05acb7cab87f0cdb5429",
+  "approved_source_sha256": "155cb0b9dcea6192c82584404eb36759e9baf0afbc71b699071d8bb387eee011",
   "final_activation_gate": "GLOBAL_MT5_ALGO_TRADING_OFF",
   "generated_preset_sha256": "c901f9ae8a707e7d9203cc91d335cdc811c497dfcbd58fd8dd2c0ca9443a7ffb",
-  "generated_source_sha256": "7efbe782ba6be7dbe98a114a0ba844430adbb6b5eafef5bf7d77e3491bc59aed",
+  "generated_source_sha256": "f10374a87626f8e3eb575408438c153744bb62cd7b7ce98e501c8a0eb45e0fac",
   "magic": 2108202610,
   "min_reward_r": 1.15,
   "ownership_instance": "vps-fxify-10k-prod",
@@ -23,7 +23,8 @@
   "strategy_changes": [
     "complete_admission_persistence",
     "first_adverse_tick_scratch_retired",
-    "confirmed_profit_net_floor_positive"
+    "confirmed_profit_net_floor_positive",
+    "bounded_opposite_thesis_lifetime"
   ],
   "strategy_version": "2.202",
   "target": "fxify-10k"
