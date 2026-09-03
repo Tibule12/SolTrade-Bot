@@ -1,0 +1,32 @@
+{
+  "schema": "SOLTRADE_FP_V202_THESIS_EXPIRY_REPLAY_V1",
+  "strategy_version": "2.202",
+  "retained_days_utc": ["2026.09.02", "2026.09.03"],
+  "candidate_rows": 245328,
+  "market_scans": 10518,
+  "new_admissions": [
+    {
+      "utc": "2026.09.03 14:57:00",
+      "market": "USTEC",
+      "direction": "BUY",
+      "original_gate": "PREVIOUS_OPPOSITE_THESIS_NOT_EXPLICITLY_INVALIDATED",
+      "complete_persistence_scans": 4,
+      "complete_persistence_seconds": 30,
+      "entry": 29274.55,
+      "structural_stop": 29220.08,
+      "initial_clean_room_r": 1.2012,
+      "maximum_favourable_excursion_r_through_capture": 4.459,
+      "maximum_adverse_excursion_r_through_capture": -0.006,
+      "theoretical_stop_hit_through_capture": false
+    }
+  ],
+  "unchanged": [
+    "M1 shadow telemetry",
+    "all admission thresholds",
+    "complete-admission persistence",
+    "structural stop and risk sizing",
+    "runner and profit protection",
+    "ownership and watchdog"
+  ],
+  "decision": "PASS_FOR_FP_DEMO_DEPLOYMENT"
+}
