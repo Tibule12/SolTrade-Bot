@@ -1,0 +1,350 @@
+{
+  "schema": "SOLTRADE_V202_ADMISSION_WALK_FORWARD_V1",
+  "orders_placed": false,
+  "strategy_changed": false,
+  "deployment_performed": false,
+  "features": [
+    "score",
+    "room_r",
+    "spread_atr",
+    "drift_atr",
+    "impulse_atr",
+    "session_asia",
+    "session_london",
+    "session_overlap"
+  ],
+  "development_days": [
+    "2026.08.26",
+    "2026.08.27"
+  ],
+  "validation_days": [
+    "2026.08.28"
+  ],
+  "later_live_days": [
+    "2026.08.31",
+    "2026.09.01",
+    "2026.09.03"
+  ],
+  "selected_probability_threshold": 0.5,
+  "model": {
+    "means": {
+      "score": 62.17639523809524,
+      "room_r": 0.39205238095238093,
+      "spread_atr": 6.704839682539682,
+      "drift_atr": -0.2828868253968254,
+      "impulse_atr": 0.9424515873015873,
+      "session_asia": 0.19047619047619047,
+      "session_london": 0.2857142857142857,
+      "session_overlap": 0.2857142857142857
+    },
+    "scales": {
+      "score": 2.559978069005054,
+      "room_r": 0.39329600785657404,
+      "spread_atr": 12.141706410531281,
+      "drift_atr": 0.5425764495524751,
+      "impulse_atr": 1.3433418011563507,
+      "session_asia": 0.392676726249301,
+      "session_london": 0.45175395145262565,
+      "session_overlap": 0.45175395145262565
+    },
+    "intercept": -0.7389930912433593,
+    "coefficients": {
+      "score": 0.24558749558579063,
+      "room_r": 0.28009549170134396,
+      "spread_atr": -1.3195014690420455,
+      "drift_atr": 0.07849743892191477,
+      "impulse_atr": -0.13038964319865826,
+      "session_asia": 0.045406548610850764,
+      "session_london": -0.21927333038710362,
+      "session_overlap": 0.008725118483653494
+    }
+  },
+  "development": {
+    "available": 63,
+    "accepted": 16,
+    "admission_rate": 0.25397,
+    "winners": 11,
+    "losses": 5,
+    "win_rate": 0.6875,
+    "mean_net_r": 0.39719,
+    "aggregate_net_r": 6.35509,
+    "wilson_lower_95": 0.44404
+  },
+  "untouched_shadow_validation": {
+    "available": 61,
+    "accepted": 21,
+    "admission_rate": 0.34426,
+    "winners": 15,
+    "losses": 6,
+    "win_rate": 0.71429,
+    "mean_net_r": 0.00417,
+    "aggregate_net_r": 0.08754,
+    "wilson_lower_95": 0.50043
+  },
+  "later_live_holdout": {
+    "available": 13,
+    "accepted": 13,
+    "admission_rate": 1.0,
+    "winners": 5,
+    "losses": 8,
+    "win_rate": 0.38462,
+    "mean_net_r": 0.08125,
+    "aggregate_net_r": 1.05623,
+    "wilson_lower_95": 0.17709
+  },
+  "later_live_predictions": [
+    {
+      "day": "2026.08.31",
+      "source": "LIVE_AUG31",
+      "key": "2026.08.31 00:13|US100|SELL|",
+      "probability": 0.88838,
+      "accepted": true,
+      "actual_net_r": -1.0,
+      "won": false,
+      "features": {
+        "score": 79.707,
+        "room_r": 1.19103,
+        "spread_atr": 2.235525778937814,
+        "drift_atr": -1.62076,
+        "impulse_atr": 0.49368,
+        "session_asia": 1.0,
+        "session_london": 0.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.08.31",
+      "source": "LIVE_AUG31",
+      "key": "2026.08.31 02:54|XAUUSD|SELL|",
+      "probability": 0.95561,
+      "accepted": true,
+      "actual_net_r": -1.0,
+      "won": false,
+      "features": {
+        "score": 88.5511,
+        "room_r": 1.18031,
+        "spread_atr": 0.9202445501211085,
+        "drift_atr": -1.51431,
+        "impulse_atr": 0.53579,
+        "session_asia": 1.0,
+        "session_london": 0.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.08.31",
+      "source": "LIVE_AUG31",
+      "key": "2026.08.31 06:02|GER40|BUY|",
+      "probability": 0.73448,
+      "accepted": true,
+      "actual_net_r": -0.99992,
+      "won": false,
+      "features": {
+        "score": 63.8157,
+        "room_r": 1.53029,
+        "spread_atr": 4.214336943586933,
+        "drift_atr": -0.01686,
+        "impulse_atr": -1.66045,
+        "session_asia": 1.0,
+        "session_london": 0.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.08.31",
+      "source": "LIVE_AUG31",
+      "key": "2026.08.31 08:17|EURUSD|BUY|",
+      "probability": 0.57443,
+      "accepted": true,
+      "actual_net_r": -1.0,
+      "won": false,
+      "features": {
+        "score": 63.3399,
+        "room_r": 1.36965,
+        "spread_atr": 2.941181597611932,
+        "drift_atr": 0.32353,
+        "impulse_atr": -0.17647,
+        "session_asia": 0.0,
+        "session_london": 1.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.08.31",
+      "source": "LIVE_AUG31",
+      "key": "2026.08.31 15:06|GER40|SELL|",
+      "probability": 0.93383,
+      "accepted": true,
+      "actual_net_r": 0.15512,
+      "won": true,
+      "features": {
+        "score": 85.1517,
+        "room_r": 1.17028,
+        "spread_atr": 2.3890741456394937,
+        "drift_atr": -0.23891,
+        "impulse_atr": 0.71672,
+        "session_asia": 0.0,
+        "session_london": 0.0,
+        "session_overlap": 1.0
+      }
+    },
+    {
+      "day": "2026.09.01",
+      "source": "LIVE_SEP01",
+      "key": "2026.09.01 10:20|XAUUSD|SELL|-765787243",
+      "probability": 0.72755,
+      "accepted": true,
+      "actual_net_r": -0.03259,
+      "won": false,
+      "features": {
+        "score": 65.5168,
+        "room_r": 1.58371,
+        "spread_atr": 1.247136638692323,
+        "drift_atr": 0.05167,
+        "impulse_atr": -1.99186,
+        "session_asia": 0.0,
+        "session_london": 1.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.01",
+      "source": "LIVE_SEP01",
+      "key": "2026.09.01 10:21|GER40|SELL|-1918365105",
+      "probability": 0.63254,
+      "accepted": true,
+      "actual_net_r": -0.04741,
+      "won": false,
+      "features": {
+        "score": 62.8833,
+        "room_r": 1.46547,
+        "spread_atr": 2.134140561521952,
+        "drift_atr": -0.2561,
+        "impulse_atr": -2.39024,
+        "session_asia": 0.0,
+        "session_london": 1.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.01",
+      "source": "LIVE_SEP01",
+      "key": "2026.09.01 10:22|US100|SELL|-1191258532",
+      "probability": 0.59934,
+      "accepted": true,
+      "actual_net_r": -0.03183,
+      "won": false,
+      "features": {
+        "score": 64.2688,
+        "room_r": 1.39633,
+        "spread_atr": 3.359999999996404,
+        "drift_atr": -0.154,
+        "impulse_atr": -1.302,
+        "session_asia": 0.0,
+        "session_london": 1.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.01",
+      "source": "LIVE_SEP01",
+      "key": "2026.09.01 13:35|XAUUSD|SELL|-1880732903",
+      "probability": 0.79604,
+      "accepted": true,
+      "actual_net_r": -0.0148,
+      "won": false,
+      "features": {
+        "score": 66.8366,
+        "room_r": 1.36825,
+        "spread_atr": 1.4970968820425032,
+        "drift_atr": 0.11977,
+        "impulse_atr": -1.15704,
+        "session_asia": 0.0,
+        "session_london": 0.0,
+        "session_overlap": 1.0
+      }
+    },
+    {
+      "day": "2026.09.03",
+      "source": "LIVE_SEP02_fp",
+      "key": "2026.09.03 01:58|USDJPY|SELL|-1337484774",
+      "probability": 0.76477,
+      "accepted": true,
+      "actual_net_r": 2.36937,
+      "won": true,
+      "features": {
+        "score": 66.4097,
+        "room_r": 1.54067,
+        "spread_atr": 2.7344,
+        "drift_atr": -0.08203,
+        "impulse_atr": 0.875,
+        "session_asia": 1.0,
+        "session_london": 0.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.03",
+      "source": "LIVE_SEP02_f10+LIVE_SEP02_f100",
+      "key": "2026.09.03 01:58|USDJPY|SELL|-1521828236",
+      "probability": 0.53742,
+      "accepted": true,
+      "actual_net_r": 2.08246,
+      "won": true,
+      "features": {
+        "score": 60.1521,
+        "room_r": 1.34113,
+        "spread_atr": 5.3915,
+        "drift_atr": 0.00899,
+        "impulse_atr": 0.98845,
+        "session_asia": 1.0,
+        "session_london": 0.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.03",
+      "source": "LIVE_SEP02_fp",
+      "key": "2026.09.03 07:38|USDJPY|SELL|-1388500141",
+      "probability": 0.83373,
+      "accepted": true,
+      "actual_net_r": 0.46385,
+      "won": true,
+      "features": {
+        "score": 73.286,
+        "room_r": 1.78553,
+        "spread_atr": 3.6176,
+        "drift_atr": -0.05685,
+        "impulse_atr": -2.13953,
+        "session_asia": 0.0,
+        "session_london": 1.0,
+        "session_overlap": 0.0
+      }
+    },
+    {
+      "day": "2026.09.03",
+      "source": "LIVE_SEP02_f10+LIVE_SEP02_f100",
+      "key": "2026.09.03 14:17|US500|BUY|292781033",
+      "probability": 0.71618,
+      "accepted": true,
+      "actual_net_r": 0.11199,
+      "won": true,
+      "features": {
+        "score": 65.2623,
+        "room_r": 1.47358,
+        "spread_atr": 5.2007,
+        "drift_atr": -0.03171,
+        "impulse_atr": -1.81897,
+        "session_asia": 0.0,
+        "session_london": 0.0,
+        "session_overlap": 1.0
+      }
+    }
+  ],
+  "decision": {
+    "walk_forward_pass": false,
+    "safe_to_implement_in_ea": false,
+    "safe_to_deploy": false,
+    "reason": "OUT_OF_SAMPLE_GATE_FAILED"
+  }
+}

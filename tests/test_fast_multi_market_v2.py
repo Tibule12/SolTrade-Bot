@@ -82,10 +82,12 @@ def minimum_protected_r(peak_r):
     if peak_r < 0.50:
         return -1.0
     if peak_r < 0.75:
-        return 0.10
+        return 0.20
     if peak_r < 1.00:
-        return 0.10
-    return max(0.25, peak_r - max(0.75, 0.40 * peak_r))
+        return 0.35
+    if peak_r < 1.50:
+        return max(0.60, peak_r - 0.65)
+    return max(0.84, max(0.25, peak_r - max(0.75, 0.40 * peak_r)))
 
 
 def contextual_exit(direction, score_direction, trend_m5, trend_m15, opposite_structure,
@@ -482,23 +484,23 @@ class FastMultiV2PolicyTests(unittest.TestCase):
         peaks = (0.0, 0.49, 0.50, 0.74, 0.75, 0.99, 1.0, 1.5, 2.0, 2.76, 4.0)
         floors = [minimum_protected_r(value) for value in peaks]
         self.assertEqual(floors, sorted(floors))
-        self.assertEqual(minimum_protected_r(0.50), 0.10)
-        self.assertEqual(minimum_protected_r(0.75), 0.10)
-        self.assertGreaterEqual(minimum_protected_r(1.0), 0.25)
+        self.assertEqual(minimum_protected_r(0.50), 0.20)
+        self.assertEqual(minimum_protected_r(0.75), 0.35)
+        self.assertGreaterEqual(minimum_protected_r(1.0), 0.60)
         self.assertGreater(minimum_protected_r(2.0), 1.0)
         self.assertGreater(minimum_protected_r(2.76), 1.5)
 
     def test_live_ger40_confirmed_profit_cannot_finish_negative_by_policy(self):
         # 1-Sep live evidence: peak was +0.58477R on FP and +0.61505R on
-        # FXIFY. Both are now protected at a modeled +0.10R net floor instead
-        # of the former -0.05R phase-one floor.
-        self.assertEqual(minimum_protected_r(0.58477), 0.10)
-        self.assertEqual(minimum_protected_r(0.61505), 0.10)
+        # FXIFY. The evidence-selected floor protects a modeled +0.20R net
+        # instead of allowing the observed giveback toward scratch.
+        self.assertEqual(minimum_protected_r(0.58477), 0.20)
+        self.assertEqual(minimum_protected_r(0.61505), 0.20)
 
     def test_historical_runner_failures_cannot_return_to_scratch(self):
         self.assertGreater(minimum_protected_r(2.76122), 1.5)  # US100
         self.assertGreater(minimum_protected_r(2.06923), 1.2)  # XAUUSD
-        self.assertGreater(minimum_protected_r(1.03319), 0.25)  # GER40
+        self.assertGreaterEqual(minimum_protected_r(1.03319), 0.60)  # GER40
 
     def test_recorded_failure_envelope_replay(self):
         # Immutable facts from the 25-Aug forensic snapshot. Rapid churn trades
@@ -525,7 +527,7 @@ class FastMultiV2PolicyTests(unittest.TestCase):
                 continue
             floor = minimum_protected_r(peak)
             replay += round(actual if floor < -0.5 else max(actual, floor * risk + commission), 2)
-        self.assertAlmostEqual(replay, 425.89, places=2)
+        self.assertAlmostEqual(replay, 590.67, places=2)
 
     def test_late_entry_drift_and_extension_are_rejected(self):
         self.assertFalse(entry_not_late(.600001, 1.0))

@@ -1,0 +1,712 @@
+{
+  "schema": "SOLTRADE_V202_INTELLIGENCE_CANDIDATE_REPLAY_V1",
+  "orders_placed": false,
+  "live_strategy_changed": false,
+  "fxify_changed": false,
+  "deployment_performed": false,
+  "telemetry_resolution_seconds": 10,
+  "candidate": {
+    "admission": "calibrate only after minimum independent labeled sample",
+    "early_failure": {
+      "minimum_age_seconds": 300,
+      "maximum_mfe_r": 0.15,
+      "current_r_at_or_below": -0.35,
+      "support_loss_confirmation_minutes": 2
+    },
+    "graduated_net_floor": {
+      "peak_0.50_to_0.75": 0.1,
+      "peak_0.75_to_1.00": 0.25,
+      "peak_1.00_plus_minimum": 0.4
+    }
+  },
+  "calibration": {
+    "status": "INSUFFICIENT_SAMPLE_FAIL_CLOSED",
+    "independent_signals": 16,
+    "winners": 6,
+    "losses": 10,
+    "minimums": {
+      "independent_signals": 100,
+      "winners": 30,
+      "losses": 30
+    },
+    "live_admission_change_authorized": false
+  },
+  "trades": [
+    {
+      "trade": {
+        "day": "2026.08.31",
+        "account": "fp",
+        "ticket": "392697510",
+        "market": "US100",
+        "symbol": "US100",
+        "direction": "SELL",
+        "entry_utc": "2026.08.31 00:13:40",
+        "exit_utc": "2026.08.31 00:31:30",
+        "fill": 29314.9,
+        "stop": 29350.82,
+        "initial_risk": 247.13,
+        "original_net_r": -1.0,
+        "exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+        "admission_score": 79.707,
+        "admission_state_key": ""
+      },
+      "independent_signal_key": "2026.08.31|2026.08.31 00:1|US100|SELL|NO_STATE",
+      "path_observations": 108,
+      "original_net_r": -1.0,
+      "current_floor_model": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.08.31 00:31:30",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.00501,
+        "peak_r": 0.21993
+      },
+      "intelligence_candidate": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.08.31 00:31:30",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.00501,
+        "peak_r": 0.21993
+      },
+      "modeled_change_vs_original_r": 0.0
+    },
+    {
+      "trade": {
+        "day": "2026.08.31",
+        "account": "fp",
+        "ticket": "392852554",
+        "market": "XAUUSD",
+        "symbol": "XAUUSD.r",
+        "direction": "SELL",
+        "entry_utc": "2026.08.31 02:54:30",
+        "exit_utc": "2026.08.31 05:24:47",
+        "fill": 4416.57,
+        "stop": 4434.57,
+        "initial_risk": 234.78,
+        "original_net_r": -1.0,
+        "exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+        "admission_score": 88.5511,
+        "admission_state_key": ""
+      },
+      "independent_signal_key": "2026.08.31|2026.08.31 02:5|XAUUSD|SELL|NO_STATE",
+      "path_observations": 902,
+      "original_net_r": -1.0,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 05:24:40",
+        "modeled_r": -0.96333,
+        "observed_cross_r": null,
+        "peak_r": 0.18
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 05:24:40",
+        "modeled_r": -0.96333,
+        "observed_cross_r": null,
+        "peak_r": 0.18
+      },
+      "modeled_change_vs_original_r": 0.03667
+    },
+    {
+      "trade": {
+        "day": "2026.08.31",
+        "account": "fp",
+        "ticket": "392939109",
+        "market": "GER40",
+        "symbol": "GER40",
+        "direction": "BUY",
+        "entry_utc": "2026.08.31 06:02:20",
+        "exit_utc": "2026.08.31 06:03:29",
+        "fill": 26531.75,
+        "stop": 26516.01,
+        "initial_risk": 246.06,
+        "original_net_r": -0.9999187190116231,
+        "exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+        "admission_score": 63.8157,
+        "admission_state_key": ""
+      },
+      "independent_signal_key": "2026.08.31|2026.08.31 06:0|GER40|BUY|NO_STATE",
+      "path_observations": 7,
+      "original_net_r": -0.99992,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 06:03:20",
+        "modeled_r": -0.79416,
+        "observed_cross_r": null,
+        "peak_r": 0.0
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 06:03:20",
+        "modeled_r": -0.79416,
+        "observed_cross_r": null,
+        "peak_r": 0.0
+      },
+      "modeled_change_vs_original_r": 0.20576
+    },
+    {
+      "trade": {
+        "day": "2026.08.31",
+        "account": "fp",
+        "ticket": "393009376",
+        "market": "EURUSD",
+        "symbol": "EURUSD.r",
+        "direction": "BUY",
+        "entry_utc": "2026.08.31 08:17:10",
+        "exit_utc": "2026.08.31 08:56:05",
+        "fill": 1.15984,
+        "stop": 1.15944,
+        "initial_risk": 245.18,
+        "original_net_r": -1.0,
+        "exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+        "admission_score": 63.3399,
+        "admission_state_key": ""
+      },
+      "independent_signal_key": "2026.08.31|2026.08.31 08:1|EURUSD|BUY|NO_STATE",
+      "path_observations": 234,
+      "original_net_r": -1.0,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 08:56:00",
+        "modeled_r": -0.75,
+        "observed_cross_r": null,
+        "peak_r": 0.2
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 08:56:00",
+        "modeled_r": -0.75,
+        "observed_cross_r": null,
+        "peak_r": 0.2
+      },
+      "modeled_change_vs_original_r": 0.25
+    },
+    {
+      "trade": {
+        "day": "2026.08.31",
+        "account": "fp",
+        "ticket": "393242284",
+        "market": "GER40",
+        "symbol": "GER40",
+        "direction": "SELL",
+        "entry_utc": "2026.08.31 15:06:30",
+        "exit_utc": "2026.08.31 15:27:15",
+        "fill": 26303.25,
+        "stop": 26342.06,
+        "initial_risk": 244.78,
+        "original_net_r": 0.15511888226162268,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 85.1517,
+        "admission_state_key": ""
+      },
+      "independent_signal_key": "2026.08.31|2026.08.31 15:0|GER40|SELL|NO_STATE",
+      "path_observations": 126,
+      "original_net_r": 0.15512,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 15:27:15",
+        "modeled_r": 0.11595,
+        "observed_cross_r": null,
+        "peak_r": 0.52821
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.08.31 15:27:15",
+        "modeled_r": 0.11595,
+        "observed_cross_r": null,
+        "peak_r": 0.52821
+      },
+      "modeled_change_vs_original_r": -0.03917
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393681587",
+        "market": "XAUUSD",
+        "symbol": "XAUUSD.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 10:20:40",
+        "exit_utc": "2026.09.01 10:20:41",
+        "fill": 4380.9,
+        "stop": 4387.59,
+        "initial_risk": 243.0,
+        "original_net_r": -0.03259259259259259,
+        "exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+        "admission_score": 65.5168,
+        "admission_state_key": "-765787243"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 10:2|XAUUSD|SELL|-765787243",
+      "path_observations": 724,
+      "original_net_r": -0.03259,
+      "current_floor_model": {
+        "status": "DELAYED_EARLY_FAILURE_EXIT",
+        "exit_utc": "2026.09.01 10:26:00",
+        "modeled_r": -0.48132,
+        "observed_cross_r": -0.48132,
+        "peak_r": 0.0
+      },
+      "intelligence_candidate": {
+        "status": "DELAYED_EARLY_FAILURE_EXIT",
+        "exit_utc": "2026.09.01 10:26:00",
+        "modeled_r": -0.48132,
+        "observed_cross_r": -0.48132,
+        "peak_r": 0.0
+      },
+      "modeled_change_vs_original_r": -0.44873
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393681863",
+        "market": "GER40",
+        "symbol": "GER40",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 10:21:30",
+        "exit_utc": "2026.09.01 10:21:31",
+        "fill": 26022.75,
+        "stop": 26054.4,
+        "initial_risk": 245.52,
+        "original_net_r": -0.04740957966764418,
+        "exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+        "admission_score": 62.8833,
+        "admission_state_key": "-1918365105"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 10:2|GER40|SELL|-1918365105",
+      "path_observations": 723,
+      "original_net_r": -0.04741,
+      "current_floor_model": {
+        "status": "PROTECTED_STOP",
+        "exit_utc": "2026.09.01 11:10:10",
+        "modeled_r": 1.24171,
+        "observed_cross_r": 1.18483,
+        "peak_r": 2.06951
+      },
+      "intelligence_candidate": {
+        "status": "PROTECTED_STOP",
+        "exit_utc": "2026.09.01 11:10:10",
+        "modeled_r": 1.24171,
+        "observed_cross_r": 1.18483,
+        "peak_r": 2.06951
+      },
+      "modeled_change_vs_original_r": 1.28912
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393682250",
+        "market": "US100",
+        "symbol": "US100",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 10:22:10",
+        "exit_utc": "2026.09.01 10:22:28",
+        "fill": 29214.95,
+        "stop": 29241.65,
+        "initial_risk": 245.37,
+        "original_net_r": -0.03182948200676529,
+        "exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+        "admission_score": 64.2688,
+        "admission_state_key": "-1191258532"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 10:2|US100|SELL|-1191258532",
+      "path_observations": 722,
+      "original_net_r": -0.03183,
+      "current_floor_model": {
+        "status": "PROTECTED_STOP",
+        "exit_utc": "2026.09.01 11:16:10",
+        "modeled_r": 1.3573,
+        "observed_cross_r": 1.34457,
+        "peak_r": 2.26217
+      },
+      "intelligence_candidate": {
+        "status": "PROTECTED_STOP",
+        "exit_utc": "2026.09.01 11:16:10",
+        "modeled_r": 1.3573,
+        "observed_cross_r": 1.34457,
+        "peak_r": 2.26217
+      },
+      "modeled_change_vs_original_r": 1.38913
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393797684",
+        "market": "XAUUSD",
+        "symbol": "XAUUSD.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 13:35:50",
+        "exit_utc": "2026.09.01 13:35:50",
+        "fill": 4350.37,
+        "stop": 4365.17,
+        "initial_risk": 237.76,
+        "original_net_r": -0.014804845222072678,
+        "exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+        "admission_score": 66.8366,
+        "admission_state_key": "-1880732903"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 13:3|XAUUSD|SELL|-1880732903",
+      "path_observations": 722,
+      "original_net_r": -0.0148,
+      "current_floor_model": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.09.01 13:59:40",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.05338,
+        "peak_r": 0.225
+      },
+      "intelligence_candidate": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.09.01 13:59:40",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.05338,
+        "peak_r": 0.225
+      },
+      "modeled_change_vs_original_r": -0.9852
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393962091",
+        "market": "XAUUSD",
+        "symbol": "XAUUSD.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 18:25:40",
+        "exit_utc": "2026.09.01 18:52:52",
+        "fill": 4341.01,
+        "stop": 4345.97,
+        "initial_risk": 240.96,
+        "original_net_r": 1.5159362549800794,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 67.9208,
+        "admission_state_key": "-897082480"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 18:2|XAUUSD|SELL|-897082480",
+      "path_observations": 0,
+      "original_net_r": 1.51594,
+      "current_floor_model": {
+        "status": "NO_PATH",
+        "modeled_r": null
+      },
+      "intelligence_candidate": {
+        "status": "NO_PATH",
+        "modeled_r": null
+      },
+      "modeled_change_vs_original_r": null
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "fp",
+        "ticket": "393975047",
+        "market": "GER40",
+        "symbol": "GER40",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 19:04:10",
+        "exit_utc": "2026.09.01 19:35:52",
+        "fill": 25856.75,
+        "stop": 25874.71,
+        "initial_risk": 246.3,
+        "original_net_r": -0.05010150223304912,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 71.1271,
+        "admission_state_key": "-713722866"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 19:0|GER40|SELL|-713722866",
+      "path_observations": 0,
+      "original_net_r": -0.0501,
+      "current_floor_model": {
+        "status": "NO_PATH",
+        "modeled_r": null
+      },
+      "intelligence_candidate": {
+        "status": "NO_PATH",
+        "modeled_r": null
+      },
+      "modeled_change_vs_original_r": null
+    },
+    {
+      "trade": {
+        "day": "2026.09.01",
+        "account": "f10",
+        "ticket": "158826999",
+        "market": "GER40",
+        "symbol": "DE30.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.01 09:44:30",
+        "exit_utc": "2026.09.01 09:44:47",
+        "fill": 25950.8,
+        "stop": 26011.68,
+        "initial_risk": 20.67,
+        "original_net_r": -0.03386550556361877,
+        "exit_class": "IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT",
+        "admission_score": 84.5975,
+        "admission_state_key": "-794778667"
+      },
+      "independent_signal_key": "2026.09.01|2026.09.01 09:4|GER40|SELL|-794778667",
+      "path_observations": 725,
+      "original_net_r": -0.03387,
+      "current_floor_model": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.09.01 10:15:40",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.07589,
+        "peak_r": 0.04106
+      },
+      "intelligence_candidate": {
+        "status": "STRUCTURAL_STOP",
+        "exit_utc": "2026.09.01 10:15:40",
+        "modeled_r": -1.0,
+        "observed_cross_r": -1.07589,
+        "peak_r": 0.04106
+      },
+      "modeled_change_vs_original_r": -0.96613
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "fp",
+        "ticket": "394912924",
+        "market": "USDJPY",
+        "symbol": "USDJPY.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.03 01:58:20",
+        "exit_utc": "2026.09.03 02:45:17",
+        "fill": 158.506,
+        "stop": 158.647,
+        "initial_risk": 245.74,
+        "original_net_r": 2.369374135264914,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 66.4097,
+        "admission_state_key": "-1337484774"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 01:5|USDJPY|SELL|-1337484774",
+      "path_observations": 258,
+      "original_net_r": 2.36937,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:45:10",
+        "modeled_r": 2.75669,
+        "observed_cross_r": null,
+        "peak_r": 3.89347
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:45:10",
+        "modeled_r": 2.75669,
+        "observed_cross_r": null,
+        "peak_r": 3.89347
+      },
+      "modeled_change_vs_original_r": 0.38732
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "fp",
+        "ticket": "395080031",
+        "market": "USDJPY",
+        "symbol": "USDJPY.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.03 07:38:40",
+        "exit_utc": "2026.09.03 08:14:41",
+        "fill": 157.096,
+        "stop": 157.319,
+        "initial_risk": 246.74,
+        "original_net_r": 0.4638485855556456,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 73.286,
+        "admission_state_key": "-1388500141"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 07:3|USDJPY|SELL|-1388500141",
+      "path_observations": 89,
+      "original_net_r": 0.46385,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 08:14:40",
+        "modeled_r": 0.56623,
+        "observed_cross_r": null,
+        "peak_r": 1.20885
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 08:14:40",
+        "modeled_r": 0.56623,
+        "observed_cross_r": null,
+        "peak_r": 1.20885
+      },
+      "modeled_change_vs_original_r": 0.10238
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "f10",
+        "ticket": "159111232",
+        "market": "USDJPY",
+        "symbol": "USDJPY.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.03 01:58:01",
+        "exit_utc": "2026.09.03 02:45:17",
+        "fill": 158.489,
+        "stop": 158.653,
+        "initial_risk": 24.87,
+        "original_net_r": 2.014877362283876,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 60.1521,
+        "admission_state_key": "-1521828236"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 01:5|USDJPY|SELL|-1521828236",
+      "path_observations": 244,
+      "original_net_r": 2.01488,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:45:10",
+        "modeled_r": 2.27734,
+        "observed_cross_r": null,
+        "peak_r": 3.27714
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:45:10",
+        "modeled_r": 2.27734,
+        "observed_cross_r": null,
+        "peak_r": 3.27714
+      },
+      "modeled_change_vs_original_r": 0.26246
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "f10",
+        "ticket": "159206138",
+        "market": "US500",
+        "symbol": "US500.r",
+        "direction": "BUY",
+        "entry_utc": "2026.09.03 14:17:11",
+        "exit_utc": "2026.09.03 14:25:34",
+        "fill": 7708.48,
+        "stop": 7697.11,
+        "initial_risk": 22.86,
+        "original_net_r": 0.11198600174978128,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 65.2623,
+        "admission_state_key": "292781033"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 14:1|US500|BUY|292781033",
+      "path_observations": 17,
+      "original_net_r": 0.11199,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 14:25:30",
+        "modeled_r": 0.23929,
+        "observed_cross_r": null,
+        "peak_r": 0.55776
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 14:25:30",
+        "modeled_r": 0.23929,
+        "observed_cross_r": null,
+        "peak_r": 0.55776
+      },
+      "modeled_change_vs_original_r": 0.1273
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "f100",
+        "ticket": "159111231",
+        "market": "USDJPY",
+        "symbol": "USDJPY.r",
+        "direction": "SELL",
+        "entry_utc": "2026.09.03 01:58:01",
+        "exit_utc": "2026.09.03 02:43:17",
+        "fill": 158.489,
+        "stop": 158.653,
+        "initial_risk": 249.73,
+        "original_net_r": 2.150042045409042,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 60.1521,
+        "admission_state_key": "-1521828236"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 01:5|USDJPY|SELL|-1521828236",
+      "path_observations": 232,
+      "original_net_r": 2.15004,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:43:10",
+        "modeled_r": 2.41311,
+        "observed_cross_r": null,
+        "peak_r": 3.27714
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 02:43:10",
+        "modeled_r": 2.41311,
+        "observed_cross_r": null,
+        "peak_r": 3.27714
+      },
+      "modeled_change_vs_original_r": 0.26307
+    },
+    {
+      "trade": {
+        "day": "2026.09.03",
+        "account": "f100",
+        "ticket": "159206139",
+        "market": "US500",
+        "symbol": "US500.r",
+        "direction": "BUY",
+        "entry_utc": "2026.09.03 14:17:11",
+        "exit_utc": "2026.09.03 14:25:34",
+        "fill": 7708.48,
+        "stop": 7697.11,
+        "initial_risk": 251.46,
+        "original_net_r": 0.11198600174978128,
+        "exit_class": "PROTECTED_STOP_EXIT",
+        "admission_score": 65.2623,
+        "admission_state_key": "292781033"
+      },
+      "independent_signal_key": "2026.09.03|2026.09.03 14:1|US500|BUY|292781033",
+      "path_observations": 17,
+      "original_net_r": 0.11199,
+      "current_floor_model": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 14:25:31",
+        "modeled_r": 0.22786,
+        "observed_cross_r": null,
+        "peak_r": 0.55776
+      },
+      "intelligence_candidate": {
+        "status": "ARCHIVE_END",
+        "exit_utc": "2026.09.03 14:25:31",
+        "modeled_r": 0.22786,
+        "observed_cross_r": null,
+        "peak_r": 0.55776
+      },
+      "modeled_change_vs_original_r": 0.11587
+    }
+  ],
+  "summary": {
+    "account_executions": 18,
+    "independent_signal_keys": 16,
+    "original_aggregate_r": 4.68265,
+    "modeled_executions_with_complete_path": 16,
+    "comparable_original_aggregate_r": 3.21682,
+    "current_floor_modeled_aggregate_r": 5.20667,
+    "candidate_modeled_aggregate_r": 5.20667,
+    "candidate_change_vs_comparable_original_r": 1.98985,
+    "candidate_change_vs_current_floor_model_r": 0.0,
+    "candidate_early_failure_exits": 1,
+    "candidate_full_structural_stops": 3,
+    "candidate_material_regressions": 3,
+    "safe_to_change_live_admission": false,
+    "safe_to_deploy_candidate": false
+  },
+  "limitations": [
+    "scan telemetry is ten-second sampled rather than exact intratick execution",
+    "the replay models net floors but not every structure-aware trailing update",
+    "admission calibration is intentionally blocked until the minimum independent sample exists",
+    "account executions sharing one setup are not independent market signals"
+  ]
+}

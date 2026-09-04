@@ -70,6 +70,10 @@ input int    OwnershipClaimHeartbeatSeconds=2;
 #define TRADE_PHASE_RUNNER 2
 #define PROFIT_THRESHOLD_TOLERANCE_R 0.005
 #define OPPOSITE_THESIS_MAX_AGE_SECONDS 86400
+#define DELAYED_FAILURE_MIN_AGE_SECONDS 900
+#define DELAYED_FAILURE_MAX_PEAK_R 0.15
+#define DELAYED_FAILURE_TRIGGER_R -0.35
+#define DELAYED_FAILURE_CONFIRM_SECONDS 60
 
 string BASE_SYMBOLS[SYMBOL_COUNT]={
    "XAUUSD","USTEC","GBPJPY","XAGUSD","DE30","EURJPY","AUDJPY","USDJPY","GBPUSD",
@@ -1747,6 +1751,8 @@ string RiskKey(const long identifier) { return "SFM2F10_R_"+IntegerToString(iden
 string LegacyRiskKey(const long identifier) { return "SFM1F10_R_"+IntegerToString(identifier); }
 string MfeKey(const long identifier) { return "SFM2F10_MFE_"+IntegerToString(identifier); }
 string MaeKey(const long identifier) { return "SFM2F10_MAE_"+IntegerToString(identifier); }
+string EarlyFailureSinceKey(const long identifier) { return "SFM2F10_EARLY_FAIL_SINCE_"+IntegerToString(identifier); }
+string EarlyFailureMarkerKey(const long identifier) { return "SFM2F10_EARLY_FAIL_EXIT_"+IntegerToString(identifier); }
 string InitialRiskPath(const long identifier) { return "SolTradeFastMultiMarketV2F10\\initial-risk-"+IntegerToString(identifier)+".csv"; }
 string ScratchStatePath(const long identifier) { return "SolTradeFastMultiMarketV2F10\\scratch-state-"+IntegerToString(identifier)+".csv"; }
 
@@ -2001,9 +2007,12 @@ void ResetRunnerState(RunnerState &state)
 double MinimumProtectedR(const double peak_r)
   {
    if(peak_r<0.50) return -1.0;
-   if(peak_r<0.75) return ConfirmedProfitMinimumNetR;
-   if(peak_r<1.00) return 0.10;
-   return MathMax(0.25,peak_r-MathMax(0.75,0.40*peak_r));
+   if(peak_r<0.75) return MathMax(ConfirmedProfitMinimumNetR,0.20);
+   if(peak_r<1.00) return 0.35;
+   if(peak_r<1.50) return MathMax(0.60,peak_r-0.65);
+   // Preserve the existing expansion allowance for large runners, while never
+   // moving protection below the continuous +1.50R boundary floor.
+   return MathMax(0.84,MathMax(0.25,peak_r-MathMax(0.75,0.40*peak_r)));
   }
 
 bool ReachedApproximateR(const double observed_r,const double threshold_r)
@@ -2198,6 +2207,60 @@ void ManageFastPositions()
            { g_status_reason="OWNERSHIP_BLOCKED_THESIS_EXIT_"+symbol; continue; }
          if(!g_trade.PositionClose(ticket)) g_status_reason="THESIS_EXIT_FAILED_"+symbol;
          else g_status_reason="THESIS_EXIT_"+symbol;
+         continue;
+        }
+      // A trade that has failed to demonstrate even +0.15R after 15 minutes
+      // and remains <= -0.35R for a continuous minute has not behaved like the
+      // observed winners.  Retire it before the emergency structural -1R SL.
+      // The durable timer resets on any recovery and survives terminal restart.
+      string early_since_key=EarlyFailureSinceKey(identifier);
+      long now_server=(long)TimeTradeServer();
+      long opened_server=(long)PositionGetInteger(POSITION_TIME);
+      bool delayed_failure_qualifies=now_server-opened_server>=DELAYED_FAILURE_MIN_AGE_SECONDS &&
+         runner.peak_r<DELAYED_FAILURE_MAX_PEAK_R && current_r<=DELAYED_FAILURE_TRIGGER_R;
+      long failure_since=0;
+      if(delayed_failure_qualifies)
+        {
+         if(GlobalVariableCheck(early_since_key)) failure_since=(long)GlobalVariableGet(early_since_key);
+         else
+           {
+            failure_since=now_server;
+            GlobalVariableSet(early_since_key,(double)failure_since);
+            GlobalVariablesFlush();
+            AppendEvidence("DELAYED_EARLY_FAILURE_ARMED",score,ticket,StringFormat(
+               "position_id=%I64d;age_seconds=%I64d;current_r=%.5f;peak_r=%.5f;trigger_r=%.2f;max_peak_r=%.2f;confirmation_seconds=%d;broker_sl_retained=true",
+               identifier,now_server-opened_server,current_r,runner.peak_r,DELAYED_FAILURE_TRIGGER_R,
+               DELAYED_FAILURE_MAX_PEAK_R,DELAYED_FAILURE_CONFIRM_SECONDS));
+           }
+        }
+      else if(GlobalVariableCheck(early_since_key))
+        {
+         GlobalVariableDel(early_since_key); GlobalVariablesFlush();
+         if(scored) AppendEvidence("DELAYED_EARLY_FAILURE_RESET",score,ticket,StringFormat(
+            "position_id=%I64d;age_seconds=%I64d;current_r=%.5f;peak_r=%.5f",
+            identifier,now_server-opened_server,current_r,runner.peak_r));
+        }
+      long failure_confirmed_seconds=delayed_failure_qualifies?now_server-failure_since:0;
+      if(delayed_failure_qualifies && failure_since>0 &&
+         failure_confirmed_seconds>=DELAYED_FAILURE_CONFIRM_SECONDS)
+        {
+         AppendEvidence("DELAYED_EARLY_FAILURE_TRIGGER",score,ticket,StringFormat(
+            "position_id=%I64d;age_seconds=%I64d;current_r=%.5f;peak_r=%.5f;confirmed_seconds=%I64d;broker_sl_retained=true",
+            identifier,now_server-opened_server,current_r,runner.peak_r,failure_confirmed_seconds));
+         g_trade.SetExpertMagicNumber(FastMagic);
+         string ownership_reason;
+         if(!VerifyOrderOwnership("POSITION_CLOSE_DELAYED_EARLY_FAILURE",ownership_reason))
+           { g_status_reason="OWNERSHIP_BLOCKED_DELAYED_FAILURE_"+symbol; continue; }
+         string early_marker=EarlyFailureMarkerKey(identifier);
+         GlobalVariableSet(early_marker,1.0); GlobalVariablesFlush();
+         if(!g_trade.PositionClose(ticket))
+           {
+            GlobalVariableDel(early_marker); GlobalVariablesFlush();
+            g_status_reason="DELAYED_FAILURE_EXIT_FAILED_"+symbol;
+            AppendEvidence("DELAYED_EARLY_FAILURE_EXIT_FAILED",score,ticket,
+               "broker_sl_remains_active=true;retcode="+IntegerToString((int)g_trade.ResultRetcode()));
+           }
+         else g_status_reason="DELAYED_EARLY_FAILURE_EXIT_"+symbol;
          continue;
         }
       double desired=0;
@@ -2851,6 +2914,8 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
                        GlobalVariableGet("SFM2F10_INV_"+IntegerToString(position_id))>0;
       string scratch_marker="SFM2F10_SCRATCH_"+IntegerToString(position_id);
       bool immediate_scratch=GlobalVariableCheck(scratch_marker) && GlobalVariableGet(scratch_marker)>0;
+      string early_failure_marker=EarlyFailureMarkerKey(position_id);
+      bool delayed_early_failure=GlobalVariableCheck(early_failure_marker) && GlobalVariableGet(early_failure_marker)>0;
       if(index>=0)
         {
          g_last_exit_direction[index]=prior_direction; g_last_exit_time[index]=(long)HistoryDealGetInteger(transaction.deal,DEAL_TIME);
@@ -2884,7 +2949,8 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
          RunnerState runner; LoadRunnerState(position_id,symbol,runner);
          double capture_ratio=runner.peak_dollars>0?MathMax(0.0,net)/runner.peak_dollars:0;
          ENUM_DEAL_REASON deal_reason=(ENUM_DEAL_REASON)HistoryDealGetInteger(transaction.deal,DEAL_REASON);
-         string exit_class=immediate_scratch?"IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT":invalidated?"THESIS_INVALIDATION":
+         string exit_class=delayed_early_failure?"DELAYED_EARLY_FAILURE_EXIT":
+            immediate_scratch?"IMMEDIATE_DIRECTIONAL_SCRATCH_EXIT":invalidated?"THESIS_INVALIDATION":
             deal_reason==DEAL_REASON_SL?(runner.protected_r>-0.50?"PROTECTED_STOP_EXIT":"INITIAL_STRUCTURAL_STOP_EXIT"):
             "BROKER_OR_EXTERNAL_EXIT";
          AppendEvidence("EXIT",score,0,StringFormat(
@@ -2895,6 +2961,8 @@ void OnTradeTransaction(const MqlTradeTransaction &transaction,
             BoolText(runner.active),runner.peak_r,runner.peak_dollars,runner.protected_r,runner.protected_dollars,
             runner.trail_updates,runner.max_giveback_r,runner.max_giveback_dollars,capture_ratio));
          if(immediate_scratch) GlobalVariableDel(scratch_marker);
+         if(delayed_early_failure) GlobalVariableDel(early_failure_marker);
+         GlobalVariableDel(EarlyFailureSinceKey(position_id)); GlobalVariablesFlush();
         }
       g_immediate_rescan_requested=true;
      }

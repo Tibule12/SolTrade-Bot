@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 
-APPROVED_SOURCE_SHA256 = "155cb0b9dcea6192c82584404eb36759e9baf0afbc71b699071d8bb387eee011"
+APPROVED_SOURCE_SHA256 = "73f108e74c424a089faed32085324fc809fb9b0bbfb91729b43a9352a0087047"
 APPROVED_PRESET_SHA256 = "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643"
 ALLOWED = {
     "fxify-10k": {
@@ -71,7 +71,7 @@ def build(source: Path, preset: Path, target: str, output: Path) -> dict[str, ob
     for old in (
         "SFM2C_P", "SFM2_X", "SFM2_R_", "SFM2_MFE_", "SFM2_MAE_",
         "SFM2_EPOCH_", "SFM2_EXITPX_", "SFM2_SCRATCH_TRY_", "SFM2_SCRATCH_",
-        "SFM2_INV_", "SFM2_HOLD_",
+        "SFM2_EARLY_FAIL_SINCE_", "SFM2_EARLY_FAIL_EXIT_", "SFM2_INV_", "SFM2_HOLD_",
     ):
         text = text.replace(f'"{old}', f'"{state_prefix}{old[4:]}')
     text = text.replace('"SFM1_R_', f'"SFM1{suffix}_R_')
@@ -131,6 +131,7 @@ def build(source: Path, preset: Path, target: str, output: Path) -> dict[str, ob
         "strategy_changes": [
             "complete_admission_persistence", "first_adverse_tick_scratch_retired",
             "confirmed_profit_net_floor_positive", "bounded_opposite_thesis_lifetime",
+            "evidence_selected_profit_retention_floor", "delayed_early_failure_exit",
         ],
         "portability_changes": [
             "account_and_server_guard", "account_unique_magic", "account_unique_file_common_namespace",
