@@ -1,0 +1,77 @@
+{
+  "schema": "FP_ADAPTIVE_PAYOFF_V1_FORWARD_BASELINE",
+  "deployment_timestamp_utc": "2026-09-10T14:28:45.1888371Z",
+  "deployment_timestamp_sast": "2026-09-10T16:28:45.1888371+02:00",
+  "strategy_git_commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+  "account": 7404213,
+  "server": "FPMarketsSC-Demo",
+  "equity_at_deployment": 100466.65,
+  "balance_at_deployment": 100466.65,
+  "balance_basis": "Account was flat with zero positions and orders; runtime exported equity, so flat-account balance equals equity.",
+  "positions_at_deployment": 0,
+  "orders_at_deployment": 0,
+  "source_sha256": "8e5fcce13b770aa84c0487f3e178710e535a2c05088161be59bbbffc4411e1b2",
+  "binary_sha256": "fb4f08f4d4ac39024f0211120866715192116f33db0cc9c1fbb9f3fd72bec9f6",
+  "manager_version": "ADAPTIVE_PAYOFF_V1",
+  "configuration": {
+    "initial_risk_percent": 1.0,
+    "aggregate_open_risk_cap_percent": 1.5,
+    "original_structural_stop_required": true,
+    "original_stop_may_widen": false,
+    "bank_at_r": 2.0,
+    "bank_original_volume_fraction": 0.5,
+    "runner_management": "completed M5/M15 structure and thesis evidence",
+    "entry_policy_changed": false,
+    "fxify_accounts_paused": [
+      7196820,
+      7198096
+    ]
+  },
+  "essential_tests": {
+    "passed": true,
+    "results": [
+      {
+        "name": "production_compile",
+        "result": "0 errors, 0 warnings"
+      },
+      {
+        "name": "adaptive_manager_static_and_scope",
+        "passed": 7,
+        "failed": 0
+      },
+      {
+        "name": "banking_broker_dispositions_restart",
+        "passed": 321,
+        "failed": 0
+      },
+      {
+        "name": "banked_cash_allocation_excludes_runner_exit",
+        "passed": 1,
+        "failed": 0
+      },
+      {
+        "name": "all_symbol_sizing",
+        "passed": 228,
+        "boundary_passed": 5
+      },
+      {
+        "name": "ownership_lease",
+        "passed": 5,
+        "failed": 0
+      },
+      {
+        "name": "entry_revalidation_fixture",
+        "passed": 1,
+        "failed": 0
+      },
+      {
+        "name": "risk_arithmetic",
+        "result": "passed"
+      }
+    ],
+    "profitability_gate_used": false,
+    "historical_replay_run": false
+  },
+  "deployment_evidence": "deployment.json",
+  "scoreboard": "scoreboard.json"
+}

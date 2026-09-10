@@ -1,0 +1,81 @@
+{
+  "strategy_commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+  "scoreboard_commit": "c5d77db39e908972fc57c5d2a53fbedc52ed820b",
+  "files": [
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/Deploy-FP-AdaptivePayoffV1.cmd",
+      "sha256": "20abf3e8e683d610b6996572dca4baf1172cb15fb5fa6e4975f11190f6e32f76"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/Deploy-FP-AdaptivePayoffV1.ps1",
+      "sha256": "8c43637d5cc01e2a609ba880f6f8fea8983aec71779e2b2ea40cc9e10a59f462"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/Publish-FP-AdaptivePayoffV1-Scoreboard.ps1",
+      "sha256": "d05df266de2e08fed24c0f15c4c78e498a39e1b2f56fdede12fcb87b24b36eef"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-20260910/SolTradeFastMultiMarketV2.ex5",
+      "sha256": "fb4f08f4d4ac39024f0211120866715192116f33db0cc9c1fbb9f3fd72bec9f6"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-20260910/SolTradeFastMultiMarketV2.mq5",
+      "sha256": "8e5fcce13b770aa84c0487f3e178710e535a2c05088161be59bbbffc4411e1b2"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-20260910/compile.log",
+      "sha256": "b2083a6464a852b4d8f2fecf81d9b038e42fed17fa93690d32592f74a33ff0fe"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-20260910/manifest.json",
+      "sha256": "310f17070535937a25c3a87933560d475d74e2fa543a6352e4d17c5f3e9291b8"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-20260910/tests.json",
+      "sha256": "93bdfb7d3f7b5649c0338e8853909986b75758a4bc916fd95462d32c777ec1f4"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "research/adaptive-payoff-v1-20260910/SolTradeFastMultiMarketV2.mq5",
+      "sha256": "8e5fcce13b770aa84c0487f3e178710e535a2c05088161be59bbbffc4411e1b2"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "research/adaptive-payoff-v1-20260910/adaptive_payoff.mqh",
+      "sha256": "a4d731f6e3b3b961d0fd1fbc4491d8d05db55a8439822551a7325062c1b2b496"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "research/adaptive-payoff-v1-20260910/build.py",
+      "sha256": "86135e9a8e63e44b33a81cab1716a4b6da1daa1894eb083697b96fad651f2008"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "research/adaptive-payoff-v1-20260910/manifest.json",
+      "sha256": "f88687e2a55cbcda6a7bbb19f01f19529633d112e81f28e8e458ea03d807c9b4"
+    },
+    {
+      "commit": "971f4e88c72f05d37efa66ddd69396e728028154",
+      "path": "research/adaptive-payoff-v1-20260910/test_adaptive_payoff.py",
+      "sha256": "9760a9bac60d4d94a878c41b6e814a914789d72f62d7e028517105266475550f"
+    },
+    {
+      "commit": "c5d77db39e908972fc57c5d2a53fbedc52ed820b",
+      "path": "ops/forexvps/Publish-FP-AdaptivePayoffV1-Scoreboard.ps1",
+      "sha256": "d05df266de2e08fed24c0f15c4c78e498a39e1b2f56fdede12fcb87b24b36eef"
+    },
+    {
+      "commit": "c5d77db39e908972fc57c5d2a53fbedc52ed820b",
+      "path": "ops/forexvps/Update-FP-AdaptivePayoffV1-Scoreboard.cmd",
+      "sha256": "5295225287b3bc1500e1d0b2defca9c0982049c39f5768cce7f8996791959f1f"
+    }
+  ]
+}
