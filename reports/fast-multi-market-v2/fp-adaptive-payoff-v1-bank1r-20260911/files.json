@@ -1,0 +1,72 @@
+[
+  {
+    "path": "research/adaptive-payoff-v1-bank1r-20260911/build.py",
+    "sha256": "06b1657d8745f42784f7e98b1320d215b9453319d4ff898d3572399627aca454",
+    "bytes": 11139
+  },
+  {
+    "path": "research/adaptive-payoff-v1-bank1r-20260911/SolTradeFastMultiMarketV2.mq5",
+    "sha256": "ffb9494014430db58d0c99c3857b54b432c237bb9795d2422cf33b93eeeb4ce4",
+    "bytes": 179457
+  },
+  {
+    "path": "research/adaptive-payoff-v1-bank1r-20260911/manifest.json",
+    "sha256": "dd7bf07b43e6a4d4d66984e5256cbec458616573f63e1bed399e06791e8bf8a4",
+    "bytes": 14893
+  },
+  {
+    "path": "research/adaptive-payoff-v1-bank1r-20260911/test_bank1r.py",
+    "sha256": "0ef3e409cb3ea45a32192eadf9041a767b15d7d3fa83029b5e3863573cfe2bf2",
+    "bytes": 10959
+  },
+  {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-20260911/SolTradeFastMultiMarketV2.mq5",
+    "sha256": "ffb9494014430db58d0c99c3857b54b432c237bb9795d2422cf33b93eeeb4ce4",
+    "bytes": 179457
+  },
+  {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-20260911/SolTradeFastMultiMarketV2.ex5",
+    "sha256": "f1a69dbb7dcb3c7f673b0aaeeec5d695463b4d3790c04a42fc77be08d8a4b78c",
+    "bytes": 241474
+  },
+  {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-20260911/compile.log",
+    "sha256": "f449067ff2833eeacf526de422f1bff68f8b940a65932c25aff5e8a2888d22bb",
+    "bytes": 5060
+  },
+  {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-20260911/manifest.json",
+    "sha256": "f7a2146a55ee62f62d1a0c7db8def20e1ca9d0ff8f2d5467a797cb240dbf67e7",
+    "bytes": 15233
+  },
+  {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-20260911/tests.json",
+    "sha256": "321a3ffe9a488743886aae8d541731cf6285a9e0f6ee0207fb30c30f9ebc2e71",
+    "bytes": 697
+  },
+  {
+    "path": "ops/forexvps/Deploy-FP-AdaptivePayoffV1-Bank1R.ps1",
+    "sha256": "0b847c7373aa53fb8f9c25b04d42e5591b43aafa09d1ea95cf7c661bbb6a91a6",
+    "bytes": 14580
+  },
+  {
+    "path": "ops/forexvps/Deploy-FP-AdaptivePayoffV1-Bank1R.cmd",
+    "sha256": "cfa7c13f35afa9899d1bef69c8da0da0d5abf2f003f0d7f1368fa98637586308",
+    "bytes": 450
+  },
+  {
+    "path": "ops/forexvps/Preflight-FP-AdaptivePayoffV1-Bank1R.ps1",
+    "sha256": "7fceb074a34aba742265f1f6f503c41e3d8b0bad2a2d33d52576c2ee7bd6f312",
+    "bytes": 2124
+  },
+  {
+    "path": "ops/forexvps/Preflight-FP-AdaptivePayoffV1-Bank1R.cmd",
+    "sha256": "99717268a587466e6d73dc5bc57fab6d04135ff4ddf39616f223fe9136b9e239",
+    "bytes": 326
+  },
+  {
+    "path": "ops/forexvps/Publish-FP-AdaptivePayoffV1-Bank1R-Scoreboard.ps1",
+    "sha256": "d807bdacc1e0a169688be7facbbb1d4d46a3e899e4a00471b3c3ad9cb234c64f",
+    "bytes": 8310
+  }
+]
