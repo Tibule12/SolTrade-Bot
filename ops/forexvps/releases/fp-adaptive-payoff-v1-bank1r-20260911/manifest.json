@@ -183,5 +183,5 @@
   "binary_sha256": "f1a69dbb7dcb3c7f673b0aaeeec5d695463b4d3790c04a42fc77be08d8a4b78c",
   "compile": "0 errors, 0 warnings",
   "built_utc": "2026-09-11T03:07:26.946608+00:00",
-  "source_commit": "PENDING_SOURCE_COMMIT"
+  "source_commit": "827a534928c090ac10bfeab70027f58110a64895"
 }
