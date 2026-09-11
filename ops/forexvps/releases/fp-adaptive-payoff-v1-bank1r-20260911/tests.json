@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "production_compile",
+      "result": "0 errors, 0 warnings"
+    },
+    {
+      "name": "bank1r_static_scope_ordering_persistence",
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "name": "banking_broker_dispositions_restart_volume",
+      "passed": 316,
+      "failed": 0
+    },
+    {
+      "name": "all_symbol_sizing",
+      "passed": 228,
+      "boundary_passed": 5
+    },
+    {
+      "name": "ownership_lease",
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "name": "risk_arithmetic",
+      "result": "passed"
+    }
+  ],
+  "profitability_gate_used": false,
+  "historical_replay_run": false,
+  "optimization_run": false
+}
