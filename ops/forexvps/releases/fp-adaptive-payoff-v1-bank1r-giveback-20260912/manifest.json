@@ -181,5 +181,6 @@
   "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
   "compile": "0 errors, 0 warnings",
   "installed_base_source_sha256": "ffb9494014430db58d0c99c3857b54b432c237bb9795d2422cf33b93eeeb4ce4",
-  "deployment_allowed_after_technical_tests": true
+  "deployment_allowed_after_technical_tests": true,
+  "source_commit": "9e8a1aa6b10016729c4cfc47b9cb997aa10f04ef"
 }
