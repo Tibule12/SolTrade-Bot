@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param()
 $ErrorActionPreference='Stop'
-$share='\\tsclient\SolTrade'
+$share='\\tsclient\SolTrade\ops\forexvps'
 $root='C:\SolTrade';$fp=Join-Path $root 'MT5-FP-DEMO'
 $release=Join-Path $share 'releases\fp-adaptive-payoff-v1-bank1r-giveback-20260912'
 $output=Join-Path $share 'remote-output\fp-adaptive-payoff-v1-bank1r-giveback-deployment.json'
