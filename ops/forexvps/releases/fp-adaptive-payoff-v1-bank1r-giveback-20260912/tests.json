@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "production_compile",
+      "result": "0 errors, 0 warnings"
+    },
+    {
+      "name": "live_xau_giveback_state_regression",
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "name": "giveback_scope_transition_recovery_tests",
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "name": "bank1r_regression_suite",
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "name": "banking_broker_dispositions_restart_volume",
+      "result": "passed in retained Bank1R suite"
+    },
+    {
+      "name": "all_symbol_sizing",
+      "result": "unchanged function; 1% suite passed"
+    },
+    {
+      "name": "ownership_static",
+      "result": "passed"
+    },
+    {
+      "name": "risk_arithmetic",
+      "result": "unchanged and passed"
+    }
+  ],
+  "historical_replay_run": false,
+  "optimization_run": false,
+  "fake_or_forced_orders": false
+}
