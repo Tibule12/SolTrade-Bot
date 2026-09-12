@@ -1,0 +1,70 @@
+{
+  "schema": "FP_BANK1R_GIVEBACK_FILES",
+  "files": [
+    {
+      "path": "research/adaptive-payoff-v1-bank1r-giveback-20260912/build.py",
+      "sha256": "d5b1e8ec381448766ca1b7d3a5b5c93c4c170babc60387857e0945f8263d0de7",
+      "bytes": 7821
+    },
+    {
+      "path": "research/adaptive-payoff-v1-bank1r-giveback-20260912/test_giveback.py",
+      "sha256": "888cd4b16a4e0186627d83b4d136cd28b1c38544d3779ff01d66335ddcddda0a",
+      "bytes": 5047
+    },
+    {
+      "path": "research/adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.mq5",
+      "sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+      "bytes": 181631
+    },
+    {
+      "path": "research/adaptive-payoff-v1-bank1r-giveback-20260912/manifest.json",
+      "sha256": "bd4970e77040951b8265c14cf0741e948e35b355bc57daa9258c90ac2d3f91e9",
+      "bytes": 14885
+    },
+    {
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.mq5",
+      "sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+      "bytes": 181631
+    },
+    {
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.ex5",
+      "sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+      "bytes": 242516
+    },
+    {
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/manifest.json",
+      "sha256": "fd17f23e9dda9cc68e7b59fd91df101b5b8d6d73729b16a054a40280a157225d",
+      "bytes": 15163
+    },
+    {
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/tests.json",
+      "sha256": "111ee85429840a8190e1167414bd5e8e83c94cd2dbf5d67bca719b4b34bb72e9",
+      "bytes": 908
+    },
+    {
+      "path": "ops/forexvps/Deploy-FP-Bank1R-Giveback.ps1",
+      "sha256": "8d3dcdd070e019abe837ed045b4848dd9edd744e0743494661849837c027fa12",
+      "bytes": 14544
+    },
+    {
+      "path": "ops/forexvps/Deploy-FP-Bank1R-Giveback.cmd",
+      "sha256": "1b74987936134bbf33c491074b0ed1f0c04a493ef6b99362f209b89c4d673a5c",
+      "bytes": 131
+    },
+    {
+      "path": "ops/forexvps/Inspect-FP-Bank1R-Giveback.ps1",
+      "sha256": "e8263f1a74ab092516a02d0dc159e38941acaf1f86afa80f06579fa8d017c3a9",
+      "bytes": 1575
+    },
+    {
+      "path": "ops/forexvps/Inspect-FP-Bank1R-Giveback.cmd",
+      "sha256": "eb5062f6e493bea78c57915f9c6e84469f89da52ea67dda2c46061e316db080c",
+      "bytes": 132
+    },
+    {
+      "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/compile.log",
+      "sha256": "8eae108f9ff4a3729b74ba1c38a115e8b7e851055918afd4ac532ed3223e912c",
+      "bytes": 5108
+    }
+  ]
+}
