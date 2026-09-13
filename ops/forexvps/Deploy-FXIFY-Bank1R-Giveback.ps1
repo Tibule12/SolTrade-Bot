@@ -14,7 +14,7 @@ $targets=@(
 )
 
 function Sha([string]$p){if(!(Test-Path -LiteralPath $p)){return $null};(Get-FileHash -Algorithm SHA256 -LiteralPath $p).Hash.ToLowerInvariant()}
-function Procs([string]$home){@(Get-CimInstance Win32_Process -Filter "Name='terminal64.exe'" | Where-Object {$_.ExecutablePath -eq "$home\terminal64.exe"})}
+function Procs([string]$terminalHome){@(Get-CimInstance Win32_Process -Filter "Name='terminal64.exe'" | Where-Object {$_.ExecutablePath -eq "$terminalHome\terminal64.exe"})}
 function Runtime([string]$state){
  $p=Join-Path (Join-Path $common $state) 'runtime.csv'
  for($i=0;$i -lt 8;$i++){try{$r=@(Get-Content -LiteralPath $p -TotalCount 2)|ConvertFrom-Csv|Select-Object -First 1;if($r.login){return $r}}catch{};Start-Sleep -Milliseconds 250}
@@ -33,8 +33,8 @@ function PatchLine([string]$text,[string]$name,[string]$value,[bool]$required=$t
 }
 function SaveReceipt { $script:receipt | ConvertTo-Json -Depth 15 | Set-Content -Encoding UTF8 -LiteralPath ($output+'.tmp'); Move-Item -Force -LiteralPath ($output+'.tmp') -Destination $output }
 function SnapshotFP {
- $home="$root\MT5-FP-DEMO";$expert=Join-Path $home 'MQL5\Experts\SolTrade\SolTradeFastMultiMarketV2'
- return [ordered]@{pids=@(Procs $home|ForEach-Object {$_.ProcessId});source_sha256=Sha($expert+'.mq5');binary_sha256=Sha($expert+'.ex5');runtime=Runtime 'SolTradeFastMultiMarketV2'}
+ $terminalHome="$root\MT5-FP-DEMO";$expert=Join-Path $terminalHome 'MQL5\Experts\SolTrade\SolTradeFastMultiMarketV2'
+ return [ordered]@{pids=@(Procs $terminalHome|ForEach-Object {$_.ProcessId});source_sha256=Sha($expert+'.mq5');binary_sha256=Sha($expert+'.ex5');runtime=Runtime 'SolTradeFastMultiMarketV2'}
 }
 function ExposurePresent {
  foreach($x in $targets){$r=Runtime $x.state;if(!$r -or [int]$r.positions -gt 0 -or [int]$r.orders -gt 0){return $true}}
