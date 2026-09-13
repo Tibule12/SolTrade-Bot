@@ -1,0 +1,44 @@
+{
+  "schema": "SOLTRADE_FXIFY_BANK1R_GIVEBACK_PORT_V1",
+  "manager": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+  "base_source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+  "base_preset_sha256": "ca4a715a61245ec4ef794f96f80c2a5ecf941b1411587f86af94f21902ac3643",
+  "risk_percent": 1.0,
+  "aggregate_risk_percent": 1.5,
+  "bank_at_r": 1.0,
+  "bank_fraction": 0.5,
+  "entry_logic_changed": false,
+  "management_logic_changed": false,
+  "sizing_logic_changed": false,
+  "thresholds_changed": false,
+  "ports": [
+    {
+      "target": "fxify-10k",
+      "account": 7196820,
+      "server": "FXIFY-Server",
+      "magic": 2108202610,
+      "expert": "SolTradeFastMultiMarketV202F10",
+      "runtime_folder": "SolTradeFastMultiMarketV2F10",
+      "state_prefix": "SFM2F10",
+      "ownership_instance": "vps-fxify-10k-prod",
+      "source_sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+      "preset_sha256": "e6c99bae387da5d17613cb07c6d332c8d4e788c8455cbfd9ebb141b4495a1738",
+      "source": "research/fxify-bank1r-giveback-20260913/release/fxify-10k/SolTradeFastMultiMarketV202F10.mq5",
+      "preset": "research/fxify-bank1r-giveback-20260913/release/fxify-10k/SolTradeFastMultiMarketV202F10-FINAL-ACTIVE.set"
+    },
+    {
+      "target": "fxify-100k",
+      "account": 7198096,
+      "server": "FXIFY-Server",
+      "magic": 2108202620,
+      "expert": "SolTradeFastMultiMarketV202F100",
+      "runtime_folder": "SolTradeFastMultiMarketV2F100",
+      "state_prefix": "SFM2F100",
+      "ownership_instance": "vps-fxify-100k-prod",
+      "source_sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+      "preset_sha256": "feb5031acdb229ff65e73b840522ff0d5fb564f41a6b5548ffd6608749d27044",
+      "source": "research/fxify-bank1r-giveback-20260913/release/fxify-100k/SolTradeFastMultiMarketV202F100.mq5",
+      "preset": "research/fxify-bank1r-giveback-20260913/release/fxify-100k/SolTradeFastMultiMarketV202F100-FINAL-ACTIVE.set"
+    }
+  ]
+}

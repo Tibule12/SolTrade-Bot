@@ -1,0 +1,14 @@
+[
+  {
+    "target": "fxify-10k",
+    "compile": "0 errors, 0 warnings",
+    "source_sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+    "binary_sha256": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039"
+  },
+  {
+    "target": "fxify-100k",
+    "compile": "0 errors, 0 warnings",
+    "source_sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+    "binary_sha256": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8"
+  }
+]

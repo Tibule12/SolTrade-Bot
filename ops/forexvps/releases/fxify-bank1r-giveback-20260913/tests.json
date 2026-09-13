@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "exact_account_portability",
+      "passed": 2,
+      "failed": 0
+    },
+    {
+      "name": "giveback_regression",
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "name": "bank1r_regression",
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "name": "ownership_static",
+      "passed": true
+    },
+    {
+      "name": "production_compile",
+      "fxify-10k": "0 errors, 0 warnings",
+      "fxify-100k": "0 errors, 0 warnings"
+    }
+  ],
+  "fake_or_forced_orders": false,
+  "historical_replay_run": false,
+  "optimization_run": false
+}
