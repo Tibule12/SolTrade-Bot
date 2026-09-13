@@ -1,0 +1,373 @@
+{
+  "schema": "SOLTRADE_FXIFY_BANK1R_GIVEBACK_DEPLOYMENT_V1",
+  "status": "DEPLOYED_ALL_THREE_ACTIVE",
+  "started_utc": "2026-09-13T07:18:08.9763199Z",
+  "requested_accounts": [
+    7196820,
+    7198096
+  ],
+  "orders_forced": false,
+  "positions_closed": false,
+  "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809",
+  "preflight": [
+    {
+      "runtime": {
+        "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+        "timestamp_utc": "2026.09.13 07:18:10",
+        "setup_active": "true",
+        "login": "7196820",
+        "server": "FXIFY-Server",
+        "account_mode_demo": "true",
+        "real_accounts_blocked": "true",
+        "entry_permission": "DISABLED_DRY_RUN",
+        "demo_only": "true",
+        "scanner_active": "true",
+        "autonomous_entry": "false",
+        "ownership_permit": "GRANTED",
+        "owner_instance_id": "vps-fxify-10k-prod",
+        "owner_runtime_id": "vps-fxify-10k-prod-43213268031879-636136875",
+        "owner_host": "fxut9756438",
+        "owner_account": "7196820",
+        "lease_id": "5544d5b338794a9b9adb458307b81538",
+        "lease_acquired_epoch": "1789233543",
+        "lease_renewed_epoch": "1789283889",
+        "lease_expires_epoch": "1789283904",
+        "connected": "true",
+        "positions": "0",
+        "orders": "0",
+        "equity": "10039.41",
+        "portfolio_risk_amount": "0.00",
+        "portfolio_risk_percent": "0.0000",
+        "status": "DRY_RUN_SCAN_COMPLETE",
+        "v1_gross": "0.00",
+        "v1_commission": "0.00",
+        "v1_swap": "0.00",
+        "v1_net": "0.00",
+        "v2_epoch_server": "1788013424"
+      },
+      "account": "7196820",
+      "source_sha256": "149ed44f7270c56eacba956a151300c7330a2331ddf5e9b948a6c7490ef6d29c",
+      "binary_sha256": "3788234f4ce5fac767715070f24e73b8a755015bcb991d7674bb808a33f24c7b",
+      "pids": [
+        8908
+      ]
+    },
+    {
+      "runtime": {
+        "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+        "timestamp_utc": "2026.09.13 07:18:10",
+        "setup_active": "true",
+        "login": "7198096",
+        "server": "FXIFY-Server",
+        "account_mode_demo": "true",
+        "real_accounts_blocked": "true",
+        "entry_permission": "DISABLED_DRY_RUN",
+        "demo_only": "true",
+        "scanner_active": "true",
+        "autonomous_entry": "false",
+        "ownership_permit": "GRANTED",
+        "owner_instance_id": "vps-fxify-100k-prod",
+        "owner_runtime_id": "vps-fxify-100k-prod-43213186937184-636124656",
+        "owner_host": "fxut9756438",
+        "owner_account": "7198096",
+        "lease_id": "12c897ce878c4d74a8c30a890b2ae5da",
+        "lease_acquired_epoch": "1789278616",
+        "lease_renewed_epoch": "1789283889",
+        "lease_expires_epoch": "1789283904",
+        "connected": "true",
+        "positions": "0",
+        "orders": "0",
+        "equity": "100321.36",
+        "portfolio_risk_amount": "0.00",
+        "portfolio_risk_percent": "0.0000",
+        "status": "DRY_RUN_SCAN_COMPLETE",
+        "v1_gross": "0.00",
+        "v1_commission": "0.00",
+        "v1_swap": "0.00",
+        "v1_net": "0.00",
+        "v2_epoch_server": "1788013275"
+      },
+      "account": "7198096",
+      "source_sha256": "b24d2b071545f7ffc0cf6903d7f5fed9a92e27f5451ee9d4f4f68d66f298992b",
+      "binary_sha256": "9dcf7d7f5a52bb09b0c7c446da7198bbf2c3ef60453d908e5d5fa277bce3d55f",
+      "pids": [
+        10196
+      ]
+    }
+  ],
+  "changed": [
+    {
+      "after_sha256": "94f1ae0da55b16eb418149445f44810a696a4822268a4c5cb8e47cc2af60e98d",
+      "path": "C:\\SolTrade\\state\\fxify-10k.ini",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\state\\fxify-10k.ini",
+      "before_sha256": "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e"
+    },
+    {
+      "after_sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F10.mq5",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F10.mq5",
+      "before_sha256": "149ed44f7270c56eacba956a151300c7330a2331ddf5e9b948a6c7490ef6d29c"
+    },
+    {
+      "after_sha256": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F10.ex5",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F10.ex5",
+      "before_sha256": "3788234f4ce5fac767715070f24e73b8a755015bcb991d7674bb808a33f24c7b"
+    },
+    {
+      "after_sha256": "2953758b8f3f7b3c9fd99d688d445e183fd63104d834d04d257cb7e48a4a04cf",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\MQL5\\Presets\\SolTradeFastMultiMarketV202F10-FINAL-ALGO-OFF.set",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\MQL5\\Presets\\SolTradeFastMultiMarketV202F10-FINAL-ALGO-OFF.set",
+      "before_sha256": "5f6a665bacc8b2f57f89edd7e8090670ac8fd3a89e9b2ace6eb977a844bfa9e1"
+    },
+    {
+      "after_sha256": "ecd135cab470d4a90979027d44b73ad512039187fd19ed69ff7372a52b27b766",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart01.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart01.chr",
+      "before_sha256": "ecd135cab470d4a90979027d44b73ad512039187fd19ed69ff7372a52b27b766"
+    },
+    {
+      "after_sha256": "dae31e1135021dfb18e71fa94dd42c7c4a231a302238db84e36afeb8d1eec08b",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart02.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart02.chr",
+      "before_sha256": "dae31e1135021dfb18e71fa94dd42c7c4a231a302238db84e36afeb8d1eec08b"
+    },
+    {
+      "after_sha256": "7b341556d2e6d41c34583479d01bc6142c97b740fd205409f88c9a7eeca12e4f",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart03.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart03.chr",
+      "before_sha256": "7b341556d2e6d41c34583479d01bc6142c97b740fd205409f88c9a7eeca12e4f"
+    },
+    {
+      "after_sha256": "5b99490c026f03727d529803079d5457bfbf02573f880e334fb8191e45c7a8b0",
+      "path": "C:\\SolTrade\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart04.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-10K\\Profiles\\Charts\\SolTradeV202F10\\chart04.chr",
+      "before_sha256": "5b99490c026f03727d529803079d5457bfbf02573f880e334fb8191e45c7a8b0"
+    },
+    {
+      "after_sha256": "408d95c18864022aeb7c9efcac438a246d710dbfe1baa284444b9a7077422ddf",
+      "path": "C:\\SolTrade\\state\\fxify-100k.ini",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\state\\fxify-100k.ini",
+      "before_sha256": "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6"
+    },
+    {
+      "after_sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F100.mq5",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F100.mq5",
+      "before_sha256": "b24d2b071545f7ffc0cf6903d7f5fed9a92e27f5451ee9d4f4f68d66f298992b"
+    },
+    {
+      "after_sha256": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F100.ex5",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV202F100.ex5",
+      "before_sha256": "9dcf7d7f5a52bb09b0c7c446da7198bbf2c3ef60453d908e5d5fa277bce3d55f"
+    },
+    {
+      "after_sha256": "7d9c540db99da102d66be21b8ab6fe1233a923791960462b49155591334b0908",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\MQL5\\Presets\\SolTradeFastMultiMarketV202F100-FINAL-ALGO-OFF.set",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\MQL5\\Presets\\SolTradeFastMultiMarketV202F100-FINAL-ALGO-OFF.set",
+      "before_sha256": "07676af26919270ff019717986d55583240e61cb00942cc4a260b84d9c4dd32a"
+    },
+    {
+      "after_sha256": "ecd135cab470d4a90979027d44b73ad512039187fd19ed69ff7372a52b27b766",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart01.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart01.chr",
+      "before_sha256": "ecd135cab470d4a90979027d44b73ad512039187fd19ed69ff7372a52b27b766"
+    },
+    {
+      "after_sha256": "dae31e1135021dfb18e71fa94dd42c7c4a231a302238db84e36afeb8d1eec08b",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart02.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart02.chr",
+      "before_sha256": "dae31e1135021dfb18e71fa94dd42c7c4a231a302238db84e36afeb8d1eec08b"
+    },
+    {
+      "after_sha256": "7b341556d2e6d41c34583479d01bc6142c97b740fd205409f88c9a7eeca12e4f",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart03.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart03.chr",
+      "before_sha256": "7b341556d2e6d41c34583479d01bc6142c97b740fd205409f88c9a7eeca12e4f"
+    },
+    {
+      "after_sha256": "5b99490c026f03727d529803079d5457bfbf02573f880e334fb8191e45c7a8b0",
+      "path": "C:\\SolTrade\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart04.chr",
+      "backup": "C:\\SolTrade\\backups\\fxify-bank1r-giveback-20260913-071809\\MT5-FXIFY-100K\\Profiles\\Charts\\SolTradeV202F100\\chart04.chr",
+      "before_sha256": "5b99490c026f03727d529803079d5457bfbf02573f880e334fb8191e45c7a8b0"
+    }
+  ],
+  "post": [
+    {
+      "account": "7196820",
+      "process_count": 1,
+      "binary_sha256": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039",
+      "runtime": {
+        "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+        "timestamp_utc": "2026.09.13 07:19:50",
+        "setup_active": "true",
+        "login": "7196820",
+        "server": "FXIFY-Server",
+        "account_mode_demo": "true",
+        "real_accounts_blocked": "true",
+        "entry_permission": "ENABLED_OWNERSHIP_GRANTED",
+        "demo_only": "true",
+        "scanner_active": "true",
+        "autonomous_entry": "true",
+        "ownership_permit": "GRANTED",
+        "owner_instance_id": "vps-fxify-10k-prod",
+        "owner_runtime_id": "vps-fxify-10k-prod-46482305645646-963029203",
+        "owner_host": "fxut9756438",
+        "owner_account": "7196820",
+        "lease_id": "c8e85ca1d58148549d8c77686afac113",
+        "lease_acquired_epoch": "1789283984",
+        "lease_renewed_epoch": "1789283990",
+        "lease_expires_epoch": "1789284005",
+        "connected": "true",
+        "positions": "0",
+        "orders": "0",
+        "equity": "10039.41",
+        "portfolio_risk_amount": "0.00",
+        "portfolio_risk_percent": "0.0000",
+        "portfolio_risk_known": "true",
+        "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+        "status": "NO_TRADE",
+        "v1_gross": "0.00",
+        "v1_commission": "0.00",
+        "v1_swap": "0.00",
+        "v1_net": "0.00",
+        "v2_epoch_server": "1788013424"
+      },
+      "source_sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+      "healthy": true
+    },
+    {
+      "account": "7198096",
+      "process_count": 1,
+      "binary_sha256": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8",
+      "runtime": {
+        "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+        "timestamp_utc": "2026.09.13 07:19:50",
+        "setup_active": "true",
+        "login": "7198096",
+        "server": "FXIFY-Server",
+        "account_mode_demo": "true",
+        "real_accounts_blocked": "true",
+        "entry_permission": "ENABLED_OWNERSHIP_GRANTED",
+        "demo_only": "true",
+        "scanner_active": "true",
+        "autonomous_entry": "true",
+        "ownership_permit": "GRANTED",
+        "owner_instance_id": "vps-fxify-100k-prod",
+        "owner_runtime_id": "vps-fxify-100k-prod-46482346115005-963036609",
+        "owner_host": "fxut9756438",
+        "owner_account": "7198096",
+        "lease_id": "7ab18b018eb84af6b0e2ea1ce89d8b0f",
+        "lease_acquired_epoch": "1789283986",
+        "lease_renewed_epoch": "1789283990",
+        "lease_expires_epoch": "1789284005",
+        "connected": "true",
+        "positions": "0",
+        "orders": "0",
+        "equity": "100321.36",
+        "portfolio_risk_amount": "0.00",
+        "portfolio_risk_percent": "0.0000",
+        "portfolio_risk_known": "true",
+        "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+        "status": "NO_TRADE",
+        "v1_gross": "0.00",
+        "v1_commission": "0.00",
+        "v1_swap": "0.00",
+        "v1_net": "0.00",
+        "v2_epoch_server": "1788013275"
+      },
+      "source_sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+      "healthy": true
+    }
+  ],
+  "fp_before": {
+    "pids": [
+      2892
+    ],
+    "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "runtime": {
+      "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+      "timestamp_utc": "2026.09.13 07:18:10",
+      "setup_active": "true",
+      "login": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "account_mode_demo": "true",
+      "real_accounts_blocked": "true",
+      "entry_permission": "ENABLED_OWNERSHIP_GRANTED",
+      "demo_only": "true",
+      "scanner_active": "true",
+      "autonomous_entry": "true",
+      "ownership_permit": "GRANTED",
+      "owner_instance_id": "vps-fp-prod",
+      "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+      "owner_host": "fxut9756438",
+      "owner_account": "7404213",
+      "lease_id": "df4bdfd068ba444f97d343bafdb13e4f",
+      "lease_acquired_epoch": "1789236890",
+      "lease_renewed_epoch": "1789283890",
+      "lease_expires_epoch": "1789283905",
+      "connected": "true",
+      "positions": "0",
+      "orders": "0",
+      "equity": "99579.64",
+      "portfolio_risk_amount": "0.00",
+      "portfolio_risk_percent": "0.0000",
+      "portfolio_risk_known": "true",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "status": "NO_TRADE",
+      "v1_gross": "-1031.03",
+      "v1_commission": "-172.38",
+      "v1_swap": "0.00",
+      "v1_net": "-1203.41",
+      "v2_epoch_server": "1787998044"
+    }
+  },
+  "fp_after": {
+    "pids": [
+      2892
+    ],
+    "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "runtime": {
+      "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+      "timestamp_utc": "2026.09.13 07:19:50",
+      "setup_active": "true",
+      "login": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "account_mode_demo": "true",
+      "real_accounts_blocked": "true",
+      "entry_permission": "ENABLED_OWNERSHIP_GRANTED",
+      "demo_only": "true",
+      "scanner_active": "true",
+      "autonomous_entry": "true",
+      "ownership_permit": "GRANTED",
+      "owner_instance_id": "vps-fp-prod",
+      "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+      "owner_host": "fxut9756438",
+      "owner_account": "7404213",
+      "lease_id": "df4bdfd068ba444f97d343bafdb13e4f",
+      "lease_acquired_epoch": "1789236890",
+      "lease_renewed_epoch": "1789283989",
+      "lease_expires_epoch": "1789284004",
+      "connected": "true",
+      "positions": "0",
+      "orders": "0",
+      "equity": "99579.64",
+      "portfolio_risk_amount": "0.00",
+      "portfolio_risk_percent": "0.0000",
+      "portfolio_risk_known": "true",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "status": "NO_TRADE",
+      "v1_gross": "-1031.03",
+      "v1_commission": "-172.38",
+      "v1_swap": "0.00",
+      "v1_net": "-1203.41",
+      "v2_epoch_server": "1787998044"
+    }
+  },
+  "error": null,
+  "rollback": null,
+  "completed_utc": "2026-09-13T07:19:53.5403895Z"
+}

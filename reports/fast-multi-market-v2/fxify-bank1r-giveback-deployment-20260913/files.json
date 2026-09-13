@@ -1,0 +1,90 @@
+{
+  "schema": "SOLTRADE_FXIFY_BANK1R_GIVEBACK_FILES_V1",
+  "files": [
+    {
+      "path": "research/fxify-bank1r-giveback-20260913/build.py",
+      "size": 4706,
+      "sha256": "103f6b969e8baa22079738f80b87f1cd3b9705749754ccce193b01e6d7f8ed09"
+    },
+    {
+      "path": "research/fxify-bank1r-giveback-20260913/test_port.py",
+      "size": 2907,
+      "sha256": "44a6cacf0f6fa8d5ae23cac083de41411773b6a344c9926fcaa301087b7910fb"
+    },
+    {
+      "path": "research/fxify-bank1r-giveback-20260913/compile.py",
+      "size": 1317,
+      "sha256": "a2215af5eff2c306a7ac79e2e61113c30d67a9f12aafee77ccc7fe8b9e2b34f1"
+    },
+    {
+      "path": "ops/forexvps/Deploy-FXIFY-Bank1R-Giveback.ps1",
+      "size": 11450,
+      "sha256": "6e290028201af752d788dfb6e0c025080cbf127a516a5ef9a296da659ef333e8"
+    },
+    {
+      "path": "ops/forexvps/Deploy-FXIFY-Bank1R-Giveback.cmd",
+      "size": 134,
+      "sha256": "0c28bf55624993c8dbf98624ef9676794fba080d97fe8f4f9cbbd74f4b990363"
+    },
+    {
+      "path": "ops/forexvps/Verify-All-Three-Bank1R-Giveback.ps1",
+      "size": 4903,
+      "sha256": "cd7edbada0361958be9cfa6df6060bbccf08d1c5f35fad2db52c29cbd9ef1313"
+    },
+    {
+      "path": "ops/forexvps/Verify-All-Three-Bank1R-Giveback.cmd",
+      "size": 138,
+      "sha256": "d1b46d77dc9aabc19003bdd11f6bc616d19f7cb09f17d6d22867d6b63630d504"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/manifest.json",
+      "size": 2019,
+      "sha256": "ac122766f1f2914f8126dab66234bf0f97a11eb6c737a50f0091c0b6c83539dd"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/tests.json",
+      "size": 605,
+      "sha256": "d5378cf3c0e230e6742bee8f0c1eccd7b599b9b8999739348c1bd206c8d23f6f"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/compile-results.json",
+      "size": 508,
+      "sha256": "7b622e4d1d44b6561ced7a08b231e9b588dc42d70315afe23a583b39b8002d34"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/fxify-10k/SolTradeFastMultiMarketV202F10.mq5",
+      "size": 181729,
+      "sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/fxify-10k/SolTradeFastMultiMarketV202F10.ex5",
+      "size": 243196,
+      "sha256": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/fxify-100k/SolTradeFastMultiMarketV202F100.mq5",
+      "size": 181771,
+      "sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef"
+    },
+    {
+      "path": "ops/forexvps/releases/fxify-bank1r-giveback-20260913/fxify-100k/SolTradeFastMultiMarketV202F100.ex5",
+      "size": 242838,
+      "sha256": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fxify-bank1r-giveback-deployment-20260913/deployment.json",
+      "size": 16828,
+      "sha256": "bb30f28ebbf654372fc4c017cf06545e3bcfe0187185e5e8936af803eb6c48b4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fxify-bank1r-giveback-deployment-20260913/verification.json",
+      "size": 7859,
+      "sha256": "40727d1932757606ba948bfc1d89ee1a984b28c786b4796c989c45f370b15ad1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fxify-bank1r-giveback-deployment-20260913/baseline.json",
+      "size": 2137,
+      "sha256": "fccad0c00a50dd33dc6066b6b56da9f71fa7cc2a6a7d8673fdff1368c7175549"
+    }
+  ]
+}

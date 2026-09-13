@@ -1,0 +1,68 @@
+{
+  "schema": "SOLTRADE_ALL_THREE_FORWARD_BASELINE_V1",
+  "timestamp_utc": "2026-09-13T07:23:58.1379651Z",
+  "timestamp_sast": "2026-09-13T09:23:58+02:00",
+  "status": "ALL_THREE_ACTIVE_VERIFIED",
+  "accounts": [
+    {
+      "id": "fp",
+      "account": 7404213,
+      "server": "FPMarketsSC-Demo",
+      "equity": 99579.64,
+      "positions": 0,
+      "orders": 0,
+      "connected": true,
+      "scanner_active": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "risk_percent": 1.0,
+      "aggregate_risk_percent": 1.5,
+      "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+      "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+      "process_ids": [
+        2892
+      ]
+    },
+    {
+      "id": "fxify-10k",
+      "account": 7196820,
+      "server": "FXIFY-Server",
+      "equity": 10039.41,
+      "positions": 0,
+      "orders": 0,
+      "connected": true,
+      "scanner_active": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "risk_percent": 1.0,
+      "aggregate_risk_percent": 1.5,
+      "source_sha256": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+      "binary_sha256": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039",
+      "process_ids": [
+        8008
+      ]
+    },
+    {
+      "id": "fxify-100k",
+      "account": 7198096,
+      "server": "FXIFY-Server",
+      "equity": 100321.36,
+      "positions": 0,
+      "orders": 0,
+      "connected": true,
+      "scanner_active": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "risk_percent": 1.0,
+      "aggregate_risk_percent": 1.5,
+      "source_sha256": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+      "binary_sha256": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8",
+      "process_ids": [
+        6172
+      ]
+    }
+  ]
+}
