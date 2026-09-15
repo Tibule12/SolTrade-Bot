@@ -14,7 +14,7 @@ All work was local and orderless. FP 7404213, FXIFY 7196820 and FXIFY 7198096 we
 | June–August | 168 | 168 | 81 / 80 | 7 | 2026-06-01 14:05:40 through 2026-08-31 17:52:00 UTC |
 | Combined development | 281 | **279** | **131 / 136** | **12** | strictly before the 2026-09-08 holdout |
 
-April–May positions 2 and 124 were omitted because the archive did not contain enough completed bars before entry to construct the declared features. It was not assigned an outcome or filled with later information.
+April–May positions 2 and 124 were omitted because the archive did not contain enough completed bars before entry to construct the declared features. They were not assigned an outcome or filled with later information.
 
 The `symbol-brain-20260908` episode file was not used as development input: its episode timestamps are on September 8, at the locked boundary. The larger preserved April–August native archives provide the 279 independent pre-boundary candidates used here.
 
@@ -85,6 +85,6 @@ Because development failed, the task's conditional implementation stages were no
 - no orderless VPS integration was started;
 - no deployment was performed.
 
-[Implementation status](implementation-status.json) records these conditional skips explicitly. Four regression tests pass, covering causal feature presence, forming-bar exclusion, pre-stop target accounting and holdout isolation. [Test receipt](test-results.json).
+[Implementation status](implementation-status.json) records these conditional skips explicitly. Five regression tests pass, covering causal feature presence, forming-bar exclusion, pre-stop target accounting and holdout isolation. [Test receipt](test-results.json).
 
 The concrete engineering conclusion is that another filter on the current directional candidates is unsupported. The component that constructs proposed directional opportunities must be replaced before a new location/timing selector can be credibly trained. Freezing the best failed filter would discard 5 out-of-fold winners while rejecting only 2 losses and would leave the accepted cohort at 0R and would repeat the same failure under a new name.
