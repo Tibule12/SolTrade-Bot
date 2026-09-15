@@ -1,0 +1,213 @@
+{
+  "status": "NO_MODEL_FROZEN",
+  "reason": "No compact formulation passed all predeclared chronological usability and robustness gates; the holdout remains sealed.",
+  "holdout_must_remain_sealed": true,
+  "best_nonpassing_model": {
+    "kind": "SHALLOW_STUMP_ENSEMBLE",
+    "parameter": 8,
+    "enter_threshold": -0.5,
+    "wait_width": 0.25,
+    "fold_models": [
+      [
+        {
+          "feature": "impulse_extension_m5_atr",
+          "split": -0.16987599999999997,
+          "polarity": -1,
+          "alpha": 0.3324881517966246
+        },
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 1.566,
+          "polarity": -1,
+          "alpha": 0.3956146824556403
+        },
+        {
+          "feature": "range_location",
+          "split": 0.9526213592233127,
+          "polarity": -1,
+          "alpha": 0.38736779609384314
+        },
+        {
+          "feature": "impulse_age_minutes",
+          "split": 25.8,
+          "polarity": -1,
+          "alpha": 0.3309090371208663
+        },
+        {
+          "feature": "impulse_extension_m5_atr",
+          "split": -1.538038,
+          "polarity": 1,
+          "alpha": 0.3597638243723598
+        },
+        {
+          "feature": "seconds_since_structural_break",
+          "split": 1582.0,
+          "polarity": 1,
+          "alpha": 0.42236906237330873
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.700744443425697,
+          "polarity": 1,
+          "alpha": 0.27030390128165926
+        },
+        {
+          "feature": "range_location",
+          "split": 0.9526213592233127,
+          "polarity": -1,
+          "alpha": 0.29112970077792594
+        }
+      ],
+      [
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.4085472546061863,
+          "polarity": -1,
+          "alpha": 0.2106067325381519
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.7181985729066507,
+          "polarity": 1,
+          "alpha": 0.26815235453348746
+        },
+        {
+          "feature": "m1_displacement_5m_atr",
+          "split": 1.1019686510385058,
+          "polarity": -1,
+          "alpha": 0.22572135673599034
+        },
+        {
+          "feature": "cost_r",
+          "split": 0.024021768112005924,
+          "polarity": -1,
+          "alpha": 0.22286292294546745
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.9031342107519515,
+          "polarity": -1,
+          "alpha": 0.22545218458419997
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -3.28338474900983,
+          "polarity": 1,
+          "alpha": 0.2188258096797232
+        },
+        {
+          "feature": "seconds_since_structural_break",
+          "split": 1540.0,
+          "polarity": 1,
+          "alpha": 0.20573783164941828
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.9031342107519515,
+          "polarity": -1,
+          "alpha": 0.19157745320041417
+        }
+      ],
+      [
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 2.7025000000000006,
+          "polarity": -1,
+          "alpha": 0.18500917955620844
+        },
+        {
+          "feature": "pullback_expanding",
+          "split": 1.0,
+          "polarity": 1,
+          "alpha": 0.16694388942075425
+        },
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 5.30549999999999,
+          "polarity": -1,
+          "alpha": 0.15625757034852544
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.371549300042699,
+          "polarity": -1,
+          "alpha": 0.14274400423727177
+        },
+        {
+          "feature": "range_location",
+          "split": 0.5932650765617506,
+          "polarity": 1,
+          "alpha": 0.14798683122150694
+        },
+        {
+          "feature": "distance_from_favorable_extreme_m5_atr",
+          "split": 2.2238040900322074,
+          "polarity": 1,
+          "alpha": 0.1211773296976095
+        },
+        {
+          "feature": "mtf_opposition_fraction",
+          "split": 0.25,
+          "polarity": -1,
+          "alpha": 0.1312074463970636
+        },
+        {
+          "feature": "m5_displacement_15m_atr",
+          "split": 0.011900121338249966,
+          "polarity": -1,
+          "alpha": 0.12597039450096012
+        }
+      ],
+      [
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.780791153949634,
+          "polarity": 1,
+          "alpha": 0.11765704346723224
+        },
+        {
+          "feature": "m5_favorable_room_r",
+          "split": 1.3249714554315561,
+          "polarity": 1,
+          "alpha": 0.14216133027414724
+        },
+        {
+          "feature": "mtf_opposition_fraction",
+          "split": 0.25,
+          "polarity": -1,
+          "alpha": 0.1562603513252521
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.3217401025362778,
+          "polarity": -1,
+          "alpha": 0.12462602100413586
+        },
+        {
+          "feature": "m1_volatility_expansion",
+          "split": 1.0300892857143535,
+          "polarity": -1,
+          "alpha": 0.13494093730511025
+        },
+        {
+          "feature": "m1_body_fraction",
+          "split": 0.7753333333332542,
+          "polarity": 1,
+          "alpha": 0.11178190172537847
+        },
+        {
+          "feature": "broker_execution_cost_room_fraction",
+          "split": 0.025331451207173512,
+          "polarity": -1,
+          "alpha": 0.12386313643755202
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.93739232943081,
+          "polarity": -1,
+          "alpha": 0.0993170903112424
+        }
+      ]
+    ]
+  }
+}

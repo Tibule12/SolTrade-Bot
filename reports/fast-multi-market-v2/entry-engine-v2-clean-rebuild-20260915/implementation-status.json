@@ -1,0 +1,12 @@
+{
+  "schema": "ENTRY_ENGINE_V2_IMPLEMENTATION_STATUS_V1",
+  "development_gate_passed": false,
+  "holdout_gate_opened": false,
+  "candidate_source_created": false,
+  "compiler_run": false,
+  "compiler_result": "NOT_APPLICABLE_NO_PASSING_FROZEN_MODEL",
+  "vps_orderless_integration_run": false,
+  "live_deployment_run": false,
+  "live_accounts_touched": false,
+  "stop_condition": "B_DIRECTIONAL_GENERATOR_HAS_NO_DEMONSTRATED_EXPLOITABLE_SIGNAL"
+}

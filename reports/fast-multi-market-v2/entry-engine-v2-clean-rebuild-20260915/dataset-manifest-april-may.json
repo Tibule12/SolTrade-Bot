@@ -1,0 +1,31 @@
+{
+  "schema": "ENTRY_ENGINE_V2_DATASET_MANIFEST_V1",
+  "created_from_existing_artifacts_only": true,
+  "orders_possible": false,
+  "development_start_utc": "2026.04.01 01:04:20",
+  "development_end_utc": "2026.05.29 14:20:40",
+  "locked_holdout_start": "2026.09.08 00:00:00",
+  "label_horizon_seconds": 14400,
+  "source_entries": 113,
+  "entries": 111,
+  "omitted_incomplete_feature_ids": [
+    "124",
+    "2"
+  ],
+  "resolved": 106,
+  "wins": 50,
+  "losses": 56,
+  "censored": 5,
+  "sources": [
+    {
+      "path": "reports/fast-multi-market-v2/holdout-20260907/april-may/control/raw/evidence.csv.gz",
+      "sha256": "cd3da793b8131477a3bfc21145d8cc940b3c864030aabe5609d984c7c0eda865"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/holdout-20260907/april-may/control/raw/scans.csv.gz",
+      "sha256": "e897057fbcb4d02ae36013cb957867f756cc1cbd2b89e22daa599f55b4fb6fe2"
+    }
+  ],
+  "label": "+1.00 net executable R before -1.00 net executable R; entry ask/bid and exit bid/ask; recorded expected non-spread cost included; fixed 4h horizon",
+  "feature_cutoff": "completed M1/M5/M15 bars and entry evidence available strictly before/at candidate entry; forming minute excluded"
+}

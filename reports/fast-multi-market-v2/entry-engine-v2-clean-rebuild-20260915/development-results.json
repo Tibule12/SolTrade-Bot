@@ -1,0 +1,3590 @@
+{
+  "schema": "ENTRY_ENGINE_V2_DEVELOPMENT_RESULT_V1",
+  "decision": "DIRECTIONAL_GENERATOR_HAS_NO_DEMONSTRATED_EXPLOITABLE_SIGNAL",
+  "holdout_opened": false,
+  "holdout_evaluations": 0,
+  "live_accounts_touched": false,
+  "development_boundary": {
+    "start": "2026.04.01 01:04:20",
+    "end": "2026.08.31 17:52:00",
+    "locked_holdout_start": "2026.09.08 00:00:00"
+  },
+  "population": {
+    "opportunities": 279,
+    "resolved": 267,
+    "wins": 131,
+    "losses": 136,
+    "censored": 12,
+    "baseline_net_r": -5,
+    "baseline_mean_r": -0.018726591760299626,
+    "win_rate": 0.49063670411985016,
+    "win_rate_wilson_95": [
+      0.4312316406392879,
+      0.5503073843849329
+    ],
+    "bootstrap_mean_r_95": [
+      -0.13857677902621723,
+      0.10112359550561797
+    ]
+  },
+  "monthly_generator_results": [
+    {
+      "month": "2026.04",
+      "resolved": 53,
+      "wins": 25,
+      "losses": 28,
+      "net_r": -3,
+      "mean_r": -0.05660377358490566
+    },
+    {
+      "month": "2026.05",
+      "resolved": 53,
+      "wins": 25,
+      "losses": 28,
+      "net_r": -3,
+      "mean_r": -0.05660377358490566
+    },
+    {
+      "month": "2026.06",
+      "resolved": 58,
+      "wins": 33,
+      "losses": 25,
+      "net_r": 8,
+      "mean_r": 0.13793103448275862
+    },
+    {
+      "month": "2026.07",
+      "resolved": 58,
+      "wins": 26,
+      "losses": 32,
+      "net_r": -6,
+      "mean_r": -0.10344827586206896
+    },
+    {
+      "month": "2026.08",
+      "resolved": 45,
+      "wins": 22,
+      "losses": 23,
+      "net_r": -1,
+      "mean_r": -0.022222222222222223
+    }
+  ],
+  "rejected_shadow_generator_check": {
+    "episodes": 125,
+    "resolved": 49,
+    "wins": 21,
+    "losses": 28,
+    "censored": 76,
+    "resolved_net_r": -7,
+    "resolved_mean_r": -0.14285714285714285
+  },
+  "feature_stability": [
+    {
+      "feature": "impulse_age_minutes",
+      "monthly_auc": {
+        "2026.04": 0.5335714285714286,
+        "2026.05": 0.5328571428571428,
+        "2026.06": 0.4218181818181818,
+        "2026.07": 0.6388221153846154,
+        "2026.08": 0.6225296442687747
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5811924298527559
+    },
+    {
+      "feature": "impulse_age_m5_bars",
+      "monthly_auc": {
+        "2026.04": 0.5335714285714286,
+        "2026.05": 0.5328571428571428,
+        "2026.06": 0.4218181818181818,
+        "2026.07": 0.6388221153846154,
+        "2026.08": 0.6225296442687747
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5811924298527559
+    },
+    {
+      "feature": "seconds_since_structural_break",
+      "monthly_auc": {
+        "2026.04": 0.5971428571428572,
+        "2026.05": 0.5171428571428571,
+        "2026.06": 0.34484848484848485,
+        "2026.07": 0.6586538461538461,
+        "2026.08": 0.6304347826086957
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6117051716399543
+    },
+    {
+      "feature": "impulse_distance_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.4928571428571429,
+        "2026.05": 0.5185714285714286,
+        "2026.06": 0.47878787878787876,
+        "2026.07": 0.6105769230769231,
+        "2026.08": 0.44861660079051385
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5417773458425632
+    },
+    {
+      "feature": "range_location",
+      "monthly_auc": {
+        "2026.04": 0.41,
+        "2026.05": 0.59,
+        "2026.06": 0.5975757575757575,
+        "2026.07": 0.42788461538461536,
+        "2026.08": 0.32806324110671936
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6043255802168845
+    },
+    {
+      "feature": "distance_from_favorable_extreme_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.5414285714285715,
+        "2026.05": 0.46714285714285714,
+        "2026.06": 0.46060606060606063,
+        "2026.07": 0.6057692307692307,
+        "2026.08": 0.6482213438735178
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5735340456644804
+    },
+    {
+      "feature": "m1_displacement_5m_atr",
+      "monthly_auc": {
+        "2026.04": 0.45571428571428574,
+        "2026.05": 0.45571428571428574,
+        "2026.06": 0.6048484848484849,
+        "2026.07": 0.46153846153846156,
+        "2026.08": 0.5632411067193676
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5590245117201639
+    },
+    {
+      "feature": "m1_acceleration_atr",
+      "monthly_auc": {
+        "2026.04": 0.4685714285714286,
+        "2026.05": 0.4657142857142857,
+        "2026.06": 0.6472727272727272,
+        "2026.07": 0.46033653846153844,
+        "2026.08": 0.5197628458498024
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5544826640750553
+    },
+    {
+      "feature": "m1_volatility_expansion",
+      "monthly_auc": {
+        "2026.04": 0.5471428571428572,
+        "2026.05": 0.5028571428571429,
+        "2026.06": 0.31757575757575757,
+        "2026.07": 0.44350961538461536,
+        "2026.08": 0.5731225296442688
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5724074313367792
+    },
+    {
+      "feature": "m5_displacement_15m_atr",
+      "monthly_auc": {
+        "2026.04": 0.5257142857142857,
+        "2026.05": 0.4014285714285714,
+        "2026.06": 0.5212121212121212,
+        "2026.07": 0.4807692307692308,
+        "2026.08": 0.466403162055336
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5396650885346538
+    },
+    {
+      "feature": "m5_acceleration_atr",
+      "monthly_auc": {
+        "2026.04": 0.5842857142857143,
+        "2026.05": 0.4114285714285714,
+        "2026.06": 0.45696969696969697,
+        "2026.07": 0.5372596153846154,
+        "2026.08": 0.5039525691699605
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5514199260884043
+    },
+    {
+      "feature": "pullback_depth_m1_atr",
+      "monthly_auc": {
+        "2026.04": 0.44857142857142857,
+        "2026.05": 0.5828571428571429,
+        "2026.06": 0.3878787878787879,
+        "2026.07": 0.4855769230769231,
+        "2026.08": 0.5988142292490118
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.571928846515803
+    },
+    {
+      "feature": "pullback_resumption",
+      "monthly_auc": {
+        "2026.04": 0.42857142857142855,
+        "2026.05": 0.5021428571428571,
+        "2026.06": 0.4951515151515152,
+        "2026.07": 0.5036057692307693,
+        "2026.08": 0.5454545454545454
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5254960456210456
+    },
+    {
+      "feature": "pullback_expanding",
+      "monthly_auc": {
+        "2026.04": 0.5842857142857143,
+        "2026.05": 0.5192857142857142,
+        "2026.06": 0.5915151515151515,
+        "2026.07": 0.5324519230769231,
+        "2026.08": 0.48122529644268774
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5492626413441631
+    },
+    {
+      "feature": "distance_from_pullback_extreme_m1_atr",
+      "monthly_auc": {
+        "2026.04": 0.40714285714285714,
+        "2026.05": 0.4707142857142857,
+        "2026.06": 0.5224242424242425,
+        "2026.07": 0.44711538461538464,
+        "2026.08": 0.6442687747035574
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5683440979310544
+    },
+    {
+      "feature": "m1_directional_close_streak",
+      "monthly_auc": {
+        "2026.04": 0.47928571428571426,
+        "2026.05": 0.4492857142857143,
+        "2026.06": 0.4581818181818182,
+        "2026.07": 0.5871394230769231,
+        "2026.08": 0.5938735177865613
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5588519388220475
+    },
+    {
+      "feature": "m1_body_fraction",
+      "monthly_auc": {
+        "2026.04": 0.4542857142857143,
+        "2026.05": 0.45357142857142857,
+        "2026.06": 0.5351515151515152,
+        "2026.07": 0.6784855769230769,
+        "2026.08": 0.4031620553359684
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5805235787762961
+    },
+    {
+      "feature": "m1_opposing_wick_body_ratio",
+      "monthly_auc": {
+        "2026.04": 0.5328571428571428,
+        "2026.05": 0.5642857142857143,
+        "2026.06": 0.45515151515151514,
+        "2026.07": 0.40805288461538464,
+        "2026.08": 0.5474308300395256
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5562738574830967
+    },
+    {
+      "feature": "score_dominance",
+      "monthly_auc": {
+        "2026.04": 0.4878571428571429,
+        "2026.05": 0.5114285714285715,
+        "2026.06": 0.556969696969697,
+        "2026.07": 0.4465144230769231,
+        "2026.08": 0.49604743083003955
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5275958543268325
+    },
+    {
+      "feature": "opposing_score",
+      "monthly_auc": {
+        "2026.04": 0.5278571428571428,
+        "2026.05": 0.4992857142857143,
+        "2026.06": 0.4393939393939394,
+        "2026.07": 0.4879807692307692,
+        "2026.08": 0.4990118577075099
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.520436972447842
+    },
+    {
+      "feature": "m1_direction",
+      "monthly_auc": {
+        "2026.04": 0.5071428571428571,
+        "2026.05": 0.57,
+        "2026.06": 0.5745454545454546,
+        "2026.07": 0.484375,
+        "2026.08": 0.508893280632411
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5352413184641446
+    },
+    {
+      "feature": "m5_direction",
+      "monthly_auc": {
+        "2026.04": 0.45357142857142857,
+        "2026.05": 0.4735714285714286,
+        "2026.06": 0.4993939393939394,
+        "2026.07": 0.6021634615384616,
+        "2026.08": 0.40810276679841895
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5535047796406493
+    },
+    {
+      "feature": "m15_direction",
+      "monthly_auc": {
+        "2026.04": 0.5335714285714286,
+        "2026.05": 0.45785714285714285,
+        "2026.06": 0.49454545454545457,
+        "2026.07": 0.46153846153846156,
+        "2026.08": 0.4762845849802372
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5286691569300265
+    },
+    {
+      "feature": "h1_direction",
+      "monthly_auc": {
+        "2026.04": 0.5228571428571429,
+        "2026.05": 0.5471428571428572,
+        "2026.06": 0.5,
+        "2026.07": 0.49819711538461536,
+        "2026.08": 0.5217391304347826
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5187084030100334
+    },
+    {
+      "feature": "mtf_alignment_fraction",
+      "monthly_auc": {
+        "2026.04": 0.49714285714285716,
+        "2026.05": 0.5242857142857142,
+        "2026.06": 0.5454545454545454,
+        "2026.07": 0.5108173076923077,
+        "2026.08": 0.3794466403162055
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5407936139947009
+    },
+    {
+      "feature": "mtf_opposition_fraction",
+      "monthly_auc": {
+        "2026.04": 0.5035714285714286,
+        "2026.05": 0.43642857142857144,
+        "2026.06": 0.396969696969697,
+        "2026.07": 0.4807692307692308,
+        "2026.08": 0.4654150197628458
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5447977819282167
+    },
+    {
+      "feature": "regime_range",
+      "monthly_auc": {
+        "2026.04": 0.5664285714285714,
+        "2026.05": 0.4907142857142857,
+        "2026.06": 0.5006060606060606,
+        "2026.07": 0.4170673076923077,
+        "2026.08": 0.5711462450592886
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5460798567374654
+    },
+    {
+      "feature": "regime_transition",
+      "monthly_auc": {
+        "2026.04": 0.455,
+        "2026.05": 0.4057142857142857,
+        "2026.06": 0.6018181818181818,
+        "2026.07": 0.5360576923076923,
+        "2026.08": 0.5286561264822134
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5611635429787604
+    },
+    {
+      "feature": "remaining_room_r",
+      "monthly_auc": {
+        "2026.04": 0.55,
+        "2026.05": 0.43857142857142856,
+        "2026.06": 0.47393939393939394,
+        "2026.07": 0.5096153846153846,
+        "2026.08": 0.6521739130434783
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5598556950296081
+    },
+    {
+      "feature": "session_room_r",
+      "monthly_auc": {
+        "2026.04": 0.57,
+        "2026.05": 0.42428571428571427,
+        "2026.06": 0.3393939393939394,
+        "2026.07": 0.5757211538461539,
+        "2026.08": 0.6027667984189723
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5969616597170945
+    },
+    {
+      "feature": "previous_day_room_r",
+      "monthly_auc": {
+        "2026.04": 0.5628571428571428,
+        "2026.05": 0.5142857142857142,
+        "2026.06": 0.5103030303030303,
+        "2026.07": 0.5865384615384616,
+        "2026.08": 0.3221343873517787
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5703699923265141
+    },
+    {
+      "feature": "m5_favorable_room_r",
+      "monthly_auc": {
+        "2026.04": 0.6028571428571429,
+        "2026.05": 0.42428571428571427,
+        "2026.06": 0.3660606060606061,
+        "2026.07": 0.5997596153846154,
+        "2026.08": 0.6086956521739131
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6041932180138702
+    },
+    {
+      "feature": "m15_favorable_room_r",
+      "monthly_auc": {
+        "2026.04": 0.4828571428571429,
+        "2026.05": 0.43142857142857144,
+        "2026.06": 0.526060606060606,
+        "2026.07": 0.40865384615384615,
+        "2026.08": 0.6225296442687747
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5651301379779641
+    },
+    {
+      "feature": "stop_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.3585714285714286,
+        "2026.05": 0.5071428571428571,
+        "2026.06": 0.5866666666666667,
+        "2026.07": 0.453125,
+        "2026.08": 0.47035573122529645
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5623514728025598
+    },
+    {
+      "feature": "stop_m1_atr",
+      "monthly_auc": {
+        "2026.04": 0.37714285714285717,
+        "2026.05": 0.5085714285714286,
+        "2026.06": 0.5672727272727273,
+        "2026.07": 0.453125,
+        "2026.08": 0.3221343873517787
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5846883822699039
+    },
+    {
+      "feature": "stop_inside_m1_noise",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    },
+    {
+      "feature": "confirmation_move_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.4342857142857143,
+        "2026.05": 0.4757142857142857,
+        "2026.06": 0.503030303030303,
+        "2026.07": 0.6490384615384616,
+        "2026.08": 0.391304347826087
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5701528833485355
+    },
+    {
+      "feature": "cost_r",
+      "monthly_auc": {
+        "2026.04": 0.43714285714285717,
+        "2026.05": 0.38357142857142856,
+        "2026.06": 0.3781818181818182,
+        "2026.07": 0.6802884615384616,
+        "2026.08": 0.5434782608695652
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6049741237023846
+    },
+    {
+      "feature": "spread_m5_atr_percent",
+      "monthly_auc": {
+        "2026.04": 0.36714285714285716,
+        "2026.05": 0.425,
+        "2026.06": 0.4909090909090909,
+        "2026.07": 0.6292067307692307,
+        "2026.08": 0.5266798418972332
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5745669249229032
+    },
+    {
+      "feature": "impulse_extension_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.3914285714285714,
+        "2026.05": 0.52,
+        "2026.06": 0.696969696969697,
+        "2026.07": 0.4026442307692308,
+        "2026.08": 0.3616600790513834
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6122473631441022
+    },
+    {
+      "feature": "breakout_extension_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.5014285714285714,
+        "2026.05": 0.5528571428571428,
+        "2026.06": 0.5927272727272728,
+        "2026.07": 0.4375,
+        "2026.08": 0.5978260869565217
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5614678147939017
+    },
+    {
+      "feature": "proposed_breakout",
+      "monthly_auc": {
+        "2026.04": 0.5064285714285715,
+        "2026.05": 0.44857142857142857,
+        "2026.06": 0.5860606060606061,
+        "2026.07": 0.40625,
+        "2026.08": 0.48122529644268774
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5512884904950123
+    },
+    {
+      "feature": "opposing_breakout",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    },
+    {
+      "feature": "expected_move_consumed_fraction",
+      "monthly_auc": {
+        "2026.04": 0.4657142857142857,
+        "2026.05": 0.46285714285714286,
+        "2026.06": 0.46606060606060606,
+        "2026.07": 0.6586538461538461,
+        "2026.08": 0.39920948616600793
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5729624650711607
+    },
+    {
+      "feature": "broker_execution_cost_room_fraction",
+      "monthly_auc": {
+        "2026.04": 0.4342857142857143,
+        "2026.05": 0.4,
+        "2026.06": 0.36363636363636365,
+        "2026.07": 0.6935096153846154,
+        "2026.08": 0.5118577075098815
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6014890489944837
+    },
+    {
+      "feature": "cost_multiple",
+      "monthly_auc": {
+        "2026.04": 0.5657142857142857,
+        "2026.05": 0.6,
+        "2026.06": 0.6363636363636364,
+        "2026.07": 0.30709134615384615,
+        "2026.08": 0.4881422924901186
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.6013688566867914
+    },
+    {
+      "feature": "spread_median_ratio",
+      "monthly_auc": {
+        "2026.04": 0.6014285714285714,
+        "2026.05": 0.49857142857142855,
+        "2026.06": 0.52,
+        "2026.07": 0.5318509615384616,
+        "2026.08": 0.3448616600790514
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5619692888633107
+    },
+    {
+      "feature": "persistence_scans",
+      "monthly_auc": {
+        "2026.04": 0.52,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5227272727272727
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5085454545454545
+    },
+    {
+      "feature": "persistence_seconds",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    },
+    {
+      "feature": "entry_drift_m5_atr",
+      "monthly_auc": {
+        "2026.04": 0.4342857142857143,
+        "2026.05": 0.4757142857142857,
+        "2026.06": 0.503030303030303,
+        "2026.07": 0.6490384615384616,
+        "2026.08": 0.391304347826087
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5701528833485355
+    },
+    {
+      "feature": "proposed_score_rate_5m",
+      "monthly_auc": {
+        "2026.04": 0.5028571428571429,
+        "2026.05": 0.3757142857142857,
+        "2026.06": 0.5363636363636364,
+        "2026.07": 0.4831730769230769,
+        "2026.08": 0.558300395256917
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5477267623680667
+    },
+    {
+      "feature": "opposing_score_rate_5m",
+      "monthly_auc": {
+        "2026.04": 0.5164285714285715,
+        "2026.05": 0.6671428571428571,
+        "2026.06": 0.4812121212121212,
+        "2026.07": 0.3864182692307692,
+        "2026.08": 0.4426877470355731
+      },
+      "direction_stable": false,
+      "mean_absolute_auc": 0.5746506582185931
+    }
+  ],
+  "stable_features": [
+    {
+      "feature": "stop_inside_m1_noise",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    },
+    {
+      "feature": "opposing_breakout",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    },
+    {
+      "feature": "persistence_scans",
+      "monthly_auc": {
+        "2026.04": 0.52,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5227272727272727
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5085454545454545
+    },
+    {
+      "feature": "persistence_seconds",
+      "monthly_auc": {
+        "2026.04": 0.5,
+        "2026.05": 0.5,
+        "2026.06": 0.5,
+        "2026.07": 0.5,
+        "2026.08": 0.5
+      },
+      "direction_stable": true,
+      "mean_absolute_auc": 0.5
+    }
+  ],
+  "experiments_tested": 46,
+  "passing_experiments": 0,
+  "best_nonpassing_diagnostic": {
+    "kind": "SHALLOW_STUMP_ENSEMBLE",
+    "parameter": 8,
+    "enter_threshold": -0.5,
+    "wait_width": 0.25,
+    "folds": [
+      {
+        "available": 53,
+        "enter": 39,
+        "wait": 13,
+        "reject": 1,
+        "entered_winners": 19,
+        "entered_losses": 20,
+        "entered_net_r": -1.0,
+        "waited_winners": 5,
+        "waited_losses": 8,
+        "waited_net_r": -3.0,
+        "rejected_winners": 1,
+        "rejected_losses": 0,
+        "rejected_net_r": 1.0,
+        "mean_entered_r": -0.02564102564102564,
+        "winner_retention": 0.76,
+        "loss_rejection": 0.0,
+        "winner_rejection": 0.04,
+        "max_drawdown_r": 5.0,
+        "auc": 0.49857142857142855,
+        "accepted_symbols": {
+          "US100": 14,
+          "US500": 8,
+          "XAGUSD.r": 2,
+          "EURUSD.r": 1,
+          "XAUUSD.r": 6,
+          "GER40": 7,
+          "GBPUSD.r": 1
+        },
+        "largest_symbol_share": 0.358974358974359,
+        "net_r_without_best_symbol": -5.0,
+        "month": "2026.05",
+        "training_count": 53
+      },
+      {
+        "available": 58,
+        "enter": 53,
+        "wait": 0,
+        "reject": 5,
+        "entered_winners": 30,
+        "entered_losses": 23,
+        "entered_net_r": 7.0,
+        "waited_winners": 0,
+        "waited_losses": 0,
+        "waited_net_r": 0.0,
+        "rejected_winners": 3,
+        "rejected_losses": 2,
+        "rejected_net_r": 1.0,
+        "mean_entered_r": 0.1320754716981132,
+        "winner_retention": 0.9090909090909091,
+        "loss_rejection": 0.08,
+        "winner_rejection": 0.09090909090909091,
+        "max_drawdown_r": 3.0,
+        "auc": 0.3618181818181818,
+        "accepted_symbols": {
+          "GER40": 5,
+          "XAUUSD.r": 21,
+          "US100": 23,
+          "USDCAD.r": 1,
+          "UK100": 1,
+          "EURJPY.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4339622641509434,
+        "net_r_without_best_symbol": 2.0,
+        "month": "2026.06",
+        "training_count": 106
+      },
+      {
+        "available": 58,
+        "enter": 54,
+        "wait": 3,
+        "reject": 1,
+        "entered_winners": 25,
+        "entered_losses": 29,
+        "entered_net_r": -4.0,
+        "waited_winners": 0,
+        "waited_losses": 3,
+        "waited_net_r": -3.0,
+        "rejected_winners": 1,
+        "rejected_losses": 0,
+        "rejected_net_r": 1.0,
+        "mean_entered_r": -0.07407407407407407,
+        "winner_retention": 0.9615384615384616,
+        "loss_rejection": 0.0,
+        "winner_rejection": 0.038461538461538464,
+        "max_drawdown_r": 8.0,
+        "auc": 0.49158653846153844,
+        "accepted_symbols": {
+          "US100": 16,
+          "GER40": 16,
+          "UK100": 1,
+          "XAUUSD.r": 14,
+          "EURUSD.r": 2,
+          "US500": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 1
+        },
+        "largest_symbol_share": 0.2962962962962963,
+        "net_r_without_best_symbol": -6.0,
+        "month": "2026.07",
+        "training_count": 164
+      },
+      {
+        "available": 45,
+        "enter": 44,
+        "wait": 1,
+        "reject": 0,
+        "entered_winners": 21,
+        "entered_losses": 23,
+        "entered_net_r": -2.0,
+        "waited_winners": 1,
+        "waited_losses": 0,
+        "waited_net_r": 1.0,
+        "rejected_winners": 0,
+        "rejected_losses": 0,
+        "rejected_net_r": 0.0,
+        "mean_entered_r": -0.045454545454545456,
+        "winner_retention": 0.9545454545454546,
+        "loss_rejection": 0.0,
+        "winner_rejection": 0.0,
+        "max_drawdown_r": 6.0,
+        "auc": 0.5138339920948617,
+        "accepted_symbols": {
+          "US100": 12,
+          "US500": 6,
+          "XAUUSD.r": 13,
+          "GER40": 8,
+          "USDJPY.r": 1,
+          "EURUSD.r": 2,
+          "USDCAD.r": 1,
+          "XAGUSD.r": 1
+        },
+        "largest_symbol_share": 0.29545454545454547,
+        "net_r_without_best_symbol": -4.0,
+        "month": "2026.08",
+        "training_count": 222
+      }
+    ],
+    "oof": {
+      "available": 214,
+      "enter": 190,
+      "wait": 17,
+      "reject": 7,
+      "entered_winners": 95,
+      "entered_losses": 95,
+      "entered_net_r": 0.0,
+      "waited_winners": 6,
+      "waited_losses": 11,
+      "waited_net_r": -5.0,
+      "rejected_winners": 5,
+      "rejected_losses": 2,
+      "rejected_net_r": 3.0,
+      "mean_entered_r": 0.0,
+      "winner_retention": 0.8962264150943396,
+      "loss_rejection": 0.018518518518518517,
+      "winner_rejection": 0.04716981132075472,
+      "max_drawdown_r": 8.0,
+      "auc": 0.4567173305380853,
+      "accepted_symbols": {
+        "US100": 65,
+        "US500": 16,
+        "XAGUSD.r": 3,
+        "EURUSD.r": 6,
+        "XAUUSD.r": 54,
+        "GER40": 36,
+        "GBPUSD.r": 1,
+        "USDCAD.r": 2,
+        "UK100": 2,
+        "EURJPY.r": 1,
+        "NZDUSD.r": 1,
+        "USDCHF.r": 1,
+        "USDJPY.r": 2
+      },
+      "largest_symbol_share": 0.34210526315789475,
+      "net_r_without_best_symbol": -7.0
+    },
+    "baseline_oof": {
+      "available": 214,
+      "enter": 214,
+      "wait": 0,
+      "reject": 0,
+      "entered_winners": 106,
+      "entered_losses": 108,
+      "entered_net_r": -2.0,
+      "waited_winners": 0,
+      "waited_losses": 0,
+      "waited_net_r": 0.0,
+      "rejected_winners": 0,
+      "rejected_losses": 0,
+      "rejected_net_r": 0.0,
+      "mean_entered_r": -0.009345794392523364,
+      "winner_retention": 1.0,
+      "loss_rejection": 0.0,
+      "winner_rejection": 0.0,
+      "max_drawdown_r": 10.0,
+      "auc": 0.5,
+      "accepted_symbols": {
+        "US100": 69,
+        "US500": 18,
+        "XAGUSD.r": 5,
+        "EURUSD.r": 8,
+        "XAUUSD.r": 64,
+        "GER40": 38,
+        "GBPUSD.r": 1,
+        "USDCAD.r": 2,
+        "UK100": 4,
+        "EURJPY.r": 1,
+        "NZDUSD.r": 1,
+        "USDCHF.r": 1,
+        "USDJPY.r": 2
+      },
+      "largest_symbol_share": 0.32242990654205606,
+      "net_r_without_best_symbol": -7.0
+    },
+    "gates": {
+      "positive_oof_expectancy": false,
+      "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+      "winner_retention_at_least_50pct": true,
+      "at_least_60_entered_resolved": true,
+      "nonnegative_every_month_and_at_least_8_entries": false,
+      "drawdown_not_worse_than_baseline": true,
+      "largest_symbol_below_50pct": true,
+      "positive_without_best_symbol": false,
+      "positive_after_removing_one_winner": false
+    },
+    "passed": false,
+    "fold_models": [
+      [
+        {
+          "feature": "impulse_extension_m5_atr",
+          "split": -0.16987599999999997,
+          "polarity": -1,
+          "alpha": 0.3324881517966246
+        },
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 1.566,
+          "polarity": -1,
+          "alpha": 0.3956146824556403
+        },
+        {
+          "feature": "range_location",
+          "split": 0.9526213592233127,
+          "polarity": -1,
+          "alpha": 0.38736779609384314
+        },
+        {
+          "feature": "impulse_age_minutes",
+          "split": 25.8,
+          "polarity": -1,
+          "alpha": 0.3309090371208663
+        },
+        {
+          "feature": "impulse_extension_m5_atr",
+          "split": -1.538038,
+          "polarity": 1,
+          "alpha": 0.3597638243723598
+        },
+        {
+          "feature": "seconds_since_structural_break",
+          "split": 1582.0,
+          "polarity": 1,
+          "alpha": 0.42236906237330873
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.700744443425697,
+          "polarity": 1,
+          "alpha": 0.27030390128165926
+        },
+        {
+          "feature": "range_location",
+          "split": 0.9526213592233127,
+          "polarity": -1,
+          "alpha": 0.29112970077792594
+        }
+      ],
+      [
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.4085472546061863,
+          "polarity": -1,
+          "alpha": 0.2106067325381519
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.7181985729066507,
+          "polarity": 1,
+          "alpha": 0.26815235453348746
+        },
+        {
+          "feature": "m1_displacement_5m_atr",
+          "split": 1.1019686510385058,
+          "polarity": -1,
+          "alpha": 0.22572135673599034
+        },
+        {
+          "feature": "cost_r",
+          "split": 0.024021768112005924,
+          "polarity": -1,
+          "alpha": 0.22286292294546745
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.9031342107519515,
+          "polarity": -1,
+          "alpha": 0.22545218458419997
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -3.28338474900983,
+          "polarity": 1,
+          "alpha": 0.2188258096797232
+        },
+        {
+          "feature": "seconds_since_structural_break",
+          "split": 1540.0,
+          "polarity": 1,
+          "alpha": 0.20573783164941828
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.9031342107519515,
+          "polarity": -1,
+          "alpha": 0.19157745320041417
+        }
+      ],
+      [
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 2.7025000000000006,
+          "polarity": -1,
+          "alpha": 0.18500917955620844
+        },
+        {
+          "feature": "pullback_expanding",
+          "split": 1.0,
+          "polarity": 1,
+          "alpha": 0.16694388942075425
+        },
+        {
+          "feature": "spread_m5_atr_percent",
+          "split": 5.30549999999999,
+          "polarity": -1,
+          "alpha": 0.15625757034852544
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.371549300042699,
+          "polarity": -1,
+          "alpha": 0.14274400423727177
+        },
+        {
+          "feature": "range_location",
+          "split": 0.5932650765617506,
+          "polarity": 1,
+          "alpha": 0.14798683122150694
+        },
+        {
+          "feature": "distance_from_favorable_extreme_m5_atr",
+          "split": 2.2238040900322074,
+          "polarity": 1,
+          "alpha": 0.1211773296976095
+        },
+        {
+          "feature": "mtf_opposition_fraction",
+          "split": 0.25,
+          "polarity": -1,
+          "alpha": 0.1312074463970636
+        },
+        {
+          "feature": "m5_displacement_15m_atr",
+          "split": 0.011900121338249966,
+          "polarity": -1,
+          "alpha": 0.12597039450096012
+        }
+      ],
+      [
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 3.780791153949634,
+          "polarity": 1,
+          "alpha": 0.11765704346723224
+        },
+        {
+          "feature": "m5_favorable_room_r",
+          "split": 1.3249714554315561,
+          "polarity": 1,
+          "alpha": 0.14216133027414724
+        },
+        {
+          "feature": "mtf_opposition_fraction",
+          "split": 0.25,
+          "polarity": -1,
+          "alpha": 0.1562603513252521
+        },
+        {
+          "feature": "impulse_distance_m5_atr",
+          "split": 1.3217401025362778,
+          "polarity": -1,
+          "alpha": 0.12462602100413586
+        },
+        {
+          "feature": "m1_volatility_expansion",
+          "split": 1.0300892857143535,
+          "polarity": -1,
+          "alpha": 0.13494093730511025
+        },
+        {
+          "feature": "m1_body_fraction",
+          "split": 0.7753333333332542,
+          "polarity": 1,
+          "alpha": 0.11178190172537847
+        },
+        {
+          "feature": "broker_execution_cost_room_fraction",
+          "split": 0.025331451207173512,
+          "polarity": -1,
+          "alpha": 0.12386313643755202
+        },
+        {
+          "feature": "m15_favorable_room_r",
+          "split": -2.93739232943081,
+          "polarity": -1,
+          "alpha": 0.0993170903112424
+        }
+      ]
+    ]
+  },
+  "all_experiment_summary": [
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.4,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 119,
+        "wait": 17,
+        "reject": 78,
+        "entered_winners": 55,
+        "entered_losses": 64,
+        "entered_net_r": -9.0,
+        "waited_winners": 10,
+        "waited_losses": 7,
+        "waited_net_r": 3.0,
+        "rejected_winners": 41,
+        "rejected_losses": 37,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.07563025210084033,
+        "winner_retention": 0.5188679245283019,
+        "loss_rejection": 0.3425925925925926,
+        "winner_rejection": 0.3867924528301887,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 42,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 36,
+          "GER40": 24,
+          "US500": 9,
+          "UK100": 3,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.35294117647058826,
+        "net_r_without_best_symbol": -13.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.45,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 110,
+        "wait": 15,
+        "reject": 89,
+        "entered_winners": 50,
+        "entered_losses": 60,
+        "entered_net_r": -10.0,
+        "waited_winners": 8,
+        "waited_losses": 7,
+        "waited_net_r": 1.0,
+        "rejected_winners": 48,
+        "rejected_losses": 41,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.09090909090909091,
+        "winner_retention": 0.4716981132075472,
+        "loss_rejection": 0.37962962962962965,
+        "winner_rejection": 0.4528301886792453,
+        "max_drawdown_r": 17.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 39,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 34,
+          "GER40": 23,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.35454545454545455,
+        "net_r_without_best_symbol": -13.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.5,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 106,
+        "wait": 13,
+        "reject": 95,
+        "entered_winners": 49,
+        "entered_losses": 57,
+        "entered_net_r": -8.0,
+        "waited_winners": 6,
+        "waited_losses": 7,
+        "waited_net_r": -1.0,
+        "rejected_winners": 51,
+        "rejected_losses": 44,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.07547169811320754,
+        "winner_retention": 0.46226415094339623,
+        "loss_rejection": 0.4074074074074074,
+        "winner_rejection": 0.4811320754716981,
+        "max_drawdown_r": 17.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 38,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 32,
+          "GER40": 22,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3584905660377358,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.55,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 100,
+        "wait": 10,
+        "reject": 104,
+        "entered_winners": 47,
+        "entered_losses": 53,
+        "entered_net_r": -6.0,
+        "waited_winners": 3,
+        "waited_losses": 7,
+        "waited_net_r": -4.0,
+        "rejected_winners": 56,
+        "rejected_losses": 48,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": -0.06,
+        "winner_retention": 0.44339622641509435,
+        "loss_rejection": 0.4444444444444444,
+        "winner_rejection": 0.5283018867924528,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 36,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 30,
+          "GER40": 20,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.36,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.6,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 90,
+        "wait": 16,
+        "reject": 108,
+        "entered_winners": 43,
+        "entered_losses": 47,
+        "entered_net_r": -4.0,
+        "waited_winners": 6,
+        "waited_losses": 10,
+        "waited_net_r": -4.0,
+        "rejected_winners": 57,
+        "rejected_losses": 51,
+        "rejected_net_r": 6.0,
+        "mean_entered_r": -0.044444444444444446,
+        "winner_retention": 0.4056603773584906,
+        "loss_rejection": 0.4722222222222222,
+        "winner_rejection": 0.5377358490566038,
+        "max_drawdown_r": 12.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 34,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 23,
+          "GER40": 20,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.37777777777777777,
+        "net_r_without_best_symbol": -10.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 0.3,
+      "enter_threshold": 0.65,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 83,
+        "wait": 17,
+        "reject": 114,
+        "entered_winners": 39,
+        "entered_losses": 44,
+        "entered_net_r": -5.0,
+        "waited_winners": 8,
+        "waited_losses": 9,
+        "waited_net_r": -1.0,
+        "rejected_winners": 59,
+        "rejected_losses": 55,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.060240963855421686,
+        "winner_retention": 0.36792452830188677,
+        "loss_rejection": 0.5092592592592593,
+        "winner_rejection": 0.5566037735849056,
+        "max_drawdown_r": 13.0,
+        "auc": 0.4769392033542977,
+        "accepted_symbols": {
+          "US100": 34,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 19,
+          "GER40": 20,
+          "US500": 5,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.40963855421686746,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.4,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 127,
+        "wait": 16,
+        "reject": 71,
+        "entered_winners": 60,
+        "entered_losses": 67,
+        "entered_net_r": -7.0,
+        "waited_winners": 8,
+        "waited_losses": 8,
+        "waited_net_r": 0.0,
+        "rejected_winners": 38,
+        "rejected_losses": 33,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.05511811023622047,
+        "winner_retention": 0.5660377358490566,
+        "loss_rejection": 0.3055555555555556,
+        "winner_rejection": 0.3584905660377358,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 43,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 41,
+          "GER40": 25,
+          "US500": 10,
+          "UK100": 3,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.33858267716535434,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.45,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 116,
+        "wait": 17,
+        "reject": 81,
+        "entered_winners": 55,
+        "entered_losses": 61,
+        "entered_net_r": -6.0,
+        "waited_winners": 7,
+        "waited_losses": 10,
+        "waited_net_r": -3.0,
+        "rejected_winners": 44,
+        "rejected_losses": 37,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.05172413793103448,
+        "winner_retention": 0.5188679245283019,
+        "loss_rejection": 0.3425925925925926,
+        "winner_rejection": 0.41509433962264153,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 41,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 38,
+          "GER40": 23,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.35344827586206895,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.5,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 108,
+        "wait": 19,
+        "reject": 87,
+        "entered_winners": 51,
+        "entered_losses": 57,
+        "entered_net_r": -6.0,
+        "waited_winners": 9,
+        "waited_losses": 10,
+        "waited_net_r": -1.0,
+        "rejected_winners": 46,
+        "rejected_losses": 41,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.05555555555555555,
+        "winner_retention": 0.4811320754716981,
+        "loss_rejection": 0.37962962962962965,
+        "winner_rejection": 0.4339622641509434,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 38,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 34,
+          "GER40": 22,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.35185185185185186,
+        "net_r_without_best_symbol": -10.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.55,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 100,
+        "wait": 16,
+        "reject": 98,
+        "entered_winners": 46,
+        "entered_losses": 54,
+        "entered_net_r": -8.0,
+        "waited_winners": 9,
+        "waited_losses": 7,
+        "waited_net_r": 2.0,
+        "rejected_winners": 51,
+        "rejected_losses": 47,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.08,
+        "winner_retention": 0.4339622641509434,
+        "loss_rejection": 0.4351851851851852,
+        "winner_rejection": 0.4811320754716981,
+        "max_drawdown_r": 17.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 35,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 30,
+          "GER40": 21,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.35,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.6,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 85,
+        "wait": 23,
+        "reject": 106,
+        "entered_winners": 39,
+        "entered_losses": 46,
+        "entered_net_r": -7.0,
+        "waited_winners": 12,
+        "waited_losses": 11,
+        "waited_net_r": 1.0,
+        "rejected_winners": 55,
+        "rejected_losses": 51,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.08235294117647059,
+        "winner_retention": 0.36792452830188677,
+        "loss_rejection": 0.4722222222222222,
+        "winner_rejection": 0.5188679245283019,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 34,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 19,
+          "GER40": 19,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 1.0,
+      "enter_threshold": 0.65,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 78,
+        "wait": 22,
+        "reject": 114,
+        "entered_winners": 37,
+        "entered_losses": 41,
+        "entered_net_r": -4.0,
+        "waited_winners": 9,
+        "waited_losses": 13,
+        "waited_net_r": -4.0,
+        "rejected_winners": 60,
+        "rejected_losses": 54,
+        "rejected_net_r": 6.0,
+        "mean_entered_r": -0.05128205128205128,
+        "winner_retention": 0.3490566037735849,
+        "loss_rejection": 0.5,
+        "winner_rejection": 0.5660377358490566,
+        "max_drawdown_r": 13.0,
+        "auc": 0.4715234102026555,
+        "accepted_symbols": {
+          "US100": 33,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 16,
+          "GER40": 19,
+          "US500": 5,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4230769230769231,
+        "net_r_without_best_symbol": -9.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.4,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 133,
+        "wait": 26,
+        "reject": 55,
+        "entered_winners": 62,
+        "entered_losses": 71,
+        "entered_net_r": -9.0,
+        "waited_winners": 14,
+        "waited_losses": 12,
+        "waited_net_r": 2.0,
+        "rejected_winners": 30,
+        "rejected_losses": 25,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.06766917293233082,
+        "winner_retention": 0.5849056603773585,
+        "loss_rejection": 0.23148148148148148,
+        "winner_rejection": 0.2830188679245283,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 45,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 45,
+          "GER40": 26,
+          "US500": 10,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3383458646616541,
+        "net_r_without_best_symbol": -14.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.45,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 126,
+        "wait": 21,
+        "reject": 67,
+        "entered_winners": 60,
+        "entered_losses": 66,
+        "entered_net_r": -6.0,
+        "waited_winners": 8,
+        "waited_losses": 13,
+        "waited_net_r": -5.0,
+        "rejected_winners": 38,
+        "rejected_losses": 29,
+        "rejected_net_r": 9.0,
+        "mean_entered_r": -0.047619047619047616,
+        "winner_retention": 0.5660377358490566,
+        "loss_rejection": 0.26851851851851855,
+        "winner_rejection": 0.3584905660377358,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 42,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 42,
+          "GER40": 25,
+          "US500": 10,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.5,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 113,
+        "wait": 20,
+        "reject": 81,
+        "entered_winners": 54,
+        "entered_losses": 59,
+        "entered_net_r": -5.0,
+        "waited_winners": 8,
+        "waited_losses": 12,
+        "waited_net_r": -4.0,
+        "rejected_winners": 44,
+        "rejected_losses": 37,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.04424778761061947,
+        "winner_retention": 0.5094339622641509,
+        "loss_rejection": 0.3425925925925926,
+        "winner_rejection": 0.41509433962264153,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 38,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 35,
+          "GER40": 24,
+          "US500": 9,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.336283185840708,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.55,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 99,
+        "wait": 27,
+        "reject": 88,
+        "entered_winners": 47,
+        "entered_losses": 52,
+        "entered_net_r": -5.0,
+        "waited_winners": 13,
+        "waited_losses": 14,
+        "waited_net_r": -1.0,
+        "rejected_winners": 46,
+        "rejected_losses": 42,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.050505050505050504,
+        "winner_retention": 0.44339622641509435,
+        "loss_rejection": 0.3888888888888889,
+        "winner_rejection": 0.4339622641509434,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 36,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 28,
+          "GER40": 21,
+          "US500": 7,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.36363636363636365,
+        "net_r_without_best_symbol": -9.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.6,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 82,
+        "wait": 31,
+        "reject": 101,
+        "entered_winners": 39,
+        "entered_losses": 43,
+        "entered_net_r": -4.0,
+        "waited_winners": 15,
+        "waited_losses": 16,
+        "waited_net_r": -1.0,
+        "rejected_winners": 52,
+        "rejected_losses": 49,
+        "rejected_net_r": 3.0,
+        "mean_entered_r": -0.04878048780487805,
+        "winner_retention": 0.36792452830188677,
+        "loss_rejection": 0.4537037037037037,
+        "winner_rejection": 0.49056603773584906,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 34,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 19,
+          "GER40": 19,
+          "US500": 6,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4146341463414634,
+        "net_r_without_best_symbol": -8.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 3.0,
+      "enter_threshold": 0.65,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 72,
+        "wait": 27,
+        "reject": 115,
+        "entered_winners": 34,
+        "entered_losses": 38,
+        "entered_net_r": -4.0,
+        "waited_winners": 13,
+        "waited_losses": 14,
+        "waited_net_r": -1.0,
+        "rejected_winners": 59,
+        "rejected_losses": 56,
+        "rejected_net_r": 3.0,
+        "mean_entered_r": -0.05555555555555555,
+        "winner_retention": 0.32075471698113206,
+        "loss_rejection": 0.5185185185185185,
+        "winner_rejection": 0.5566037735849056,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4591194968553459,
+        "accepted_symbols": {
+          "US100": 31,
+          "XAUUSD.r": 16,
+          "GER40": 18,
+          "US500": 4,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4305555555555556,
+        "net_r_without_best_symbol": -7.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.4,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 151,
+        "wait": 34,
+        "reject": 29,
+        "entered_winners": 72,
+        "entered_losses": 79,
+        "entered_net_r": -7.0,
+        "waited_winners": 15,
+        "waited_losses": 19,
+        "waited_net_r": -4.0,
+        "rejected_winners": 19,
+        "rejected_losses": 10,
+        "rejected_net_r": 9.0,
+        "mean_entered_r": -0.046357615894039736,
+        "winner_retention": 0.6792452830188679,
+        "loss_rejection": 0.09259259259259259,
+        "winner_rejection": 0.1792452830188679,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "US100": 53,
+          "US500": 12,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 50,
+          "GER40": 28,
+          "GBPUSD.r": 1,
+          "UK100": 2,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3509933774834437,
+        "net_r_without_best_symbol": -14.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.45,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 133,
+        "wait": 35,
+        "reject": 46,
+        "entered_winners": 63,
+        "entered_losses": 70,
+        "entered_net_r": -7.0,
+        "waited_winners": 18,
+        "waited_losses": 17,
+        "waited_net_r": 1.0,
+        "rejected_winners": 25,
+        "rejected_losses": 21,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.05263157894736842,
+        "winner_retention": 0.5943396226415094,
+        "loss_rejection": 0.19444444444444445,
+        "winner_rejection": 0.2358490566037736,
+        "max_drawdown_r": 13.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "US100": 48,
+          "US500": 11,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 42,
+          "GER40": 26,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3609022556390977,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.5,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 112,
+        "wait": 39,
+        "reject": 63,
+        "entered_winners": 53,
+        "entered_losses": 59,
+        "entered_net_r": -6.0,
+        "waited_winners": 19,
+        "waited_losses": 20,
+        "waited_net_r": -1.0,
+        "rejected_winners": 34,
+        "rejected_losses": 29,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.05357142857142857,
+        "winner_retention": 0.5,
+        "loss_rejection": 0.26851851851851855,
+        "winner_rejection": 0.32075471698113206,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "US100": 37,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 35,
+          "GER40": 24,
+          "US500": 10,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.33035714285714285,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.55,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 93,
+        "wait": 40,
+        "reject": 81,
+        "entered_winners": 43,
+        "entered_losses": 50,
+        "entered_net_r": -7.0,
+        "waited_winners": 20,
+        "waited_losses": 20,
+        "waited_net_r": 0.0,
+        "rejected_winners": 43,
+        "rejected_losses": 38,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.07526881720430108,
+        "winner_retention": 0.4056603773584906,
+        "loss_rejection": 0.35185185185185186,
+        "winner_rejection": 0.4056603773584906,
+        "max_drawdown_r": 17.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "US100": 33,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 26,
+          "GER40": 21,
+          "US500": 9,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3548387096774194,
+        "net_r_without_best_symbol": -10.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.6,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 75,
+        "wait": 37,
+        "reject": 102,
+        "entered_winners": 34,
+        "entered_losses": 41,
+        "entered_net_r": -7.0,
+        "waited_winners": 19,
+        "waited_losses": 18,
+        "waited_net_r": 1.0,
+        "rejected_winners": 53,
+        "rejected_losses": 49,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.09333333333333334,
+        "winner_retention": 0.32075471698113206,
+        "loss_rejection": 0.4537037037037037,
+        "winner_rejection": 0.5,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "US100": 32,
+          "XAUUSD.r": 19,
+          "GER40": 17,
+          "US500": 4,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.4266666666666667,
+        "net_r_without_best_symbol": -9.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 10.0,
+      "enter_threshold": 0.65,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 54,
+        "wait": 39,
+        "reject": 121,
+        "entered_winners": 22,
+        "entered_losses": 32,
+        "entered_net_r": -10.0,
+        "waited_winners": 21,
+        "waited_losses": 18,
+        "waited_net_r": 3.0,
+        "rejected_winners": 63,
+        "rejected_losses": 58,
+        "rejected_net_r": 5.0,
+        "mean_entered_r": -0.18518518518518517,
+        "winner_retention": 0.20754716981132076,
+        "loss_rejection": 0.5370370370370371,
+        "winner_rejection": 0.5943396226415094,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4460167714884696,
+        "accepted_symbols": {
+          "XAUUSD.r": 14,
+          "US100": 23,
+          "GER40": 15,
+          "UK100": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.42592592592592593,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.4,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 167,
+        "wait": 35,
+        "reject": 12,
+        "entered_winners": 78,
+        "entered_losses": 89,
+        "entered_net_r": -11.0,
+        "waited_winners": 19,
+        "waited_losses": 16,
+        "waited_net_r": 3.0,
+        "rejected_winners": 9,
+        "rejected_losses": 3,
+        "rejected_net_r": 6.0,
+        "mean_entered_r": -0.0658682634730539,
+        "winner_retention": 0.7358490566037735,
+        "loss_rejection": 0.027777777777777776,
+        "winner_rejection": 0.08490566037735849,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "US100": 57,
+          "US500": 15,
+          "XAGUSD.r": 2,
+          "XAUUSD.r": 54,
+          "EURUSD.r": 2,
+          "GER40": 30,
+          "GBPUSD.r": 1,
+          "UK100": 3,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1
+        },
+        "largest_symbol_share": 0.3413173652694611,
+        "net_r_without_best_symbol": -15.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.45,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 148,
+        "wait": 45,
+        "reject": 21,
+        "entered_winners": 71,
+        "entered_losses": 77,
+        "entered_net_r": -6.0,
+        "waited_winners": 21,
+        "waited_losses": 24,
+        "waited_net_r": -3.0,
+        "rejected_winners": 14,
+        "rejected_losses": 7,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.04054054054054054,
+        "winner_retention": 0.6698113207547169,
+        "loss_rejection": 0.06481481481481481,
+        "winner_rejection": 0.1320754716981132,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "US100": 54,
+          "US500": 11,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 47,
+          "EURUSD.r": 2,
+          "GER40": 28,
+          "GBPUSD.r": 1,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDCAD.r": 1
+        },
+        "largest_symbol_share": 0.36486486486486486,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.5,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 110,
+        "wait": 57,
+        "reject": 47,
+        "entered_winners": 51,
+        "entered_losses": 59,
+        "entered_net_r": -8.0,
+        "waited_winners": 27,
+        "waited_losses": 30,
+        "waited_net_r": -3.0,
+        "rejected_winners": 28,
+        "rejected_losses": 19,
+        "rejected_net_r": 9.0,
+        "mean_entered_r": -0.07272727272727272,
+        "winner_retention": 0.4811320754716981,
+        "loss_rejection": 0.17592592592592593,
+        "winner_rejection": 0.2641509433962264,
+        "max_drawdown_r": 18.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "US100": 40,
+          "XAGUSD.r": 1,
+          "XAUUSD.r": 34,
+          "GER40": 22,
+          "US500": 9,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.36363636363636365,
+        "net_r_without_best_symbol": -10.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.55,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 76,
+        "wait": 72,
+        "reject": 66,
+        "entered_winners": 33,
+        "entered_losses": 43,
+        "entered_net_r": -10.0,
+        "waited_winners": 38,
+        "waited_losses": 34,
+        "waited_net_r": 4.0,
+        "rejected_winners": 35,
+        "rejected_losses": 31,
+        "rejected_net_r": 4.0,
+        "mean_entered_r": -0.13157894736842105,
+        "winner_retention": 0.3113207547169811,
+        "loss_rejection": 0.28703703703703703,
+        "winner_rejection": 0.330188679245283,
+        "max_drawdown_r": 17.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "US100": 29,
+          "XAUUSD.r": 21,
+          "GER40": 19,
+          "US500": 5,
+          "UK100": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.3815789473684211,
+        "net_r_without_best_symbol": -9.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.6,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 50,
+        "wait": 60,
+        "reject": 104,
+        "entered_winners": 19,
+        "entered_losses": 31,
+        "entered_net_r": -12.0,
+        "waited_winners": 32,
+        "waited_losses": 28,
+        "waited_net_r": 4.0,
+        "rejected_winners": 55,
+        "rejected_losses": 49,
+        "rejected_net_r": 6.0,
+        "mean_entered_r": -0.24,
+        "winner_retention": 0.1792452830188679,
+        "loss_rejection": 0.4537037037037037,
+        "winner_rejection": 0.5188679245283019,
+        "max_drawdown_r": 15.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "US100": 21,
+          "GER40": 13,
+          "XAUUSD.r": 13,
+          "UK100": 1,
+          "US500": 1,
+          "EURUSD.r": 1
+        },
+        "largest_symbol_share": 0.42,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "RIDGE_LOGISTIC",
+      "parameter": 30.0,
+      "enter_threshold": 0.65,
+      "wait_width": 0.1,
+      "oof": {
+        "available": 214,
+        "enter": 30,
+        "wait": 46,
+        "reject": 138,
+        "entered_winners": 11,
+        "entered_losses": 19,
+        "entered_net_r": -8.0,
+        "waited_winners": 22,
+        "waited_losses": 24,
+        "waited_net_r": -2.0,
+        "rejected_winners": 73,
+        "rejected_losses": 65,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": -0.26666666666666666,
+        "winner_retention": 0.10377358490566038,
+        "loss_rejection": 0.6018518518518519,
+        "winner_rejection": 0.6886792452830188,
+        "max_drawdown_r": 10.0,
+        "auc": 0.4362334032145353,
+        "accepted_symbols": {
+          "GER40": 6,
+          "US100": 13,
+          "XAUUSD.r": 10,
+          "UK100": 1
+        },
+        "largest_symbol_share": 0.43333333333333335,
+        "net_r_without_best_symbol": -7.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 3,
+      "enter_threshold": -0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 202,
+        "wait": 9,
+        "reject": 3,
+        "entered_winners": 99,
+        "entered_losses": 103,
+        "entered_net_r": -4.0,
+        "waited_winners": 5,
+        "waited_losses": 4,
+        "waited_net_r": 1.0,
+        "rejected_winners": 2,
+        "rejected_losses": 1,
+        "rejected_net_r": 1.0,
+        "mean_entered_r": -0.019801980198019802,
+        "winner_retention": 0.9339622641509434,
+        "loss_rejection": 0.009259259259259259,
+        "winner_rejection": 0.018867924528301886,
+        "max_drawdown_r": 10.0,
+        "auc": 0.42535814116002796,
+        "accepted_symbols": {
+          "US100": 65,
+          "US500": 17,
+          "XAGUSD.r": 4,
+          "EURUSD.r": 8,
+          "XAUUSD.r": 63,
+          "GER40": 36,
+          "GBPUSD.r": 1,
+          "USDCAD.r": 2,
+          "UK100": 1,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 2
+        },
+        "largest_symbol_share": 0.3217821782178218,
+        "net_r_without_best_symbol": -7.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 3,
+      "enter_threshold": 0.0,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 131,
+        "wait": 36,
+        "reject": 47,
+        "entered_winners": 57,
+        "entered_losses": 74,
+        "entered_net_r": -17.0,
+        "waited_winners": 19,
+        "waited_losses": 17,
+        "waited_net_r": 2.0,
+        "rejected_winners": 30,
+        "rejected_losses": 17,
+        "rejected_net_r": 13.0,
+        "mean_entered_r": -0.1297709923664122,
+        "winner_retention": 0.5377358490566038,
+        "loss_rejection": 0.1574074074074074,
+        "winner_rejection": 0.2830188679245283,
+        "max_drawdown_r": 22.0,
+        "auc": 0.42535814116002796,
+        "accepted_symbols": {
+          "US100": 44,
+          "US500": 13,
+          "XAGUSD.r": 2,
+          "EURUSD.r": 5,
+          "XAUUSD.r": 36,
+          "GER40": 24,
+          "GBPUSD.r": 1,
+          "USDCAD.r": 2,
+          "UK100": 1,
+          "EURJPY.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 1
+        },
+        "largest_symbol_share": 0.33587786259541985,
+        "net_r_without_best_symbol": -18.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 3,
+      "enter_threshold": 0.25,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 60,
+        "wait": 71,
+        "reject": 83,
+        "entered_winners": 25,
+        "entered_losses": 35,
+        "entered_net_r": -10.0,
+        "waited_winners": 32,
+        "waited_losses": 39,
+        "waited_net_r": -7.0,
+        "rejected_winners": 49,
+        "rejected_losses": 34,
+        "rejected_net_r": 15.0,
+        "mean_entered_r": -0.16666666666666666,
+        "winner_retention": 0.2358490566037736,
+        "loss_rejection": 0.3148148148148148,
+        "winner_rejection": 0.46226415094339623,
+        "max_drawdown_r": 14.0,
+        "auc": 0.42535814116002796,
+        "accepted_symbols": {
+          "US100": 21,
+          "US500": 8,
+          "XAGUSD.r": 2,
+          "EURUSD.r": 2,
+          "XAUUSD.r": 15,
+          "GER40": 9,
+          "GBPUSD.r": 1,
+          "UK100": 1,
+          "EURJPY.r": 1
+        },
+        "largest_symbol_share": 0.35,
+        "net_r_without_best_symbol": -11.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 3,
+      "enter_threshold": 0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 15,
+        "wait": 45,
+        "reject": 154,
+        "entered_winners": 8,
+        "entered_losses": 7,
+        "entered_net_r": 1.0,
+        "waited_winners": 17,
+        "waited_losses": 28,
+        "waited_net_r": -11.0,
+        "rejected_winners": 81,
+        "rejected_losses": 73,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": 0.06666666666666667,
+        "winner_retention": 0.07547169811320754,
+        "loss_rejection": 0.6759259259259259,
+        "winner_rejection": 0.7641509433962265,
+        "max_drawdown_r": 3.0,
+        "auc": 0.42535814116002796,
+        "accepted_symbols": {
+          "US100": 4,
+          "GER40": 4,
+          "XAUUSD.r": 6,
+          "US500": 1
+        },
+        "largest_symbol_share": 0.4,
+        "net_r_without_best_symbol": -1.0
+      },
+      "gates": {
+        "positive_oof_expectancy": true,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 5,
+      "enter_threshold": -0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 205,
+        "wait": 6,
+        "reject": 3,
+        "entered_winners": 102,
+        "entered_losses": 103,
+        "entered_net_r": -1.0,
+        "waited_winners": 4,
+        "waited_losses": 2,
+        "waited_net_r": 2.0,
+        "rejected_winners": 0,
+        "rejected_losses": 3,
+        "rejected_net_r": -3.0,
+        "mean_entered_r": -0.004878048780487805,
+        "winner_retention": 0.9622641509433962,
+        "loss_rejection": 0.027777777777777776,
+        "winner_rejection": 0.0,
+        "max_drawdown_r": 11.0,
+        "auc": 0.4331324248777079,
+        "accepted_symbols": {
+          "US100": 68,
+          "US500": 17,
+          "XAGUSD.r": 4,
+          "EURUSD.r": 8,
+          "XAUUSD.r": 60,
+          "GER40": 38,
+          "GBPUSD.r": 1,
+          "USDCAD.r": 2,
+          "UK100": 2,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 2
+        },
+        "largest_symbol_share": 0.33170731707317075,
+        "net_r_without_best_symbol": -5.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 5,
+      "enter_threshold": 0.0,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 115,
+        "wait": 32,
+        "reject": 67,
+        "entered_winners": 48,
+        "entered_losses": 67,
+        "entered_net_r": -19.0,
+        "waited_winners": 21,
+        "waited_losses": 11,
+        "waited_net_r": 10.0,
+        "rejected_winners": 37,
+        "rejected_losses": 30,
+        "rejected_net_r": 7.0,
+        "mean_entered_r": -0.16521739130434782,
+        "winner_retention": 0.4528301886792453,
+        "loss_rejection": 0.2777777777777778,
+        "winner_rejection": 0.3490566037735849,
+        "max_drawdown_r": 22.0,
+        "auc": 0.4331324248777079,
+        "accepted_symbols": {
+          "US100": 45,
+          "US500": 12,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 3,
+          "GER40": 21,
+          "XAUUSD.r": 29,
+          "UK100": 1,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCAD.r": 1
+        },
+        "largest_symbol_share": 0.391304347826087,
+        "net_r_without_best_symbol": -20.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 5,
+      "enter_threshold": 0.25,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 62,
+        "wait": 53,
+        "reject": 99,
+        "entered_winners": 26,
+        "entered_losses": 36,
+        "entered_net_r": -10.0,
+        "waited_winners": 22,
+        "waited_losses": 31,
+        "waited_net_r": -9.0,
+        "rejected_winners": 58,
+        "rejected_losses": 41,
+        "rejected_net_r": 17.0,
+        "mean_entered_r": -0.16129032258064516,
+        "winner_retention": 0.24528301886792453,
+        "loss_rejection": 0.37962962962962965,
+        "winner_rejection": 0.5471698113207547,
+        "max_drawdown_r": 16.0,
+        "auc": 0.4331324248777079,
+        "accepted_symbols": {
+          "US100": 24,
+          "US500": 7,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 1,
+          "GER40": 14,
+          "XAUUSD.r": 13,
+          "UK100": 1,
+          "EURJPY.r": 1
+        },
+        "largest_symbol_share": 0.3870967741935484,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 5,
+      "enter_threshold": 0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 26,
+        "wait": 36,
+        "reject": 152,
+        "entered_winners": 10,
+        "entered_losses": 16,
+        "entered_net_r": -6.0,
+        "waited_winners": 16,
+        "waited_losses": 20,
+        "waited_net_r": -4.0,
+        "rejected_winners": 80,
+        "rejected_losses": 72,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": -0.23076923076923078,
+        "winner_retention": 0.09433962264150944,
+        "loss_rejection": 0.6666666666666666,
+        "winner_rejection": 0.7547169811320755,
+        "max_drawdown_r": 8.0,
+        "auc": 0.4331324248777079,
+        "accepted_symbols": {
+          "US100": 10,
+          "EURUSD.r": 1,
+          "GER40": 6,
+          "US500": 1,
+          "XAUUSD.r": 8
+        },
+        "largest_symbol_share": 0.38461538461538464,
+        "net_r_without_best_symbol": -6.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 8,
+      "enter_threshold": -0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 190,
+        "wait": 17,
+        "reject": 7,
+        "entered_winners": 95,
+        "entered_losses": 95,
+        "entered_net_r": 0.0,
+        "waited_winners": 6,
+        "waited_losses": 11,
+        "waited_net_r": -5.0,
+        "rejected_winners": 5,
+        "rejected_losses": 2,
+        "rejected_net_r": 3.0,
+        "mean_entered_r": 0.0,
+        "winner_retention": 0.8962264150943396,
+        "loss_rejection": 0.018518518518518517,
+        "winner_rejection": 0.04716981132075472,
+        "max_drawdown_r": 8.0,
+        "auc": 0.4567173305380853,
+        "accepted_symbols": {
+          "US100": 65,
+          "US500": 16,
+          "XAGUSD.r": 3,
+          "EURUSD.r": 6,
+          "XAUUSD.r": 54,
+          "GER40": 36,
+          "GBPUSD.r": 1,
+          "USDCAD.r": 2,
+          "UK100": 2,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 2
+        },
+        "largest_symbol_share": 0.34210526315789475,
+        "net_r_without_best_symbol": -7.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 8,
+      "enter_threshold": 0.0,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 120,
+        "wait": 35,
+        "reject": 59,
+        "entered_winners": 55,
+        "entered_losses": 65,
+        "entered_net_r": -10.0,
+        "waited_winners": 14,
+        "waited_losses": 21,
+        "waited_net_r": -7.0,
+        "rejected_winners": 37,
+        "rejected_losses": 22,
+        "rejected_net_r": 15.0,
+        "mean_entered_r": -0.08333333333333333,
+        "winner_retention": 0.5188679245283019,
+        "loss_rejection": 0.2037037037037037,
+        "winner_rejection": 0.3490566037735849,
+        "max_drawdown_r": 14.0,
+        "auc": 0.4567173305380853,
+        "accepted_symbols": {
+          "US100": 46,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 3,
+          "XAUUSD.r": 33,
+          "GER40": 23,
+          "US500": 9,
+          "GBPUSD.r": 1,
+          "UK100": 1,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1
+        },
+        "largest_symbol_share": 0.38333333333333336,
+        "net_r_without_best_symbol": -14.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 8,
+      "enter_threshold": 0.25,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 78,
+        "wait": 42,
+        "reject": 94,
+        "entered_winners": 39,
+        "entered_losses": 39,
+        "entered_net_r": 0.0,
+        "waited_winners": 16,
+        "waited_losses": 26,
+        "waited_net_r": -10.0,
+        "rejected_winners": 51,
+        "rejected_losses": 43,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": 0.0,
+        "winner_retention": 0.36792452830188677,
+        "loss_rejection": 0.39814814814814814,
+        "winner_rejection": 0.4811320754716981,
+        "max_drawdown_r": 7.0,
+        "auc": 0.4567173305380853,
+        "accepted_symbols": {
+          "US100": 31,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 1,
+          "GER40": 17,
+          "US500": 6,
+          "XAUUSD.r": 21,
+          "UK100": 1
+        },
+        "largest_symbol_share": 0.3974358974358974,
+        "net_r_without_best_symbol": -5.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 8,
+      "enter_threshold": 0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 37,
+        "wait": 41,
+        "reject": 136,
+        "entered_winners": 17,
+        "entered_losses": 20,
+        "entered_net_r": -3.0,
+        "waited_winners": 22,
+        "waited_losses": 19,
+        "waited_net_r": 3.0,
+        "rejected_winners": 67,
+        "rejected_losses": 69,
+        "rejected_net_r": -2.0,
+        "mean_entered_r": -0.08108108108108109,
+        "winner_retention": 0.16037735849056603,
+        "loss_rejection": 0.6388888888888888,
+        "winner_rejection": 0.6320754716981132,
+        "max_drawdown_r": 8.0,
+        "auc": 0.4567173305380853,
+        "accepted_symbols": {
+          "US100": 11,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 1,
+          "GER40": 11,
+          "US500": 3,
+          "XAUUSD.r": 10
+        },
+        "largest_symbol_share": 0.2972972972972973,
+        "net_r_without_best_symbol": -6.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 12,
+      "enter_threshold": -0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 172,
+        "wait": 27,
+        "reject": 15,
+        "entered_winners": 84,
+        "entered_losses": 88,
+        "entered_net_r": -4.0,
+        "waited_winners": 13,
+        "waited_losses": 14,
+        "waited_net_r": -1.0,
+        "rejected_winners": 9,
+        "rejected_losses": 6,
+        "rejected_net_r": 3.0,
+        "mean_entered_r": -0.023255813953488372,
+        "winner_retention": 0.7924528301886793,
+        "loss_rejection": 0.05555555555555555,
+        "winner_rejection": 0.08490566037735849,
+        "max_drawdown_r": 11.0,
+        "auc": 0.4623078266946192,
+        "accepted_symbols": {
+          "US100": 62,
+          "XAGUSD.r": 2,
+          "EURUSD.r": 6,
+          "XAUUSD.r": 47,
+          "GER40": 31,
+          "US500": 14,
+          "USDCAD.r": 2,
+          "UK100": 3,
+          "EURJPY.r": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1,
+          "USDJPY.r": 2
+        },
+        "largest_symbol_share": 0.36046511627906974,
+        "net_r_without_best_symbol": -12.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": true,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": false,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 12,
+      "enter_threshold": 0.0,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 109,
+        "wait": 39,
+        "reject": 66,
+        "entered_winners": 52,
+        "entered_losses": 57,
+        "entered_net_r": -5.0,
+        "waited_winners": 17,
+        "waited_losses": 22,
+        "waited_net_r": -5.0,
+        "rejected_winners": 37,
+        "rejected_losses": 29,
+        "rejected_net_r": 8.0,
+        "mean_entered_r": -0.045871559633027525,
+        "winner_retention": 0.49056603773584906,
+        "loss_rejection": 0.26851851851851855,
+        "winner_rejection": 0.3490566037735849,
+        "max_drawdown_r": 10.0,
+        "auc": 0.4623078266946192,
+        "accepted_symbols": {
+          "US100": 41,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 2,
+          "GER40": 24,
+          "US500": 9,
+          "XAUUSD.r": 29,
+          "UK100": 1,
+          "NZDUSD.r": 1,
+          "USDCHF.r": 1
+        },
+        "largest_symbol_share": 0.3761467889908257,
+        "net_r_without_best_symbol": -8.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 12,
+      "enter_threshold": 0.25,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 69,
+        "wait": 40,
+        "reject": 105,
+        "entered_winners": 33,
+        "entered_losses": 36,
+        "entered_net_r": -3.0,
+        "waited_winners": 19,
+        "waited_losses": 21,
+        "waited_net_r": -2.0,
+        "rejected_winners": 54,
+        "rejected_losses": 51,
+        "rejected_net_r": 3.0,
+        "mean_entered_r": -0.043478260869565216,
+        "winner_retention": 0.3113207547169811,
+        "loss_rejection": 0.4722222222222222,
+        "winner_rejection": 0.5094339622641509,
+        "max_drawdown_r": 8.0,
+        "auc": 0.4623078266946192,
+        "accepted_symbols": {
+          "US100": 23,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 1,
+          "GER40": 16,
+          "US500": 6,
+          "XAUUSD.r": 20,
+          "UK100": 1,
+          "USDCHF.r": 1
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_r_without_best_symbol": -7.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": true,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "SHALLOW_STUMP_ENSEMBLE",
+      "parameter": 12,
+      "enter_threshold": 0.5,
+      "wait_width": 0.25,
+      "oof": {
+        "available": 214,
+        "enter": 41,
+        "wait": 28,
+        "reject": 145,
+        "entered_winners": 18,
+        "entered_losses": 23,
+        "entered_net_r": -5.0,
+        "waited_winners": 15,
+        "waited_losses": 13,
+        "waited_net_r": 2.0,
+        "rejected_winners": 73,
+        "rejected_losses": 72,
+        "rejected_net_r": 1.0,
+        "mean_entered_r": -0.12195121951219512,
+        "winner_retention": 0.16981132075471697,
+        "loss_rejection": 0.6666666666666666,
+        "winner_rejection": 0.6886792452830188,
+        "max_drawdown_r": 9.0,
+        "auc": 0.4623078266946192,
+        "accepted_symbols": {
+          "US100": 11,
+          "XAGUSD.r": 1,
+          "EURUSD.r": 1,
+          "GER40": 12,
+          "US500": 3,
+          "XAUUSD.r": 13
+        },
+        "largest_symbol_share": 0.3170731707317073,
+        "net_r_without_best_symbol": -6.0
+      },
+      "gates": {
+        "positive_oof_expectancy": false,
+        "loss_rejection_exceeds_winner_rejection_by_10pct": false,
+        "winner_retention_at_least_50pct": false,
+        "at_least_60_entered_resolved": false,
+        "nonnegative_every_month_and_at_least_8_entries": false,
+        "drawdown_not_worse_than_baseline": true,
+        "largest_symbol_below_50pct": true,
+        "positive_without_best_symbol": false,
+        "positive_after_removing_one_winner": false
+      },
+      "passed": false
+    }
+  ],
+  "stop_reason": "No compact formulation passed all predeclared chronological usability and robustness gates; the holdout remains sealed."
+}

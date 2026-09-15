@@ -1,0 +1,22 @@
+{
+  "schema": "ENTRY_ENGINE_V2_HOLDOUT_SEAL_V1",
+  "boundary": "2026.09.08 00:00:00",
+  "status": "NOT_EVALUATED_DEVELOPMENT_GATE_FAILED",
+  "evaluations": 0,
+  "candidate_frozen": false,
+  "reason": "No development candidate passed every predeclared expectancy, separation, retention, sample-size, stability, drawdown and concentration gate. Opening the outcome-labelled holdout without a frozen passing candidate would turn the holdout into development data.",
+  "sealed_cases": [
+    "20260908_AUDJPY_SELL",
+    "20260908_NZDUSD_SELL",
+    "20260908_GER40_SELL",
+    "20260909_USDJPY_SELL",
+    "20260909_XAUUSD_BUY",
+    "20260909_GER40_SELL",
+    "20260914_XAUUSD_SELL",
+    "20260914_USDJPY_SELL",
+    "20260915_US100_SELL",
+    "20260915_GER40_SELL"
+  ],
+  "trainer_imports_holdout": false,
+  "trade_decisions_produced": false
+}

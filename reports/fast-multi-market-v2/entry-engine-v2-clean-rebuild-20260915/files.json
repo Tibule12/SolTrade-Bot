@@ -1,0 +1,90 @@
+{
+  "schema": "ENTRY_ENGINE_V2_FILE_RECEIPT_V1",
+  "files": [
+    {
+      "path": "tools/entry_engine_v2_common.py",
+      "bytes": 15266,
+      "sha256": "3b61d28c5924c32cea849d9a48a412741cb5445d8404e8dec56b0ce98fba695e"
+    },
+    {
+      "path": "tools/build_entry_engine_v2_dataset.py",
+      "bytes": 12149,
+      "sha256": "efb2b4f689d56e9a6962f2135a3377e6d81b964f9f92841a412eedf9b863dfa5"
+    },
+    {
+      "path": "tools/train_entry_engine_v2_development.py",
+      "bytes": 13825,
+      "sha256": "92fca2a56c12cbf1526715da3dcdcd06b57d69bec7747b30dd8b97f8e8ac2331"
+    },
+    {
+      "path": "tests/test_entry_engine_v2.py",
+      "bytes": 5089,
+      "sha256": "b2046bf9023115bb6223704effa5ccbe5ecb0d0617b160a4b74d5d96b190875e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/dataset-manifest-april-may.json",
+      "bytes": 1190,
+      "sha256": "94240170e3821ac727c70fcc797962bbd4d25c368c326c042d99150225940cb7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/dataset-manifest-june-august.json",
+      "bytes": 1184,
+      "sha256": "6905cf7191946634a365c8bbe9fcfc7c21313545957e74f6d5deb2081be0e229"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/dataset-manifest.json",
+      "bytes": 3693,
+      "sha256": "f8ab3d1a430775cedec78b34937b7dd06903192077da7ba5a36ed48d2927536e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-dataset-april-may.csv",
+      "bytes": 114493,
+      "sha256": "496af9c46de6bd007c6c2ca64d3f85fdca66dc598e0665d41a197655cb3dde32"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-dataset-june-august.csv",
+      "bytes": 171583,
+      "sha256": "6deed943abff892968c0a97d1170e9f556518cec2e8b6c0bb1b13323f4bdcb67"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-dataset.csv",
+      "bytes": 284275,
+      "sha256": "3ff49b309de4f39f800b8c1edf1679be604094dc3a992634ef0005a841f5b658"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-results.json",
+      "bytes": 108379,
+      "sha256": "3114eeb17a329abe1682c4929e0416cab4065e87c34d0cfb3ff90d492c81baeb"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/feature-manifest.json",
+      "bytes": 1676,
+      "sha256": "01b20a9f648c541ec975a951cf25c191ac3aa5aabbda75fe0e56cbf2b3f38f84"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/holdout-seal.json",
+      "bytes": 836,
+      "sha256": "0183cc07ebd2300ec8563b60d3d7e3391160eef90799a561b8fd47988ecad058"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/implementation-status.json",
+      "bytes": 446,
+      "sha256": "851807ad57656eb6c7fa466b35f2163beb43eaecfef8381adc164281d65dc109"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/model-freeze.json",
+      "bytes": 5816,
+      "sha256": "5f4fef5ab3ddd0768d71918125dc2b7db939aaa08a2a8599c7e6190f8a1acc4b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/report.md",
+      "bytes": 8375,
+      "sha256": "9929a346c100b31853ffe91ef93adfa5b676f534481f725dba8cd3c87e65e575"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/test-results.json",
+      "bytes": 512,
+      "sha256": "283ff965acf9e9ca85cc1b830aeefbe72e7030204fc4f04fae12783b925e0a61"
+    }
+  ]
+}

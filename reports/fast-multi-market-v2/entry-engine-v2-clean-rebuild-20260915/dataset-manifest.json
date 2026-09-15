@@ -1,0 +1,104 @@
+{
+  "schema": "ENTRY_ENGINE_V2_MASTER_DATASET_MANIFEST_V1",
+  "created_from_existing_artifacts_only": true,
+  "orders_possible": false,
+  "development_start_utc": "2026.04.01 01:04:20",
+  "development_end_utc": "2026.08.31 17:52:00",
+  "locked_holdout_start": "2026.09.08 00:00:00",
+  "label_horizon_seconds": 14400,
+  "source_entries": 281,
+  "entries": 279,
+  "omitted_incomplete_feature_ids": [
+    "124",
+    "2"
+  ],
+  "resolved": 267,
+  "wins": 131,
+  "losses": 136,
+  "censored": 12,
+  "features": [
+    "impulse_age_minutes",
+    "impulse_age_m5_bars",
+    "seconds_since_structural_break",
+    "impulse_distance_m5_atr",
+    "range_location",
+    "distance_from_favorable_extreme_m5_atr",
+    "m1_displacement_5m_atr",
+    "m1_acceleration_atr",
+    "m1_volatility_expansion",
+    "m5_displacement_15m_atr",
+    "m5_acceleration_atr",
+    "pullback_depth_m1_atr",
+    "pullback_resumption",
+    "pullback_expanding",
+    "distance_from_pullback_extreme_m1_atr",
+    "m1_directional_close_streak",
+    "m1_body_fraction",
+    "m1_opposing_wick_body_ratio",
+    "score_dominance",
+    "opposing_score",
+    "m1_direction",
+    "m5_direction",
+    "m15_direction",
+    "h1_direction",
+    "mtf_alignment_fraction",
+    "mtf_opposition_fraction",
+    "regime_range",
+    "regime_transition",
+    "remaining_room_r",
+    "session_room_r",
+    "previous_day_room_r",
+    "m5_favorable_room_r",
+    "m15_favorable_room_r",
+    "stop_m5_atr",
+    "stop_m1_atr",
+    "stop_inside_m1_noise",
+    "confirmation_move_m5_atr",
+    "cost_r",
+    "spread_m5_atr_percent",
+    "impulse_extension_m5_atr",
+    "breakout_extension_m5_atr",
+    "proposed_breakout",
+    "opposing_breakout",
+    "expected_move_consumed_fraction",
+    "broker_execution_cost_room_fraction",
+    "cost_multiple",
+    "spread_median_ratio",
+    "persistence_scans",
+    "persistence_seconds",
+    "entry_drift_m5_atr",
+    "proposed_score_rate_5m",
+    "opposing_score_rate_5m"
+  ],
+  "partitions": [
+    {
+      "manifest": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/dataset-manifest-april-may.json",
+      "dataset": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-dataset-april-may.csv"
+    },
+    {
+      "manifest": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/dataset-manifest-june-august.json",
+      "dataset": "reports/fast-multi-market-v2/entry-engine-v2-clean-rebuild-20260915/development-dataset-june-august.csv"
+    }
+  ],
+  "sources": [
+    {
+      "path": "reports/fast-multi-market-v2/holdout-20260907/april-may/control/raw/evidence.csv.gz",
+      "sha256": "cd3da793b8131477a3bfc21145d8cc940b3c864030aabe5609d984c7c0eda865"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/holdout-20260907/april-may/control/raw/scans.csv.gz",
+      "sha256": "e897057fbcb4d02ae36013cb957867f756cc1cbd2b89e22daa599f55b4fb6fe2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/validation-20260907/baseline-summer-2026-b/raw/evidence.csv.gz",
+      "sha256": "3517574cbf5416d239c55ffa2630e3f2d4c173e460c8dfddc6ae016f507cbff9"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/validation-20260907/baseline-summer-2026-b/raw/scans.csv.gz",
+      "sha256": "8fff4fe50ac69d2e410814097706c6bc01e13201541ebfd9b8e44bb94a25edcd"
+    }
+  ],
+  "label": "+1.00 net executable R before -1.00 net executable R; entry ask/bid and exit bid/ask; recorded expected non-spread cost included; fixed 4h horizon",
+  "feature_cutoff": "completed M1/M5/M15 bars and entry evidence available strictly before/at candidate entry; forming minute excluded",
+  "dataset_sha256": "3ff49b309de4f39f800b8c1edf1679be604094dc3a992634ef0005a841f5b658"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "ENTRY_ENGINE_V2_TEST_RESULT_V1",
+  "command": "python3 tests/test_entry_engine_v2.py",
+  "tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "checks": [
+    "requested causal feature families are present and outcome fields are excluded",
+    "forming entry-minute bar cannot change features",
+    "partial M5/M15 buckets cannot change higher-timeframe features",
+    "tradable continuation stops accumulating after the structural stop",
+    "development trainer contains no September holdout input"
+  ]
+}
