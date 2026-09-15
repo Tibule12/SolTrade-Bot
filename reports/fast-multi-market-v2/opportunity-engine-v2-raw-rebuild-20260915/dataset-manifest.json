@@ -1,0 +1,52 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_DATASET_V1",
+  "generator": "raw_market_event_generator",
+  "partitions": [
+    "april-may",
+    "june-august"
+  ],
+  "opportunities": 12094,
+  "resolved_opportunities": 12060,
+  "event_family_distribution": {
+    "RANGE_TO_DIRECTION": 1114,
+    "STRUCTURAL_REVERSAL": 1811,
+    "TREND_RESUMPTION": 1473,
+    "FAILED_BREAKOUT": 1603,
+    "PULLBACK_CONTINUATION": 1043,
+    "COMPLETED_BREAKOUT": 1200,
+    "FRESH_DIRECTIONAL_EXPANSION": 1832,
+    "BREAKOUT_RETEST": 1698,
+    "COMPRESSION_EXPANSION": 187,
+    "EXHAUSTION_REJECTION": 133
+  },
+  "direction_labels": {
+    "LONG_EDGE": 3018,
+    "NO_EDGE": 5819,
+    "SHORT_EDGE": 3017,
+    "AMBIGUOUS": 206,
+    "CENSORED": 34
+  },
+  "first_utc": "2026.04.01 13:00:00",
+  "last_utc": "2026.08.31 18:47:00",
+  "evaluation_interval_seconds": 300,
+  "episode_cooldown_seconds": 14400,
+  "episode_independence": "same-symbol event windows do not overlap the four-hour label horizon",
+  "label_horizon_seconds": 14400,
+  "completed_bars_only": true,
+  "forming_m1_excluded": true,
+  "production_admissions_used": false,
+  "production_scores_used": false,
+  "production_direction_used": false,
+  "dataset": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/opportunities.csv",
+  "dataset_sha256": "000d6635d024dd84dec42cdd45e7080fc0d246bc97fd43a5961bf3631a8ffb41",
+  "partition_manifests": [
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/manifest-april-may.json",
+      "sha256": "b42afca77f2e89cfb769d0d8e3a4ec5b561ac5e5b6d36753fd50df5aaef73f64"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/manifest-june-august.json",
+      "sha256": "5f406a871a068297a6512df6e8cc0aaf5a3144adda7cb1b509fc19327b703d55"
+    }
+  ]
+}

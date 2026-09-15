@@ -1,0 +1,8352 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_DEVELOPMENT_RESULT_V1",
+  "decision": "NO_DEMONSTRATED_MARKET_EDGE_IN_CURRENT_INFORMATION_SET",
+  "holdout_opened": false,
+  "holdout_evaluations": 0,
+  "opportunities": 12094,
+  "resolved_opportunities": 12060,
+  "direction_labels": {
+    "LONG_EDGE": 3018,
+    "NO_EDGE": 5819,
+    "SHORT_EDGE": 3017,
+    "AMBIGUOUS": 206,
+    "CENSORED": 34
+  },
+  "event_families": {
+    "FAILED_BREAKOUT": 1603,
+    "RANGE_TO_DIRECTION": 1114,
+    "STRUCTURAL_REVERSAL": 1811,
+    "TREND_RESUMPTION": 1473,
+    "PULLBACK_CONTINUATION": 1043,
+    "COMPLETED_BREAKOUT": 1200,
+    "FRESH_DIRECTIONAL_EXPANSION": 1832,
+    "BREAKOUT_RETEST": 1698,
+    "COMPRESSION_EXPANSION": 187,
+    "EXHAUSTION_REJECTION": 133
+  },
+  "features": [
+    "event_alignment",
+    "trend_m1_aligned",
+    "trend_m5_aligned",
+    "trend_m15_aligned",
+    "trend_h1_aligned",
+    "path_efficiency_m5",
+    "path_efficiency_change",
+    "impulse_aligned",
+    "recent_momentum_aligned",
+    "latest_impulse_aligned",
+    "impulse_age_m5",
+    "displacement_along_candidate_m5_atr",
+    "acceleration_aligned",
+    "volatility_expansion_m5",
+    "m1_body_aligned",
+    "m1_body_fraction",
+    "favorable_wick_body",
+    "opposing_wick_body",
+    "directional_close_streak",
+    "opposing_close_streak",
+    "aligned_breakout",
+    "opposing_breakout",
+    "failed_opposing_breakout",
+    "failed_aligned_breakout",
+    "aligned_structure",
+    "opposing_structure",
+    "pullback_resume_aligned",
+    "pullback_depth",
+    "pullback_progress",
+    "breakout_retest_aligned",
+    "opposing_pressure",
+    "rejection_aligned",
+    "directional_range_location",
+    "distance_favorable_extreme_m5_atr",
+    "session_directional_location",
+    "previous_day_directional_location",
+    "room_r",
+    "stop_m1_atr",
+    "stop_m5_atr",
+    "invalidation_distance_m5_atr",
+    "spread_m1_atr",
+    "cost_r",
+    "compression_ratio_m1"
+  ],
+  "experiments_tested": 42,
+  "passing_experiments": 0,
+  "event_direction_benchmark": {
+    "opportunities": 12060,
+    "actions": {
+      "LONG": 6146,
+      "SHORT": 5914
+    },
+    "resolved_entries": 9542,
+    "wins": 3099,
+    "losses": 6443,
+    "net_r": -3344,
+    "expectancy_r": -0.3504506392789771,
+    "max_drawdown_r": 3351.0,
+    "directional_edges_available": 6035,
+    "directional_edges_correct": 2893,
+    "directional_edges_wrong": 2853,
+    "directional_accuracy": 0.5034806822137139,
+    "edge_retention": 0.47937033968516984,
+    "monthly": {
+      "2026.04": [
+        1891,
+        662,
+        1229
+      ],
+      "2026.05": [
+        1830,
+        563,
+        1267
+      ],
+      "2026.06": [
+        1940,
+        627,
+        1313
+      ],
+      "2026.07": [
+        2068,
+        658,
+        1410
+      ],
+      "2026.08": [
+        1813,
+        589,
+        1224
+      ]
+    },
+    "symbols": {
+      "US100": [
+        563,
+        277,
+        286
+      ],
+      "XAGUSD.r": [
+        531,
+        198,
+        333
+      ],
+      "USDCAD.r": [
+        501,
+        137,
+        364
+      ],
+      "GER40": [
+        523,
+        234,
+        289
+      ],
+      "XAUUSD.r": [
+        565,
+        286,
+        279
+      ],
+      "EURJPY.r": [
+        504,
+        159,
+        345
+      ],
+      "US500": [
+        520,
+        181,
+        339
+      ],
+      "EURO50": [
+        390,
+        91,
+        299
+      ],
+      "UK100": [
+        441,
+        154,
+        287
+      ],
+      "USDCHF.r": [
+        495,
+        136,
+        359
+      ],
+      "EURGBP.r": [
+        449,
+        75,
+        374
+      ],
+      "EURUSD.r": [
+        521,
+        157,
+        364
+      ],
+      "GBPJPY.r": [
+        506,
+        153,
+        353
+      ],
+      "GBPUSD.r": [
+        514,
+        160,
+        354
+      ],
+      "AUDNZD.r": [
+        461,
+        128,
+        333
+      ],
+      "AUDUSD.r": [
+        512,
+        142,
+        370
+      ],
+      "NZDUSD.r": [
+        515,
+        125,
+        390
+      ],
+      "USDJPY.r": [
+        526,
+        158,
+        368
+      ],
+      "AUDJPY.r": [
+        505,
+        148,
+        357
+      ]
+    },
+    "families": {
+      "FAILED_BREAKOUT": [
+        1506,
+        435,
+        1071
+      ],
+      "RANGE_TO_DIRECTION": [
+        754,
+        256,
+        498
+      ],
+      "TREND_RESUMPTION": [
+        1212,
+        415,
+        797
+      ],
+      "PULLBACK_CONTINUATION": [
+        882,
+        310,
+        572
+      ],
+      "COMPLETED_BREAKOUT": [
+        735,
+        255,
+        480
+      ],
+      "FRESH_DIRECTIONAL_EXPANSION": [
+        1504,
+        451,
+        1053
+      ],
+      "STRUCTURAL_REVERSAL": [
+        1529,
+        506,
+        1023
+      ],
+      "COMPRESSION_EXPANSION": [
+        133,
+        37,
+        96
+      ],
+      "BREAKOUT_RETEST": [
+        1241,
+        414,
+        827
+      ],
+      "EXHAUSTION_REJECTION": [
+        46,
+        20,
+        26
+      ]
+    },
+    "largest_symbol_share": 0.05921190526095158,
+    "net_without_best_symbol": -3351,
+    "net_without_best_month": -2777,
+    "positive_months": 0,
+    "months_with_entries": 5
+  },
+  "inverse_direction_benchmark": {
+    "opportunities": 12060,
+    "actions": {
+      "SHORT": 6146,
+      "LONG": 5914
+    },
+    "resolved_entries": 10499,
+    "wins": 3348,
+    "losses": 7151,
+    "net_r": -3803,
+    "expectancy_r": -0.3622249738070292,
+    "max_drawdown_r": 3803.0,
+    "directional_edges_available": 6035,
+    "directional_edges_correct": 3142,
+    "directional_edges_wrong": 2795,
+    "directional_accuracy": 0.5292235135590365,
+    "edge_retention": 0.5206296603148302,
+    "monthly": {
+      "2026.04": [
+        2070,
+        667,
+        1403
+      ],
+      "2026.05": [
+        2025,
+        672,
+        1353
+      ],
+      "2026.06": [
+        2100,
+        648,
+        1452
+      ],
+      "2026.07": [
+        2272,
+        719,
+        1553
+      ],
+      "2026.08": [
+        2032,
+        642,
+        1390
+      ]
+    },
+    "symbols": {
+      "US100": [
+        601,
+        294,
+        307
+      ],
+      "XAGUSD.r": [
+        578,
+        240,
+        338
+      ],
+      "USDCAD.r": [
+        550,
+        158,
+        392
+      ],
+      "GER40": [
+        559,
+        246,
+        313
+      ],
+      "XAUUSD.r": [
+        603,
+        286,
+        317
+      ],
+      "AUDNZD.r": [
+        507,
+        101,
+        406
+      ],
+      "EURJPY.r": [
+        551,
+        146,
+        405
+      ],
+      "US500": [
+        580,
+        224,
+        356
+      ],
+      "EURO50": [
+        452,
+        79,
+        373
+      ],
+      "UK100": [
+        533,
+        174,
+        359
+      ],
+      "NZDUSD.r": [
+        571,
+        148,
+        423
+      ],
+      "AUDJPY.r": [
+        559,
+        166,
+        393
+      ],
+      "USDCHF.r": [
+        558,
+        152,
+        406
+      ],
+      "AUDUSD.r": [
+        566,
+        157,
+        409
+      ],
+      "EURGBP.r": [
+        500,
+        93,
+        407
+      ],
+      "EURUSD.r": [
+        570,
+        173,
+        397
+      ],
+      "USDJPY.r": [
+        564,
+        161,
+        403
+      ],
+      "GBPJPY.r": [
+        546,
+        175,
+        371
+      ],
+      "GBPUSD.r": [
+        551,
+        175,
+        376
+      ]
+    },
+    "families": {
+      "FAILED_BREAKOUT": [
+        1221,
+        413,
+        808
+      ],
+      "RANGE_TO_DIRECTION": [
+        1076,
+        338,
+        738
+      ],
+      "STRUCTURAL_REVERSAL": [
+        1557,
+        534,
+        1023
+      ],
+      "TREND_RESUMPTION": [
+        1361,
+        415,
+        946
+      ],
+      "PULLBACK_CONTINUATION": [
+        896,
+        295,
+        601
+      ],
+      "COMPLETED_BREAKOUT": [
+        1130,
+        355,
+        775
+      ],
+      "FRESH_DIRECTIONAL_EXPANSION": [
+        1602,
+        485,
+        1117
+      ],
+      "BREAKOUT_RETEST": [
+        1450,
+        455,
+        995
+      ],
+      "COMPRESSION_EXPANSION": [
+        135,
+        36,
+        99
+      ],
+      "EXHAUSTION_REJECTION": [
+        71,
+        22,
+        49
+      ]
+    },
+    "largest_symbol_share": 0.05743404133727022,
+    "net_without_best_symbol": -3790,
+    "net_without_best_month": -3122,
+    "positive_months": 0,
+    "months_with_entries": 5
+  },
+  "structural_stop_audit": {
+    "hypotheses": 24188,
+    "inside_m1_noise": 12,
+    "inside_m5_noise": 0,
+    "median_stop_m1_atr": 6.381735417156772,
+    "median_stop_m5_atr": 2.295599006828426
+  },
+  "best_nonpassing_diagnostic": {
+    "kind": "PAIRWISE_SHALLOW_STUMPS",
+    "parameter": 8,
+    "threshold": 0.55,
+    "margin": 0.05,
+    "metrics": {
+      "opportunities": 9677,
+      "actions": {
+        "WAIT": 2290,
+        "REJECT": 7330,
+        "LONG": 21,
+        "SHORT": 36
+      },
+      "resolved_entries": 55,
+      "wins": 30,
+      "losses": 25,
+      "net_r": 5,
+      "expectancy_r": 0.09090909090909091,
+      "max_drawdown_r": 7.0,
+      "directional_edges_available": 4800,
+      "directional_edges_correct": 24,
+      "directional_edges_wrong": 16,
+      "directional_accuracy": 0.6,
+      "edge_retention": 0.005,
+      "monthly": {
+        "2026.05": [
+          55,
+          30,
+          25
+        ]
+      },
+      "symbols": {
+        "XAUUSD.r": [
+          15,
+          11,
+          4
+        ],
+        "US100": [
+          20,
+          9,
+          11
+        ],
+        "US500": [
+          4,
+          3,
+          1
+        ],
+        "GER40": [
+          12,
+          5,
+          7
+        ],
+        "XAGUSD.r": [
+          2,
+          2,
+          0
+        ],
+        "USDCAD.r": [
+          1,
+          0,
+          1
+        ],
+        "USDJPY.r": [
+          1,
+          0,
+          1
+        ]
+      },
+      "families": {
+        "PULLBACK_CONTINUATION": [
+          11,
+          6,
+          5
+        ],
+        "FRESH_DIRECTIONAL_EXPANSION": [
+          6,
+          2,
+          4
+        ],
+        "RANGE_TO_DIRECTION": [
+          4,
+          1,
+          3
+        ],
+        "STRUCTURAL_REVERSAL": [
+          15,
+          11,
+          4
+        ],
+        "TREND_RESUMPTION": [
+          7,
+          5,
+          2
+        ],
+        "COMPLETED_BREAKOUT": [
+          1,
+          0,
+          1
+        ],
+        "BREAKOUT_RETEST": [
+          4,
+          2,
+          2
+        ],
+        "FAILED_BREAKOUT": [
+          7,
+          3,
+          4
+        ]
+      },
+      "largest_symbol_share": 0.36363636363636365,
+      "net_without_best_symbol": -2,
+      "net_without_best_month": 0,
+      "positive_months": 1,
+      "months_with_entries": 1
+    },
+    "folds": [
+      {
+        "opportunities": 2295,
+        "actions": {
+          "WAIT": 692,
+          "REJECT": 1546,
+          "LONG": 21,
+          "SHORT": 36
+        },
+        "resolved_entries": 55,
+        "wins": 30,
+        "losses": 25,
+        "net_r": 5,
+        "expectancy_r": 0.09090909090909091,
+        "max_drawdown_r": 7.0,
+        "directional_edges_available": 1171,
+        "directional_edges_correct": 24,
+        "directional_edges_wrong": 16,
+        "directional_accuracy": 0.6,
+        "edge_retention": 0.02049530315969257,
+        "monthly": {
+          "2026.05": [
+            55,
+            30,
+            25
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            15,
+            11,
+            4
+          ],
+          "US100": [
+            20,
+            9,
+            11
+          ],
+          "US500": [
+            4,
+            3,
+            1
+          ],
+          "GER40": [
+            12,
+            5,
+            7
+          ],
+          "XAGUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            11,
+            6,
+            5
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            6,
+            2,
+            4
+          ],
+          "RANGE_TO_DIRECTION": [
+            4,
+            1,
+            3
+          ],
+          "STRUCTURAL_REVERSAL": [
+            15,
+            11,
+            4
+          ],
+          "TREND_RESUMPTION": [
+            7,
+            5,
+            2
+          ],
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "BREAKOUT_RETEST": [
+            4,
+            2,
+            2
+          ],
+          "FAILED_BREAKOUT": [
+            7,
+            3,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.36363636363636365,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1,
+        "month": "2026.05",
+        "training_opportunities": 2383
+      },
+      {
+        "opportunities": 2435,
+        "actions": {
+          "REJECT": 1935,
+          "WAIT": 500
+        },
+        "resolved_entries": 0,
+        "wins": 0,
+        "losses": 0,
+        "net_r": 0,
+        "expectancy_r": null,
+        "max_drawdown_r": 0.0,
+        "directional_edges_available": 1209,
+        "directional_edges_correct": 0,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 0.0,
+        "edge_retention": 0.0,
+        "monthly": {},
+        "symbols": {},
+        "families": {},
+        "largest_symbol_share": 0.0,
+        "net_without_best_symbol": 0,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 0,
+        "month": "2026.06",
+        "training_opportunities": 4678
+      },
+      {
+        "opportunities": 2591,
+        "actions": {
+          "WAIT": 561,
+          "REJECT": 2030
+        },
+        "resolved_entries": 0,
+        "wins": 0,
+        "losses": 0,
+        "net_r": 0,
+        "expectancy_r": null,
+        "max_drawdown_r": 0.0,
+        "directional_edges_available": 1281,
+        "directional_edges_correct": 0,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 0.0,
+        "edge_retention": 0.0,
+        "monthly": {},
+        "symbols": {},
+        "families": {},
+        "largest_symbol_share": 0.0,
+        "net_without_best_symbol": 0,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 0,
+        "month": "2026.07",
+        "training_opportunities": 7113
+      },
+      {
+        "opportunities": 2356,
+        "actions": {
+          "REJECT": 1819,
+          "WAIT": 537
+        },
+        "resolved_entries": 0,
+        "wins": 0,
+        "losses": 0,
+        "net_r": 0,
+        "expectancy_r": null,
+        "max_drawdown_r": 0.0,
+        "directional_edges_available": 1139,
+        "directional_edges_correct": 0,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 0.0,
+        "edge_retention": 0.0,
+        "monthly": {},
+        "symbols": {},
+        "families": {},
+        "largest_symbol_share": 0.0,
+        "net_without_best_symbol": 0,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 0,
+        "month": "2026.08",
+        "training_opportunities": 9704
+      }
+    ],
+    "gates": {
+      "positive_costed_expectancy": true,
+      "directional_accuracy_at_least_55pct": true,
+      "edge_retention_at_least_25pct": false,
+      "loss_rate_below_event_benchmark": true,
+      "at_least_80_resolved_entries": false,
+      "controlled_drawdown": true,
+      "largest_symbol_below_40pct": true,
+      "all_months_nonnegative_and_usable": false,
+      "positive_without_best_symbol": false,
+      "positive_without_best_month": false,
+      "positive_after_one_winner_removed": true
+    },
+    "passed": false,
+    "fold_models": [
+      {
+        "kind": "PAIRWISE_SHALLOW_STUMPS",
+        "trees": [
+          {
+            "feature": "stop_m5_atr",
+            "split": 1.15,
+            "polarity": -1,
+            "alpha": 0.3422249147299652
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.259981429897832,
+            "polarity": -1,
+            "alpha": 0.1768987339544505
+          },
+          {
+            "feature": "spread_m1_atr",
+            "split": 0.7304347826103645,
+            "polarity": -1,
+            "alpha": 0.08165142332442454
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.05862665439136468,
+            "polarity": -1,
+            "alpha": 0.055081910297413696
+          },
+          {
+            "feature": "invalidation_distance_m5_atr",
+            "split": 1.9864864864860963,
+            "polarity": -1,
+            "alpha": 0.052141869200004055
+          },
+          {
+            "feature": "trend_m5_aligned",
+            "split": 0.12055555555582713,
+            "polarity": 1,
+            "alpha": 0.06447597714331547
+          },
+          {
+            "feature": "previous_day_directional_location",
+            "split": 0.5528031290743136,
+            "polarity": -1,
+            "alpha": 0.04957871854174185
+          },
+          {
+            "feature": "trend_m15_aligned",
+            "split": -0.21463506395768275,
+            "polarity": 1,
+            "alpha": 0.03150362540842573
+          }
+        ]
+      },
+      {
+        "kind": "PAIRWISE_SHALLOW_STUMPS",
+        "trees": [
+          {
+            "feature": "event_alignment",
+            "split": -1.0,
+            "polarity": -1,
+            "alpha": 0.35852020869106316
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.32170281598673217,
+            "polarity": -1,
+            "alpha": 0.17575933961379414
+          },
+          {
+            "feature": "spread_m1_atr",
+            "split": 0.2828282828290707,
+            "polarity": -1,
+            "alpha": 0.08952792369343267
+          },
+          {
+            "feature": "stop_m5_atr",
+            "split": 2.785332915991252,
+            "polarity": -1,
+            "alpha": 0.047378778888694614
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.05640666716276307,
+            "polarity": -1,
+            "alpha": 0.03481427194201902
+          },
+          {
+            "feature": "trend_m15_aligned",
+            "split": -0.20236631191705273,
+            "polarity": 1,
+            "alpha": 0.03482380931537656
+          },
+          {
+            "feature": "m1_body_aligned",
+            "split": 0.48275862069065323,
+            "polarity": -1,
+            "alpha": 0.02982494573487933
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.32170281598673217,
+            "polarity": 1,
+            "alpha": 0.030097927756760613
+          }
+        ]
+      },
+      {
+        "kind": "PAIRWISE_SHALLOW_STUMPS",
+        "trees": [
+          {
+            "feature": "event_alignment",
+            "split": -1.0,
+            "polarity": -1,
+            "alpha": 0.36817618552107684
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.32850547637411304,
+            "polarity": -1,
+            "alpha": 0.16539707400513343
+          },
+          {
+            "feature": "spread_m1_atr",
+            "split": 0.28865979381443296,
+            "polarity": -1,
+            "alpha": 0.08966092244444501
+          },
+          {
+            "feature": "stop_m5_atr",
+            "split": 2.8242207007658053,
+            "polarity": -1,
+            "alpha": 0.04509410116139299
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.18824964108684172,
+            "polarity": -1,
+            "alpha": 0.03671569596502176
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.32850547637411304,
+            "polarity": 1,
+            "alpha": 0.03791709627836956
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.4998214923241962,
+            "polarity": -1,
+            "alpha": 0.044154743505903586
+          },
+          {
+            "feature": "trend_m15_aligned",
+            "split": 0.7166437305066311,
+            "polarity": 1,
+            "alpha": 0.03589662962293322
+          }
+        ]
+      },
+      {
+        "kind": "PAIRWISE_SHALLOW_STUMPS",
+        "trees": [
+          {
+            "feature": "event_alignment",
+            "split": -1.0,
+            "polarity": -1,
+            "alpha": 0.37217230572851623
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.3326512619349388,
+            "polarity": -1,
+            "alpha": 0.17515977052913007
+          },
+          {
+            "feature": "spread_m1_atr",
+            "split": 0.296453232894032,
+            "polarity": -1,
+            "alpha": 0.08902740155834027
+          },
+          {
+            "feature": "stop_m5_atr",
+            "split": 2.8400598335202303,
+            "polarity": -1,
+            "alpha": 0.047219029576842875
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.19049577858017108,
+            "polarity": -1,
+            "alpha": 0.038904280481421014
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.3326512619349388,
+            "polarity": 1,
+            "alpha": 0.037562976899996596
+          },
+          {
+            "feature": "cost_r",
+            "split": 0.5066135301895323,
+            "polarity": -1,
+            "alpha": 0.04487886072818877
+          },
+          {
+            "feature": "impulse_aligned",
+            "split": -2.058823529411762,
+            "polarity": -1,
+            "alpha": 0.03713716069496748
+          }
+        ]
+      }
+    ]
+  },
+  "all_candidate_results": [
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5416,
+          "REJECT": 710,
+          "LONG": 1881,
+          "SHORT": 1670
+        },
+        "resolved_entries": 2876,
+        "wins": 1069,
+        "losses": 1807,
+        "net_r": -738,
+        "expectancy_r": -0.2566063977746871,
+        "max_drawdown_r": 744.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 973,
+        "directional_edges_wrong": 903,
+        "directional_accuracy": 0.5186567164179104,
+        "edge_retention": 0.20270833333333332,
+        "monthly": {
+          "2026.05": [
+            823,
+            319,
+            504
+          ],
+          "2026.06": [
+            707,
+            255,
+            452
+          ],
+          "2026.07": [
+            758,
+            275,
+            483
+          ],
+          "2026.08": [
+            588,
+            220,
+            368
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            225,
+            86,
+            139
+          ],
+          "EURJPY.r": [
+            165,
+            47,
+            118
+          ],
+          "GBPJPY.r": [
+            181,
+            59,
+            122
+          ],
+          "US500": [
+            151,
+            61,
+            90
+          ],
+          "USDCAD.r": [
+            118,
+            38,
+            80
+          ],
+          "US100": [
+            254,
+            121,
+            133
+          ],
+          "USDJPY.r": [
+            108,
+            34,
+            74
+          ],
+          "GBPUSD.r": [
+            177,
+            62,
+            115
+          ],
+          "EURUSD.r": [
+            169,
+            59,
+            110
+          ],
+          "NZDUSD.r": [
+            117,
+            34,
+            83
+          ],
+          "UK100": [
+            156,
+            57,
+            99
+          ],
+          "AUDNZD.r": [
+            56,
+            14,
+            42
+          ],
+          "XAUUSD.r": [
+            264,
+            143,
+            121
+          ],
+          "USDCHF.r": [
+            135,
+            46,
+            89
+          ],
+          "AUDJPY.r": [
+            154,
+            52,
+            102
+          ],
+          "GER40": [
+            237,
+            99,
+            138
+          ],
+          "EURO50": [
+            35,
+            10,
+            25
+          ],
+          "EURGBP.r": [
+            39,
+            8,
+            31
+          ],
+          "AUDUSD.r": [
+            135,
+            39,
+            96
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            265,
+            97,
+            168
+          ],
+          "RANGE_TO_DIRECTION": [
+            290,
+            119,
+            171
+          ],
+          "TREND_RESUMPTION": [
+            368,
+            143,
+            225
+          ],
+          "COMPLETED_BREAKOUT": [
+            336,
+            136,
+            200
+          ],
+          "STRUCTURAL_REVERSAL": [
+            359,
+            131,
+            228
+          ],
+          "FAILED_BREAKOUT": [
+            439,
+            140,
+            299
+          ],
+          "EXHAUSTION_REJECTION": [
+            41,
+            17,
+            24
+          ],
+          "BREAKOUT_RETEST": [
+            415,
+            156,
+            259
+          ],
+          "COMPRESSION_EXPANSION": [
+            14,
+            6,
+            8
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            349,
+            124,
+            225
+          ]
+        },
+        "largest_symbol_share": 0.0917941585535466,
+        "net_without_best_symbol": -760,
+        "net_without_best_month": -590,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 7566,
+          "REJECT": 710,
+          "LONG": 756,
+          "SHORT": 645
+        },
+        "resolved_entries": 1088,
+        "wins": 375,
+        "losses": 713,
+        "net_r": -338,
+        "expectancy_r": -0.31066176470588236,
+        "max_drawdown_r": 340.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 344,
+        "directional_edges_wrong": 317,
+        "directional_accuracy": 0.5204236006051437,
+        "edge_retention": 0.07166666666666667,
+        "monthly": {
+          "2026.05": [
+            389,
+            146,
+            243
+          ],
+          "2026.06": [
+            252,
+            77,
+            175
+          ],
+          "2026.07": [
+            271,
+            98,
+            173
+          ],
+          "2026.08": [
+            176,
+            54,
+            122
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            62,
+            24,
+            38
+          ],
+          "EURJPY.r": [
+            73,
+            19,
+            54
+          ],
+          "US500": [
+            49,
+            23,
+            26
+          ],
+          "US100": [
+            89,
+            49,
+            40
+          ],
+          "USDJPY.r": [
+            50,
+            16,
+            34
+          ],
+          "GBPUSD.r": [
+            80,
+            22,
+            58
+          ],
+          "NZDUSD.r": [
+            58,
+            22,
+            36
+          ],
+          "GBPJPY.r": [
+            65,
+            25,
+            40
+          ],
+          "AUDJPY.r": [
+            60,
+            14,
+            46
+          ],
+          "XAUUSD.r": [
+            54,
+            30,
+            24
+          ],
+          "EURUSD.r": [
+            71,
+            22,
+            49
+          ],
+          "USDCHF.r": [
+            56,
+            15,
+            41
+          ],
+          "GER40": [
+            79,
+            30,
+            49
+          ],
+          "EURO50": [
+            22,
+            8,
+            14
+          ],
+          "EURGBP.r": [
+            25,
+            4,
+            21
+          ],
+          "USDCAD.r": [
+            53,
+            13,
+            40
+          ],
+          "UK100": [
+            52,
+            18,
+            34
+          ],
+          "AUDUSD.r": [
+            67,
+            15,
+            52
+          ],
+          "AUDNZD.r": [
+            23,
+            6,
+            17
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            84,
+            26,
+            58
+          ],
+          "RANGE_TO_DIRECTION": [
+            125,
+            49,
+            76
+          ],
+          "COMPLETED_BREAKOUT": [
+            169,
+            69,
+            100
+          ],
+          "STRUCTURAL_REVERSAL": [
+            96,
+            31,
+            65
+          ],
+          "BREAKOUT_RETEST": [
+            166,
+            61,
+            105
+          ],
+          "FAILED_BREAKOUT": [
+            188,
+            52,
+            136
+          ],
+          "TREND_RESUMPTION": [
+            132,
+            44,
+            88
+          ],
+          "EXHAUSTION_REJECTION": [
+            24,
+            11,
+            13
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            98,
+            30,
+            68
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            2,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.0818014705882353,
+        "net_without_best_symbol": -347,
+        "net_without_best_month": -270,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2220,
+          "WAIT": 5439,
+          "LONG": 1041,
+          "SHORT": 977
+        },
+        "resolved_entries": 1736,
+        "wins": 735,
+        "losses": 1001,
+        "net_r": -266,
+        "expectancy_r": -0.1532258064516129,
+        "max_drawdown_r": 273.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 643,
+        "directional_edges_wrong": 561,
+        "directional_accuracy": 0.5340531561461794,
+        "edge_retention": 0.13395833333333335,
+        "monthly": {
+          "2026.05": [
+            521,
+            225,
+            296
+          ],
+          "2026.06": [
+            409,
+            174,
+            235
+          ],
+          "2026.07": [
+            444,
+            185,
+            259
+          ],
+          "2026.08": [
+            362,
+            151,
+            211
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            58,
+            24,
+            34
+          ],
+          "GBPJPY.r": [
+            72,
+            27,
+            45
+          ],
+          "US500": [
+            143,
+            59,
+            84
+          ],
+          "USDCAD.r": [
+            32,
+            15,
+            17
+          ],
+          "US100": [
+            253,
+            121,
+            132
+          ],
+          "USDJPY.r": [
+            51,
+            17,
+            34
+          ],
+          "XAGUSD.r": [
+            203,
+            82,
+            121
+          ],
+          "NZDUSD.r": [
+            25,
+            8,
+            17
+          ],
+          "XAUUSD.r": [
+            263,
+            142,
+            121
+          ],
+          "EURUSD.r": [
+            64,
+            22,
+            42
+          ],
+          "GBPUSD.r": [
+            85,
+            32,
+            53
+          ],
+          "GER40": [
+            222,
+            93,
+            129
+          ],
+          "AUDJPY.r": [
+            48,
+            16,
+            32
+          ],
+          "EURO50": [
+            11,
+            3,
+            8
+          ],
+          "AUDUSD.r": [
+            41,
+            14,
+            27
+          ],
+          "USDCHF.r": [
+            36,
+            14,
+            22
+          ],
+          "UK100": [
+            117,
+            44,
+            73
+          ],
+          "EURGBP.r": [
+            3,
+            0,
+            3
+          ],
+          "AUDNZD.r": [
+            9,
+            2,
+            7
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            175,
+            81,
+            94
+          ],
+          "TREND_RESUMPTION": [
+            214,
+            91,
+            123
+          ],
+          "COMPLETED_BREAKOUT": [
+            218,
+            94,
+            124
+          ],
+          "STRUCTURAL_REVERSAL": [
+            225,
+            92,
+            133
+          ],
+          "PULLBACK_CONTINUATION": [
+            175,
+            80,
+            95
+          ],
+          "FAILED_BREAKOUT": [
+            245,
+            84,
+            161
+          ],
+          "EXHAUSTION_REJECTION": [
+            33,
+            16,
+            17
+          ],
+          "BREAKOUT_RETEST": [
+            249,
+            112,
+            137
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            3,
+            3
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            196,
+            82,
+            114
+          ]
+        },
+        "largest_symbol_share": 0.15149769585253456,
+        "net_without_best_symbol": -287,
+        "net_without_best_month": -206,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2220,
+          "WAIT": 6681,
+          "LONG": 392,
+          "SHORT": 384
+        },
+        "resolved_entries": 623,
+        "wins": 261,
+        "losses": 362,
+        "net_r": -101,
+        "expectancy_r": -0.16211878009630817,
+        "max_drawdown_r": 104.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 230,
+        "directional_edges_wrong": 187,
+        "directional_accuracy": 0.5515587529976019,
+        "edge_retention": 0.04791666666666667,
+        "monthly": {
+          "2026.05": [
+            252,
+            112,
+            140
+          ],
+          "2026.06": [
+            126,
+            49,
+            77
+          ],
+          "2026.07": [
+            148,
+            66,
+            82
+          ],
+          "2026.08": [
+            97,
+            34,
+            63
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            35,
+            15,
+            20
+          ],
+          "US500": [
+            43,
+            21,
+            22
+          ],
+          "US100": [
+            89,
+            49,
+            40
+          ],
+          "USDJPY.r": [
+            25,
+            7,
+            18
+          ],
+          "NZDUSD.r": [
+            18,
+            7,
+            11
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "EURUSD.r": [
+            32,
+            7,
+            25
+          ],
+          "GBPUSD.r": [
+            36,
+            12,
+            24
+          ],
+          "GER40": [
+            75,
+            29,
+            46
+          ],
+          "EURO50": [
+            9,
+            3,
+            6
+          ],
+          "GBPJPY.r": [
+            31,
+            13,
+            18
+          ],
+          "UK100": [
+            34,
+            12,
+            22
+          ],
+          "XAGUSD.r": [
+            54,
+            24,
+            30
+          ],
+          "AUDJPY.r": [
+            24,
+            7,
+            17
+          ],
+          "AUDUSD.r": [
+            23,
+            8,
+            15
+          ],
+          "USDCHF.r": [
+            20,
+            9,
+            11
+          ],
+          "USDCAD.r": [
+            15,
+            7,
+            8
+          ],
+          "EURGBP.r": [
+            2,
+            0,
+            2
+          ],
+          "AUDNZD.r": [
+            5,
+            2,
+            3
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            69,
+            38,
+            31
+          ],
+          "COMPLETED_BREAKOUT": [
+            108,
+            45,
+            63
+          ],
+          "STRUCTURAL_REVERSAL": [
+            60,
+            26,
+            34
+          ],
+          "PULLBACK_CONTINUATION": [
+            53,
+            22,
+            31
+          ],
+          "BREAKOUT_RETEST": [
+            94,
+            43,
+            51
+          ],
+          "TREND_RESUMPTION": [
+            69,
+            27,
+            42
+          ],
+          "EXHAUSTION_REJECTION": [
+            20,
+            10,
+            10
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            51,
+            19,
+            32
+          ],
+          "FAILED_BREAKOUT": [
+            97,
+            30,
+            67
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.14285714285714285,
+        "net_without_best_symbol": -110,
+        "net_without_best_month": -85,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4792,
+          "WAIT": 3656,
+          "LONG": 622,
+          "SHORT": 607
+        },
+        "resolved_entries": 1135,
+        "wins": 525,
+        "losses": 610,
+        "net_r": -85,
+        "expectancy_r": -0.07488986784140969,
+        "max_drawdown_r": 93.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 442,
+        "directional_edges_wrong": 374,
+        "directional_accuracy": 0.5416666666666666,
+        "edge_retention": 0.09208333333333334,
+        "monthly": {
+          "2026.05": [
+            351,
+            168,
+            183
+          ],
+          "2026.06": [
+            248,
+            115,
+            133
+          ],
+          "2026.07": [
+            285,
+            132,
+            153
+          ],
+          "2026.08": [
+            251,
+            110,
+            141
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            16,
+            6,
+            10
+          ],
+          "US500": [
+            130,
+            55,
+            75
+          ],
+          "US100": [
+            248,
+            121,
+            127
+          ],
+          "USDJPY.r": [
+            13,
+            5,
+            8
+          ],
+          "XAUUSD.r": [
+            262,
+            142,
+            120
+          ],
+          "XAGUSD.r": [
+            111,
+            39,
+            72
+          ],
+          "GER40": [
+            197,
+            88,
+            109
+          ],
+          "GBPJPY.r": [
+            17,
+            8,
+            9
+          ],
+          "UK100": [
+            87,
+            38,
+            49
+          ],
+          "AUDJPY.r": [
+            10,
+            3,
+            7
+          ],
+          "AUDUSD.r": [
+            4,
+            4,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            21,
+            7,
+            14
+          ],
+          "USDCHF.r": [
+            6,
+            2,
+            4
+          ],
+          "EURUSD.r": [
+            5,
+            3,
+            2
+          ],
+          "AUDNZD.r": [
+            3,
+            1,
+            2
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            126,
+            60,
+            66
+          ],
+          "COMPLETED_BREAKOUT": [
+            140,
+            68,
+            72
+          ],
+          "STRUCTURAL_REVERSAL": [
+            141,
+            60,
+            81
+          ],
+          "PULLBACK_CONTINUATION": [
+            100,
+            54,
+            46
+          ],
+          "FAILED_BREAKOUT": [
+            157,
+            57,
+            100
+          ],
+          "BREAKOUT_RETEST": [
+            173,
+            86,
+            87
+          ],
+          "COMPRESSION_EXPANSION": [
+            5,
+            3,
+            2
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            131,
+            64,
+            67
+          ],
+          "TREND_RESUMPTION": [
+            137,
+            60,
+            77
+          ],
+          "EXHAUSTION_REJECTION": [
+            25,
+            13,
+            12
+          ]
+        },
+        "largest_symbol_share": 0.23083700440528634,
+        "net_without_best_symbol": -107,
+        "net_without_best_month": -70,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4792,
+          "WAIT": 4453,
+          "LONG": 216,
+          "SHORT": 216
+        },
+        "resolved_entries": 377,
+        "wins": 181,
+        "losses": 196,
+        "net_r": -15,
+        "expectancy_r": -0.03978779840848806,
+        "max_drawdown_r": 29.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 154,
+        "directional_edges_wrong": 116,
+        "directional_accuracy": 0.5703703703703704,
+        "edge_retention": 0.03208333333333333,
+        "monthly": {
+          "2026.05": [
+            157,
+            83,
+            74
+          ],
+          "2026.06": [
+            62,
+            25,
+            37
+          ],
+          "2026.07": [
+            97,
+            49,
+            48
+          ],
+          "2026.08": [
+            61,
+            24,
+            37
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            13,
+            6,
+            7
+          ],
+          "US500": [
+            39,
+            19,
+            20
+          ],
+          "US100": [
+            85,
+            49,
+            36
+          ],
+          "USDJPY.r": [
+            10,
+            4,
+            6
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "GER40": [
+            67,
+            26,
+            41
+          ],
+          "XAGUSD.r": [
+            39,
+            16,
+            23
+          ],
+          "UK100": [
+            23,
+            11,
+            12
+          ],
+          "AUDJPY.r": [
+            7,
+            3,
+            4
+          ],
+          "GBPJPY.r": [
+            11,
+            5,
+            6
+          ],
+          "AUDUSD.r": [
+            3,
+            3,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            12,
+            4,
+            8
+          ],
+          "USDCHF.r": [
+            5,
+            1,
+            4
+          ],
+          "EURUSD.r": [
+            3,
+            1,
+            2
+          ],
+          "AUDNZD.r": [
+            2,
+            1,
+            1
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            50,
+            27,
+            23
+          ],
+          "COMPLETED_BREAKOUT": [
+            65,
+            30,
+            35
+          ],
+          "STRUCTURAL_REVERSAL": [
+            34,
+            18,
+            16
+          ],
+          "PULLBACK_CONTINUATION": [
+            26,
+            14,
+            12
+          ],
+          "BREAKOUT_RETEST": [
+            56,
+            29,
+            27
+          ],
+          "TREND_RESUMPTION": [
+            42,
+            17,
+            25
+          ],
+          "EXHAUSTION_REJECTION": [
+            17,
+            10,
+            7
+          ],
+          "FAILED_BREAKOUT": [
+            50,
+            18,
+            32
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            35,
+            17,
+            18
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.22546419098143236,
+        "net_without_best_symbol": -28,
+        "net_without_best_month": -24,
+        "positive_months": 2,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5419,
+          "REJECT": 710,
+          "LONG": 1879,
+          "SHORT": 1669
+        },
+        "resolved_entries": 2872,
+        "wins": 1067,
+        "losses": 1805,
+        "net_r": -738,
+        "expectancy_r": -0.25696378830083566,
+        "max_drawdown_r": 744.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 972,
+        "directional_edges_wrong": 901,
+        "directional_accuracy": 0.5189535504538174,
+        "edge_retention": 0.2025,
+        "monthly": {
+          "2026.05": [
+            820,
+            318,
+            502
+          ],
+          "2026.06": [
+            706,
+            255,
+            451
+          ],
+          "2026.07": [
+            758,
+            274,
+            484
+          ],
+          "2026.08": [
+            588,
+            220,
+            368
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            225,
+            86,
+            139
+          ],
+          "EURJPY.r": [
+            166,
+            48,
+            118
+          ],
+          "GBPJPY.r": [
+            180,
+            59,
+            121
+          ],
+          "US500": [
+            151,
+            61,
+            90
+          ],
+          "USDCAD.r": [
+            118,
+            38,
+            80
+          ],
+          "US100": [
+            254,
+            121,
+            133
+          ],
+          "USDJPY.r": [
+            108,
+            34,
+            74
+          ],
+          "GBPUSD.r": [
+            175,
+            61,
+            114
+          ],
+          "EURUSD.r": [
+            167,
+            58,
+            109
+          ],
+          "NZDUSD.r": [
+            117,
+            34,
+            83
+          ],
+          "UK100": [
+            157,
+            57,
+            100
+          ],
+          "AUDNZD.r": [
+            56,
+            14,
+            42
+          ],
+          "XAUUSD.r": [
+            263,
+            142,
+            121
+          ],
+          "USDCHF.r": [
+            135,
+            46,
+            89
+          ],
+          "AUDJPY.r": [
+            154,
+            52,
+            102
+          ],
+          "GER40": [
+            237,
+            99,
+            138
+          ],
+          "EURO50": [
+            35,
+            10,
+            25
+          ],
+          "EURGBP.r": [
+            39,
+            8,
+            31
+          ],
+          "AUDUSD.r": [
+            135,
+            39,
+            96
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            263,
+            96,
+            167
+          ],
+          "RANGE_TO_DIRECTION": [
+            289,
+            118,
+            171
+          ],
+          "TREND_RESUMPTION": [
+            366,
+            143,
+            223
+          ],
+          "COMPLETED_BREAKOUT": [
+            336,
+            136,
+            200
+          ],
+          "STRUCTURAL_REVERSAL": [
+            359,
+            131,
+            228
+          ],
+          "FAILED_BREAKOUT": [
+            440,
+            140,
+            300
+          ],
+          "EXHAUSTION_REJECTION": [
+            41,
+            17,
+            24
+          ],
+          "BREAKOUT_RETEST": [
+            413,
+            155,
+            258
+          ],
+          "COMPRESSION_EXPANSION": [
+            15,
+            6,
+            9
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            350,
+            125,
+            225
+          ]
+        },
+        "largest_symbol_share": 0.09157381615598886,
+        "net_without_best_symbol": -759,
+        "net_without_best_month": -590,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 7569,
+          "REJECT": 710,
+          "LONG": 754,
+          "SHORT": 644
+        },
+        "resolved_entries": 1086,
+        "wins": 375,
+        "losses": 711,
+        "net_r": -336,
+        "expectancy_r": -0.30939226519337015,
+        "max_drawdown_r": 338.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 344,
+        "directional_edges_wrong": 316,
+        "directional_accuracy": 0.5212121212121212,
+        "edge_retention": 0.07166666666666667,
+        "monthly": {
+          "2026.05": [
+            387,
+            146,
+            241
+          ],
+          "2026.06": [
+            252,
+            77,
+            175
+          ],
+          "2026.07": [
+            271,
+            98,
+            173
+          ],
+          "2026.08": [
+            176,
+            54,
+            122
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            61,
+            24,
+            37
+          ],
+          "EURJPY.r": [
+            74,
+            19,
+            55
+          ],
+          "US500": [
+            49,
+            23,
+            26
+          ],
+          "US100": [
+            89,
+            49,
+            40
+          ],
+          "USDJPY.r": [
+            50,
+            16,
+            34
+          ],
+          "GBPUSD.r": [
+            80,
+            22,
+            58
+          ],
+          "NZDUSD.r": [
+            58,
+            22,
+            36
+          ],
+          "GBPJPY.r": [
+            64,
+            25,
+            39
+          ],
+          "AUDJPY.r": [
+            60,
+            14,
+            46
+          ],
+          "XAUUSD.r": [
+            54,
+            30,
+            24
+          ],
+          "EURUSD.r": [
+            71,
+            22,
+            49
+          ],
+          "USDCHF.r": [
+            56,
+            15,
+            41
+          ],
+          "GER40": [
+            78,
+            30,
+            48
+          ],
+          "EURO50": [
+            22,
+            8,
+            14
+          ],
+          "EURGBP.r": [
+            25,
+            4,
+            21
+          ],
+          "USDCAD.r": [
+            53,
+            13,
+            40
+          ],
+          "UK100": [
+            52,
+            18,
+            34
+          ],
+          "AUDUSD.r": [
+            67,
+            15,
+            52
+          ],
+          "AUDNZD.r": [
+            23,
+            6,
+            17
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            84,
+            26,
+            58
+          ],
+          "RANGE_TO_DIRECTION": [
+            125,
+            49,
+            76
+          ],
+          "COMPLETED_BREAKOUT": [
+            169,
+            69,
+            100
+          ],
+          "STRUCTURAL_REVERSAL": [
+            95,
+            31,
+            64
+          ],
+          "BREAKOUT_RETEST": [
+            167,
+            61,
+            106
+          ],
+          "FAILED_BREAKOUT": [
+            187,
+            52,
+            135
+          ],
+          "TREND_RESUMPTION": [
+            131,
+            44,
+            87
+          ],
+          "EXHAUSTION_REJECTION": [
+            24,
+            11,
+            13
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            98,
+            30,
+            68
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            2,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.08195211786372007,
+        "net_without_best_symbol": -345,
+        "net_without_best_month": -268,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2218,
+          "WAIT": 5443,
+          "LONG": 1040,
+          "SHORT": 976
+        },
+        "resolved_entries": 1735,
+        "wins": 734,
+        "losses": 1001,
+        "net_r": -267,
+        "expectancy_r": -0.15389048991354468,
+        "max_drawdown_r": 274.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 643,
+        "directional_edges_wrong": 561,
+        "directional_accuracy": 0.5340531561461794,
+        "edge_retention": 0.13395833333333335,
+        "monthly": {
+          "2026.05": [
+            522,
+            225,
+            297
+          ],
+          "2026.06": [
+            408,
+            173,
+            235
+          ],
+          "2026.07": [
+            443,
+            185,
+            258
+          ],
+          "2026.08": [
+            362,
+            151,
+            211
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            58,
+            24,
+            34
+          ],
+          "GBPJPY.r": [
+            72,
+            27,
+            45
+          ],
+          "US500": [
+            143,
+            59,
+            84
+          ],
+          "USDCAD.r": [
+            32,
+            15,
+            17
+          ],
+          "US100": [
+            253,
+            121,
+            132
+          ],
+          "USDJPY.r": [
+            51,
+            17,
+            34
+          ],
+          "XAGUSD.r": [
+            204,
+            82,
+            122
+          ],
+          "NZDUSD.r": [
+            25,
+            8,
+            17
+          ],
+          "XAUUSD.r": [
+            262,
+            141,
+            121
+          ],
+          "EURUSD.r": [
+            64,
+            22,
+            42
+          ],
+          "GBPUSD.r": [
+            85,
+            32,
+            53
+          ],
+          "GER40": [
+            221,
+            93,
+            128
+          ],
+          "AUDJPY.r": [
+            48,
+            16,
+            32
+          ],
+          "EURO50": [
+            11,
+            3,
+            8
+          ],
+          "AUDUSD.r": [
+            41,
+            14,
+            27
+          ],
+          "USDCHF.r": [
+            36,
+            14,
+            22
+          ],
+          "UK100": [
+            117,
+            44,
+            73
+          ],
+          "EURGBP.r": [
+            3,
+            0,
+            3
+          ],
+          "AUDNZD.r": [
+            9,
+            2,
+            7
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            175,
+            81,
+            94
+          ],
+          "TREND_RESUMPTION": [
+            214,
+            91,
+            123
+          ],
+          "COMPLETED_BREAKOUT": [
+            218,
+            94,
+            124
+          ],
+          "STRUCTURAL_REVERSAL": [
+            226,
+            92,
+            134
+          ],
+          "PULLBACK_CONTINUATION": [
+            174,
+            79,
+            95
+          ],
+          "FAILED_BREAKOUT": [
+            245,
+            84,
+            161
+          ],
+          "EXHAUSTION_REJECTION": [
+            33,
+            16,
+            17
+          ],
+          "BREAKOUT_RETEST": [
+            249,
+            112,
+            137
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            3,
+            3
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            195,
+            82,
+            113
+          ]
+        },
+        "largest_symbol_share": 0.15100864553314122,
+        "net_without_best_symbol": -287,
+        "net_without_best_month": -207,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2218,
+          "WAIT": 6687,
+          "LONG": 392,
+          "SHORT": 380
+        },
+        "resolved_entries": 621,
+        "wins": 261,
+        "losses": 360,
+        "net_r": -99,
+        "expectancy_r": -0.15942028985507245,
+        "max_drawdown_r": 102.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 230,
+        "directional_edges_wrong": 187,
+        "directional_accuracy": 0.5515587529976019,
+        "edge_retention": 0.04791666666666667,
+        "monthly": {
+          "2026.05": [
+            252,
+            112,
+            140
+          ],
+          "2026.06": [
+            126,
+            49,
+            77
+          ],
+          "2026.07": [
+            146,
+            66,
+            80
+          ],
+          "2026.08": [
+            97,
+            34,
+            63
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            35,
+            15,
+            20
+          ],
+          "US500": [
+            43,
+            21,
+            22
+          ],
+          "US100": [
+            89,
+            49,
+            40
+          ],
+          "USDJPY.r": [
+            25,
+            7,
+            18
+          ],
+          "NZDUSD.r": [
+            18,
+            7,
+            11
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "EURUSD.r": [
+            32,
+            7,
+            25
+          ],
+          "GBPUSD.r": [
+            36,
+            12,
+            24
+          ],
+          "GER40": [
+            74,
+            29,
+            45
+          ],
+          "EURO50": [
+            9,
+            3,
+            6
+          ],
+          "GBPJPY.r": [
+            31,
+            13,
+            18
+          ],
+          "UK100": [
+            34,
+            12,
+            22
+          ],
+          "XAGUSD.r": [
+            53,
+            24,
+            29
+          ],
+          "AUDJPY.r": [
+            24,
+            7,
+            17
+          ],
+          "AUDUSD.r": [
+            23,
+            8,
+            15
+          ],
+          "USDCHF.r": [
+            20,
+            9,
+            11
+          ],
+          "USDCAD.r": [
+            15,
+            7,
+            8
+          ],
+          "EURGBP.r": [
+            2,
+            0,
+            2
+          ],
+          "AUDNZD.r": [
+            5,
+            2,
+            3
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            69,
+            38,
+            31
+          ],
+          "COMPLETED_BREAKOUT": [
+            108,
+            45,
+            63
+          ],
+          "STRUCTURAL_REVERSAL": [
+            60,
+            26,
+            34
+          ],
+          "PULLBACK_CONTINUATION": [
+            53,
+            22,
+            31
+          ],
+          "BREAKOUT_RETEST": [
+            94,
+            43,
+            51
+          ],
+          "TREND_RESUMPTION": [
+            69,
+            27,
+            42
+          ],
+          "EXHAUSTION_REJECTION": [
+            20,
+            10,
+            10
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            50,
+            19,
+            31
+          ],
+          "FAILED_BREAKOUT": [
+            96,
+            30,
+            66
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.143317230273752,
+        "net_without_best_symbol": -108,
+        "net_without_best_month": -85,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4790,
+          "WAIT": 3657,
+          "LONG": 622,
+          "SHORT": 608
+        },
+        "resolved_entries": 1134,
+        "wins": 524,
+        "losses": 610,
+        "net_r": -86,
+        "expectancy_r": -0.07583774250440917,
+        "max_drawdown_r": 94.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 442,
+        "directional_edges_wrong": 374,
+        "directional_accuracy": 0.5416666666666666,
+        "edge_retention": 0.09208333333333334,
+        "monthly": {
+          "2026.05": [
+            352,
+            168,
+            184
+          ],
+          "2026.06": [
+            247,
+            114,
+            133
+          ],
+          "2026.07": [
+            285,
+            132,
+            153
+          ],
+          "2026.08": [
+            250,
+            110,
+            140
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            15,
+            6,
+            9
+          ],
+          "US500": [
+            131,
+            55,
+            76
+          ],
+          "US100": [
+            248,
+            121,
+            127
+          ],
+          "USDJPY.r": [
+            13,
+            5,
+            8
+          ],
+          "XAUUSD.r": [
+            261,
+            141,
+            120
+          ],
+          "XAGUSD.r": [
+            111,
+            39,
+            72
+          ],
+          "GER40": [
+            197,
+            88,
+            109
+          ],
+          "GBPJPY.r": [
+            17,
+            8,
+            9
+          ],
+          "UK100": [
+            87,
+            38,
+            49
+          ],
+          "AUDJPY.r": [
+            10,
+            3,
+            7
+          ],
+          "AUDUSD.r": [
+            4,
+            4,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            21,
+            7,
+            14
+          ],
+          "USDCHF.r": [
+            6,
+            2,
+            4
+          ],
+          "EURUSD.r": [
+            5,
+            3,
+            2
+          ],
+          "AUDNZD.r": [
+            3,
+            1,
+            2
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            126,
+            60,
+            66
+          ],
+          "COMPLETED_BREAKOUT": [
+            140,
+            68,
+            72
+          ],
+          "STRUCTURAL_REVERSAL": [
+            142,
+            60,
+            82
+          ],
+          "PULLBACK_CONTINUATION": [
+            99,
+            53,
+            46
+          ],
+          "FAILED_BREAKOUT": [
+            156,
+            57,
+            99
+          ],
+          "BREAKOUT_RETEST": [
+            173,
+            86,
+            87
+          ],
+          "COMPRESSION_EXPANSION": [
+            5,
+            3,
+            2
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            131,
+            64,
+            67
+          ],
+          "TREND_RESUMPTION": [
+            137,
+            60,
+            77
+          ],
+          "EXHAUSTION_REJECTION": [
+            25,
+            13,
+            12
+          ]
+        },
+        "largest_symbol_share": 0.23015873015873015,
+        "net_without_best_symbol": -107,
+        "net_without_best_month": -70,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 1.0,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4790,
+          "WAIT": 4455,
+          "LONG": 217,
+          "SHORT": 215
+        },
+        "resolved_entries": 376,
+        "wins": 181,
+        "losses": 195,
+        "net_r": -14,
+        "expectancy_r": -0.03723404255319149,
+        "max_drawdown_r": 28.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 154,
+        "directional_edges_wrong": 116,
+        "directional_accuracy": 0.5703703703703704,
+        "edge_retention": 0.03208333333333333,
+        "monthly": {
+          "2026.05": [
+            157,
+            83,
+            74
+          ],
+          "2026.06": [
+            62,
+            25,
+            37
+          ],
+          "2026.07": [
+            97,
+            49,
+            48
+          ],
+          "2026.08": [
+            60,
+            24,
+            36
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            12,
+            6,
+            6
+          ],
+          "US500": [
+            39,
+            19,
+            20
+          ],
+          "US100": [
+            85,
+            49,
+            36
+          ],
+          "USDJPY.r": [
+            10,
+            4,
+            6
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "GER40": [
+            67,
+            26,
+            41
+          ],
+          "XAGUSD.r": [
+            39,
+            16,
+            23
+          ],
+          "UK100": [
+            23,
+            11,
+            12
+          ],
+          "AUDJPY.r": [
+            7,
+            3,
+            4
+          ],
+          "GBPJPY.r": [
+            11,
+            5,
+            6
+          ],
+          "AUDUSD.r": [
+            3,
+            3,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            12,
+            4,
+            8
+          ],
+          "USDCHF.r": [
+            5,
+            1,
+            4
+          ],
+          "EURUSD.r": [
+            3,
+            1,
+            2
+          ],
+          "AUDNZD.r": [
+            2,
+            1,
+            1
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            50,
+            27,
+            23
+          ],
+          "COMPLETED_BREAKOUT": [
+            65,
+            30,
+            35
+          ],
+          "STRUCTURAL_REVERSAL": [
+            34,
+            18,
+            16
+          ],
+          "PULLBACK_CONTINUATION": [
+            26,
+            14,
+            12
+          ],
+          "BREAKOUT_RETEST": [
+            56,
+            29,
+            27
+          ],
+          "TREND_RESUMPTION": [
+            42,
+            17,
+            25
+          ],
+          "EXHAUSTION_REJECTION": [
+            17,
+            10,
+            7
+          ],
+          "FAILED_BREAKOUT": [
+            49,
+            18,
+            31
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            35,
+            17,
+            18
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.22606382978723405,
+        "net_without_best_symbol": -27,
+        "net_without_best_month": -23,
+        "positive_months": 2,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5424,
+          "REJECT": 706,
+          "LONG": 1879,
+          "SHORT": 1668
+        },
+        "resolved_entries": 2867,
+        "wins": 1065,
+        "losses": 1802,
+        "net_r": -737,
+        "expectancy_r": -0.25706313219393095,
+        "max_drawdown_r": 743.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 970,
+        "directional_edges_wrong": 898,
+        "directional_accuracy": 0.5192719486081371,
+        "edge_retention": 0.20208333333333334,
+        "monthly": {
+          "2026.05": [
+            820,
+            318,
+            502
+          ],
+          "2026.06": [
+            705,
+            255,
+            450
+          ],
+          "2026.07": [
+            753,
+            272,
+            481
+          ],
+          "2026.08": [
+            589,
+            220,
+            369
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            226,
+            86,
+            140
+          ],
+          "EURJPY.r": [
+            166,
+            48,
+            118
+          ],
+          "GBPJPY.r": [
+            181,
+            59,
+            122
+          ],
+          "US500": [
+            150,
+            60,
+            90
+          ],
+          "USDCAD.r": [
+            118,
+            38,
+            80
+          ],
+          "US100": [
+            254,
+            121,
+            133
+          ],
+          "USDJPY.r": [
+            107,
+            34,
+            73
+          ],
+          "GBPUSD.r": [
+            175,
+            61,
+            114
+          ],
+          "EURUSD.r": [
+            167,
+            57,
+            110
+          ],
+          "NZDUSD.r": [
+            118,
+            34,
+            84
+          ],
+          "UK100": [
+            155,
+            57,
+            98
+          ],
+          "AUDNZD.r": [
+            56,
+            14,
+            42
+          ],
+          "XAUUSD.r": [
+            263,
+            142,
+            121
+          ],
+          "USDCHF.r": [
+            135,
+            46,
+            89
+          ],
+          "AUDJPY.r": [
+            154,
+            52,
+            102
+          ],
+          "GER40": [
+            234,
+            99,
+            135
+          ],
+          "EURO50": [
+            35,
+            10,
+            25
+          ],
+          "EURGBP.r": [
+            38,
+            8,
+            30
+          ],
+          "AUDUSD.r": [
+            135,
+            39,
+            96
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            264,
+            96,
+            168
+          ],
+          "RANGE_TO_DIRECTION": [
+            288,
+            118,
+            170
+          ],
+          "TREND_RESUMPTION": [
+            363,
+            143,
+            220
+          ],
+          "COMPLETED_BREAKOUT": [
+            337,
+            136,
+            201
+          ],
+          "STRUCTURAL_REVERSAL": [
+            356,
+            129,
+            227
+          ],
+          "FAILED_BREAKOUT": [
+            441,
+            141,
+            300
+          ],
+          "EXHAUSTION_REJECTION": [
+            41,
+            17,
+            24
+          ],
+          "BREAKOUT_RETEST": [
+            413,
+            155,
+            258
+          ],
+          "COMPRESSION_EXPANSION": [
+            15,
+            6,
+            9
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            349,
+            124,
+            225
+          ]
+        },
+        "largest_symbol_share": 0.09173351935821417,
+        "net_without_best_symbol": -758,
+        "net_without_best_month": -588,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 7586,
+          "REJECT": 706,
+          "LONG": 745,
+          "SHORT": 640
+        },
+        "resolved_entries": 1072,
+        "wins": 365,
+        "losses": 707,
+        "net_r": -342,
+        "expectancy_r": -0.31902985074626866,
+        "max_drawdown_r": 344.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 335,
+        "directional_edges_wrong": 315,
+        "directional_accuracy": 0.5153846153846153,
+        "edge_retention": 0.06979166666666667,
+        "monthly": {
+          "2026.05": [
+            382,
+            139,
+            243
+          ],
+          "2026.06": [
+            248,
+            75,
+            173
+          ],
+          "2026.07": [
+            269,
+            97,
+            172
+          ],
+          "2026.08": [
+            173,
+            54,
+            119
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            58,
+            20,
+            38
+          ],
+          "EURJPY.r": [
+            74,
+            19,
+            55
+          ],
+          "US500": [
+            49,
+            23,
+            26
+          ],
+          "US100": [
+            88,
+            49,
+            39
+          ],
+          "USDJPY.r": [
+            50,
+            16,
+            34
+          ],
+          "GBPUSD.r": [
+            79,
+            21,
+            58
+          ],
+          "NZDUSD.r": [
+            58,
+            21,
+            37
+          ],
+          "GBPJPY.r": [
+            63,
+            25,
+            38
+          ],
+          "AUDJPY.r": [
+            59,
+            14,
+            45
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "EURUSD.r": [
+            71,
+            22,
+            49
+          ],
+          "USDCHF.r": [
+            55,
+            15,
+            40
+          ],
+          "GER40": [
+            75,
+            28,
+            47
+          ],
+          "EURO50": [
+            21,
+            7,
+            14
+          ],
+          "EURGBP.r": [
+            24,
+            4,
+            20
+          ],
+          "USDCAD.r": [
+            53,
+            13,
+            40
+          ],
+          "UK100": [
+            52,
+            18,
+            34
+          ],
+          "AUDUSD.r": [
+            67,
+            15,
+            52
+          ],
+          "AUDNZD.r": [
+            23,
+            6,
+            17
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            79,
+            23,
+            56
+          ],
+          "RANGE_TO_DIRECTION": [
+            124,
+            49,
+            75
+          ],
+          "COMPLETED_BREAKOUT": [
+            167,
+            69,
+            98
+          ],
+          "STRUCTURAL_REVERSAL": [
+            94,
+            30,
+            64
+          ],
+          "BREAKOUT_RETEST": [
+            166,
+            60,
+            106
+          ],
+          "FAILED_BREAKOUT": [
+            186,
+            51,
+            135
+          ],
+          "TREND_RESUMPTION": [
+            128,
+            41,
+            87
+          ],
+          "EXHAUSTION_REJECTION": [
+            25,
+            11,
+            14
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            97,
+            29,
+            68
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            2,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.08208955223880597,
+        "net_without_best_symbol": -352,
+        "net_without_best_month": -277,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2219,
+          "WAIT": 5459,
+          "LONG": 1032,
+          "SHORT": 967
+        },
+        "resolved_entries": 1721,
+        "wins": 731,
+        "losses": 990,
+        "net_r": -259,
+        "expectancy_r": -0.1504938988959907,
+        "max_drawdown_r": 266.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 640,
+        "directional_edges_wrong": 558,
+        "directional_accuracy": 0.5342237061769616,
+        "edge_retention": 0.13333333333333333,
+        "monthly": {
+          "2026.05": [
+            517,
+            225,
+            292
+          ],
+          "2026.06": [
+            403,
+            172,
+            231
+          ],
+          "2026.07": [
+            439,
+            183,
+            256
+          ],
+          "2026.08": [
+            362,
+            151,
+            211
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            58,
+            24,
+            34
+          ],
+          "GBPJPY.r": [
+            72,
+            27,
+            45
+          ],
+          "US500": [
+            142,
+            58,
+            84
+          ],
+          "USDCAD.r": [
+            32,
+            15,
+            17
+          ],
+          "US100": [
+            253,
+            121,
+            132
+          ],
+          "USDJPY.r": [
+            49,
+            17,
+            32
+          ],
+          "XAGUSD.r": [
+            204,
+            82,
+            122
+          ],
+          "NZDUSD.r": [
+            25,
+            8,
+            17
+          ],
+          "XAUUSD.r": [
+            262,
+            141,
+            121
+          ],
+          "EURUSD.r": [
+            63,
+            21,
+            42
+          ],
+          "GBPUSD.r": [
+            83,
+            31,
+            52
+          ],
+          "GER40": [
+            218,
+            93,
+            125
+          ],
+          "AUDJPY.r": [
+            48,
+            16,
+            32
+          ],
+          "EURO50": [
+            10,
+            3,
+            7
+          ],
+          "AUDUSD.r": [
+            39,
+            14,
+            25
+          ],
+          "USDCHF.r": [
+            36,
+            14,
+            22
+          ],
+          "UK100": [
+            115,
+            44,
+            71
+          ],
+          "EURGBP.r": [
+            3,
+            0,
+            3
+          ],
+          "AUDNZD.r": [
+            9,
+            2,
+            7
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            174,
+            81,
+            93
+          ],
+          "TREND_RESUMPTION": [
+            210,
+            91,
+            119
+          ],
+          "COMPLETED_BREAKOUT": [
+            216,
+            94,
+            122
+          ],
+          "STRUCTURAL_REVERSAL": [
+            223,
+            91,
+            132
+          ],
+          "PULLBACK_CONTINUATION": [
+            174,
+            79,
+            95
+          ],
+          "FAILED_BREAKOUT": [
+            243,
+            84,
+            159
+          ],
+          "EXHAUSTION_REJECTION": [
+            33,
+            16,
+            17
+          ],
+          "BREAKOUT_RETEST": [
+            249,
+            112,
+            137
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            3,
+            3
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            193,
+            80,
+            113
+          ]
+        },
+        "largest_symbol_share": 0.15223707147007554,
+        "net_without_best_symbol": -279,
+        "net_without_best_month": -200,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2219,
+          "WAIT": 6699,
+          "LONG": 384,
+          "SHORT": 375
+        },
+        "resolved_entries": 610,
+        "wins": 253,
+        "losses": 357,
+        "net_r": -104,
+        "expectancy_r": -0.17049180327868851,
+        "max_drawdown_r": 108.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 223,
+        "directional_edges_wrong": 187,
+        "directional_accuracy": 0.5439024390243903,
+        "edge_retention": 0.04645833333333333,
+        "monthly": {
+          "2026.05": [
+            247,
+            107,
+            140
+          ],
+          "2026.06": [
+            122,
+            47,
+            75
+          ],
+          "2026.07": [
+            144,
+            65,
+            79
+          ],
+          "2026.08": [
+            97,
+            34,
+            63
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            35,
+            15,
+            20
+          ],
+          "US500": [
+            43,
+            21,
+            22
+          ],
+          "US100": [
+            88,
+            49,
+            39
+          ],
+          "USDJPY.r": [
+            24,
+            7,
+            17
+          ],
+          "NZDUSD.r": [
+            19,
+            7,
+            12
+          ],
+          "XAUUSD.r": [
+            52,
+            28,
+            24
+          ],
+          "EURUSD.r": [
+            32,
+            7,
+            25
+          ],
+          "GBPUSD.r": [
+            35,
+            11,
+            24
+          ],
+          "GER40": [
+            71,
+            27,
+            44
+          ],
+          "EURO50": [
+            9,
+            3,
+            6
+          ],
+          "GBPJPY.r": [
+            31,
+            13,
+            18
+          ],
+          "XAGUSD.r": [
+            50,
+            20,
+            30
+          ],
+          "UK100": [
+            33,
+            12,
+            21
+          ],
+          "AUDJPY.r": [
+            24,
+            7,
+            17
+          ],
+          "AUDUSD.r": [
+            22,
+            8,
+            14
+          ],
+          "USDCHF.r": [
+            20,
+            9,
+            11
+          ],
+          "USDCAD.r": [
+            15,
+            7,
+            8
+          ],
+          "EURGBP.r": [
+            2,
+            0,
+            2
+          ],
+          "AUDNZD.r": [
+            5,
+            2,
+            3
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            69,
+            38,
+            31
+          ],
+          "COMPLETED_BREAKOUT": [
+            106,
+            45,
+            61
+          ],
+          "STRUCTURAL_REVERSAL": [
+            59,
+            25,
+            34
+          ],
+          "PULLBACK_CONTINUATION": [
+            49,
+            19,
+            30
+          ],
+          "BREAKOUT_RETEST": [
+            93,
+            42,
+            51
+          ],
+          "TREND_RESUMPTION": [
+            67,
+            26,
+            41
+          ],
+          "EXHAUSTION_REJECTION": [
+            21,
+            10,
+            11
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            49,
+            17,
+            32
+          ],
+          "FAILED_BREAKOUT": [
+            95,
+            30,
+            65
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.14426229508196722,
+        "net_without_best_symbol": -114,
+        "net_without_best_month": -90,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4792,
+          "WAIT": 3662,
+          "LONG": 620,
+          "SHORT": 603
+        },
+        "resolved_entries": 1127,
+        "wins": 522,
+        "losses": 605,
+        "net_r": -83,
+        "expectancy_r": -0.07364685004436557,
+        "max_drawdown_r": 91.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 440,
+        "directional_edges_wrong": 373,
+        "directional_accuracy": 0.5412054120541205,
+        "edge_retention": 0.09166666666666666,
+        "monthly": {
+          "2026.05": [
+            351,
+            167,
+            184
+          ],
+          "2026.06": [
+            245,
+            114,
+            131
+          ],
+          "2026.07": [
+            282,
+            131,
+            151
+          ],
+          "2026.08": [
+            249,
+            110,
+            139
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            15,
+            6,
+            9
+          ],
+          "US500": [
+            130,
+            54,
+            76
+          ],
+          "US100": [
+            248,
+            121,
+            127
+          ],
+          "USDJPY.r": [
+            12,
+            5,
+            7
+          ],
+          "XAUUSD.r": [
+            261,
+            141,
+            120
+          ],
+          "XAGUSD.r": [
+            110,
+            39,
+            71
+          ],
+          "GER40": [
+            195,
+            88,
+            107
+          ],
+          "GBPJPY.r": [
+            17,
+            8,
+            9
+          ],
+          "UK100": [
+            86,
+            38,
+            48
+          ],
+          "AUDJPY.r": [
+            10,
+            3,
+            7
+          ],
+          "AUDUSD.r": [
+            4,
+            4,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            20,
+            6,
+            14
+          ],
+          "USDCHF.r": [
+            6,
+            2,
+            4
+          ],
+          "EURUSD.r": [
+            5,
+            3,
+            2
+          ],
+          "AUDNZD.r": [
+            3,
+            1,
+            2
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            125,
+            60,
+            65
+          ],
+          "COMPLETED_BREAKOUT": [
+            139,
+            68,
+            71
+          ],
+          "STRUCTURAL_REVERSAL": [
+            142,
+            60,
+            82
+          ],
+          "PULLBACK_CONTINUATION": [
+            99,
+            53,
+            46
+          ],
+          "FAILED_BREAKOUT": [
+            156,
+            57,
+            99
+          ],
+          "BREAKOUT_RETEST": [
+            173,
+            86,
+            87
+          ],
+          "COMPRESSION_EXPANSION": [
+            5,
+            3,
+            2
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            129,
+            62,
+            67
+          ],
+          "TREND_RESUMPTION": [
+            134,
+            60,
+            74
+          ],
+          "EXHAUSTION_REJECTION": [
+            25,
+            13,
+            12
+          ]
+        },
+        "largest_symbol_share": 0.2315882874889086,
+        "net_without_best_symbol": -104,
+        "net_without_best_month": -66,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 3.0,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4792,
+          "WAIT": 4462,
+          "LONG": 212,
+          "SHORT": 211
+        },
+        "resolved_entries": 367,
+        "wins": 174,
+        "losses": 193,
+        "net_r": -19,
+        "expectancy_r": -0.051771117166212535,
+        "max_drawdown_r": 26.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 148,
+        "directional_edges_wrong": 115,
+        "directional_accuracy": 0.5627376425855514,
+        "edge_retention": 0.030833333333333334,
+        "monthly": {
+          "2026.05": [
+            152,
+            77,
+            75
+          ],
+          "2026.06": [
+            60,
+            24,
+            36
+          ],
+          "2026.07": [
+            96,
+            49,
+            47
+          ],
+          "2026.08": [
+            59,
+            24,
+            35
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            12,
+            6,
+            6
+          ],
+          "US500": [
+            39,
+            19,
+            20
+          ],
+          "US100": [
+            84,
+            49,
+            35
+          ],
+          "USDJPY.r": [
+            9,
+            4,
+            5
+          ],
+          "XAUUSD.r": [
+            52,
+            28,
+            24
+          ],
+          "GER40": [
+            64,
+            24,
+            40
+          ],
+          "XAGUSD.r": [
+            37,
+            13,
+            24
+          ],
+          "UK100": [
+            23,
+            11,
+            12
+          ],
+          "AUDJPY.r": [
+            7,
+            3,
+            4
+          ],
+          "GBPJPY.r": [
+            11,
+            5,
+            6
+          ],
+          "AUDUSD.r": [
+            3,
+            3,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            11,
+            3,
+            8
+          ],
+          "USDCHF.r": [
+            5,
+            1,
+            4
+          ],
+          "EURUSD.r": [
+            3,
+            1,
+            2
+          ],
+          "AUDNZD.r": [
+            2,
+            1,
+            1
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            50,
+            27,
+            23
+          ],
+          "COMPLETED_BREAKOUT": [
+            63,
+            30,
+            33
+          ],
+          "STRUCTURAL_REVERSAL": [
+            33,
+            17,
+            16
+          ],
+          "PULLBACK_CONTINUATION": [
+            23,
+            12,
+            11
+          ],
+          "BREAKOUT_RETEST": [
+            55,
+            28,
+            27
+          ],
+          "TREND_RESUMPTION": [
+            41,
+            16,
+            25
+          ],
+          "EXHAUSTION_REJECTION": [
+            18,
+            10,
+            8
+          ],
+          "FAILED_BREAKOUT": [
+            49,
+            18,
+            31
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            33,
+            15,
+            18
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.22888283378746593,
+        "net_without_best_symbol": -33,
+        "net_without_best_month": -21,
+        "positive_months": 2,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5442,
+          "REJECT": 690,
+          "LONG": 1879,
+          "SHORT": 1666
+        },
+        "resolved_entries": 2865,
+        "wins": 1066,
+        "losses": 1799,
+        "net_r": -733,
+        "expectancy_r": -0.2558464223385689,
+        "max_drawdown_r": 738.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 971,
+        "directional_edges_wrong": 895,
+        "directional_accuracy": 0.5203644158628081,
+        "edge_retention": 0.20229166666666668,
+        "monthly": {
+          "2026.05": [
+            817,
+            315,
+            502
+          ],
+          "2026.06": [
+            709,
+            257,
+            452
+          ],
+          "2026.07": [
+            752,
+            275,
+            477
+          ],
+          "2026.08": [
+            587,
+            219,
+            368
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            225,
+            84,
+            141
+          ],
+          "EURJPY.r": [
+            168,
+            49,
+            119
+          ],
+          "GBPJPY.r": [
+            179,
+            58,
+            121
+          ],
+          "US500": [
+            151,
+            61,
+            90
+          ],
+          "USDCAD.r": [
+            119,
+            40,
+            79
+          ],
+          "US100": [
+            255,
+            121,
+            134
+          ],
+          "USDJPY.r": [
+            107,
+            36,
+            71
+          ],
+          "GBPUSD.r": [
+            174,
+            62,
+            112
+          ],
+          "EURUSD.r": [
+            167,
+            57,
+            110
+          ],
+          "NZDUSD.r": [
+            118,
+            34,
+            84
+          ],
+          "AUDNZD.r": [
+            57,
+            14,
+            43
+          ],
+          "XAUUSD.r": [
+            258,
+            139,
+            119
+          ],
+          "USDCHF.r": [
+            136,
+            46,
+            90
+          ],
+          "AUDJPY.r": [
+            154,
+            52,
+            102
+          ],
+          "GER40": [
+            234,
+            98,
+            136
+          ],
+          "EURO50": [
+            35,
+            10,
+            25
+          ],
+          "EURGBP.r": [
+            37,
+            8,
+            29
+          ],
+          "AUDUSD.r": [
+            136,
+            40,
+            96
+          ],
+          "UK100": [
+            155,
+            57,
+            98
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            258,
+            95,
+            163
+          ],
+          "RANGE_TO_DIRECTION": [
+            288,
+            118,
+            170
+          ],
+          "TREND_RESUMPTION": [
+            358,
+            141,
+            217
+          ],
+          "COMPLETED_BREAKOUT": [
+            339,
+            138,
+            201
+          ],
+          "STRUCTURAL_REVERSAL": [
+            359,
+            132,
+            227
+          ],
+          "FAILED_BREAKOUT": [
+            446,
+            142,
+            304
+          ],
+          "EXHAUSTION_REJECTION": [
+            42,
+            17,
+            25
+          ],
+          "BREAKOUT_RETEST": [
+            408,
+            152,
+            256
+          ],
+          "COMPRESSION_EXPANSION": [
+            15,
+            6,
+            9
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            352,
+            125,
+            227
+          ]
+        },
+        "largest_symbol_share": 0.09005235602094241,
+        "net_without_best_symbol": -753,
+        "net_without_best_month": -584,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 7635,
+          "REJECT": 690,
+          "LONG": 729,
+          "SHORT": 623
+        },
+        "resolved_entries": 1044,
+        "wins": 355,
+        "losses": 689,
+        "net_r": -334,
+        "expectancy_r": -0.31992337164750956,
+        "max_drawdown_r": 337.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 326,
+        "directional_edges_wrong": 305,
+        "directional_accuracy": 0.5166402535657686,
+        "edge_retention": 0.06791666666666667,
+        "monthly": {
+          "2026.05": [
+            371,
+            134,
+            237
+          ],
+          "2026.06": [
+            241,
+            75,
+            166
+          ],
+          "2026.07": [
+            264,
+            95,
+            169
+          ],
+          "2026.08": [
+            168,
+            51,
+            117
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            56,
+            20,
+            36
+          ],
+          "EURJPY.r": [
+            72,
+            19,
+            53
+          ],
+          "US500": [
+            43,
+            19,
+            24
+          ],
+          "US100": [
+            85,
+            46,
+            39
+          ],
+          "USDJPY.r": [
+            50,
+            16,
+            34
+          ],
+          "NZDUSD.r": [
+            55,
+            21,
+            34
+          ],
+          "GBPJPY.r": [
+            61,
+            23,
+            38
+          ],
+          "AUDJPY.r": [
+            60,
+            13,
+            47
+          ],
+          "GBPUSD.r": [
+            78,
+            22,
+            56
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "EURUSD.r": [
+            69,
+            22,
+            47
+          ],
+          "USDCHF.r": [
+            53,
+            14,
+            39
+          ],
+          "GER40": [
+            74,
+            28,
+            46
+          ],
+          "EURO50": [
+            21,
+            7,
+            14
+          ],
+          "EURGBP.r": [
+            23,
+            4,
+            19
+          ],
+          "USDCAD.r": [
+            52,
+            13,
+            39
+          ],
+          "UK100": [
+            52,
+            18,
+            34
+          ],
+          "AUDUSD.r": [
+            62,
+            14,
+            48
+          ],
+          "AUDNZD.r": [
+            25,
+            7,
+            18
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            76,
+            22,
+            54
+          ],
+          "RANGE_TO_DIRECTION": [
+            123,
+            49,
+            74
+          ],
+          "COMPLETED_BREAKOUT": [
+            162,
+            67,
+            95
+          ],
+          "STRUCTURAL_REVERSAL": [
+            93,
+            29,
+            64
+          ],
+          "BREAKOUT_RETEST": [
+            163,
+            59,
+            104
+          ],
+          "FAILED_BREAKOUT": [
+            179,
+            47,
+            132
+          ],
+          "TREND_RESUMPTION": [
+            124,
+            40,
+            84
+          ],
+          "EXHAUSTION_REJECTION": [
+            25,
+            11,
+            14
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            94,
+            29,
+            65
+          ],
+          "COMPRESSION_EXPANSION": [
+            5,
+            2,
+            3
+          ]
+        },
+        "largest_symbol_share": 0.08141762452107279,
+        "net_without_best_symbol": -341,
+        "net_without_best_month": -268,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2198,
+          "WAIT": 5496,
+          "LONG": 1024,
+          "SHORT": 959
+        },
+        "resolved_entries": 1706,
+        "wins": 725,
+        "losses": 981,
+        "net_r": -256,
+        "expectancy_r": -0.15005861664712777,
+        "max_drawdown_r": 261.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 635,
+        "directional_edges_wrong": 555,
+        "directional_accuracy": 0.5336134453781513,
+        "edge_retention": 0.13229166666666667,
+        "monthly": {
+          "2026.05": [
+            514,
+            223,
+            291
+          ],
+          "2026.06": [
+            399,
+            169,
+            230
+          ],
+          "2026.07": [
+            434,
+            183,
+            251
+          ],
+          "2026.08": [
+            359,
+            150,
+            209
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            57,
+            23,
+            34
+          ],
+          "GBPJPY.r": [
+            72,
+            27,
+            45
+          ],
+          "US500": [
+            142,
+            58,
+            84
+          ],
+          "USDCAD.r": [
+            29,
+            14,
+            15
+          ],
+          "US100": [
+            254,
+            121,
+            133
+          ],
+          "USDJPY.r": [
+            48,
+            17,
+            31
+          ],
+          "XAGUSD.r": [
+            201,
+            80,
+            121
+          ],
+          "NZDUSD.r": [
+            25,
+            8,
+            17
+          ],
+          "XAUUSD.r": [
+            258,
+            139,
+            119
+          ],
+          "EURUSD.r": [
+            63,
+            20,
+            43
+          ],
+          "GBPUSD.r": [
+            81,
+            31,
+            50
+          ],
+          "GER40": [
+            219,
+            93,
+            126
+          ],
+          "AUDJPY.r": [
+            47,
+            16,
+            31
+          ],
+          "EURO50": [
+            10,
+            3,
+            7
+          ],
+          "AUDUSD.r": [
+            39,
+            14,
+            25
+          ],
+          "USDCHF.r": [
+            34,
+            14,
+            20
+          ],
+          "UK100": [
+            115,
+            45,
+            70
+          ],
+          "EURGBP.r": [
+            3,
+            0,
+            3
+          ],
+          "AUDNZD.r": [
+            9,
+            2,
+            7
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            172,
+            80,
+            92
+          ],
+          "TREND_RESUMPTION": [
+            207,
+            90,
+            117
+          ],
+          "COMPLETED_BREAKOUT": [
+            216,
+            94,
+            122
+          ],
+          "STRUCTURAL_REVERSAL": [
+            221,
+            91,
+            130
+          ],
+          "PULLBACK_CONTINUATION": [
+            170,
+            77,
+            93
+          ],
+          "FAILED_BREAKOUT": [
+            244,
+            84,
+            160
+          ],
+          "EXHAUSTION_REJECTION": [
+            32,
+            16,
+            16
+          ],
+          "BREAKOUT_RETEST": [
+            244,
+            110,
+            134
+          ],
+          "COMPRESSION_EXPANSION": [
+            6,
+            3,
+            3
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            194,
+            80,
+            114
+          ]
+        },
+        "largest_symbol_share": 0.15123094958968347,
+        "net_without_best_symbol": -276,
+        "net_without_best_month": -197,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 2198,
+          "WAIT": 6741,
+          "LONG": 374,
+          "SHORT": 364
+        },
+        "resolved_entries": 592,
+        "wins": 244,
+        "losses": 348,
+        "net_r": -104,
+        "expectancy_r": -0.17567567567567569,
+        "max_drawdown_r": 107.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 216,
+        "directional_edges_wrong": 181,
+        "directional_accuracy": 0.5440806045340051,
+        "edge_retention": 0.045,
+        "monthly": {
+          "2026.05": [
+            238,
+            103,
+            135
+          ],
+          "2026.06": [
+            120,
+            46,
+            74
+          ],
+          "2026.07": [
+            142,
+            64,
+            78
+          ],
+          "2026.08": [
+            92,
+            31,
+            61
+          ]
+        },
+        "symbols": {
+          "EURJPY.r": [
+            32,
+            14,
+            18
+          ],
+          "US500": [
+            38,
+            18,
+            20
+          ],
+          "US100": [
+            85,
+            46,
+            39
+          ],
+          "USDJPY.r": [
+            24,
+            7,
+            17
+          ],
+          "NZDUSD.r": [
+            19,
+            7,
+            12
+          ],
+          "XAUUSD.r": [
+            53,
+            29,
+            24
+          ],
+          "EURUSD.r": [
+            33,
+            7,
+            26
+          ],
+          "GBPUSD.r": [
+            33,
+            10,
+            23
+          ],
+          "GER40": [
+            71,
+            27,
+            44
+          ],
+          "EURO50": [
+            9,
+            3,
+            6
+          ],
+          "XAGUSD.r": [
+            49,
+            20,
+            29
+          ],
+          "UK100": [
+            33,
+            12,
+            21
+          ],
+          "AUDJPY.r": [
+            23,
+            6,
+            17
+          ],
+          "GBPJPY.r": [
+            31,
+            12,
+            19
+          ],
+          "AUDUSD.r": [
+            21,
+            8,
+            13
+          ],
+          "USDCHF.r": [
+            18,
+            9,
+            9
+          ],
+          "USDCAD.r": [
+            13,
+            7,
+            6
+          ],
+          "EURGBP.r": [
+            2,
+            0,
+            2
+          ],
+          "AUDNZD.r": [
+            5,
+            2,
+            3
+          ]
+        },
+        "families": {
+          "RANGE_TO_DIRECTION": [
+            68,
+            36,
+            32
+          ],
+          "COMPLETED_BREAKOUT": [
+            103,
+            43,
+            60
+          ],
+          "STRUCTURAL_REVERSAL": [
+            56,
+            23,
+            33
+          ],
+          "PULLBACK_CONTINUATION": [
+            49,
+            17,
+            32
+          ],
+          "BREAKOUT_RETEST": [
+            91,
+            42,
+            49
+          ],
+          "TREND_RESUMPTION": [
+            62,
+            25,
+            37
+          ],
+          "EXHAUSTION_REJECTION": [
+            19,
+            10,
+            9
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            49,
+            17,
+            32
+          ],
+          "FAILED_BREAKOUT": [
+            93,
+            30,
+            63
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.14358108108108109,
+        "net_without_best_symbol": -111,
+        "net_without_best_month": -90,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4784,
+          "WAIT": 3688,
+          "SHORT": 595,
+          "LONG": 610
+        },
+        "resolved_entries": 1111,
+        "wins": 516,
+        "losses": 595,
+        "net_r": -79,
+        "expectancy_r": -0.0711071107110711,
+        "max_drawdown_r": 88.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 434,
+        "directional_edges_wrong": 365,
+        "directional_accuracy": 0.5431789737171464,
+        "edge_retention": 0.09041666666666667,
+        "monthly": {
+          "2026.05": [
+            347,
+            165,
+            182
+          ],
+          "2026.06": [
+            241,
+            112,
+            129
+          ],
+          "2026.07": [
+            275,
+            130,
+            145
+          ],
+          "2026.08": [
+            248,
+            109,
+            139
+          ]
+        },
+        "symbols": {
+          "US500": [
+            129,
+            54,
+            75
+          ],
+          "US100": [
+            249,
+            121,
+            128
+          ],
+          "USDJPY.r": [
+            10,
+            3,
+            7
+          ],
+          "XAUUSD.r": [
+            256,
+            138,
+            118
+          ],
+          "XAGUSD.r": [
+            108,
+            38,
+            70
+          ],
+          "GER40": [
+            194,
+            87,
+            107
+          ],
+          "GBPJPY.r": [
+            16,
+            8,
+            8
+          ],
+          "UK100": [
+            87,
+            39,
+            48
+          ],
+          "AUDJPY.r": [
+            8,
+            3,
+            5
+          ],
+          "EURJPY.r": [
+            14,
+            6,
+            8
+          ],
+          "AUDUSD.r": [
+            5,
+            5,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            18,
+            6,
+            12
+          ],
+          "USDCHF.r": [
+            5,
+            2,
+            3
+          ],
+          "EURUSD.r": [
+            4,
+            2,
+            2
+          ],
+          "AUDNZD.r": [
+            3,
+            1,
+            2
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            139,
+            68,
+            71
+          ],
+          "STRUCTURAL_REVERSAL": [
+            141,
+            61,
+            80
+          ],
+          "PULLBACK_CONTINUATION": [
+            94,
+            51,
+            43
+          ],
+          "FAILED_BREAKOUT": [
+            155,
+            56,
+            99
+          ],
+          "BREAKOUT_RETEST": [
+            167,
+            81,
+            86
+          ],
+          "COMPRESSION_EXPANSION": [
+            5,
+            3,
+            2
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            129,
+            62,
+            67
+          ],
+          "TREND_RESUMPTION": [
+            133,
+            61,
+            72
+          ],
+          "EXHAUSTION_REJECTION": [
+            24,
+            13,
+            11
+          ],
+          "RANGE_TO_DIRECTION": [
+            124,
+            60,
+            64
+          ]
+        },
+        "largest_symbol_share": 0.2304230423042304,
+        "net_without_best_symbol": -99,
+        "net_without_best_month": -64,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 10.0,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 4784,
+          "WAIT": 4488,
+          "SHORT": 199,
+          "LONG": 206
+        },
+        "resolved_entries": 350,
+        "wins": 165,
+        "losses": 185,
+        "net_r": -20,
+        "expectancy_r": -0.05714285714285714,
+        "max_drawdown_r": 27.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 140,
+        "directional_edges_wrong": 109,
+        "directional_accuracy": 0.5622489959839357,
+        "edge_retention": 0.029166666666666667,
+        "monthly": {
+          "2026.05": [
+            144,
+            73,
+            71
+          ],
+          "2026.06": [
+            58,
+            24,
+            34
+          ],
+          "2026.07": [
+            93,
+            47,
+            46
+          ],
+          "2026.08": [
+            55,
+            21,
+            34
+          ]
+        },
+        "symbols": {
+          "US500": [
+            34,
+            16,
+            18
+          ],
+          "US100": [
+            81,
+            46,
+            35
+          ],
+          "USDJPY.r": [
+            7,
+            2,
+            5
+          ],
+          "XAUUSD.r": [
+            52,
+            28,
+            24
+          ],
+          "GER40": [
+            63,
+            23,
+            40
+          ],
+          "XAGUSD.r": [
+            35,
+            12,
+            23
+          ],
+          "UK100": [
+            23,
+            11,
+            12
+          ],
+          "AUDJPY.r": [
+            7,
+            3,
+            4
+          ],
+          "EURJPY.r": [
+            9,
+            6,
+            3
+          ],
+          "GBPJPY.r": [
+            10,
+            5,
+            5
+          ],
+          "AUDUSD.r": [
+            4,
+            4,
+            0
+          ],
+          "EURO50": [
+            3,
+            1,
+            2
+          ],
+          "GBPUSD.r": [
+            11,
+            3,
+            8
+          ],
+          "USDCHF.r": [
+            4,
+            1,
+            3
+          ],
+          "EURUSD.r": [
+            3,
+            1,
+            2
+          ],
+          "AUDNZD.r": [
+            2,
+            1,
+            1
+          ],
+          "NZDUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            60,
+            28,
+            32
+          ],
+          "STRUCTURAL_REVERSAL": [
+            31,
+            16,
+            15
+          ],
+          "PULLBACK_CONTINUATION": [
+            22,
+            11,
+            11
+          ],
+          "BREAKOUT_RETEST": [
+            53,
+            26,
+            27
+          ],
+          "TREND_RESUMPTION": [
+            38,
+            16,
+            22
+          ],
+          "EXHAUSTION_REJECTION": [
+            16,
+            10,
+            6
+          ],
+          "FAILED_BREAKOUT": [
+            48,
+            17,
+            31
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            33,
+            15,
+            18
+          ],
+          "RANGE_TO_DIRECTION": [
+            47,
+            25,
+            22
+          ],
+          "COMPRESSION_EXPANSION": [
+            2,
+            1,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.23142857142857143,
+        "net_without_best_symbol": -31,
+        "net_without_best_month": -22,
+        "positive_months": 2,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5667,
+          "REJECT": 4003,
+          "LONG": 3,
+          "SHORT": 4
+        },
+        "resolved_entries": 7,
+        "wins": 3,
+        "losses": 4,
+        "net_r": -1,
+        "expectancy_r": -0.14285714285714285,
+        "max_drawdown_r": 3.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 1,
+        "directional_accuracy": 0.6666666666666666,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            7,
+            3,
+            4
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            3,
+            0,
+            3
+          ]
+        },
+        "largest_symbol_share": 0.2857142857142857,
+        "net_without_best_symbol": -3,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5667,
+          "REJECT": 4003,
+          "LONG": 3,
+          "SHORT": 4
+        },
+        "resolved_entries": 7,
+        "wins": 3,
+        "losses": 4,
+        "net_r": -1,
+        "expectancy_r": -0.14285714285714285,
+        "max_drawdown_r": 3.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 1,
+        "directional_accuracy": 0.6666666666666666,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            7,
+            3,
+            4
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            3,
+            0,
+            3
+          ]
+        },
+        "largest_symbol_share": 0.2857142857142857,
+        "net_without_best_symbol": -3,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 2908,
+          "REJECT": 6763,
+          "LONG": 2,
+          "SHORT": 4
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 2908,
+          "REJECT": 6763,
+          "LONG": 2,
+          "SHORT": 4
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 9670,
+          "LONG": 2,
+          "SHORT": 4,
+          "WAIT": 1
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 3,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 9670,
+          "LONG": 2,
+          "SHORT": 4,
+          "WAIT": 1
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 4091,
+          "REJECT": 5367,
+          "LONG": 108,
+          "SHORT": 111
+        },
+        "resolved_entries": 212,
+        "wins": 96,
+        "losses": 116,
+        "net_r": -20,
+        "expectancy_r": -0.09433962264150944,
+        "max_drawdown_r": 20.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 86,
+        "directional_edges_wrong": 74,
+        "directional_accuracy": 0.5375,
+        "edge_retention": 0.017916666666666668,
+        "monthly": {
+          "2026.05": [
+            208,
+            95,
+            113
+          ],
+          "2026.07": [
+            2,
+            1,
+            1
+          ],
+          "2026.08": [
+            2,
+            0,
+            2
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            51,
+            26,
+            25
+          ],
+          "US100": [
+            74,
+            30,
+            44
+          ],
+          "US500": [
+            27,
+            15,
+            12
+          ],
+          "GER40": [
+            50,
+            22,
+            28
+          ],
+          "XAGUSD.r": [
+            3,
+            2,
+            1
+          ],
+          "USDCAD.r": [
+            3,
+            1,
+            2
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ],
+          "EURUSD.r": [
+            1,
+            0,
+            1
+          ],
+          "GBPUSD.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "STRUCTURAL_REVERSAL": [
+            26,
+            13,
+            13
+          ],
+          "FAILED_BREAKOUT": [
+            37,
+            12,
+            25
+          ],
+          "TREND_RESUMPTION": [
+            23,
+            12,
+            11
+          ],
+          "COMPRESSION_EXPANSION": [
+            1,
+            0,
+            1
+          ],
+          "BREAKOUT_RETEST": [
+            32,
+            16,
+            16
+          ],
+          "PULLBACK_CONTINUATION": [
+            17,
+            9,
+            8
+          ],
+          "EXHAUSTION_REJECTION": [
+            3,
+            3,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            22,
+            9,
+            13
+          ],
+          "RANGE_TO_DIRECTION": [
+            26,
+            12,
+            14
+          ],
+          "COMPLETED_BREAKOUT": [
+            25,
+            10,
+            15
+          ]
+        },
+        "largest_symbol_share": 0.3490566037735849,
+        "net_without_best_symbol": -23,
+        "net_without_best_month": -20,
+        "positive_months": 0,
+        "months_with_entries": 3
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 4299,
+          "REJECT": 5367,
+          "LONG": 4,
+          "SHORT": 7
+        },
+        "resolved_entries": 11,
+        "wins": 4,
+        "losses": 7,
+        "net_r": -3,
+        "expectancy_r": -0.2727272727272727,
+        "max_drawdown_r": 5.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 3,
+        "directional_edges_wrong": 2,
+        "directional_accuracy": 0.6,
+        "edge_retention": 0.000625,
+        "monthly": {
+          "2026.05": [
+            7,
+            3,
+            4
+          ],
+          "2026.07": [
+            2,
+            1,
+            1
+          ],
+          "2026.08": [
+            2,
+            0,
+            2
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            3,
+            1,
+            2
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ],
+          "EURUSD.r": [
+            1,
+            0,
+            1
+          ],
+          "GBPUSD.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            2,
+            1,
+            1
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            3,
+            2,
+            1
+          ],
+          "RANGE_TO_DIRECTION": [
+            4,
+            0,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.2727272727272727,
+        "net_without_best_symbol": -5,
+        "net_without_best_month": -3,
+        "positive_months": 0,
+        "months_with_entries": 3
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 7408,
+          "WAIT": 2263,
+          "LONG": 2,
+          "SHORT": 4
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 7408,
+          "WAIT": 2263,
+          "LONG": 2,
+          "SHORT": 4
+        },
+        "resolved_entries": 6,
+        "wins": 3,
+        "losses": 3,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 2.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            6,
+            3,
+            3
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            2,
+            0,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.3333333333333333,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 9382,
+          "WAIT": 291,
+          "LONG": 1,
+          "SHORT": 3
+        },
+        "resolved_entries": 4,
+        "wins": 3,
+        "losses": 1,
+        "net_r": 2,
+        "expectancy_r": 0.5,
+        "max_drawdown_r": 1.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            4,
+            3,
+            1
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ]
+        },
+        "largest_symbol_share": 0.5,
+        "net_without_best_symbol": 0,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": false,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": true
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 5,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 9382,
+          "WAIT": 291,
+          "LONG": 1,
+          "SHORT": 3
+        },
+        "resolved_entries": 4,
+        "wins": 3,
+        "losses": 1,
+        "net_r": 2,
+        "expectancy_r": 0.5,
+        "max_drawdown_r": 1.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            4,
+            3,
+            1
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ]
+        },
+        "largest_symbol_share": 0.5,
+        "net_without_best_symbol": 0,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": false,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": true
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 3445,
+          "REJECT": 5770,
+          "SHORT": 257,
+          "LONG": 205
+        },
+        "resolved_entries": 437,
+        "wins": 207,
+        "losses": 230,
+        "net_r": -23,
+        "expectancy_r": -0.05263157894736842,
+        "max_drawdown_r": 34.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 170,
+        "directional_edges_wrong": 141,
+        "directional_accuracy": 0.5466237942122186,
+        "edge_retention": 0.035416666666666666,
+        "monthly": {
+          "2026.05": [
+            197,
+            89,
+            108
+          ],
+          "2026.06": [
+            79,
+            38,
+            41
+          ],
+          "2026.07": [
+            56,
+            22,
+            34
+          ],
+          "2026.08": [
+            105,
+            58,
+            47
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            102,
+            47,
+            55
+          ],
+          "US500": [
+            58,
+            22,
+            36
+          ],
+          "US100": [
+            125,
+            68,
+            57
+          ],
+          "USDJPY.r": [
+            10,
+            3,
+            7
+          ],
+          "GER40": [
+            90,
+            47,
+            43
+          ],
+          "AUDUSD.r": [
+            4,
+            2,
+            2
+          ],
+          "XAGUSD.r": [
+            23,
+            9,
+            14
+          ],
+          "EURUSD.r": [
+            4,
+            2,
+            2
+          ],
+          "EURJPY.r": [
+            5,
+            4,
+            1
+          ],
+          "AUDJPY.r": [
+            5,
+            3,
+            2
+          ],
+          "GBPJPY.r": [
+            2,
+            0,
+            2
+          ],
+          "GBPUSD.r": [
+            4,
+            0,
+            4
+          ],
+          "USDCAD.r": [
+            2,
+            0,
+            2
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ],
+          "UK100": [
+            1,
+            0,
+            1
+          ],
+          "USDCHF.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            35,
+            19,
+            16
+          ],
+          "COMPLETED_BREAKOUT": [
+            44,
+            22,
+            22
+          ],
+          "STRUCTURAL_REVERSAL": [
+            71,
+            33,
+            38
+          ],
+          "FAILED_BREAKOUT": [
+            69,
+            27,
+            42
+          ],
+          "TREND_RESUMPTION": [
+            39,
+            18,
+            21
+          ],
+          "COMPRESSION_EXPANSION": [
+            3,
+            1,
+            2
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            67,
+            32,
+            35
+          ],
+          "RANGE_TO_DIRECTION": [
+            56,
+            26,
+            30
+          ],
+          "BREAKOUT_RETEST": [
+            48,
+            27,
+            21
+          ],
+          "EXHAUSTION_REJECTION": [
+            5,
+            2,
+            3
+          ]
+        },
+        "largest_symbol_share": 0.28604118993135014,
+        "net_without_best_symbol": -34,
+        "net_without_best_month": -34,
+        "positive_months": 1,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.48,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 3818,
+          "REJECT": 5770,
+          "SHORT": 56,
+          "LONG": 33
+        },
+        "resolved_entries": 83,
+        "wins": 39,
+        "losses": 44,
+        "net_r": -5,
+        "expectancy_r": -0.060240963855421686,
+        "max_drawdown_r": 10.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 32,
+        "directional_edges_wrong": 25,
+        "directional_accuracy": 0.5614035087719298,
+        "edge_retention": 0.006666666666666667,
+        "monthly": {
+          "2026.05": [
+            82,
+            39,
+            43
+          ],
+          "2026.07": [
+            1,
+            0,
+            1
+          ]
+        },
+        "symbols": {
+          "US100": [
+            17,
+            9,
+            8
+          ],
+          "US500": [
+            11,
+            4,
+            7
+          ],
+          "USDJPY.r": [
+            4,
+            2,
+            2
+          ],
+          "XAUUSD.r": [
+            19,
+            12,
+            7
+          ],
+          "EURUSD.r": [
+            2,
+            0,
+            2
+          ],
+          "XAGUSD.r": [
+            9,
+            5,
+            4
+          ],
+          "GER40": [
+            7,
+            1,
+            6
+          ],
+          "EURJPY.r": [
+            2,
+            2,
+            0
+          ],
+          "AUDJPY.r": [
+            4,
+            2,
+            2
+          ],
+          "GBPUSD.r": [
+            3,
+            0,
+            3
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "GBPJPY.r": [
+            1,
+            0,
+            1
+          ],
+          "AUDUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "AUDNZD.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "STRUCTURAL_REVERSAL": [
+            21,
+            14,
+            7
+          ],
+          "FAILED_BREAKOUT": [
+            11,
+            5,
+            6
+          ],
+          "COMPRESSION_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            13,
+            5,
+            8
+          ],
+          "PULLBACK_CONTINUATION": [
+            9,
+            4,
+            5
+          ],
+          "TREND_RESUMPTION": [
+            10,
+            4,
+            6
+          ],
+          "RANGE_TO_DIRECTION": [
+            9,
+            2,
+            7
+          ],
+          "COMPLETED_BREAKOUT": [
+            2,
+            1,
+            1
+          ],
+          "BREAKOUT_RETEST": [
+            6,
+            2,
+            4
+          ],
+          "EXHAUSTION_REJECTION": [
+            1,
+            1,
+            0
+          ]
+        },
+        "largest_symbol_share": 0.2289156626506024,
+        "net_without_best_symbol": -10,
+        "net_without_best_month": -4,
+        "positive_months": 0,
+        "months_with_entries": 2
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 2290,
+          "REJECT": 7330,
+          "LONG": 21,
+          "SHORT": 36
+        },
+        "resolved_entries": 55,
+        "wins": 30,
+        "losses": 25,
+        "net_r": 5,
+        "expectancy_r": 0.09090909090909091,
+        "max_drawdown_r": 7.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 24,
+        "directional_edges_wrong": 16,
+        "directional_accuracy": 0.6,
+        "edge_retention": 0.005,
+        "monthly": {
+          "2026.05": [
+            55,
+            30,
+            25
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            15,
+            11,
+            4
+          ],
+          "US100": [
+            20,
+            9,
+            11
+          ],
+          "US500": [
+            4,
+            3,
+            1
+          ],
+          "GER40": [
+            12,
+            5,
+            7
+          ],
+          "XAGUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            11,
+            6,
+            5
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            6,
+            2,
+            4
+          ],
+          "RANGE_TO_DIRECTION": [
+            4,
+            1,
+            3
+          ],
+          "STRUCTURAL_REVERSAL": [
+            15,
+            11,
+            4
+          ],
+          "TREND_RESUMPTION": [
+            7,
+            5,
+            2
+          ],
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "BREAKOUT_RETEST": [
+            4,
+            2,
+            2
+          ],
+          "FAILED_BREAKOUT": [
+            7,
+            3,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.36363636363636365,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": true
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.55,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 2306,
+          "REJECT": 7330,
+          "LONG": 14,
+          "SHORT": 27
+        },
+        "resolved_entries": 40,
+        "wins": 20,
+        "losses": 20,
+        "net_r": 0,
+        "expectancy_r": 0.0,
+        "max_drawdown_r": 8.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 16,
+        "directional_edges_wrong": 12,
+        "directional_accuracy": 0.5714285714285714,
+        "edge_retention": 0.0033333333333333335,
+        "monthly": {
+          "2026.05": [
+            40,
+            20,
+            20
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            13,
+            9,
+            4
+          ],
+          "US100": [
+            13,
+            5,
+            8
+          ],
+          "US500": [
+            4,
+            3,
+            1
+          ],
+          "GER40": [
+            6,
+            1,
+            5
+          ],
+          "XAGUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            7,
+            3,
+            4
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            6,
+            2,
+            4
+          ],
+          "RANGE_TO_DIRECTION": [
+            3,
+            0,
+            3
+          ],
+          "STRUCTURAL_REVERSAL": [
+            9,
+            7,
+            2
+          ],
+          "TREND_RESUMPTION": [
+            5,
+            4,
+            1
+          ],
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "FAILED_BREAKOUT": [
+            6,
+            3,
+            3
+          ],
+          "BREAKOUT_RETEST": [
+            3,
+            1,
+            2
+          ]
+        },
+        "largest_symbol_share": 0.325,
+        "net_without_best_symbol": -5,
+        "net_without_best_month": 0,
+        "positive_months": 0,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.62,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 8908,
+          "WAIT": 764,
+          "LONG": 2,
+          "SHORT": 3
+        },
+        "resolved_entries": 5,
+        "wins": 3,
+        "losses": 2,
+        "net_r": 1,
+        "expectancy_r": 0.2,
+        "max_drawdown_r": 1.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            5,
+            3,
+            2
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            1,
+            0,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.4,
+        "net_without_best_symbol": -1,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": false,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.62,
+      "margin": 0.12,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "REJECT": 8908,
+          "WAIT": 764,
+          "LONG": 2,
+          "SHORT": 3
+        },
+        "resolved_entries": 5,
+        "wins": 3,
+        "losses": 2,
+        "net_r": 1,
+        "expectancy_r": 0.2,
+        "max_drawdown_r": 1.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 2,
+        "directional_edges_wrong": 0,
+        "directional_accuracy": 1.0,
+        "edge_retention": 0.0004166666666666667,
+        "monthly": {
+          "2026.05": [
+            5,
+            3,
+            2
+          ]
+        },
+        "symbols": {
+          "US100": [
+            1,
+            0,
+            1
+          ],
+          "XAUUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "XAGUSD.r": [
+            1,
+            1,
+            0
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "TREND_RESUMPTION": [
+            1,
+            1,
+            0
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            1,
+            1,
+            0
+          ],
+          "FAILED_BREAKOUT": [
+            1,
+            1,
+            0
+          ],
+          "RANGE_TO_DIRECTION": [
+            1,
+            0,
+            1
+          ]
+        },
+        "largest_symbol_share": 0.4,
+        "net_without_best_symbol": -1,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": false,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      },
+      "passed": false
+    }
+  ]
+}

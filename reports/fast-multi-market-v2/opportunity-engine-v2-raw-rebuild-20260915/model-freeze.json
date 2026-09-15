@@ -1,0 +1,6 @@
+{
+  "status": "NO_MODEL_FROZEN",
+  "holdout_must_remain_sealed": true,
+  "candidate": null,
+  "stop_reason": "No joint opportunity/direction formulation passed all development gates."
+}

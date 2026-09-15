@@ -1,0 +1,639 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_LAYER_DIAGNOSIS_V1",
+  "decision": "NO_DEMONSTRATED_MARKET_EDGE_IN_CURRENT_INFORMATION_SET",
+  "event_construction": {
+    "status": "FAILED_AS_DIRECTIONAL_RULE",
+    "event_direction_benchmark": {
+      "opportunities": 12060,
+      "actions": {
+        "LONG": 6146,
+        "SHORT": 5914
+      },
+      "resolved_entries": 9542,
+      "wins": 3099,
+      "losses": 6443,
+      "net_r": -3344,
+      "expectancy_r": -0.3504506392789771,
+      "max_drawdown_r": 3351.0,
+      "directional_edges_available": 6035,
+      "directional_edges_correct": 2893,
+      "directional_edges_wrong": 2853,
+      "directional_accuracy": 0.5034806822137139,
+      "edge_retention": 0.47937033968516984,
+      "monthly": {
+        "2026.04": [
+          1891,
+          662,
+          1229
+        ],
+        "2026.05": [
+          1830,
+          563,
+          1267
+        ],
+        "2026.06": [
+          1940,
+          627,
+          1313
+        ],
+        "2026.07": [
+          2068,
+          658,
+          1410
+        ],
+        "2026.08": [
+          1813,
+          589,
+          1224
+        ]
+      },
+      "symbols": {
+        "US100": [
+          563,
+          277,
+          286
+        ],
+        "XAGUSD.r": [
+          531,
+          198,
+          333
+        ],
+        "USDCAD.r": [
+          501,
+          137,
+          364
+        ],
+        "GER40": [
+          523,
+          234,
+          289
+        ],
+        "XAUUSD.r": [
+          565,
+          286,
+          279
+        ],
+        "EURJPY.r": [
+          504,
+          159,
+          345
+        ],
+        "US500": [
+          520,
+          181,
+          339
+        ],
+        "EURO50": [
+          390,
+          91,
+          299
+        ],
+        "UK100": [
+          441,
+          154,
+          287
+        ],
+        "USDCHF.r": [
+          495,
+          136,
+          359
+        ],
+        "EURGBP.r": [
+          449,
+          75,
+          374
+        ],
+        "EURUSD.r": [
+          521,
+          157,
+          364
+        ],
+        "GBPJPY.r": [
+          506,
+          153,
+          353
+        ],
+        "GBPUSD.r": [
+          514,
+          160,
+          354
+        ],
+        "AUDNZD.r": [
+          461,
+          128,
+          333
+        ],
+        "AUDUSD.r": [
+          512,
+          142,
+          370
+        ],
+        "NZDUSD.r": [
+          515,
+          125,
+          390
+        ],
+        "USDJPY.r": [
+          526,
+          158,
+          368
+        ],
+        "AUDJPY.r": [
+          505,
+          148,
+          357
+        ]
+      },
+      "families": {
+        "FAILED_BREAKOUT": [
+          1506,
+          435,
+          1071
+        ],
+        "RANGE_TO_DIRECTION": [
+          754,
+          256,
+          498
+        ],
+        "TREND_RESUMPTION": [
+          1212,
+          415,
+          797
+        ],
+        "PULLBACK_CONTINUATION": [
+          882,
+          310,
+          572
+        ],
+        "COMPLETED_BREAKOUT": [
+          735,
+          255,
+          480
+        ],
+        "FRESH_DIRECTIONAL_EXPANSION": [
+          1504,
+          451,
+          1053
+        ],
+        "STRUCTURAL_REVERSAL": [
+          1529,
+          506,
+          1023
+        ],
+        "COMPRESSION_EXPANSION": [
+          133,
+          37,
+          96
+        ],
+        "BREAKOUT_RETEST": [
+          1241,
+          414,
+          827
+        ],
+        "EXHAUSTION_REJECTION": [
+          46,
+          20,
+          26
+        ]
+      },
+      "largest_symbol_share": 0.05921190526095158,
+      "net_without_best_symbol": -3351,
+      "net_without_best_month": -2777,
+      "positive_months": 0,
+      "months_with_entries": 5
+    },
+    "negative_event_families": 10,
+    "event_families_tested": 10
+  },
+  "direction_prediction": {
+    "status": "NO_STABLE_SEPARATION",
+    "experiments_tested": 42,
+    "passing": 0,
+    "best_net_nonpassing": {
+      "kind": "PAIRWISE_SHALLOW_STUMPS",
+      "parameter": 8,
+      "threshold": 0.55,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 2290,
+          "REJECT": 7330,
+          "LONG": 21,
+          "SHORT": 36
+        },
+        "resolved_entries": 55,
+        "wins": 30,
+        "losses": 25,
+        "net_r": 5,
+        "expectancy_r": 0.09090909090909091,
+        "max_drawdown_r": 7.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 24,
+        "directional_edges_wrong": 16,
+        "directional_accuracy": 0.6,
+        "edge_retention": 0.005,
+        "monthly": {
+          "2026.05": [
+            55,
+            30,
+            25
+          ]
+        },
+        "symbols": {
+          "XAUUSD.r": [
+            15,
+            11,
+            4
+          ],
+          "US100": [
+            20,
+            9,
+            11
+          ],
+          "US500": [
+            4,
+            3,
+            1
+          ],
+          "GER40": [
+            12,
+            5,
+            7
+          ],
+          "XAGUSD.r": [
+            2,
+            2,
+            0
+          ],
+          "USDCAD.r": [
+            1,
+            0,
+            1
+          ],
+          "USDJPY.r": [
+            1,
+            0,
+            1
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            11,
+            6,
+            5
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            6,
+            2,
+            4
+          ],
+          "RANGE_TO_DIRECTION": [
+            4,
+            1,
+            3
+          ],
+          "STRUCTURAL_REVERSAL": [
+            15,
+            11,
+            4
+          ],
+          "TREND_RESUMPTION": [
+            7,
+            5,
+            2
+          ],
+          "COMPLETED_BREAKOUT": [
+            1,
+            0,
+            1
+          ],
+          "BREAKOUT_RETEST": [
+            4,
+            2,
+            2
+          ],
+          "FAILED_BREAKOUT": [
+            7,
+            3,
+            4
+          ]
+        },
+        "largest_symbol_share": 0.36363636363636365,
+        "net_without_best_symbol": -2,
+        "net_without_best_month": 0,
+        "positive_months": 1,
+        "months_with_entries": 1
+      },
+      "gates": {
+        "positive_costed_expectancy": true,
+        "directional_accuracy_at_least_55pct": true,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": false,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": true
+      }
+    },
+    "highest_coverage_nonpassing": {
+      "kind": "PAIRWISE_REGULARIZED_LOGISTIC",
+      "parameter": 0.3,
+      "threshold": 0.48,
+      "margin": 0.05,
+      "metrics": {
+        "opportunities": 9677,
+        "actions": {
+          "WAIT": 5416,
+          "REJECT": 710,
+          "LONG": 1881,
+          "SHORT": 1670
+        },
+        "resolved_entries": 2876,
+        "wins": 1069,
+        "losses": 1807,
+        "net_r": -738,
+        "expectancy_r": -0.2566063977746871,
+        "max_drawdown_r": 744.0,
+        "directional_edges_available": 4800,
+        "directional_edges_correct": 973,
+        "directional_edges_wrong": 903,
+        "directional_accuracy": 0.5186567164179104,
+        "edge_retention": 0.20270833333333332,
+        "monthly": {
+          "2026.05": [
+            823,
+            319,
+            504
+          ],
+          "2026.06": [
+            707,
+            255,
+            452
+          ],
+          "2026.07": [
+            758,
+            275,
+            483
+          ],
+          "2026.08": [
+            588,
+            220,
+            368
+          ]
+        },
+        "symbols": {
+          "XAGUSD.r": [
+            225,
+            86,
+            139
+          ],
+          "EURJPY.r": [
+            165,
+            47,
+            118
+          ],
+          "GBPJPY.r": [
+            181,
+            59,
+            122
+          ],
+          "US500": [
+            151,
+            61,
+            90
+          ],
+          "USDCAD.r": [
+            118,
+            38,
+            80
+          ],
+          "US100": [
+            254,
+            121,
+            133
+          ],
+          "USDJPY.r": [
+            108,
+            34,
+            74
+          ],
+          "GBPUSD.r": [
+            177,
+            62,
+            115
+          ],
+          "EURUSD.r": [
+            169,
+            59,
+            110
+          ],
+          "NZDUSD.r": [
+            117,
+            34,
+            83
+          ],
+          "UK100": [
+            156,
+            57,
+            99
+          ],
+          "AUDNZD.r": [
+            56,
+            14,
+            42
+          ],
+          "XAUUSD.r": [
+            264,
+            143,
+            121
+          ],
+          "USDCHF.r": [
+            135,
+            46,
+            89
+          ],
+          "AUDJPY.r": [
+            154,
+            52,
+            102
+          ],
+          "GER40": [
+            237,
+            99,
+            138
+          ],
+          "EURO50": [
+            35,
+            10,
+            25
+          ],
+          "EURGBP.r": [
+            39,
+            8,
+            31
+          ],
+          "AUDUSD.r": [
+            135,
+            39,
+            96
+          ]
+        },
+        "families": {
+          "PULLBACK_CONTINUATION": [
+            265,
+            97,
+            168
+          ],
+          "RANGE_TO_DIRECTION": [
+            290,
+            119,
+            171
+          ],
+          "TREND_RESUMPTION": [
+            368,
+            143,
+            225
+          ],
+          "COMPLETED_BREAKOUT": [
+            336,
+            136,
+            200
+          ],
+          "STRUCTURAL_REVERSAL": [
+            359,
+            131,
+            228
+          ],
+          "FAILED_BREAKOUT": [
+            439,
+            140,
+            299
+          ],
+          "EXHAUSTION_REJECTION": [
+            41,
+            17,
+            24
+          ],
+          "BREAKOUT_RETEST": [
+            415,
+            156,
+            259
+          ],
+          "COMPRESSION_EXPANSION": [
+            14,
+            6,
+            8
+          ],
+          "FRESH_DIRECTIONAL_EXPANSION": [
+            349,
+            124,
+            225
+          ]
+        },
+        "largest_symbol_share": 0.0917941585535466,
+        "net_without_best_symbol": -760,
+        "net_without_best_month": -590,
+        "positive_months": 0,
+        "months_with_entries": 4
+      },
+      "gates": {
+        "positive_costed_expectancy": false,
+        "directional_accuracy_at_least_55pct": false,
+        "edge_retention_at_least_25pct": false,
+        "loss_rate_below_event_benchmark": true,
+        "at_least_80_resolved_entries": true,
+        "controlled_drawdown": true,
+        "largest_symbol_below_40pct": true,
+        "all_months_nonnegative_and_usable": false,
+        "positive_without_best_symbol": false,
+        "positive_without_best_month": false,
+        "positive_after_one_winner_removed": false
+      }
+    }
+  },
+  "structural_stop_geometry": {
+    "status": "NOT_PRIMARY_FAILURE",
+    "audit": {
+      "hypotheses": 24188,
+      "inside_m1_noise": 12,
+      "inside_m5_noise": 0,
+      "median_stop_m1_atr": 6.381735417156772,
+      "median_stop_m5_atr": 2.295599006828426
+    },
+    "inside_m1_noise_fraction": 0.000496113775425831
+  },
+  "horizon_and_targets": {
+    "status": "OPPORTUNITIES_EXIST_BUT_ARE_NOT_CAUSALLY_SELECTED",
+    "directional_hypotheses": 24188,
+    "opportunities_with_one_direction_edge": 6035,
+    "ambiguous_both_direction_edges": 206,
+    "no_edge": 5819,
+    "directions": {
+      "long": {
+        "primary_labels": {
+          "WIN_1R_BEFORE_STOP": 3232,
+          "LOSS_STOP_BEFORE_1R": 6557,
+          "NO_BOUNDARY": 2305
+        },
+        "plus_0_5_reached": 6878,
+        "plus_1_reached": 4816,
+        "minus_0_5_reached": 10071,
+        "minus_1_reached": 7422,
+        "plus_2_before_stop": 1510,
+        "plus_3_before_stop": 794,
+        "plus_5_before_stop": 279,
+        "median_expected_total_cost_r": 0.274317055979312,
+        "p95_expected_total_cost_r": 0.5699316789974477
+      },
+      "short": {
+        "primary_labels": {
+          "NO_BOUNDARY": 1796,
+          "LOSS_STOP_BEFORE_1R": 7074,
+          "WIN_1R_BEFORE_STOP": 3224
+        },
+        "plus_0_5_reached": 6929,
+        "plus_1_reached": 5001,
+        "minus_0_5_reached": 10743,
+        "minus_1_reached": 8099,
+        "plus_2_before_stop": 1609,
+        "plus_3_before_stop": 902,
+        "plus_5_before_stop": 346,
+        "median_expected_total_cost_r": 0.3185702711173597,
+        "p95_expected_total_cost_r": 0.6270363504134052
+      }
+    }
+  },
+  "cost_burden": {
+    "status": "MATERIAL",
+    "definition": "expected spread plus recorded non-spread cost divided by net initial structural risk",
+    "long_median_r": 0.274317055979312,
+    "short_median_r": 0.3185702711173597,
+    "long_p95_r": 0.5699316789974477,
+    "short_p95_r": 0.6270363504134052,
+    "exact_zero_cost_relabel_performed": false
+  },
+  "regime_instability": {
+    "status": "FAILED",
+    "event_benchmark_positive_months": 0,
+    "event_benchmark_months": 5,
+    "best_net_positive_months": 1,
+    "best_net_months_with_entries": 1
+  },
+  "data_sufficiency": {
+    "status": "ADEQUATE_FOR_REJECTING_CURRENT_INFORMATION_SET_NOT_PROOF_OF_IMPOSSIBILITY",
+    "opportunities": 12094,
+    "resolved_opportunities": 12060,
+    "symbols": 19,
+    "months": {
+      "2026.04": 2383,
+      "2026.05": 2311,
+      "2026.06": 2435,
+      "2026.07": 2591,
+      "2026.08": 2374
+    }
+  }
+}

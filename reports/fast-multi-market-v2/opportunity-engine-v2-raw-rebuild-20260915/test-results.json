@@ -1,0 +1,17 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_TEST_RESULT_V1",
+  "command": "python3 tests/test_opportunity_engine_v2.py",
+  "tests": 8,
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    "incomplete higher-timeframe buckets are excluded",
+    "structural stops retain volatility floors",
+    "LONG and SHORT feature transforms are mirrored",
+    "ENTER requires direction and NO_TRADE separation",
+    "development trainer has no holdout input",
+    "episode cooldown covers the complete label horizon",
+    "required raw impulse, pullback, retest and pressure context is explicit",
+    "persisted episodes are non-overlapping, pre-holdout and contain required identity/context fields"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_IMPLEMENTATION_STATUS_V1",
+  "development_gate_passed": false,
+  "holdout_gate_opened": false,
+  "candidate_source_created": false,
+  "compiler_run": false,
+  "compiler_result": "NOT_APPLICABLE_NO_PASSING_FROZEN_MODEL",
+  "vps_orderless_integration_run": false,
+  "live_deployment_run": false,
+  "live_accounts_touched": false,
+  "stop_condition": "NO_DEMONSTRATED_MARKET_EDGE_IN_CURRENT_INFORMATION_SET"
+}

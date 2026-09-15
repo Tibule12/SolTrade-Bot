@@ -1,0 +1,95 @@
+{
+  "schema": "OPPORTUNITY_ENGINE_V2_FILE_RECEIPT_V1",
+  "files": [
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/dataset-manifest.json",
+      "bytes": 1819,
+      "sha256": "8415d749dd70518a1b15f6808fc9a6e31164bbe7fbe2ffc100ff4a3a83dd87d3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/development-results.json",
+      "bytes": 176999,
+      "sha256": "f65c29a513e6dc64125dd49be26772efd549af0cc808f50e1e84f9555dbaffa4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/feature-manifest.json",
+      "bytes": 1451,
+      "sha256": "518acfd72302302427f798de77047378e9209f559312fa11413a11199026c973"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/holdout-seal.json",
+      "bytes": 676,
+      "sha256": "43889cb8fb7fb0b0cbb8140602a6abd870df40185d14e38448c8b50c16a1a3af"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/implementation-status.json",
+      "bytes": 444,
+      "sha256": "567cd77b9092d3d5f73f38ee5af3ec039e78a739d6129fa940d30cd5909545ef"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/layer-diagnosis.json",
+      "bytes": 13898,
+      "sha256": "bd33db160033ac8dd2309a61bce97da375fa138d7736e8961c3c10ce05f549f8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/manifest-april-may.json",
+      "bytes": 2735,
+      "sha256": "b42afca77f2e89cfb769d0d8e3a4ec5b561ac5e5b6d36753fd50df5aaef73f64"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/manifest-june-august.json",
+      "bytes": 2752,
+      "sha256": "5f406a871a068297a6512df6e8cc0aaf5a3144adda7cb1b509fc19327b703d55"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/model-freeze.json",
+      "bytes": 186,
+      "sha256": "4a1e97dac66eb0f9da02e275e78f58801a3800e67f969d69d9b8e6dc1892c3ae"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/opportunities-april-may.csv",
+      "bytes": 6568300,
+      "sha256": "35091def33ed53acb56751bdfe8fe4e2485235f825701edc56e9076d1da914a3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/opportunities-june-august.csv",
+      "bytes": 10342038,
+      "sha256": "6dac150d7e9f070608e0b80472320da24c66ae931668e4eadba27c92e00b928f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/opportunities.csv",
+      "bytes": 16908343,
+      "sha256": "000d6635d024dd84dec42cdd45e7080fc0d246bc97fd43a5961bf3631a8ffb41"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/report.md",
+      "bytes": 10141,
+      "sha256": "996557d286fd85dabb24986391131c4c8f20dbc8608fc599acd7160a12ebba3a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/opportunity-engine-v2-raw-rebuild-20260915/test-results.json",
+      "bytes": 681,
+      "sha256": "c05ec7cd0d207a90353cb12406ef6c8d6e04b5eae1349e9adc4d095146a7804d"
+    },
+    {
+      "path": "tests/test_opportunity_engine_v2.py",
+      "bytes": 5264,
+      "sha256": "14b837e1b3a41d181330dd9fce44b8cce0283d575d6e0ccec191fb4e54a2bc7b"
+    },
+    {
+      "path": "tools/build_opportunity_engine_v2_universe.py",
+      "bytes": 8832,
+      "sha256": "19061be1cae4043d3fe4c84f7e2eb086ff951bdd41b89c0b12706a9938a84c2b"
+    },
+    {
+      "path": "tools/opportunity_engine_v2_common.py",
+      "bytes": 16992,
+      "sha256": "f74b952345b5e9ee83a1080971ff2b58279dcf35208d72e33027e027ada0cd36"
+    },
+    {
+      "path": "tools/train_opportunity_engine_v2.py",
+      "bytes": 18286,
+      "sha256": "e7b79f4325ccb989f65b9a4f075ee80e59caac7f458be1b52d9f17a354b6456b"
+    }
+  ]
+}
