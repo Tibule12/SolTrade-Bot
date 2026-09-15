@@ -1,0 +1,78 @@
+{
+  "schema": "SOLTRADE_FP_M1_TIMING_CANDIDATE_MANIFEST_V1",
+  "status": "NOT_DEPLOYED_PROMOTION_GATE_FALSE",
+  "account_evaluated": 7404213,
+  "live_accounts_changed": [],
+  "mt5_tester_used": false,
+  "focused_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "files": [
+    {
+      "path": "ops/forexvps/releases/fp-m1-timing-v1-candidate-20260915/SolTradeFastMultiMarketV2.mq5",
+      "bytes": 183523,
+      "sha256": "359a471d8783e0433382799d1f3a5bdf5442fec64bd0ba9a0cbc3baf9e42a10b"
+    },
+    {
+      "path": "ops/forexvps/releases/fp-m1-timing-v1-candidate-20260915/SolTradeM1TimingCandidate.ex5",
+      "bytes": 245618,
+      "sha256": "e6055011fcb437fc2492c7499e2e85ff8ba0a5fb6112f6c3573be8f03387afce"
+    },
+    {
+      "path": "ops/forexvps/releases/fp-m1-timing-v1-candidate-20260915/compile.log",
+      "bytes": 5060,
+      "sha256": "4a5e618bbc763294bc25b6fc4190292face6bc8881198b291d0d62475a19aee0"
+    },
+    {
+      "path": "tools/mql/SolTradeM1ForwardGateProbe.mq5",
+      "bytes": 7477,
+      "sha256": "25fe3ae3b549dc392ab83e8614e7ce74323fb898eff8b467dd36b4ad68914b4d"
+    },
+    {
+      "path": "tools/run_fp_m1_forward_gate_export.py",
+      "bytes": 4552,
+      "sha256": "2100455a6bf537d2dcbf611e98746ffa78a8827656ae57e3afc52e8ad6ee9640"
+    },
+    {
+      "path": "tools/audit_fp_m1_forward_gate.py",
+      "bytes": 7827,
+      "sha256": "1aa71bae0ae6c4815528311fe30710abd0bf167d9bc38131a04ce844bd7efc25"
+    },
+    {
+      "path": "tests/test_fp_m1_forward_gate.py",
+      "bytes": 492,
+      "sha256": "26f53ffc7297d7f450ea14b640102b1a00eed69dbdf4959829bc21a98421217a"
+    },
+    {
+      "path": "tests/test_fp_m1_timing_candidate.py",
+      "bytes": 1915,
+      "sha256": "7c6ab9e196165e97c5598413655669492dd27a66cb1d46ca4fe1ffd18790d3b0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fp-m1-forward-gate-20260915/audit.json",
+      "bytes": 9101,
+      "sha256": "446dbb7644e3a0519c8bd6f928152518749b846435c4c6c5b9159978b2a290c1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fp-m1-forward-gate-20260915/trade-features.csv",
+      "bytes": 2592,
+      "sha256": "e6120e3ac4524cbc3fb694f33e1bd0d3176def870bbd77530400e0e7956417a0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fp-m1-forward-gate-20260915/m1-summary.csv",
+      "bytes": 1193,
+      "sha256": "0db366e3d8ded873414bf10a878b7200e2be5cf851b745089ac476c793076e1b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fp-m1-forward-gate-20260915/export-receipt.json",
+      "bytes": 446,
+      "sha256": "a6856d837177720e53dcfb3ac8f0395fe3bba0ebd21ea6235bdcbe25f2907892"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/fp-m1-forward-gate-20260915/report.md",
+      "bytes": 4283,
+      "sha256": "037fd1116d969989238ffd051e0fd0de0bb522193f2c73700db376d176229b76"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "SOLTRADE_FP_M1_FORWARD_GATE_EXPORT_V1",
+  "elapsed_seconds": 17.421,
+  "terminal_exit_code": 0,
+  "account": 7404213,
+  "server": "FPMarketsSC-Demo",
+  "read_only": true,
+  "live_trading_allowed": false,
+  "tester_used": false,
+  "order_api_present": false,
+  "source_sha256": "25fe3ae3b549dc392ab83e8614e7ce74323fb898eff8b467dd36b4ad68914b4d",
+  "bars_sha256": "2a4076eefa91292b043373918245939745ca4333298359bb7127c8c7bc6d0d7b"
+}
