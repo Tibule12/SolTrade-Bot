@@ -1,6 +1,8 @@
 # All-three live damage audit — September 15, 2026
 
-**Decision: `DEPLOYMENT_IS_CURRENTLY_LOSING_AND_NEW_ENTRIES_SHOULD_BE_PAUSED`.** From the flat September 13 deployment baseline through the latest read-only snapshots, FP lost **$3,917.09 / 3.9996R** on four consecutive trades. FXIFY 10K lost **$190.69 / 2.0243R** on its two closed trades, and FXIFY 100K lost **$1,992.14 / 2.0105R** on its two closed trades. No closed trade reached +1R, no profit was banked, and no runner was created.
+**Decision: `DEPLOYMENT_IS_CURRENTLY_LOSING`.** From the flat September 13 deployment baseline through the latest read-only snapshots, FP lost **$3,917.09 / 3.9996R** on four consecutive trades. FXIFY 10K lost **$190.69 / 2.0243R** on its two closed trades, and FXIFY 100K lost **$1,992.14 / 2.0105R** on its two closed trades. No closed trade reached +1R, no profit was banked, and no runner was created.
+
+> **Operating instruction after this audit:** keep all three accounts active and leave every trade, stop and setting unchanged. This supersedes the pause recommendation originally made from the snapshot.
 
 The snapshots were captured directly from the existing VPS runtime and evidence files at 15:53–15:54 UTC (17:53–17:54 SAST). No replay, portal session, order, position, setting, source, binary or deployment was changed.
 
@@ -52,6 +54,6 @@ This is not enough data to estimate long-run expectancy, but it is enough to rej
 
 All three runtimes were connected, autonomous and ownership-granted. The losses are real strategy outcomes recorded by the deployed builds, rather than evidence that a terminal stopped or the ownership guard failed. FP was flat at the snapshot. Both FXIFY accounts still had one open US500 position and no pending orders.
 
-The evidence supports pausing **new autonomous entries on all three accounts** while preserving broker stops and management for the two existing US500 positions. That action was not performed during this read-only audit.
+The audit initially recommended pausing new autonomous entries. The user subsequently directed that all three accounts continue running unchanged. No pause, close, stop movement or configuration change was performed.
 
 [Machine-readable snapshot](snapshot.json) · [trade-level results](trades.csv) · [raw FP runtime](raw-fp-runtime.csv) · [raw FP events](raw-fp-events.csv) · [raw FXIFY 10K runtime](raw-fxify-10k-runtime.csv) · [raw FXIFY 10K events](raw-fxify-10k-events.csv) · [raw FXIFY 100K runtime](raw-fxify-100k-runtime.csv) · [raw FXIFY 100K events](raw-fxify-100k-events.csv)
