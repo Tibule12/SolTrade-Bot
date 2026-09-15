@@ -1,0 +1,149 @@
+{
+  "schema": "SOLTRADE_ALL_THREE_LIVE_DAMAGE_V1",
+  "captured_date": "2026-09-15",
+  "read_only": true,
+  "accounts": [
+    {
+      "account": "FP 7404213",
+      "snapshot_utc": "2026.09.15 15:53:10",
+      "baseline_equity": 99579.64,
+      "equity": 95662.55,
+      "equity_change": -3917.09,
+      "equity_change_percent": -3.93363,
+      "positions": 0,
+      "orders": 0,
+      "portfolio_risk_amount": 0.0,
+      "portfolio_risk_percent": 0.0,
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "connected": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "closed_count": 4,
+      "closed_wins": 0,
+      "closed_losses": 4,
+      "closed_net_dollars": -3917.09,
+      "closed_net_r": -3.99964,
+      "equity_minus_closed_reconciliation": 0.0,
+      "equity_if_current_positions_reach_reported_stop": 95662.55,
+      "baseline_change_if_current_positions_reach_reported_stop": -3917.09,
+      "open_positions": []
+    },
+    {
+      "account": "FXIFY 10K 7196820",
+      "snapshot_utc": "2026.09.15 15:53:40",
+      "baseline_equity": 10039.41,
+      "equity": 9849.14,
+      "equity_change": -190.27,
+      "equity_change_percent": -1.89523,
+      "positions": 1,
+      "orders": 0,
+      "portfolio_risk_amount": 94.08,
+      "portfolio_risk_percent": 0.9552,
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "connected": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "closed_count": 2,
+      "closed_wins": 0,
+      "closed_losses": 2,
+      "closed_net_dollars": -190.69,
+      "closed_net_r": -2.02433,
+      "equity_minus_closed_reconciliation": 0.42,
+      "equity_if_current_positions_reach_reported_stop": 9755.06,
+      "baseline_change_if_current_positions_reach_reported_stop": -284.35,
+      "open_positions": [
+        {
+          "ticket": "160263574",
+          "symbol": "US500.r",
+          "direction": "SELL",
+          "entry_utc": "2026.09.15 15:18:00",
+          "entry_price": 7592.22,
+          "stop_price": 7598.85,
+          "initial_risk_dollars": 93.66,
+          "latest_evidence_utc": "2026.09.15 15:50:10",
+          "latest_event": "ENTRY_PROBATION_HEALTHY",
+          "latest_state": "HEALTHY_POSITION",
+          "latest_current_r": 0.1644,
+          "sampled_peak_r": 0.31523
+        }
+      ]
+    },
+    {
+      "account": "FXIFY 100K 7198096",
+      "snapshot_utc": "2026.09.15 15:54:10",
+      "baseline_equity": 100321.36,
+      "equity": 98406.6,
+      "equity_change": -1914.76,
+      "equity_change_percent": -1.90863,
+      "positions": 1,
+      "orders": 0,
+      "portfolio_risk_amount": 1054.12,
+      "portfolio_risk_percent": 1.0712,
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "connected": true,
+      "autonomous_entry": true,
+      "ownership_permit": "GRANTED",
+      "closed_count": 2,
+      "closed_wins": 0,
+      "closed_losses": 2,
+      "closed_net_dollars": -1992.14,
+      "closed_net_r": -2.0105,
+      "equity_minus_closed_reconciliation": 77.38,
+      "equity_if_current_positions_reach_reported_stop": 97352.48,
+      "baseline_change_if_current_positions_reach_reported_stop": -2968.88,
+      "open_positions": [
+        {
+          "ticket": "160263573",
+          "symbol": "US500.r",
+          "direction": "SELL",
+          "entry_utc": "2026.09.15 15:18:00",
+          "entry_price": 7592.22,
+          "stop_price": 7598.85,
+          "initial_risk_dollars": 976.74,
+          "latest_evidence_utc": "2026.09.15 15:50:10",
+          "latest_event": "ENTRY_PROBATION_HEALTHY",
+          "latest_state": "HEALTHY_POSITION",
+          "latest_current_r": 0.1644,
+          "sampled_peak_r": 0.31523
+        }
+      ]
+    }
+  ],
+  "inputs": {
+    "raw-fp-runtime.csv": {
+      "sha256": "791739cf11591a958bbcaa81433d1e44d164edd360d2263c745b391a91425379",
+      "bytes": 12914
+    },
+    "raw-fp-events.csv": {
+      "sha256": "8d37c5bc85ffaedd1b53903e262ee45ba28c360f2b98cd8726a7d9b8fcc35376",
+      "bytes": 62779
+    },
+    "raw-fxify-10k-runtime.csv": {
+      "sha256": "247954d2ae08cd57744271260dee3ed8d9c5d47f7b9ede4cf0d0a59655864ff3",
+      "bytes": 12992
+    },
+    "raw-fxify-10k-events.csv": {
+      "sha256": "450867b205058dc5274cfe5cdef05f49be06bbc30961d097bd562bd613d0f0ce",
+      "bytes": 60472
+    },
+    "raw-fxify-100k-runtime.csv": {
+      "sha256": "569ef28aebdbdab456d91622e54186191846a62b221fc7428308b5c72777553e",
+      "bytes": 12983
+    },
+    "raw-fxify-100k-events.csv": {
+      "sha256": "6b64f23c5852dd18c27e9f6bff5906f81ae7f089a5c8e3766f2f34be6dc8b0e8",
+      "bytes": 60465
+    }
+  },
+  "aggregate": {
+    "baseline_equity": 209940.41,
+    "snapshot_equity": 203918.29,
+    "equity_change": -6022.12,
+    "closed_net_dollars": -6099.92,
+    "closed_positions": 8,
+    "closed_wins": 0,
+    "closed_losses": 8,
+    "banked_positions": 0,
+    "positions_reaching_1r": 0
+  }
+}
