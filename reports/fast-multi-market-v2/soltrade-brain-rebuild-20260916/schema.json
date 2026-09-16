@@ -1,0 +1,459 @@
+{
+  "schema": "SOLTRADE_BRAIN_SCHEMA_V1",
+  "collector_version": "1.0.0",
+  "raw_ticks": {
+    "format": "CSV RFC4180",
+    "rotation": "hourly per symbol",
+    "fields": [
+      {
+        "name": "schema",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "collector_version",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "account",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "server",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "symbol",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_time_server_msc",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_time_utc_msc",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "captured_utc",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "server_offset_seconds",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "bid",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "ask",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "last",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_price",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_points",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "mid",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "quote_direction",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "bid_direction",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "ask_direction",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "trade_direction",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_flags",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_volume",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_volume_real",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "interarrival_ms",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "source",
+        "type": "string",
+        "nullable": false
+      }
+    ]
+  },
+  "causal_features": {
+    "format": "CSV RFC4180",
+    "cadence_seconds": 5,
+    "fields": [
+      {
+        "name": "schema",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "collector_version",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "observation_utc",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "account",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "server",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "symbol",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "latest_tick_utc_msc",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "symbol_sync_lag_ms",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "bid",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "ask",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "mid",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_price",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_points",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "rate_1s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "rate_5s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "rate_30s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "quote_pressure_1s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "quote_pressure_5s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "quote_pressure_30s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "trade_pressure_1s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "trade_pressure_5s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "trade_pressure_30s",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "quote_acceleration",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "mid_change_1s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "mid_change_5s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "mid_change_30s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_mean_1s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_mean_5s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_mean_30s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "arrival_mean_ms_5s",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "tick_window_truncated",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "day_open_observed",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "session",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "session_open_observed",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "distance_from_day_open",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "distance_from_session_open",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "correlated_count",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "correlated_return_mean",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "correlated_alignment_fraction",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "correlated_max_bar_lag_seconds",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "event_context_available",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "scheduled_event_present",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "next_event_utc",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "minutes_to_event",
+        "type": "number",
+        "nullable": true
+      },
+      {
+        "name": "event_currency",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "event_importance",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "event_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "event_api_error",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "tick_size",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "tick_value_loss",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "spread_cash_per_lot_estimate",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "commission_available",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "commission_cash_per_lot",
+        "type": "number",
+        "nullable": true
+      },
+      {
+        "name": "swap_long",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "swap_short",
+        "type": "number",
+        "nullable": false
+      },
+      {
+        "name": "cost_source",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "m1_completed_state",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "m5_completed_state",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "m15_completed_state",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "h1_completed_state",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "completed_bars_only",
+        "type": "boolean",
+        "nullable": false
+      },
+      {
+        "name": "order_capability",
+        "type": "boolean",
+        "nullable": false
+      }
+    ]
+  },
+  "causality_contract": {
+    "raw_ticks": "broker CopyTicks(COPY_TICKS_ALL), written only after arrival",
+    "bars": "CopyRates shift=1; completed bars only",
+    "future_prices": "excluded from collector and reserved for later labeling",
+    "scheduled_events": "MT5 calendar values only; availability and API errors explicit",
+    "unavailable_commission": "commission_available=false and value empty",
+    "orders": "order_capability=false"
+  }
+}

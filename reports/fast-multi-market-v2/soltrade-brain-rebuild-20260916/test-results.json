@@ -1,0 +1,46 @@
+{
+  "schema": "SOLTRADE_BRAIN_COLLECTOR_TEST_RESULTS_V1",
+  "status": "PASS_WITH_DISCLOSED_LIVE_RESTART_REPAIR",
+  "static_tests": {
+    "passed": 5,
+    "failed": 0,
+    "command": "python3 -m unittest tests/test_brain_collector_v1.py -v"
+  },
+  "compile": "0 errors, 0 warnings",
+  "live_commissioning": {
+    "status": "COMMISSIONED_COLLECTING",
+    "ticks_at_receipt": 91,
+    "features_at_receipt": 38,
+    "symbols_configured": 19,
+    "copy_errors": 0,
+    "terminal_trade_allowed": false,
+    "mql_trade_allowed": false,
+    "order_capability": false
+  },
+  "captured_data_checks": {
+    "available_tick_rows": 1361,
+    "available_feature_rows": 855,
+    "tick_symbols": 1,
+    "feature_symbols": 19,
+    "timestamp_errors": 0,
+    "sample_feature_causality_errors": 0
+  },
+  "restart": {
+    "forced_restart_passed_on_deployed_collector": true,
+    "restart_counts_observed": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "state_sequence_increased": true,
+    "audit_found_sequence_checkpoint_lag": true,
+    "repair": "reconcile the current and prior hourly tick shard tails before CopyTicks backfill",
+    "repair_static_regression_passed": true,
+    "final_binary_commissioned_from_empty_store": true
+  },
+  "models_trained": false,
+  "orders_sent": false,
+  "positions_modified": false
+}

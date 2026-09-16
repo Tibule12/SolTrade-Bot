@@ -1,0 +1,53 @@
+{
+  "schema": "SOLTRADE_BRAIN_REPORT_FILES_V1",
+  "files": {
+    "architecture.json": {
+      "sha256": "4714eb8b0e80a6d1d2edc99c4e688fadac260c02f32f00085c3bf516bbe8972f",
+      "bytes": 1042
+    },
+    "commission.json": {
+      "sha256": "fe35c63b503994a94c48842e19400dd94de3b18991bdc3b1e7fd1c2c5b7cfbf8",
+      "bytes": 2517
+    },
+    "compile.log": {
+      "sha256": "83c73a419de49282acb34b322a6aca577297f5bd0e65d6bed4fc6f94df1e6853",
+      "bytes": 3126
+    },
+    "failed-baseline.json": {
+      "sha256": "2f7484d1578f5956ac79f0d7bdae7cfc5d94dc2cc4aead0e5eeecbf3c992f82c",
+      "bytes": 882
+    },
+    "fxify-pause-verification.json": {
+      "sha256": "5a100f3a1d2bd60cc5a7c9b43f675c4cc471c314b2235c6608b18509a2d67d22",
+      "bytes": 5198
+    },
+    "live-heartbeat.csv": {
+      "sha256": "67b427baf632c31239289e7370688e46c023c0c6b32d0b1eb2fd4e897d3f1b45",
+      "bytes": 567
+    },
+    "restart-state-sample.csv": {
+      "sha256": "f4ac0f8dc385d088028cf3ade98f12782609cfb2d6cd4c29f5a6421ff4fbc17c",
+      "bytes": 2378
+    },
+    "sample-features.csv": {
+      "sha256": "a598e2961ba362df35df37444ba5261e71a510181d1e4882d0701e65cfa5e0fb",
+      "bytes": 27199
+    },
+    "sample-ticks.csv": {
+      "sha256": "4e4e1d18e8601a3be380669bd8d73b9077fb7db5e4484ec0cf2cb46ccc10caa7",
+      "bytes": 5156
+    },
+    "schema.json": {
+      "sha256": "0af3b5348df95a9ea675c63f14a0fca34944ea61bdecbda658bc9e958fed4cb9",
+      "bytes": 9731
+    },
+    "test-results.json": {
+      "sha256": "2ccb803510ee517001c8dcfce9750073bf6bdc09d7021ea6cdd9b5c383bc1be2",
+      "bytes": 1313
+    },
+    "report.md": {
+      "sha256": "76a2d0dd1a55a1d6072127d6eeb2dd42e656572c3695eb4dae999c6c60c227a5",
+      "bytes": 6599
+    }
+  }
+}

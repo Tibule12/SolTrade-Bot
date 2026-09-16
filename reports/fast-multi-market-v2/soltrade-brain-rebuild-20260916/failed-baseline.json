@@ -1,0 +1,17 @@
+{
+  "schema": "SOLTRADE_FAILED_DIRECTIONAL_BASELINE_V1",
+  "label": "SOLTRADE_FAILED_DIRECTIONAL_BASELINE",
+  "captured_utc": "2026-09-16T04:33:05.9027831Z",
+  "account": "7404213",
+  "server": "FPMarketsSC-Demo",
+  "manager": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+  "source_path": "C:\\SolTrade\\MT5-FP-DEMO\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV2.mq5",
+  "binary_path": "C:\\SolTrade\\MT5-FP-DEMO\\MQL5\\Experts\\SolTrade\\SolTradeFastMultiMarketV2.ex5",
+  "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+  "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+  "preserved_release": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912",
+  "preserved_source_commit": "9e8a1aa6b10016729c4cfc47b9cb997aa10f04ef",
+  "fp_pid_before": 2892,
+  "fp_pid_after": 2892,
+  "unchanged": true
+}

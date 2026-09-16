@@ -1,0 +1,48 @@
+﻿{
+    "schema":  "SOLTRADE_BRAIN_COLLECTOR_COMMISSION_V1",
+    "status":  "COMMISSIONED_COLLECTING",
+    "started_utc":  "2026-09-16T04:33:43.4339198Z",
+    "orders_sent":  false,
+    "positions_modified":  false,
+    "models_trained":  false,
+    "error":  null,
+    "fp_pid_before":  [
+                          2892
+                      ],
+    "fp_source_before":  "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "fp_binary_before":  "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "commissioning_backup":  "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Files\\SolTradeBrainCollectorV1-commissioning-20260916-043350",
+    "heartbeat":  {
+                      "schema":  "SOLTRADE_BRAIN_HEARTBEAT_V1",
+                      "collector_version":  "1.0.0",
+                      "status":  "COLLECTING",
+                      "utc":  "1789533262",
+                      "started_utc":  "2026.09.16 04:34:15",
+                      "restart_count":  "1",
+                      "account":  "7404213",
+                      "server":  "FPMarketsSC-Demo",
+                      "connected":  "true",
+                      "terminal_trade_allowed":  "false",
+                      "mql_trade_allowed":  "false",
+                      "order_capability":  "false",
+                      "total_ticks":  "91",
+                      "total_features":  "38",
+                      "copy_errors":  "0",
+                      "symbols_configured":  "19",
+                      "timer_milliseconds":  "200",
+                      "feature_interval_seconds":  "5",
+                      "server_offset_seconds":  "10800",
+                      "storage_root":  "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Files\\SolTradeBrainCollectorV1\\",
+                      "latest_state_utc":  "2026.09.16 04:34:15",
+                      "build":  "2"
+                  },
+    "source_sha256":  "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261",
+    "binary_sha256":  "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c",
+    "compile":  "0 errors, 0 warnings",
+    "fp_pid_after":  [
+                         2892
+                     ],
+    "fp_source_after":  "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "fp_binary_after":  "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "completed_utc":  "2026-09-16T04:34:24.8090403Z"
+}
