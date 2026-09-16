@@ -1,0 +1,4 @@
+ObserverConfirmed=true
+TimerMilliseconds=200
+FeatureIntervalSeconds=5
+FlushIntervalSeconds=5
