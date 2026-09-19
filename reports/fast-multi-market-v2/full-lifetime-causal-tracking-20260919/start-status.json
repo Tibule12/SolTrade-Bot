@@ -1,0 +1,39 @@
+{
+  "schema": "SOLTRADE_V3_FULL_LIFETIME_START_STATUS_V1",
+  "captured_utc": "2026-09-19T08:36:11.0149776Z",
+  "status": "RUNNING_WAITING_FOR_FIRST_FRESH_MARKET_OPPORTUNITY",
+  "market_context": "Saturday; configured markets were closed",
+  "heartbeat": {
+    "schema": "SOLTRADE_V3_LIFETIME_HEARTBEAT_V1",
+    "tracker_version": "1.0.1",
+    "model_id": "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+    "status": "COLLECTING_FULL_LIFETIMES",
+    "utc": "1789806959",
+    "started_utc": "2026.09.19 08:35:53",
+    "restart_count": "2",
+    "account": "7404213",
+    "server": "FPMarketsSC-Demo",
+    "connected": "true",
+    "terminal_trade_allowed": "false",
+    "mql_trade_allowed": "false",
+    "order_capability": "false",
+    "total_ticks": "66",
+    "total_opportunities": "0",
+    "total_triggered": "0",
+    "active_opportunities": "0",
+    "active_positions": "0",
+    "lifetime_observations": "0",
+    "completed_outcomes": "0",
+    "copy_errors": "0",
+    "symbols": "19",
+    "state_utc": "2026.09.19 08:35:59"
+  },
+  "interpretation": "The service is active. The copied tick count consists of startup/backfill rows; the 10-second freshness gate admitted zero opportunities, positions, lifetime observations or outcomes. Forward post-entry records begin only after a fresh quote and a frozen V3 trigger.",
+  "invalid_startup_data": {
+    "cause": "stale Friday quotes returned by MT5 during initial Saturday launch",
+    "accepted_as_evidence": false,
+    "quarantined_backup": "C:\\SolTrade\\backups\\full-lifetime-invalid-stale-state-20260919-083453",
+    "production_data_touched": false,
+    "collector_data_touched": false
+  }
+}

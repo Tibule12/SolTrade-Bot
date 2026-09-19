@@ -1,0 +1,63 @@
+{
+  "schema": "SOLTRADE_V3_FULL_LIFETIME_ARTIFACT_MANIFEST_V1",
+  "created_utc": "2026-09-19T08:40:46.051759+00:00",
+  "implementation_commit": "552269a9e663df1beb6e58d123dee54ae9978171",
+  "evidence_commit": "reported at delivery",
+  "artifacts": [
+    {
+      "path": "compile.log",
+      "bytes": 1768,
+      "sha256": "f63dc590efcd7e0a498f6d00f1e0b12180efd68fa1d0ebe2ace3d52051058d5a"
+    },
+    {
+      "path": "deployment-verification.json",
+      "bytes": 16622,
+      "sha256": "93e22ac27590d71f394c7ef7293c0bcbb33a0aa449c361d95db76e0b5d50e710"
+    },
+    {
+      "path": "frozen-invalidation-candidates.csv",
+      "bytes": 607,
+      "sha256": "add2ba237d08a7ff0773fdb716c6d785f9e8a3b98eb4cfd1fb783f3c336a08c6"
+    },
+    {
+      "path": "frozen-tracking-model.json",
+      "bytes": 86084,
+      "sha256": "55761589de93b64e11162cb36dccd143d66f685ddcf6d20485643e16c701d0e0"
+    },
+    {
+      "path": "heartbeat.csv",
+      "bytes": 541,
+      "sha256": "2e8d2c74d8ae4c0bf7bcd5e7a0cf0c6602837c024701e6a9710421b959fdd6aa"
+    },
+    {
+      "path": "manifest.csv",
+      "bytes": 502,
+      "sha256": "00852f6620b95109c730569694d4a5464ee852663282aaf5d25c85a48614aab2"
+    },
+    {
+      "path": "operational-verification.json",
+      "bytes": 7492,
+      "sha256": "080e93a4850c2a727182541121ec3e32d5e14a5db0f7995df73a42d7f423e3e7"
+    },
+    {
+      "path": "report.md",
+      "bytes": 7711,
+      "sha256": "ccc61784fd7202d366ddfeae4426dc134d1be61268606cf7f13086f02c6903e8"
+    },
+    {
+      "path": "schema.json",
+      "bytes": 6570,
+      "sha256": "5000943920adbe7975b50bef8e532e5cee1cc2099d4debcc618470d7088ef077"
+    },
+    {
+      "path": "start-status.json",
+      "bytes": 1649,
+      "sha256": "97bb7f52d34d31cc275cc979f0fbb7720715066a0ece0d119b9d448f35aa05d8"
+    },
+    {
+      "path": "test-results.json",
+      "bytes": 1233,
+      "sha256": "230f78e56a369f4529ed83a54394270ca172102814a1b82721e650778bc1254b"
+    }
+  ]
+}
