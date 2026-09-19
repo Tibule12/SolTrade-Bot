@@ -1,0 +1,48 @@
+{
+  "schema": "ENTRY_ENGINE_V3_ARCHITECTURE_V1",
+  "name": "ENTRY_ENGINE_V3_TRANSITION_EXPECTANCY",
+  "order_capability": false,
+  "state_flow": [
+    "NO_TRADE",
+    "OPPORTUNITY_DETECTED",
+    "WAIT_FOR_TRANSITION",
+    [
+      "ENTRY_TRIGGERED",
+      "OPPORTUNITY_ABANDONED"
+    ]
+  ],
+  "episode_independence_seconds": 14400,
+  "wait_window_seconds": 900,
+  "observation_stride_seconds": 15,
+  "label_horizon_seconds": 14400,
+  "models": [
+    "P(full loss)",
+    "P(Bank1R)",
+    "P(+2R)",
+    "P(+3R)",
+    "P(+5R+)",
+    "expected net R"
+  ],
+  "training": [
+    "episode-balanced weights",
+    "chronological day folds",
+    "four-hour train/validation embargo",
+    "no random shuffle"
+  ],
+  "promotion_gates": [
+    "4 training days",
+    "3 validation days",
+    "150 validation episodes",
+    "40 entries",
+    "positive costed expectancy",
+    "full loss rate <45%",
+    ">=5% +3R tails",
+    "monotonic calibration",
+    "<40% one-symbol concentration",
+    "positive without best symbol/day/winner",
+    "drawdown <12R"
+  ],
+  "deployment_policy": "No implementation, compilation, shadow start, or deployment unless every research gate passes; deployment always requires separate evidence review.",
+  "production_changes": false,
+  "fxify_in_scope": false
+}

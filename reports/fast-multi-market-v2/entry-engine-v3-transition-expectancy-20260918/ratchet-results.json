@@ -1,0 +1,123 @@
+{
+  "schema": "WHOLE_TRADE_PROFIT_RATCHET_V1_RESEARCH",
+  "bank1_unchanged": true,
+  "runner_volume_fraction": 0.5,
+  "guarantee_formula": "banked 0.5R + half-volume runner stop R; guarantee is monotonic and stop is never widened",
+  "baseline": {
+    "opportunities": 318,
+    "net_r": -28.530140195055004,
+    "expectancy_r": -0.08971742199702831,
+    "maximum_drawdown_r": 61.93172966408419
+  },
+  "predeclared_candidates": [
+    {
+      "name": "loose",
+      "opportunities": 318,
+      "net_r": -28.477186826710092,
+      "expectancy_r": -0.08955090197078645,
+      "maximum_drawdown_r": 61.018935587874175,
+      "improvement_vs_structural_r": 0.05295336834491238,
+      "minimum_retained_r_on_banked": 0.0,
+      "mean_peak_to_final_giveback_r": 0.9174710751013859,
+      "plus3_paths": 48,
+      "plus3_mean_final_r": 2.2952949800413656,
+      "plus5_paths": 19.0,
+      "positive_days": 1,
+      "daily_net_r": {
+        "2026-09-16": -22.481231654910097,
+        "2026-09-17": -19.798311520207164,
+        "2026-09-18": 13.802356348407162
+      }
+    },
+    {
+      "name": "balanced",
+      "opportunities": 318,
+      "net_r": -26.07718682671009,
+      "expectancy_r": -0.08200373215946569,
+      "maximum_drawdown_r": 58.76893558787414,
+      "improvement_vs_structural_r": 2.4529533683449145,
+      "minimum_retained_r_on_banked": 0.0,
+      "mean_peak_to_final_giveback_r": 0.8984234560537668,
+      "plus3_paths": 48,
+      "plus3_mean_final_r": 2.314044980041366,
+      "plus5_paths": 19.0,
+      "positive_days": 1,
+      "daily_net_r": {
+        "2026-09-16": -21.48123165491008,
+        "2026-09-17": -18.998311520207167,
+        "2026-09-18": 14.402356348407164
+      }
+    },
+    {
+      "name": "capture",
+      "opportunities": 318,
+      "net_r": -28.03378795025676,
+      "expectancy_r": -0.08815656588131056,
+      "maximum_drawdown_r": 58.58114664667472,
+      "improvement_vs_structural_r": 0.4963522447982456,
+      "minimum_retained_r_on_banked": 0.0,
+      "mean_peak_to_final_giveback_r": 0.9139520363993753,
+      "plus3_paths": 48,
+      "plus3_mean_final_r": 2.3045324566341434,
+      "plus5_paths": 19.0,
+      "positive_days": 1,
+      "daily_net_r": {
+        "2026-09-16": -21.38462809360094,
+        "2026-09-17": -19.379083404449027,
+        "2026-09-18": 12.729923547793224
+      }
+    }
+  ],
+  "production_change": false,
+  "status": "NOT_FROZEN",
+  "reason": "All three development cohorts remained negative and only one of three days was positive.",
+  "formulations": {
+    "loose": {
+      "whole_peak_to_guaranteed_whole_R": [
+        [
+          2,
+          0.25
+        ],
+        [
+          3,
+          0.75
+        ],
+        [
+          5,
+          1.5
+        ],
+        [
+          8,
+          3.0
+        ]
+      ]
+    },
+    "balanced": {
+      "whole_peak_to_guaranteed_whole_R": [
+        [
+          1.5,
+          0.1
+        ],
+        [
+          2.5,
+          0.75
+        ],
+        [
+          4,
+          1.5
+        ],
+        [
+          6,
+          2.5
+        ],
+        [
+          10,
+          5
+        ]
+      ]
+    },
+    "capture": {
+      "formula": "after 2R whole-trade peak: max(previous guarantee, 0.35*peak-0.25)"
+    }
+  }
+}

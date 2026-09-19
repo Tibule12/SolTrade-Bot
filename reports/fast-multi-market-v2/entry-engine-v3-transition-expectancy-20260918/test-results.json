@@ -1,0 +1,18 @@
+{
+  "schema": "ENTRY_ENGINE_V3_TEST_RECEIPT_V1",
+  "command": "python3 -m unittest -v tests.test_entry_engine_v3",
+  "result": "PASS",
+  "tests": 6,
+  "coverage": [
+    "UTC parsing",
+    "15-minute WAIT trajectory",
+    "four-hour episode independence",
+    "direction-mirrored feature exclusions",
+    "Bank1R/ratchet arithmetic",
+    "no re-entry after structural stop",
+    "state transitions",
+    "order_capability=false"
+  ],
+  "actual_dataset_audit": "PASS: 323 episodes, zero duplicate opportunity/time/direction rows, minimum same-symbol gap 14400 seconds, maximum WAIT 900 seconds",
+  "production_changes": false
+}

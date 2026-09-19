@@ -1,0 +1,14 @@
+{
+  "schema": "ENTRY_ENGINE_V3_IMPLEMENTATION_STATUS_V1",
+  "entry_model_frozen": false,
+  "ratchet_frozen": false,
+  "invalidation_frozen": false,
+  "mql5_candidate_created": false,
+  "compiler_run": false,
+  "shadow_process_started": false,
+  "deployment_performed": false,
+  "fp_modified": false,
+  "fxify_modified": false,
+  "collector_modified": false,
+  "reason": "0/32 entry formulations passed; ratchet and invalidation research did not pass stability gates."
+}

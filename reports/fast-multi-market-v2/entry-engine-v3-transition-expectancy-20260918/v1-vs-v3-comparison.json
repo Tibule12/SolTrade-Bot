@@ -1,0 +1,131 @@
+{
+  "schema": "CURRENT_V1_VS_ENTRY_ENGINE_V3_V1",
+  "episode_mapping": "most recent same-symbol independent episode active at production entry",
+  "production_entries_mapped_to_oof_stream": 4,
+  "production_entries_outside_oof_days": [
+    {
+      "time": 1789572930,
+      "symbol": "GER40",
+      "direction": "LONG",
+      "payoff_proxy_r": 0.49828,
+      "full_loss": 0.0,
+      "bank1": 1.0,
+      "plus_3": 0.0,
+      "mfe_r": 2.31225,
+      "source": "ACTUAL_PRODUCTION_TRADE",
+      "opportunity_id": "GER40-1789562057-0003"
+    },
+    {
+      "time": 1789583650,
+      "symbol": "GER40",
+      "direction": "LONG",
+      "payoff_proxy_r": -0.99944,
+      "full_loss": 1.0,
+      "bank1": 0.0,
+      "plus_3": 0.0,
+      "mfe_r": 0.0,
+      "source": "ACTUAL_PRODUCTION_TRADE",
+      "opportunity_id": "GER40-1789576457-0004"
+    },
+    {
+      "time": 1789587950,
+      "symbol": "US100",
+      "direction": "SHORT",
+      "payoff_proxy_r": -0.98131,
+      "full_loss": 1.0,
+      "bank1": 0.0,
+      "plus_3": 0.0,
+      "mfe_r": 0.0,
+      "source": "ACTUAL_PRODUCTION_TRADE",
+      "opportunity_id": "US100-1789576457-0004"
+    }
+  ],
+  "production_entries_unmapped": [
+    {
+      "time": 1789530380,
+      "symbol": "XAUUSD.r",
+      "direction": "LONG",
+      "payoff_proxy_r": -1.0,
+      "full_loss": 1.0,
+      "bank1": 0.0,
+      "plus_3": 0.0,
+      "mfe_r": 0.16181,
+      "source": "ACTUAL_PRODUCTION_TRADE"
+    }
+  ],
+  "A_current_production": {
+    "trades": 4,
+    "net_r": 4.0621,
+    "full_losses": 1.0,
+    "bank1": 3.0,
+    "plus_3": 2.0,
+    "median_mfe_r": 2.536385,
+    "maximum_drawdown_r": 0.76618
+  },
+  "B_v3_oof": {
+    "trades": 64,
+    "net_r": 4.76513054286445,
+    "full_losses": 33.0,
+    "bank1": 31.0,
+    "plus_3": 13.0,
+    "median_mfe_r": 2.1546746901827363,
+    "maximum_drawdown_r": 11.0
+  },
+  "both_enter_same_direction_A_actual": {
+    "trades": 1,
+    "net_r": 3.11885,
+    "full_losses": 0.0,
+    "bank1": 1.0,
+    "plus_3": 1.0,
+    "median_mfe_r": 10.01264,
+    "maximum_drawdown_r": 0.0
+  },
+  "both_enter_same_direction_B_counterfactual": {
+    "trades": 1,
+    "net_r": -1.0,
+    "full_losses": 1.0,
+    "bank1": 0.0,
+    "plus_3": 0.0,
+    "median_mfe_r": 11.84261274869059,
+    "maximum_drawdown_r": 1.0
+  },
+  "direction_disagreement_A_actual": {
+    "trades": 2,
+    "net_r": 1.70943,
+    "full_losses": 0.0,
+    "bank1": 2.0,
+    "plus_3": 1.0,
+    "median_mfe_r": 2.536385,
+    "maximum_drawdown_r": 0.0
+  },
+  "direction_disagreement_B_counterfactual": {
+    "trades": 2,
+    "net_r": -2.0,
+    "full_losses": 2.0,
+    "bank1": 0.0,
+    "plus_3": 0.0,
+    "median_mfe_r": 0.4340022138766768,
+    "maximum_drawdown_r": 2.0
+  },
+  "A_enters_B_rejects": {
+    "trades": 1,
+    "net_r": -0.76618,
+    "full_losses": 1.0,
+    "bank1": 0.0,
+    "plus_3": 0.0,
+    "median_mfe_r": 0.30612,
+    "maximum_drawdown_r": 0.76618
+  },
+  "B_enters_A_rejects": {
+    "trades": 61,
+    "net_r": 7.76513054286445,
+    "full_losses": 30.0,
+    "bank1": 31.0,
+    "plus_3": 13.0,
+    "median_mfe_r": 2.178946146193074,
+    "maximum_drawdown_r": 14.774934180325893
+  },
+  "B_wait_then_enter": 44,
+  "B_wait_then_abandon": 163,
+  "limitation": "A uses actual realized production trade R/MFE. Only trades mapping to episodes in V3's chronological out-of-fold validation stream are compared; earlier training-day and unmatched trades are disclosed."
+}

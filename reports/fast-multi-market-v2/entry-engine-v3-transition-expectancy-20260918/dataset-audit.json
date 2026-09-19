@@ -1,0 +1,35 @@
+{
+  "schema": "ENTRY_ENGINE_V3_DATASET_AUDIT_V1",
+  "episodes": 323,
+  "observations": 39406,
+  "resolved_first_observation_directional_labels": 638,
+  "symbols": 19,
+  "calendar_days": [
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18"
+  ],
+  "minimum_same_symbol_episode_gap_seconds": 14400,
+  "required_gap_seconds": 14400,
+  "duplicate_opportunity_time_direction_rows": 0,
+  "maximum_wait_seconds": 900,
+  "required_max_wait_seconds": 900,
+  "feature_count": 72,
+  "outcome_count": 27,
+  "outcomes_at_first_observation": {
+    "full_loss": 371,
+    "bank1": 250,
+    "plus_2": 157,
+    "plus_3": 102,
+    "plus_5": 44,
+    "neither": 17
+  },
+  "completed_bar_invariant": "enforced on every input feature row; build aborts otherwise",
+  "orderless_invariant": "enforced order_capability=false on every input feature row; build aborts otherwise",
+  "production_scores_as_features": false,
+  "symbol_as_model_feature": false,
+  "direction_identity_as_model_feature": false,
+  "future_path_as_feature": false,
+  "raw_mfe_retains_post_stop_market_path": true,
+  "tradable_continuation_terminates_at_first_structural_stop": true
+}

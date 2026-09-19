@@ -1,0 +1,31 @@
+{
+  "schema": "SOLTRADE_ENTRY_ENGINE_V1_FAILED_BASELINE_V1",
+  "label": "SOLTRADE_ENTRY_ENGINE_V1_FAILED_BASELINE",
+  "account": "7404213",
+  "source_path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.mq5",
+  "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+  "binary_path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.ex5",
+  "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+  "source_commit": "9e8a1aa6b10016729c4cfc47b9cb997aa10f04ef",
+  "production_modified": false,
+  "status": "FAILED_PREDICTIVE_ENTRY_AUTHORITY_PRESERVED_FOR_COMPARISON",
+  "not_ground_truth": [
+    "BUY score",
+    "SELL score",
+    "admission score",
+    "no_trade_score",
+    "conflict=false",
+    "30-second persistence"
+  ],
+  "live_identity_last_verified_utc": "2026-09-18T19:41:00Z",
+  "fresh_post-research_verification": "PENDING_VPS_READ_ONLY_EXPORT",
+  "fresh_post_research_verification": {
+    "utc": "2026-09-18T21:07:59.7586465Z",
+    "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "pid": 2892,
+    "positions": "0",
+    "orders": "0",
+    "matches_frozen_identity": true
+  }
+}

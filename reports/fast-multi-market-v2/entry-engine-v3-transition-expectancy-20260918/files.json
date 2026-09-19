@@ -1,0 +1,161 @@
+{
+  "artifact": "ENTRY_ENGINE_V3_TRANSITION_EXPECTANCY",
+  "status": "NO_REPLACEMENT_FROZEN__COLLECTOR_CONTINUES",
+  "implementation_commit": "2626858f68a939ea493993d6fe6d7cd323b4e02b",
+  "implementation_files": [
+    {
+      "path": "ops/forexvps/Export-Entry-Engine-V3-Collector.ps1",
+      "bytes": 4799,
+      "sha256": "d6b345fdf7828df0b9e81747642a83ffffa1d0a5efccf919bc1b71c8551d4692"
+    },
+    {
+      "path": "ops/forexvps/vps_credential.py",
+      "bytes": 1932,
+      "sha256": "d77569abe96cee6991aae1b7b0d2db8393956ecac32993757def370e9b527227"
+    },
+    {
+      "path": "tests/test_entry_engine_v3.py",
+      "bytes": 4014,
+      "sha256": "9efe1f81f4037fba93fd914ab33712e4143b9192324aca6dc28f290c96603729"
+    },
+    {
+      "path": "tools/entry_engine_v3/__init__.py",
+      "bytes": 79,
+      "sha256": "a74c7c377d700925b38f030817c1f0bc3197693b0df6c2074e374b302fd4a488"
+    },
+    {
+      "path": "tools/entry_engine_v3/build_dataset.py",
+      "bytes": 23507,
+      "sha256": "471e8bb26409c2390a77a52336143063fda75aaf0aa44e60bccef5b1675c9b7d"
+    },
+    {
+      "path": "tools/entry_engine_v3/common.py",
+      "bytes": 4328,
+      "sha256": "11a616f9a5dd57f529dfacf5fe26acce718eea666675a72640db8502e00fc1b4"
+    },
+    {
+      "path": "tools/entry_engine_v3/research.py",
+      "bytes": 10459,
+      "sha256": "d14a0c7e926f83d4f7f0cb9fb635da4ed96ab2884b9d5d02bcc60e862c74de76"
+    },
+    {
+      "path": "tools/entry_engine_v3/state_machine.py",
+      "bytes": 2236,
+      "sha256": "d72787e4b2182ef618e4fcd9345239d60b076e85e6c11932be682244ec3c1645"
+    },
+    {
+      "path": "tools/entry_engine_v3/train.py",
+      "bytes": 13470,
+      "sha256": "23e8cf8e27040d2fec1c8c921ba8822873befd0367d955754ba7e3a34dc1c290"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/architecture.json",
+      "bytes": 1275,
+      "sha256": "c5f9e9b257a6d7d1978a982479429bde963af36ad38a9dfcd69f6994e7be1bd0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/calibration.csv",
+      "bytes": 533,
+      "sha256": "4924ecf9c91960b4ebb48bd27c27f3e9fead287c119ef57799ae5e271142dc40"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/continuation-gate.json",
+      "bytes": 543,
+      "sha256": "3dfa7cacbf43139bb443840675635eb9c581910fbad8ac16c6f7514f82e91d5d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/dataset-audit.json",
+      "bytes": 1133,
+      "sha256": "cd14430f643d13e8774ba95d358601cc4c0e9bf622c597523a4b27b3835b18c9"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/dataset-manifest.json",
+      "bytes": 868,
+      "sha256": "ddfe5b6c8650b01a99990e5720ec30f5040c4459b05b351ddf1c4a06d33a5621"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/development-results.json",
+      "bytes": 131353,
+      "sha256": "ab810cd40fee6d6b3417a5d98555d605dbb34d6d3195b89c47a268d0c7a152da"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/episodes.csv",
+      "bytes": 35898,
+      "sha256": "26d79dc7ef6629546322d82bbe23e8ff6372e93fd5f59af6463c58b47fdfd692"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/failed-entry-baseline.json",
+      "bytes": 1372,
+      "sha256": "c9910977cde7273760ed5f3d07fac72846876dc26fbfeef0a222eeb40d7b6a78"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/feature-manifest.json",
+      "bytes": 2720,
+      "sha256": "44917965ca856e6f9e4010e0a641c1844e89edf3a2d401ea33453d0b1bed3174"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/implementation-status.json",
+      "bytes": 470,
+      "sha256": "1b0f9073757d6eb17731a989a9aa834f4699db1d6966038489860ad6be5df503"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/model-freeze.json",
+      "bytes": 3242,
+      "sha256": "48f996e28ce17e2a8ac4af4a95c058907a37d2d15ceae8aebc176e58a7cdb156"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/observations.csv",
+      "bytes": 38948483,
+      "sha256": "45f5c758fff12ddfecfedf6792f31af45bd4b1423aa499749af5a02886f05245"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/oof-actions.csv",
+      "bytes": 37429,
+      "sha256": "469318b182133d5fc976e8e9a87dba37230f5eec9f1e3e7005454dc7e3a96599"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/operational-verification.json",
+      "bytes": 6593,
+      "sha256": "0ce848f3dca4d5efc769621d08b7323364c738d9aad396d14d58d6f3efa838bb"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/outcome-manifest.json",
+      "bytes": 1256,
+      "sha256": "e2e9a1ffa1fd782256c5627051037703fac9258b4e43a8d645c3d99f5570bb33"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/post-entry-invalidation.json",
+      "bytes": 2345,
+      "sha256": "c4a57b79a2df0ed14d2a9bc3f0f02fc2c520bdeb8177167fed541f65a57d23a7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/ratchet-results.json",
+      "bytes": 3219,
+      "sha256": "c65f14fba581c59cbdd254e84547b9768b615a3b384ce4c88004d82080f374c3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/report.md",
+      "bytes": 10718,
+      "sha256": "e5c687607714e720379b9f91008faec4d1bf67e6ed2fd61bad6d54fe1c5ea6d0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/test-results.json",
+      "bytes": 626,
+      "sha256": "2195e0fa16f8c1a41955a425b8722c60bd3406b8491741fce4a4f29bad850f32"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/entry-engine-v3-transition-expectancy-20260918/v1-vs-v3-comparison.json",
+      "bytes": 3395,
+      "sha256": "21fcc5fe2c883d9335a9ca57e671e4c2640f5260c2ddcf55a3758f35f85c92ac"
+    }
+  ],
+  "collector_export_archive_sha256": "717d57ca4a2bfcc11a4a0cdc13fea4f9018dd025f8b3e5f3cba31864170586d6",
+  "frozen_fp_source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+  "frozen_fp_binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+  "notes": [
+    "files.json excludes its own hash",
+    "evidence commit is recorded in delivery because a commit cannot contain its own final hash"
+  ]
+}

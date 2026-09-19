@@ -1,0 +1,19 @@
+{
+  "schema": "ENTRY_ENGINE_V3_CONTINUATION_GATE_V1",
+  "status": "COLLECTING_NOT_TRAINING",
+  "collector_action": "continue unchanged",
+  "next_research_eligible_when": {
+    "minimum_total_calendar_days": 7,
+    "minimum_validation_days": 3,
+    "minimum_independent_episodes": 700
+  },
+  "frozen_development_spec": [
+    "same episode detector",
+    "same 72-feature manifest",
+    "same outcome labels",
+    "same 32 formulations",
+    "same promotion gates"
+  ],
+  "known_trade_tuning_prohibited": true,
+  "automatic_deployment": false
+}

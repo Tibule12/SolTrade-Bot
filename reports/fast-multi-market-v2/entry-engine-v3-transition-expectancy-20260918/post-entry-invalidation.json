@@ -1,0 +1,76 @@
+{
+  "schema": "POST_ENTRY_CAUSAL_INVALIDATION_V1",
+  "rule": "adverse movement AND transition pressure reversal AND expanding pullback AND no resumption",
+  "blind_fixed_r_exit": false,
+  "observation_limit": "Causal reversal observations are available only inside the 15-minute WAIT trajectory in this first collector study.",
+  "candidates": [
+    {
+      "adverse_r": -0.25,
+      "reversal_score_max": -0.25,
+      "entries": 64,
+      "early_exits": 30,
+      "net_r": 10.157188666868878,
+      "improvement_r": 5.392058124004428,
+      "maximum_drawdown_r": 6.816630698447891,
+      "tail_winners_interrupted": 3,
+      "validation_days": 2,
+      "daily_net_r": {
+        "2026-09-17": 5.375583174766793,
+        "2026-09-18": 4.781605492102085
+      },
+      "passed": false
+    },
+    {
+      "adverse_r": -0.25,
+      "reversal_score_max": -0.5,
+      "entries": 64,
+      "early_exits": 26,
+      "net_r": 10.531785468954672,
+      "improvement_r": 5.766654926090221,
+      "maximum_drawdown_r": 7.265929283476126,
+      "tail_winners_interrupted": 3,
+      "validation_days": 2,
+      "daily_net_r": {
+        "2026-09-17": 4.071464581194595,
+        "2026-09-18": 6.460320887760079
+      },
+      "passed": false
+    },
+    {
+      "adverse_r": -0.4,
+      "reversal_score_max": -0.25,
+      "entries": 64,
+      "early_exits": 20,
+      "net_r": 11.627612896087312,
+      "improvement_r": 6.862482353222862,
+      "maximum_drawdown_r": 6.93347723707588,
+      "tail_winners_interrupted": 0,
+      "validation_days": 2,
+      "daily_net_r": {
+        "2026-09-17": 4.202597241827279,
+        "2026-09-18": 7.425015654260034
+      },
+      "passed": false
+    },
+    {
+      "adverse_r": -0.4,
+      "reversal_score_max": -0.5,
+      "entries": 64,
+      "early_exits": 18,
+      "net_r": 10.531130491829716,
+      "improvement_r": 5.765999948965265,
+      "maximum_drawdown_r": 7.520112823852743,
+      "tail_winners_interrupted": 0,
+      "validation_days": 2,
+      "daily_net_r": {
+        "2026-09-17": 3.6159616550504157,
+        "2026-09-18": 6.9151688367793005
+      },
+      "passed": false
+    }
+  ],
+  "passing_candidates": 0,
+  "production_change": false,
+  "status": "NOT_FROZEN",
+  "reason": "Promising diagnostic improvement, but only two validation days and observations end after the 15-minute transition window."
+}
