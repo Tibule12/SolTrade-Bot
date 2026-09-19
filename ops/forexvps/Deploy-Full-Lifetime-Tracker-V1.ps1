@@ -117,14 +117,14 @@ if(`$process.Count -eq 0){Start-Process -FilePath `$terminal -WorkingDirectory `
  Register-ScheduledTask -TaskName $taskName -Action $action -Trigger @($startup,$minute) -RunLevel Highest -User 'SYSTEM' -Force|Out-Null
  Start-Tracker
  $deadline=[DateTime]::UtcNow.AddSeconds(120);$hb=$null
-do{Start-Sleep -Seconds 2;$hb=Tracker-Heartbeat}while((-not $hb -or $hb.status -ne 'COLLECTING_FULL_LIFETIMES') -and [DateTime]::UtcNow -lt $deadline)
+ do{Start-Sleep -Seconds 2;$hb=Tracker-Heartbeat}while((-not $hb -or $hb.status -ne 'COLLECTING_FULL_LIFETIMES' -or $hb.tracker_version -ne '1.1.0') -and [DateTime]::UtcNow -lt $deadline)
  if(-not $hb){throw 'Tracker heartbeat absent'}
  if($hb.order_capability -ne 'false' -or $hb.terminal_trade_allowed -ne 'false' -or $hb.mql_trade_allowed -ne 'false'){throw 'Tracker trade permissions not disabled'}
  if($hb.tracker_version -ne '1.1.0' -or $hb.position_time_limit -ne 'none' -or [int]$hb.research_safety_horizon_days -ne 0){throw 'Corrected lifetime semantics are not active'}
  $stateBefore=Sha (Join-Path $data 'status\state.csv');$restartBefore=[int]$hb.restart_count
  Process-For "$iso\terminal64.exe"|ForEach-Object{Stop-Process -Id $_.ProcessId -Force};Start-Sleep -Seconds 3;Start-Tracker
  $deadline=[DateTime]::UtcNow.AddSeconds(120);$afterRestart=$null
-do{Start-Sleep -Seconds 2;$afterRestart=Tracker-Heartbeat}while((-not $afterRestart -or [int]$afterRestart.restart_count -le $restartBefore) -and [DateTime]::UtcNow -lt $deadline)
+ do{Start-Sleep -Seconds 2;$afterRestart=Tracker-Heartbeat}while((-not $afterRestart -or $afterRestart.tracker_version -ne '1.1.0' -or [int]$afterRestart.restart_count -le $restartBefore) -and [DateTime]::UtcNow -lt $deadline)
  if(-not $afterRestart -or [int]$afterRestart.restart_count -le $restartBefore){throw 'Tracker restart persistence failed'}
  $receipt.restart_test=[ordered]@{status='PASS';before_restart_count=$restartBefore;after_restart_count=[int]$afterRestart.restart_count;state_before_sha256=$stateBefore;state_after_sha256=Sha (Join-Path $data 'status\state.csv');tracker_only_process_restarted=$true}
  Start-ScheduledTask -TaskName $taskName;Start-Sleep -Seconds 2;$task=Get-ScheduledTask -TaskName $taskName;$taskInfo=Get-ScheduledTaskInfo -TaskName $taskName
