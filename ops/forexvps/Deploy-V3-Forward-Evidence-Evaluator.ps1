@@ -86,7 +86,7 @@ try{
  $finalHeartbeat=Get-Content -Raw -LiteralPath "$evaluatorHome\status\heartbeat.json"|ConvertFrom-Json;$integrity=Get-Content -Raw -LiteralPath "$evaluatorHome\output\integrity-receipt.json"|ConvertFrom-Json
  if($finalHeartbeat.status -ne 'WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE' -or $integrity.status -ne 'CLEAN'){throw 'Final evaluator state is not clean and waiting'}
  foreach($p in @('Run-V3-Forward-Evidence-Evaluator.ps1','expected-identities.json','output-schema.json','frozen-tracking-model.json')){Copy-Item -Force -LiteralPath (Join-Path $evaluatorHome $p) -Destination (Join-Path $output $p)}
- Copy-Item -Recurse -Force -LiteralPath "$evaluatorHome\output\*" -Destination $output
+ Get-ChildItem -LiteralPath "$evaluatorHome\output" -Force|ForEach-Object{Copy-Item -Recurse -Force -LiteralPath $_.FullName -Destination $output}
  Copy-Item -Force -LiteralPath "$evaluatorHome\status\heartbeat.json" -Destination "$output\heartbeat.json"
  Copy-Item -Force -LiteralPath "$evaluatorHome\state\sequence.json" -Destination "$output\sequence.json"
  $receipt.evaluator=[ordered]@{home=$evaluatorHome;source_sha256=Sha "$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1";expected_identities_sha256=Sha "$evaluatorHome\expected-identities.json";output_schema_sha256=Sha "$evaluatorHome\output-schema.json";frozen_model_sha256=Sha "$evaluatorHome\frozen-tracking-model.json";heartbeat=$finalHeartbeat;integrity_status=$integrity.status;trade_api_scan='PASS';order_capability=$false;deployment_capability=$false;tuning_enabled=$false}
