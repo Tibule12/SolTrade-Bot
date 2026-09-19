@@ -1,0 +1,59 @@
+{
+  "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_OUTPUT_SCHEMA_V1",
+  "sequence_id": "V3_FORWARD_EVIDENCE_20260919_A",
+  "model_id": "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+  "outputs": {
+    "per-trade-evidence.csv": {
+      "cardinality": "one row per known-terminal hypothetical trade and frozen invalidation candidate",
+      "right_censored_included": false,
+      "fields": [
+        "schema", "sequence_id", "sequence_status", "model_id", "opportunity_id", "symbol", "session", "direction",
+        "entry_utc", "terminal_utc", "lifetime_seconds", "initial_r_distance", "baseline_final_r", "baseline_mfe_r",
+        "baseline_mae_r", "bank1_reached", "baseline_plus_2", "baseline_plus_3", "baseline_plus_5", "structural_stop_utc",
+        "runner_stop_utc", "terminal_reason", "entry_expected_net_r", "entry_quality", "entry_full_loss_probability",
+        "entry_bank1_probability", "candidate_id", "candidate_fired", "candidate_fire_utc", "invalidation_r",
+        "invalidation_transition_score", "causal_evidence_state", "candidate_final_r", "baseline_eventual_final_r",
+        "recovered_to_breakeven", "reached_plus_1_after_exit", "reached_plus_2_after_exit", "reached_plus_3_after_exit",
+        "reached_plus_5_after_exit", "r_saved_vs_baseline", "r_lost_vs_baseline_if_interrupted"
+      ]
+    },
+    "rolling-invalidation-summary.csv": {
+      "cardinality": "one row per frozen invalidation candidate",
+      "fields": [
+        "schema", "sequence_id", "sequence_status", "model_id", "candidate_id", "eligible_triggered_positions", "invalidations",
+        "full_minus_1_losses_avoided", "full_minus_1_losses_not_avoided", "average_losing_r_baseline",
+        "average_losing_r_with_invalidation", "median_losing_r_baseline", "median_losing_r_with_invalidation",
+        "total_r_saved_vs_baseline", "interrupted_breakeven_recoveries", "interrupted_bank1_trades", "interrupted_plus_2_trades",
+        "interrupted_plus_3_trades", "interrupted_plus_5_trades", "baseline_total_net_r", "invalidation_total_net_r",
+        "expectancy_difference_r", "max_drawdown_baseline_r", "max_drawdown_invalidation_r", "max_drawdown_difference_r",
+        "profit_factor", "average_winner_r", "average_loser_r", "payoff_ratio", "result_without_best_winner_r",
+        "result_without_best_day_r", "dominant_symbol", "symbol_entry_fraction", "symbol_absolute_net_r_fraction",
+        "dominant_session", "session_entry_fraction", "session_absolute_net_r_fraction"
+      ]
+    },
+    "rolling-v3-entry-summary.json": {
+      "fields": [
+        "schema", "sequence_id", "sequence_status", "model_id", "generated_utc", "opportunities_detected", "wait_state_count",
+        "wait_definition", "enter_count", "abandon_count", "currently_unresolved_opportunities", "long_count", "short_count",
+        "known_completed_positions", "right_censored_positions", "full_losses", "full_loss_rate", "bank1_count", "bank1_rate",
+        "plus_2_count", "plus_2_rate", "plus_3_count", "plus_3_rate", "plus_5_count", "plus_5_rate", "net_r",
+        "expectancy_r", "max_drawdown_r", "result_without_best_winner_r", "result_without_best_day_r", "quality_definition",
+        "quality_calibration_bands", "development_search_rerun", "tuning_enabled", "promotion_authorized"
+      ]
+    },
+    "integrity-receipt.json": {
+      "fields": ["schema", "sequence_id", "run_utc", "status", "checks", "errors", "outcome_rows", "event_rows", "observation_rows", "order_capability"]
+    },
+    "daily/YYYYMMDD-snapshot.json": {
+      "fields": ["schema", "status", "generated_utc", "sequence", "integrity", "v3_entry_summary", "invalidation_summary", "per_trade_rows"]
+    },
+    "status/heartbeat.json": {
+      "fields": ["schema", "status", "sequence_id", "utc", "completed_positions_evaluated", "candidate_rows", "integrity_status", "order_capability", "deployment_capability", "tuning_enabled"]
+    }
+  },
+  "quality_definition": "1/(1+exp(-2*entry_expected_net_r))",
+  "quality_bands": [[0.0, 0.5], [0.5, 0.55], [0.55, 0.6], [0.6, 0.65], [0.65, 0.7], [0.7, 0.8], [0.8, 1.01]],
+  "order_capability": false,
+  "tuning_enabled": false,
+  "automatic_promotion": false
+}
