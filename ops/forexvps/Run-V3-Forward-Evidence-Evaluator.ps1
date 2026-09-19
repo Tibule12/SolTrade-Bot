@@ -62,7 +62,7 @@ function Integrity-Check($Expected,$Outcomes,$Events,$Observations){
  $badOutcome=@($Outcomes|Where-Object{$_.order_capability -ne 'false' -or $_.completed_bars_only -ne 'true'});Add 'outcome_orderless_completed_bar_flags' ($badOutcome.Count -eq 0) 0 $badOutcome.Count
  $badEvent=@($Events|Where-Object{$_.order_capability -ne 'false'});Add 'event_order_capability_violations' ($badEvent.Count -eq 0) 0 $badEvent.Count
  $badObservation=@($Observations|Where-Object{$_.order_capability -ne 'false' -or $_.completed_bars_only -ne 'true' -or $_.feature_window_ready -ne 'true'});Add 'stale_or_noncausal_observation_violations' ($badObservation.Count -eq 0) 0 $badObservation.Count
- [ordered]@{schema='SOLTRADE_V3_FORWARD_INTEGRITY_V1';sequence_id=$Expected.sequence_id;run_utc=Iso-Now;status=if($errors.Count){'EVIDENCE_CONTAMINATED'}else{'CLEAN'};checks=@($checks);errors=@($errors);outcome_rows=$Outcomes.Count;event_rows=$Events.Count;observation_rows=$Observations.Count;order_capability=$false}
+ [ordered]@{schema='SOLTRADE_V3_FORWARD_INTEGRITY_V1';sequence_id=$Expected.sequence_id;run_utc=Iso-Now;status=if($errors.Count){'EVIDENCE_CONTAMINATED'}else{'CLEAN'};checks=@($checks|ForEach-Object{$_});errors=@($errors|ForEach-Object{$_});outcome_rows=$Outcomes.Count;event_rows=$Events.Count;observation_rows=$Observations.Count;order_capability=$false}
 }
 
 function Build-PerTrade($Outcomes,$Events,$Observations,$Expected,[string]$Status){
