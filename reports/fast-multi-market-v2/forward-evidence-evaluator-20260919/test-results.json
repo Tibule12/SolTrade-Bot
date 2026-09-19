@@ -1,0 +1,60 @@
+{
+  "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_TEST_RESULTS_V1",
+  "status": "PASS",
+  "local_unit_tests": {
+    "command": "python3 -m unittest tests.test_forward_evidence_evaluator -v",
+    "passed": 7,
+    "failed": 0,
+    "coverage": [
+      "loss avoidance and severity",
+      "interrupted winner harm",
+      "RIGHT_CENSORED exclusion",
+      "chronological drawdown",
+      "frozen quality formula and bands",
+      "sticky contamination",
+      "observation-only scheduled source"
+    ]
+  },
+  "vps_self_test": {
+    "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_SELF_TEST_V1",
+    "status": "PASS",
+    "tests": 4,
+    "order_capability": false
+  },
+  "live_integrity": {
+    "status": "CLEAN",
+    "passed": 36,
+    "failed": 0,
+    "errors": []
+  },
+  "output_contract": {
+    "per_trade_columns": 41,
+    "per_trade_rows": 0,
+    "empty_file_has_header": true
+  },
+  "schedule": {
+    "task_name": "SolTrade-V3-Forward-Evidence-Evaluator-V1",
+    "state": "Ready",
+    "last_result": 0,
+    "run_as": "SYSTEM",
+    "startup_trigger": true,
+    "interval_minutes": 5,
+    "multiple_instances": "IgnoreNew",
+    "execution_time_limit_minutes": 4,
+    "next_run_time": "2026-09-19T10:31:31.0000000Z"
+  },
+  "heartbeat": {
+    "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+    "status": "WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE",
+    "sequence_id": "V3_FORWARD_EVIDENCE_20260919_A",
+    "utc": 1789813828,
+    "completed_positions_evaluated": 0,
+    "candidate_rows": 0,
+    "integrity_status": "CLEAN",
+    "order_capability": false,
+    "deployment_capability": false,
+    "tuning_enabled": false
+  },
+  "orders_sent": false,
+  "positions_modified": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_FILES_V1",
+  "implementation_commit": "0db08f6ef5611e1bca67e607d9ad348619d904dd",
+  "evidence_commit": "reported_at_delivery",
+  "files": [
+    {
+      "path": "daily/20260919-snapshot.json",
+      "bytes": 32383,
+      "sha256": "dd4ea934af6fa343a3787ff062497328465df7c8ca30a34757c6983ed835a62d"
+    },
+    {
+      "path": "deployment.json",
+      "bytes": 23219,
+      "sha256": "d206afd5ee7c2d22169afc32c3c3ce1ad976b8cecb0840cd1f1ed91277f24013"
+    },
+    {
+      "path": "heartbeat.json",
+      "bytes": 418,
+      "sha256": "71afc2e30fdb477b65c7af59a475905cd7c85c7b79f2f4fd4fdfe51c41bc8bd8"
+    },
+    {
+      "path": "integrity-receipt.json",
+      "bytes": 10469,
+      "sha256": "9f821a434c7cdb4591aba6569d1877de5b4159aa13b7938562ccefc5c9c15faa"
+    },
+    {
+      "path": "per-trade-evidence.csv",
+      "bytes": 732,
+      "sha256": "d438c3c06a55f296234b6dd77de86da9d554420a617d4c6bed22b48a97943a7a"
+    },
+    {
+      "path": "report.md",
+      "bytes": 5659,
+      "sha256": "4ad5af8a6763c5134115526ca74745b489662fa91349b9765be4a6520e0cd682"
+    },
+    {
+      "path": "rolling-invalidation-summary.csv",
+      "bytes": 1896,
+      "sha256": "6f573fa2b25a1e155f0256b35be7e85848d4e28a8bbb6ae2d29190060ce7d28a"
+    },
+    {
+      "path": "rolling-invalidation-summary.json",
+      "bytes": 9918,
+      "sha256": "d6720ba254cc385964373c03022f6c2a1f9de13dd58ee6b25c86fa224b847fcd"
+    },
+    {
+      "path": "rolling-v3-entry-summary.json",
+      "bytes": 1323,
+      "sha256": "1aaefc536d311732e28a0b784c2b691afc4d62ec7d391c8d259fa5cbb57c57b6"
+    },
+    {
+      "path": "schema.json",
+      "bytes": 4154,
+      "sha256": "8808d50fa1050c918d78cfbb3b95fee130464c0dade3faec5128d4c0fe66c4f1"
+    },
+    {
+      "path": "self-test.json",
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    {
+      "path": "sequence.json",
+      "bytes": 353,
+      "sha256": "4826ee09bb8ddef10a52a6f95ece0feb36a07e1c17a7f8ec20a7911e8c5412b9"
+    },
+    {
+      "path": "test-results.json",
+      "bytes": 1679,
+      "sha256": "efb6f64bb479ef2bffc6506ce9617295cc78e483d00c8083672bdb7646bca5a4"
+    }
+  ]
+}

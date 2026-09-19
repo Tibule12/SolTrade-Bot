@@ -1,0 +1,454 @@
+{
+    "schema":  "SOLTRADE_V3_FORWARD_DAILY_SNAPSHOT_V1",
+    "status":  "WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE",
+    "generated_utc":  "2026-09-19T10:30:28.2012236Z",
+    "sequence":  {
+                     "schema":  "SOLTRADE_V3_FORWARD_SEQUENCE_V1",
+                     "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                     "started_utc":  "2026-09-19T10:20:40.2229671Z",
+                     "status":  "CLEAN",
+                     "contamination_detected_utc":  null,
+                     "contamination_reasons":  [
+
+                                               ],
+                     "last_run_utc":  "2026-09-19T10:30:27.3105837Z"
+                 },
+    "integrity":  {
+                      "schema":  "SOLTRADE_V3_FORWARD_INTEGRITY_V1",
+                      "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                      "run_utc":  "2026-09-19T10:30:26.5918234Z",
+                      "status":  "CLEAN",
+                      "checks":  [
+                                     {
+                                         "name":  "tracker_source_sha256",
+                                         "passed":  true,
+                                         "expected":  "9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e",
+                                         "actual":  "9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e"
+                                     },
+                                     {
+                                         "name":  "tracker_binary_sha256",
+                                         "passed":  true,
+                                         "expected":  "60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513",
+                                         "actual":  "60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513"
+                                     },
+                                     {
+                                         "name":  "tracker_model_include_sha256",
+                                         "passed":  true,
+                                         "expected":  "d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2",
+                                         "actual":  "d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2"
+                                     },
+                                     {
+                                         "name":  "frozen_model_json_sha256",
+                                         "passed":  true,
+                                         "expected":  "55761589de93b64e11162cb36dccd143d66f685ddcf6d20485643e16c701d0e0",
+                                         "actual":  "55761589de93b64e11162cb36dccd143d66f685ddcf6d20485643e16c701d0e0"
+                                     },
+                                     {
+                                         "name":  "candidate_receipt_sha256",
+                                         "passed":  true,
+                                         "expected":  "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af",
+                                         "actual":  "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af"
+                                     },
+                                     {
+                                         "name":  "tracker_heartbeat_present",
+                                         "passed":  true,
+                                         "expected":  "present",
+                                         "actual":  "present"
+                                     },
+                                     {
+                                         "name":  "tracker_model_id",
+                                         "passed":  true,
+                                         "expected":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                         "actual":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918"
+                                     },
+                                     {
+                                         "name":  "tracker_version",
+                                         "passed":  true,
+                                         "expected":  "1.1.0",
+                                         "actual":  "1.1.0"
+                                     },
+                                     {
+                                         "name":  "tracker_order_capability",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "tracker_terminal_trade_allowed",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "tracker_mql_trade_allowed",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "tracker_position_time_limit",
+                                         "passed":  true,
+                                         "expected":  "none",
+                                         "actual":  "none"
+                                     },
+                                     {
+                                         "name":  "tracker_manifest_present",
+                                         "passed":  true,
+                                         "expected":  "present",
+                                         "actual":  "present"
+                                     },
+                                     {
+                                         "name":  "manifest_entry_specification",
+                                         "passed":  true,
+                                         "expected":  "FROZEN_V3_72_FEATURES_8_INTERACTIONS_THRESHOLDS",
+                                         "actual":  "FROZEN_V3_72_FEATURES_8_INTERACTIONS_THRESHOLDS"
+                                     },
+                                     {
+                                         "name":  "manifest_safety_disposition",
+                                         "passed":  true,
+                                         "expected":  "RIGHT_CENSORED",
+                                         "actual":  "RIGHT_CENSORED"
+                                     },
+                                     {
+                                         "name":  "manifest_bank_action",
+                                         "passed":  true,
+                                         "expected":  "PLUS_1R_BANK_50_PERCENT_ONCE",
+                                         "actual":  "PLUS_1R_BANK_50_PERCENT_ONCE"
+                                     },
+                                     {
+                                         "name":  "manifest_ratchet_deployed",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "tracker_trade_api_scan",
+                                         "passed":  true,
+                                         "expected":  "no trade APIs",
+                                         "actual":  ""
+                                     },
+                                     {
+                                         "name":  "fp_source_sha256",
+                                         "passed":  true,
+                                         "expected":  "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+                                         "actual":  "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e"
+                                     },
+                                     {
+                                         "name":  "fp_binary_sha256",
+                                         "passed":  true,
+                                         "expected":  "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+                                         "actual":  "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea"
+                                     },
+                                     {
+                                         "name":  "fxify_10k_startup_sha256",
+                                         "passed":  true,
+                                         "expected":  "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+                                         "actual":  "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e"
+                                     },
+                                     {
+                                         "name":  "fxify_10k_enabled_zero",
+                                         "passed":  true,
+                                         "expected":  "Enabled=0",
+                                         "actual":  "Enabled=0"
+                                     },
+                                     {
+                                         "name":  "fxify_10k_allow_live_zero",
+                                         "passed":  true,
+                                         "expected":  "AllowLiveTrading=0",
+                                         "actual":  "AllowLiveTrading=0"
+                                     },
+                                     {
+                                         "name":  "fxify_100k_startup_sha256",
+                                         "passed":  true,
+                                         "expected":  "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+                                         "actual":  "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6"
+                                     },
+                                     {
+                                         "name":  "fxify_100k_enabled_zero",
+                                         "passed":  true,
+                                         "expected":  "Enabled=0",
+                                         "actual":  "Enabled=0"
+                                     },
+                                     {
+                                         "name":  "fxify_100k_allow_live_zero",
+                                         "passed":  true,
+                                         "expected":  "AllowLiveTrading=0",
+                                         "actual":  "AllowLiveTrading=0"
+                                     },
+                                     {
+                                         "name":  "collector_source_sha256",
+                                         "passed":  true,
+                                         "expected":  "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261",
+                                         "actual":  "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261"
+                                     },
+                                     {
+                                         "name":  "collector_binary_sha256",
+                                         "passed":  true,
+                                         "expected":  "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c",
+                                         "actual":  "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c"
+                                     },
+                                     {
+                                         "name":  "collector_heartbeat_present",
+                                         "passed":  true,
+                                         "expected":  "present",
+                                         "actual":  "present"
+                                     },
+                                     {
+                                         "name":  "collector_order_capability",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "collector_terminal_trade_allowed",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "collector_mql_trade_allowed",
+                                         "passed":  true,
+                                         "expected":  "false",
+                                         "actual":  "false"
+                                     },
+                                     {
+                                         "name":  "right_censored_known_result_violations",
+                                         "passed":  true,
+                                         "expected":  0,
+                                         "actual":  0
+                                     },
+                                     {
+                                         "name":  "outcome_orderless_completed_bar_flags",
+                                         "passed":  true,
+                                         "expected":  0,
+                                         "actual":  0
+                                     },
+                                     {
+                                         "name":  "event_order_capability_violations",
+                                         "passed":  true,
+                                         "expected":  0,
+                                         "actual":  0
+                                     },
+                                     {
+                                         "name":  "stale_or_noncausal_observation_violations",
+                                         "passed":  true,
+                                         "expected":  0,
+                                         "actual":  0
+                                     }
+                                 ],
+                      "errors":  [
+
+                                 ],
+                      "outcome_rows":  0,
+                      "event_rows":  0,
+                      "observation_rows":  0,
+                      "order_capability":  false
+                  },
+    "v3_entry_summary":  {
+                             "schema":  "SOLTRADE_V3_ENTRY_FORWARD_SUMMARY_V1",
+                             "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                             "sequence_status":  "CLEAN",
+                             "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                             "generated_utc":  "2026-09-19T10:30:28.0762236Z",
+                             "opportunities_detected":  0,
+                             "wait_state_count":  0,
+                             "wait_definition":  "Every OPPORTUNITY_DETECTED enters WAIT_FOR_TRANSITION before ENTER or ABANDON",
+                             "enter_count":  0,
+                             "abandon_count":  0,
+                             "currently_unresolved_opportunities":  0,
+                             "long_count":  0,
+                             "short_count":  0,
+                             "known_completed_positions":  0,
+                             "right_censored_positions":  0,
+                             "full_losses":  0,
+                             "full_loss_rate":  null,
+                             "bank1_count":  0,
+                             "bank1_rate":  null,
+                             "plus_2_count":  0,
+                             "plus_2_rate":  null,
+                             "plus_3_count":  0,
+                             "plus_3_rate":  null,
+                             "plus_5_count":  0,
+                             "plus_5_rate":  null,
+                             "net_r":  0,
+                             "expectancy_r":  null,
+                             "max_drawdown_r":  0,
+                             "result_without_best_winner_r":  0,
+                             "result_without_best_day_r":  0,
+                             "quality_definition":  "1/(1+exp(-2*entry_expected_net_r))",
+                             "quality_calibration_bands":  [
+
+                                                           ],
+                             "development_search_rerun":  false,
+                             "tuning_enabled":  false,
+                             "promotion_authorized":  false
+                         },
+    "invalidation_summary":  {
+                                 "schema":  "SOLTRADE_V3_INVALIDATION_ROLLING_SET_V1",
+                                 "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                                 "sequence_status":  "CLEAN",
+                                 "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                 "generated_utc":  "2026-09-19T10:30:28.0605982Z",
+                                 "candidate_selection_performed":  false,
+                                 "recommendation_emitted":  false,
+                                 "candidates":  [
+                                                    {
+                                                        "schema":  "SOLTRADE_V3_INVALIDATION_ROLLING_V1",
+                                                        "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                                                        "sequence_status":  "CLEAN",
+                                                        "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                                        "candidate_id":  "FROZEN_V3_DIAGNOSTIC",
+                                                        "eligible_triggered_positions":  0,
+                                                        "invalidations":  0,
+                                                        "full_minus_1_losses_avoided":  0,
+                                                        "full_minus_1_losses_not_avoided":  0,
+                                                        "average_losing_r_baseline":  null,
+                                                        "average_losing_r_with_invalidation":  null,
+                                                        "median_losing_r_baseline":  null,
+                                                        "median_losing_r_with_invalidation":  null,
+                                                        "total_r_saved_vs_baseline":  0,
+                                                        "interrupted_breakeven_recoveries":  0,
+                                                        "interrupted_bank1_trades":  0,
+                                                        "interrupted_plus_2_trades":  0,
+                                                        "interrupted_plus_3_trades":  0,
+                                                        "interrupted_plus_5_trades":  0,
+                                                        "baseline_total_net_r":  0,
+                                                        "invalidation_total_net_r":  0,
+                                                        "expectancy_difference_r":  null,
+                                                        "max_drawdown_baseline_r":  0,
+                                                        "max_drawdown_invalidation_r":  0,
+                                                        "max_drawdown_difference_r":  0,
+                                                        "profit_factor":  null,
+                                                        "average_winner_r":  null,
+                                                        "average_loser_r":  null,
+                                                        "payoff_ratio":  null,
+                                                        "result_without_best_winner_r":  0,
+                                                        "result_without_best_day_r":  0,
+                                                        "dominant_symbol":  "",
+                                                        "symbol_entry_fraction":  null,
+                                                        "symbol_absolute_net_r_fraction":  null,
+                                                        "dominant_session":  "",
+                                                        "session_entry_fraction":  null,
+                                                        "session_absolute_net_r_fraction":  null
+                                                    },
+                                                    {
+                                                        "schema":  "SOLTRADE_V3_INVALIDATION_ROLLING_V1",
+                                                        "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                                                        "sequence_status":  "CLEAN",
+                                                        "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                                        "candidate_id":  "STRICT_PRESSURE_RESUMPTION",
+                                                        "eligible_triggered_positions":  0,
+                                                        "invalidations":  0,
+                                                        "full_minus_1_losses_avoided":  0,
+                                                        "full_minus_1_losses_not_avoided":  0,
+                                                        "average_losing_r_baseline":  null,
+                                                        "average_losing_r_with_invalidation":  null,
+                                                        "median_losing_r_baseline":  null,
+                                                        "median_losing_r_with_invalidation":  null,
+                                                        "total_r_saved_vs_baseline":  0,
+                                                        "interrupted_breakeven_recoveries":  0,
+                                                        "interrupted_bank1_trades":  0,
+                                                        "interrupted_plus_2_trades":  0,
+                                                        "interrupted_plus_3_trades":  0,
+                                                        "interrupted_plus_5_trades":  0,
+                                                        "baseline_total_net_r":  0,
+                                                        "invalidation_total_net_r":  0,
+                                                        "expectancy_difference_r":  null,
+                                                        "max_drawdown_baseline_r":  0,
+                                                        "max_drawdown_invalidation_r":  0,
+                                                        "max_drawdown_difference_r":  0,
+                                                        "profit_factor":  null,
+                                                        "average_winner_r":  null,
+                                                        "average_loser_r":  null,
+                                                        "payoff_ratio":  null,
+                                                        "result_without_best_winner_r":  0,
+                                                        "result_without_best_day_r":  0,
+                                                        "dominant_symbol":  "",
+                                                        "symbol_entry_fraction":  null,
+                                                        "symbol_absolute_net_r_fraction":  null,
+                                                        "dominant_session":  "",
+                                                        "session_entry_fraction":  null,
+                                                        "session_absolute_net_r_fraction":  null
+                                                    },
+                                                    {
+                                                        "schema":  "SOLTRADE_V3_INVALIDATION_ROLLING_V1",
+                                                        "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                                                        "sequence_status":  "CLEAN",
+                                                        "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                                        "candidate_id":  "STRUCTURAL_REVERSAL_CONFIRMATION",
+                                                        "eligible_triggered_positions":  0,
+                                                        "invalidations":  0,
+                                                        "full_minus_1_losses_avoided":  0,
+                                                        "full_minus_1_losses_not_avoided":  0,
+                                                        "average_losing_r_baseline":  null,
+                                                        "average_losing_r_with_invalidation":  null,
+                                                        "median_losing_r_baseline":  null,
+                                                        "median_losing_r_with_invalidation":  null,
+                                                        "total_r_saved_vs_baseline":  0,
+                                                        "interrupted_breakeven_recoveries":  0,
+                                                        "interrupted_bank1_trades":  0,
+                                                        "interrupted_plus_2_trades":  0,
+                                                        "interrupted_plus_3_trades":  0,
+                                                        "interrupted_plus_5_trades":  0,
+                                                        "baseline_total_net_r":  0,
+                                                        "invalidation_total_net_r":  0,
+                                                        "expectancy_difference_r":  null,
+                                                        "max_drawdown_baseline_r":  0,
+                                                        "max_drawdown_invalidation_r":  0,
+                                                        "max_drawdown_difference_r":  0,
+                                                        "profit_factor":  null,
+                                                        "average_winner_r":  null,
+                                                        "average_loser_r":  null,
+                                                        "payoff_ratio":  null,
+                                                        "result_without_best_winner_r":  0,
+                                                        "result_without_best_day_r":  0,
+                                                        "dominant_symbol":  "",
+                                                        "symbol_entry_fraction":  null,
+                                                        "symbol_absolute_net_r_fraction":  null,
+                                                        "dominant_session":  "",
+                                                        "session_entry_fraction":  null,
+                                                        "session_absolute_net_r_fraction":  null
+                                                    },
+                                                    {
+                                                        "schema":  "SOLTRADE_V3_INVALIDATION_ROLLING_V1",
+                                                        "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                                                        "sequence_status":  "CLEAN",
+                                                        "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                                        "candidate_id":  "EXPANDING_PULLBACK_FAILURE",
+                                                        "eligible_triggered_positions":  0,
+                                                        "invalidations":  0,
+                                                        "full_minus_1_losses_avoided":  0,
+                                                        "full_minus_1_losses_not_avoided":  0,
+                                                        "average_losing_r_baseline":  null,
+                                                        "average_losing_r_with_invalidation":  null,
+                                                        "median_losing_r_baseline":  null,
+                                                        "median_losing_r_with_invalidation":  null,
+                                                        "total_r_saved_vs_baseline":  0,
+                                                        "interrupted_breakeven_recoveries":  0,
+                                                        "interrupted_bank1_trades":  0,
+                                                        "interrupted_plus_2_trades":  0,
+                                                        "interrupted_plus_3_trades":  0,
+                                                        "interrupted_plus_5_trades":  0,
+                                                        "baseline_total_net_r":  0,
+                                                        "invalidation_total_net_r":  0,
+                                                        "expectancy_difference_r":  null,
+                                                        "max_drawdown_baseline_r":  0,
+                                                        "max_drawdown_invalidation_r":  0,
+                                                        "max_drawdown_difference_r":  0,
+                                                        "profit_factor":  null,
+                                                        "average_winner_r":  null,
+                                                        "average_loser_r":  null,
+                                                        "payoff_ratio":  null,
+                                                        "result_without_best_winner_r":  0,
+                                                        "result_without_best_day_r":  0,
+                                                        "dominant_symbol":  "",
+                                                        "symbol_entry_fraction":  null,
+                                                        "symbol_absolute_net_r_fraction":  null,
+                                                        "dominant_session":  "",
+                                                        "session_entry_fraction":  null,
+                                                        "session_absolute_net_r_fraction":  null
+                                                    }
+                                                ]
+                             },
+    "per_trade_rows":  0
+}
