@@ -1,7 +1,7 @@
 {
-  "schema": "SOLTRADE_V3_FULL_LIFETIME_ARTIFACT_MANIFEST_V1",
-  "created_utc": "2026-09-19T08:40:46.051759+00:00",
-  "implementation_commit": "552269a9e663df1beb6e58d123dee54ae9978171",
+  "schema": "SOLTRADE_V3_FULL_LIFETIME_ARTIFACT_MANIFEST_V2",
+  "created_utc": "2026-09-19T09:23:58.624442+00:00",
+  "implementation_head": "b5e8947352da65b02ec8d41da7301ebdbf0e2f3d",
   "evidence_commit": "reported at delivery",
   "artifacts": [
     {
@@ -36,28 +36,48 @@
     },
     {
       "path": "operational-verification.json",
-      "bytes": 7492,
-      "sha256": "080e93a4850c2a727182541121ec3e32d5e14a5db0f7995df73a42d7f423e3e7"
+      "bytes": 15653,
+      "sha256": "20a9879211262a3ce83ff4477bda3ef49322b411c6468552eef3fe025812cedf"
+    },
+    {
+      "path": "repair-compile.log",
+      "bytes": 3618,
+      "sha256": "1953dc2da396fa62c01269486d487fd0c70cc2d3bfd0e0f10086218bf7d5541b"
+    },
+    {
+      "path": "repair-deployment-verification.json",
+      "bytes": 17883,
+      "sha256": "7c06f1e2b3d99921ecc8666a140b062205492179637f0c7a787cbaf6cf955ffd"
+    },
+    {
+      "path": "repair-heartbeat.csv",
+      "bytes": 658,
+      "sha256": "0a84d13172545f1c4b6d1aaeb7715b4cce9308132844649a0669aa24eb9ed749"
+    },
+    {
+      "path": "repair-manifest.csv",
+      "bytes": 736,
+      "sha256": "c8e669bde93fda840f3e7d8dd139c59673bfa8b4492cf5f00e03538f912609d7"
     },
     {
       "path": "report.md",
-      "bytes": 7711,
-      "sha256": "ccc61784fd7202d366ddfeae4426dc134d1be61268606cf7f13086f02c6903e8"
+      "bytes": 7652,
+      "sha256": "037f8e7bb95ff5b20c093a6fe667b766f20ca6ece7e53dc9fba13ba29a3e0756"
     },
     {
       "path": "schema.json",
-      "bytes": 6570,
-      "sha256": "5000943920adbe7975b50bef8e532e5cee1cc2099d4debcc618470d7088ef077"
+      "bytes": 8315,
+      "sha256": "915f9114418643e8faa6b458c0ba508d3ad99866a6d7cc346c1e23f892a6ac89"
     },
     {
       "path": "start-status.json",
-      "bytes": 1649,
-      "sha256": "97bb7f52d34d31cc275cc979f0fbb7720715066a0ece0d119b9d448f35aa05d8"
+      "bytes": 2238,
+      "sha256": "924deb8ba2fd17ba51430a7c7d4950b06583de0ffb15d8dc2a2e09994ed43794"
     },
     {
       "path": "test-results.json",
-      "bytes": 1233,
-      "sha256": "230f78e56a369f4529ed83a54394270ca172102814a1b82721e650778bc1254b"
+      "bytes": 1386,
+      "sha256": "41e87345ff4814b97b6feb03eb6f2243e10c6e8899b4baa1407668f29f7fc3eb"
     }
   ]
 }

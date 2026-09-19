@@ -1,12 +1,13 @@
 {
-  "schema": "SOLTRADE_V3_FULL_LIFETIME_SCHEMA_V1",
-  "tracker_version": "1.0.1",
+  "schema": "SOLTRADE_V3_FULL_LIFETIME_SCHEMA_V2",
+  "tracker_version": "1.1.0",
   "model_id": "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
   "storage_root": "C:\\SolTrade\\Research\\SolTrade-Full-Lifetime-Tracker-V1\\MQL5\\Files\\SolTradeFullLifetimeTrackerV1",
   "files": {
     "lifetime_observations": {
       "path": "lifetime_observations\\YYYYMMDD\\YYYYMMDD-HH-lifetime.csv",
       "rotation": "hourly",
+      "field_count": 74,
       "fields": [
         "schema",
         "tracker_version",
@@ -16,9 +17,13 @@
         "symbol",
         "direction",
         "entry_utc",
+        "lifetime_seconds",
         "entry_price",
         "initial_structural_stop",
         "initial_r_distance",
+        "active_structural_stop",
+        "runner_stop_utc",
+        "runner_trail_updates",
         "current_exit_price",
         "current_r",
         "mfe_r",
@@ -76,12 +81,14 @@
         "pullback_invalidated",
         "pullback_exit_r",
         "completed_bars_only",
+        "feature_window_ready",
         "order_capability"
       ]
     },
     "events": {
       "path": "events\\YYYYMMDD\\YYYYMMDD-HH-events.csv",
       "rotation": "hourly",
+      "field_count": 14,
       "fields": [
         "schema",
         "tracker_version",
@@ -102,7 +109,8 @@
     "outcomes": {
       "path": "outcomes\\YYYYMMDD\\YYYYMMDD-outcomes.csv",
       "rotation": "daily",
-      "row_granularity": "one row per completed hypothetical trade and invalidation candidate",
+      "row_granularity": "one row per terminal or right-censored hypothetical position and invalidation candidate",
+      "field_count": 44,
       "fields": [
         "schema",
         "tracker_version",
@@ -112,10 +120,17 @@
         "session",
         "direction",
         "entry_utc",
-        "exit_utc",
+        "terminal_utc",
+        "lifetime_seconds",
+        "outcome_status",
+        "terminal_reason",
+        "baseline_final_r_known",
+        "aftermath_complete",
         "entry_price",
         "initial_stop",
         "initial_risk",
+        "final_runner_stop",
+        "runner_trail_updates",
         "mfe_r",
         "mae_r",
         "bank1_reached",
@@ -126,6 +141,7 @@
         "causal_exit_triggered",
         "causal_exit_utc",
         "causal_exit_r",
+        "causal_final_r_known",
         "causal_final_r",
         "continued_to_minus_1",
         "recovered_to_breakeven",
@@ -140,7 +156,8 @@
         "plus_5_path_interrupted",
         "completed_bars_only",
         "order_capability"
-      ]
+      ],
+      "known_outcome_rule": "RIGHT_CENSORED rows have baseline_final_r_known=false, aftermath_complete=false, and blank baseline_final_r; exclude them from metrics needing final baseline or aftermath outcomes."
     },
     "state": {
       "path": "status\\state.csv",
@@ -150,7 +167,7 @@
         "key",
         "value"
       ],
-      "contents": "tracker totals, detector state, open hypothetical position state, and per-candidate aftermath flags for restart recovery"
+      "contents": "tracker totals, opportunity independence state, open hypothetical position, runner stop/trail, terminal state, and per-candidate invalidation/aftermath flags"
     },
     "heartbeat": {
       "path": "status\\heartbeat.csv",
@@ -174,8 +191,12 @@
         "total_triggered",
         "active_opportunities",
         "active_positions",
+        "active_positions_over_four_hours",
         "lifetime_observations",
         "completed_outcomes",
+        "right_censored_outcomes",
+        "position_time_limit",
+        "research_safety_horizon_days",
         "copy_errors",
         "symbols",
         "state_utc"
@@ -197,6 +218,11 @@
         "production_authority",
         "automatic_promotion",
         "entry_specification",
+        "episode_independence_seconds",
+        "position_time_limit",
+        "baseline_terminal_path",
+        "research_safety_horizon_days",
+        "safety_horizon_disposition",
         "bank_action",
         "ratchet_deployed"
       ]
@@ -221,12 +247,22 @@
     "observation_interval_seconds": 5,
     "wait_observation_interval_seconds": 15,
     "wait_horizon_seconds": 900,
-    "position_horizon_seconds": 14400,
     "same_symbol_episode_gap_seconds": 14400,
+    "episode_rule_scope": "opportunity generation and independence only",
+    "position_time_limit": null,
+    "research_safety_horizon_days": 0,
+    "optional_safety_cutoff_disposition": "RIGHT_CENSORED",
     "fresh_quote_max_lag_seconds": 10,
-    "tick_path_updates": "every accepted CopyTicks row updates current R, MFE, MAE, Bank1R, structural stop and post-invalidation aftermath",
-    "feature_snapshots": "every 5 seconds while a hypothetical position is active",
-    "bank": "at +1R bank 50% once; runner is the remaining 50%; repeated banking is disabled",
+    "post_restart_feature_window_seconds": 30,
+    "maximum_allowed_gap_inside_rebuilt_feature_window_seconds": 10,
+    "stale_or_closed_market": "freeze all position evaluation and safety-cutoff evaluation; resume only after fresh broker quotes and rebuild the causal 30-second window",
+    "baseline_terminal_path": [
+      "initial structural stop before Bank1R",
+      "at +1R bank 50% once",
+      "remaining 50% runner exits at a monotonic completed-M5/M15 structural runner stop"
+    ],
+    "invalidation_aftermath": "a candidate exit does not stop the observer; all aftermath flags and the parallel baseline continue until genuine terminal state or explicit right censoring",
+    "restart_persistence": "entry, bank, runner stop, MFE/MAE, terminal state, and all invalidation aftermath flags are persisted atomically",
     "ratchet_deployed": false,
     "final_paths": [
       "BASELINE_STRUCTURAL_STOP",

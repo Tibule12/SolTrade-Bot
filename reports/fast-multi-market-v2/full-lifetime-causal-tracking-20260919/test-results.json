@@ -1,28 +1,31 @@
 {
-  "schema": "SOLTRADE_V3_FULL_LIFETIME_TEST_RESULTS_V1",
-  "run_utc": "2026-09-19T08:40:46.050109+00:00",
+  "schema": "SOLTRADE_V3_FULL_LIFETIME_REPAIR_TEST_RESULTS_V2",
+  "run_utc": "2026-09-19T09:21:57.731758+00:00",
   "command": "python3 -m unittest tests.test_entry_engine_v3 tests.test_full_lifetime_tracker_v1",
   "result": "PASS",
-  "tests_run": 12,
+  "tests_run": 17,
   "failures": 0,
   "errors": 0,
   "coverage": [
-    "existing frozen V3 causality/state-machine tests remain passing",
-    "negative R alone never triggers causal invalidation",
-    "frozen diagnostic requires current_R <= -0.40 and transition_score <= -0.25",
-    "post-exit aftermath records -1R, breakeven, +1R, +2R, +3R and +5R paths",
-    "Bank1R occurs once and preserves 50% runner accounting",
-    "72 base features, 8 interactions, model thresholds and invalidation candidates are frozen",
-    "MQL source has no trade API and enforces quote freshness"
+    "triggered baseline remains active beyond four hours",
+    "Bank1R runner remains active beyond four hours",
+    "overnight/restart round trip restores complete open state",
+    "stale quotes freeze stop, invalidation, and safety-cutoff evaluation",
+    "invalidation aftermath continues beyond four hours through breakeven and +1R/+2R/+3R/+5R",
+    "enabled research cutoff emits RIGHT_CENSORED and no baseline result",
+    "Bank1R occurs once",
+    "frozen V3 model, 72 features, 8 interactions, thresholds, and four candidates remain unchanged",
+    "four-hour constant remains only as opportunity independence",
+    "MQL source contains no order APIs"
   ],
   "compile_result": "0 errors, 0 warnings",
   "static_trade_api_scan": "PASS",
   "restart_test": {
     "status": "PASS",
-    "before_restart_count": 1,
-    "after_restart_count": 2,
-    "state_before_sha256": "743aae8f1ae20fd06a057877f1c63346376186595df399356f175b2cf232cb4a",
-    "state_after_sha256": "743aae8f1ae20fd06a057877f1c63346376186595df399356f175b2cf232cb4a",
+    "before_restart_count": 4,
+    "after_restart_count": 5,
+    "state_before_sha256": "06309e685ab6d9a09affcfedcfa4182864151228beba7ac22ffe8336a8f75cd7",
+    "state_after_sha256": "06309e685ab6d9a09affcfedcfa4182864151228beba7ac22ffe8336a8f75cd7",
     "tracker_only_process_restarted": true
   }
 }

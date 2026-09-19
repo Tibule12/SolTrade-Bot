@@ -1,68 +1,103 @@
-# V3 full-lifetime causal trade tracking — deployed orderless observer
+# V3 full-lifetime causal tracker — four-hour termination removed
 
-**Status: `FULL_LIFETIME_TRACKER_DEPLOYED_ORDERLESS__WAITING_FOR_FIRST_FRESH_MARKET_TRIGGER`.** The full hypothetical position-lifetime tracker is implemented, compiled, deployed and running in its own portable MT5 terminal. It preserves the frozen V3 detector, 72 features, eight interactions and entry thresholds; once that specification emits `ENTRY_TRIGGERED`, the tracker follows the hypothetical trade tick by tick through its structural stop or four-hour expiry and writes a five-second causal feature snapshot throughout the position. It cannot send, modify or close orders.
+**Status: `CORRECTED_TRACKER_DEPLOYED__NO_POSITION_TIME_LIMIT`.** Tracker version **1.1.0** is compiled and running in the isolated research terminal. A hypothetical `ENTRY_TRIGGERED` position no longer ends at the four-hour opportunity boundary. It remains open until the frozen baseline structural management path reaches a genuine terminal state. The four-hour value remains only as the same-symbol opportunity-generation independence interval.
 
-The commissioning occurred on Saturday while the 19 configured markets were closed. The final heartbeat is healthy with `COLLECTING_FULL_LIFETIMES`, both MT5 trading permissions false, `order_capability=false`, zero copy errors, and **zero admitted opportunities, triggered positions, lifetime observations or outcomes**. This means the service is started, but no honest forward post-entry record exists yet. The first valid records will begin after the first fresh market quote and a frozen V3 trigger. [Start status](start-status.json) · [live heartbeat](heartbeat.csv).
+The correction was deployed before any fresh-market V3 trigger. The pre-deployment and final heartbeats both contain **0 triggered positions, 0 lifetime observations and 0 outcomes**. Saturday quotes were stale, so the tracker correctly created no market evidence.
 
-## Frozen entry and invalidation specifications
+## Corrected lifetime semantics
 
-The tracker uses research identity **`ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918`**, fitted once from the already available September 16–18 snapshot solely to reproduce the frozen V3 diagnostic forward. It uses the pre-existing `TRANSITION_INTERACTIONS` formulation: L2 10, expected net R at least 0.10, predicted full-loss probability at most 0.45, Bank1R probability at least 0.45, and directional expected-R margin at least 0.05. It has 72 base fields and the same eight declared interactions. This tracker identity does not promote V3, reopen its development search, or alter the 7-day / 700-episode continuation gate. [Frozen tracking model](frozen-tracking-model.json).
+The baseline path now terminates only as follows:
 
-Four causal invalidation paths were fixed before forward results:
+1. Before Bank1R, the executable bid/ask reaches the original structural stop.
+2. At +1R, 50% is banked exactly once.
+3. The remaining 50% runner stays active until its monotonic structural stop is reached. That stop is derived from completed M5/M15 structure with the frozen volatility/spread breathing distance and can only tighten into profit.
 
-| Candidate | Adverse R condition | Evidence-failure condition |
-|---|---:|---|
-| `FROZEN_V3_DIAGNOSTIC` | `current_R <= -0.40` | `transition_score <= -0.25` |
-| `STRICT_PRESSURE_RESUMPTION` | `current_R <= -0.50` | `transition_score <= -0.35` and no resumption |
-| `STRUCTURAL_REVERSAL_CONFIRMATION` | `current_R <= -0.40` | `transition_score <= -0.25` and aligned M1+M5 trend ≤ −1 |
-| `EXPANDING_PULLBACK_FAILURE` | `current_R <= -0.35` | `transition_score <= -0.30`, pullback expanding and no resumption |
+The production manager audit found no normal four-hour, session-end or overnight forced exit to reproduce. The frozen research baseline remains the structural-stop path declared in the original full-lifetime task; no time exit was added.
 
-Every rule requires both meaningful adverse movement and causal evidence failure. Negative R by itself cannot exit. Candidate definitions are written by the running tracker in [the frozen candidate receipt](frozen-invalidation-candidates.csv).
+A candidate causal invalidation records its hypothetical exit but does not stop observation. The baseline path, MFE/MAE and all aftermath flags continue until the baseline genuinely terminates. This includes recovery to breakeven, Bank1R, +2R, +3R, +5R and eventual structural loss after the candidate exit.
 
-## Full-lifetime behavior
+State now persists the original entry, initial stop/risk, Bank1R state, current runner stop, runner-stop timestamp and update count, MFE/MAE, baseline terminal state, and every invalidation/aftermath flag. On restart or market reopen, invalidation scoring waits for a new continuous 30-second tick window. A quote gap greater than 10 seconds resets that readiness check. Stale or closed-market quotes freeze evaluation and cannot manufacture stops, invalidations, time cutoffs or exits.
 
-Every accepted broker tick updates executable current R, MFE, MAE, bid/ask movement, Bank1R, structural-stop state and the post-invalidation path. The five-second snapshots add 1/5/30-second tick and pressure windows, pressure reversal, acceleration, burst rate, spread, pullback/resumption state, completed M1/M5/M15/H1 bars, correlated markets, volatility and cost. `CopyRates` uses shift 1, so forming bars do not enter the features.
+The optional research safety horizon is present but **disabled** (`ResearchSafetyHorizonDays=0`). If explicitly enabled later, it emits `RIGHT_CENSORED`; it leaves final baseline R blank, marks `baseline_final_r_known=false` and `aftermath_complete=false`, and is excluded from calculations that require a known final outcome.
 
-For each invalidation, tracking continues rather than ending at the hypothetical causal exit. The completed outcome records whether price later continued to −1R, recovered to breakeven, or reached +1R, +2R, +3R or +5R. That supports the requested loss-avoidance, interrupted-winner, expectancy, drawdown, profit-factor, payoff, symbol/session concentration, best-winner and best-day comparisons once completed forward trades exist.
+[Exact V2 schema and semantics](schema.json) · [deployed manifest](repair-manifest.csv).
 
-The baseline path uses the original structural stop. At +1R it banks 50% exactly once and retains a 50% runner. There is no repeated bank and no deployed profit ratchet.
+## Frozen specifications preserved
 
-## Storage and restart persistence
+The deployed model remains **`ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918`** with the same 72 base features, eight interactions, fitted coefficients, thresholds and four invalidation candidates. The model include SHA-256 is unchanged at `d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2`.
 
-The isolated terminal is `C:\SolTrade\Research\SolTrade-Full-Lifetime-Tracker-V1`; data is under `...\MQL5\Files\SolTradeFullLifetimeTrackerV1`:
+| Candidate | Frozen condition |
+|---|---|
+| `FROZEN_V3_DIAGNOSTIC` | `current_R <= -0.40` and `transition_score <= -0.25` |
+| `STRICT_PRESSURE_RESUMPTION` | `current_R <= -0.50`, `transition_score <= -0.35`, no resumption |
+| `STRUCTURAL_REVERSAL_CONFIRMATION` | `current_R <= -0.40`, `transition_score <= -0.25`, aligned M1+M5 trend ≤ −1 |
+| `EXPANDING_PULLBACK_FAILURE` | `current_R <= -0.35`, `transition_score <= -0.30`, expanding pullback, no resumption |
 
-- `lifetime_observations\YYYYMMDD\YYYYMMDD-HH-lifetime.csv` — 69-field causal position snapshots;
-- `events\YYYYMMDD\YYYYMMDD-HH-events.csv` — detection, entry, Bank1R, invalidation, stop and completion events;
-- `outcomes\YYYYMMDD\YYYYMMDD-outcomes.csv` — baseline plus one row per invalidation path, including all post-exit aftermath flags;
-- `status\state.csv` — atomic restart state for every opportunity, open position and candidate aftermath;
-- `status\heartbeat.csv`, `manifest.csv`, and `frozen-invalidation-candidates.csv` — runtime proofs and frozen configuration.
+Bank1R remains one 50% bank. `WHOLE_TRADE_PROFIT_RATCHET_V1` remains undeployed. The seven-day / 700-episode V3 continuation gate and the original collector are unchanged. [Frozen candidates](frozen-invalidation-candidates.csv) · [frozen model](frozen-tracking-model.json).
 
-[The exact field order and semantics](schema.json) are machine-readable. A forced tracker-only restart advanced restart count from 1 to 2 while the state hash remained `743aae8f1ae20fd06a057877f1c63346376186595df399356f175b2cf232cb4a`; the watchdog is installed and running. [Operational verification](operational-verification.json).
+## Verification
 
-## Commissioning defect caught and repaired
+The combined regression suite passes **17/17**. It explicitly proves:
 
-The initial Saturday launch exposed that MT5 can return the last Friday quote when no current market tick exists. That could have created false weekend opportunities. Version 1.0.1 now requires each symbol's newest broker quote to be no more than ten seconds old before detection or WAIT evaluation. The invalid tracker-only startup store was excluded from evidence, copied to `C:\SolTrade\backups\full-lifetime-invalid-stale-state-20260919-083453`, and reset. The final run has zero stale active opportunities and positions. No production or collector data was touched.
+- an unbanked triggered position remains active beyond four hours;
+- a Bank1R runner remains active beyond four hours;
+- overnight/restart serialization restores the complete open state;
+- stale quotes cannot create a stop, invalidation, cutoff or exit;
+- invalidation aftermath continues beyond four hours through breakeven and +1R/+2R/+3R/+5R;
+- a forced research cutoff produces `RIGHT_CENSORED` with no fabricated baseline result;
+- the source contains no `CTrade`, `OrderSend`, trade request/action, position close/modify or order-delete path.
 
-## Isolation proof
+The VPS compiler completed with **0 errors and 0 warnings**. The tracker-only forced restart advanced restart count **4 → 5** while the persisted state hash remained exactly `06309e685ab6d9a09affcfedcfa4182864151228beba7ac22ffe8336a8f75cd7`.
 
-FP 7404213 remained PID 2892, autonomous and `ENABLED_OWNERSHIP_GRANTED`, with source SHA-256 `4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e` and binary SHA-256 `fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea` before and after deployment. It was flat at the final capture. No FP file or setting changed.
+[Test receipt](test-results.json) · [compiler log](repair-compile.log) · [full deployment receipt](repair-deployment-verification.json).
 
-FXIFY 7196820 and 7198096 still have `Enabled=0`, `AllowLiveTrading=0`, and preserved `DISABLED_DRY_RUN` / autonomous-false runtimes. Their startup hashes did not change. Those disabled runtime rows remain dated September 16 because disabled EAs do not refresh them.
+## Fresh runtime proof
 
-The existing brain collector remained `COLLECTING`, orderless, on 19 symbols with zero copy errors. Deployment sent **zero orders**, modified **zero positions**, changed **zero production files**, changed **zero FXIFY files**, and did not touch the collector. [Full VPS deployment receipt](deployment-verification.json).
+The post-restart heartbeat reports:
 
-## Verification, commits and hashes
+| Field | Value |
+|---|---|
+| Status | `COLLECTING_FULL_LIFETIMES` |
+| Tracker version | `1.1.0` |
+| Position time limit | `none` |
+| Research safety horizon | `0` days / disabled |
+| Account / server | `7404213` / `FPMarketsSC-Demo` |
+| Connected | `true` |
+| Terminal trading / MQL trading | `false` / `false` |
+| Order capability | `false` |
+| Copy errors | `0` |
+| Symbols | `19` |
+| Triggered positions | `0` |
+| Right-censored outcomes | `0` |
 
-The combined V3 and lifetime suite passes **12/12**. The lifetime tests prove the two-condition invalidation rule, continued post-exit aftermath, one-time Bank1R accounting, frozen model/candidate identity, absence of trade APIs and stale-quote rejection. MQL compilation completed with **0 errors and 0 warnings**. [Test receipt](test-results.json) · [compiler log](compile.log).
+[Fresh heartbeat](repair-heartbeat.csv) · [start status](start-status.json).
 
-Implementation commit: `552269a9e663df1beb6e58d123dee54ae9978171`.
+## Production isolation
+
+The deployment receipt records `orders_sent=false`, `positions_modified=false`, `production_files_modified=false` and `fxify_files_modified=false`. FP had **0 positions / 0 orders** before and after the tracker-only work.
+
+FP remained PID **2892**, autonomous and ownership-granted. Its source stayed `4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e`; its binary stayed `fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea`.
+
+FXIFY 7196820 and 7198096 remain blocked by `Enabled=0` and `AllowLiveTrading=0`. Their startup hashes were identical before and after deployment. The original collector remained `COLLECTING`, on 19 symbols, with zero copy errors and all order permissions false; the deployment script only read its heartbeat and did not target its terminal, source, binary, storage or watchdog.
+
+[Machine-readable operational proof](operational-verification.json).
+
+## Commits and hashes
+
+The corrected implementation is the commit chain ending at **`b5e8947352da65b02ec8d41da7301ebdbf0e2f3d`**:
+
+- `4898bab33a3587465fa6a5e2887227587dd2ef6a` — remove the four-hour position termination and add full structural lifetime/restart/censoring behavior;
+- `c0822a856db3bf4bfd4b5469949d31f7e51f1823` — require the corrected heartbeat during deployment verification;
+- `b5e8947352da65b02ec8d41da7301ebdbf0e2f3d` — align compiled tracker version metadata.
 
 | Artifact | SHA-256 |
 |---|---|
-| Tracker source | `133b623e455edab50367fd42fbead105e6150edae1798c5a33c586673a76a68e` |
+| Deployed tracker source | `9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e` |
 | Frozen model include | `d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2` |
-| Deployed tracker binary | `e9475e785230b59c85ece62cbb02d3ccc72dc628bd8b830c2e60f03523e1f0aa` |
-| Deployment script | `4e1d3ac30d10e70007a5f64aced6767da2f0d22d2da10267c0bc754d55563386` |
-| Model exporter | `4caa7ce8f0e577981d1fb61bb141d7e91c2ce2a470fa769d59df64b91a9ec5e7` |
-| Reference lifetime semantics | `6b44cf9d73b2615fd8d90216f31d7738baf96367f35724e4283686af71e5be0b` |
-| Lifetime regression test | `3099da7685136e6f7693c3c87e1af353c14cbd8af1f7ab209365007d3123d16e` |
+| Deployed tracker binary | `60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513` |
+| Tracker preset | `064aa33f9f8c7c83fca7dbb55a99f5b2f45bff13b39a9eeb5b9ffd28002db291` |
+| Reference lifetime semantics | `7bafbfe909b6300503fdba11d3ea535edd21923ce73af9c4e985662bd3d6cb67` |
+| Deployment script | `14b5e3b55bd2cd5dc5900aeb7ac912fda5153f65a6dfbf3aad78bcab747f3aaf` |
+| Lifetime regression test | `e9cef57a24dad7ba5c635358f9157c07daecb22d9f102c5c36f826cb25406c25` |
+
+The VPS source hash matches the committed local source hash exactly. The rollback snapshot is `C:\SolTrade\backups\full-lifetime-tracker-update-20260919-091837`.
