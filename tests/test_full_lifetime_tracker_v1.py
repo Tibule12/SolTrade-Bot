@@ -104,6 +104,7 @@ class FullLifetimeTrackerTests(unittest.TestCase):
         text = SOURCE.read_text()
         self.assertFalse(ORDER_CAPABILITY)
         self.assertIn("const bool ORDER_CAPABILITY=false", text)
+        self.assertIn('#property version   "1.100"', text)
         self.assertIn("#define EPISODE_INDEPENDENCE_SECONDS 14400", text)
         self.assertIn("ResearchSafetyHorizonDays=0", text)
         self.assertIn('rightCensored?"RIGHT_CENSORED"', text)

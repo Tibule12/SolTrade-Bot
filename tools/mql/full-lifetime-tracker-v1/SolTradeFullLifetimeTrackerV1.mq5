@@ -1,5 +1,5 @@
 #property strict
-#property version   "1.000"
+#property version   "1.100"
 #property description "ORDERLESS V3 full-lifetime hypothetical tracker; no trade capability"
 
 #include "SolTradeV3TrackingModel.mqh"
