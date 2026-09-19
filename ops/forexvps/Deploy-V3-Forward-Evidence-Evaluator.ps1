@@ -6,7 +6,7 @@ $share=Split-Path -Parent $MyInvocation.MyCommand.Path
 $repo=(Resolve-Path (Join-Path $share '..\..')).Path
 $payload=Join-Path $repo 'tools\forward_evidence'
 $output=Join-Path $share 'remote-output\v3-forward-evidence-evaluator-v1'
-$home="$root\Research\SolTrade-Forward-Evidence-Evaluator-V1"
+$evaluatorHome="$root\Research\SolTrade-Forward-Evidence-Evaluator-V1"
 $tracker="$root\Research\SolTrade-Full-Lifetime-Tracker-V1"
 $fp="$root\MT5-FP-DEMO"
 $collector="$root\Research\SolTrade-Brain-Collector-V1"
@@ -53,22 +53,22 @@ try{
  $scriptText=[IO.File]::ReadAllText($runner);$operationalText=($scriptText -split "`r?`n"|Where-Object{$_ -notmatch '^\s*\$patterns='}) -join "`n"
  foreach($pattern in @('#include\s*<Trade/','\bCTrade\b','\bOrderSend(?:Async)?\s*\(','\bMqlTradeRequest\b','\bTRADE_ACTION_','\bPositionClose\s*\(','\bPositionModify\s*\(','\bOrderDelete\s*\(')){if($operationalText -match $pattern){throw "Evaluator contains forbidden trade API: $pattern"}}
 
- if(Test-Path -LiteralPath $home){$backup="$root\backups\v3-forward-evaluator-$([DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))";New-Item -ItemType Directory -Force -Path $backup|Out-Null;Copy-Item -Recurse -Force -LiteralPath $home -Destination $backup;$receipt.backup=$backup}
- New-Item -ItemType Directory -Force -Path $home,"$home\output\daily","$home\status","$home\state"|Out-Null
- Copy-Item -Force -LiteralPath $runner -Destination "$home\Run-V3-Forward-Evidence-Evaluator.ps1"
- Copy-Item -Force -LiteralPath $expected -Destination "$home\expected-identities.json"
- Copy-Item -Force -LiteralPath $schema -Destination "$home\output-schema.json"
- Copy-Item -Force -LiteralPath $model -Destination "$home\frozen-tracking-model.json"
- $selfTest=& powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$home\Run-V3-Forward-Evidence-Evaluator.ps1" -SelfTest
+ if(Test-Path -LiteralPath $evaluatorHome){$backup="$root\backups\v3-forward-evaluator-$([DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss'))";New-Item -ItemType Directory -Force -Path $backup|Out-Null;Copy-Item -Recurse -Force -LiteralPath $evaluatorHome -Destination $backup;$receipt.backup=$backup}
+ New-Item -ItemType Directory -Force -Path $evaluatorHome,"$evaluatorHome\output\daily","$evaluatorHome\status","$evaluatorHome\state"|Out-Null
+ Copy-Item -Force -LiteralPath $runner -Destination "$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1"
+ Copy-Item -Force -LiteralPath $expected -Destination "$evaluatorHome\expected-identities.json"
+ Copy-Item -Force -LiteralPath $schema -Destination "$evaluatorHome\output-schema.json"
+ Copy-Item -Force -LiteralPath $model -Destination "$evaluatorHome\frozen-tracking-model.json"
+ $selfTest=& powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1" -SelfTest
  $self=$selfTest|ConvertFrom-Json;if($self.status -ne 'PASS'){throw 'Evaluator self-test failed'}
  $selfTest|Set-Content -Encoding UTF8 -LiteralPath "$output\self-test.json"
- & powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$home\Run-V3-Forward-Evidence-Evaluator.ps1"
+ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1"
  if($LASTEXITCODE -ne 0){throw "Initial evaluator run failed with $LASTEXITCODE"}
- $heartbeat=Get-Content -Raw -LiteralPath "$home\status\heartbeat.json"|ConvertFrom-Json
+ $heartbeat=Get-Content -Raw -LiteralPath "$evaluatorHome\status\heartbeat.json"|ConvertFrom-Json
  if($heartbeat.status -ne 'WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE' -or $heartbeat.integrity_status -ne 'CLEAN' -or $heartbeat.order_capability -ne $false){throw "Unexpected initial evaluator heartbeat: $($heartbeat.status)"}
 
  if(Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue){Unregister-ScheduledTask -TaskName $taskName -Confirm:$false}
- $action=New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"$home\Run-V3-Forward-Evidence-Evaluator.ps1`""
+ $action=New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1`""
  $startup=New-ScheduledTaskTrigger -AtStartup
  $repeating=New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration (New-TimeSpan -Days 3650)
  $settings=New-ScheduledTaskSettingsSet -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Minutes 4)
@@ -83,13 +83,13 @@ try{
  for($i=0;$i -lt 2;$i++){if($after.fxify[$i].startup_sha256 -ne $before.fxify[$i].startup_sha256 -or $after.fxify[$i].text -notmatch '(?m)^Enabled=0\r?$' -or $after.fxify[$i].text -notmatch '(?m)^AllowLiveTrading=0\r?$'){throw "FXIFY changed or resumed: $($after.fxify[$i].account)"}}
  if($after.collector.source_sha256 -ne $before.collector.source_sha256 -or $after.collector.binary_sha256 -ne $before.collector.binary_sha256 -or ($after.collector.pids -join ',') -ne ($before.collector.pids -join ',') -or $after.collector.heartbeat.order_capability -ne 'false'){throw 'Original collector changed'}
  if($after.tracker.source_sha256 -ne $before.tracker.source_sha256 -or $after.tracker.binary_sha256 -ne $before.tracker.binary_sha256 -or $after.tracker.model_include_sha256 -ne $before.tracker.model_include_sha256 -or $after.tracker.candidate_sha256 -ne $before.tracker.candidate_sha256 -or ($after.tracker.pids -join ',') -ne ($before.tracker.pids -join ',') -or $after.tracker.heartbeat.order_capability -ne 'false'){throw 'Full-lifetime tracker changed'}
- $finalHeartbeat=Get-Content -Raw -LiteralPath "$home\status\heartbeat.json"|ConvertFrom-Json;$integrity=Get-Content -Raw -LiteralPath "$home\output\integrity-receipt.json"|ConvertFrom-Json
+ $finalHeartbeat=Get-Content -Raw -LiteralPath "$evaluatorHome\status\heartbeat.json"|ConvertFrom-Json;$integrity=Get-Content -Raw -LiteralPath "$evaluatorHome\output\integrity-receipt.json"|ConvertFrom-Json
  if($finalHeartbeat.status -ne 'WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE' -or $integrity.status -ne 'CLEAN'){throw 'Final evaluator state is not clean and waiting'}
- foreach($p in @('Run-V3-Forward-Evidence-Evaluator.ps1','expected-identities.json','output-schema.json','frozen-tracking-model.json')){Copy-Item -Force -LiteralPath (Join-Path $home $p) -Destination (Join-Path $output $p)}
- Copy-Item -Recurse -Force -LiteralPath "$home\output\*" -Destination $output
- Copy-Item -Force -LiteralPath "$home\status\heartbeat.json" -Destination "$output\heartbeat.json"
- Copy-Item -Force -LiteralPath "$home\state\sequence.json" -Destination "$output\sequence.json"
- $receipt.evaluator=[ordered]@{home=$home;source_sha256=Sha "$home\Run-V3-Forward-Evidence-Evaluator.ps1";expected_identities_sha256=Sha "$home\expected-identities.json";output_schema_sha256=Sha "$home\output-schema.json";frozen_model_sha256=Sha "$home\frozen-tracking-model.json";heartbeat=$finalHeartbeat;integrity_status=$integrity.status;trade_api_scan='PASS';order_capability=$false;deployment_capability=$false;tuning_enabled=$false}
+ foreach($p in @('Run-V3-Forward-Evidence-Evaluator.ps1','expected-identities.json','output-schema.json','frozen-tracking-model.json')){Copy-Item -Force -LiteralPath (Join-Path $evaluatorHome $p) -Destination (Join-Path $output $p)}
+ Copy-Item -Recurse -Force -LiteralPath "$evaluatorHome\output\*" -Destination $output
+ Copy-Item -Force -LiteralPath "$evaluatorHome\status\heartbeat.json" -Destination "$output\heartbeat.json"
+ Copy-Item -Force -LiteralPath "$evaluatorHome\state\sequence.json" -Destination "$output\sequence.json"
+ $receipt.evaluator=[ordered]@{home=$evaluatorHome;source_sha256=Sha "$evaluatorHome\Run-V3-Forward-Evidence-Evaluator.ps1";expected_identities_sha256=Sha "$evaluatorHome\expected-identities.json";output_schema_sha256=Sha "$evaluatorHome\output-schema.json";frozen_model_sha256=Sha "$evaluatorHome\frozen-tracking-model.json";heartbeat=$finalHeartbeat;integrity_status=$integrity.status;trade_api_scan='PASS';order_capability=$false;deployment_capability=$false;tuning_enabled=$false}
  $receipt.fp_untouched=$true;$receipt.fxify_remained_paused=$true;$receipt.original_collector_untouched=$true;$receipt.full_lifetime_tracker_untouched=$true;$receipt.production_files_modified=$false;$receipt.orders_sent=$false;$receipt.positions_modified=$false;$receipt.status='DEPLOYED_CLEAN_WAITING_FOR_FIRST_COMPLETED_HYPOTHETICAL_TRADE'
 }catch{$receipt.status='FAILED';$receipt.error=$_.Exception.Message}
 finally{$receipt.completed_utc=[DateTime]::UtcNow.ToString('o');Save-Receipt}
