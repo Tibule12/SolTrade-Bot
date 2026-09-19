@@ -2,3 +2,4 @@ ObserverConfirmed=true
 TimerMilliseconds=200
 ObservationIntervalSeconds=5
 FlushIntervalSeconds=5
+ResearchSafetyHorizonDays=0

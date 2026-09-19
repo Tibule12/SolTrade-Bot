@@ -14,7 +14,7 @@ $fp="$root\MT5-FP-DEMO"
 $collector="$root\Research\SolTrade-Brain-Collector-V1"
 $collectorData=Join-Path $collector 'MQL5\Files\SolTradeBrainCollectorV1'
 $common=Join-Path $env:APPDATA 'MetaQuotes\Terminal\Common\Files'
-$receipt=[ordered]@{schema='SOLTRADE_V3_FULL_LIFETIME_DEPLOYMENT_V1';status='PREPARING';started_utc=[DateTime]::UtcNow.ToString('o');orders_sent=$false;positions_modified=$false;production_files_modified=$false;fxify_files_modified=$false;entry_specification_changed=$false;error=$null}
+$receipt=[ordered]@{schema='SOLTRADE_V3_FULL_LIFETIME_DEPLOYMENT_V2';status='PREPARING';started_utc=[DateTime]::UtcNow.ToString('o');orders_sent=$false;positions_modified=$false;production_files_modified=$false;fxify_files_modified=$false;entry_specification_changed=$false;error=$null}
 
 function Sha([string]$p){if(-not(Test-Path -LiteralPath $p)){return $null};(Get-FileHash -Algorithm SHA256 -LiteralPath $p).Hash.ToLowerInvariant()}
 function Save-Receipt{$receipt|ConvertTo-Json -Depth 20|Set-Content -Encoding UTF8 -LiteralPath (Join-Path $output 'deployment.json')}
@@ -34,8 +34,8 @@ function Start-Tracker{Start-Process -FilePath "$iso\terminal64.exe" -WorkingDir
 
 New-Item -ItemType Directory -Force -Path $output|Out-Null
 try{
- $fpBefore=FP-Snapshot;$fx10Before=FX-State 'fxify-10k' '7196820' "$root\MT5-FXIFY-10K" 'SolTradeFastMultiMarketV2F10';$fx100Before=FX-State 'fxify-100k' '7198096' "$root\MT5-FXIFY-100K" 'SolTradeFastMultiMarketV2F100';$collectorBefore=Read-CsvPair (Join-Path $collectorData 'status\heartbeat.csv')
- $receipt.fp_before=$fpBefore;$receipt.fxify_before=@($fx10Before,$fx100Before);$receipt.collector_before=$collectorBefore
+ $fpBefore=FP-Snapshot;$fx10Before=FX-State 'fxify-10k' '7196820' "$root\MT5-FXIFY-10K" 'SolTradeFastMultiMarketV2F10';$fx100Before=FX-State 'fxify-100k' '7198096' "$root\MT5-FXIFY-100K" 'SolTradeFastMultiMarketV2F100';$collectorBefore=Read-CsvPair (Join-Path $collectorData 'status\heartbeat.csv');$trackerBefore=Tracker-Heartbeat
+ $receipt.fp_before=$fpBefore;$receipt.fxify_before=@($fx10Before,$fx100Before);$receipt.collector_before=$collectorBefore;$receipt.tracker_before=$trackerBefore
  if($fpBefore.source_sha256 -ne '4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e' -or $fpBefore.binary_sha256 -ne 'fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea'){throw 'FP frozen baseline hash mismatch'}
  if(@($fpBefore.pids).Count -ne 1){throw 'FP process count is not one'}
  foreach($x in @($fx10Before,$fx100Before)){if(-not $x.enabled_zero -or -not $x.allow_live_zero){throw "FXIFY startup pause missing: $($x.login)"}}
@@ -46,6 +46,9 @@ try{
  $text=Get-Content -Raw -LiteralPath $source
  foreach($pattern in @('#include\s*<Trade/','\bCTrade\b','\bOrderSend(?:Async)?\s*\(','\bMqlTradeRequest\b','\bTRADE_ACTION_','\bPositionClose\s*\(','\bPositionModify\s*\(','\bOrderDelete\s*\(')){if($text -match $pattern){throw "Forbidden trade capability matched: $pattern"}}
  if($text -notmatch 'const bool ORDER_CAPABILITY=false'){throw 'Order capability marker absent'}
+ if($text -match '\bPositionExpiry\b|FOUR_HOUR_EXPIRY'){throw 'Artificial four-hour position termination remains in source'}
+ if($text -notmatch '#define EPISODE_INDEPENDENCE_SECONDS 14400'){throw 'Four-hour opportunity independence marker absent'}
+ if($text -notmatch 'ResearchSafetyHorizonDays=0'){throw 'Research safety horizon is not disabled by default'}
 
  if(Test-Path -LiteralPath $iso){
   if(Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue){Stop-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue;Disable-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue|Out-Null}
@@ -117,6 +120,7 @@ if(`$process.Count -eq 0){Start-Process -FilePath `$terminal -WorkingDirectory `
 do{Start-Sleep -Seconds 2;$hb=Tracker-Heartbeat}while((-not $hb -or $hb.status -ne 'COLLECTING_FULL_LIFETIMES') -and [DateTime]::UtcNow -lt $deadline)
  if(-not $hb){throw 'Tracker heartbeat absent'}
  if($hb.order_capability -ne 'false' -or $hb.terminal_trade_allowed -ne 'false' -or $hb.mql_trade_allowed -ne 'false'){throw 'Tracker trade permissions not disabled'}
+ if($hb.tracker_version -ne '1.1.0' -or $hb.position_time_limit -ne 'none' -or [int]$hb.research_safety_horizon_days -ne 0){throw 'Corrected lifetime semantics are not active'}
  $stateBefore=Sha (Join-Path $data 'status\state.csv');$restartBefore=[int]$hb.restart_count
  Process-For "$iso\terminal64.exe"|ForEach-Object{Stop-Process -Id $_.ProcessId -Force};Start-Sleep -Seconds 3;Start-Tracker
  $deadline=[DateTime]::UtcNow.AddSeconds(120);$afterRestart=$null
@@ -133,7 +137,7 @@ do{Start-Sleep -Seconds 2;$afterRestart=Tracker-Heartbeat}while((-not $afterRest
  if($collectorAfter.order_capability -ne 'false' -or $collectorAfter.terminal_trade_allowed -ne 'false' -or $collectorAfter.mql_trade_allowed -ne 'false'){throw 'Collector changed orderless state'}
  if(@($receipt.tracker.pids).Count -ne 1){throw 'Tracker process count is not one'}
  if(Test-Path (Join-Path $data 'status\heartbeat.csv')){Copy-Item -Force (Join-Path $data 'status\heartbeat.csv') (Join-Path $output 'heartbeat.csv')};if(Test-Path (Join-Path $data 'manifest.csv')){Copy-Item -Force (Join-Path $data 'manifest.csv') (Join-Path $output 'manifest.csv')};if(Test-Path (Join-Path $data 'frozen-invalidation-candidates.csv')){Copy-Item -Force (Join-Path $data 'frozen-invalidation-candidates.csv') (Join-Path $output 'frozen-invalidation-candidates.csv')}
- $receipt.fp_untouched=$true;$receipt.fxify_remained_paused=$true;$receipt.collector_untouched=$true;$receipt.order_capability=$false;$receipt.orders_sent=$false;$receipt.positions_modified=$false;$receipt.production_files_modified=$false;$receipt.status='DEPLOYED_ORDERLESS_TRACKER_VERIFIED'
+ $receipt.fp_untouched=$true;$receipt.fxify_remained_paused=$true;$receipt.collector_untouched=$true;$receipt.order_capability=$false;$receipt.orders_sent=$false;$receipt.positions_modified=$false;$receipt.production_files_modified=$false;$receipt.lifetime_semantics='STRUCTURAL_TERMINAL_ONLY__NO_POSITION_TIME_LIMIT';$receipt.status='DEPLOYED_ORDERLESS_TRACKER_VERIFIED'
 }catch{$receipt.status='FAILED';$receipt.error=$_.Exception.Message}
 finally{$receipt.completed_utc=[DateTime]::UtcNow.ToString('o');Save-Receipt}
 if($receipt.status -ne 'DEPLOYED_ORDERLESS_TRACKER_VERIFIED'){throw $receipt.error}
