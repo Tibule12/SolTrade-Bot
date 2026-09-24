@@ -1,4 +1,8 @@
 import math
+import json
+import os
+import shutil
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -9,6 +13,7 @@ from tools.forward_evidence.evaluator import (
 
 ROOT = Path(__file__).resolve().parents[1]
 PS = ROOT / "ops/forexvps/Run-V3-Forward-Evidence-Evaluator.ps1"
+PWSH = os.environ.get("SOLTRADE_PWSH") or shutil.which("pwsh") or shutil.which("powershell")
 
 
 def row(**updates):
@@ -51,6 +56,32 @@ class ForwardEvidenceTests(unittest.TestCase):
         self.assertEqual(validate_right_censored([clean]), [])
         dirty = dict(clean, baseline_final_r_known="true", baseline_final_r="0")
         self.assertEqual(len(validate_right_censored([dirty])), 2)
+
+    def test_censored_rows_never_enter_aggregate_payoffs(self):
+        censored = row(outcome_status="RIGHT_CENSORED", baseline_final_r=999, candidate_final_r=999)
+        summary = candidate_summary([row(), censored], CANDIDATE_IDS[0])
+        self.assertEqual(summary["eligible_triggered_positions"], 1)
+        self.assertAlmostEqual(summary["baseline_total_net_r"], -1.0)
+
+    def test_fractional_loss_savings_and_interruption_offset(self):
+        summary = candidate_summary([
+            row(baseline_final_r=-1.02124703, candidate_final_r=-0.41336189),
+            row(baseline_final_r=3.12345678, candidate_final_r=-0.41336189,
+                terminal_reason="RUNNER_STRUCTURAL_STOP"),
+        ], CANDIDATE_IDS[0])
+        self.assertAlmostEqual(summary["total_r_saved_vs_baseline"], -2.92893353)
+
+    @unittest.skipUnless(PWSH, "Set SOLTRADE_PWSH to run the actual scheduled PowerShell calculations")
+    def test_actual_powershell_regressions(self):
+        result = subprocess.run([
+            PWSH, "-NoProfile", "-File", str(ROOT / "tests/Test-ForwardEvidenceEvaluator.ps1"),
+            "-EvaluatorPath", str(PS), "-ObservationCount", "1000",
+        ], check=True, capture_output=True, text=True, timeout=90)
+        receipt = json.loads(result.stdout)
+        self.assertEqual(receipt["status"], "PASS")
+        self.assertGreaterEqual(receipt["tests_passed"], 25)
+        self.assertEqual(receipt["benchmark"]["comparisons"], 1000)
+        self.assertFalse(receipt["production_paths_read"])
 
     def test_drawdown_and_robustness_are_chronological(self):
         self.assertEqual(max_drawdown([1.0, -2.0, 0.5, -1.0]), 2.5)

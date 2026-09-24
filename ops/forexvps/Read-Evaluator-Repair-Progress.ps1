@@ -1,0 +1,6 @@
+$ErrorActionPreference='Stop'
+$out=Join-Path $PSScriptRoot 'remote-output\evaluator-repair-20260924'
+$homePath='C:\SolTrade\Research\SolTrade-Forward-Evidence-Evaluator-V1'
+$processes=@(Get-CimInstance Win32_Process -Filter "Name='powershell.exe'"|Where-Object{$_.CommandLine-match '(?:Forward-Evaluator-20260924|Forward-Evidence-Evaluator|tested-payload\\regression|tested-payload\\evaluator)'}|ForEach-Object{[ordered]@{pid=$_.ProcessId;parent_pid=$_.ParentProcessId;created=$_.CreationDate;working_set=$_.WorkingSetSize;user_time=$_.UserModeTime;kernel_time=$_.KernelModeTime;role=if($_.CommandLine-match 'regression.ps1'){'regression'}elseif($_.CommandLine-match 'Repair-V3'){'repair'}elseif($_.CommandLine-match 'SelfTest'){'self_test'}else{'evaluator'}}})
+$r=[ordered]@{utc=[DateTime]::UtcNow.ToString('o');processes=$processes;task_state=[string](Get-ScheduledTask -TaskName 'SolTrade-V3-Forward-Evidence-Evaluator-V1').State;heartbeat=if(Test-Path "$homePath\status\heartbeat.json"){Get-Content -Raw "$homePath\status\heartbeat.json"|ConvertFrom-Json}else{$null};progress=if(Test-Path "$homePath\status\run-progress.json"){Get-Content -Raw "$homePath\status\run-progress.json"|ConvertFrom-Json}else{$null}}
+[IO.File]::WriteAllText("$out\progress-probe.json",($r|ConvertTo-Json -Depth 12),(New-Object Text.UTF8Encoding($false)))
