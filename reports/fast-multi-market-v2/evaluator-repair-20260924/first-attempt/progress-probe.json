@@ -1,0 +1,64 @@
+{
+    "utc":  "2026-09-24T16:10:38.3514847Z",
+    "processes":  [
+                      {
+                          "pid":  6032,
+                          "parent_pid":  4964,
+                          "created":  "\/Date(1790265720398)\/",
+                          "working_set":  28254208,
+                          "user_time":  14687500,
+                          "kernel_time":  7031250,
+                          "role":  "repair"
+                      }
+                  ],
+    "task_state":  "Running",
+    "heartbeat":  {
+                      "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+                      "status":  "EVALUATING_FORWARD_EVIDENCE",
+                      "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                      "utc":  1790266230,
+                      "completed_positions_evaluated":  24,
+                      "candidate_rows":  96,
+                      "integrity_status":  "CLEAN",
+                      "run_id":  "1bafcbc5f2e0441891f0dcb260f51fd3",
+                      "run_started_utc":  "2026-09-24T16:08:09.6304513Z",
+                      "run_finished_utc":  "2026-09-24T16:10:30.6950987Z",
+                      "run_elapsed_ms":  141051,
+                      "stage_durations_ms":  {
+                                                 "LOAD_OUTCOMES":  723,
+                                                 "LOAD_EVENTS":  2078,
+                                                 "LOAD_LIFETIME_OBSERVATIONS":  94450,
+                                                 "INTEGRITY_CHECK":  7786,
+                                                 "SEQUENCE_CHECK":  466,
+                                                 "BUILD_PER_TRADE":  26866,
+                                                 "ROLLING_SUMMARIES":  7019,
+                                                 "PUBLISH_RESULTS":  414
+                                             },
+                      "evaluator_source_sha256":  "39591a6346853ecb3fe4828f55857198e6c51b43f0e6be9664184f8fb437ebf3",
+                      "order_capability":  false,
+                      "deployment_capability":  false,
+                      "tuning_enabled":  false
+                  },
+    "progress":  {
+                     "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_PROGRESS_V1",
+                     "run_id":  "1bafcbc5f2e0441891f0dcb260f51fd3",
+                     "started_utc":  "2026-09-24T16:08:09.6304513Z",
+                     "updated_utc":  "2026-09-24T16:10:30.7575989Z",
+                     "status":  "COMPLETED",
+                     "stage":  "COMPLETE",
+                     "elapsed_ms":  141110,
+                     "completed_stage_ms":  {
+                                                "LOAD_OUTCOMES":  723,
+                                                "LOAD_EVENTS":  2078,
+                                                "LOAD_LIFETIME_OBSERVATIONS":  94450,
+                                                "INTEGRITY_CHECK":  7786,
+                                                "SEQUENCE_CHECK":  466,
+                                                "BUILD_PER_TRADE":  26866,
+                                                "ROLLING_SUMMARIES":  7019,
+                                                "PUBLISH_RESULTS":  414,
+                                                "PUBLISH_HEARTBEAT":  86
+                                            },
+                     "evaluator_source_sha256":  "39591a6346853ecb3fe4828f55857198e6c51b43f0e6be9664184f8fb437ebf3",
+                     "order_capability":  false
+                 }
+}

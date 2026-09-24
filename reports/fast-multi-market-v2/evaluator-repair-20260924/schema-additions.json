@@ -1,0 +1,43 @@
+{
+  "schema": "SOLTRADE_EVALUATOR_REPAIR_OUTPUT_ADDITIONS_V1",
+  "existing_per_trade_and_summary_columns": "unchanged",
+  "status/heartbeat.json": {
+    "added_fields": [
+      "run_id",
+      "run_started_utc",
+      "run_finished_utc",
+      "run_elapsed_ms",
+      "stage_durations_ms",
+      "evaluator_source_sha256"
+    ],
+    "timing_scope": "elapsed time through start of heartbeat publication; COMPLETE progress includes final snapshot writes"
+  },
+  "status/run-progress.json": {
+    "fields": [
+      "schema",
+      "run_id",
+      "started_utc",
+      "updated_utc",
+      "status",
+      "stage",
+      "elapsed_ms",
+      "completed_stage_ms",
+      "evaluator_source_sha256",
+      "order_capability"
+    ],
+    "stages": [
+      "LOAD_OUTCOMES",
+      "LOAD_EVENTS",
+      "LOAD_LIFETIME_OBSERVATIONS",
+      "INTEGRITY_CHECK",
+      "SEQUENCE_CHECK",
+      "BUILD_PER_TRADE",
+      "ROLLING_SUMMARIES",
+      "PUBLISH_RESULTS",
+      "PUBLISH_HEARTBEAT",
+      "COMPLETE"
+    ]
+  },
+  "order_capability": false,
+  "trading_specification_changed": false
+}

@@ -1,0 +1,750 @@
+{
+  "schema": "FP_BANK_ACCOUNTING_INVESTIGATION_V1",
+  "status": "R_DEFINITION_MISMATCH_CONFIRMED__BROKER_DEAL_SPLIT_REQUIRED",
+  "scope": "Local preserved evidence and frozen deployed source only; no broker contact, strategy edits or orders.",
+  "source": {
+    "path": "ops/forexvps/releases/fp-adaptive-payoff-v1-bank1r-giveback-20260912/SolTradeFastMultiMarketV2.mq5",
+    "sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e"
+  },
+  "event_source": {
+    "path": "reports/fast-multi-market-v2/full-live-audit-20260924/evidence/fp-events-since-last-audit.csv",
+    "sha256": "cb7b58605918377da24f0f500bd541a12c5ba69947ede93b11f7a5fbc481ffc5"
+  },
+  "usd_jpy": {
+    "position_id": 404406045,
+    "entry_event_utc": "2026.09.22 10:35:40",
+    "exit_event_utc": "2026.09.22 11:10:01",
+    "initial_price_risk": 0.101,
+    "initial_dollar_risk": 942.19,
+    "reported_peak_price_r": 1.16832,
+    "reported_peak_cash_before_commission": 1008.18,
+    "total_position_commission_and_fees": -80.46,
+    "reached_1r": false,
+    "partial_banking": false,
+    "final_total_cash": -626.64,
+    "final_total_r": -0.66509,
+    "price_r_formula": "direction*(executable_close-entry)/initial_price_distance",
+    "peak_cash_formula": "maximum(position_profit+position_swap+closed_gross); excludes opening commission and exit commission",
+    "bank_trigger_formula": "(position_profit+position_swap+closed_gross+opening_cost)/initial_dollar_risk",
+    "source_lines": {
+      "price_r": 2438,
+      "peak_cash": 2442,
+      "peak_price_r": 2449,
+      "opening_cost": 2152,
+      "bank_trigger": 2486,
+      "bank_minimum": 2207
+    },
+    "proved_conclusion": "The 1.16832 price-R peak and +1 bank-trigger R use different numerators and denominators; the first does not prove the second was reached.",
+    "conditional_reconstruction": {
+      "assumption": "All -80.46 position commission/fees were charged on entry; exact deal-level split is absent from the export.",
+      "peak_bank_trigger_cash": 927.72,
+      "peak_bank_trigger_r": 0.984642163470213,
+      "cash_short_of_bank": 14.47,
+      "conclusion_if_assumption_verified": "Bank1R was never eligible at the recorded peak; no missed eligible bank demonstrated."
+    },
+    "opening_cost_magnitude_required_to_remain_below_bank_at_recorded_cash_peak": 65.99,
+    "unresolved": "Actual entry-vs-exit commission/fee split and tick-level ledger availability are not recorded in this event export. Do not claim a definitive broker-level replay from these summaries."
+  },
+  "balance": {
+    "baseline_flat_balance": 97103.93,
+    "observed_terminal_balance": 94228.02,
+    "observed_terminal_utc": "2026-09-24 11:05",
+    "closed_eight_trade_cash": -3342.35,
+    "balance_change": -2875.91,
+    "difference_from_closed_trade_sum": 466.44,
+    "open_position_id": 405640859,
+    "partial_bank_utc": "2026.09.24 10:23:21",
+    "original_volume": 0.92,
+    "closed_volume": 0.46,
+    "remaining_volume": 0.46,
+    "recorded_allocated_banked_net": 469.2,
+    "partial_event_line": 144,
+    "open_entry_line": 129,
+    "formula": "Actual balance contribution from the still-open position = allocated banked_net + opening_cost*(remaining_volume/original_volume), absent any other balance movement.",
+    "source_formula_line": 2162,
+    "conditional_reconstruction": {
+      "opening_cost_total_inferred": -5.52,
+      "opening_cost_allocated_to_unclosed_half": -2.76,
+      "implied_dollars_per_original_lot": 6.0,
+      "open_position_realized_cash_contribution": 466.44,
+      "fully_reconciled_balance": 94228.02
+    },
+    "proved_conclusion": "The prior audit excluded a confirmed partial realization on the ninth still-open position. Its 469.20 allocated banked net accounts for the 466.44 balance difference if remaining-half opening costs were 2.76.",
+    "unresolved": "The exact -5.52 opening charge and absence of additional balance movements require broker deal/balance history; those values are inferred, not directly exported."
+  },
+  "confirmed_diagnostic_defects": [
+    {
+      "field": "EXIT.banked_cash",
+      "example_position": 404406045,
+      "reported": -313.09,
+      "partial_banking": false,
+      "cause": "APReadBankedCash allocates the first half-volume of every closing deal, including the terminal full close, without requiring an actual partial bank. Therefore banked_cash can be negative on an unbanked loser.",
+      "source_lines": [
+        2331,
+        2349,
+        2357,
+        3232
+      ]
+    },
+    {
+      "field": "PRE_BANK_GIVEBACK_FAILED.opposite_direction",
+      "reported": false,
+      "cause": "pre_bank_opposing_failure uses original score.direction; score.direction is overwritten with held direction before log expression recomputes opposite_direction, making this logged flag false for every such event.",
+      "source_lines": [
+        2475,
+        2481,
+        2527
+      ],
+      "event_line": 51
+    },
+    {
+      "field": "PARTIAL_EXIT_DEAL.entry",
+      "cause": "The row is populated from FindScore without loading DEAL_PRICE; it is not a broker partial-exit fill price.",
+      "source_lines": [
+        3183,
+        3185
+      ],
+      "event_line": 146
+    }
+  ],
+  "relevant_events": [
+    {
+      "file_line": 39,
+      "utc": "2026.09.22 10:35:40",
+      "event": "ENTRY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "lot": "13.4100",
+        "initial_risk": "942.19",
+        "broker_sl_confirmed": "true",
+        "complete_admission_persistence": "true",
+        "admission_state_key": "-424507953",
+        "net_cost_gate": "8.17",
+        "spread": "0.00200000",
+        "spread_points": "2.00",
+        "spread_median_ratio": "0.6667",
+        "persistence_scans": "5",
+        "persistence_seconds": "39",
+        "signal_first_seen": "2026.09.22 10:35:01",
+        "signal_stable": "2026.09.22 10:35:40",
+        "entry_timestamp": "2026.09.22 10:35:40",
+        "signal_reference_entry": "157.05200000",
+        "confirmation_move": "-0.02000000",
+        "confirmation_move_m5_atr": "-0.23045",
+        "confirmation_opportunity_consumed": "0.00000",
+        "remaining_room_after_confirmation": "0.19092857",
+        "entry_drift_m5_atr": "-0.23045",
+        "m5_swing_extension_atr": "0.31111",
+        "m15_swing_extension_m5_atr": "1.17941",
+        "impulse_extension_m5_atr": "-2.03951",
+        "breakout_extension_m5_atr": "0.00000",
+        "admission_score": "63.4082",
+        "no_trade_threshold": "60.0000",
+        "scratch_fill": "157.0720000000",
+        "scratch_reference_close": "157.0740000000",
+        "scratch_buy_detects_bid": "true",
+        "scratch_sell_detects_ask": "true"
+      }
+    },
+    {
+      "file_line": 40,
+      "utc": "2026.09.22 10:35:50",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "ENTRY_PROBATION",
+        "current_r": "-0.02970",
+        "peak_r": "0.00000",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 41,
+      "utc": "2026.09.22 10:37:50",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "position_id": "404406045",
+        "from": "ENTRY_PROBATION",
+        "to": "HEALTHY_POSITION",
+        "current_r": "0.19802",
+        "peak_r": "0.19802",
+        "thesis_currently_qualified": "false"
+      }
+    },
+    {
+      "file_line": 42,
+      "utc": "2026.09.22 10:40:00",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "position_id": "404406045",
+        "from": "HEALTHY_POSITION",
+        "to": "PRE_BANK_PROFIT",
+        "peak_r": "0.53465",
+        "monetary_trailing_enabled": "false"
+      }
+    },
+    {
+      "file_line": 43,
+      "utc": "2026.09.22 10:40:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.53465",
+        "peak_r": "0.53465",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 44,
+      "utc": "2026.09.22 10:45:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "1.10891",
+        "peak_r": "1.16832",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 45,
+      "utc": "2026.09.22 10:50:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.49505",
+        "peak_r": "1.16832",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 46,
+      "utc": "2026.09.22 10:55:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.73267",
+        "peak_r": "1.16832",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 47,
+      "utc": "2026.09.22 11:00:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.40594",
+        "peak_r": "1.16832",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 48,
+      "utc": "2026.09.22 11:03:40",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "position_id": "404406045",
+        "from": "PRE_BANK_PROFIT",
+        "to": "PRE_BANK_GIVEBACK",
+        "current_r": "-0.10891",
+        "peak_r": "1.16832",
+        "banked": "false",
+        "original_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 49,
+      "utc": "2026.09.22 11:05:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "state": "PRE_BANK_GIVEBACK",
+        "current_r": "-0.11881",
+        "peak_r": "1.16832",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 50,
+      "utc": "2026.09.22 11:08:30",
+      "event": "HALF_RISK_DAMAGE_AREA_REACHED",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "current_r": "-0.50495",
+        "automatic_exit": "false",
+        "state": "PRE_BANK_GIVEBACK"
+      }
+    },
+    {
+      "file_line": 51,
+      "utc": "2026.09.22 11:10:00",
+      "event": "PRE_BANK_GIVEBACK_FAILED",
+      "ticket": "404406045",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "classification": "PRE_BANK_GIVEBACK_FAILED",
+        "current_r": "-0.63366",
+        "peak_r": "1.16832",
+        "causal": "opposing_structural_or_persisted_thesis_deterioration",
+        "structural_deterioration": "false",
+        "opposite_direction": "false",
+        "opposite_structure": "true",
+        "held": "55.75",
+        "opposite": "69.00",
+        "original_structural_sl_retained": "true",
+        "broker_structural_sl_retained_until_fill": "true"
+      }
+    },
+    {
+      "file_line": 52,
+      "utc": "2026.09.22 11:10:01",
+      "event": "EXIT",
+      "ticket": "0",
+      "symbol": "USDJPY.r",
+      "detail": {
+        "manager": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+        "state": "PRE_BANK_GIVEBACK",
+        "original_stop": "157.17300000",
+        "original_price_risk": "0.10100000",
+        "initial_dollar_risk": "942.19",
+        "original_volume": "13.41000000",
+        "remaining_volume": "0",
+        "half_risk_touched": "true",
+        "probation_failed": "false",
+        "reached_1r": "false",
+        "reached_2r": "false",
+        "partial_banking": "false",
+        "banked_cash": "-313.09",
+        "banked_r": "-0.33230",
+        "runner_cash": "-313.55",
+        "runner_r": "-0.33279",
+        "final_total_cash": "-626.64",
+        "final_total_r": "-0.66509",
+        "position_id": "404406045",
+        "entry_time": "2026.09.22 13:35:40",
+        "entry_price": "157.07200000",
+        "exit_time": "2026.09.22 14:10:00",
+        "exit_price": "157.13600000",
+        "holding_seconds": "2060",
+        "gross": "-546.18",
+        "commission": "-80.46",
+        "swap": "0.00",
+        "net": "-626.64",
+        "mfe": "1008.18",
+        "mae": "-563.24",
+        "invalidated": "false",
+        "reason": "DEAL_REASON_EXPERT",
+        "exit_class": "PRE_BANK_GIVEBACK_FAILED",
+        "RUNNER_MODE_ENTERED": "false",
+        "RUNNER_PEAK_R": "1.16832",
+        "RUNNER_PEAK_DOLLARS": "1008.18",
+        "PROTECTED_R": "-1.00000",
+        "PROTECTED_DOLLARS": "-946.42",
+        "TRAIL_UPDATES": "0",
+        "MAX_GIVEBACK_R": "1.82178",
+        "MAX_GIVEBACK_DOLLARS": "1571.42",
+        "FINAL_CAPTURE_RATIO": "0.000000"
+      }
+    },
+    {
+      "file_line": 129,
+      "utc": "2026.09.24 09:37:01",
+      "event": "ENTRY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "lot": "0.9200",
+        "initial_risk": "931.68",
+        "broker_sl_confirmed": "true",
+        "complete_admission_persistence": "true",
+        "admission_state_key": "-519084782",
+        "net_cost_gate": "46.65",
+        "spread": "0.08000000",
+        "spread_points": "8.00",
+        "spread_median_ratio": "1.0000",
+        "persistence_scans": "4",
+        "persistence_seconds": "30",
+        "signal_first_seen": "2026.09.24 09:36:30",
+        "signal_stable": "2026.09.24 09:37:00",
+        "entry_timestamp": "2026.09.24 09:37:01",
+        "signal_reference_entry": "4258.70000000",
+        "confirmation_move": "0.34000000",
+        "confirmation_move_m5_atr": "0.06239",
+        "confirmation_opportunity_consumed": "0.02758",
+        "remaining_room_after_confirmation": "11.98842857",
+        "entry_drift_m5_atr": "0.06239",
+        "m5_swing_extension_atr": "1.63875",
+        "m15_swing_extension_m5_atr": "3.06710",
+        "impulse_extension_m5_atr": "0.19819",
+        "breakout_extension_m5_atr": "0.00000",
+        "admission_score": "80.1878",
+        "no_trade_threshold": "60.0000",
+        "scratch_fill": "4258.3600000000",
+        "scratch_reference_close": "4258.4400000000",
+        "scratch_buy_detects_bid": "true",
+        "scratch_sell_detects_ask": "true"
+      }
+    },
+    {
+      "file_line": 130,
+      "utc": "2026.09.24 09:37:10",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "ENTRY_PROBATION",
+        "current_r": "0.01589",
+        "peak_r": "0.01589",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 131,
+      "utc": "2026.09.24 09:38:00",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "from": "ENTRY_PROBATION",
+        "to": "HEALTHY_POSITION",
+        "current_r": "0.15690",
+        "peak_r": "0.15690",
+        "thesis_currently_qualified": "false"
+      }
+    },
+    {
+      "file_line": 132,
+      "utc": "2026.09.24 09:40:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "HEALTHY_POSITION",
+        "current_r": "0.07944",
+        "peak_r": "0.21847",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 133,
+      "utc": "2026.09.24 09:43:30",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "from": "HEALTHY_POSITION",
+        "to": "PRE_BANK_PROFIT",
+        "peak_r": "0.54220",
+        "monetary_trailing_enabled": "false"
+      }
+    },
+    {
+      "file_line": 134,
+      "utc": "2026.09.24 09:45:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.61569",
+        "peak_r": "0.70506",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 135,
+      "utc": "2026.09.24 09:50:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.53525",
+        "peak_r": "0.70506",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 136,
+      "utc": "2026.09.24 09:55:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.44191",
+        "peak_r": "0.70506",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 137,
+      "utc": "2026.09.24 10:00:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.30586",
+        "peak_r": "0.70506",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 138,
+      "utc": "2026.09.24 10:01:01",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "from": "PRE_BANK_PROFIT",
+        "to": "PRE_BANK_GIVEBACK",
+        "current_r": "-0.02681",
+        "peak_r": "0.70506",
+        "banked": "false",
+        "original_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 139,
+      "utc": "2026.09.24 10:01:40",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "from": "PRE_BANK_GIVEBACK",
+        "to": "PRE_BANK_PROFIT",
+        "current_r": "0.07249",
+        "peak_r": "0.70506",
+        "recovered_profitable_state": "true"
+      }
+    },
+    {
+      "file_line": 140,
+      "utc": "2026.09.24 10:05:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.49355",
+        "peak_r": "0.70506",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 141,
+      "utc": "2026.09.24 10:10:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.53128",
+        "peak_r": "0.76763",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 142,
+      "utc": "2026.09.24 10:15:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.59186",
+        "peak_r": "0.76763",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 143,
+      "utc": "2026.09.24 10:20:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "PRE_BANK_PROFIT",
+        "current_r": "0.60675",
+        "peak_r": "0.85998",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 144,
+      "utc": "2026.09.24 10:23:21",
+      "event": "PARTIAL_BANK_1R",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "trigger_r": "1.00721",
+        "trigger_cash": "938.40",
+        "initial_risk": "931.68",
+        "requested_volume": "0.46000000",
+        "target_total": "0.46000000",
+        "closed_volume": "0.46000000",
+        "remaining_volume": "0.46000000",
+        "banked_net": "469.20",
+        "banked_r": "0.50360",
+        "retcode": "10009",
+        "api_ok": "true",
+        "broker_deals_authoritative": "true"
+      }
+    },
+    {
+      "file_line": 145,
+      "utc": "2026.09.24 10:23:21",
+      "event": "PAYOFF_STATE_TRANSITION",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "from": "PRE_BANK_PROFIT",
+        "to": "STRUCTURAL_RUNNER",
+        "event": "PARTIAL_BANK_1R",
+        "banking_confirmed_in_broker_history": "true",
+        "remaining_half_is_structural_runner": "true"
+      }
+    },
+    {
+      "file_line": 146,
+      "utc": "2026.09.24 10:23:21",
+      "event": "PARTIAL_EXIT_DEAL",
+      "ticket": "289384974",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "position_id": "405640859",
+        "final_exit": "false",
+        "original_risk_and_thesis_retained": "true"
+      }
+    },
+    {
+      "file_line": 147,
+      "utc": "2026.09.24 10:25:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "STRUCTURAL_RUNNER",
+        "current_r": "1.04667",
+        "peak_r": "1.05760",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 148,
+      "utc": "2026.09.24 10:30:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "STRUCTURAL_RUNNER",
+        "current_r": "1.24131",
+        "peak_r": "1.27607",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 149,
+      "utc": "2026.09.24 10:35:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "STRUCTURAL_RUNNER",
+        "current_r": "0.44985",
+        "peak_r": "1.30983",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    },
+    {
+      "file_line": 150,
+      "utc": "2026.09.24 10:40:00",
+      "event": "ENTRY_PROBATION_HEALTHY",
+      "ticket": "405640859",
+      "symbol": "XAUUSD.r",
+      "detail": {
+        "state": "STRUCTURAL_RUNNER",
+        "current_r": "-0.23734",
+        "peak_r": "1.30983",
+        "soft_bad_bars": "0",
+        "exit": "false",
+        "broker_structural_sl_retained": "true"
+      }
+    }
+  ],
+  "changes": {
+    "production_source": false,
+    "production_binary": false,
+    "permissions": false,
+    "fp_orders_sent_by_this_investigation": 0,
+    "fxify": false,
+    "collector": false
+  }
+}

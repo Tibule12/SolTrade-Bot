@@ -1,0 +1,217 @@
+{
+  "schema": "SOLTRADE_EVALUATOR_REPAIR_ARTIFACTS_V1",
+  "generated_utc": "2026-09-24T17:00:47.388316+00:00",
+  "implementation_commits": [
+    "8e99097",
+    "edbab00",
+    "2e63883",
+    "c324004",
+    "5753977"
+  ],
+  "files": {
+    "ops/forexvps/Read-Evaluator-Repair-Progress.ps1": {
+      "bytes": 1336,
+      "sha256": "9af178e747472a4b71a5d0dd05d7d5e73bdcbdce98c704401c814a8009f48e64"
+    },
+    "ops/forexvps/Repair-V3-Forward-Evaluator-20260924.ps1": {
+      "bytes": 13521,
+      "sha256": "0e841d83b71f2dded58af9b1e4729a8dc16abdf24d98b6b92059fe9631ab57ee"
+    },
+    "ops/forexvps/Run-V3-Forward-Evidence-Evaluator.ps1": {
+      "bytes": 35419,
+      "sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/bank-accounting.json": {
+      "bytes": 23733,
+      "sha256": "f62701392af1608e8a1b89deb76bd1acc283ede069e1063f58a5206a5a188604"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/bank-accounting.md": {
+      "bytes": 5005,
+      "sha256": "ff29f1a4d5f520f88ba5afa0ac291a9f1eb124ce6697bfbac8be467b6bad98c0"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/delivery-verification.json": {
+      "bytes": 3272,
+      "sha256": "196840a55b19a1d41995e61fcf43bd4e54e57c839d76a2a18d9b3927df7bd2e8"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/deployment.json": {
+      "bytes": 130675,
+      "sha256": "85b41cf76b43d54bd9b8625ad3753d8965f4534e2792b2d6b9ff6a13a93b5260"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/first-attempt/deployment.json": {
+      "bytes": 13466,
+      "sha256": "feb0512c0b8b4d28b4cb874415f1ff903f1bbba69c9f6a31674aee0a6f4f79e6"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/first-attempt/powershell-regression.json": {
+      "bytes": 2306,
+      "sha256": "e02f4715055054d8f9304ced964c3e0551810f119cff8af0ecbc5498758bd511"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/first-attempt/progress-probe.json": {
+      "bytes": 3650,
+      "sha256": "6df8ee2bce441f063434dbf6ea698f7fe0658dd3ed6e655c3df2f53f830bd81a"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/first-attempt/self-test.json": {
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/deployment.json": {
+      "bytes": 23035,
+      "sha256": "a11fbaecdb13531a7ddfe98161b581eed914796e39ddf6c625848c5d16aae07d"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/fourth-heartbeat.json": {
+      "bytes": 1233,
+      "sha256": "88e50b9aa85046d0dd58c60a1f7d30bd38919506f507cf93453e6a9a11accd01"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/latest-run-progress.json": {
+      "bytes": 1032,
+      "sha256": "f3dba98dcdf895193b145a29dc07dfb9047501b6db07d897ff2bacac4636187d"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/live-heartbeat-probe.json": {
+      "bytes": 1233,
+      "sha256": "88e50b9aa85046d0dd58c60a1f7d30bd38919506f507cf93453e6a9a11accd01"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/powershell-regression.json": {
+      "bytes": 2715,
+      "sha256": "98e0b6180c9403cda4aa56dd0fbe9f188fc84754456ab57e214a542f9acf477c"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/progress-probe.json": {
+      "bytes": 4065,
+      "sha256": "1e41a410fbc98d0f971f25839c985eb75e627c818230fefb628dbdb6f67e2476"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/self-test.json": {
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/task-after.xml": {
+      "bytes": 1634,
+      "sha256": "7d3c945c08c03f0ac42c809ec05e02f91dc5a57eb13a93b092d459b1297cff06"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/fourth-attempt/task-before.xml": {
+      "bytes": 1606,
+      "sha256": "244e84a0a14183f2311b1a9116a368f364a88e0c4399d44ac6533dedb697afd0"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/heartbeat.json": {
+      "bytes": 1233,
+      "sha256": "0b12d96c0598df5c369a8a5d48aac459328f26ba61e611adbdd121945f5f3f01"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/historical-parity.json": {
+      "bytes": 418,
+      "sha256": "05814388cceb96e2f40e2aafe90955c0d315f8c390b11789cd842e6fcd59016f"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/integrity-receipt.json": {
+      "bytes": 10477,
+      "sha256": "05c504ea410d639178ef96779162fe06294601994126175f3ca20e7af8529e5c"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/latest-run-progress.json": {
+      "bytes": 1032,
+      "sha256": "338faac14f569ec902e278561e8e6cc6daf0f2f2dfc6f2c2813ce5d41a753a84"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/local-powershell-regression.json": {
+      "bytes": 2039,
+      "sha256": "db1c41b480d9fbb0f37bcc6e0e565bcfb7dfd881a921fbd69ec52329515e3785"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/per-trade-evidence.csv": {
+      "bytes": 100086,
+      "sha256": "108030465c93b3f281d1b97942e364cd2d00c21061884c1d96afbc30ab6d620b"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/powershell-regression.json": {
+      "bytes": 2715,
+      "sha256": "98e0b6180c9403cda4aa56dd0fbe9f188fc84754456ab57e214a542f9acf477c"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/report.md": {
+      "bytes": 8522,
+      "sha256": "0d84775e5126604ef738048f8285c07c1aaf9e7175302d96a9899bfa87cf28c0"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/rolling-invalidation-summary.csv": {
+      "bytes": 3224,
+      "sha256": "a634ae5e077c1fe37bae0be005c304dfda81cfd7a2c4f925ed5ee9ff18e0f206"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/rolling-invalidation-summary.json": {
+      "bytes": 11169,
+      "sha256": "321c2244f5430c529662dae85d5985eb82ada1ecd71c411249d1c4ea64896ae5"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/rolling-v3-entry-summary.json": {
+      "bytes": 4963,
+      "sha256": "54a6ab98aefc7d433f673a6b6e64ceb09965dde005cb5a8afc7718cc42c58f09"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/schema-additions.json": {
+      "bytes": 1073,
+      "sha256": "de59d648a0421167449147b5d448ad526390e37836e095cf2ce448560136265d"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/second-attempt/deployment.json": {
+      "bytes": 13469,
+      "sha256": "ebbb1b5dbb01692bd422d0ba81bbfaea738fc711a73d1d2add27642cf22866fe"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/second-attempt/latest-run-progress.json": {
+      "bytes": 1032,
+      "sha256": "ecc1dec894d9cbb062b25f06ebfa7d158ffb457088aec04fb40bbd1884b60c9b"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/second-attempt/powershell-regression.json": {
+      "bytes": 2715,
+      "sha256": "98e0b6180c9403cda4aa56dd0fbe9f188fc84754456ab57e214a542f9acf477c"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/second-attempt/progress-probe.json": {
+      "bytes": 4065,
+      "sha256": "1e41a410fbc98d0f971f25839c985eb75e627c818230fefb628dbdb6f67e2476"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/second-attempt/self-test.json": {
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/self-test.json": {
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/sequence.json": {
+      "bytes": 353,
+      "sha256": "083f3a62518c3db9d1c8be01aa4e64e7c3d0c67d344fd11b54694f334b28d139"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/task-after.xml": {
+      "bytes": 1634,
+      "sha256": "7d3c945c08c03f0ac42c809ec05e02f91dc5a57eb13a93b092d459b1297cff06"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/test-results.json": {
+      "bytes": 3335,
+      "sha256": "4e2bd486ee5b962a260813c1d9c4ff31b2793698d6b2009f213cdc2f36bd3f1b"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/third-attempt/deployment.json": {
+      "bytes": 13618,
+      "sha256": "cc9fe3b551922a2f6de63eb1f6f5d08d71c5a930495c49a64197e810c207c767"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/third-attempt/latest-run-progress.json": {
+      "bytes": 624,
+      "sha256": "d885cc168020d7e37c4635f34334a6854f7e47fb5aeafb89b6c3503e30bf7749"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/third-attempt/powershell-regression.json": {
+      "bytes": 2715,
+      "sha256": "98e0b6180c9403cda4aa56dd0fbe9f188fc84754456ab57e214a542f9acf477c"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/third-attempt/progress-probe.json": {
+      "bytes": 4065,
+      "sha256": "1e41a410fbc98d0f971f25839c985eb75e627c818230fefb628dbdb6f67e2476"
+    },
+    "reports/fast-multi-market-v2/evaluator-repair-20260924/third-attempt/self-test.json": {
+      "bytes": 145,
+      "sha256": "2172c41df314694a56aa68f2fea9ebd0eb0ec80627d2b6fe505b7c2f10c157da"
+    },
+    "reports/fast-multi-market-v2/full-live-audit-20260924/audit.json": {
+      "bytes": 9988,
+      "sha256": "555c518560d9349b538542e40462fc9e90690fe77c4303e2f4a9e89cd7fc9b2d"
+    },
+    "reports/fast-multi-market-v2/full-live-audit-20260924/report.md": {
+      "bytes": 11480,
+      "sha256": "025333d6045ee2c06ca4f753a1a5c23b1dcb022105dbd25b3d08f41a5d159262"
+    },
+    "tests/Test-EvaluatorTaskXml.ps1": {
+      "bytes": 1706,
+      "sha256": "a3ff33493f70912a9c92dfb1f6f97ec136536b85e5bf91088bd18c504f84ab61"
+    },
+    "tests/Test-ForwardEvidenceEvaluator.ps1": {
+      "bytes": 11410,
+      "sha256": "98d75083e179ae80f2a07b444ba79cf46d3fb5f2eab31a7fa07749f817a293b4"
+    },
+    "tests/test_forward_evidence_evaluator.py": {
+      "bytes": 6122,
+      "sha256": "01ef6796e6aba2f6b5f59b4ccb926e61870edb7d5e7c7975a4f81ec2fbde31a4"
+    }
+  }
+}

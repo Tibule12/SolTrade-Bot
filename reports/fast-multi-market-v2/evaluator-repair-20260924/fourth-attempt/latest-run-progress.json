@@ -1,0 +1,22 @@
+{
+    "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_PROGRESS_V1",
+    "run_id":  "1e774ac8829541c7af667fef13bd73b9",
+    "started_utc":  "2026-09-24T16:39:21.1629163Z",
+    "updated_utc":  "2026-09-24T16:44:49.9491543Z",
+    "status":  "COMPLETED",
+    "stage":  "COMPLETE",
+    "elapsed_ms":  328570,
+    "completed_stage_ms":  {
+                               "LOAD_OUTCOMES":  421,
+                               "LOAD_EVENTS":  2861,
+                               "LOAD_LIFETIME_OBSERVATIONS":  192529,
+                               "INTEGRITY_CHECK":  33239,
+                               "SEQUENCE_CHECK":  666,
+                               "BUILD_PER_TRADE":  84338,
+                               "ROLLING_SUMMARIES":  11150,
+                               "PUBLISH_RESULTS":  616,
+                               "PUBLISH_HEARTBEAT":  299
+                           },
+    "evaluator_source_sha256":  "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+    "order_capability":  false
+}

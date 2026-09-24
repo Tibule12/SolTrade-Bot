@@ -1,0 +1,11 @@
+{
+    "schema":  "SOLTRADE_V3_FORWARD_SEQUENCE_V1",
+    "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+    "started_utc":  "2026-09-19T10:20:40.2229671Z",
+    "status":  "CLEAN",
+    "contamination_detected_utc":  null,
+    "contamination_reasons":  [
+
+                              ],
+    "last_run_utc":  "2026-09-24T16:55:47.9448125Z"
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "SOLTRADE_EVALUATOR_REPAIR_TESTS_V1",
+  "python_suite": {
+    "command": "SOLTRADE_PWSH=/tmp/soltrade-powershell-runtime/pwsh python3 -m unittest tests.test_forward_evidence_evaluator -v",
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 4.491
+  },
+  "powershell_regression": {
+    "schema": "SOLTRADE_FORWARD_EVALUATOR_REGRESSION_V1",
+    "status": "PASS",
+    "powershell_version": "7.6.6",
+    "source_sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+    "tests_passed": 31,
+    "checks": [
+      "one completed comparison",
+      "fractional saved R retained",
+      "no loss fabricated on improvement",
+      "fractional interrupted winner cost retained",
+      "interrupted winner not counted as saving",
+      "all post-invalidation recovery flags preserved",
+      "runner terminal beyond four hours preserved",
+      "odd three value median",
+      "odd seven value median",
+      "even median",
+      "empty median remains unavailable",
+      "duplicate terminal candidates collapse to latest result",
+      "latest terminal selected independent of input order",
+      "earliest entry event selected",
+      "earliest matching invalidation selected",
+      "last exact opportunity and timestamp observation selected",
+      "missing observation retains event evidence fallback",
+      "censored and incomplete outcomes excluded from known results",
+      "summary reports interrupted recoveries and large winners",
+      "aggregate delta remains signed and fractional",
+      "streamed shard import preserves sorted file and row order",
+      "streamed import retains quoted multiline fields",
+      "outcomes runner input assignment exists",
+      "outcomes actual loader preserves schema filtering",
+      "events runner input assignment exists",
+      "events actual loader preserves schema filtering",
+      "observations runner input assignment exists",
+      "observations actual loader preserves schema filtering",
+      "large workload produces all 1000 candidate comparisons",
+      "large workload preserves fractional accounting",
+      "large workload retains exact invalidation observations"
+    ],
+    "benchmark": {
+      "observations": 100000,
+      "events": 1250,
+      "outcomes": 1000,
+      "comparisons": 1000,
+      "build_per_trade_seconds": 5.6825804
+    },
+    "production_paths_read": false,
+    "orders_sent": 0,
+    "order_capability": false
+  },
+  "historical_parity": {
+    "status": "PASS",
+    "event_rows": 1004,
+    "outcome_rows": 88,
+    "comparison_rows": 88,
+    "unchanged_fields_per_row": 39,
+    "rows_with_corrected_fractional_R": 74,
+    "note": "Real archived events/outcomes; lifetime observation fixture omitted equally from both runs; exact observation matching covered by separate regression",
+    "source_sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69"
+  },
+  "loader_microbenchmark": {
+    "rows": 3000,
+    "properties": 151,
+    "old_ms": 746,
+    "new_ms": 67,
+    "selection_equal": true
+  },
+  "deployment_task_xml": {
+    "status": "PASS",
+    "checks": 6,
+    "purpose": "Permit only evaluator Settings.Priority and Settings.ExecutionTimeLimit; reject action, overlap-policy, trigger-limit and argument changes; omitted default priority and formatting permitted"
+  }
+}

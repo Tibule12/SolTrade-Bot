@@ -1,0 +1,180 @@
+﻿{
+    "schema":  "SOLTRADE_EVALUATOR_REPAIR_20260924_V1",
+    "status":  "FAILED",
+    "started_utc":  "2026-09-24T16:28:33.5301825Z",
+    "orders_sent_by_repair":  0,
+    "positions_modified_by_repair":  0,
+    "trading_logic_changed":  false,
+    "backup":  "C:\\SolTrade\\backups\\forward-evaluator-repair-20260924-162833",
+    "before":  {
+                   "captured_utc":  "2026-09-24T16:28:41.8427358Z",
+                   "identities":  {
+                                      "fp":  {
+                                                 "source_sha256":  "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+                                                 "binary_sha256":  "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+                                                 "pids":  [
+                                                              2892
+                                                          ]
+                                             },
+                                      "collector":  {
+                                                        "source_sha256":  "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261",
+                                                        "binary_sha256":  "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c",
+                                                        "pids":  [
+                                                                     3828
+                                                                 ]
+                                                    },
+                                      "tracker":  {
+                                                      "source_sha256":  "9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e",
+                                                      "binary_sha256":  "60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513",
+                                                      "pids":  [
+                                                                   7848
+                                                               ],
+                                                      "model_include_sha256":  "d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2",
+                                                      "candidates_sha256":  "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af"
+                                                  }
+                                  },
+                   "configuration_hashes":  {
+                                                "C:\\SolTrade\\state\\brain-collector-v1.ini":  "b675da70bdfe20b3b3015d8c10e864f2795fdb4abc2693dcd3dcea274b5b116f",
+                                                "C:\\SolTrade\\state\\fp-demo.ini":  "4013930489b64eb954a7677683d3a64f4a93fb65d4f1ca1f7cfd9aba101b661e",
+                                                "C:\\SolTrade\\state\\full-lifetime-tracker-v1.ini":  "30b2247e90a5de81a1dea5a054c0152438d2bfb3ee2ed6fbdef2c88d82bef8fd",
+                                                "C:\\SolTrade\\state\\fxify-100k.ini":  "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+                                                "C:\\SolTrade\\state\\fxify-10k.ini":  "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+                                                "C:\\SolTrade\\MT5-FP-DEMO\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV2-FPMarkets-demo.set":  "d1d0cd96eaeecb3063839b866e116b07a551de2bb63f3117408b91d6ac9373d5",
+                                                "C:\\SolTrade\\MT5-FXIFY-10K\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV201F10-ORDER-DISABLED.set":  "b4159096ae997b2b9ed029dab799a925f7169b45985672de3e1b257a3881f242",
+                                                "C:\\SolTrade\\MT5-FXIFY-100K\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV201F100-ORDER-DISABLED.set":  "dd87e2cc97e8433889493275fa339f8706cd8c99632507ca9044cd39f6239b2e",
+                                                "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Profiles\\Presets\\SolTradeBrainCollectorV1.set":  "4c3a852d4f42bd0e31ee6c29e5816ee96fb09a99603b2548c315d86429856ec5",
+                                                "C:\\SolTrade\\Research\\SolTrade-Full-Lifetime-Tracker-V1\\MQL5\\Profiles\\Presets\\SolTradeFullLifetimeTrackerV1.set":  "064aa33f9f8c7c83fca7dbb55a99f5b2f45bff13b39a9eeb5b9ffd28002db291"
+                                            },
+                   "fxify":  [
+                                 {
+                                     "name":  "fxify-10k",
+                                     "sha256":  "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+                                     "enabled_zero":  true,
+                                     "allow_live_zero":  true
+                                 },
+                                 {
+                                     "name":  "fxify-100k",
+                                     "sha256":  "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+                                     "enabled_zero":  true,
+                                     "allow_live_zero":  true
+                                 }
+                             ],
+                   "collector_heartbeat":  {
+                                               "schema":  "SOLTRADE_BRAIN_HEARTBEAT_V1",
+                                               "collector_version":  "1.0.0",
+                                               "status":  "COLLECTING",
+                                               "utc":  "1790267319",
+                                               "started_utc":  "2026.09.16 04:34:15",
+                                               "restart_count":  "1",
+                                               "account":  "7404213",
+                                               "server":  "FPMarketsSC-Demo",
+                                               "connected":  "true",
+                                               "terminal_trade_allowed":  "false",
+                                               "mql_trade_allowed":  "false",
+                                               "order_capability":  "false",
+                                               "total_ticks":  "10154767",
+                                               "total_features":  "2789124",
+                                               "copy_errors":  "0",
+                                               "symbols_configured":  "19",
+                                               "timer_milliseconds":  "200",
+                                               "feature_interval_seconds":  "5",
+                                               "server_offset_seconds":  "10800",
+                                               "storage_root":  "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Files\\SolTradeBrainCollectorV1\\",
+                                               "latest_state_utc":  "2026.09.24 16:28:34",
+                                               "build":  "2"
+                                           },
+                   "tracker_heartbeat":  {
+                                             "schema":  "SOLTRADE_V3_LIFETIME_HEARTBEAT_V2",
+                                             "tracker_version":  "1.1.0",
+                                             "model_id":  "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+                                             "status":  "COLLECTING_FULL_LIFETIMES",
+                                             "utc":  "1790267321",
+                                             "started_utc":  "2026.09.19 09:19:38",
+                                             "restart_count":  "6",
+                                             "account":  "7404213",
+                                             "server":  "FPMarketsSC-Demo",
+                                             "connected":  "true",
+                                             "terminal_trade_allowed":  "false",
+                                             "mql_trade_allowed":  "false",
+                                             "order_capability":  "false",
+                                             "total_ticks":  "5852675",
+                                             "total_opportunities":  "434",
+                                             "total_triggered":  "25",
+                                             "active_opportunities":  "0",
+                                             "active_positions":  "1",
+                                             "active_positions_over_four_hours":  "1",
+                                             "lifetime_observations":  "27538",
+                                             "completed_outcomes":  "24",
+                                             "right_censored_outcomes":  "0",
+                                             "position_time_limit":  "none",
+                                             "research_safety_horizon_days":  "0",
+                                             "copy_errors":  "0",
+                                             "symbols":  "19",
+                                             "state_utc":  "2026.09.24 16:28:41"
+                                         },
+                   "expected_identity_sha256":  "b3d78e85fd17a48a859deeebdb19830fd2b4a764a42bff9a8960f03686c2aa28",
+                   "model_json_sha256":  "55761589de93b64e11162cb36dccd143d66f685ddcf6d20485643e16c701d0e0",
+                   "schema_sha256":  "8808d50fa1050c918d78cfbb3b95fee130464c0dade3faec5128d4c0fe66c4f1"
+               },
+    "previous_source_sha256":  "04d183c3c6d26b2199e780757cf480acdc58bdaa6240271ccc591f817155316b",
+    "task_priority_before":  7,
+    "task_xml_before_sha256":  "244e84a0a14183f2311b1a9116a368f364a88e0c4399d44ac6533dedb697afd0",
+    "regression_receipt_reused":  true,
+    "sequence_before":  {
+                            "schema":  "SOLTRADE_V3_FORWARD_SEQUENCE_V1",
+                            "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                            "started_utc":  "2026-09-19T10:20:40.2229671Z",
+                            "status":  "CLEAN",
+                            "contamination_detected_utc":  null,
+                            "contamination_reasons":  [
+
+                                                      ],
+                            "last_run_utc":  "2026-09-24T16:21:56.6331157Z"
+                        },
+    "source_sha256":  "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+    "manual_run_seconds":  185.808,
+    "validated_manual_run_reused":  true,
+    "sequence_after":  {
+                           "schema":  "SOLTRADE_V3_FORWARD_SEQUENCE_V1",
+                           "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                           "started_utc":  "2026-09-19T10:20:40.2229671Z",
+                           "status":  "CLEAN",
+                           "contamination_detected_utc":  null,
+                           "contamination_reasons":  [
+
+                                                     ],
+                           "last_run_utc":  "2026-09-24T16:21:56.6331157Z"
+                       },
+    "manual_heartbeat":  {
+                             "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+                             "status":  "EVALUATING_FORWARD_EVIDENCE",
+                             "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+                             "utc":  1790266971,
+                             "completed_positions_evaluated":  24,
+                             "candidate_rows":  96,
+                             "integrity_status":  "CLEAN",
+                             "run_id":  "3338c0b5b4784973b3e78a72f862c5ba",
+                             "run_started_utc":  "2026-09-24T16:19:45.9119591Z",
+                             "run_finished_utc":  "2026-09-24T16:22:51.8839863Z",
+                             "run_elapsed_ms":  185808,
+                             "stage_durations_ms":  {
+                                                        "LOAD_OUTCOMES":  689,
+                                                        "LOAD_EVENTS":  1998,
+                                                        "LOAD_LIFETIME_OBSERVATIONS":  111236,
+                                                        "INTEGRITY_CHECK":  14926,
+                                                        "SEQUENCE_CHECK":  439,
+                                                        "BUILD_PER_TRADE":  42975,
+                                                        "ROLLING_SUMMARIES":  11291,
+                                                        "PUBLISH_RESULTS":  638
+                                                    },
+                             "evaluator_source_sha256":  "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+                             "order_capability":  false,
+                             "deployment_capability":  false,
+                             "tuning_enabled":  false
+                         },
+    "error":  "Scheduled evaluator failed: Running / 267014",
+    "error_detail":  "Scheduled evaluator failed: Running / 267014",
+    "source_rolled_back":  true,
+    "priority_rolled_back":  true,
+    "completed_utc":  "2026-09-24T16:35:10.3468446Z"
+}

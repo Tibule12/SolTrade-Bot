@@ -1,0 +1,6 @@
+﻿{
+    "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_SELF_TEST_V1",
+    "status":  "PASS",
+    "tests":  4,
+    "order_capability":  false
+}

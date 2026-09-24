@@ -261,5 +261,23 @@
     "tracker-outcomes-all.csv": "13e6aecd5585ac38ad4bc7f9c7a3cbdd113197b3a43c20f066b0dee19fe50949",
     "evaluator-heartbeat.json": "9e29a31af412a8618d79271ad015e1da408008309709a96cfe4a4fb0f20c2eab",
     "integrity-receipt.json": "fea79d3064e5899c2950863a5f2abc40b5b26f5c4e6437e0fc0dbad5068d5ac4"
+  },
+  "accounting_followup": {
+    "receipt": "../evaluator-repair-20260924/bank-accounting.json",
+    "confirmed_open_position_partial_banked_net": 469.2,
+    "residual_remaining_half_opening_commission_inferred": 2.76,
+    "broker_deal_charge_split_verified": false,
+    "reported_peak_r_definition": "executable price change / original structural price distance",
+    "bank1_trigger_definition": "commission-adjusted cash P&L / initial dollar risk",
+    "missed_eligible_usdjpy_bank_established": false,
+    "original_evidence_preserved": true
+  },
+  "evaluator_repair_followup": {
+    "report": "../evaluator-repair-20260924/report.md",
+    "status": "REPAIRED_AND_SCHEDULED_CLEAN",
+    "heartbeat_finished_utc": "2026-09-24T16:57:00.0865895Z",
+    "completed_positions": 24,
+    "candidate_rows": 96,
+    "protected_state_unchanged": true
   }
 }
