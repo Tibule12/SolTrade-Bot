@@ -91,11 +91,11 @@ try{
  # The default task priority 7 is BelowNormal. On this CPU-saturated host
  # scheduled PowerShell received almost no CPU before the four-minute timeout.
  # Normal priority 6 matches the successful interactive verification runs.
- $settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=6
+ $settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=6;$settings.ExecutionTimeLimit='PT8M'
  Set-ScheduledTask -TaskName $taskName -Settings $settings|Out-Null;$priorityChanged=$true
  Enable-ScheduledTask -TaskName $taskName|Out-Null;$taskDisabled=$false
  $runStart=[DateTimeOffset]::UtcNow.ToUnixTimeSeconds();Start-ScheduledTask -TaskName $taskName
- $deadline=[DateTime]::UtcNow.AddSeconds(240)
+ $deadline=[DateTime]::UtcNow.AddSeconds(490)
  do{Start-Sleep -Seconds 2;$task=Get-ScheduledTask -TaskName $taskName;$info=Get-ScheduledTaskInfo -TaskName $taskName}while($task.State-eq 'Running' -and [DateTime]::UtcNow-lt $deadline)
  if($task.State-eq 'Running' -or $info.LastTaskResult-ne 0){throw "Scheduled evaluator failed: $($task.State) / $($info.LastTaskResult)"}
  $finalHeartbeat=Json "$evaluatorHome\status\heartbeat.json"
@@ -103,9 +103,9 @@ try{
  $after=Snapshot;$receipt.after=$after
  foreach($key in @('identities','configuration_hashes','fxify','expected_identity_sha256','model_json_sha256','schema_sha256')){if(($before[$key]|ConvertTo-Json -Depth 15 -Compress)-cne ($after[$key]|ConvertTo-Json -Depth 15 -Compress)){throw "Protected state changed: $key"}}
  Export-ScheduledTask -TaskName $taskName|Set-Content -Encoding UTF8 "$out\task-after.xml"
- $oldXml=[IO.File]::ReadAllText("$backup\task.xml") -replace '<Priority>\d+</Priority>','<Priority>6</Priority>'
- if($oldXml-cne [IO.File]::ReadAllText("$out\task-after.xml")){throw 'Evaluator task changed beyond intended priority adjustment'}
- $receipt.schedule=[ordered]@{task_name=$taskName;state=[string]$task.State;last_result=$info.LastTaskResult;last_run_utc=$info.LastRunTime.ToUniversalTime().ToString('o');next_run_utc=$info.NextRunTime.ToUniversalTime().ToString('o');execution_time_limit=[string]$task.Settings.ExecutionTimeLimit;triggers=$task.Triggers;principal=$task.Principal;priority=$task.Settings.Priority;only_priority_changed=$true}
+ $oldXml=([IO.File]::ReadAllText("$backup\task.xml") -replace '<Priority>\d+</Priority>','<Priority>6</Priority>') -replace '<ExecutionTimeLimit>[^<]+</ExecutionTimeLimit>','<ExecutionTimeLimit>PT8M</ExecutionTimeLimit>'
+ if($oldXml-cne [IO.File]::ReadAllText("$out\task-after.xml")){throw 'Evaluator task changed beyond intended priority/runtime allowance'}
+ $receipt.schedule=[ordered]@{task_name=$taskName;state=[string]$task.State;last_result=$info.LastTaskResult;last_run_utc=$info.LastRunTime.ToUniversalTime().ToString('o');next_run_utc=$info.NextRunTime.ToUniversalTime().ToString('o');execution_time_limit=[string]$task.Settings.ExecutionTimeLimit;triggers=$task.Triggers;principal=$task.Principal;priority=$task.Settings.Priority;only_priority_and_runtime_limit_changed=$true}
  foreach($file in @('per-trade-evidence.csv','rolling-invalidation-summary.csv','rolling-invalidation-summary.json','rolling-v3-entry-summary.json','integrity-receipt.json')){Copy-Item -Force -LiteralPath "$evaluatorHome\output\$file" -Destination "$out\$file"}
  Copy-Item -Force -LiteralPath "$evaluatorHome\status\heartbeat.json" -Destination "$out\heartbeat.json"
  Copy-Item -Force -LiteralPath "$evaluatorHome\state\sequence.json" -Destination "$out\sequence.json"
@@ -113,7 +113,7 @@ try{
 }catch{
  $receipt.status='FAILED';$receipt.error=$_.Exception.Message;$receipt.error_detail=[string]$_
  if($replaced){Stop-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue;Copy-Item -Force -LiteralPath "$backup\Run-V3-Forward-Evidence-Evaluator.ps1" -Destination $destination;$receipt.source_rolled_back=$true}
- if($priorityChanged){$settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=$priorityBefore;Set-ScheduledTask -TaskName $taskName -Settings $settings|Out-Null;$receipt.priority_rolled_back=$true}
+ if($priorityChanged){$settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=$priorityBefore;$settings.ExecutionTimeLimit='PT4M';Set-ScheduledTask -TaskName $taskName -Settings $settings|Out-Null;$receipt.priority_rolled_back=$true}
 }finally{
  if($taskDisabled){Enable-ScheduledTask -TaskName $taskName|Out-Null}
  $receipt.completed_utc=[DateTime]::UtcNow.ToString('o');Save
