@@ -1,0 +1,12 @@
+{
+    "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+    "status":  "EVALUATING_FORWARD_EVIDENCE",
+    "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+    "utc":  1790141097,
+    "completed_positions_evaluated":  15,
+    "candidate_rows":  60,
+    "integrity_status":  "CLEAN",
+    "order_capability":  false,
+    "deployment_capability":  false,
+    "tuning_enabled":  false
+}
