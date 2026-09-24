@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param()
+param([switch]$ReuseValidatedRun)
 $ErrorActionPreference='Stop'
 Set-StrictMode -Version 2.0
 $repo=Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
@@ -12,7 +12,7 @@ New-Item -ItemType Directory -Force -Path $out|Out-Null
 $stamp=[DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss')
 $backup="C:\SolTrade\backups\forward-evaluator-repair-$stamp"
 $receipt=[ordered]@{schema='SOLTRADE_EVALUATOR_REPAIR_20260924_V1';status='PREPARING';started_utc=[DateTime]::UtcNow.ToString('o');orders_sent_by_repair=0;positions_modified_by_repair=0;trading_logic_changed=$false;backup=$backup}
-$taskDisabled=$false;$replaced=$false
+$taskDisabled=$false;$replaced=$false;$priorityChanged=$false
 function Sha([string]$Path){if(Test-Path -LiteralPath $Path){(Get-FileHash -Algorithm SHA256 -LiteralPath $Path).Hash.ToLowerInvariant()}else{$null}}
 function Json([string]$Path){if(Test-Path -LiteralPath $Path){Get-Content -Raw -LiteralPath $Path|ConvertFrom-Json}else{$null}}
 function Pair([string]$Path){if(Test-Path -LiteralPath $Path){$lines=@(Get-Content -LiteralPath $Path -TotalCount 2);if($lines.Count-eq 2){$lines|ConvertFrom-Csv|Select-Object -First 1}}}
@@ -46,6 +46,7 @@ try{
  $receipt.previous_source_sha256=Sha $destination
  if($receipt.previous_source_sha256-ne '04d183c3c6d26b2199e780757cf480acdc58bdaa6240271ccc591f817155316b'){throw 'Evaluator is not the reviewed pre-repair version'}
  $task=Get-ScheduledTask -TaskName $taskName
+ $priorityBefore=$task.Settings.Priority;$receipt.task_priority_before=$priorityBefore
  $receipt.task_xml_before_sha256=$null
  New-Item -ItemType Directory -Force -Path $backup|Out-Null
  Export-ScheduledTask -TaskName $taskName|Set-Content -Encoding UTF8 "$backup\task.xml"
@@ -57,8 +58,11 @@ try{
  $receipt.status='TESTING';Save
  & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$stage\evaluator.ps1" -SelfTest|Set-Content -Encoding UTF8 "$out\self-test.json"
  if($LASTEXITCODE-ne 0){throw 'Evaluator self-test failed'}
- & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$stage\regression.ps1" -EvaluatorPath "$stage\evaluator.ps1" -OutputPath "$out\powershell-regression.json" -ObservationCount 1000
- if($LASTEXITCODE-ne 0){throw 'Windows PowerShell regression failed'}
+ $priorRegression=Json "$out\powershell-regression.json"
+ if($ReuseValidatedRun -and $null-ne $priorRegression -and $priorRegression.status-eq 'PASS' -and $priorRegression.tests_passed-ge 31 -and $priorRegression.source_sha256-eq (Sha "$stage\evaluator.ps1")){$receipt.regression_receipt_reused=$true}else{
+  & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$stage\regression.ps1" -EvaluatorPath "$stage\evaluator.ps1" -OutputPath "$out\powershell-regression.json" -ObservationCount 1000
+  if($LASTEXITCODE-ne 0){throw 'Windows PowerShell regression failed'}
+ }
  Disable-ScheduledTask -TaskName $taskName|Out-Null;$taskDisabled=$true
  Stop-ScheduledTask -TaskName $taskName
  $deadline=[DateTime]::UtcNow.AddSeconds(15)
@@ -71,16 +75,24 @@ try{
  $receipt.source_sha256=Sha $destination
  if($receipt.source_sha256-ne (Sha $source)){throw 'Deployed evaluator hash differs from source'}
  $receipt.status='RUNNING_REPAIRED_EVALUATOR';Save
- $timer=[Diagnostics.Stopwatch]::StartNew()
- & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $destination
- $timer.Stop();$receipt.manual_run_seconds=$timer.Elapsed.TotalSeconds
- if($LASTEXITCODE-ne 0){throw "Repaired evaluator returned $LASTEXITCODE"}
- if($timer.Elapsed.TotalSeconds-ge 240){throw 'Evaluator exceeded existing four-minute task budget'}
+ $priorHeartbeat=Json "$evaluatorHome\status\heartbeat.json"
+ if($ReuseValidatedRun -and $null-ne $priorHeartbeat -and $priorHeartbeat.PSObject.Properties.Name-contains 'evaluator_source_sha256' -and $priorHeartbeat.evaluator_source_sha256-eq $receipt.source_sha256 -and $priorHeartbeat.integrity_status-eq 'CLEAN' -and ([DateTimeOffset]::UtcNow.ToUnixTimeSeconds()-[long]$priorHeartbeat.utc)-lt 1800){$receipt.manual_run_seconds=[double]$priorHeartbeat.run_elapsed_ms/1000.0;$receipt.validated_manual_run_reused=$true}else{
+  $timer=[Diagnostics.Stopwatch]::StartNew()
+  & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $destination
+  $timer.Stop();$receipt.manual_run_seconds=$timer.Elapsed.TotalSeconds
+  if($LASTEXITCODE-ne 0){throw "Repaired evaluator returned $LASTEXITCODE"}
+ }
+ if($receipt.manual_run_seconds-ge 240){throw 'Evaluator exceeded existing four-minute task budget'}
  $heartbeat=Json "$evaluatorHome\status\heartbeat.json";$integrity=Json "$evaluatorHome\output\integrity-receipt.json"
  if($heartbeat.integrity_status-ne 'CLEAN' -or $integrity.status-ne 'CLEAN'){throw 'Evaluator did not publish clean results'}
  $sequenceAfter=Json "$evaluatorHome\state\sequence.json"
  if($sequenceAfter.sequence_id-ne $sequenceBefore.sequence_id -or $sequenceAfter.started_utc-ne $sequenceBefore.started_utc){throw 'Existing evidence sequence was reset'}
  $receipt.sequence_after=$sequenceAfter;$receipt.manual_heartbeat=$heartbeat
+ # The default task priority 7 is BelowNormal. On this CPU-saturated host
+ # scheduled PowerShell received almost no CPU before the four-minute timeout.
+ # Normal priority 6 matches the successful interactive verification runs.
+ $settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=6
+ Set-ScheduledTask -TaskName $taskName -Settings $settings|Out-Null;$priorityChanged=$true
  Enable-ScheduledTask -TaskName $taskName|Out-Null;$taskDisabled=$false
  $runStart=[DateTimeOffset]::UtcNow.ToUnixTimeSeconds();Start-ScheduledTask -TaskName $taskName
  $deadline=[DateTime]::UtcNow.AddSeconds(240)
@@ -91,8 +103,9 @@ try{
  $after=Snapshot;$receipt.after=$after
  foreach($key in @('identities','configuration_hashes','fxify','expected_identity_sha256','model_json_sha256','schema_sha256')){if(($before[$key]|ConvertTo-Json -Depth 15 -Compress)-cne ($after[$key]|ConvertTo-Json -Depth 15 -Compress)){throw "Protected state changed: $key"}}
  Export-ScheduledTask -TaskName $taskName|Set-Content -Encoding UTF8 "$out\task-after.xml"
- if((Sha "$out\task-after.xml")-ne $receipt.task_xml_before_sha256){throw 'Evaluator schedule definition changed'}
- $receipt.schedule=[ordered]@{task_name=$taskName;state=[string]$task.State;last_result=$info.LastTaskResult;last_run_utc=$info.LastRunTime.ToUniversalTime().ToString('o');next_run_utc=$info.NextRunTime.ToUniversalTime().ToString('o');execution_time_limit=[string]$task.Settings.ExecutionTimeLimit;triggers=$task.Triggers;principal=$task.Principal;definition_unchanged=$true}
+ $oldXml=[IO.File]::ReadAllText("$backup\task.xml") -replace '<Priority>\d+</Priority>','<Priority>6</Priority>'
+ if($oldXml-cne [IO.File]::ReadAllText("$out\task-after.xml")){throw 'Evaluator task changed beyond intended priority adjustment'}
+ $receipt.schedule=[ordered]@{task_name=$taskName;state=[string]$task.State;last_result=$info.LastTaskResult;last_run_utc=$info.LastRunTime.ToUniversalTime().ToString('o');next_run_utc=$info.NextRunTime.ToUniversalTime().ToString('o');execution_time_limit=[string]$task.Settings.ExecutionTimeLimit;triggers=$task.Triggers;principal=$task.Principal;priority=$task.Settings.Priority;only_priority_changed=$true}
  foreach($file in @('per-trade-evidence.csv','rolling-invalidation-summary.csv','rolling-invalidation-summary.json','rolling-v3-entry-summary.json','integrity-receipt.json')){Copy-Item -Force -LiteralPath "$evaluatorHome\output\$file" -Destination "$out\$file"}
  Copy-Item -Force -LiteralPath "$evaluatorHome\status\heartbeat.json" -Destination "$out\heartbeat.json"
  Copy-Item -Force -LiteralPath "$evaluatorHome\state\sequence.json" -Destination "$out\sequence.json"
@@ -100,6 +113,7 @@ try{
 }catch{
  $receipt.status='FAILED';$receipt.error=$_.Exception.Message;$receipt.error_detail=[string]$_
  if($replaced){Stop-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue;Copy-Item -Force -LiteralPath "$backup\Run-V3-Forward-Evidence-Evaluator.ps1" -Destination $destination;$receipt.source_rolled_back=$true}
+ if($priorityChanged){$settings=(Get-ScheduledTask -TaskName $taskName).Settings;$settings.Priority=$priorityBefore;Set-ScheduledTask -TaskName $taskName -Settings $settings|Out-Null;$receipt.priority_rolled_back=$true}
 }finally{
  if($taskDisabled){Enable-ScheduledTask -TaskName $taskName|Out-Null}
  $receipt.completed_utc=[DateTime]::UtcNow.ToString('o');Save
