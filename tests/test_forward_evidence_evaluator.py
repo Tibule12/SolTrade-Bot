@@ -79,7 +79,7 @@ class ForwardEvidenceTests(unittest.TestCase):
         ], check=True, capture_output=True, text=True, timeout=90)
         receipt = json.loads(result.stdout)
         self.assertEqual(receipt["status"], "PASS")
-        self.assertGreaterEqual(receipt["tests_passed"], 25)
+        self.assertGreaterEqual(receipt["tests_passed"], 31)
         self.assertEqual(receipt["benchmark"]["comparisons"], 1000)
         self.assertFalse(receipt["production_paths_read"])
 

@@ -130,11 +130,11 @@ try{$lock=[IO.File]::Open($lockPath,[IO.FileMode]::OpenOrCreate,[IO.FileAccess]:
 $runId=[Guid]::NewGuid().ToString('N');$runStartedUtc=Iso-Now;$runClock=[Diagnostics.Stopwatch]::StartNew();$stageClock=[Diagnostics.Stopwatch]::StartNew();$stageDurations=[ordered]@{};$runStage='';$evaluatorSourceHash=Sha $PSCommandPath
 try{
  Update-RunProgress 'LOAD_OUTCOMES'
- $Expected=Get-Content -Raw -LiteralPath $ExpectedIdentityPath|ConvertFrom-Json;$trackerData=Join-Path $TrackerHome 'MQL5\Files\SolTradeFullLifetimeTrackerV1';$outcomes=@(Import-TreeCsv (Join-Path $trackerData 'outcomes')|Where-Object{$_.PSObject.Properties.Name -contains 'outcome_status'})
+ $Expected=Get-Content -Raw -LiteralPath $ExpectedIdentityPath|ConvertFrom-Json;$trackerData=Join-Path $TrackerHome 'MQL5\Files\SolTradeFullLifetimeTrackerV1';$outcomes=@(Import-TreeCsv (Join-Path $trackerData 'outcomes')|Where-Object{$null -ne $_.PSObject.Properties['outcome_status']})
  Update-RunProgress 'LOAD_EVENTS'
- $events=@(Import-TreeCsv (Join-Path $trackerData 'events')|Where-Object{$_.PSObject.Properties.Name -contains 'event'})
+ $events=@(Import-TreeCsv (Join-Path $trackerData 'events')|Where-Object{$null -ne $_.PSObject.Properties['event']})
  Update-RunProgress 'LOAD_LIFETIME_OBSERVATIONS'
- $observations=@(Import-TreeCsv (Join-Path $trackerData 'lifetime_observations')|Where-Object{$_.PSObject.Properties.Name -contains 'observation_utc_msc'})
+ $observations=@(Import-TreeCsv (Join-Path $trackerData 'lifetime_observations')|Where-Object{$null -ne $_.PSObject.Properties['observation_utc_msc']})
  Update-RunProgress 'INTEGRITY_CHECK'
  $integrity=Integrity-Check -Expected $Expected -Outcomes $outcomes -Events $events -Observations $observations
  Update-RunProgress 'SEQUENCE_CHECK'

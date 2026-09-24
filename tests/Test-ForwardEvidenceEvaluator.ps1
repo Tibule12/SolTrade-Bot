@@ -70,6 +70,22 @@ try{
  $imported=@(Import-TreeCsv $tempRoot)
  Check ($imported.Count-eq 3-and $imported[0].sequence-eq '1'-and $imported[2].sequence-eq '3') 'streamed shard import preserves sorted file and row order'
  Check ($imported[0].detail-eq "quoted`nmultiline") 'streamed import retains quoted multiline fields'
+ # Execute the runner's real input assignments against isolated shards. This
+ # checks schema filtering, including case-insensitive property lookup, without
+ # running the scheduler or reading production paths.
+ $trackerData=Join-Path $tempRoot 'tracker-fixture'
+ $ast=[System.Management.Automation.Language.Parser]::ParseInput($source,[ref]$null,[ref]$null)
+ foreach($fixture in @(@('outcomes','outcome_status'),@('events','event'),@('observations','observation_utc_msc'))){
+  $variable=$fixture[0];$field=$fixture[1];$folder=if($variable-eq 'observations'){'lifetime_observations'}else{$variable}
+  $dir=Join-Path $trackerData $folder;New-Item -ItemType Directory -Force -Path $dir|Out-Null
+  @([pscustomobject]@{$field='valid'})|Export-Csv -LiteralPath (Join-Path $dir 'a.csv') -NoTypeInformation
+  @([pscustomobject]@{$field.ToUpperInvariant()='case-insensitive'})|Export-Csv -LiteralPath (Join-Path $dir 'b.csv') -NoTypeInformation
+  @([pscustomobject]@{unrelated='skip'})|Export-Csv -LiteralPath (Join-Path $dir 'c.csv') -NoTypeInformation
+  $assignment=$ast.Find({param($node) $node-is [System.Management.Automation.Language.AssignmentStatementAst] -and $node.Left-is [System.Management.Automation.Language.VariableExpressionAst] -and $node.Left.VariablePath.UserPath-eq $variable},$true)
+  Check ($null-ne $assignment) "$variable runner input assignment exists"
+  $selected=@(& ([scriptblock]::Create($assignment.Right.Extent.Text)))
+  Check ($selected.Count-eq 2-and $selected[0].$field-eq 'valid'-and $selected[1].$field-eq 'case-insensitive') "$variable actual loader preserves schema filtering"
+ }
 }finally{if(Test-Path -LiteralPath $tempRoot){Remove-Item -LiteralPath $tempRoot -Recurse -Force}}
 
 # Representative workload, no production files: 250 completed trades, all four candidates,
