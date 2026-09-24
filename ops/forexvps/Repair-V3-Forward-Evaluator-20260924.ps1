@@ -17,6 +17,17 @@ function Sha([string]$Path){if(Test-Path -LiteralPath $Path){(Get-FileHash -Algo
 function Json([string]$Path){if(Test-Path -LiteralPath $Path){Get-Content -Raw -LiteralPath $Path|ConvertFrom-Json}else{$null}}
 function Pair([string]$Path){if(Test-Path -LiteralPath $Path){$lines=@(Get-Content -LiteralPath $Path -TotalCount 2);if($lines.Count-eq 2){$lines|ConvertFrom-Csv|Select-Object -First 1}}}
 function Save{$receipt|ConvertTo-Json -Depth 30|Set-Content -Encoding UTF8 -LiteralPath "$out\deployment.json"}
+function StableTaskXml([string]$Text){
+ # Task Scheduler omits default priority 7, but emits explicit priority 6.
+ # Compare the XML tree after removing only the two authorized settings.
+ $doc=New-Object System.Xml.XmlDocument
+ $doc.PreserveWhitespace=$false;$doc.LoadXml($Text)
+ foreach($name in @('Priority','ExecutionTimeLimit')){
+  $node=$doc.SelectSingleNode("/*[local-name()='Task']/*[local-name()='Settings']/*[local-name()='$name']")
+  if($null-ne $node){[void]$node.ParentNode.RemoveChild($node)}
+ }
+ $doc.OuterXml
+}
 function Snapshot{
  $processes=@(Get-CimInstance Win32_Process -Filter "Name='terminal64.exe'")
  $identities=[ordered]@{}
@@ -82,7 +93,7 @@ try{
   $timer.Stop();$receipt.manual_run_seconds=$timer.Elapsed.TotalSeconds
   if($LASTEXITCODE-ne 0){throw "Repaired evaluator returned $LASTEXITCODE"}
  }
- if($receipt.manual_run_seconds-ge 240){throw 'Evaluator exceeded existing four-minute task budget'}
+ if($receipt.manual_run_seconds-ge 480){throw 'Evaluator exceeded repaired eight-minute task budget'}
  $heartbeat=Json "$evaluatorHome\status\heartbeat.json";$integrity=Json "$evaluatorHome\output\integrity-receipt.json"
  if($heartbeat.integrity_status-ne 'CLEAN' -or $integrity.status-ne 'CLEAN'){throw 'Evaluator did not publish clean results'}
  $sequenceAfter=Json "$evaluatorHome\state\sequence.json"
@@ -103,8 +114,8 @@ try{
  $after=Snapshot;$receipt.after=$after
  foreach($key in @('identities','configuration_hashes','fxify','expected_identity_sha256','model_json_sha256','schema_sha256')){if(($before[$key]|ConvertTo-Json -Depth 15 -Compress)-cne ($after[$key]|ConvertTo-Json -Depth 15 -Compress)){throw "Protected state changed: $key"}}
  Export-ScheduledTask -TaskName $taskName|Set-Content -Encoding UTF8 "$out\task-after.xml"
- $oldXml=([IO.File]::ReadAllText("$backup\task.xml") -replace '<Priority>\d+</Priority>','<Priority>6</Priority>') -replace '<ExecutionTimeLimit>[^<]+</ExecutionTimeLimit>','<ExecutionTimeLimit>PT8M</ExecutionTimeLimit>'
- if($oldXml-cne [IO.File]::ReadAllText("$out\task-after.xml")){throw 'Evaluator task changed beyond intended priority/runtime allowance'}
+ if($task.Settings.Priority-ne 6 -or $task.Settings.ExecutionTimeLimit-ne 'PT8M'){throw 'Evaluator priority/runtime allowance was not applied'}
+ if((StableTaskXml ([IO.File]::ReadAllText("$backup\task.xml")))-cne (StableTaskXml ([IO.File]::ReadAllText("$out\task-after.xml")))){throw 'Evaluator task changed beyond intended priority/runtime allowance'}
  $receipt.schedule=[ordered]@{task_name=$taskName;state=[string]$task.State;last_result=$info.LastTaskResult;last_run_utc=$info.LastRunTime.ToUniversalTime().ToString('o');next_run_utc=$info.NextRunTime.ToUniversalTime().ToString('o');execution_time_limit=[string]$task.Settings.ExecutionTimeLimit;triggers=$task.Triggers;principal=$task.Principal;priority=$task.Settings.Priority;only_priority_and_runtime_limit_changed=$true}
  foreach($file in @('per-trade-evidence.csv','rolling-invalidation-summary.csv','rolling-invalidation-summary.json','rolling-v3-entry-summary.json','integrity-receipt.json')){Copy-Item -Force -LiteralPath "$evaluatorHome\output\$file" -Destination "$out\$file"}
  Copy-Item -Force -LiteralPath "$evaluatorHome\status\heartbeat.json" -Destination "$out\heartbeat.json"

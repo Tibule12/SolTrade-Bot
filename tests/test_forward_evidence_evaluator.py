@@ -83,6 +83,15 @@ class ForwardEvidenceTests(unittest.TestCase):
         self.assertEqual(receipt["benchmark"]["comparisons"], 1000)
         self.assertFalse(receipt["production_paths_read"])
 
+    @unittest.skipUnless(PWSH, "Set SOLTRADE_PWSH for deployment XML regression checks")
+    def test_task_verification_allows_only_intended_settings(self):
+        result = subprocess.run([
+            PWSH, "-NoProfile", "-File", str(ROOT / "tests/Test-EvaluatorTaskXml.ps1"),
+        ], check=True, capture_output=True, text=True, timeout=30)
+        receipt = json.loads(result.stdout)
+        self.assertEqual(receipt["status"], "PASS")
+        self.assertEqual(receipt["checks"], 6)
+
     def test_drawdown_and_robustness_are_chronological(self):
         self.assertEqual(max_drawdown([1.0, -2.0, 0.5, -1.0]), 2.5)
 
