@@ -1,0 +1,145 @@
+{
+  "schema": "FP_OPERATIONAL_AUDIT_20260930_V1",
+  "captured_utc": "2026-09-30T17:28:21.3776747Z",
+  "fresh_runtime": {
+    "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+    "timestamp_utc": "2026.09.30 17:28:20",
+    "setup_active": "true",
+    "login": "7404213",
+    "server": "FPMarketsSC-Demo",
+    "account_mode_demo": "true",
+    "real_accounts_blocked": "true",
+    "entry_permission": "BLOCKED_NO_OWNERSHIP",
+    "demo_only": "true",
+    "scanner_active": "true",
+    "autonomous_entry": "false",
+    "ownership_permit": "BLOCKED",
+    "owner_instance_id": "vps-fp-prod",
+    "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+    "owner_host": "fxut9756438",
+    "owner_account": "7404213",
+    "lease_id": "",
+    "lease_acquired_epoch": "0",
+    "lease_renewed_epoch": "0",
+    "lease_expires_epoch": "0",
+    "connected": "true",
+    "positions": "1",
+    "orders": "0",
+    "equity": "95206.46",
+    "portfolio_risk_amount": "1693.19",
+    "portfolio_risk_percent": "1.7784",
+    "portfolio_risk_known": "true",
+    "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+    "status": "NO_TRADE",
+    "v1_gross": "-1031.03",
+    "v1_commission": "-172.38",
+    "v1_swap": "0.00",
+    "v1_net": "-1203.41",
+    "v2_epoch_server": "1787998044"
+  },
+  "prior_runtime": {
+    "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+    "timestamp_utc": "2026.09.24 11:16:00",
+    "setup_active": "true",
+    "login": "7404213",
+    "server": "FPMarketsSC-Demo",
+    "account_mode_demo": "true",
+    "real_accounts_blocked": "true",
+    "entry_permission": "BLOCKED_NO_OWNERSHIP",
+    "demo_only": "true",
+    "scanner_active": "true",
+    "autonomous_entry": "false",
+    "ownership_permit": "BLOCKED",
+    "owner_instance_id": "vps-fp-prod",
+    "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+    "owner_host": "fxut9756438",
+    "owner_account": "7404213",
+    "lease_id": "",
+    "lease_acquired_epoch": "0",
+    "lease_renewed_epoch": "1790248549",
+    "lease_expires_epoch": "1790248549",
+    "connected": "true",
+    "positions": "1",
+    "orders": "0",
+    "equity": "94073.00",
+    "portfolio_risk_amount": "308.20",
+    "portfolio_risk_percent": "0.3276",
+    "portfolio_risk_known": "true",
+    "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+    "status": "NO_TRADE",
+    "v1_gross": "-1031.03",
+    "v1_commission": "-172.38",
+    "v1_swap": "0.00",
+    "v1_net": "-1203.41",
+    "v2_epoch_server": "1787998044"
+  },
+  "frozen_identity": {
+    "source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+    "binary_sha256": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+    "pids": [
+      2892
+    ]
+  },
+  "same_runtime_id": true,
+  "known_open_position_from_entry_and_absent_exit": {
+    "position_id": "408708254",
+    "symbol": "GER40",
+    "direction": "SELL",
+    "entry_utc": "2026.09.30 15:41:33",
+    "entry_price": 25209.75,
+    "original_stop": 25254.4,
+    "original_volume": 18.63,
+    "initial_risk_cash": 944.54,
+    "entry_event_line": 2827,
+    "latest_state_event_utc": "2026.09.30 17:25:00",
+    "latest_state_event_line": 2868,
+    "latest_state_detail": "state=PRE_BANK_PROFIT;current_r=0.70549;peak_r=0.81747;soft_bad_bars=0;exit=false;broker_structural_sl_retained=true",
+    "caveat": "Position identity inferred from latest unmatched owned entry and runtime count1; fresh broker position detail not part of captured runtime."
+  },
+  "correction_to_prior_report": {
+    "path": "reports/fast-multi-market-v2/full-live-audit-20260924/report.md",
+    "lines": [
+      3,
+      58
+    ],
+    "claim": "FP autonomous and ownership-granted",
+    "contradicting_artifact": "reports/fast-multi-market-v2/full-live-audit-20260924/evidence/snapshot.json",
+    "actual": "At2026.09.24 11:16:00UTC captured entry_permission=BLOCKED_NO_OWNERSHIP,autonomous_entry=false,ownership_permit=BLOCKED.",
+    "conclusion": "Prior report overclaimed current authority. Fresh Sep30 capture is also blocked. Entries after Sep24 establish some intervening authority, not continuous blocking."
+  },
+  "ownership_action_scope": {
+    "entry_source_line": 2693,
+    "bank1_source_line": 2213,
+    "discretionary_exit_source_line": 2367,
+    "runner_stop_update_source_line": 2569,
+    "consequence": "A failed ownership verification blocks all those attempted actions. Existing broker stop is not removed by this block."
+  },
+  "portfolio_risk_definition": {
+    "source_lines": [
+      1655,
+      1667
+    ],
+    "definition": "Cash movement from current executable quote to existing broker SL, not entry-to-SL initial cash risk. It includes open profit that could be surrendered."
+  },
+  "unknowns": [
+    "First ownership-loss time/reason needs ACCOUNT_OWNERSHIP_* lifecycle or expert log.",
+    "Scheduled-task query null-method error does not demonstrate task absence.",
+    "Runtime and entry/evidence timestamps are not an atomic broker-position snapshot."
+  ],
+  "source_files": [
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260924/evidence/snapshot.json",
+      "sha256": "1f018542716bd3b07acb312fd492ab4715e1c71d5970c3302dc84b541ee0adb9"
+    },
+    {
+      "path": "ops/forexvps/remote-output/full-readonly-audit-20260930/snapshot-before.json",
+      "sha256": "92f47015541b76d8c076f4a4dbdd0666d3f0f70f7895968507ae03d7c4b58708"
+    },
+    {
+      "path": "ops/forexvps/remote-output/full-readonly-audit-20260930/fp-evidence.csv",
+      "sha256": "95438275857dba860ad3fef85adcdc0a0f154fda144809695a65cb77df723a22"
+    }
+  ],
+  "production_changes": false,
+  "orders_sent_by_analysis": 0
+}

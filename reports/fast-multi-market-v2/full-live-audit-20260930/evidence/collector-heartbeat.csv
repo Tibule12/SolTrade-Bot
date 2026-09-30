@@ -1,0 +1,2 @@
+schema,collector_version,status,utc,started_utc,restart_count,account,server,connected,terminal_trade_allowed,mql_trade_allowed,order_capability,total_ticks,total_features,copy_errors,symbols_configured,timer_milliseconds,feature_interval_seconds,server_offset_seconds,storage_root,latest_state_utc,build
+SOLTRADE_BRAIN_HEARTBEAT_V1,1.0.0,COLLECTING,1790789409,2026.09.16 04:34:15,1,7404213,FPMarketsSC-Demo,true,false,false,false,17062908,4770634,0,19,200,5,10800,C:\SolTrade\Research\SolTrade-Brain-Collector-V1\MQL5\Files\SolTradeBrainCollectorV1\,2026.09.30 17:30:06,2

@@ -1,0 +1,628 @@
+{
+  "schema": "SOLTRADE_FULL_READONLY_AUDIT_20260930",
+  "read_only": true,
+  "audit_orders_sent": 0,
+  "audit_positions_modified": 0,
+  "capture_utc": "2026-09-30T17:28:21.3776747Z",
+  "final_utc": "2026-09-30T17:54:34.6041485Z",
+  "protected_hashes": {
+    "fp": {
+      "source_sha256": {
+        "expected": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+        "actual": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+        "match": true
+      },
+      "binary_sha256": {
+        "expected": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+        "actual": "fa2107a6088cf211d73eee646676cb3d61a6975b5b98eb47a548544c04199fea",
+        "match": true
+      },
+      "pid_unchanged": true
+    },
+    "collector": {
+      "source_sha256": {
+        "expected": "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261",
+        "actual": "a2a2faa3c7a2f6b307258b52630aeb728699c24b6065d61b60d3433a8d56a261",
+        "match": true
+      },
+      "binary_sha256": {
+        "expected": "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c",
+        "actual": "f80aedd723efc80471f5ea87bad8fee41b3b12c3c90b089b5dad7efc53d4963c",
+        "match": true
+      },
+      "pid_unchanged": true
+    },
+    "tracker": {
+      "source_sha256": {
+        "expected": "9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e",
+        "actual": "9daaeccc44fef63d67c8b9fc1c11270beda3a9a8ad8e21a976e7692273a9e56e",
+        "match": true
+      },
+      "binary_sha256": {
+        "expected": "60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513",
+        "actual": "60918ce78fdb8624bf23e8837468ceeef429d92b1f0382bc811129b10b6c9513",
+        "match": true
+      },
+      "model_include_sha256": {
+        "expected": "d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2",
+        "actual": "d3a91f5b10b6d9c99b88939a90f5710e314b082e31ea22f77bbef76e57bf29a2",
+        "match": true
+      },
+      "candidates_sha256": {
+        "expected": "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af",
+        "actual": "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af",
+        "match": true
+      },
+      "pid_unchanged": true
+    }
+  },
+  "configuration_hashes": {
+    "C:\\SolTrade\\state\\brain-collector-v1.ini": {
+      "expected": "b675da70bdfe20b3b3015d8c10e864f2795fdb4abc2693dcd3dcea274b5b116f",
+      "actual": "b675da70bdfe20b3b3015d8c10e864f2795fdb4abc2693dcd3dcea274b5b116f",
+      "match": true
+    },
+    "C:\\SolTrade\\state\\fp-demo.ini": {
+      "expected": "4013930489b64eb954a7677683d3a64f4a93fb65d4f1ca1f7cfd9aba101b661e",
+      "actual": "4013930489b64eb954a7677683d3a64f4a93fb65d4f1ca1f7cfd9aba101b661e",
+      "match": true
+    },
+    "C:\\SolTrade\\state\\full-lifetime-tracker-v1.ini": {
+      "expected": "30b2247e90a5de81a1dea5a054c0152438d2bfb3ee2ed6fbdef2c88d82bef8fd",
+      "actual": "30b2247e90a5de81a1dea5a054c0152438d2bfb3ee2ed6fbdef2c88d82bef8fd",
+      "match": true
+    },
+    "C:\\SolTrade\\state\\fxify-100k.ini": {
+      "expected": "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+      "actual": "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+      "match": true
+    },
+    "C:\\SolTrade\\state\\fxify-10k.ini": {
+      "expected": "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+      "actual": "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+      "match": true
+    },
+    "C:\\SolTrade\\MT5-FP-DEMO\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV2-FPMarkets-demo.set": {
+      "expected": "d1d0cd96eaeecb3063839b866e116b07a551de2bb63f3117408b91d6ac9373d5",
+      "actual": "d1d0cd96eaeecb3063839b866e116b07a551de2bb63f3117408b91d6ac9373d5",
+      "match": true
+    },
+    "C:\\SolTrade\\MT5-FXIFY-10K\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV201F10-ORDER-DISABLED.set": {
+      "expected": "b4159096ae997b2b9ed029dab799a925f7169b45985672de3e1b257a3881f242",
+      "actual": "b4159096ae997b2b9ed029dab799a925f7169b45985672de3e1b257a3881f242",
+      "match": true
+    },
+    "C:\\SolTrade\\MT5-FXIFY-100K\\MQL5\\Profiles\\Presets\\SolTradeFastMultiMarketV201F100-ORDER-DISABLED.set": {
+      "expected": "dd87e2cc97e8433889493275fa339f8706cd8c99632507ca9044cd39f6239b2e",
+      "actual": "dd87e2cc97e8433889493275fa339f8706cd8c99632507ca9044cd39f6239b2e",
+      "match": true
+    },
+    "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Profiles\\Presets\\SolTradeBrainCollectorV1.set": {
+      "expected": "4c3a852d4f42bd0e31ee6c29e5816ee96fb09a99603b2548c315d86429856ec5",
+      "actual": "4c3a852d4f42bd0e31ee6c29e5816ee96fb09a99603b2548c315d86429856ec5",
+      "match": true
+    },
+    "C:\\SolTrade\\Research\\SolTrade-Full-Lifetime-Tracker-V1\\MQL5\\Profiles\\Presets\\SolTradeFullLifetimeTrackerV1.set": {
+      "expected": "064aa33f9f8c7c83fca7dbb55a99f5b2f45bff13b39a9eeb5b9ffd28002db291",
+      "actual": "064aa33f9f8c7c83fca7dbb55a99f5b2f45bff13b39a9eeb5b9ffd28002db291",
+      "match": true
+    }
+  },
+  "fxify_code_hashes": {
+    "10k": {
+      "source": {
+        "expected": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+        "actual": "055855e84ad7fe392932edc1c878f6ff66288360d148575c8dbc5a9692f2c1c3",
+        "match": true
+      },
+      "binary": {
+        "expected": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039",
+        "actual": "f1a527764b264b903ee54d4d9a890873bd7f0ceb38edca8b98f33df0f5715039",
+        "match": true
+      }
+    },
+    "100k": {
+      "source": {
+        "expected": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+        "actual": "b10d8a40f422cfba2dcb9c02b1b5b0d44dc9d669e4336d4c21601fbb17a483ef",
+        "match": true
+      },
+      "binary": {
+        "expected": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8",
+        "actual": "63bbbfa3a0fd81180d93cad558e5c841b2a5608aac2c921cf26aca13e7aad1f8",
+        "match": true
+      }
+    }
+  },
+  "all_protected_hashes_match": true,
+  "fp": {
+    "runtime_at_first": {
+      "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+      "timestamp_utc": "2026.09.30 17:28:20",
+      "setup_active": "true",
+      "login": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "account_mode_demo": "true",
+      "real_accounts_blocked": "true",
+      "entry_permission": "BLOCKED_NO_OWNERSHIP",
+      "demo_only": "true",
+      "scanner_active": "true",
+      "autonomous_entry": "false",
+      "ownership_permit": "BLOCKED",
+      "owner_instance_id": "vps-fp-prod",
+      "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+      "owner_host": "fxut9756438",
+      "owner_account": "7404213",
+      "lease_id": "",
+      "lease_acquired_epoch": "0",
+      "lease_renewed_epoch": "0",
+      "lease_expires_epoch": "0",
+      "connected": "true",
+      "positions": "1",
+      "orders": "0",
+      "equity": "95206.46",
+      "portfolio_risk_amount": "1693.19",
+      "portfolio_risk_percent": "1.7784",
+      "portfolio_risk_known": "true",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "status": "NO_TRADE",
+      "v1_gross": "-1031.03",
+      "v1_commission": "-172.38",
+      "v1_swap": "0.00",
+      "v1_net": "-1203.41",
+      "v2_epoch_server": "1787998044"
+    },
+    "runtime_at_final": {
+      "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+      "timestamp_utc": "2026.09.30 17:54:30",
+      "setup_active": "true",
+      "login": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "account_mode_demo": "true",
+      "real_accounts_blocked": "true",
+      "entry_permission": "BLOCKED_NO_OWNERSHIP",
+      "demo_only": "true",
+      "scanner_active": "true",
+      "autonomous_entry": "false",
+      "ownership_permit": "BLOCKED",
+      "owner_instance_id": "vps-fp-prod",
+      "owner_runtime_id": "vps-fp-prod-46011237713215-915922156",
+      "owner_host": "fxut9756438",
+      "owner_account": "7404213",
+      "lease_id": "5d3c2480de274fd3989a10c6082caf32",
+      "lease_acquired_epoch": "1790789978",
+      "lease_renewed_epoch": "1790789978",
+      "lease_expires_epoch": "1790789993",
+      "connected": "true",
+      "positions": "1",
+      "orders": "0",
+      "equity": "94974.01",
+      "portfolio_risk_amount": "1460.51",
+      "portfolio_risk_percent": "1.5378",
+      "portfolio_risk_known": "true",
+      "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+      "status": "NO_TRADE",
+      "v1_gross": "-1031.03",
+      "v1_commission": "-172.38",
+      "v1_swap": "0.00",
+      "v1_net": "-1203.41",
+      "v2_epoch_server": "1787998044"
+    },
+    "visual_broker_balance_at_1759_utc": 94456.6,
+    "visual_broker_equity_at_1759_utc": 94847.27,
+    "visual_broker_floating_profit_at_1759_utc": 390.67,
+    "visual_broker_position": {
+      "ticket": "408708254",
+      "symbol": "ger40",
+      "direction": "SELL",
+      "volume": 18.63,
+      "entry": 25209.75,
+      "stop": 25254.4,
+      "current_price": 25191.25
+    },
+    "ownership_state_at_final": {
+      "schema": "SOLTRADE_ACCOUNT_OWNERSHIP_STATE_V1",
+      "account": 7404213,
+      "lease": {
+        "acquired_epoch": 1790789978,
+        "expires_epoch": 1790789993,
+        "renewed_epoch": 1790789978,
+        "instance_id": "vps-fp-prod",
+        "host": "fxut9756438",
+        "runtime_id": "vps-fp-prod-46011237713215-915922156",
+        "account": 7404213,
+        "last_audit_renew_epoch": 1790789978,
+        "lease_id": "5d3c2480de274fd3989a10c6082caf32"
+      }
+    },
+    "ownership_lifecycle_counts_since_september24": {
+      "ACCOUNT_OWNERSHIP_GRANTED": 24,
+      "ACCOUNT_OWNERSHIP_CLAIM_WRITE_FAILED": 16,
+      "ACCOUNT_OWNERSHIP_BLOCKED": 35
+    },
+    "ownership_blocked_actions": {
+      "MARKET_ENTRY_BUY": 1,
+      "MARKET_ENTRY_SELL": 11,
+      "POSITION_MODIFY_STRUCTURAL_RUNNER": 23
+    },
+    "ownership_blocked_reasons": {
+      "PERMIT_FILE_MISSING": 9,
+      "PERMIT_NOT_GRANTED_DENIED": 19,
+      "PERMIT_EXPIRED": 7
+    },
+    "ownership_authority_tail_window_utc": [
+      "2026-09-30T10:16:03.4765186Z",
+      "2026-09-30T17:34:18.6018704Z"
+    ],
+    "ownership_authority_expirations_in_tail": 229,
+    "ownership_authority_median_seconds_past_expiry": 18,
+    "ownership_authority_max_seconds_past_expiry": 168
+  },
+  "fxify": {
+    "startup_blocks_at_first": [
+      {
+        "account": "7196820",
+        "startup_hash": "23f8bef5da9d895681002f58071b362d09e05b81240ee5bb0e2e96b9e0f3ad4e",
+        "enabled_zero": true,
+        "allow_live_zero": true,
+        "last_runtime": {
+          "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+          "timestamp_utc": "2026.09.16 02:56:25",
+          "setup_active": "false",
+          "login": "7196820",
+          "server": "FXIFY-Server",
+          "account_mode_demo": "true",
+          "real_accounts_blocked": "true",
+          "entry_permission": "DISABLED_DRY_RUN",
+          "demo_only": "true",
+          "scanner_active": "false",
+          "autonomous_entry": "false",
+          "ownership_permit": "BLOCKED",
+          "owner_instance_id": "vps-fxify-10k-prod",
+          "owner_runtime_id": "",
+          "owner_host": "fxut9756438",
+          "owner_account": "7196820",
+          "lease_id": "",
+          "lease_acquired_epoch": "0",
+          "lease_renewed_epoch": "0",
+          "lease_expires_epoch": "0",
+          "connected": "true",
+          "positions": "0",
+          "orders": "0",
+          "equity": "9660.24",
+          "portfolio_risk_amount": "0.00",
+          "portfolio_risk_percent": "0.0000",
+          "portfolio_risk_known": "true",
+          "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+          "status": "STARTING",
+          "v1_gross": "-324.21",
+          "v1_commission": "-12.78",
+          "v1_swap": "0.00",
+          "v1_net": "-336.99",
+          "v2_epoch_server": "0"
+        }
+      },
+      {
+        "account": "7198096",
+        "startup_hash": "c682d2a640f5380f75f516be2b84a3c371d2863a6071ba13f45af6a856fba2e6",
+        "enabled_zero": true,
+        "allow_live_zero": true,
+        "last_runtime": {
+          "schema": "SOLTRADE_FAST_MULTI_MARKET_RUNTIME_V2",
+          "timestamp_utc": "2026.09.16 02:56:33",
+          "setup_active": "false",
+          "login": "7198096",
+          "server": "FXIFY-Server",
+          "account_mode_demo": "true",
+          "real_accounts_blocked": "true",
+          "entry_permission": "DISABLED_DRY_RUN",
+          "demo_only": "true",
+          "scanner_active": "false",
+          "autonomous_entry": "false",
+          "ownership_permit": "BLOCKED",
+          "owner_instance_id": "vps-fxify-100k-prod",
+          "owner_runtime_id": "",
+          "owner_host": "fxut9756438",
+          "owner_account": "7198096",
+          "lease_id": "",
+          "lease_acquired_epoch": "0",
+          "lease_renewed_epoch": "0",
+          "lease_expires_epoch": "0",
+          "connected": "true",
+          "positions": "0",
+          "orders": "0",
+          "equity": "96405.60",
+          "portfolio_risk_amount": "0.00",
+          "portfolio_risk_percent": "0.0000",
+          "portfolio_risk_known": "true",
+          "manager_version": "ADAPTIVE_PAYOFF_V1_BANK1R_GIVEBACK",
+          "status": "STARTING",
+          "v1_gross": "-3443.02",
+          "v1_commission": "-151.38",
+          "v1_swap": "0.00",
+          "v1_net": "-3594.40",
+          "v2_epoch_server": "0"
+        }
+      }
+    ],
+    "startup_blocks_at_final": [
+      {
+        "account": "7196820",
+        "allow_live_zero": true,
+        "enabled_zero": true
+      },
+      {
+        "account": "7198096",
+        "allow_live_zero": true,
+        "enabled_zero": true
+      }
+    ],
+    "current_broker_exposure_verifiable": false,
+    "reason": "Disabled EAs last published position/order status on September 16; no fresh independent broker exposure was captured."
+  },
+  "collector": {
+    "first": {
+      "schema": "SOLTRADE_BRAIN_HEARTBEAT_V1",
+      "collector_version": "1.0.0",
+      "status": "COLLECTING",
+      "utc": "1790789299",
+      "started_utc": "2026.09.16 04:34:15",
+      "restart_count": "1",
+      "account": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "connected": "true",
+      "terminal_trade_allowed": "false",
+      "mql_trade_allowed": "false",
+      "order_capability": "false",
+      "total_ticks": "17060670",
+      "total_features": "4770216",
+      "copy_errors": "0",
+      "symbols_configured": "19",
+      "timer_milliseconds": "200",
+      "feature_interval_seconds": "5",
+      "server_offset_seconds": "10800",
+      "storage_root": "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Files\\SolTradeBrainCollectorV1\\",
+      "latest_state_utc": "2026.09.30 17:28:16",
+      "build": "2"
+    },
+    "final": {
+      "schema": "SOLTRADE_BRAIN_HEARTBEAT_V1",
+      "collector_version": "1.0.0",
+      "status": "COLLECTING",
+      "utc": "1790790875",
+      "started_utc": "2026.09.16 04:34:15",
+      "restart_count": "1",
+      "account": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "connected": "true",
+      "terminal_trade_allowed": "false",
+      "mql_trade_allowed": "false",
+      "order_capability": "false",
+      "total_ticks": "17089173",
+      "total_features": "4776163",
+      "copy_errors": "0",
+      "symbols_configured": "19",
+      "timer_milliseconds": "200",
+      "feature_interval_seconds": "5",
+      "server_offset_seconds": "10800",
+      "storage_root": "C:\\SolTrade\\Research\\SolTrade-Brain-Collector-V1\\MQL5\\Files\\SolTradeBrainCollectorV1\\",
+      "latest_state_utc": "2026.09.30 17:54:31",
+      "build": "2"
+    }
+  },
+  "tracker": {
+    "first": {
+      "schema": "SOLTRADE_V3_LIFETIME_HEARTBEAT_V2",
+      "tracker_version": "1.1.0",
+      "model_id": "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+      "status": "COLLECTING_FULL_LIFETIMES",
+      "utc": "1790789298",
+      "started_utc": "2026.09.19 09:19:38",
+      "restart_count": "6",
+      "account": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "connected": "true",
+      "terminal_trade_allowed": "false",
+      "mql_trade_allowed": "false",
+      "order_capability": "false",
+      "total_ticks": "12758504",
+      "total_opportunities": "903",
+      "total_triggered": "54",
+      "active_opportunities": "0",
+      "active_positions": "0",
+      "active_positions_over_four_hours": "0",
+      "lifetime_observations": "56593",
+      "completed_outcomes": "54",
+      "right_censored_outcomes": "0",
+      "position_time_limit": "none",
+      "research_safety_horizon_days": "0",
+      "copy_errors": "0",
+      "symbols": "19",
+      "state_utc": "2026.09.30 17:28:18"
+    },
+    "final": {
+      "schema": "SOLTRADE_V3_LIFETIME_HEARTBEAT_V2",
+      "tracker_version": "1.1.0",
+      "model_id": "ENTRY_ENGINE_V3_TRACKING_DIAGNOSTIC_20260918",
+      "status": "COLLECTING_FULL_LIFETIMES",
+      "utc": "1790790874",
+      "started_utc": "2026.09.19 09:19:38",
+      "restart_count": "6",
+      "account": "7404213",
+      "server": "FPMarketsSC-Demo",
+      "connected": "true",
+      "terminal_trade_allowed": "false",
+      "mql_trade_allowed": "false",
+      "order_capability": "false",
+      "total_ticks": "12787000",
+      "total_opportunities": "903",
+      "total_triggered": "54",
+      "active_opportunities": "0",
+      "active_positions": "0",
+      "active_positions_over_four_hours": "0",
+      "lifetime_observations": "56593",
+      "completed_outcomes": "54",
+      "right_censored_outcomes": "0",
+      "position_time_limit": "none",
+      "research_safety_horizon_days": "0",
+      "copy_errors": "0",
+      "symbols": "19",
+      "state_utc": "2026.09.30 17:54:34"
+    }
+  },
+  "evaluator": {
+    "last_published_heartbeat": {
+      "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+      "status": "EVALUATING_FORWARD_EVIDENCE",
+      "sequence_id": "V3_FORWARD_EVIDENCE_20260919_A",
+      "utc": 1790729335,
+      "completed_positions_evaluated": 50,
+      "candidate_rows": 200,
+      "integrity_status": "CLEAN",
+      "run_id": "eb5c7a5289314c13acc636d0f624c02e",
+      "run_started_utc": "2026-09-30T00:41:23.8637691Z",
+      "run_finished_utc": "2026-09-30T00:48:55.8551182Z",
+      "run_elapsed_ms": 451990,
+      "stage_durations_ms": {
+        "LOAD_OUTCOMES": 254,
+        "LOAD_EVENTS": 1055,
+        "LOAD_LIFETIME_OBSERVATIONS": 368901,
+        "INTEGRITY_CHECK": 22391,
+        "SEQUENCE_CHECK": 182,
+        "BUILD_PER_TRADE": 51851,
+        "ROLLING_SUMMARIES": 6993,
+        "PUBLISH_RESULTS": 117
+      },
+      "evaluator_source_sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+      "order_capability": false,
+      "deployment_capability": false,
+      "tuning_enabled": false
+    },
+    "published_age_hours_at_first": 16.6571,
+    "latest_progress_at_first": {
+      "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_PROGRESS_V1",
+      "run_id": "f800dc11b4c646c0a8a04a2a901a7903",
+      "started_utc": "2026-09-30T17:21:27.1694619Z",
+      "updated_utc": "2026-09-30T17:21:34.0914686Z",
+      "status": "RUNNING",
+      "stage": "LOAD_LIFETIME_OBSERVATIONS",
+      "elapsed_ms": 6713,
+      "completed_stage_ms": {
+        "LOAD_OUTCOMES": 762,
+        "LOAD_EVENTS": 3653
+      },
+      "evaluator_source_sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+      "order_capability": false
+    },
+    "latest_progress_at_final": {
+      "schema": "SOLTRADE_V3_FORWARD_EVALUATOR_PROGRESS_V1",
+      "run_id": "d46cfc1c2b8245ef94faec2370007f5e",
+      "started_utc": "2026-09-30T17:51:27.2731436Z",
+      "updated_utc": "2026-09-30T17:51:32.0388512Z",
+      "status": "RUNNING",
+      "stage": "LOAD_LIFETIME_OBSERVATIONS",
+      "elapsed_ms": 4694,
+      "completed_stage_ms": {
+        "LOAD_OUTCOMES": 749,
+        "LOAD_EVENTS": 2845
+      },
+      "evaluator_source_sha256": "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+      "order_capability": false
+    },
+    "sequence": {
+      "schema": "SOLTRADE_V3_FORWARD_SEQUENCE_V1",
+      "sequence_id": "V3_FORWARD_EVIDENCE_20260919_A",
+      "started_utc": "2026-09-19T10:20:40.2229671Z",
+      "status": "CLEAN",
+      "contamination_detected_utc": null,
+      "contamination_reasons": [],
+      "last_run_utc": "2026-09-30T04:39:21.1182391Z"
+    },
+    "integrity_receipt": {
+      "status": "CLEAN",
+      "run_utc": "2026-09-30T04:39:20.6338592Z",
+      "passed_checks": 36,
+      "total_checks": 36
+    }
+  },
+  "tasks_at_first": [
+    {
+      "name": "SolTrade-Watchdog",
+      "state": "Running",
+      "last_result": 2147946720,
+      "last_run_utc": "2026-09-30T17:28:28.0000000Z",
+      "next_run_utc": "2026-09-30T17:28:28.0000000Z",
+      "execution_time_limit": "PT72H",
+      "priority": 7,
+      "multiple_instances": "IgnoreNew"
+    },
+    {
+      "name": "SolTrade-Brain-Collector-V1-Watchdog",
+      "error": "No MSFT_ScheduledTask objects found with property 'TaskName' equal to 'SolTrade-Brain-Collector-V1-Watchdog'.  Verify the value of the property and retry."
+    },
+    {
+      "name": "SolTrade-Full-Lifetime-Tracker-V1-Watchdog",
+      "state": "Running",
+      "last_result": 2147946720,
+      "last_run_utc": "2026-09-30T17:28:28.0000000Z",
+      "next_run_utc": "2026-09-30T17:29:29.0000000Z",
+      "execution_time_limit": "PT72H",
+      "priority": 7,
+      "multiple_instances": "IgnoreNew"
+    },
+    {
+      "name": "SolTrade-V3-Forward-Evidence-Evaluator-V1",
+      "state": "Running",
+      "last_result": 2147946720,
+      "last_run_utc": "2026-09-30T17:26:26.0000000Z",
+      "next_run_utc": "2026-09-30T17:31:31.0000000Z",
+      "execution_time_limit": "PT8M",
+      "priority": 6,
+      "multiple_instances": "IgnoreNew"
+    },
+    {
+      "name": "SolTrade-AccountOwnership-7404213",
+      "error": "You cannot call a method on a null-valued expression."
+    }
+  ],
+  "tasks_at_final": [
+    {
+      "name": "SolTrade-AccountOwnership-7404213",
+      "state": "Running",
+      "last_result": 267009,
+      "last_run": "09/30/2026 17:41:41",
+      "next_run": ""
+    },
+    {
+      "name": "SolTrade-V3-Forward-Evidence-Evaluator-V1",
+      "state": "Running",
+      "last_result": 267009,
+      "last_run": "09/30/2026 17:51:51",
+      "next_run": "09/30/2026 17:56:56"
+    },
+    {
+      "name": "SolTrade-Watchdog",
+      "state": "Running",
+      "last_result": 2147946720,
+      "last_run": "09/30/2026 17:54:54",
+      "next_run": "09/30/2026 17:55:55"
+    },
+    {
+      "name": "SolTrade-Full-Lifetime-Tracker-V1-Watchdog",
+      "state": "Running",
+      "last_result": 2147946720,
+      "last_run": "09/30/2026 17:55:55",
+      "next_run": "09/30/2026 17:56:56"
+    }
+  ],
+  "research_program_trade_api_tokens": {
+    "collector": [],
+    "tracker": []
+  },
+  "cost_evidence_limit": "Repo/VPS capture lacks FXIFY purchase invoices and VPS billing; actual out-of-pocket fees cannot be calculated.",
+  "limitations": [
+    "FP GUI balance/equity is a visual observation at 17:59 UTC and changes with the open position.",
+    "Snapshots are not atomic; hashes, runtimes, task status and GUI values have their own capture times.",
+    "FXIFY EA runtime position/order rows are stale from September 16; entry block is freshly verified but current exposure is not."
+  ]
+}

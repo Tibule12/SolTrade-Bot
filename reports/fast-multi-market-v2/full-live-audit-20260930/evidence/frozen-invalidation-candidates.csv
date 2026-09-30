@@ -1,0 +1,5 @@
+schema,candidate_id,adverse_r_lte,transition_score_lte,additional_requirement,frozen_before_forward_results,order_capability
+SOLTRADE_CAUSAL_INVALIDATION_CANDIDATE_V1,FROZEN_V3_DIAGNOSTIC,-0.40,-0.25,none,true,false
+SOLTRADE_CAUSAL_INVALIDATION_CANDIDATE_V1,STRICT_PRESSURE_RESUMPTION,-0.50,-0.35,resumption_evidence=false,true,false
+SOLTRADE_CAUSAL_INVALIDATION_CANDIDATE_V1,STRUCTURAL_REVERSAL_CONFIRMATION,-0.40,-0.25,m1_plus_m5_trend_aligned<=-1,true,false
+SOLTRADE_CAUSAL_INVALIDATION_CANDIDATE_V1,EXPANDING_PULLBACK_FAILURE,-0.35,-0.30,pullback_expanding=true AND resumption_evidence=false,true,false

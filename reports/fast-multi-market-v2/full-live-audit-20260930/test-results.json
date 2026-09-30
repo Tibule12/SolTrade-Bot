@@ -1,0 +1,94 @@
+{
+  "schema": "SOLTRADE_FULL_AUDIT_TEST_RECEIPT_V1",
+  "checks": [
+    {
+      "name": "six FP trades reconcile whole-position subtotal",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fourteen closed FP positions reconcile broker balance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FP 2026-09-24 carry-in bank excluded from interval attribution",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen production and research hashes and all config hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "FXIFY startup blocks fresh",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "research programs have zero trade API tokens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "collector and tracker runtime orderless",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "tracker opportunity partition and four-hour independence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "54 completed positions map to 216 complete comparisons",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no censored result enters known totals",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 56,593 lifetime rows pass causal and orderless assertions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Bank1R one-time event count matches completed paths",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "published 50-position calculations match raw outcomes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "four unpublished positions identified",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "diagnostic saved/lost R matches net delta",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original FP broker stop visually preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "raw tracker archive hash and CRC verified",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 17,
+  "total": 17,
+  "all_passed": true,
+  "visual_check": "FP terminal screenshot manually read at 17:59 UTC; screenshot itself is preserved separately."
+}

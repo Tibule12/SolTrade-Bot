@@ -1,0 +1,192 @@
+{
+  "schema": "SOLTRADE_FULL_AUDIT_FILES_V1",
+  "files": [
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/all-soltrade-tasks.json",
+      "bytes": 5250,
+      "sha256": "1ade00603133cfb87e37a994503e6c3657e8d8b225c15bcc04c5cd59b1efd1b8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/collector-heartbeat.csv",
+      "bytes": 575,
+      "sha256": "592f2627c98a7a57cd9740fefeb13bd9fb5c8f85cffd1389a0f290e8ec6d007d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/evaluator-heartbeat.json",
+      "bytes": 1233,
+      "sha256": "510cc07467e51069a2a2024f3560d7aad6ac2610585466ab40796db82982b046"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/evaluator-run-progress.json",
+      "bytes": 624,
+      "sha256": "b6ca79d8aa58e7bde0e0aef707633d78648293b9c2ccf0212d928bcbf7c1c02e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/expected-identities.json",
+      "bytes": 1622,
+      "sha256": "b3d78e85fd17a48a859deeebdb19830fd2b4a764a42bff9a8960f03686c2aa28"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/final-quick-state.json",
+      "bytes": 10269,
+      "sha256": "d3ab2029eabee152aa8ac81fb1e5f6a038aaacb9ef88ab8b3530d4b8fe53608a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/fp-evidence.csv",
+      "bytes": 3674529,
+      "sha256": "95438275857dba860ad3fef85adcdc0a0f154fda144809695a65cb77df723a22"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/fp-ownership-audit-tail.jsonl",
+      "bytes": 470079,
+      "sha256": "555192a3c694d27480f2957692c3bf80964343b14f9c7085c3c0760edfca9426"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/fp-runtime.csv",
+      "bytes": 13052,
+      "sha256": "1adafacd70b52969d91ba7d5b7e0aebdf44adc9f20ede41957047f659c98bbb1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/frozen-invalidation-candidates.csv",
+      "bytes": 612,
+      "sha256": "064ebf44ac8026700bf9cabac58acb9107e3b8ae6ee1a2d7ca4a38f9578205af"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/fxify-fresh-code-hashes.json",
+      "bytes": 595,
+      "sha256": "5bd53c8d732bbb5bae5f2d354c2479dcb0d20f5306b391e1a2eea9e8e1766302"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/integrity-receipt.json",
+      "bytes": 10478,
+      "sha256": "e6089b772a6a760202e2e5d5e00b42215e20b165626195cdab644cdbc5e8bc5d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260924.csv",
+      "bytes": 21118,
+      "sha256": "ae8a1bcec19d925d2727e9fa79d843c08ac45d81bd70a4943a2c813f7071cfbc"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260925.csv",
+      "bytes": 4586,
+      "sha256": "8f899538dd7be0c0dea6785500097f4313b56899b6f58346c879ae23e71b9f31"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260927.csv",
+      "bytes": 33850,
+      "sha256": "0388cdb39dd38db74025fd9c42d5e67d8fd94ddcfcf723ab238b8c2ead7954f6"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260928.csv",
+      "bytes": 39015,
+      "sha256": "f88434234d0aa8dc144f32e9cb54e2fa36c36e169e716d68bf53f1e0cef835ca"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260929.csv",
+      "bytes": 23879,
+      "sha256": "dd011e2e9350bf875d7b06eb461d267bd56041655e2bf1309fb3a5ad15cff1a4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/lifecycle-20260930.csv",
+      "bytes": 2557,
+      "sha256": "6539704951e57ad6e231d704556c798734d6c48b26b830bbc02d65b68721a6c2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/own-capture-stop-receipt.json",
+      "bytes": 706,
+      "sha256": "03773c1dc53642f7131726a416c642bf27ebacf9b28fa5cd6f7d935038c05f83"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/sequence.json",
+      "bytes": 353,
+      "sha256": "8684bed45fe2c290bade161134d2b55a791b2d4e84f13b5ddb1acd1875f9f795"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/snapshot-before.json",
+      "bytes": 22523,
+      "sha256": "92f47015541b76d8c076f4a4dbdd0666d3f0f70f7895968507ae03d7c4b58708"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/tracker-all-quick.zip",
+      "bytes": 7316634,
+      "sha256": "41a2404fb1f006d2cd233de930dbe10ebb5c3e48f63a8ea15195ca1b300365e5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/tracker-heartbeat.csv",
+      "bytes": 674,
+      "sha256": "49be6456108230379b71572412f0bd2704e6ea8170a583c4337fcb8c443ef63d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/tracker-quick-receipt.json",
+      "bytes": 411,
+      "sha256": "7bd9807d38b86936ba1283c9997a43c6530c2503e0270665793930fe52831c56"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/forward-analysis.json",
+      "bytes": 41539,
+      "sha256": "d5a67bde33477095550cbe6ba3b580357864f51c7d0ebf1f81b2896e57014427"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/forward-comparisons.csv",
+      "bytes": 121822,
+      "sha256": "744707fba534589268112cf2bbf06858e1b35eefa51bcc97e5c48a69c23392c7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/fp-analysis.json",
+      "bytes": 14214,
+      "sha256": "cc6219132e9e9a8fb0c6d06c64193b098e05d7e927597dcb24bb0c94da24cf47"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/fp-broker-ui-20260930.png",
+      "bytes": 135870,
+      "sha256": "7b09574661d2ca23e2bc94ca798cde304d2a66c9aa2ebca0bf099c9bc6497ea2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/fp-findings.md",
+      "bytes": 6505,
+      "sha256": "f068f645d822fc1b48f7a441262577cdc086e7cdf7e000507a85e8d9911cb35c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/fp-operational-analysis.json",
+      "bytes": 5625,
+      "sha256": "5321ae8f3b23fbe3f28526f79ecdc7f6de27e7e20203bb17db3ded52714f4202"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/fp-trades.csv",
+      "bytes": 3204,
+      "sha256": "b42ca716dee5461ae2a55ad66f592af91d21573ca072d2bd21e41242c1477b1d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/operations.json",
+      "bytes": 23311,
+      "sha256": "ac3c612553b32a5c36709976c93e1daed2bcce2fdc76dd580d2e5065a5c425c7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/report.md",
+      "bytes": 11268,
+      "sha256": "8d43a70232798e635cef7f078ff06a0afa3ff46d46046d74ee2381cf80bdefb5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/test-results.json",
+      "bytes": 2308,
+      "sha256": "b72c7e0ad13e1f2ddfa7502f1d16e5ff9fe666a01929b51504c25d62337eec2b"
+    },
+    {
+      "path": "tools/audit_forward_20260930.py",
+      "bytes": 11136,
+      "sha256": "ca33c3e6340944f93af643d1ac1492d42f1a2065ce311d0b7be0985e2c2fcc0d"
+    },
+    {
+      "path": "tools/audit_fp_20260930.py",
+      "bytes": 12396,
+      "sha256": "23f0fb37d5d58336e4856c48f2ace552232a1dba6eb8a34552e10ea7e33f3f50"
+    },
+    {
+      "path": "tools/audit_operations_20260930.py",
+      "bytes": 7548,
+      "sha256": "4e093d247a73b2586ff55ef741a04fbcca6c0e7fe58fd8776fad643eda3c25ca"
+    }
+  ],
+  "sha256_algorithm": "SHA-256",
+  "not_included": "files.json cannot contain its own hash"
+}

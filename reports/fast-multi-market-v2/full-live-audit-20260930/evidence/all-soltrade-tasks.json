@@ -1,0 +1,121 @@
+﻿[
+    {
+        "name":  "SolTrade-AccountOwnership-7196820",
+        "state":  "Running",
+        "last_result":  267009,
+        "last_run":  "09/28/2026 03:00:00",
+        "next_run":  "",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "PowerShell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File C:\\SolTrade\\ownership\\Run-AccountOwnershipAuthority.ps1 -Account 7196820 -TerminalHome MT5-FXIFY-10K -ExpectedInstanceId vps-fxify-10k-prod -ExpectedHost fxut9756438",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-AccountOwnership-7198096",
+        "state":  "Running",
+        "last_result":  267009,
+        "last_run":  "09/28/2026 03:00:00",
+        "next_run":  "",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "PowerShell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File C:\\SolTrade\\ownership\\Run-AccountOwnershipAuthority.ps1 -Account 7198096 -TerminalHome MT5-FXIFY-100K -ExpectedInstanceId vps-fxify-100k-prod -ExpectedHost fxut9756438",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-AccountOwnership-7404213",
+        "state":  "Running",
+        "last_result":  267009,
+        "last_run":  "09/28/2026 03:09:09",
+        "next_run":  "",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "PowerShell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File C:\\SolTrade\\ownership\\Run-AccountOwnershipAuthority.ps1 -Account 7404213 -TerminalHome MT5-FP-DEMO -ExpectedInstanceId vps-fp-prod -ExpectedHost fxut9756438",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-FP-AdaptivePayoffV1-Bank1R-Scoreboard",
+        "state":  "Disabled",
+        "last_result":  0,
+        "last_run":  "09/12/2026 17:30:30",
+        "next_run":  "09/30/2026 17:36:36",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "powershell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File C:\\SolTrade\\Publish-FP-AdaptivePayoffV1-Bank1R-Scoreboard.ps1",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-Full-Lifetime-Tracker-V1-Watchdog",
+        "state":  "Running",
+        "last_result":  2147946720,
+        "last_run":  "09/30/2026 17:34:34",
+        "next_run":  "09/30/2026 17:36:36",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "powershell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\SolTrade\\Research\\SolTrade-Full-Lifetime-Tracker-V1\\Watch-FullLifetimeTracker.ps1\"",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-V3-Forward-Evidence-Evaluator-V1",
+        "state":  "Running",
+        "last_result":  267009,
+        "last_run":  "09/30/2026 17:31:31",
+        "next_run":  "09/30/2026 17:36:36",
+        "priority":  6,
+        "execution_time_limit":  "PT8M",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "powershell.exe",
+                            "Arguments":  "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File \"C:\\SolTrade\\Research\\SolTrade-Forward-Evidence-Evaluator-V1\\Run-V3-Forward-Evidence-Evaluator.ps1\"",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    },
+    {
+        "name":  "SolTrade-Watchdog",
+        "state":  "Running",
+        "last_result":  2147946720,
+        "last_run":  "09/30/2026 17:35:35",
+        "next_run":  "09/30/2026 17:35:35",
+        "priority":  7,
+        "execution_time_limit":  "PT72H",
+        "multiple_instances":  "IgnoreNew",
+        "actions":  [
+                        {
+                            "Execute":  "PowerShell.exe",
+                            "Arguments":  "-NoProfile -ExecutionPolicy Bypass -File C:\\SolTrade\\watchdogs\\Watch-SolTrade.ps1",
+                            "WorkingDirectory":  null
+                        }
+                    ]
+    }
+]

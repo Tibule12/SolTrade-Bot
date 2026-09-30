@@ -1,0 +1,27 @@
+{
+    "schema":  "SOLTRADE_V3_FORWARD_EVALUATOR_HEARTBEAT_V1",
+    "status":  "EVALUATING_FORWARD_EVIDENCE",
+    "sequence_id":  "V3_FORWARD_EVIDENCE_20260919_A",
+    "utc":  1790729335,
+    "completed_positions_evaluated":  50,
+    "candidate_rows":  200,
+    "integrity_status":  "CLEAN",
+    "run_id":  "eb5c7a5289314c13acc636d0f624c02e",
+    "run_started_utc":  "2026-09-30T00:41:23.8637691Z",
+    "run_finished_utc":  "2026-09-30T00:48:55.8551182Z",
+    "run_elapsed_ms":  451990,
+    "stage_durations_ms":  {
+                               "LOAD_OUTCOMES":  254,
+                               "LOAD_EVENTS":  1055,
+                               "LOAD_LIFETIME_OBSERVATIONS":  368901,
+                               "INTEGRITY_CHECK":  22391,
+                               "SEQUENCE_CHECK":  182,
+                               "BUILD_PER_TRADE":  51851,
+                               "ROLLING_SUMMARIES":  6993,
+                               "PUBLISH_RESULTS":  117
+                           },
+    "evaluator_source_sha256":  "9efd4bf2924509e2813877aa9a2f63c79db6bf751861a63b09f947c61ad76b69",
+    "order_capability":  false,
+    "deployment_capability":  false,
+    "tuning_enabled":  false
+}

@@ -1,0 +1,12 @@
+﻿{
+    "captured_utc":  "2026-09-30T17:45:07.2203728Z",
+    "file_counts":  {
+                        "outcomes":  9,
+                        "lifetime_observations":  88,
+                        "events":  155
+                    },
+    "sha256":  "41a2404fb1f006d2cd233de930dbe10ebb5c3e48f63a8ea15195ca1b300365e5",
+    "order_capability":  false,
+    "orders_sent":  0,
+    "read_only":  true
+}
