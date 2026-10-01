@@ -213,5 +213,8 @@
   "vps_remote_account_or_trading_settings_modified": false,
   "research_order_api_used": false,
   "exact_unresolved_period": "FXIFY broker deals/orders/positions/account operations and account-specific bid/ask for 2026-09-01 through 2026-09-16",
-  "interpretation": "August 10K binary cache cannot substitute for September deal or quote histories; no FXIFY broker-exact baseline or counterfactual final balance is asserted."
+  "interpretation": "This receipt describes the earlier failed cache/RDP route. A later isolated local 10K terminal recovered September broker deals/orders, disclosed in the superseding 10K receipt. The 100K broker history remains unavailable.",
+  "subsequent_10k_recovery": "fxify-10k-broker-reconciliation.json",
+  "10k_september_broker_history_now_recovered": true,
+  "100k_september_broker_history_still_missing": true
 }

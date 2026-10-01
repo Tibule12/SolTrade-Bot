@@ -1,0 +1,28 @@
+{
+  "schema": "FXIFY_10K_BROKER_CASH_RECONCILIATION_V1",
+  "login": 7196820,
+  "server_utc_offset_minutes": 180,
+  "broker_deals": 49,
+  "broker_orders": 48,
+  "closed_positions": 24,
+  "broker_open_positions": 0,
+  "september_ea_positions_matched": 22,
+  "ea_broker_cash_mismatch_count": 0,
+  "august_positions_outside_september_events": [
+    "157381255",
+    "157490306"
+  ],
+  "initial_deposit": "10000.00",
+  "broker_final_balance": "9660.24000000",
+  "september_opening_balance_after_august_pilot": "9997.23000000",
+  "broker_net_trade_cash": "-339.76000000",
+  "wins": 10,
+  "losses": 14,
+  "two_close_positions": 0,
+  "max_observed_realized_balance_drawdown_cash": "397.83000000",
+  "max_true_equity_drawdown_cash": null,
+  "broker_cash_exact": true,
+  "broker_alternative_path_exact": false,
+  "research_permission_exception": "Exporter runtime reported MQL_TRADE_ALLOWED=1 despite startup AllowLiveTrading=0; zero order API and no new research deals. Further account probes halted.",
+  "broker_export_receipt": "fxify-10k-broker-export/recovery-receipt.json"
+}

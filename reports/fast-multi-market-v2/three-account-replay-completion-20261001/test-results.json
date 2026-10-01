@@ -1,10 +1,10 @@
 {
   "schema": "THREE_ACCOUNT_REPLAY_COMPLETION_TEST_RECEIPT_V1",
-  "run_utc": "2026-10-01T16:23:50.662150+00:00",
-  "command": "python3 -m unittest tests.test_three_account_completion_replay tests.test_three_account_completion_coverage tests.test_three_account_completion_matrix tests.test_three_account_24h_recovery tests.test_three_account_24h_live tests.test_three_account_native_opposite tests.test_three_account_replay_engine -v",
+  "run_utc": "2026-10-01T16:47:26.066802+00:00",
+  "command": "python3 -m unittest tests.test_three_account_completion_replay tests.test_three_account_completion_coverage tests.test_three_account_completion_matrix tests.test_three_account_24h_recovery tests.test_three_account_24h_live tests.test_three_account_native_opposite tests.test_three_account_replay_engine tests.test_three_account_fxify_broker_recovery -v",
   "exit_code": 0,
-  "tests_run": 40,
-  "seconds": 6.127,
+  "tests_run": 42,
+  "seconds": 8.451,
   "status": "PASS",
   "suite_modules": [
     "tests.test_three_account_completion_replay",
@@ -13,7 +13,8 @@
     "tests.test_three_account_24h_recovery",
     "tests.test_three_account_24h_live",
     "tests.test_three_account_native_opposite",
-    "tests.test_three_account_replay_engine"
+    "tests.test_three_account_replay_engine",
+    "tests.test_three_account_fxify_broker_recovery"
   ],
   "test_names": [
     "test_banked_runner_can_last_beyond_four_hours_without_expiry (tests.test_three_account_completion_replay.CompletionReplayTests.test_banked_runner_can_last_beyond_four_hours_without_expiry)",
@@ -33,7 +34,7 @@
     "test_native_stop_alone_still_needs_manager_and_execution (tests.test_three_account_completion_coverage.CompletionCoverageTests.test_native_stop_alone_still_needs_manager_and_execution)",
     "test_all_opportunity_coverage_denominator_is_not_invented (tests.test_three_account_completion_matrix.CompletionMatrixTests.test_all_opportunity_coverage_denominator_is_not_invented)",
     "test_all_original_arms_retained_and_no_counterfactual_cash_fabricated (tests.test_three_account_completion_matrix.CompletionMatrixTests.test_all_original_arms_retained_and_no_counterfactual_cash_fabricated)",
-    "test_fxify_baseline_uses_four_trade_bridge_not_all_september_events (tests.test_three_account_completion_matrix.CompletionMatrixTests.test_fxify_baseline_uses_four_trade_bridge_not_all_september_events)",
+    "test_fxify_10k_broker_baseline_and_100k_event_bridge_are_distinct (tests.test_three_account_completion_matrix.CompletionMatrixTests.test_fxify_10k_broker_baseline_and_100k_event_bridge_are_distinct)",
     "test_first_post_entry_quote_can_itself_be_stale (tests.test_three_account_24h_recovery.TwentyFourHourQuoteRecoveryTests.test_first_post_entry_quote_can_itself_be_stale)",
     "test_missing_market_interval_prevents_exact_boundary_order (tests.test_three_account_24h_recovery.TwentyFourHourQuoteRecoveryTests.test_missing_market_interval_prevents_exact_boundary_order)",
     "test_opposite_path_continues_after_original_exit (tests.test_three_account_24h_recovery.TwentyFourHourQuoteRecoveryTests.test_opposite_path_continues_after_original_exit)",
@@ -55,6 +56,8 @@
     "test_interleaved_partial_closes_preserve_all_cash_components_and_risk (tests.test_three_account_replay_engine.AccountReplayTests.test_interleaved_partial_closes_preserve_all_cash_components_and_risk)",
     "test_missing_entry_and_unverified_opening_do_not_fabricate_flat_book (tests.test_three_account_replay_engine.AccountReplayTests.test_missing_entry_and_unverified_opening_do_not_fabricate_flat_book)",
     "test_netting_reversal_keeps_cash_and_residual_but_censors_risk (tests.test_three_account_replay_engine.AccountReplayTests.test_netting_reversal_keeps_cash_and_residual_but_censors_risk)",
-    "test_same_millisecond_uses_ticket_order_and_entry_fee_once (tests.test_three_account_replay_engine.AccountReplayTests.test_same_millisecond_uses_ticket_order_and_entry_fee_once)"
+    "test_same_millisecond_uses_ticket_order_and_entry_fee_once (tests.test_three_account_replay_engine.AccountReplayTests.test_same_millisecond_uses_ticket_order_and_entry_fee_once)",
+    "test_10k_broker_ledger_reconciles_all_september_ea_events (tests.test_three_account_fxify_broker_recovery.FxifyBrokerRecoveryTests.test_10k_broker_ledger_reconciles_all_september_ea_events)",
+    "test_probe_had_no_order_api_or_new_broker_deal_but_permissions_were_enabled (tests.test_three_account_fxify_broker_recovery.FxifyBrokerRecoveryTests.test_probe_had_no_order_api_or_new_broker_deal_but_permissions_were_enabled)"
   ]
 }

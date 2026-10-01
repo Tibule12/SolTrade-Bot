@@ -7,6 +7,7 @@
   "prior_arm_labels_preserved": true,
   "numeric_null_policy": "No experimental cash, R, W/L, drawdown or final balance populated without a complete chronological terminal path.",
   "baseline_fp_broker_cash_exact": true,
-  "fxify_independent_broker_baseline_exact": false,
+  "fxify_10k_independent_broker_baseline_exact": true,
+  "fxify_100k_independent_broker_baseline_exact": false,
   "matrix_csv": "account-arm-completion-matrix.csv"
 }

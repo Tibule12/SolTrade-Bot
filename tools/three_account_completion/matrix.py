@@ -31,11 +31,12 @@ def load():
         raise ValueError("FP native stops and tick paths disagree by position")
     prior_baseline = json.loads((PRIOR / "baseline-replay.json").read_text())
     fx = json.loads((PRIOR / "fxify-event-diagnostic.json").read_text())["accounts"]
-    return previous, coverage, prior_baseline, fx
+    fx_10k_broker = json.loads((OUT / "fxify-10k-broker-reconciliation.json").read_text())
+    return previous, coverage, prior_baseline, fx, fx_10k_broker
 
 
 def build():
-    previous, coverage, baseline, fx = load()
+    previous, coverage, baseline, fx, fx_10k_broker = load()
     rows = []
     for old in previous:
         account, arm = old["account"], old["arm"]
@@ -56,6 +57,22 @@ def build():
                        last_observed_account_balance=baseline["fp"]["final_export_balance"],
                        last_observed_balance_basis="FRESH_FP_BROKER_DEAL_EXPORT_2026_10_01_11_09_50_UTC",
                        eligibility_basis="ALL_103_BROKER_CLOSED_FP_POSITIONS")
+        elif arm == "BASELINE_REPLAY" and account == "FXIFY 7196820":
+            b = fx_10k_broker
+            row = dict(account=account, arm=arm, opening_balance=b["initial_deposit"],
+                       eligible_trades=b["closed_positions"], exact_replay_trades=b["closed_positions"],
+                       modelled_complete_trades=0, censored_trades=0, unresolved_trades=0,
+                       exact_coverage_pct="100.00", broker_exact_final_balance=b["broker_final_balance"],
+                       modelled_final_balance=None, net_cash=b["broker_net_trade_cash"], net_r=None,
+                       max_realized_balance_dd=b["max_observed_realized_balance_drawdown_cash"],
+                       max_true_equity_dd=None, wins=b["wins"], losses=b["losses"],
+                       full_stops=None, bank1r=b["two_close_positions"], plus_3r=None, plus_5r=None,
+                       status="BROKER_CASH_BASELINE_EXACT_RESEARCH_PERMISSION_EXCEPTION",
+                       first_ambiguity_trade=None,
+                       missing_evidence="FLOATING_EQUITY_AND_COMPLETE_INTRATRADE_R_MARKS;RESEARCH_TERMINAL_PERMISSION_EXCEPTION_DISCLOSED",
+                       last_observed_account_balance=b["broker_final_balance"],
+                       last_observed_balance_basis="FRESH_FXIFY_10K_BROKER_DEAL_EXPORT_2026_10_01_16_39_05_UTC",
+                       eligibility_basis="ALL_24_BROKER_CLOSED_10K_POSITIONS_INCLUDING_TWO_AUGUST_PILOT")
         elif arm == "BASELINE_REPLAY":
             key = "fxify-10k" if account == "FXIFY 7196820" else "fxify-100k"
             # This baseline row is the four-trade Sep 13-to-pause bridge.
@@ -113,9 +130,12 @@ def build():
             )
             if fp:
                 missing += "; 4/29 no fresh <=2s entry quote; 25/29 structural geometry reconstructed but historical broker floor unverified; full alternative Bank1R/runner/fill/ownership/cost lifetime missing"
+            elif account == "FXIFY 7196820":
+                missing = "Independent September deals/orders recovered and broker cash reconciled; account-specific historical bid/ask, native opposite stops, alternative fills and manager lifetime remain unavailable"
             else:
                 missing += "; September FXIFY broker deals/orders/account operations and continuous bid/ask were not recovered"
-            row = dict(account=account, arm=arm, opening_balance=("100000.00" if fp else None),
+            row = dict(account=account, arm=arm, opening_balance=("100000.00" if fp else
+                           fx_10k_broker["september_opening_balance_after_august_pilot"] if account == "FXIFY 7196820" else None),
                        eligible_trades=eligible, exact_replay_trades=0, modelled_complete_trades=0,
                        censored_trades=censored, unresolved_trades=unresolved,
                        exact_coverage_pct=(None if "ALL_OPPORTUNITIES" in arm else "0.00"),
@@ -125,13 +145,17 @@ def build():
                        wins=None, losses=None, full_stops=None, bank1r=None,
                        plus_3r=None, plus_5r=None,
                        status="INCOMPLETE_CHRONOLOGICAL_ALTERNATIVE_PATH",
-                       first_ambiguity_trade=(coverage[0]["position_id"] if fp else "FXIFY_SEPTEMBER_BROKER_HISTORY"),
+                       first_ambiguity_trade=(coverage[0]["position_id"] if fp else
+                                              read_csv(PRIOR / "fxify-10k-event-trades.csv")[0]["position_id"]
+                                              if account == "FXIFY 7196820" else "FXIFY_100K_SEPTEMBER_BROKER_HISTORY"),
                        missing_evidence=missing,
                        last_observed_account_balance=old["actual_final_balance"],
                        last_observed_balance_basis=("FP_OCTOBER_1_BROKER_EXPORT_BASELINE_ONLY" if fp else
-                                                    "FXIFY_SEPTEMBER_16_PAUSE_RUNTIME_NOT_CURRENT"),
+                                                    "FXIFY_10K_OCTOBER_1_BROKER_EXPORT_BASELINE_ONLY" if account == "FXIFY 7196820" else
+                                                    "FXIFY_100K_SEPTEMBER_16_PAUSE_RUNTIME_NOT_CURRENT"),
                        eligibility_basis=("AT_LEAST_29_FP_ACTUAL_ENTRIES_TRUE_ALL_OPPORTUNITY_DENOMINATOR_UNKNOWN" if fp and "ALL_OPPORTUNITIES" in arm else
                                           "29_FP_ACTUAL_ENTRIES_WITH_24H_QUOTE_REQUESTS" if fp else
+                                          "22_SEPTEMBER_EA_PAIRS_ALL_BROKER_CONFIRMED_BUT_ALTERNATIVES_UNKNOWN" if account == "FXIFY 7196820" else
                                           "22_MATCHED_SEPTEMBER_EA_ENTRY_EXIT_PAIRS_OPENING_BALANCE_UNKNOWN"))
         if int(row["eligible_trades"]) != (int(row["exact_replay_trades"]) +
                 int(row["modelled_complete_trades"]) + int(row["censored_trades"]) +
@@ -153,7 +177,8 @@ def build():
                "prior_arm_labels_preserved": True,
                "numeric_null_policy": "No experimental cash, R, W/L, drawdown or final balance populated without a complete chronological terminal path.",
                "baseline_fp_broker_cash_exact": True,
-               "fxify_independent_broker_baseline_exact": False,
+               "fxify_10k_independent_broker_baseline_exact": True,
+               "fxify_100k_independent_broker_baseline_exact": False,
                "matrix_csv": "account-arm-completion-matrix.csv"}
     (OUT / "account-arm-completion-matrix.json").write_text(json.dumps(summary, indent=2) + "\n")
     fx_rows = []
@@ -166,7 +191,10 @@ def build():
                 "symbol": trade["symbol"],
                 "actual_direction": trade["direction"],
                 "ea_event_net_cash": trade["net_usd"],
-                "missing_broker_data": "SEPTEMBER_DEALS_ORDERS_FILL_CHARGES_AND_ACCOUNT_OPERATIONS",
+                "broker_baseline_status": ("BROKER_CASH_CONFIRMED" if login == "7196820" else
+                                           "EA_EVENTS_ONLY"),
+                "missing_broker_data": ("" if login == "7196820" else
+                                        "SEPTEMBER_DEALS_ORDERS_FILL_CHARGES_AND_ACCOUNT_OPERATIONS"),
                 "missing_alternative_data": "ACCOUNT_SPECIFIC_BID_ASK_NATIVE_OPPOSITE_STOP_AND_FULL_MANAGER_LIFETIME",
             })
     if len(fx_rows) != 44 or len({(r["account"], r["position_id"]) for r in fx_rows}) != 44:

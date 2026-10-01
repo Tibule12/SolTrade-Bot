@@ -1,0 +1,18 @@
+{
+  "schema": "FXIFY_10K_NATIVE_BROKER_HISTORY_RECOVERY_V1",
+  "account": "7196820",
+  "status_line": "COMPLETE,7196820,FXIFY-Server,2026.10.01 19:39:02,2026.10.01 16:39:05",
+  "deal_count": 49,
+  "order_count": 48,
+  "final_balance": "9660.24000000",
+  "open_position_count": 0,
+  "replay_issues": [],
+  "research_source_has_order_api": false,
+  "research_placed_order": false,
+  "isolated_terminal": "/home/tibule12/.mt5/drive_c/fxify-readonly-research",
+  "startup_config_allow_live_trading": false,
+  "runtime_mql_trade_allowed": true,
+  "runtime_terminal_trade_allowed": true,
+  "safety_note": "Startup setting did not disable terminal or MQL trade permission as intended; exporter contains no order API, broker history has no new research deal. No further account probes should run until read-only permission is enforced or investor access used.",
+  "source_sha256": "c756495e5f3062e95c33514616f25ff3a665571fec11f38c6c21e4b91d2cd71a"
+}

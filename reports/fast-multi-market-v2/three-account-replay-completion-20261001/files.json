@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/account-arm-completion-matrix.csv",
-      "bytes": 38682,
-      "sha256": "908204179226f677eeb71cded1b2cf31ac8d7783f9c42c9adc93102e6d74c467"
+      "bytes": 37077,
+      "sha256": "1e63b0a74701ac62d594e0cf45e8b53e136926c508fda63a66e43dae9c9d383a"
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/account-arm-completion-matrix.json",
-      "bytes": 517,
-      "sha256": "50aef78e3d36057833fc7e946ea4dfa21ebefc00dbb34dab23ee22a52c56e536"
+      "bytes": 577,
+      "sha256": "d05ac4554ff72a09c92d7dce63bb7cefe38d133382ffe2f08f30a70d8bcb61ea"
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-14-stop-loss-opposite-evidence.csv",
@@ -237,14 +237,69 @@
       "sha256": "b7570932c0869c946def9c9b1a70ad74159fc984b3cad6239049638d0d5a7fd0"
     },
     {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/SolTradeFXIFYReadOnlyHistory.mq5",
+      "bytes": 7930,
+      "sha256": "c756495e5f3062e95c33514616f25ff3a665571fec11f38c6c21e4b91d2cd71a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/compile.log",
+      "bytes": 3054,
+      "sha256": "a7823d6e468a21e830ed3cab7c1afa07b6d9acca6221856e57ec31d6443dfae1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/deals.csv",
+      "bytes": 9964,
+      "sha256": "afa301144c6d15e36da265d5b1d953df054bf564a97f3559dfce49778d0e7a0b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/expert.log",
+      "bytes": 434,
+      "sha256": "4fe13b3fe4b9f2f5967b3d6c9393f02c61d7eab828ba30e017ae4a61e468f1c2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/history-status.csv",
+      "bytes": 115,
+      "sha256": "a002cee6e15e63958709974b88d421c140c01324820060d1567233617167bf09"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/orders.csv",
+      "bytes": 7693,
+      "sha256": "43808de32ce871377b2e361f3469b8704272a30b9dfa678da5030087ee1ddfe0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/recovery-receipt.json",
+      "bytes": 942,
+      "sha256": "1cb04990aa67831d2e4eb995b6a426bab9d02163d8c657ac9eccfeee8c038567"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/startup.ini",
+      "bytes": 268,
+      "sha256": "3152a6341f2ffdb312092fa71d612039388404085749ac88a27a63c33d82a7f7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-export/terminal.log",
+      "bytes": 16704,
+      "sha256": "6112a7f06a072fb7aef7a1928009ab69b73734462de8c677ab0eefd70a559c17"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-position-ledger.csv",
+      "bytes": 2363,
+      "sha256": "bcd50b39149fde4a6e1797e198dce6f2a50c6ecdd0c3bc6b8ba232601d6d5117"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-10k-broker-reconciliation.json",
+      "bytes": 1071,
+      "sha256": "ba1069b40ac1606fbd3247568c98402fbfa74c7996dc75fff6356d06afdc07a1"
+    },
+    {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-recovery-receipt.json",
-      "bytes": 8137,
-      "sha256": "f91d5f13c8fd0dc53a99d277b37558a0b22f4be5bb6aedb75d28274c1926d662"
+      "bytes": 8381,
+      "sha256": "2c6057710d5774b943a931ea980887b6e2ae8416901f6da920381c3396818a47"
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-unresolved-trades.csv",
-      "bytes": 8410,
-      "sha256": "f3653b3be9ff3558a3737cd0b2624ae742abecd843714c2d138b59b37ed6ce04"
+      "bytes": 7971,
+      "sha256": "0ae270ad81714471af776dd0f024a056073ccc5863fa3c3b72ad25cec93c5681"
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/SolTradeFPReadOnlyNativeStopBars.mq5",
@@ -503,13 +558,13 @@
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/report.md",
-      "bytes": 8460,
-      "sha256": "17ed032ff050c323bf3f1734c8a3f9df4e977785d53f6418775dc43e0a5596ea"
+      "bytes": 10576,
+      "sha256": "6faa8f6b5d1b63948da6b1d5ab010eaf63ab65e7a0e2931e4e296f5fd6acc3b5"
     },
     {
       "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/test-results.json",
-      "bytes": 8402,
-      "sha256": "dc31256823660643bd7442a8e2c7cfad0302f8ccc84cb98afb9daebb621ca516"
+      "bytes": 8929,
+      "sha256": "45b476ae3d551b128a231a44c1244181724d2774451d3a9932ac930b90d68ad7"
     },
     {
       "path": "tests/test_three_account_24h_live.py",
@@ -528,13 +583,18 @@
     },
     {
       "path": "tests/test_three_account_completion_matrix.py",
-      "bytes": 1893,
-      "sha256": "85091cf4433c576b4a8c92eceab528464cf6d22f230083c8e68eb533fedf3710"
+      "bytes": 2141,
+      "sha256": "d96f564a1a309a8ecf0e5a971f8a6358edb1b2634fb5e8cf3e96d232b08ef353"
     },
     {
       "path": "tests/test_three_account_completion_replay.py",
       "bytes": 8559,
       "sha256": "f02694687374300ed50991492eb36746d5408777a895fd073df0b18a32d23541"
+    },
+    {
+      "path": "tests/test_three_account_fxify_broker_recovery.py",
+      "bytes": 1403,
+      "sha256": "99659e73b7800d6ea247b3f929acb02e0b7b88acc678d6ddde15f6c012907fe3"
     },
     {
       "path": "tests/test_three_account_native_opposite.py",
@@ -572,9 +632,14 @@
       "sha256": "a63db24f30161932231023bcf9b253888466c2ef59d5166aa41ab89e47ad94cf"
     },
     {
+      "path": "tools/three_account_completion/fxify_reconcile.py",
+      "bytes": 5476,
+      "sha256": "dbb838eb0032c0a8c7022515109fe40f42ff698d060c78b8d618602dd42076ac"
+    },
+    {
       "path": "tools/three_account_completion/matrix.py",
-      "bytes": 12321,
-      "sha256": "8d4f2fa89525a43d5481277ce2b4519e6b77cdddad5dff5dfe36fb50e7b78a5f"
+      "bytes": 15069,
+      "sha256": "b5ca7a426d7b18d231c7137e20177d39d95a574d71ff5a7f91f14d32fe027809"
     },
     {
       "path": "tools/three_account_completion/replay.py",

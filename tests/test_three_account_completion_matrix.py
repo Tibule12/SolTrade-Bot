@@ -23,13 +23,16 @@ class CompletionMatrixTests(unittest.TestCase):
             self.assertEqual(row["net_r"], "")
             self.assertEqual(row["exact_replay_trades"], "0")
 
-    def test_fxify_baseline_uses_four_trade_bridge_not_all_september_events(self):
-        for account in ("FXIFY 7196820", "FXIFY 7198096"):
-            row = next(r for r in self.rows if r["account"] == account and r["arm"] == "BASELINE_REPLAY")
-            self.assertEqual(row["eligible_trades"], "4")
-            self.assertEqual(row["unresolved_trades"], "4")
-            self.assertEqual(row["exact_replay_trades"], "0")
-            self.assertEqual(row["broker_exact_final_balance"], "")
+    def test_fxify_10k_broker_baseline_and_100k_event_bridge_are_distinct(self):
+        ten = next(r for r in self.rows if r["account"] == "FXIFY 7196820" and r["arm"] == "BASELINE_REPLAY")
+        self.assertEqual(ten["eligible_trades"], "24")
+        self.assertEqual(ten["exact_replay_trades"], "24")
+        self.assertEqual(ten["broker_exact_final_balance"], "9660.24000000")
+        hundred = next(r for r in self.rows if r["account"] == "FXIFY 7198096" and r["arm"] == "BASELINE_REPLAY")
+        self.assertEqual(hundred["eligible_trades"], "4")
+        self.assertEqual(hundred["unresolved_trades"], "4")
+        self.assertEqual(hundred["exact_replay_trades"], "0")
+        self.assertEqual(hundred["broker_exact_final_balance"], "")
 
     def test_all_opportunity_coverage_denominator_is_not_invented(self):
         for row in self.rows:
