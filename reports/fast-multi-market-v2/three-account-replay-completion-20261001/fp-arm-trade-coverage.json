@@ -1,0 +1,21 @@
+{
+  "schema": "FP_24H_NATIVE_OPPOSITE_EXACT_COVERAGE_V1",
+  "all_actual_entries": 29,
+  "initial_stop_loss_entries": 14,
+  "fresh_entry_quote_count": 25,
+  "full_24h_quote_window_count": 27,
+  "native_stop_exact_count": 0,
+  "opposite_exact_final_result_count": 0,
+  "all_status_counts": {
+    "UNRESOLVED_BROKER_HISTORY": 4,
+    "UNRESOLVED_NATIVE_STOP": 25
+  },
+  "initial_stop_loss_status_counts": {
+    "UNRESOLVED_NATIVE_STOP": 14
+  },
+  "initial_stop_loss_mirrored_quote_boundary_counts": {
+    "BOUNDARY_ORDER_UNRESOLVED_QUOTE_GAP": 1,
+    "PLUS_1R_QUOTE_BOUNDARY": 13
+  },
+  "note": "Mirrored quote boundaries are diagnostic. No opposite-side cash Bank1R, final R or account balance is imputed."
+}

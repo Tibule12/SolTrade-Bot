@@ -1,0 +1,18 @@
+{
+  "schema": "FP_24H_OPPOSITE_QUOTE_BOUNDARY_RECEIPT_V1",
+  "positions": 29,
+  "total_exported_ticks": 2903063,
+  "entry_anchor": {
+    "FRESH_QUOTE_WITHIN_2S": 25,
+    "UNRESOLVED_BROKER_HISTORY_OR_STOP": 4
+  },
+  "mirrored_opposite_status": {
+    "PLUS_1R_QUOTE_BOUNDARY": 15,
+    "UNRESOLVED_BROKER_HISTORY_OR_STOP": 4,
+    "BOUNDARY_ORDER_UNRESOLVED_QUOTE_GAP": 1,
+    "INITIAL_STOP_QUOTE_BOUNDARY": 9
+  },
+  "actual_initial_stop_loss_rows": 14,
+  "opposite_final_cash_coverage": 0,
+  "interpretation": "24h executable quote-side initial boundaries only. Beyond the original exit is included. No opposite manager terminal, native stop, broker-valid fill, or exact counterfactual cash is inferred; quote gaps and unavailable entry anchors remain unresolved."
+}

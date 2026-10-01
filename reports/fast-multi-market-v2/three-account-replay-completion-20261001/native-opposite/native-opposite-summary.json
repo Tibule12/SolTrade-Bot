@@ -1,0 +1,21 @@
+{
+  "schema": "FP_NATIVE_OPPOSITE_STOP_RECONSTRUCTION_V1",
+  "account": 7404213,
+  "position_count": 29,
+  "fourteen_initial_stop_loss_count": 14,
+  "native_structure_reconstructed_count": 25,
+  "native_structure_unresolved_count": 4,
+  "actual_stop_reconciled_count": 25,
+  "exact_native_stop_price_count": 0,
+  "historical_broker_floor_provenance": "Unavailable in historical MT5 deal/order data; current metadata is marked as current, never historical.",
+  "frozen_source_sha256": "4d1980812f3312728d8c8258c6b8b59d4c29013f3f3832128866fbcfcab3c63e",
+  "input_sha256": {
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-bars-fp-20261001.csv": "6223f960aa3d501e741409951a87766cefc7fdefc15e79f653f5483b49518e95",
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-coverage-fp-20261001.csv": "93e32a6d4606559c214da2e5dc331007978540f593ad29a0218c1ea9ff4c2e52",
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-specifications-fp-20261001.csv": "6e28fa1fe5b380a109135a2bb6ed104dacaaf6f395889bf940791a6ec782d884",
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-status-fp-20261001.csv": "1e4c94f04913a05b08241cf20ac4a973afe228eee492eeeb1eaad53c29554209",
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-stop-bars-from-broker-ticks.csv": "11f2e4400a3ccfaee38ee32c759fc1f3382e6334b4be4956ce0789317c24344d",
+    "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-stop-broker-tick-coverage.json": "d2d35982bcedabf1de4b05b32c3943728231be78cc61fbab19d8094d89ce736c"
+  },
+  "out_csv": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-opposite-stops.csv"
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "THREE_ACCOUNT_EXACT_ARM_COMPLETION_MATRIX_V1",
+  "rows": 73,
+  "account_count": 3,
+  "experimental_arms_per_account": 23,
+  "counterfactual_arms_with_exact_final_balance": 0,
+  "prior_arm_labels_preserved": true,
+  "numeric_null_policy": "No experimental cash, R, W/L, drawdown or final balance populated without a complete chronological terminal path.",
+  "baseline_fp_broker_cash_exact": true,
+  "fxify_independent_broker_baseline_exact": false,
+  "matrix_csv": "account-arm-completion-matrix.csv"
+}

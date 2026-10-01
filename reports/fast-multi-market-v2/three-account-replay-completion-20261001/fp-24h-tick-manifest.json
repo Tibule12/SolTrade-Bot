@@ -1,0 +1,298 @@
+{
+  "schema": "FP_24H_TICK_MANIFEST_V1",
+  "files": [
+    {
+      "case_id": "fp24-400259945",
+      "symbol": "XAUUSD.r",
+      "ticks": 150120,
+      "source_bytes": 7055658,
+      "source_sha256": "1aa045c63d05557bd89f6ad3385309894fd7cc24b03e5f84584fc52848a60f4d",
+      "gzip_bytes": 1209267,
+      "gzip_sha256": "53ef4cd2518aa8f02a769f70c9cc46527fc353221130ff88a68e66243d0b659f",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400259945.csv.gz"
+    },
+    {
+      "case_id": "fp24-400503030",
+      "symbol": "USDJPY.r",
+      "ticks": 96360,
+      "source_bytes": 4336218,
+      "source_sha256": "86f5243bcfc8953efc76cb3e7aeb74944d0f1582751c65083e5edc4dbd49d32c",
+      "gzip_bytes": 613763,
+      "gzip_sha256": "68cc817e156926438b0af02839b2917761dd5078a813482b79e047cc59c3d1f3",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400503030.csv.gz"
+    },
+    {
+      "case_id": "fp24-400687907",
+      "symbol": "US100",
+      "ticks": 129992,
+      "source_bytes": 6369626,
+      "source_sha256": "990776a0d5fc0707efda0dc476716874770ce990fdfc094b84ef7c6dcbacb8e2",
+      "gzip_bytes": 780633,
+      "gzip_sha256": "f40eb54d0ec618e85b072ecb51a58bbb3f89183fdddc6da6fba3de0eb3b91275",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400687907.csv.gz"
+    },
+    {
+      "case_id": "fp24-400795827",
+      "symbol": "GER40",
+      "ticks": 45652,
+      "source_bytes": 2236966,
+      "source_sha256": "af97ef313f1d03eaa40519fb0799dcb3811b35bd8e8b70b99d64bcb61d1aab18",
+      "gzip_bytes": 251862,
+      "gzip_sha256": "2d33da8631183c4bed0307369c22a519eacdfcdd91e3acc11669497d0fb1e334",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400795827.csv.gz"
+    },
+    {
+      "case_id": "fp24-401323004",
+      "symbol": "XAUUSD.r",
+      "ticks": 158694,
+      "source_bytes": 7458636,
+      "source_sha256": "8dba17944e97284f98f1a51a65808bfdd91815ef0052384fa8ae92852b2f8601",
+      "gzip_bytes": 1308032,
+      "gzip_sha256": "db2161ac625a1bc17cf743139a97403dbcb8ca7ff734fbf14fd3c770d42e87fa",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401323004.csv.gz"
+    },
+    {
+      "case_id": "fp24-401663494",
+      "symbol": "GER40",
+      "ticks": 54763,
+      "source_bytes": 2683405,
+      "source_sha256": "cc120ce8b0deab191dda56198e385485ef62b64aac28e6f970516ce55cb85ee7",
+      "gzip_bytes": 303916,
+      "gzip_sha256": "984c4c5ac7dc178ce9f936a2ce35bc82383b3b947f6e2d0f16861203f5db6b4d",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401663494.csv.gz"
+    },
+    {
+      "case_id": "fp24-401784070",
+      "symbol": "GER40",
+      "ticks": 53140,
+      "source_bytes": 2603878,
+      "source_sha256": "090996cdca63efdd0cf1e1ac3e3ebc594683e61e310907e35e66cd40a24a5eae",
+      "gzip_bytes": 294796,
+      "gzip_sha256": "71351f7a480585766e676bcc58b9f7b5fd6901e61b417c6e29da0dfc324b0443",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401784070.csv.gz"
+    },
+    {
+      "case_id": "fp24-401890448",
+      "symbol": "US100",
+      "ticks": 130790,
+      "source_bytes": 6408728,
+      "source_sha256": "e0251d5e8a49a1206472be4f2423016885be8369d0fbf089326fea1afa03191c",
+      "gzip_bytes": 791977,
+      "gzip_sha256": "e8b12bbebc0d9086cd3dadd28dfe5b3dbd2d203b37561413943159bf447bfa98",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401890448.csv.gz"
+    },
+    {
+      "case_id": "fp24-402234685",
+      "symbol": "UK100",
+      "ticks": 34970,
+      "source_bytes": 1713548,
+      "source_sha256": "65cba496d6ab0ff692def985e617821ef5818f3870adfaa166f37d9d8c78bea3",
+      "gzip_bytes": 197564,
+      "gzip_sha256": "4c48b61e8722fe32bb3318906706c4befea93a3f0a0c66a04019dd8b03478578",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402234685.csv.gz"
+    },
+    {
+      "case_id": "fp24-402391108",
+      "symbol": "XAUUSD.r",
+      "ticks": 149348,
+      "source_bytes": 7019374,
+      "source_sha256": "3665e74bf3edf05e08098c29be0d6e09b89bd2d92ca01cf9ae37ed5d69555f58",
+      "gzip_bytes": 1210222,
+      "gzip_sha256": "3afc6008ca2d8672087a0c341bcef50610970dcc986972863aba0351ba404791",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402391108.csv.gz"
+    },
+    {
+      "case_id": "fp24-402914703",
+      "symbol": "US100",
+      "ticks": 82492,
+      "source_bytes": 4042126,
+      "source_sha256": "8b195bc13c64df3c5c691f1bf298ba1b1870fd45f4d9c675f5f01a992a20e87e",
+      "gzip_bytes": 505198,
+      "gzip_sha256": "f7403c2047f6ac299095f16d488379542b599945f57819b4f3c219896cbc8148",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402914703.csv.gz"
+    },
+    {
+      "case_id": "fp24-403168162",
+      "symbol": "GER40",
+      "ticks": 11865,
+      "source_bytes": 581403,
+      "source_sha256": "53be8dca01af7e1f05a8fb83222f35937559808b09a5212c7635bdf90d7f4727",
+      "gzip_bytes": 63799,
+      "gzip_sha256": "213534547f546aef647587ba3a0944661ff7d1b8464b2f319f2ae284ef6fa007",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-403168162.csv.gz"
+    },
+    {
+      "case_id": "fp24-403429027",
+      "symbol": "US100",
+      "ticks": 118512,
+      "source_bytes": 5807106,
+      "source_sha256": "35ed98296b90a7e48f0360c517d2b631b533697908540673a9378fb7aea3794a",
+      "gzip_bytes": 715022,
+      "gzip_sha256": "2fc668f4e33fa424560d053989800d517f6e2487cb084559e187a33d7c8fe303",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-403429027.csv.gz"
+    },
+    {
+      "case_id": "fp24-404066546",
+      "symbol": "XAUUSD.r",
+      "ticks": 153613,
+      "source_bytes": 7219829,
+      "source_sha256": "7c190183ceba4283983397ee707ec95e534129f7e061db5f1bcc69f0cbb84c9c",
+      "gzip_bytes": 1248964,
+      "gzip_sha256": "c4b010845be3367af8bfe1170c48b94dee30bbe558aa7a5dec4b1238bec56925",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404066546.csv.gz"
+    },
+    {
+      "case_id": "fp24-404217210",
+      "symbol": "US100",
+      "ticks": 126254,
+      "source_bytes": 6186464,
+      "source_sha256": "2741fa3f6b2c8d6885918cd62ca4355d3c200e640f0392cab770770dfee7ed7d",
+      "gzip_bytes": 764090,
+      "gzip_sha256": "27dcbae22955328b92ddc5e6c41cbc6469006bda0ae3939d3187357f963c7da3",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404217210.csv.gz"
+    },
+    {
+      "case_id": "fp24-404314872",
+      "symbol": "GER40",
+      "ticks": 50825,
+      "source_bytes": 2490443,
+      "source_sha256": "2637b3bdee2d960391e45c26fb795624bdade0c4e1b24195dc19628c4cfbed69",
+      "gzip_bytes": 280940,
+      "gzip_sha256": "cf37649f6295bc4e4e75b32f683ac983abd5812c6074f9d9394c60a0ef9667d4",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404314872.csv.gz"
+    },
+    {
+      "case_id": "fp24-404406045",
+      "symbol": "USDJPY.r",
+      "ticks": 88745,
+      "source_bytes": 3993543,
+      "source_sha256": "f9f4343926a34e78213c4e70a308f35d133060b3bc65bf4d7a2f9335dcac2a78",
+      "gzip_bytes": 552928,
+      "gzip_sha256": "b61d505c1e5168a4f69674d2b0b827613a17bf8bf9802f6e48a52579a9fdc609",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404406045.csv.gz"
+    },
+    {
+      "case_id": "fp24-405060244",
+      "symbol": "GER40",
+      "ticks": 61428,
+      "source_bytes": 3009990,
+      "source_sha256": "2e9a4c4dcdfe698049de94ae53f2890f532454c1d100d923d009df0c465fe369",
+      "gzip_bytes": 339048,
+      "gzip_sha256": "5b00a0b193ebd368ad5e6514bbf4b414cd8968279b2ae099d3659c6e3279e8af",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405060244.csv.gz"
+    },
+    {
+      "case_id": "fp24-405229729",
+      "symbol": "XAUUSD.r",
+      "ticks": 151902,
+      "source_bytes": 7139412,
+      "source_sha256": "54edc96b0649711c75f50a99f280aa36b82c37e7395e53e1daaae6cfcca5fe82",
+      "gzip_bytes": 1225577,
+      "gzip_sha256": "cb4de90359ccfaa30b13d04f62f6b0db39ca4e4b342c0eff68b6d531e8bbf6be",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405229729.csv.gz"
+    },
+    {
+      "case_id": "fp24-405250840",
+      "symbol": "AUDUSD.r",
+      "ticks": 55342,
+      "source_bytes": 2269040,
+      "source_sha256": "80476925de1d3f3d04ef6d6ed19189922d39332bf331952bd716aa819bbc74ab",
+      "gzip_bytes": 339287,
+      "gzip_sha256": "20af667c44d0e5a6ae7927d63a6cafa97fa1faa598959c5b0651d98a7356ab59",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405250840.csv.gz"
+    },
+    {
+      "case_id": "fp24-405640859",
+      "symbol": "XAUUSD.r",
+      "ticks": 152113,
+      "source_bytes": 7149329,
+      "source_sha256": "1e0f054e0c37cf1717aa90dcdc1da44f72c097b20f8d5e3e784ef76a01d267c9",
+      "gzip_bytes": 1223247,
+      "gzip_sha256": "3dec32f7f31d0d01fd2ee884831d3674bb4e31bb6976a260ee79c49034cd6297",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405640859.csv.gz"
+    },
+    {
+      "case_id": "fp24-406782899",
+      "symbol": "XAUUSD.r",
+      "ticks": 156678,
+      "source_bytes": 7363884,
+      "source_sha256": "d86e48d6a8d41ea189180f654299bd8ba1d51c20e353bf9eaad6a2c3e128b1bf",
+      "gzip_bytes": 1273024,
+      "gzip_sha256": "333890fb027109bdbebc088ced0b4b66749ad767796e8cc6d80ae55d730e228c",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-406782899.csv.gz"
+    },
+    {
+      "case_id": "fp24-407242896",
+      "symbol": "US100",
+      "ticks": 141821,
+      "source_bytes": 6949247,
+      "source_sha256": "07e09120b0ad2eb07ae00e3d51b466848bc7ea0d7930e1231674b5fafc073655",
+      "gzip_bytes": 879618,
+      "gzip_sha256": "babbd990ec816635155d9ac1184f3a02dfbc38e9cf0e553af03dd13e8dc86fec",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407242896.csv.gz"
+    },
+    {
+      "case_id": "fp24-407390566",
+      "symbol": "XAUUSD.r",
+      "ticks": 148459,
+      "source_bytes": 6977591,
+      "source_sha256": "d90c13d360ade3562831781100698154e06b2659aca2f15d6824a6ede79181ba",
+      "gzip_bytes": 1185247,
+      "gzip_sha256": "11bee6997bb65b36d5d3efe1b77763279175fe364741b1160dfe9cffdff8a708",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407390566.csv.gz"
+    },
+    {
+      "case_id": "fp24-407571384",
+      "symbol": "AUDUSD.r",
+      "ticks": 53327,
+      "source_bytes": 2186425,
+      "source_sha256": "ed8344fbbc322d001fe18c744715178522466c95aeab782c3913d43772991421",
+      "gzip_bytes": 327601,
+      "gzip_sha256": "dc8a35246027ff8cae18ddb568917b681bb9d015559cfb2749db463058eeb474",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407571384.csv.gz"
+    },
+    {
+      "case_id": "fp24-408044341",
+      "symbol": "EURJPY.r",
+      "ticks": 115579,
+      "source_bytes": 5201073,
+      "source_sha256": "e187c11d6de059b3752030e0d56199cc03f2c2e37351d54d818fc1f018431510",
+      "gzip_bytes": 752466,
+      "gzip_sha256": "ca22c3f786c481b60c359ea0b51b1bb5cb2b8ecf0b2b070f9f540d6eef772406",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-408044341.csv.gz"
+    },
+    {
+      "case_id": "fp24-408708254",
+      "symbol": "GER40",
+      "ticks": 73563,
+      "source_bytes": 3604605,
+      "source_sha256": "ae43ea7fed126913536c24bf6bc06e5307c7e4424335db39de17bad5d20205ee",
+      "gzip_bytes": 407294,
+      "gzip_sha256": "611e4cc38fb5141d1a1e549e740be324fc0b5c20f35d3cb519d1061dc67cc5cb",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-408708254.csv.gz"
+    },
+    {
+      "case_id": "fp24-409016573",
+      "symbol": "US100",
+      "ticks": 117442,
+      "source_bytes": 5754676,
+      "source_sha256": "1830892e39ed9a899097d0705715cf4c4cf2b8925590330c92c76639df0af683",
+      "gzip_bytes": 740536,
+      "gzip_sha256": "e20ea6ae71bd718fe1e0b6cc5c3758b2f0c424241340d53258fa7deea1175b11",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-409016573.csv.gz"
+    },
+    {
+      "case_id": "fp24-409382791",
+      "symbol": "GER40",
+      "ticks": 39274,
+      "source_bytes": 1924444,
+      "source_sha256": "9dcd12a4e38e62d2558654a27a5419a7aa5f6c967d405e04a0fae3de78a311e8",
+      "gzip_bytes": 210168,
+      "gzip_sha256": "b7570932c0869c946def9c9b1a70ad74159fc984b3cad6239049638d0d5a7fd0",
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-409382791.csv.gz"
+    }
+  ],
+  "total_ticks": 2903063,
+  "source_total_bytes": 137736667,
+  "gzip_total_bytes": 19996086
+}

@@ -1,0 +1,217 @@
+{
+  "schema": "FXIFY_INDEPENDENT_BROKER_RECOVERY_ATTEMPT_V1",
+  "accounts": [
+    "7196820",
+    "7198096"
+  ],
+  "local_mt5_cache": [
+    {
+      "relative_path": "trades/2100139002/cache.dat",
+      "bytes": 4096,
+      "sha256": "59a8b9fa9e0682acf10f9911ad3daea87abe25fea49b362b93bc05a9d8e5e980"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.07.dat",
+      "bytes": 996,
+      "sha256": "43c92c8a8f36e31f185782601350405292548a8f75c842a96c86b358690db037"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.08.dat",
+      "bytes": 996,
+      "sha256": "e20c5bdf41c0ae14f51e6ba52b390e176f5b53f63f30b8ef56f18d70fb15beee"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.09.dat",
+      "bytes": 8724,
+      "sha256": "044953eade224c47e7ccc764b1889202dc1dc5577421bf23147e1e62d16ae83f"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.10.dat",
+      "bytes": 2928,
+      "sha256": "216268728cb12d42dc091dcf93db7dfc281e73d23ed84517f6d0cb14353e7a0d"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.11.dat",
+      "bytes": 4216,
+      "sha256": "b184953218ef83a4b7f768d50b4c6ae86107522cb6c69a6e2190b1455f76dcb2"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2023.12.dat",
+      "bytes": 6792,
+      "sha256": "2f4c3de435adad0d54174e57ab1e2aa53e26faa936e1aea5491e15b0719ff84f"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.01.dat",
+      "bytes": 5504,
+      "sha256": "5e849f1b25c188cbc496a226427e7642f89424817f9b02cb6778cc9c4b83a120"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.02.dat",
+      "bytes": 28688,
+      "sha256": "1a970fe912484b7b611f0d9168e51f4cb899d3d50981a4e9ad13a8561386844f"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.03.dat",
+      "bytes": 24180,
+      "sha256": "3e8345d18334761d783e0f31f20e42d2d6d9ed0f65d75c32d9fc31f76756fa8e"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.04.dat",
+      "bytes": 15808,
+      "sha256": "8729b730fa6e119cad1607cc6c9ae89cfdf24fb9b3a26b0de71975a71c6e4bfe"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.05.dat",
+      "bytes": 26756,
+      "sha256": "44af00aad07c0ea4aeeb4e3b49c484be1d00043e061974bd54aafcdab25a039a"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.06.dat",
+      "bytes": 20960,
+      "sha256": "25067e7acded2e8be9c2083b12fbbef1ee83652fade8aa0c396ad1c4864f3c1f"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.07.dat",
+      "bytes": 26112,
+      "sha256": "46f6ab70f6c92fd1d58c05d283239acdbd2750aebfd79d3113b336057e123df7"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.08.dat",
+      "bytes": 17096,
+      "sha256": "e0174dd60bbaa7fa01ddcbf3dedf89ff526039a9a06a8107d3ca30380772a285"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.09.dat",
+      "bytes": 10012,
+      "sha256": "cd2d0e213b72dfba335a8d436e191bddd26e48d7e1209adf04657321b3fdb8d5"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.10.dat",
+      "bytes": 5504,
+      "sha256": "9e10bb177b458bf6293fd4d2520846aa5e0912d62ea063b631fa34310ba624a5"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.11.dat",
+      "bytes": 8724,
+      "sha256": "a30508a108554e0adae3968873f68a0abf9710e954832027b3131f3e451a96cc"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2024.12.dat",
+      "bytes": 22248,
+      "sha256": "2d26c1f5571594877d10743390c45a0f8ad86ecbeac83e41b128a64ac4fc621a"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.01.dat",
+      "bytes": 12588,
+      "sha256": "8a09b15fb5b39ff7501b435bbe48cecfd13287f6ac33eb188531eb3f4e8a0548"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.02.dat",
+      "bytes": 996,
+      "sha256": "8b3288d83d2d1ad2e42c10dceacfe970bfd26adc2503ae4aaa63a645a1f55fc9"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.03.dat",
+      "bytes": 8080,
+      "sha256": "3f3837dffaf649610bb5074109ffbbacb2cbd3c69de15f4a91c7d5abbd1b6ebf"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.04.dat",
+      "bytes": 7436,
+      "sha256": "b9570b6288fe6a5f8b4096a7841558b22c12fb00e09fc8fe8793dfff823338ab"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.05.dat",
+      "bytes": 4860,
+      "sha256": "bf77c02cdf497f5a9025865027e44e8ad905f7d865a03e9a699cfd2cde6eba22"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.06.dat",
+      "bytes": 2928,
+      "sha256": "01e50997ae29961ce72031a3acee05f4be4cc8b56bd18dec322a13fd2fa7f5e3"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.07.dat",
+      "bytes": 4216,
+      "sha256": "924d0a65a2d70e669d89bd147d8117eb0d6348755a9e4e7b956324c1e70c5029"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.08.dat",
+      "bytes": 4860,
+      "sha256": "72bac66c09308901fb24b17fcefb9319bd22314abdf3c39a9a0f2a3a6fbeb55e"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.09.dat",
+      "bytes": 2928,
+      "sha256": "6dfb4f78c9f98f897b4a81d2e9cad0a82d6ff3d7a353d64ad846e7ed9051368d"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.10.dat",
+      "bytes": 2284,
+      "sha256": "3c9ae5d91fa04598272a0b8b916cefc1ad62140e3faa62a244269f1bb9642680"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.11.dat",
+      "bytes": 4860,
+      "sha256": "5bbba2f3566065a914b81851f6f4ba3925655d04c3750ec4a51b55cf9b598c12"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2025.12.dat",
+      "bytes": 996,
+      "sha256": "91301b0207b2b87cabf278c71ee76645f524413790f570d7b812710b29e68b82"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.01.dat",
+      "bytes": 10656,
+      "sha256": "0922893a09604c9d9a41244fde5c67398514caa621c1e9c4a867e6d5aee27015"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.02.dat",
+      "bytes": 1640,
+      "sha256": "ad21236841bee1d9e3c00be0e3239d23c2aad5885252bb623994f9079eca6cc9"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.03.dat",
+      "bytes": 2284,
+      "sha256": "5dae54155a9c31c6cb442c8d7ed10696eab7565ae4cc33179bc5a9490ed141f1"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.04.dat",
+      "bytes": 2928,
+      "sha256": "f4f11a711d4ac16c9fbc1cdd6267257a9260b39ead9beecf66f2914c2b813be6"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.05.dat",
+      "bytes": 3572,
+      "sha256": "cff23ff3b13aa061be10a8f092cf180255593c2b43a17ad0d8c5234f44fa1b10"
+    },
+    {
+      "relative_path": "trades/2100139002/history_2026.07.dat",
+      "bytes": 1640,
+      "sha256": "b5f7c8ed865d3de167e1cfd481ffadd247d601e1789235ae8634a136eabed6fa"
+    },
+    {
+      "relative_path": "trades/7196820/cache.dat",
+      "bytes": 4096,
+      "sha256": "816cc1742552075edd4c0965e5de50edc6f7dcf059bb0901746f81f30b446530"
+    },
+    {
+      "relative_path": "trades/7196820/deals_2026.08.dat",
+      "bytes": 3752,
+      "sha256": "1a1b9a35f1799054e84d410ca35460e2afc106cf541f4e972cff61acae4b0d0b"
+    },
+    {
+      "relative_path": "trades/7196820/history_2026.08.dat",
+      "bytes": 2928,
+      "sha256": "465addfc78adceb9e4dbd86c6a5168b7e368cbdd77302f77333be58f37e05c70"
+    }
+  ],
+  "local_september_deal_history_found": false,
+  "local_100k_deal_history_found": false,
+  "local_fxi_24h_tick_files_found": false,
+  "vps_readonly_rdp_attempt": "VPS credential authentication and Windows desktop observed in guarded RDP attempt; redirected-drive broker-history receipt did not arrive; no broker history was recovered through this path.",
+  "vps_remote_account_or_trading_settings_modified": false,
+  "research_order_api_used": false,
+  "exact_unresolved_period": "FXIFY broker deals/orders/positions/account operations and account-specific bid/ask for 2026-09-01 through 2026-09-16",
+  "interpretation": "August 10K binary cache cannot substitute for September deal or quote histories; no FXIFY broker-exact baseline or counterfactual final balance is asserted."
+}

@@ -1,0 +1,590 @@
+{
+  "schema": "THREE_ACCOUNT_REPLAY_COMPLETION_FILE_MANIFEST_V1",
+  "files": [
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/account-arm-completion-matrix.csv",
+      "bytes": 38682,
+      "sha256": "908204179226f677eeb71cded1b2cf31ac8d7783f9c42c9adc93102e6d74c467"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/account-arm-completion-matrix.json",
+      "bytes": 517,
+      "sha256": "50aef78e3d36057833fc7e946ea4dfa21ebefc00dbb34dab23ee22a52c56e536"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-14-stop-loss-opposite-evidence.csv",
+      "bytes": 10976,
+      "sha256": "dfe86d649dc428af08e3d42636d326fccc954ddcc72ba1249e663e2d5703292e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-14-stop-loss-opposite-evidence.json",
+      "bytes": 478,
+      "sha256": "f107fd6c6c80456a94939208704ed01e0b0f5b02bc40b4dc1e64f192ea98f054"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/SolTradeFPAllSymbolAudit.mq5",
+      "bytes": 7770,
+      "sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/compile.log",
+      "bytes": 3040,
+      "sha256": "0608286e50e34df9f2c85d207ac7406c3e02db33bb1bee42c3f7e1b79484070e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/export-receipt.json",
+      "bytes": 345,
+      "sha256": "7f8868fae4f80ad7e485c45b38ef1bb10997eb04e2caf3a38f8b3317488bca67"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/path-chunks-three-account-24h.csv",
+      "bytes": 137552,
+      "sha256": "87213164635c9123f62d4afc39d726b485f7bc272a6217a2742c341051953069"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/path-coverage-three-account-24h.csv",
+      "bytes": 2971,
+      "sha256": "a64c1fd3c0df4739d400ae5389497b007792f77b0fe19c5433b2081ac658d986"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/paths-status-three-account-24h.csv",
+      "bytes": 119,
+      "sha256": "cf69f165dda1a3c83c954e4c0183b32f6b7b415c98f504e6b660d2c84d0582d6"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/symbol-specifications-three-account-24h.csv",
+      "bytes": 2164,
+      "sha256": "3add833c791ea93a6f4acf1ee8e1f5b9e9298d94e8262ff6d936d3ba378f1a16"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-export/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-opposite-paths.csv",
+      "bytes": 18346,
+      "sha256": "fc70044d32e30511460ddebdb72654d73ccfea3184dc2df25172d5cb3bbc9836"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-opposite-summary.json",
+      "bytes": 765,
+      "sha256": "638dd194a411f21bc3f0298961f39d0f2b90d1491cbab399dc510850c6ae3a17"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-requests.csv",
+      "bytes": 1831,
+      "sha256": "bc077e659365677a51ddf0cec999e48451aec9c7bc5cf50acdccbb3d2fe00a1d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-24h-tick-manifest.json",
+      "bytes": 13465,
+      "sha256": "0d1346ab99834b334bb23c5db33f07fc4355db67e83ec792217093cfe03fd557"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-arm-trade-coverage.csv",
+      "bytes": 10562,
+      "sha256": "295d63e1a1f024095b1e7fafcf19c42f3b20f200569ec4bcea5a70f9f26f81a3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-arm-trade-coverage.json",
+      "bytes": 706,
+      "sha256": "f01ba8428b189a0da163e78a4338ab55d12fbd410c73d540af7523c697082da4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400259945.csv.gz",
+      "bytes": 1209267,
+      "sha256": "53ef4cd2518aa8f02a769f70c9cc46527fc353221130ff88a68e66243d0b659f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400503030.csv.gz",
+      "bytes": 613763,
+      "sha256": "68cc817e156926438b0af02839b2917761dd5078a813482b79e047cc59c3d1f3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400687907.csv.gz",
+      "bytes": 780633,
+      "sha256": "f40eb54d0ec618e85b072ecb51a58bbb3f89183fdddc6da6fba3de0eb3b91275"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-400795827.csv.gz",
+      "bytes": 251862,
+      "sha256": "2d33da8631183c4bed0307369c22a519eacdfcdd91e3acc11669497d0fb1e334"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401323004.csv.gz",
+      "bytes": 1308032,
+      "sha256": "db2161ac625a1bc17cf743139a97403dbcb8ca7ff734fbf14fd3c770d42e87fa"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401663494.csv.gz",
+      "bytes": 303916,
+      "sha256": "984c4c5ac7dc178ce9f936a2ce35bc82383b3b947f6e2d0f16861203f5db6b4d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401784070.csv.gz",
+      "bytes": 294796,
+      "sha256": "71351f7a480585766e676bcc58b9f7b5fd6901e61b417c6e29da0dfc324b0443"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-401890448.csv.gz",
+      "bytes": 791977,
+      "sha256": "e8b12bbebc0d9086cd3dadd28dfe5b3dbd2d203b37561413943159bf447bfa98"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402234685.csv.gz",
+      "bytes": 197564,
+      "sha256": "4c48b61e8722fe32bb3318906706c4befea93a3f0a0c66a04019dd8b03478578"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402391108.csv.gz",
+      "bytes": 1210222,
+      "sha256": "3afc6008ca2d8672087a0c341bcef50610970dcc986972863aba0351ba404791"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-402914703.csv.gz",
+      "bytes": 505198,
+      "sha256": "f7403c2047f6ac299095f16d488379542b599945f57819b4f3c219896cbc8148"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-403168162.csv.gz",
+      "bytes": 63799,
+      "sha256": "213534547f546aef647587ba3a0944661ff7d1b8464b2f319f2ae284ef6fa007"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-403429027.csv.gz",
+      "bytes": 715022,
+      "sha256": "2fc668f4e33fa424560d053989800d517f6e2487cb084559e187a33d7c8fe303"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404066546.csv.gz",
+      "bytes": 1248964,
+      "sha256": "c4b010845be3367af8bfe1170c48b94dee30bbe558aa7a5dec4b1238bec56925"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404217210.csv.gz",
+      "bytes": 764090,
+      "sha256": "27dcbae22955328b92ddc5e6c41cbc6469006bda0ae3939d3187357f963c7da3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404314872.csv.gz",
+      "bytes": 280940,
+      "sha256": "cf37649f6295bc4e4e75b32f683ac983abd5812c6074f9d9394c60a0ef9667d4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-404406045.csv.gz",
+      "bytes": 552928,
+      "sha256": "b61d505c1e5168a4f69674d2b0b827613a17bf8bf9802f6e48a52579a9fdc609"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405060244.csv.gz",
+      "bytes": 339048,
+      "sha256": "5b00a0b193ebd368ad5e6514bbf4b414cd8968279b2ae099d3659c6e3279e8af"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405229729.csv.gz",
+      "bytes": 1225577,
+      "sha256": "cb4de90359ccfaa30b13d04f62f6b0db39ca4e4b342c0eff68b6d531e8bbf6be"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405250840.csv.gz",
+      "bytes": 339287,
+      "sha256": "20af667c44d0e5a6ae7927d63a6cafa97fa1faa598959c5b0651d98a7356ab59"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-405640859.csv.gz",
+      "bytes": 1223247,
+      "sha256": "3dec32f7f31d0d01fd2ee884831d3674bb4e31bb6976a260ee79c49034cd6297"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-406782899.csv.gz",
+      "bytes": 1273024,
+      "sha256": "333890fb027109bdbebc088ced0b4b66749ad767796e8cc6d80ae55d730e228c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407242896.csv.gz",
+      "bytes": 879618,
+      "sha256": "babbd990ec816635155d9ac1184f3a02dfbc38e9cf0e553af03dd13e8dc86fec"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407390566.csv.gz",
+      "bytes": 1185247,
+      "sha256": "11bee6997bb65b36d5d3efe1b77763279175fe364741b1160dfe9cffdff8a708"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-407571384.csv.gz",
+      "bytes": 327601,
+      "sha256": "dc8a35246027ff8cae18ddb568917b681bb9d015559cfb2749db463058eeb474"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-408044341.csv.gz",
+      "bytes": 752466,
+      "sha256": "ca22c3f786c481b60c359ea0b51b1bb5cb2b8ecf0b2b070f9f540d6eef772406"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-408708254.csv.gz",
+      "bytes": 407294,
+      "sha256": "611e4cc38fb5141d1a1e549e740be324fc0b5c20f35d3cb519d1061dc67cc5cb"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-409016573.csv.gz",
+      "bytes": 740536,
+      "sha256": "e20ea6ae71bd718fe1e0b6cc5c3758b2f0c424241340d53258fa7deea1175b11"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fp-ticks/ticks-fp24-409382791.csv.gz",
+      "bytes": 210168,
+      "sha256": "b7570932c0869c946def9c9b1a70ad74159fc984b3cad6239049638d0d5a7fd0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-recovery-receipt.json",
+      "bytes": 8137,
+      "sha256": "f91d5f13c8fd0dc53a99d277b37558a0b22f4be5bb6aedb75d28274c1926d662"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/fxify-unresolved-trades.csv",
+      "bytes": 8410,
+      "sha256": "f3653b3be9ff3558a3737cd0b2624ae742abecd843714c2d138b59b37ed6ce04"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/SolTradeFPReadOnlyNativeStopBars.mq5",
+      "bytes": 5632,
+      "sha256": "ea489ae4d4145560014cd698c51b56b03ca412feeb17517637eca72d79184661"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/compile.log",
+      "bytes": 3072,
+      "sha256": "c382d1d45c24ac4ac107095984d5e79c480afda319a90832075e96b7475add36"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/export-receipt.json",
+      "bytes": 582,
+      "sha256": "9edde628390246d180554e42b935133808545eea351bdfa60f18c2763d84867e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-bars-fp-20261001.csv",
+      "bytes": 125551,
+      "sha256": "6223f960aa3d501e741409951a87766cefc7fdefc15e79f653f5483b49518e95"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-coverage-fp-20261001.csv",
+      "bytes": 3976,
+      "sha256": "93e32a6d4606559c214da2e5dc331007978540f593ad29a0218c1ea9ff4c2e52"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-specifications-fp-20261001.csv",
+      "bytes": 1896,
+      "sha256": "6e28fa1fe5b380a109135a2bb6ed104dacaaf6f395889bf940791a6ec782d884"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/native-stop-status-fp-20261001.csv",
+      "bytes": 142,
+      "sha256": "1e4c94f04913a05b08241cf20ac4a973afe228eee492eeeb1eaad53c29554209"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/bar-export/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-opposite-stops.csv",
+      "bytes": 18738,
+      "sha256": "6547e3698ab910c15f46f192feadafa7d32d036c44ff9b92d184385093352d18"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-opposite-summary.json",
+      "bytes": 1940,
+      "sha256": "60c1b9a42e408cc3aaad13b258bfa62c473232abbb85cdae5aec39fe3bad501c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-stop-bars-from-broker-ticks.csv",
+      "bytes": 116290,
+      "sha256": "11f2e4400a3ccfaee38ee32c759fc1f3382e6334b4be4956ce0789317c24344d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-stop-broker-tick-coverage.json",
+      "bytes": 15523,
+      "sha256": "d2d35982bcedabf1de4b05b32c3943728231be78cc61fbab19d8094d89ce736c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/native-stop-requests.csv",
+      "bytes": 1178,
+      "sha256": "39db46bdb72986a9fecd2c32c23c345f5caedfbc7f54520830e607d550a99222"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/SolTradeFPAllSymbolAudit.mq5",
+      "bytes": 7770,
+      "sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/compile.log",
+      "bytes": 3040,
+      "sha256": "32da3a20cd33ef646fe9ad6ef35c121a51ebef81b9518d1e8fb8573a25a2af6a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/export-receipt.json",
+      "bytes": 348,
+      "sha256": "086702cad701ad3debdc6cfde7b25a353698b99d22491640f692cc5f2f794d5f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/path-chunks-native-prehistory-20261001.csv",
+      "bytes": 72200,
+      "sha256": "a6807bd304fc002c7290d3be879a4469903707ef9a67c359a94843de24ae1170"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/path-coverage-native-prehistory-20261001.csv",
+      "bytes": 3102,
+      "sha256": "ce984c3d535ccaaf1af92894c786729a57c34986903adfd2c8a7be8497e3dbce"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/paths-status-native-prehistory-20261001.csv",
+      "bytes": 119,
+      "sha256": "56d2c6bc3718e081e75bcbba1ecfb369b7d4754dc4b3edd311665baa0c0e3f9b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/symbol-specifications-native-prehistory-20261001.csv",
+      "bytes": 2164,
+      "sha256": "542cc61a5f04b4a6b0c821d0c4ef75ade675ff5f9fc9174e25137a7aab2f4830"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-export/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-tick-requests.csv",
+      "bytes": 2006,
+      "sha256": "c33c851fdde1b0c6848cf5d489af92727dbb8a9236c91b66202b0dbcd90d1560"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-400259945.csv.gz",
+      "bytes": 356934,
+      "sha256": "aa2d2111c6b27d7b69c579dc72683a5810a50d54f5b30a7c81ce7b7e4bf85746"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-400503030.csv.gz",
+      "bytes": 194288,
+      "sha256": "864805acce7462a353dccab89e0177001d10cd212f8c45525e7ccc198144466b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-400687907.csv.gz",
+      "bytes": 185412,
+      "sha256": "b37bfb6c19523472fea6e900fe21f4a805f93507104ea7eb4d18fb2d06ba7286"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-400795827.csv.gz",
+      "bytes": 79397,
+      "sha256": "68e109d4430ba874c096328c77d30415d39375054f2aa6f071f32c201dd3e762"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-401323004.csv.gz",
+      "bytes": 270796,
+      "sha256": "81d931fc689941d8e244192ab905eb34eedb8608bab52d9677cdcdee370e49f8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-401663494.csv.gz",
+      "bytes": 75567,
+      "sha256": "3b91664cc56aff98c70f985006592251225624646697777c521580dac557a8c2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-401784070.csv.gz",
+      "bytes": 76079,
+      "sha256": "90e6690e56e0f6de2b78ab7a3a32ad418c4f2c834d703eabf89e368f3ba442e3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-401890448.csv.gz",
+      "bytes": 275600,
+      "sha256": "e2ea46278fa73393476896b5f5b7572b82cd2d2890fac2882e359553a6b1c9e8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-402234685.csv.gz",
+      "bytes": 43565,
+      "sha256": "cfe3d0a2d65361fe363d8f3484c33121f32023fd931625338edfa14780ab2d08"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-402391108.csv.gz",
+      "bytes": 325280,
+      "sha256": "ac857f9b96257c5f2f553f594f812c79d25c4ddbbb07d520bbd38d075219978f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-402914703.csv.gz",
+      "bytes": 163459,
+      "sha256": "dd4b8d6c3352dc1107b9cb544db8b9fdd5faa6f22fef92499679cd653dde3c6d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-403168162.csv.gz",
+      "bytes": 105486,
+      "sha256": "16674c6a8e77125fdca3be360a0fc81db0812e05155d28e05c1284e849224430"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-403429027.csv.gz",
+      "bytes": 944404,
+      "sha256": "9c4d1151eec55f48e830fb2c2116cceed52eea12709f6416194763c8ae95934b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-404066546.csv.gz",
+      "bytes": 185851,
+      "sha256": "e85237826ee805dab968e342ae94c0d899222d968442c3a17658bb04aadaae06"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-404217210.csv.gz",
+      "bytes": 165416,
+      "sha256": "c74314e700b4e18e6e2fea7a89d563b720f2da8bc9a5a788594738a5fcfa42df"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-404314872.csv.gz",
+      "bytes": 67344,
+      "sha256": "9108adcea0fce462b2f9ada901b515b05a3c32808dd7289f027b19278ae1f1e5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-404406045.csv.gz",
+      "bytes": 177375,
+      "sha256": "e90d943d25f97c96a12ef7ced45d506ac508c6b5cd49d90f6c3451c86e52de5e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-405060244.csv.gz",
+      "bytes": 96156,
+      "sha256": "6220f22ce13c671fd20aadd5f1f89159151b24e052df948ed49a559131f058e1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-405229729.csv.gz",
+      "bytes": 325437,
+      "sha256": "c31646d0e5aa0e960d9bfc03bb50df5f0ebce506a5cbaf5a75679dd99306d53a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-405250840.csv.gz",
+      "bytes": 97642,
+      "sha256": "6d6e0f631056067141cb349265a15a605537bf884c2d47f9367139ea6b018984"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-405640859.csv.gz",
+      "bytes": 324420,
+      "sha256": "a8b085f6f9502ec05f9e785aff4d1c399e44e14d9fb055c3f17e6f4aa6f1b23a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-406782899.csv.gz",
+      "bytes": 1526070,
+      "sha256": "e3466fa58f45e13ba068b44a25b696e74a4a7c7ccb025397fefaeaa69c6b7867"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-407242896.csv.gz",
+      "bytes": 264005,
+      "sha256": "3be5e5f976c00676f2d37cea5725ea90b9089c24969188ee92599af91bb23c9d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-407390566.csv.gz",
+      "bytes": 254868,
+      "sha256": "52a1fbe070e121df0d62dcec3a605843014ae8211c1c0d06aeca40160bd5fb72"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-407571384.csv.gz",
+      "bytes": 91079,
+      "sha256": "d55b3cfb5d4a5895b4009aece3b7a57dd828eebbea6db50262392b1b54ee8ab2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-408044341.csv.gz",
+      "bytes": 152298,
+      "sha256": "3426c8292d4cf1fbe7a5b45aa0e67bcccc0bdba185cfa18df299d1c0db378307"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-408708254.csv.gz",
+      "bytes": 135594,
+      "sha256": "233bccb7503c64c76af0c09f6004e50506888a8326a9ed6030a0c00020d368dd"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-409016573.csv.gz",
+      "bytes": 265131,
+      "sha256": "4b6673c0ca7a9030107c065adde538def124d6d355edb7ebe571afaffe9100ea"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/native-opposite/prehistory-ticks/ticks-fp-prebar-409382791.csv.gz",
+      "bytes": 102408,
+      "sha256": "33eb4ec59f1dc4a5d92758062969610c8d9226db6a91fb86b4b08aadcb820288"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/report.md",
+      "bytes": 8460,
+      "sha256": "17ed032ff050c323bf3f1734c8a3f9df4e977785d53f6418775dc43e0a5596ea"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-completion-20261001/test-results.json",
+      "bytes": 8402,
+      "sha256": "dc31256823660643bd7442a8e2c7cfad0302f8ccc84cb98afb9daebb621ca516"
+    },
+    {
+      "path": "tests/test_three_account_24h_live.py",
+      "bytes": 2247,
+      "sha256": "f31c831d84ac299f1b0e1eb73923188f3bd69e4eaf51d47035b302cf39470d58"
+    },
+    {
+      "path": "tests/test_three_account_24h_recovery.py",
+      "bytes": 1885,
+      "sha256": "e5543540d4a8d0e9f1160674c69ff3642ffcad63febfbd20252bed2236cf4994"
+    },
+    {
+      "path": "tests/test_three_account_completion_coverage.py",
+      "bytes": 4709,
+      "sha256": "07da0460f37c265e0183fd194c34b7ea845170c86d60b056a3136d0a9114163f"
+    },
+    {
+      "path": "tests/test_three_account_completion_matrix.py",
+      "bytes": 1893,
+      "sha256": "85091cf4433c576b4a8c92eceab528464cf6d22f230083c8e68eb533fedf3710"
+    },
+    {
+      "path": "tests/test_three_account_completion_replay.py",
+      "bytes": 8559,
+      "sha256": "f02694687374300ed50991492eb36746d5408777a895fd073df0b18a32d23541"
+    },
+    {
+      "path": "tests/test_three_account_native_opposite.py",
+      "bytes": 5720,
+      "sha256": "f3f06cdf208a5e11f01f5d010bd0f69092c7dfc44a41e511bddf2911aa17b972"
+    },
+    {
+      "path": "tools/mql/SolTradeFPReadOnlyNativeStopBars.mq5",
+      "bytes": 5632,
+      "sha256": "ea489ae4d4145560014cd698c51b56b03ca412feeb17517637eca72d79184661"
+    },
+    {
+      "path": "tools/run_fp_native_opposite_bar_export.py",
+      "bytes": 4693,
+      "sha256": "38d25d93e1dded04179c6c0fe641cffd057b88fc56210e4d4fee8c1409c77379"
+    },
+    {
+      "path": "tools/three_account_24h_recovery.py",
+      "bytes": 9189,
+      "sha256": "8d5b8eeff1aeea5c146e40b3d208851fd883eeacf7dcc3410cada025873459bd"
+    },
+    {
+      "path": "tools/three_account_completion/__init__.py",
+      "bytes": 446,
+      "sha256": "5aaed6fd4acb6caf93a752730721c560fa256bddb65c1e76e7205ef7f828b910"
+    },
+    {
+      "path": "tools/three_account_completion/fp_coverage.py",
+      "bytes": 7083,
+      "sha256": "ec14789d9f88b8db5f530d3c5ca3a594b5c7a48e4a97029bc880a736ff48ade2"
+    },
+    {
+      "path": "tools/three_account_completion/fp_loss_table.py",
+      "bytes": 11336,
+      "sha256": "a63db24f30161932231023bcf9b253888466c2ef59d5166aa41ab89e47ad94cf"
+    },
+    {
+      "path": "tools/three_account_completion/matrix.py",
+      "bytes": 12321,
+      "sha256": "8d4f2fa89525a43d5481277ce2b4519e6b77cdddad5dff5dfe36fb50e7b78a5f"
+    },
+    {
+      "path": "tools/three_account_completion/replay.py",
+      "bytes": 18994,
+      "sha256": "f0dfe80ec977e9bb8e327bfd647a4c8a757bcb682af8d8a4aa786d3053981cba"
+    },
+    {
+      "path": "tools/three_account_native_opposite.py",
+      "bytes": 23973,
+      "sha256": "0f816dc711a84a6f4dc3a35956087020e415ad80e62f4c98579d7078a614225d"
+    }
+  ]
+}

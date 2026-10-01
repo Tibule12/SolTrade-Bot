@@ -1,0 +1,14 @@
+{
+  "read_only": true,
+  "order_capability": false,
+  "live_trading_allowed": false,
+  "isolated_terminal": "/home/tibule12/.wine-fpmarkets/drive_c/v202-validation-terminal",
+  "source_sha256": "ea489ae4d4145560014cd698c51b56b03ca412feeb17517637eca72d79184661",
+  "request_sha256": "39db46bdb72986a9fecd2c32c23c345f5caedfbc7f54520830e607d550a99222",
+  "elapsed_seconds": 8.787,
+  "process_exit_code": 0,
+  "status_rows": [
+    "status,account,server,server_time,utc_time,order_capability",
+    "COMPLETE,7404213,FPMarketsSC-Demo,2026.10.01 18:57:41,2026.10.01 15:57:41,false"
+  ]
+}
