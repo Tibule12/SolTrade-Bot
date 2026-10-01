@@ -1,0 +1,57 @@
+{
+  "schema": "SOLTRADE_OBSERVED_FAILURE_LEDGER_V1",
+  "scope": "Losses with matched EA ENTRY/EXIT evidence. Ranked frozen post-Sep13 manager cohort; earlier mixed managers remain in per-loss CSV.",
+  "interpretation": "Observed loss cash is the money lost in recorded closes, not estimated recoverable savings. A structural-stop loss does not prove direction was wrong; score, timing and ownership causal attributions need complete opposite/alternate paths. CURRENT_FLOW_CONFLICT records a pre-entry quote state but does not prove it caused the loss.",
+  "frozen_cohort_ranked_observed_loss_mechanisms": [
+    {
+      "account": "FP 7404213",
+      "observed_exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+      "loss_positions": 14,
+      "observed_loss_cash": 13185.97,
+      "observed_loss_r": 13.7445,
+      "counterfactual_recoverable_cash": null,
+      "reversibility": "UNPROVEN_BY_BASELINE_OUTCOME"
+    },
+    {
+      "account": "FXIFY 7198096",
+      "observed_exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+      "loss_positions": 4,
+      "observed_loss_cash": 3915.76,
+      "observed_loss_r": 3.98668,
+      "counterfactual_recoverable_cash": null,
+      "reversibility": "UNPROVEN_BY_BASELINE_OUTCOME"
+    },
+    {
+      "account": "FP 7404213",
+      "observed_exit_class": "PRE_BANK_GIVEBACK_FAILED",
+      "loss_positions": 2,
+      "observed_loss_cash": 1113.06,
+      "observed_loss_r": 1.17602,
+      "counterfactual_recoverable_cash": null,
+      "reversibility": "UNPROVEN_BY_BASELINE_OUTCOME"
+    },
+    {
+      "account": "FXIFY 7196820",
+      "observed_exit_class": "INITIAL_STRUCTURAL_STOP_EXIT",
+      "loss_positions": 4,
+      "observed_loss_cash": 379.17,
+      "observed_loss_r": 4.00054,
+      "counterfactual_recoverable_cash": null,
+      "reversibility": "UNPROVEN_BY_BASELINE_OUTCOME"
+    }
+  ],
+  "unrankable_in_cash": [
+    {
+      "layer": "OWNERSHIP_BLOCK",
+      "reason": "Blocked action logs lack a complete counterfactual broker quote/fill and later account response; exact incremental P&L unresolved."
+    },
+    {
+      "layer": "POST_BANK_GIVEBACK",
+      "reason": "Price peak R and actual cash R have different accounting; a broker-valid alternate stop/fill is not established."
+    },
+    {
+      "layer": "SCORE_POLARITY_ERROR",
+      "reason": "Opposite native structural stops, post-baseline quote lifetime and account-path propagation are unresolved."
+    }
+  ]
+}

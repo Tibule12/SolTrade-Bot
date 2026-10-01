@@ -1,0 +1,54 @@
+{
+  "schema": "SOLTRADE_THREE_ACCOUNT_BASELINE_REPLAY_V1",
+  "fp": {
+    "basis": "FRESH_NATIVE_BROKER_DEALS_AND_ORDERS; CASH_EXACT_FOR_EXPORT",
+    "server_utc_offset_minutes": 180,
+    "deal_rows": 218,
+    "closed_positions": 103,
+    "wins": 42,
+    "losses": 61,
+    "two_close_positions": 11,
+    "trade_net_cash_since_deposit": "-6287.82000000",
+    "final_export_balance": "93712.18000000",
+    "final_export_open_positions": [],
+    "max_observed_realized_balance_drawdown_cash": "8001.80000000",
+    "max_true_equity_drawdown": null,
+    "september_13_baseline": {
+      "balance": "99579.64000000",
+      "open_position_ids": [],
+      "open_position_count": 0,
+      "last_deal_utc": "2026-09-11T15:08:13.723000+00:00"
+    },
+    "september_30_visual_anchor": {
+      "balance": "94456.60000000",
+      "open_position_ids": [
+        "408708254"
+      ],
+      "open_position_count": 1,
+      "last_deal_utc": "2026-09-30T15:41:30.430000+00:00"
+    },
+    "september_30_expected_visual_balance": "94456.60",
+    "september_30_visual_balance_reconciles": true,
+    "risk_annotated_positions": 59,
+    "risk_unannotated_positions": 44,
+    "ledger_status": "EXACT_FOR_PROVIDED_DEALS",
+    "position_status": "RECONSTRUCTED",
+    "equity_status": "UNOBSERVED",
+    "unresolved_dependencies": [
+      "NO_EQUITY_OBSERVATIONS",
+      "STOP_AND_RISK_CHANGES_BETWEEN_OBSERVATIONS"
+    ]
+  },
+  "fxify_10k": {
+    "basis": "EA_EVENTS_PLUS_TWO_FLAT_BALANCE_ANCHORS",
+    "independent_broker_ledger": false,
+    "baseline_exact_account_path": false,
+    "post_sep13_paused_balance_bridge": "10039.41 - 379.17 = 9660.24"
+  },
+  "fxify_100k": {
+    "basis": "EA_EVENTS_PLUS_TWO_FLAT_BALANCE_ANCHORS",
+    "independent_broker_ledger": false,
+    "baseline_exact_account_path": false,
+    "post_sep13_paused_balance_bridge": "100321.36 - 3915.76 = 96405.60"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "FXIFY_10K_AUGUST_PILOT_EA_BRIDGE_V1",
+  "source_type": "LOCAL_EA_TELEMETRY_NOT_INDEPENDENT_BROKER_LEDGER",
+  "account": "7196820",
+  "closed_records": [
+    {
+      "utc": "2026.08.13 17:00:02",
+      "symbol": "AUDJPY.r",
+      "recorded_actual_net_usd": "-1.72",
+      "cumulative_net_usd": "-1.72"
+    },
+    {
+      "utc": "2026.08.14 17:00:07",
+      "symbol": "USDJPY.r",
+      "recorded_actual_net_usd": "-1.05",
+      "cumulative_net_usd": "-2.77"
+    }
+  ],
+  "source_log_sha256": "fde9885d03de8377949b966412fe6db656a91b9e87a4ded353d4cbfb59e73839",
+  "source_state_sha256": "0363119a947600c711659852ea13b96fa435faf34dbcd5b9e90bb98f6f3c943c",
+  "recorded_sum_usd": "-2.77",
+  "reconciliation": "10000.00 - 2.77 + 42.18 - 379.17 = 9660.24",
+  "historical_broker_confirmation": false
+}

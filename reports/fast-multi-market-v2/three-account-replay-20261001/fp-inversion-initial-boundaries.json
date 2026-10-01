@@ -1,0 +1,19 @@
+{
+  "schema": "FP_OPPOSITE_INITIAL_BOUNDARY_DIAGNOSTIC_V1",
+  "normal": {
+    "INITIAL_STOP_BOUNDARY": 15,
+    "UNRESOLVED_ENTRY_QUOTE_OR_STOP": 4,
+    "PLUS_1R_BOUNDARY": 9,
+    "RIGHT_CENSORED_AT_ACTUAL_EXIT": 1
+  },
+  "inverted": {
+    "RIGHT_CENSORED_AT_ACTUAL_EXIT": 14,
+    "UNRESOLVED_ENTRY_QUOTE_OR_STOP": 4,
+    "PLUS_1R_BOUNDARY": 2,
+    "INITIAL_STOP_BOUNDARY": 9
+  },
+  "both_boundaries_known": 11,
+  "exact_inverted_account_path_available": false,
+  "native_opposite_structure_available": false,
+  "interpretation": "Mirrored initial distance only; actual bid/ask at entry, no synthetic cash negation. A +1R crossing is not final profit. Position path ends at actual baseline exit, so any opposite position still active then is right-censored. Production Bank1R/runner behavior, native opposite stop, costs, and full account path are not reconstructed."
+}

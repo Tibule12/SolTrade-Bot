@@ -1,0 +1,18 @@
+{
+  "schema": "FP_ENTRY_TIMING_QUOTE_MATRIX_V1",
+  "rows": 174,
+  "status_counts": {
+    "OBSERVED_QUOTE_ONLY": 156,
+    "NO_QUOTE_WITHIN_TWO_SECONDS": 16,
+    "SIGNAL_FIRST_SEEN_UNAVAILABLE": 2
+  },
+  "arms": [
+    "FIRST_QUALIFICATION",
+    "PRODUCTION_ENTRY",
+    "DELAY_5S",
+    "DELAY_15S",
+    "DELAY_30S",
+    "DELAY_60S"
+  ],
+  "interpretation": "Original direction and original stop-distance are held only for quote-path MFE/MAE through actual baseline exit. First qualification uses recorded signal_first_seen. Each delayed quote is sampled at/after its target within two seconds. New fills, native structural stops, lot sizing, costs and manager exits remain unknown; no delayed arm has a final account result. Price milestones are not cash Bank1R events."
+}

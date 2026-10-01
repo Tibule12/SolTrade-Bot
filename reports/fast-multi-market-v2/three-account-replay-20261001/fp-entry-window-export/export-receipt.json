@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 18.116297960281372,
+  "source_sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486",
+  "read_only": true,
+  "live_trading_allowed": false,
+  "completed_status": "status,account,server,server_time,utc_time\nCOMPLETE,7404213,FPMarketsSC-Demo,2026.10.01 14:15:06,2026.10.01 11:15:06\n"
+}

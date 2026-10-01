@@ -1,0 +1,41 @@
+{
+  "schema": "FP_CURRENT_FLOW_ENTRY_DESCRIPTOR_V1",
+  "rule_id": "CURRENT_FLOW_QUOTE_V1_PREDECLARED_20261001",
+  "frozen_rule": "Last <=entry 30s needs >=6 quotes; last <=entry 5s needs >=3 and freshest <=2s. Direction requires 5s nonzero quote pressure >=+0.25 and positive mid velocity (LONG), or <=-0.25 and negative velocity (SHORT), with current spread <=1.5x 30s median. Strong needs |pressure|>=0.5 and 5s/30s tick-rate ratio >=1.2. Otherwise NEUTRAL/UNAVAILABLE.",
+  "leakage_guard": "Only broker ticks with server_msc <= actual deal execution msc are passed to classifier.",
+  "summary": {
+    "AGREES": {
+      "n": 5,
+      "wins": 3,
+      "losses": 2,
+      "actual_net_cash": 1456.69,
+      "recorded_r_n": 4,
+      "recorded_net_r": 0.7005800000000001
+    },
+    "OPPOSES": {
+      "n": 9,
+      "wins": 4,
+      "losses": 5,
+      "actual_net_cash": 1443.41,
+      "recorded_r_n": 9,
+      "recorded_net_r": 1.64957
+    },
+    "NEUTRAL": {
+      "n": 10,
+      "wins": 1,
+      "losses": 9,
+      "actual_net_cash": -8268.93,
+      "recorded_r_n": 9,
+      "recorded_net_r": -7.65927
+    },
+    "UNAVAILABLE": {
+      "n": 5,
+      "wins": 3,
+      "losses": 2,
+      "actual_net_cash": -498.63,
+      "recorded_r_n": 4,
+      "recorded_net_r": 0.21287999999999999
+    }
+  },
+  "interpretation": "Actual-outcome association for entered trades only. The four requested flow policy arms require alternative fills, stops, manager and propagated account sizing; they are not computed from this descriptor."
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "SOLTRADE_ACCOUNT_ARM_MATRIX_V1",
+  "rows": 73,
+  "matrix_csv": "account-arm-matrix.csv",
+  "interpretation": "Null is not zero. Only observed baseline cash paths are populated; no experimental account balance is fabricated. Normalized R is populated only where recorded initial risk exists. Price-peak milestones are omitted from cash Bank1R/+3R/+5R columns.",
+  "account_count": 3,
+  "experimental_arm_count_per_account": 23
+}

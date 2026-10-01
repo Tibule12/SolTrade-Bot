@@ -1,0 +1,682 @@
+{
+  "schema": "SOLTRADE_THREE_ACCOUNT_REPLAY_FILE_MANIFEST_V1",
+  "file_count": 135,
+  "total_bytes": 11374609,
+  "files": [
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/account-arm-matrix.csv",
+      "bytes": 21321,
+      "sha256": "a9687fe543bd42dcd33275cf82b1716baaecafdbaf02693cb48a00fe23e1298e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/account-arm-matrix.json",
+      "bytes": 443,
+      "sha256": "dd070fa109ac2950155c5e385bcc88992488cd5025245edf08199eab3016a8a1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/baseline-replay.json",
+      "bytes": 1862,
+      "sha256": "ff4e739be6c1c7dda2dbcfb8c76c984917484c928ce5f6069aeca5faaf4e8127"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/SolTradeFPAllSymbolAudit.mq5",
+      "bytes": 7770,
+      "sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/compile.log",
+      "bytes": 3040,
+      "sha256": "0a61facdafb720a64fa38d228069ce7e0ffac88c239550fa442d6356cf5de210"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/deals.csv",
+      "bytes": 43794,
+      "sha256": "46481d828f6f5c5a4f597ee37826444b64d101c09633be341d9323c401aeeb1e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/export-receipt.json",
+      "bytes": 346,
+      "sha256": "5561d39d1749a093f99bb2a514675e310ea1c1537082ff20235a55d7929776e5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/history-status.csv",
+      "bytes": 117,
+      "sha256": "b58806a47181bfab248f4e5c0d14f26ead5cd57722c61f338b9725bef485cc80"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/orders.csv",
+      "bytes": 34094,
+      "sha256": "0b1297924848742e628f7525260d0c329e9ab26b0fb0c807078c3c45170cece9"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/engineering-failure-ledger.json",
+      "bytes": 2416,
+      "sha256": "d8f32ab37b8253bac7db0535f13b0d8ae9702d17270a17c3f774de9ed396fcea"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-baseline-lifetime-requests.csv",
+      "bytes": 1918,
+      "sha256": "fb6ac04e6aa45b36e0330976e6f0e846d63eee14f6c914bab4daae145a228b62"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-broker-balance-path.csv",
+      "bytes": 31732,
+      "sha256": "e52f5b4fa1f82b45ae1504e874587cfeb83d046af10626ebed20c7950b0558ef"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-broker-position-ledger.csv",
+      "bytes": 20841,
+      "sha256": "07483392532ab83a45f07775f9cba73d4aef652ab2a8718e9af4ecb1afb2ca89"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-broker-reconciliation.json",
+      "bytes": 59341,
+      "sha256": "fc21ddd7c85fe606b77c1a89980889002cac8382a6c40ca61f5a932e3636dc63"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-current-flow-entries.csv",
+      "bytes": 7474,
+      "sha256": "0ed23074c541377fca65f08365ff324cd6f23d98ab00368334c35f46bd64d92f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-current-flow-summary.json",
+      "bytes": 1522,
+      "sha256": "a878322118c3ca7358b562c3d88c638e6e29b87036956d1e086ea53083f46d57"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-timing-quote-matrix.csv",
+      "bytes": 29261,
+      "sha256": "ca221fcc0b57bfcf8342d5039e78c033a597596e7723273d9bf75ce209ef58db"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-timing-quote-summary.json",
+      "bytes": 770,
+      "sha256": "7789834ea2486a506034a030b3519aab4b783e7673c788ce2e378a225003cc3c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/SolTradeFPAllSymbolAudit.mq5",
+      "bytes": 7770,
+      "sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/compile.log",
+      "bytes": 3040,
+      "sha256": "8a6145645b35ee8c7268513b6df56599ee749872e4a44ca8b57d15818c02e7af"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/export-receipt.json",
+      "bytes": 348,
+      "sha256": "92aca10e225db1d5c198582db58db34b74b5a913fc609a253d1a8bd80e6db4dc"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/path-chunks-three-account-entry-windows.csv",
+      "bytes": 1574,
+      "sha256": "4a0a79cc029963e6bccb74977a7ad7442a221bbeef771a99a68dc7a60d8072c2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/path-coverage-three-account-entry-windows.csv",
+      "bytes": 2984,
+      "sha256": "3aa3ff2f8f4ee2482d4f7b23a24cf7331bc8a280ef8510cee1f56590793074a4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/paths-status-three-account-entry-windows.csv",
+      "bytes": 117,
+      "sha256": "298177a09d9a9101552dc97fbb12384e340e41d4c2cba1865b7c964e03004d1f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/symbol-specifications-three-account-entry-windows.csv",
+      "bytes": 2134,
+      "sha256": "1a52afbfbd50bc956f15dfcc652c0fd2d7666c4f968022a9c31ba27943ae0a8f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-export/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-requests.csv",
+      "bytes": 1947,
+      "sha256": "3bac4614381b595e6d35833d5243fff43a0cad970f45712adf6db351ddf7e82c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-400259945.csv",
+      "bytes": 39991,
+      "sha256": "939578058980549880e87320344ae7aeee344b52f3bda8eeb7c58a13fdcf1ae7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-400503030.csv",
+      "bytes": 17881,
+      "sha256": "75baf95615f2f84da276d03bb745000d18cffce0230b7efaccaf022fb78da00a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-400687907.csv",
+      "bytes": 28337,
+      "sha256": "dba4e96df129bf49b41705f2c8a508ff67e8ba0e79e0a73eb976a20deece79b8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-400795827.csv",
+      "bytes": 21233,
+      "sha256": "2a30cbe35aa2cce8b80b82831ba7536887d9c85cc71bda81fa159d9c00cc12b7"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-401323004.csv",
+      "bytes": 28215,
+      "sha256": "d7fc4451499dfe9db8793a9bf7e965b70d4636740e5a06b7fb300b7ffa34fbcd"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-401663494.csv",
+      "bytes": 14417,
+      "sha256": "fe4c964c771ee1faeee2a10d40ace1e7801b0812efff30211353c017531ba663"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-401784070.csv",
+      "bytes": 39329,
+      "sha256": "57d32af75c8f129fefd0cd16a74b8d3b2d99bc20010747a1e01576a50f1bc8e1"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-401890448.csv",
+      "bytes": 38849,
+      "sha256": "a08f3764a51f9ea2a6550565aa17dc4f09d8e238910da04f13b93f04b7442f9b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-402234685.csv",
+      "bytes": 13649,
+      "sha256": "54d3c097d1f00fc3ce9dcad682278df9a56ad3b258ef0012f0c74d7fd4b7639a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-402391108.csv",
+      "bytes": 31159,
+      "sha256": "91c8928f2e0b0458fc1f6fed01ff3ab9631cb27e6760b80bf4aecd3d63bb1cd8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-402914703.csv",
+      "bytes": 26609,
+      "sha256": "d1075499e851cdf7366b51aa8572e41baacc4c05c1cc21050231b8afc6e204e5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-403168162.csv",
+      "bytes": 15377,
+      "sha256": "ae807ceb7ee9deb1a30a69b04ad7a334849c59f84fe00574ecb59cccfea83264"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-403429027.csv",
+      "bytes": 28241,
+      "sha256": "b8dd7ebbd07db9e7205fb007ca0954c406acc2ad79ec3fe4d3f867a4f8628644"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-404066546.csv",
+      "bytes": 30561,
+      "sha256": "aed2e6fbc76c496e10ff754788ee9cd18d8ca288d287728c7565f6176b4db7d5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-404217210.csv",
+      "bytes": 29153,
+      "sha256": "26e6c48eab3ffa251ac263b2985f5afba487b143ceb957dc6e8c3a8a735641ef"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-404314872.csv",
+      "bytes": 23009,
+      "sha256": "a4814ba19a23ad5c7e4fc973a73365a17518437954ac7c7f895c7e0ce4c8dfef"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-404406045.csv",
+      "bytes": 14713,
+      "sha256": "fdfd4bb89aaa3b5c766a78dfc9f6afbce047ab404a2cd8a958bb096cf57b296d"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-405060244.csv",
+      "bytes": 14945,
+      "sha256": "b6523f8855f04c314e6ece3d6c796bae3059b885bebc0027c526a90cd74d72aa"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-405229729.csv",
+      "bytes": 38703,
+      "sha256": "37155c45f8638e75127171cb602715247bdd3e2c8484fde1131a3739ff345325"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-405250840.csv",
+      "bytes": 21097,
+      "sha256": "596645573f876e2fd9212cddbcba8cd9ea2b96ecfd9c84fbeb17a254c3adca9a"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-405640859.csv",
+      "bytes": 32585,
+      "sha256": "80bc7c20bfae92bcc181f732f31fb62abf6042c984cf1c5cc813d82fcbd35cc8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-406782899.csv",
+      "bytes": 35713,
+      "sha256": "52151d7c8d43534ee67e41e6984f491a241f2f8be3d65846d2610550514f4469"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-407242896.csv",
+      "bytes": 36977,
+      "sha256": "d8fa4196595c99e43ab353a5e569f9e8fcef7f9cbf2a0b9d8623a5277ffd1a08"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-407390566.csv",
+      "bytes": 18371,
+      "sha256": "c26260bcd854f858fa2487cf43e99334440f7c040cd51bba2b124dbc5eaf52c2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-407571384.csv",
+      "bytes": 10577,
+      "sha256": "b772774105fed9b9da4a20359845327050709ce1f7ebaabd16e95fdd717d5114"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-408044341.csv",
+      "bytes": 23381,
+      "sha256": "94a7aa37f983e2849f5340550c4f924efedc51a0997a977855e2f26081ea8fe0"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-408708254.csv",
+      "bytes": 15473,
+      "sha256": "d5ed585ec6c38e32eb96836b186df86f3071282a9e738fc302fc3f979c7cf821"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-409016573.csv",
+      "bytes": 25217,
+      "sha256": "daa841f496095196ba0030810e89d1154d3367ffaf6c4c747230242bf2ce0718"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-entry-window-ticks/ticks-fp-entry-409382791.csv",
+      "bytes": 29489,
+      "sha256": "02619214c4887eded20e5caace449a775fc4a7a3bf4ae65746426b9b94bba9b4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-evidence.md",
+      "bytes": 7061,
+      "sha256": "d50a86b961f4877fe12aa9ad14a83b8975d0eabf78b35e59682df78681cc4cc4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-first-move-rows.csv",
+      "bytes": 52448,
+      "sha256": "3924a32bf92502a0a2cd31768e64df128bc6a9fe01599552fd8b95527957169e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-first-move-summary.json",
+      "bytes": 7787,
+      "sha256": "0e046e0e215074b388c467015865305952887c8f7042d6155ef8bbc77897f69c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-inversion-initial-boundaries.csv",
+      "bytes": 4745,
+      "sha256": "068fa308ba3eda6862913144297ce5e784384d7082f3ec23803b6633002fc477"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-inversion-initial-boundaries.json",
+      "bytes": 869,
+      "sha256": "27114e725665aec9f622f695ddeaaf17cda5de7d1596f7fcfb688f1f39cc3974"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/SolTradeFPAllSymbolAudit.mq5",
+      "bytes": 7770,
+      "sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/compile.log",
+      "bytes": 3040,
+      "sha256": "e6634188842fa92473df2159e543d37dac546db6a864dff042064aa2a1b27135"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/export-receipt.json",
+      "bytes": 348,
+      "sha256": "1d7970cfdc86fb4993a9fa605d43d6a81d2b89284318fe909c3da848a9448e54"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/path-chunks-three-account-lifetime.csv",
+      "bytes": 11134,
+      "sha256": "ef5da3437d2f128d5a69602eae4e2964a7a4851f3aea2b695a3500500d37f52f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/path-coverage-three-account-lifetime.csv",
+      "bytes": 2984,
+      "sha256": "87030b793010e3afc546eb747250ba860c25914f5e2a3c5442e25352c2fd47cd"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/paths-status-three-account-lifetime.csv",
+      "bytes": 117,
+      "sha256": "66deb7af52ae315f7b3e741af71665c111efb562a9aefc206b65412c46ab7a37"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/symbol-specifications-three-account-lifetime.csv",
+      "bytes": 2134,
+      "sha256": "b5572dcb9bfb04bf7a926ec2a631ae25492093c9a293a0b117b7a2f82b9b52a3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-export/terminal.log",
+      "bytes": 452,
+      "sha256": "419e0c7ab1896e67fd41123123add4716cc8a237c58d57b000f4b8d799103475"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-400259945.csv",
+      "bytes": 73065,
+      "sha256": "c831c1a51ab0718ec07ecfb10513d2817a95d5d2c823eb4cc0f2eef35188f286"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-400503030.csv",
+      "bytes": 52817,
+      "sha256": "5be3e8fe259000ae855feb74f06c765300d23b96cd0b4fa0354907a527fa10bc"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-400687907.csv",
+      "bytes": 30545,
+      "sha256": "bb00dc970e3235b28a26d874c162e7b197302d3fa492d3a14da8a3b9629b6d7b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-400795827.csv",
+      "bytes": 241793,
+      "sha256": "775c5e98e95ef99bfe15944169ad3fe808c913ba5da963ed547dc8a66df58dc3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-401323004.csv",
+      "bytes": 250211,
+      "sha256": "c01cd342f0bfa4f8c144d8a5d156ea506051e5ae19cbe37d282aec47ce2ddcd2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-401663494.csv",
+      "bytes": 103697,
+      "sha256": "72332a933dcc0fe572e31e27bdb795e10f0bb34c34c53034612916c83f105e35"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-401784070.csv",
+      "bytes": 29873,
+      "sha256": "ad2dcdd473cddaabf99e14dedde80a170d4d70aa36149f5d6e16e06d4788ea54"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-401890448.csv",
+      "bytes": 387521,
+      "sha256": "9e05b61447848c18e34f8c2a22b4e49356771548fb128e1e107d31582ce3c6be"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-402234685.csv",
+      "bytes": 37745,
+      "sha256": "e01d12ffae023082829dd074c5973de4b0c86bd9a4ef1810afc5751e798f1cef"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-402391108.csv",
+      "bytes": 1262763,
+      "sha256": "a2a3d4d960a13da5809565d87cceaadbade2f9d6a84fbf9ba731e3172e84cd3c"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-402914703.csv",
+      "bytes": 335249,
+      "sha256": "ec37833f59de2c5b8ed3bba41e3b900f2a2c6f965a1933b4b403cafc99fa2cbe"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-403168162.csv",
+      "bytes": 435089,
+      "sha256": "48fa6673ebd9bf3636ae8997a91a14699630db0380f7b571b8084b1dcfe6527e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-403429027.csv",
+      "bytes": 57041,
+      "sha256": "3ccfdb9adbbdb002744e93762a9530c43a37679e227bddf678475b69e5226dd5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-404066546.csv",
+      "bytes": 270543,
+      "sha256": "47c1f00ef5b9fd723b9345703af4c2b5d63bab190d74c68b4ab3b5ca655bf533"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-404217210.csv",
+      "bytes": 38945,
+      "sha256": "432673e4dc42f566685cb0d80ec9e0ea7f4d1c88951c11d72471b0bae4369451"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-404314872.csv",
+      "bytes": 23633,
+      "sha256": "accdf1bc0b0c5feee188907526c2276cf04c702efacbb8ad7e95663638e7599e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-404406045.csv",
+      "bytes": 102713,
+      "sha256": "1c6069915583d22b2cd7cdf5a1895f4b53a7f5363d3caf6c719c24e5f7681692"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-405060244.csv",
+      "bytes": 137537,
+      "sha256": "daadd360804a1c94c84a880ffed9b8b2fe619dbb3f28f0cc1f64e6010950d94f"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-405229729.csv",
+      "bytes": 177761,
+      "sha256": "3c0c4da8b59af8b5775d91ed593f00b51aa440ef9adc97ec0246e8aa9bc21825"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-405250840.csv",
+      "bytes": 354777,
+      "sha256": "36849cca9da75af16e7093e58d039d5783ce1e8ab5de31a642eb04d51ee46615"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-405640859.csv",
+      "bytes": 850879,
+      "sha256": "3e0e662cc7ab41d3fc0e8a945d8ac263ac577390dfec9c514da7998f10027f70"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-406782899.csv",
+      "bytes": 2626157,
+      "sha256": "5f0bb6140df8d6243883710c8c3f34b85d434a19fc93881f2255e6337b8f6187"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-407242896.csv",
+      "bytes": 417953,
+      "sha256": "ea4fc9787146a82e06da7d172e33b3be11b6ddfc8693230ceb1152862a85f3f6"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-407390566.csv",
+      "bytes": 191469,
+      "sha256": "e404201a2c2d5f578179cad0454429c53a2ec2fde17d51aa27edb1cb60a531a3"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-407571384.csv",
+      "bytes": 401777,
+      "sha256": "790a05722d032ea8ee254d4ee91fe78d64c143309f216478afa93fc7d2faedf2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-408044341.csv",
+      "bytes": 50705,
+      "sha256": "af50b18c3bf2bec8e854b378ca924b6fcf06abf9cf198d8c279ddc5b8aca7451"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-408708254.csv",
+      "bytes": 519377,
+      "sha256": "32b7e6c2d1ecef28c03158c127e2836055674495456127c856bbdd874ad4c592"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-409016573.csv",
+      "bytes": 225809,
+      "sha256": "e57d6605a806812979bf19037fa811c3d7a9bbadc0034aea378556c7b3998c8b"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-lifetime-ticks/ticks-fp-life-409382791.csv",
+      "bytes": 225377,
+      "sha256": "e8ebe59b66bb15c1c75b2351b322cf70f279fdce0735129b9e3ca08e41ccc6ea"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-management-quote-paths.csv",
+      "bytes": 7647,
+      "sha256": "245eb87067ca3cdbc6524c17a98496e72052a5f4067e04ce477f40ddca33ffc5"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-management-quote-summary.json",
+      "bytes": 1595,
+      "sha256": "d16590fb3d13561e32018b9d3421d2755bf28fd085863afb8cc1557b24c30c77"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-quote-continuity.json",
+      "bytes": 10563,
+      "sha256": "abaf1865018096a4c02e671d466bf64a4a848073451e83a0d3b801eff16a0569"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-score-diagnostic.json",
+      "bytes": 57819,
+      "sha256": "d2513197b51c8798c987b8375773094c201b312e54aeb0f4c46403db9beb3fb8"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fp-score-trades.csv",
+      "bytes": 22348,
+      "sha256": "fb0f38f52f21704182e52bbf391f5d77e483ee1d910763362eba599bf1022aba"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-100k-baseline-path.csv",
+      "bytes": 320,
+      "sha256": "c4e71d05cc5d85212baf420bdcf7da2327617beaef7f230ceb6f2e05de8701c6"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-100k-event-trades.csv",
+      "bytes": 5278,
+      "sha256": "098781c2370f124f8fd2dac6947a4eb339a0f816a4a80f45e4f1302ed5e49d11"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-10k-baseline-path.csv",
+      "bytes": 312,
+      "sha256": "775db5417252cc856f0181238b359a52ece0d20363d12ce97dabea41b487b0e9"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-10k-event-trades.csv",
+      "bytes": 5244,
+      "sha256": "363b0d028795e8c023f683088df8fc383775ff46fe82596ffa803fa8d1855040"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-august-pilot-bridge.json",
+      "bytes": 807,
+      "sha256": "32238dcec8763d89a69de9179698c9497aafa38febad90067136da132336418e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-event-diagnostic.json",
+      "bytes": 26048,
+      "sha256": "8d13e4c3a7164d9c43cc7bc89630aeee88cb9fa90e9c3389ab707ee75e2c898e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-event-diagnostic.md",
+      "bytes": 4006,
+      "sha256": "a38a227642b1fc2254e349dff8745aa9106393ad27c203f19bcc7c29eed01207"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/fxify-evidence.md",
+      "bytes": 7624,
+      "sha256": "744b46e39a13601d9a4a82190feef277276a63c1a55c360804a519341a8bd136"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/isolation-receipt.json",
+      "bytes": 1995,
+      "sha256": "85e7fc688c88e51f00c3e26621c5c484a466b949784377475889dad39d4551fd"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/per-loss-attribution.csv",
+      "bytes": 14605,
+      "sha256": "3e3f94247893d5e4d35062cd81bb889e06939ddbe9ff7f65c7c0a1f3af47cdf4"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/read-only-export-runner.py",
+      "bytes": 4704,
+      "sha256": "b83d37a812e5b072ac468161f483ff4a624c94390826eb5f2dff76c70a136f7e"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/report.md",
+      "bytes": 13341,
+      "sha256": "0638920366898431d93a7a0f4fb1ebbf2b2882552713707eec1d495fe0b964f2"
+    },
+    {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/test-results.json",
+      "bytes": 5001,
+      "sha256": "bce9bd27cb5de920e82860b5aee2c9ee05561a306c1206338d9665e44c42c8d2"
+    },
+    {
+      "path": "tests/test_three_account_fxify_events.py",
+      "bytes": 6571,
+      "sha256": "756c2c3e0ac4beecff2d46305797ebf085ed649c6a9f43586c20ba12bf489311"
+    },
+    {
+      "path": "tests/test_three_account_live_receipts.py",
+      "bytes": 4557,
+      "sha256": "331e124fe167a4f36f4f616d02fa9e75d404373159f74f2e16c1facbd74e0b41"
+    },
+    {
+      "path": "tests/test_three_account_quote_diagnostics.py",
+      "bytes": 3848,
+      "sha256": "be6e5f964191974c1cb0595d01dd1687a9f092eca69006e7a612e9d4b4b4cabf"
+    },
+    {
+      "path": "tests/test_three_account_replay_engine.py",
+      "bytes": 10693,
+      "sha256": "73b72183712630b41743d39c6c440dea0b575c87d355c8aaa2d33882a0328bd7"
+    },
+    {
+      "path": "tests/test_three_account_score_audit.py",
+      "bytes": 2787,
+      "sha256": "c4f9bb4eb3023d910e2da191bf8b1a3ae1fcaf1b09f4834e918ba6b46f19a731"
+    },
+    {
+      "path": "tools/build_three_account_tick_requests.py",
+      "bytes": 2708,
+      "sha256": "66d849e41ab529e22d50bc50eae4ced66fad81994818555b570e9f4b8a2dae0c"
+    },
+    {
+      "path": "tools/run_three_account_baseline.py",
+      "bytes": 8081,
+      "sha256": "40264dc46b0f339848d4edf53aa276bb4696e1d96f146ec36c5ac2e8a5cbb3ee"
+    },
+    {
+      "path": "tools/three_account_arm_matrix.py",
+      "bytes": 10467,
+      "sha256": "af4f38802da87545e9224eb0262573d59bea7ea85bca6f751066b6d6c61aa6c8"
+    },
+    {
+      "path": "tools/three_account_current_flow.py",
+      "bytes": 6414,
+      "sha256": "e5fadbc1d987a2acbdce91d4cf638383deefa72699fd384221c2d64bcdbbbd90"
+    },
+    {
+      "path": "tools/three_account_failure_ledger.py",
+      "bytes": 4880,
+      "sha256": "897d5e132c7a3b94f7e2af74d5a753ba58bc111972a32116ee7f2a8b1c3fd489"
+    },
+    {
+      "path": "tools/three_account_first_move.py",
+      "bytes": 8630,
+      "sha256": "3ba9b9ce9578862323400f7934c7ff42caea0cf2b6f84aa904b766b86d8656bf"
+    },
+    {
+      "path": "tools/three_account_fxify_events.py",
+      "bytes": 19997,
+      "sha256": "72bfc41f976a7e4f9ebc246c0554e271187c7f7c0071f8a0e61e7b670578fdd6"
+    },
+    {
+      "path": "tools/three_account_inversion_boundary.py",
+      "bytes": 4850,
+      "sha256": "bea3492b5403374b0824b8a866de772023b92cec2e36885ab083a7c581fb3a3f"
+    },
+    {
+      "path": "tools/three_account_management_diagnostic.py",
+      "bytes": 7132,
+      "sha256": "249d7abf6a92e3e15039e764f5d11499d92c739ec6502bf3b2f9f08a2eeb6591"
+    },
+    {
+      "path": "tools/three_account_replay/__init__.py",
+      "bytes": 499,
+      "sha256": "4d357db4e97efb363d316f94c0341e415cb50205a88a95dcfaa538181e95eaff"
+    },
+    {
+      "path": "tools/three_account_replay/engine.py",
+      "bytes": 22280,
+      "sha256": "bcbb5943743cb0f0ca50e23563ec7140e3960bc9bc7f2eecb268f093f56f230f"
+    },
+    {
+      "path": "tools/three_account_score_audit.py",
+      "bytes": 9265,
+      "sha256": "e03bb17825256f1bffaa39bac7c33ad860b18a343cde18652e6d154dc29724dd"
+    },
+    {
+      "path": "tools/three_account_timing_matrix.py",
+      "bytes": 5852,
+      "sha256": "57bacd97990f300f75202a5dee6211952473eea2836dbba88cb6ce5b6e1d53da"
+    }
+  ]
+}

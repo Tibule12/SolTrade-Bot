@@ -1,0 +1,44 @@
+{
+  "schema": "THREE_ACCOUNT_ORDERLESS_ISOLATION_RECEIPT_V1",
+  "research_order_api_scan_paths": 14,
+  "research_order_api_violations": [],
+  "local_export_receipts": [
+    {
+      "export": "broker-refresh-fp",
+      "exit_code": 0,
+      "elapsed_seconds": 8.79255723953247,
+      "source_sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486",
+      "read_only": true,
+      "live_trading_allowed": false,
+      "completed_status": "status,account,server,server_time,utc_time\nCOMPLETE,7404213,FPMarketsSC-Demo,2026.10.01 14:09:50,2026.10.01 11:09:50\n"
+    },
+    {
+      "export": "fp-entry-window-export",
+      "exit_code": 0,
+      "elapsed_seconds": 18.116297960281372,
+      "source_sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486",
+      "read_only": true,
+      "live_trading_allowed": false,
+      "completed_status": "status,account,server,server_time,utc_time\nCOMPLETE,7404213,FPMarketsSC-Demo,2026.10.01 14:15:06,2026.10.01 11:15:06\n"
+    },
+    {
+      "export": "fp-lifetime-export",
+      "exit_code": 0,
+      "elapsed_seconds": 14.046999454498291,
+      "source_sha256": "e2df7035d46d433af5301afc5047adb7decf3ec3572a714bbd0b89f189f70486",
+      "read_only": true,
+      "live_trading_allowed": false,
+      "completed_status": "status,account,server,server_time,utc_time\nCOMPLETE,7404213,FPMarketsSC-Demo,2026.10.01 14:18:24,2026.10.01 11:18:24\n"
+    }
+  ],
+  "research_orders_sent": 0,
+  "research_position_modifications": 0,
+  "research_vps_commands_issued": 0,
+  "production_artifact_changes_by_this_work": 0,
+  "last_independent_vps_verification": "2026-09-30",
+  "last_verified_protected_hashes_match": true,
+  "last_verified_fxify_startup_entry_block": "Enabled=0; AllowLiveTrading=0 (September 30 evidence)",
+  "current_vps_hashes_or_exposure_freshly_checked": false,
+  "fp_autonomous_orders_outside_research_possible": true,
+  "reference": "reports/fast-multi-market-v2/full-live-audit-20260930/operations.json"
+}

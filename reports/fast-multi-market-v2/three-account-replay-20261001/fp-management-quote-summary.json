@@ -1,0 +1,28 @@
+{
+  "schema": "FP_BE_QUOTE_PATH_DIAGNOSTIC_V1",
+  "coverage": {
+    "QUOTE_PATH_DIAGNOSTIC__BROKER_STOP_VALIDITY_AND_ALTERNATE_FILL_UNRESOLVED": 29
+  },
+  "frozen_rules": {
+    "HALF_R_TO_BE": "After executable exit-side quote first reaches +0.5 initial price-R, first later quote at or beyond entry price against the trade marks a theoretical BE floor hit.",
+    "BANK1R_RUNNER_BE": "After the actual one-time broker partial close, first later executable exit-side quote at or beyond entry price against the trade marks a theoretical runner BE floor hit."
+  },
+  "interpretation": "Observed baseline quote paths only. No new trade was placed and no counterfactual fill is claimed. Opening costs mean entry-price floor is not cash breakeven. This is not M1/M2 broker-valid account-path replay.",
+  "summary": {
+    "positions_with_baseline_tick_path": 29,
+    "positions_with_actual_partial_bank_deal": 11,
+    "half_r_quote_threshold_armed": 16,
+    "half_r_quote_be_floor_hit": 12,
+    "half_r_floor_would_precede_actual_bank": 4,
+    "half_r_floor_would_precede_actual_profitable_close": 7,
+    "post_bank_entry_price_floor_hit_before_baseline_exit": 5,
+    "known_ea_final_r_positions": 26,
+    "exact_counterfactual_final_cash_available": false,
+    "exact_counterfactual_final_balance_available": false,
+    "missing_for_exactness": [
+      "historical broker stop/freeze validity and actual modified-stop acceptance",
+      "counterfactual broker fills/slippage and closing commission/swap allocation",
+      "later account-dependent sizing and concurrent admission response"
+    ]
+  }
+}

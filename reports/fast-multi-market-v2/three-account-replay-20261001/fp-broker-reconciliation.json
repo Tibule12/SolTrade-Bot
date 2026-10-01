@@ -1,0 +1,2194 @@
+{
+  "schema": "FP_BROKER_RECONCILIATION_V1",
+  "account": "7404213",
+  "server": "FPMarketsSC-Demo",
+  "source_files": {
+    "fresh_deals": {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/deals.csv",
+      "sha256": "ef65282f9d534a4c6fc289b11e1d3ff17de291b95ac34e9faef0a7133b8f604c"
+    },
+    "fresh_orders": {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/orders.csv",
+      "sha256": "e1307c1a80e8cff650d65a531dd67f82588c0d5479da10c99702f179c8306555"
+    },
+    "fresh_status": {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/history-status.csv",
+      "sha256": "ebc7845f4e61555c092f1d64cd91332d41789f877b4aeb54f8222d44db6156c8"
+    },
+    "fresh_receipt": {
+      "path": "reports/fast-multi-market-v2/three-account-replay-20261001/broker-refresh-fp/export-receipt.json",
+      "sha256": "5561d39d1749a093f99bb2a514675e310ea1c1537082ff20235a55d7929776e5"
+    },
+    "old_deals": {
+      "path": "reports/fast-multi-market-v2/entry-location-audit-20260908/broker/deals.csv",
+      "sha256": "bbec99520e950f883000575cfdd5e56e3f95722d2d5f722c254731540b330b89"
+    },
+    "old_orders": {
+      "path": "reports/fast-multi-market-v2/entry-location-audit-20260908/broker/orders.csv",
+      "sha256": "210b0d3e22a8576ded570c9d71c1a681481e2570adff32743668db4baac14b81"
+    },
+    "ea_events": {
+      "path": "reports/fast-multi-market-v2/full-live-audit-20260930/evidence/fp-evidence.csv",
+      "sha256": "95438275857dba860ad3fef85adcdc0a0f154fda144809695a65cb77df723a22"
+    }
+  },
+  "export_status": {
+    "status": "COMPLETE",
+    "account": "7404213",
+    "server": "FPMarketsSC-Demo",
+    "server_time": "2026.10.01 14:09:50",
+    "utc_time": "2026.10.01 11:09:50"
+  },
+  "time_basis": {
+    "broker_time_server": "server wall clock, UTC+03:00 on this interval",
+    "time_msc": "server wall clock encoded as Unix milliseconds; subtract 10800000 ms before treating as UTC",
+    "utc_from_server_seconds": -10800,
+    "validated_against_ea_entry_exit_seconds": true,
+    "time_msc_rows_checked": 218,
+    "time_msc_minus_server_wall_milliseconds_min": 2,
+    "time_msc_minus_server_wall_milliseconds_max": 994
+  },
+  "counts": {
+    "broker_deals": 218,
+    "broker_orders": 217,
+    "deposit_deals": 1,
+    "opening_deals": 103,
+    "closing_deals": 114,
+    "fully_closed_positions": 103,
+    "single_close_positions": 92,
+    "two_close_positions": 11,
+    "broker_deal_tickets_without_order": 0,
+    "orders_without_broker_deal": 0,
+    "old_sep08_deal_rows_exact_prefix": 133,
+    "old_sep08_order_rows_exact_prefix": 132,
+    "ea_event_rows": 2867,
+    "ea_entry_events": 60,
+    "ea_exit_events": 60,
+    "ea_partial_exit_events": 10,
+    "ea_exit_positions_matched_to_broker": 60,
+    "ea_exit_net_cash_mismatches": 0
+  },
+  "coverage": {
+    "first_trade_utc": "2026-08-20T19:20:16Z",
+    "last_trade_exit_utc": "2026-10-01T08:57:12Z",
+    "all_positions_closed_at_export": true
+  },
+  "balances": [
+    {
+      "name": "sep08_full_broker_snapshot",
+      "cutoff_utc": "2026-09-08T10:08:12Z",
+      "broker_balance": "98531.43",
+      "documented_balance": "98531.43",
+      "difference": "0.00"
+    },
+    {
+      "name": "sep10_flat_deployment",
+      "cutoff_utc": "2026-09-10T14:28:45Z",
+      "broker_balance": "100466.65",
+      "documented_balance": "100466.65",
+      "difference": "0.00"
+    },
+    {
+      "name": "sep11_flat_deployment",
+      "cutoff_utc": "2026-09-11T03:17:22Z",
+      "broker_balance": "100581.60",
+      "documented_balance": "100581.60",
+      "difference": "0.00"
+    },
+    {
+      "name": "sep13_flat_baseline",
+      "cutoff_utc": "2026-09-13T00:00:00Z",
+      "broker_balance": "99579.64",
+      "documented_balance": "99579.64",
+      "difference": "0.00"
+    },
+    {
+      "name": "sep18_flat_snapshot",
+      "cutoff_utc": "2026-09-18T19:41:00Z",
+      "broker_balance": "97103.93",
+      "documented_balance": "97103.93",
+      "difference": "0.00"
+    },
+    {
+      "name": "sep30_visual_balance",
+      "cutoff_utc": "2026-09-30T17:59:00Z",
+      "broker_balance": "94456.60",
+      "documented_balance": "94456.60",
+      "difference": "0.00"
+    },
+    {
+      "name": "fresh_export_balance",
+      "cutoff_utc": "2026-10-01T11:09:50Z",
+      "broker_balance": "93712.18",
+      "documented_balance": "93712.18",
+      "difference": "0.00"
+    }
+  ],
+  "bridges": {
+    "sep08_to_sep30": {
+      "start_balance": "98531.43",
+      "broker_deal_cash": "-4074.83",
+      "end_balance": "94456.60"
+    },
+    "sep30_to_oct01": {
+      "start_balance": "94456.60",
+      "broker_deal_cash": "-744.42",
+      "end_balance": "93712.18",
+      "positions_after_visual_cutoff": [
+        {
+          "position_id": "408708254",
+          "symbol": "GER40",
+          "entry_utc": "2026-09-30T15:41:30Z",
+          "exit_utc": "2026-09-30T22:23:15Z",
+          "opening_volume": "18.63000000",
+          "closed_volume": "18.63000000",
+          "closing_deal_count": 2,
+          "deal_tickets": [
+            "291239948",
+            "291278104",
+            "291307505"
+          ],
+          "profit": "856.51",
+          "commission": "0.00",
+          "swap": "5.91",
+          "fee": "0.00",
+          "net_cash": "862.42"
+        },
+        {
+          "position_id": "409016573",
+          "symbol": "US100",
+          "entry_utc": "2026-09-30T20:40:30Z",
+          "exit_utc": "2026-09-30T22:40:00Z",
+          "opening_volume": "22.37000000",
+          "closed_volume": "22.37000000",
+          "closing_deal_count": 1,
+          "deal_tickets": [
+            "291302717",
+            "291308517"
+          ],
+          "profit": "-704.66",
+          "commission": "0.00",
+          "swap": "43.62",
+          "fee": "0.00",
+          "net_cash": "-661.04"
+        },
+        {
+          "position_id": "409382791",
+          "symbol": "GER40",
+          "entry_utc": "2026-10-01T08:14:40Z",
+          "exit_utc": "2026-10-01T08:57:12Z",
+          "opening_volume": "9.03000000",
+          "closed_volume": "9.03000000",
+          "closing_deal_count": 1,
+          "deal_tickets": [
+            "291433576",
+            "291448122"
+          ],
+          "profit": "-945.80",
+          "commission": "0.00",
+          "swap": "0.00",
+          "fee": "0.00",
+          "net_cash": "-945.80"
+        }
+      ]
+    }
+  },
+  "ea_cash_match": {
+    "positions": 60,
+    "max_absolute_difference": "0.00",
+    "all_exact_to_cent": true,
+    "partial_exit_event_tickets_matched": 10
+  },
+  "per_position": [
+    {
+      "position_id": "389139523",
+      "symbol": "EURGBP.r",
+      "entry_utc": "2026-08-20T19:20:16Z",
+      "exit_utc": "2026-08-20T19:20:17Z",
+      "opening_volume": "0.05000000",
+      "closed_volume": "0.05000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277680074",
+        "277680082"
+      ],
+      "profit": "-0.20",
+      "commission": "-0.30",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-0.50"
+    },
+    {
+      "position_id": "389139524",
+      "symbol": "AUDJPY.r",
+      "entry_utc": "2026-08-20T19:20:16Z",
+      "exit_utc": "2026-08-20T19:20:17Z",
+      "opening_volume": "0.03000000",
+      "closed_volume": "0.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277680075",
+        "277680081"
+      ],
+      "profit": "-0.09",
+      "commission": "-0.18",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-0.27"
+    },
+    {
+      "position_id": "389139525",
+      "symbol": "NZDUSD.r",
+      "entry_utc": "2026-08-20T19:20:17Z",
+      "exit_utc": "2026-08-20T19:20:17Z",
+      "opening_volume": "0.03000000",
+      "closed_volume": "0.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277680076",
+        "277680077"
+      ],
+      "profit": "-0.12",
+      "commission": "-0.18",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-0.30"
+    },
+    {
+      "position_id": "389142576",
+      "symbol": "EURGBP.r",
+      "entry_utc": "2026-08-20T19:33:39Z",
+      "exit_utc": "2026-08-21T10:46:03Z",
+      "opening_volume": "0.05000000",
+      "closed_volume": "0.05000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277682285",
+        "277867567"
+      ],
+      "profit": "1.71",
+      "commission": "-0.30",
+      "swap": "-0.47",
+      "fee": "0.00",
+      "net_cash": "0.94"
+    },
+    {
+      "position_id": "389142577",
+      "symbol": "AUDJPY.r",
+      "entry_utc": "2026-08-20T19:33:39Z",
+      "exit_utc": "2026-08-21T10:46:03Z",
+      "opening_volume": "0.03000000",
+      "closed_volume": "0.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277682286",
+        "277867566"
+      ],
+      "profit": "-8.63",
+      "commission": "-0.18",
+      "swap": "-0.21",
+      "fee": "0.00",
+      "net_cash": "-9.02"
+    },
+    {
+      "position_id": "389142578",
+      "symbol": "NZDUSD.r",
+      "entry_utc": "2026-08-20T19:33:40Z",
+      "exit_utc": "2026-08-21T10:46:03Z",
+      "opening_volume": "0.03000000",
+      "closed_volume": "0.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277682287",
+        "277867565"
+      ],
+      "profit": "11.76",
+      "commission": "-0.18",
+      "swap": "-0.08",
+      "fee": "0.00",
+      "net_cash": "11.50"
+    },
+    {
+      "position_id": "389363181",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-21T09:25:00Z",
+      "exit_utc": "2026-08-21T09:40:00Z",
+      "opening_volume": "0.18000000",
+      "closed_volume": "0.18000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277850197",
+        "277853598"
+      ],
+      "profit": "26.10",
+      "commission": "-1.08",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "25.02"
+    },
+    {
+      "position_id": "389363257",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-08-21T09:25:10Z",
+      "exit_utc": "2026-08-21T09:32:49Z",
+      "opening_volume": "3.04000000",
+      "closed_volume": "3.04000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277850265",
+        "277852112"
+      ],
+      "profit": "-24.94",
+      "commission": "-18.24",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-43.18"
+    },
+    {
+      "position_id": "389367538",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-21T09:40:00Z",
+      "exit_utc": "2026-08-21T10:00:00Z",
+      "opening_volume": "0.35000000",
+      "closed_volume": "0.35000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277853601",
+        "277857502"
+      ],
+      "profit": "-107.80",
+      "commission": "-2.10",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-109.90"
+    },
+    {
+      "position_id": "389368123",
+      "symbol": "AUDUSD.r",
+      "entry_utc": "2026-08-21T09:42:20Z",
+      "exit_utc": "2026-08-21T09:57:57Z",
+      "opening_volume": "6.57000000",
+      "closed_volume": "6.57000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277854033",
+        "277857058"
+      ],
+      "profit": "6.57",
+      "commission": "-39.42",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-32.85"
+    },
+    {
+      "position_id": "389370676",
+      "symbol": "EURJPY.r",
+      "entry_utc": "2026-08-21T09:51:10Z",
+      "exit_utc": "2026-08-21T09:53:59Z",
+      "opening_volume": "2.72000000",
+      "closed_volume": "2.72000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277855937",
+        "277856539"
+      ],
+      "profit": "-8.58",
+      "commission": "-16.32",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-24.90"
+    },
+    {
+      "position_id": "389376294",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-21T10:10:00Z",
+      "exit_utc": "2026-08-21T11:03:41Z",
+      "opening_volume": "5.24000000",
+      "closed_volume": "5.24000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277860147",
+        "277870827"
+      ],
+      "profit": "50.28",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "50.28"
+    },
+    {
+      "position_id": "389382439",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-21T10:30:20Z",
+      "exit_utc": "2026-08-21T10:52:45Z",
+      "opening_volume": "0.23000000",
+      "closed_volume": "0.23000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277864911",
+        "277868450"
+      ],
+      "profit": "24.15",
+      "commission": "-1.38",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "22.77"
+    },
+    {
+      "position_id": "389382494",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-08-21T10:30:40Z",
+      "exit_utc": "2026-08-21T10:35:00Z",
+      "opening_volume": "4.04000000",
+      "closed_volume": "4.04000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277864941",
+        "277865817"
+      ],
+      "profit": "-50.95",
+      "commission": "-24.24",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-75.19"
+    },
+    {
+      "position_id": "389384962",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-08-21T10:40:00Z",
+      "exit_utc": "2026-08-21T11:05:21Z",
+      "opening_volume": "4.00000000",
+      "closed_volume": "4.00000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "277866727",
+        "277871335"
+      ],
+      "profit": "284.82",
+      "commission": "-24.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "260.82"
+    },
+    {
+      "position_id": "390178137",
+      "symbol": "US100",
+      "entry_utc": "2026-08-24T14:58:19Z",
+      "exit_utc": "2026-08-24T14:58:20Z",
+      "opening_volume": "9.82000000",
+      "closed_volume": "9.82000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278475696",
+        "278475706"
+      ],
+      "profit": "-13.26",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-13.26"
+    },
+    {
+      "position_id": "390401461",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T00:50:10Z",
+      "exit_utc": "2026-08-25T00:55:10Z",
+      "opening_volume": "7.40000000",
+      "closed_volume": "7.40000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278624438",
+        "278625598"
+      ],
+      "profit": "-143.19",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-143.19"
+    },
+    {
+      "position_id": "390459586",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T02:38:00Z",
+      "exit_utc": "2026-08-25T02:40:10Z",
+      "opening_volume": "5.36000000",
+      "closed_volume": "5.36000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278666813",
+        "278667792"
+      ],
+      "profit": "24.92",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "24.92"
+    },
+    {
+      "position_id": "390492057",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T03:50:10Z",
+      "exit_utc": "2026-08-25T05:05:50Z",
+      "opening_volume": "0.25000000",
+      "closed_volume": "0.25000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278690643",
+        "278706616"
+      ],
+      "profit": "1.25",
+      "commission": "-1.50",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-0.25"
+    },
+    {
+      "position_id": "390515203",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T05:05:50Z",
+      "exit_utc": "2026-08-25T05:15:57Z",
+      "opening_volume": "0.36000000",
+      "closed_volume": "0.36000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278706678",
+        "278709282"
+      ],
+      "profit": "-243.72",
+      "commission": "-2.16",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-245.88"
+    },
+    {
+      "position_id": "390557432",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T06:46:20Z",
+      "exit_utc": "2026-08-25T07:11:32Z",
+      "opening_volume": "11.14000000",
+      "closed_volume": "11.14000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278738371",
+        "278745261"
+      ],
+      "profit": "-7.46",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.46"
+    },
+    {
+      "position_id": "390566648",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-25T07:10:20Z",
+      "exit_utc": "2026-08-25T07:12:04Z",
+      "opening_volume": "11.52000000",
+      "closed_volume": "11.52000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278744836",
+        "278745405"
+      ],
+      "profit": "-249.42",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-249.42"
+    },
+    {
+      "position_id": "390567678",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T07:13:10Z",
+      "exit_utc": "2026-08-25T07:16:05Z",
+      "opening_volume": "10.53000000",
+      "closed_volume": "10.53000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278745625",
+        "278746228"
+      ],
+      "profit": "-7.48",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.48"
+    },
+    {
+      "position_id": "390577214",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T07:40:10Z",
+      "exit_utc": "2026-08-25T08:23:48Z",
+      "opening_volume": "0.31000000",
+      "closed_volume": "0.31000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278752819",
+        "278769324"
+      ],
+      "profit": "-7.13",
+      "commission": "-1.86",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-8.99"
+    },
+    {
+      "position_id": "390600840",
+      "symbol": "XAGUSD.r",
+      "entry_utc": "2026-08-25T08:24:40Z",
+      "exit_utc": "2026-08-25T08:30:00Z",
+      "opening_volume": "0.28000000",
+      "closed_volume": "0.28000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278770942",
+        "278773796"
+      ],
+      "profit": "205.80",
+      "commission": "-1.68",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "204.12"
+    },
+    {
+      "position_id": "390623388",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T09:26:20Z",
+      "exit_utc": "2026-08-25T11:09:43Z",
+      "opening_volume": "6.98000000",
+      "closed_volume": "6.98000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278788154",
+        "278812294"
+      ],
+      "profit": "-7.47",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.47"
+    },
+    {
+      "position_id": "390644624",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-25T10:30:01Z",
+      "exit_utc": "2026-08-25T10:43:49Z",
+      "opening_volume": "9.04000000",
+      "closed_volume": "9.04000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278804440",
+        "278806922"
+      ],
+      "profit": "-7.49",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.49"
+    },
+    {
+      "position_id": "390647935",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-25T10:43:49Z",
+      "exit_utc": "2026-08-25T11:02:27Z",
+      "opening_volume": "9.03000000",
+      "closed_volume": "9.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278806923",
+        "278810890"
+      ],
+      "profit": "-7.48",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.48"
+    },
+    {
+      "position_id": "390653371",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-25T11:03:10Z",
+      "exit_utc": "2026-08-25T11:05:03Z",
+      "opening_volume": "10.03000000",
+      "closed_volume": "10.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278810975",
+        "278811199"
+      ],
+      "profit": "-7.49",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.49"
+    },
+    {
+      "position_id": "390659680",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-25T11:25:50Z",
+      "exit_utc": "2026-08-25T12:10:36Z",
+      "opening_volume": "7.42000000",
+      "closed_volume": "7.42000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278815901",
+        "278826939"
+      ],
+      "profit": "5.19",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "5.19"
+    },
+    {
+      "position_id": "390679009",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T12:21:20Z",
+      "exit_utc": "2026-08-25T12:32:23Z",
+      "opening_volume": "8.58000000",
+      "closed_volume": "8.58000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278831208",
+        "278833864"
+      ],
+      "profit": "-248.99",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-248.99"
+    },
+    {
+      "position_id": "390742767",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T14:00:40Z",
+      "exit_utc": "2026-08-25T14:26:32Z",
+      "opening_volume": "0.21000000",
+      "closed_volume": "0.21000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278880362",
+        "278892927"
+      ],
+      "profit": "-245.07",
+      "commission": "-1.26",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-246.33"
+    },
+    {
+      "position_id": "390837295",
+      "symbol": "US100",
+      "entry_utc": "2026-08-25T18:06:00Z",
+      "exit_utc": "2026-08-25T18:33:44Z",
+      "opening_volume": "7.81000000",
+      "closed_volume": "7.81000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278956372",
+        "278960240"
+      ],
+      "profit": "-247.50",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-247.50"
+    },
+    {
+      "position_id": "390844886",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T18:51:10Z",
+      "exit_utc": "2026-08-25T19:04:05Z",
+      "opening_volume": "0.49000000",
+      "closed_volume": "0.49000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278962462",
+        "278964760"
+      ],
+      "profit": "193.06",
+      "commission": "-2.94",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "190.12"
+    },
+    {
+      "position_id": "390864756",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T19:56:00Z",
+      "exit_utc": "2026-08-25T20:06:23Z",
+      "opening_volume": "0.51000000",
+      "closed_volume": "0.51000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278974498",
+        "278976478"
+      ],
+      "profit": "106.59",
+      "commission": "-3.06",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "103.53"
+    },
+    {
+      "position_id": "390887755",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-25T23:15:40Z",
+      "exit_utc": "2026-08-25T23:22:20Z",
+      "opening_volume": "0.70000000",
+      "closed_volume": "0.70000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "278990599",
+        "278991287"
+      ],
+      "profit": "-240.80",
+      "commission": "-4.20",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-245.00"
+    },
+    {
+      "position_id": "390951806",
+      "symbol": "US100",
+      "entry_utc": "2026-08-26T01:58:20Z",
+      "exit_utc": "2026-08-26T02:21:45Z",
+      "opening_volume": "9.71000000",
+      "closed_volume": "9.71000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "279039497",
+        "279044958"
+      ],
+      "profit": "-247.22",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-247.22"
+    },
+    {
+      "position_id": "390960851",
+      "symbol": "NZDUSD.r",
+      "entry_utc": "2026-08-26T02:27:30Z",
+      "exit_utc": "2026-08-26T05:01:58Z",
+      "opening_volume": "3.97000000",
+      "closed_volume": "3.97000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "279045970",
+        "279079267"
+      ],
+      "profit": "258.05",
+      "commission": "-23.82",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "234.23"
+    },
+    {
+      "position_id": "390971779",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-26T02:54:10Z",
+      "exit_utc": "2026-08-26T03:00:30Z",
+      "opening_volume": "0.37000000",
+      "closed_volume": "0.37000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "279054158",
+        "279055994"
+      ],
+      "profit": "-240.87",
+      "commission": "-2.22",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-243.09"
+    },
+    {
+      "position_id": "392137661",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-28T07:57:40Z",
+      "exit_utc": "2026-08-28T08:47:37Z",
+      "opening_volume": "6.54000000",
+      "closed_volume": "6.54000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "279965827",
+        "279976212"
+      ],
+      "profit": "146.50",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "146.50"
+    },
+    {
+      "position_id": "392561195",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-28T18:45:40Z",
+      "exit_utc": "2026-08-30T22:02:08Z",
+      "opening_volume": "0.15000000",
+      "closed_volume": "0.15000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280295999",
+        "280327633"
+      ],
+      "profit": "106.95",
+      "commission": "-0.90",
+      "swap": "5.92",
+      "fee": "0.00",
+      "net_cash": "111.97",
+      "ea_exit_cash": "111.97",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "392697510",
+      "symbol": "US100",
+      "entry_utc": "2026-08-31T00:13:40Z",
+      "exit_utc": "2026-08-31T00:31:30Z",
+      "opening_volume": "6.88000000",
+      "closed_volume": "6.88000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280393653",
+        "280405115"
+      ],
+      "profit": "-247.13",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-247.13",
+      "ea_exit_cash": "-247.13",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "392852554",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-08-31T02:54:30Z",
+      "exit_utc": "2026-08-31T05:24:47Z",
+      "opening_volume": "0.13000000",
+      "closed_volume": "0.13000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280508651",
+        "280552339"
+      ],
+      "profit": "-234.00",
+      "commission": "-0.78",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-234.78",
+      "ea_exit_cash": "-234.78",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "392939109",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-31T06:02:20Z",
+      "exit_utc": "2026-08-31T06:03:29Z",
+      "opening_volume": "13.49000000",
+      "closed_volume": "13.49000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280570064",
+        "280570543"
+      ],
+      "profit": "-246.04",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-246.04",
+      "ea_exit_cash": "-246.04",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393009376",
+      "symbol": "EURUSD.r",
+      "entry_utc": "2026-08-31T08:17:10Z",
+      "exit_utc": "2026-08-31T08:56:05Z",
+      "opening_volume": "5.33000000",
+      "closed_volume": "5.33000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280619908",
+        "280630179"
+      ],
+      "profit": "-213.20",
+      "commission": "-31.98",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-245.18",
+      "ea_exit_cash": "-245.18",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393242284",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-31T15:06:30Z",
+      "exit_utc": "2026-08-31T15:27:15Z",
+      "opening_volume": "5.43000000",
+      "closed_volume": "5.43000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280790166",
+        "280801285"
+      ],
+      "profit": "37.97",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "37.97",
+      "ea_exit_cash": "37.97",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393331431",
+      "symbol": "GER40",
+      "entry_utc": "2026-08-31T17:49:10Z",
+      "exit_utc": "2026-08-31T18:54:20Z",
+      "opening_volume": "13.90000000",
+      "closed_volume": "13.90000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "280859071",
+        "280874820"
+      ],
+      "profit": "260.45",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "260.45",
+      "ea_exit_cash": "260.45",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393681587",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-01T10:20:40Z",
+      "exit_utc": "2026-09-01T10:20:41Z",
+      "opening_volume": "0.36000000",
+      "closed_volume": "0.36000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281124623",
+        "281124629"
+      ],
+      "profit": "-5.76",
+      "commission": "-2.16",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.92",
+      "ea_exit_cash": "-7.92",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393681863",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-01T10:21:30Z",
+      "exit_utc": "2026-09-01T10:21:31Z",
+      "opening_volume": "6.69000000",
+      "closed_volume": "6.69000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281124808",
+        "281124811"
+      ],
+      "profit": "-11.64",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-11.64",
+      "ea_exit_cash": "-11.64",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393682250",
+      "symbol": "US100",
+      "entry_utc": "2026-09-01T10:22:10Z",
+      "exit_utc": "2026-09-01T10:22:28Z",
+      "opening_volume": "9.19000000",
+      "closed_volume": "9.19000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281125114",
+        "281125267"
+      ],
+      "profit": "-7.81",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-7.81",
+      "ea_exit_cash": "-7.81",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393797684",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-01T13:35:50Z",
+      "exit_utc": "2026-09-01T13:35:50Z",
+      "opening_volume": "0.16000000",
+      "closed_volume": "0.16000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281212127",
+        "281212129"
+      ],
+      "profit": "-2.56",
+      "commission": "-0.96",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-3.52",
+      "ea_exit_cash": "-3.52",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393962091",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-01T18:25:40Z",
+      "exit_utc": "2026-09-01T18:52:52Z",
+      "opening_volume": "0.48000000",
+      "closed_volume": "0.48000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281333690",
+        "281339729"
+      ],
+      "profit": "368.16",
+      "commission": "-2.88",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "365.28",
+      "ea_exit_cash": "365.28",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "393975047",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-01T19:04:10Z",
+      "exit_utc": "2026-09-01T19:35:52Z",
+      "opening_volume": "11.83000000",
+      "closed_volume": "11.83000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281342365",
+        "281348555"
+      ],
+      "profit": "-12.34",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-12.34",
+      "ea_exit_cash": "-12.34",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "394279418",
+      "symbol": "GBPJPY.r",
+      "entry_utc": "2026-09-02T07:13:30Z",
+      "exit_utc": "2026-09-02T07:57:37Z",
+      "opening_volume": "2.24000000",
+      "closed_volume": "2.24000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281550508",
+        "281569407"
+      ],
+      "profit": "-234.24",
+      "commission": "-13.44",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-247.68",
+      "ea_exit_cash": "-247.68",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "394281872",
+      "symbol": "EURJPY.r",
+      "entry_utc": "2026-09-02T07:16:50Z",
+      "exit_utc": "2026-09-02T07:44:41Z",
+      "opening_volume": "2.92000000",
+      "closed_volume": "2.92000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281552132",
+        "281563609"
+      ],
+      "profit": "47.55",
+      "commission": "-17.52",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "30.03",
+      "ea_exit_cash": "30.03",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "394912924",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-03T01:58:20Z",
+      "exit_utc": "2026-09-03T02:45:17Z",
+      "opening_volume": "2.59000000",
+      "closed_volume": "2.59000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "281990942",
+        "282004915"
+      ],
+      "profit": "597.79",
+      "commission": "-15.54",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "582.25",
+      "ea_exit_cash": "582.25",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "395080031",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-03T07:38:40Z",
+      "exit_utc": "2026-09-03T08:14:41Z",
+      "opening_volume": "1.67000000",
+      "closed_volume": "1.67000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "282104810",
+        "282125766"
+      ],
+      "profit": "124.47",
+      "commission": "-10.02",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "114.45",
+      "ea_exit_cash": "114.45",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "395905866",
+      "symbol": "US100",
+      "entry_utc": "2026-09-04T05:43:20Z",
+      "exit_utc": "2026-09-04T06:04:13Z",
+      "opening_volume": "12.99000000",
+      "closed_volume": "12.99000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "282669379",
+        "282678680"
+      ],
+      "profit": "124.70",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "124.70",
+      "ea_exit_cash": "124.70",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "396155774",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-04T12:32:40Z",
+      "exit_utc": "2026-09-04T12:33:29Z",
+      "opening_volume": "4.71000000",
+      "closed_volume": "4.71000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "282843301",
+        "282846827"
+      ],
+      "profit": "147.45",
+      "commission": "-28.26",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "119.19",
+      "ea_exit_cash": "119.19",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "396268698",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-04T13:26:10Z",
+      "exit_utc": "2026-09-04T13:47:02Z",
+      "opening_volume": "0.11000000",
+      "closed_volume": "0.11000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "282930426",
+        "282965330"
+      ],
+      "profit": "-240.79",
+      "commission": "-0.66",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-241.45",
+      "ea_exit_cash": "-241.45",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "396723916",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-07T01:45:30Z",
+      "exit_utc": "2026-09-07T02:20:10Z",
+      "opening_volume": "0.27000000",
+      "closed_volume": "0.27000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283267388",
+        "283277145"
+      ],
+      "profit": "86.94",
+      "commission": "-1.62",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "85.32",
+      "ea_exit_cash": "85.32",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "396782803",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-07T05:04:30Z",
+      "exit_utc": "2026-09-07T05:06:19Z",
+      "opening_volume": "0.62000000",
+      "closed_volume": "0.62000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283307072",
+        "283307526"
+      ],
+      "profit": "-240.56",
+      "commission": "-3.72",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-244.28",
+      "ea_exit_cash": "-244.28",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "396882634",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-07T08:51:41Z",
+      "exit_utc": "2026-09-07T09:06:26Z",
+      "opening_volume": "1.10000000",
+      "closed_volume": "1.10000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283378974",
+        "283381940"
+      ],
+      "profit": "56.25",
+      "commission": "-6.60",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "49.65",
+      "ea_exit_cash": "49.65",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397193808",
+      "symbol": "AUDJPY.r",
+      "entry_utc": "2026-09-08T02:53:40Z",
+      "exit_utc": "2026-09-08T03:55:58Z",
+      "opening_volume": "2.78000000",
+      "closed_volume": "2.78000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283598017",
+        "283611061"
+      ],
+      "profit": "-230.29",
+      "commission": "-16.68",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-246.97",
+      "ea_exit_cash": "-246.97",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397314712",
+      "symbol": "NZDUSD.r",
+      "entry_utc": "2026-09-08T08:19:20Z",
+      "exit_utc": "2026-09-08T08:22:35Z",
+      "opening_volume": "4.93000000",
+      "closed_volume": "4.93000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283687492",
+        "283688629"
+      ],
+      "profit": "123.25",
+      "commission": "-29.58",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "93.67",
+      "ea_exit_cash": "93.67",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397330173",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-08T08:50:30Z",
+      "exit_utc": "2026-09-08T09:10:49Z",
+      "opening_volume": "4.05000000",
+      "closed_volume": "4.05000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "283698735",
+        "283703888"
+      ],
+      "profit": "-246.60",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-246.60",
+      "ea_exit_cash": "-246.60",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397800222",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-09T00:32:30Z",
+      "exit_utc": "2026-09-09T00:36:44Z",
+      "opening_volume": "3.37000000",
+      "closed_volume": "3.37000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284039920",
+        "284040839"
+      ],
+      "profit": "-226.06",
+      "commission": "-20.22",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-246.28",
+      "ea_exit_cash": "-246.28",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397894666",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-09T06:28:41Z",
+      "exit_utc": "2026-09-09T06:41:00Z",
+      "opening_volume": "1.95000000",
+      "closed_volume": "1.95000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284109651",
+        "284112638"
+      ],
+      "profit": "1099.80",
+      "commission": "-11.70",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "1088.10",
+      "ea_exit_cash": "1088.10",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "397971468",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-09T11:07:20Z",
+      "exit_utc": "2026-09-09T11:24:07Z",
+      "opening_volume": "19.79000000",
+      "closed_volume": "19.79000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284168801",
+        "284171730"
+      ],
+      "profit": "198.79",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "198.79",
+      "ea_exit_cash": "198.79",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "398082021",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-09T13:53:00Z",
+      "exit_utc": "2026-09-09T14:08:19Z",
+      "opening_volume": "0.96000000",
+      "closed_volume": "0.96000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284255363",
+        "284271442"
+      ],
+      "profit": "350.40",
+      "commission": "-5.76",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "344.64",
+      "ea_exit_cash": "344.64",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "398784015",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-10T13:36:40Z",
+      "exit_utc": "2026-09-10T13:39:41Z",
+      "opening_volume": "21.61000000",
+      "closed_volume": "21.61000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284784514",
+        "284788602"
+      ],
+      "profit": "199.69",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "199.69",
+      "ea_exit_cash": "199.69",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "398825888",
+      "symbol": "US100",
+      "entry_utc": "2026-09-10T14:02:20Z",
+      "exit_utc": "2026-09-10T14:15:11Z",
+      "opening_volume": "18.00000000",
+      "closed_volume": "18.00000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284812248",
+        "284824716"
+      ],
+      "profit": "350.28",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "350.28",
+      "ea_exit_cash": "350.28",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "398988937",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-10T16:49:50Z",
+      "exit_utc": "2026-09-10T22:25:10Z",
+      "opening_volume": "34.50000000",
+      "closed_volume": "34.50000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "284925800",
+        "285001013"
+      ],
+      "profit": "95.32",
+      "commission": "0.00",
+      "swap": "19.63",
+      "fee": "0.00",
+      "net_cash": "114.95",
+      "ea_exit_cash": "114.95",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "399618790",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-11T14:18:40Z",
+      "exit_utc": "2026-09-11T15:08:13Z",
+      "opening_volume": "0.74000000",
+      "closed_volume": "0.74000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "285349102",
+        "285382497"
+      ],
+      "profit": "-997.52",
+      "commission": "-4.44",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-1001.96",
+      "ea_exit_cash": "-1001.96",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "400259945",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-14T13:38:51Z",
+      "exit_utc": "2026-09-14T13:47:51Z",
+      "opening_volume": "1.00000000",
+      "closed_volume": "1.00000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "285800204",
+        "285807846"
+      ],
+      "profit": "-984.00",
+      "commission": "-6.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-990.00",
+      "ea_exit_cash": "-990.00",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "400503030",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-14T19:20:30Z",
+      "exit_utc": "2026-09-14T19:35:10Z",
+      "opening_volume": "18.95000000",
+      "closed_volume": "18.95000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "285945435",
+        "285948510"
+      ],
+      "profit": "-872.07",
+      "commission": "-113.70",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-985.77",
+      "ea_exit_cash": "-985.77",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "400687907",
+      "symbol": "US100",
+      "entry_utc": "2026-09-15T05:40:40Z",
+      "exit_utc": "2026-09-15T05:45:08Z",
+      "opening_volume": "42.65000000",
+      "closed_volume": "42.65000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "286047194",
+        "286048263"
+      ],
+      "profit": "-975.83",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-975.83",
+      "ea_exit_cash": "-975.83",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "400795827",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-15T08:21:00Z",
+      "exit_utc": "2026-09-15T09:35:58Z",
+      "opening_volume": "18.09000000",
+      "closed_volume": "18.09000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "286114968",
+        "286144562"
+      ],
+      "profit": "-965.49",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-965.49",
+      "ea_exit_cash": "-965.49",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "401323004",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-16T03:46:20Z",
+      "exit_utc": "2026-09-16T04:49:02Z",
+      "opening_volume": "1.53000000",
+      "closed_volume": "1.53000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "286482509",
+        "286490582"
+      ],
+      "profit": "-945.54",
+      "commission": "-9.18",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-954.72",
+      "ea_exit_cash": "-954.72",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "401663494",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-16T15:35:30Z",
+      "exit_utc": "2026-09-16T17:01:20Z",
+      "opening_volume": "32.44000000",
+      "closed_volume": "32.44000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "286720044",
+        "286723437",
+        "286742315"
+      ],
+      "profit": "471.83",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "471.83",
+      "ea_exit_cash": "471.83",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "401784070",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-16T18:34:10Z",
+      "exit_utc": "2026-09-16T18:36:52Z",
+      "opening_volume": "26.82000000",
+      "closed_volume": "26.82000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "286807281",
+        "286811500"
+      ],
+      "profit": "-951.04",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-951.04",
+      "ea_exit_cash": "-951.04",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "401890448",
+      "symbol": "US100",
+      "entry_utc": "2026-09-16T19:45:50Z",
+      "exit_utc": "2026-09-16T22:25:40Z",
+      "opening_volume": "9.83000000",
+      "closed_volume": "9.83000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "286883021",
+        "286908808"
+      ],
+      "profit": "-941.71",
+      "commission": "0.00",
+      "swap": "17.60",
+      "fee": "0.00",
+      "net_cash": "-924.11",
+      "ea_exit_cash": "-924.11",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "402234685",
+      "symbol": "UK100",
+      "entry_utc": "2026-09-17T07:56:00Z",
+      "exit_utc": "2026-09-17T08:10:41Z",
+      "opening_volume": "36.33000000",
+      "closed_volume": "36.33000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "287084214",
+        "287090388"
+      ],
+      "profit": "-714.81",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-714.81",
+      "ea_exit_cash": "-714.81",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "402391108",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-17T11:39:40Z",
+      "exit_utc": "2026-09-17T14:57:19Z",
+      "opening_volume": "1.65000000",
+      "closed_volume": "1.65000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "287169144",
+        "287172642",
+        "287297878"
+      ],
+      "profit": "2891.72",
+      "commission": "-9.90",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "2881.82",
+      "ea_exit_cash": "2881.82",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "402914703",
+      "symbol": "US100",
+      "entry_utc": "2026-09-18T07:15:50Z",
+      "exit_utc": "2026-09-18T08:30:02Z",
+      "opening_volume": "35.53000000",
+      "closed_volume": "35.53000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "287522839",
+        "287527057",
+        "287551095"
+      ],
+      "profit": "44.66",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "44.66",
+      "ea_exit_cash": "44.66",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "403168162",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-18T14:19:00Z",
+      "exit_utc": "2026-09-18T18:54:09Z",
+      "opening_volume": "29.32000000",
+      "closed_volume": "29.32000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "287704306",
+        "287716872",
+        "287786125"
+      ],
+      "profit": "1587.75",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "1587.75",
+      "ea_exit_cash": "1587.75",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "403429027",
+      "symbol": "US100",
+      "entry_utc": "2026-09-21T01:48:00Z",
+      "exit_utc": "2026-09-21T01:58:29Z",
+      "opening_volume": "61.18000000",
+      "closed_volume": "61.18000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "287849504",
+        "287852456"
+      ],
+      "profit": "-970.93",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-970.93",
+      "ea_exit_cash": "-970.93",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "404066546",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-21T23:36:30Z",
+      "exit_utc": "2026-09-22T00:30:57Z",
+      "opening_volume": "2.35000000",
+      "closed_volume": "2.35000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "288203928",
+        "288205374",
+        "288225101"
+      ],
+      "profit": "25.23",
+      "commission": "-14.10",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "11.13",
+      "ea_exit_cash": "11.13",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "404217210",
+      "symbol": "US100",
+      "entry_utc": "2026-09-22T05:39:40Z",
+      "exit_utc": "2026-09-22T05:45:49Z",
+      "opening_volume": "56.12000000",
+      "closed_volume": "56.12000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "288311221",
+        "288313962"
+      ],
+      "profit": "-961.34",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-961.34",
+      "ea_exit_cash": "-961.34",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "404314872",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-22T08:35:40Z",
+      "exit_utc": "2026-09-22T08:39:51Z",
+      "opening_volume": "15.85000000",
+      "closed_volume": "15.85000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "288380725",
+        "288383348"
+      ],
+      "profit": "-951.92",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-951.92",
+      "ea_exit_cash": "-951.92",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "404406045",
+      "symbol": "USDJPY.r",
+      "entry_utc": "2026-09-22T10:35:40Z",
+      "exit_utc": "2026-09-22T11:10:00Z",
+      "opening_volume": "13.41000000",
+      "closed_volume": "13.41000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "288450052",
+        "288464759"
+      ],
+      "profit": "-546.18",
+      "commission": "-80.46",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-626.64",
+      "ea_exit_cash": "-626.64",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "405060244",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-23T11:57:10Z",
+      "exit_utc": "2026-09-23T12:52:02Z",
+      "opening_volume": "35.65000000",
+      "closed_volume": "35.65000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "288943340",
+        "288949337",
+        "288972230"
+      ],
+      "profit": "81.27",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "81.27",
+      "ea_exit_cash": "81.27",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "405229729",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-23T14:27:20Z",
+      "exit_utc": "2026-09-23T14:53:19Z",
+      "opening_volume": "0.60000000",
+      "closed_volume": "0.60000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "289067991",
+        "289082687"
+      ],
+      "profit": "-921.60",
+      "commission": "-3.60",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-925.20",
+      "ea_exit_cash": "-925.20",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "405250840",
+      "symbol": "AUDUSD.r",
+      "entry_utc": "2026-09-23T14:54:30Z",
+      "exit_utc": "2026-09-23T17:45:37Z",
+      "opening_volume": "13.44000000",
+      "closed_volume": "13.44000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "289084779",
+        "289101466",
+        "289147797"
+      ],
+      "profit": "1081.92",
+      "commission": "-80.64",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "1001.28",
+      "ea_exit_cash": "1001.28",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "405640859",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-24T09:37:00Z",
+      "exit_utc": "2026-09-24T12:13:16Z",
+      "opening_volume": "0.92000000",
+      "closed_volume": "0.92000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "289369870",
+        "289384974",
+        "289421853"
+      ],
+      "profit": "8.74",
+      "commission": "-5.52",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "3.22",
+      "ea_exit_cash": "3.22",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "406782899",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-28T01:54:01Z",
+      "exit_utc": "2026-09-28T10:04:02Z",
+      "opening_volume": "0.70000000",
+      "closed_volume": "0.70000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "290157794",
+        "290175270",
+        "290295381"
+      ],
+      "profit": "2502.15",
+      "commission": "-4.20",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "2497.95",
+      "ea_exit_cash": "2497.95",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "407242896",
+      "symbol": "US100",
+      "entry_utc": "2026-09-28T15:10:30Z",
+      "exit_utc": "2026-09-28T16:16:58Z",
+      "opening_volume": "11.85000000",
+      "closed_volume": "11.85000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "290437345",
+        "290460983"
+      ],
+      "profit": "-961.86",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-961.86",
+      "ea_exit_cash": "-961.86",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "407390566",
+      "symbol": "XAUUSD.r",
+      "entry_utc": "2026-09-28T22:09:00Z",
+      "exit_utc": "2026-09-28T23:20:00Z",
+      "opening_volume": "2.42000000",
+      "closed_volume": "2.42000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "290544984",
+        "290550807"
+      ],
+      "profit": "-471.90",
+      "commission": "-14.52",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-486.42",
+      "ea_exit_cash": "-486.42",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "407571384",
+      "symbol": "AUDUSD.r",
+      "entry_utc": "2026-09-29T06:49:10Z",
+      "exit_utc": "2026-09-29T10:44:24Z",
+      "opening_volume": "10.44000000",
+      "closed_volume": "10.44000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "290648237",
+        "290671598",
+        "290707602"
+      ],
+      "profit": "657.72",
+      "commission": "-62.64",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "595.08",
+      "ea_exit_cash": "595.08",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "408044341",
+      "symbol": "EURJPY.r",
+      "entry_utc": "2026-09-30T02:53:50Z",
+      "exit_utc": "2026-09-30T03:03:56Z",
+      "opening_volume": "11.03000000",
+      "closed_volume": "11.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "290957296",
+        "290959396"
+      ],
+      "profit": "-886.77",
+      "commission": "-66.18",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-952.95",
+      "ea_exit_cash": "-952.95",
+      "ea_broker_difference": "0.00"
+    },
+    {
+      "position_id": "408708254",
+      "symbol": "GER40",
+      "entry_utc": "2026-09-30T15:41:30Z",
+      "exit_utc": "2026-09-30T22:23:15Z",
+      "opening_volume": "18.63000000",
+      "closed_volume": "18.63000000",
+      "closing_deal_count": 2,
+      "deal_tickets": [
+        "291239948",
+        "291278104",
+        "291307505"
+      ],
+      "profit": "856.51",
+      "commission": "0.00",
+      "swap": "5.91",
+      "fee": "0.00",
+      "net_cash": "862.42"
+    },
+    {
+      "position_id": "409016573",
+      "symbol": "US100",
+      "entry_utc": "2026-09-30T20:40:30Z",
+      "exit_utc": "2026-09-30T22:40:00Z",
+      "opening_volume": "22.37000000",
+      "closed_volume": "22.37000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "291302717",
+        "291308517"
+      ],
+      "profit": "-704.66",
+      "commission": "0.00",
+      "swap": "43.62",
+      "fee": "0.00",
+      "net_cash": "-661.04"
+    },
+    {
+      "position_id": "409382791",
+      "symbol": "GER40",
+      "entry_utc": "2026-10-01T08:14:40Z",
+      "exit_utc": "2026-10-01T08:57:12Z",
+      "opening_volume": "9.03000000",
+      "closed_volume": "9.03000000",
+      "closing_deal_count": 1,
+      "deal_tickets": [
+        "291433576",
+        "291448122"
+      ],
+      "profit": "-945.80",
+      "commission": "0.00",
+      "swap": "0.00",
+      "fee": "0.00",
+      "net_cash": "-945.80"
+    }
+  ],
+  "limitations": [
+    "Broker deals reconstruct realized balance including entry commissions and dated partial exits. They do not contain historical unrealized equity marks or contemporaneous bid/ask quotes.",
+    "EA event coverage begins August 29 and ends September 30 17:25 UTC; broker export contains older positions and later October 1 exits.",
+    "Nine earlier V1 positions lack original planned dollar risk in the derived historical ledger."
+  ]
+}
