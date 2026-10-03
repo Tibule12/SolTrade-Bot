@@ -1,0 +1,2 @@
+result,login,server,symbol,rows,errors,order_capability,mql_trade_allowed,terminal_trade_allowed,server_now
+COPY_ERRORS,7404213,FPMarketsSC-Demo,XAUUSD.r,100000,12,false,1,1,2026.10.02 23:59:59

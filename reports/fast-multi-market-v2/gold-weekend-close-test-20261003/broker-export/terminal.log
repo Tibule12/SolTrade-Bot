@@ -1,0 +1,12 @@
+libEGL warning: pci id for fd 35: 10de:13b6, driver (null)
+
+pci id for fd 36: 10de:13b6, driver (null)
+pci id for fd 37: 10de:13b6, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 35: 10de:13b6, driver (null)
+
+pci id for fd 36: 10de:13b6, driver (null)
+pci id for fd 37: 10de:13b6, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 35: 10de:13b6, driver (null)
+
