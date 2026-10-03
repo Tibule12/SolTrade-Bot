@@ -16,9 +16,17 @@
       "bytes": 7412,
       "sha256": "8d1059aeffe8c5d03c48ae5a48ca5a1f2ccbbc27fb9356b671269e3624156992"
     },
+    "tools/measure_gold_precontinuation.py": {
+      "bytes": 2455,
+      "sha256": "deb1ee1ca2c4b1b99510deb445c682192f4867aa873c335bdc906737265ef6d6"
+    },
     "tests/test_gold_weekend_expanded.py": {
-      "bytes": 2659,
-      "sha256": "0a80af755c04d10f17a46d7332660e1bf8826c601b8de3037d998a33f0528e01"
+      "bytes": 3442,
+      "sha256": "733a8ec91b5e325ab4acebba236fd8f03e2e77234b4d0862939975ba108bf13c"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/precontinuation.json": {
+      "bytes": 1027,
+      "sha256": "c10729acd8bbdde272609b6151bf17b011f5f10e145ae434639c950e17e3589f"
     },
     "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/primary.json": {
       "bytes": 73440,
@@ -81,12 +89,12 @@
       "sha256": "78d7616c7a03267c860cec7e59ea9eb82a2a1afd61629d6e16436b2debcc5a6b"
     },
     "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/report.md": {
-      "bytes": 12193,
-      "sha256": "661744e6831fa30ff4c5d2561115cc83f71c31c5f387acb26103eca88512b643"
+      "bytes": 12728,
+      "sha256": "49bd6713aa1dc03cf1505a756ef6a50c6bd3ca5e5b10924297608538e01a3d41"
     },
     "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/test-results.json": {
-      "bytes": 488,
-      "sha256": "c78f61c477ec2e347fa9e93dca061b381fed6623ad33a939059ac4ea06abddd3"
+      "bytes": 640,
+      "sha256": "ca2d52b55bd0ff7bc045ad4508d00543e74e8d92db76ac7865565b91664ab1a8"
     }
   }
 }

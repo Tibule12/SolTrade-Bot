@@ -2,9 +2,11 @@ import sys
 import unittest
 from datetime import datetime, timedelta
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from analyze_gold_weekend_expanded import evaluate, signals, entry_indices, session_endpoint
+from measure_gold_precontinuation import measure
 
 
 class GoldWeekendExpandedTests(unittest.TestCase):
@@ -55,6 +57,17 @@ class GoldWeekendExpandedTests(unittest.TestCase):
         source = (Path(__file__).resolve().parents[1] / "tools/mql/SolTradeGoldWeekendReadOnly.mq5").read_text()
         for token in ("OrderSend(", "OrderSendAsync(", "CTrade", "PositionClose(", "#include <Trade"):
             self.assertNotIn(token, source)
+
+    def test_precontinuation_mae_excludes_unknown_boundary_bar_order(self):
+        monday = self.bars(3)
+        monday[1] = (monday[1][0], 100, 100, 98, 100, .1)
+        monday[2] = (monday[2][0], 100, 106, 90, 100, .1)
+        receipt = {"monday":"2026-10-05", "signals":{"M1":"BUY"},
+                   "paths":{"BUY":{"REOPEN":{"entry_price_estimate":100.1,
+                    "barrier_5":"FAVORABLE_FIRST","barrier_10":"NEITHER","barrier_20":"NEITHER"}}}}
+        with patch("measure_gold_precontinuation.load",return_value=({monday[0][0].date():monday},{},{})):
+            result = measure(Path("unused"),[receipt])
+        self.assertAlmostEqual(result["5"]["median_prior_adverse_usd"],2.1)
 
 
 if __name__ == "__main__":

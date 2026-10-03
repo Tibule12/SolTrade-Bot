@@ -1,0 +1,23 @@
+{
+  "5": {
+    "favorable_first_paths": 119,
+    "first_bar_favorable_paths": 27,
+    "median_prior_adverse_usd": 1.15,
+    "p90_prior_adverse_usd": 3.27,
+    "definition": "Worst executable-side adverse quote on completed bars strictly before the first favorable-boundary bar; boundary bar excluded because M1 high/low order is unknown"
+  },
+  "10": {
+    "favorable_first_paths": 58,
+    "first_bar_favorable_paths": 14,
+    "median_prior_adverse_usd": 1.21,
+    "p90_prior_adverse_usd": 5.72,
+    "definition": "Worst executable-side adverse quote on completed bars strictly before the first favorable-boundary bar; boundary bar excluded because M1 high/low order is unknown"
+  },
+  "20": {
+    "favorable_first_paths": 38,
+    "first_bar_favorable_paths": 3,
+    "median_prior_adverse_usd": 3.805,
+    "p90_prior_adverse_usd": 18.55,
+    "definition": "Worst executable-side adverse quote on completed bars strictly before the first favorable-boundary bar; boundary bar excluded because M1 high/low order is unknown"
+  }
+}

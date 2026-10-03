@@ -1,9 +1,10 @@
 {
-  "expanded_unittest": {"passed": 7, "failed": 0},
+  "expanded_unittest": {"passed": 8, "failed": 0},
   "legacy_boundary_tests": {"passed": 4, "failed": 0},
   "python_compile": "PASS",
   "mql_compile": "0 errors, 0 warnings",
   "old_export_overlap": {"rows_matched": 100000, "field_mismatches": 0},
   "full_export": {"m1_rows": 2336387, "duplicate_or_decreasing_timestamps": 0, "requests_before_broker_history_failed_4401": 8},
+  "precontinuation": {"favorable_first_paths_5": 119, "favorable_first_paths_10": 58, "favorable_first_paths_20": 38, "same_bar_order_excluded": true},
   "research_order_api_scan": "PASS: no OrderSend, OrderSendAsync, CTrade, PositionClose, Buy or Sell call"
 }
