@@ -5,6 +5,8 @@
 input bool ReadOnlyResearchConfirmed=false;
 input bool CloseWhenDone=true;
 input string OutputSuffix="20261003";
+input string StartServer="2023.01.01 00:00:00";
+input string EndServer="2026.10.04 00:00:00";
 
 string ROOT="SolTradeGoldWeekendReadOnly\\";
 bool ran=false;
@@ -42,14 +44,26 @@ void ExportBars()
    int h=FileOpen(ROOT+"m1-"+OutputSuffix+".csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
    if(h==INVALID_HANDLE){Finish("FILE_ERROR",0,1);return;}
    FileWrite(h,"server_epoch","bid_open","bid_high","bid_low","bid_close","spread_points","point","tick_volume");
-   datetime start=StringToTime("2026.04.01 00:00:00");
-   datetime finish=StringToTime("2026.10.04 00:00:00");
+   int d=FileOpen(ROOT+"requests-"+OutputSuffix+".csv",FILE_WRITE|FILE_CSV|FILE_ANSI|FILE_COMMON,',');
+   if(d!=INVALID_HANDLE) FileWrite(d,"from_server","to_server","rows","last_error","attempts","max_bars","series_first","server_first");
+   datetime start=StringToTime(StartServer);
+   datetime finish=StringToTime(EndServer);
+   if(start<=0 || finish<=start){FileClose(h);if(d!=INVALID_HANDLE)FileClose(d);Finish("INVALID_RANGE",0,1);return;}
    long rows=0;int errors=0;
    for(datetime from=start;from<finish;from+=7*86400)
      {
       datetime to=from+7*86400-1;if(to>=finish)to=finish-1;
-      MqlRates rates[];ResetLastError();
-      int n=CopyRates(symbol,PERIOD_M1,from,to,rates);
+      MqlRates rates[];int n=-1;int code=0;int tries=0;
+      for(tries=1;tries<=5;tries++)
+        {
+         ResetLastError();n=CopyRates(symbol,PERIOD_M1,from,to,rates);code=GetLastError();
+         if(n>=0)break;
+         Sleep(1000);
+        }
+      long first=0,server_first=0;
+      SeriesInfoInteger(symbol,PERIOD_M1,SERIES_FIRSTDATE,first);
+      SeriesInfoInteger(symbol,PERIOD_M1,SERIES_SERVER_FIRSTDATE,server_first);
+      if(d!=INVALID_HANDLE) FileWrite(d,TimeToString(from,TIME_DATE|TIME_SECONDS),TimeToString(to,TIME_DATE|TIME_SECONDS),n,code,tries,TerminalInfoInteger(TERMINAL_MAXBARS),first,server_first);
       if(n<0){errors++;continue;}
       for(int i=0;i<n;i++)
         {
@@ -59,8 +73,10 @@ void ExportBars()
          rows++;
         }
       FileFlush(h);
+      if(d!=INVALID_HANDLE)FileFlush(d);
      }
-   FileClose(h);Finish(errors==0?"COMPLETE":"COPY_ERRORS",rows,errors);
+   FileClose(h);if(d!=INVALID_HANDLE)FileClose(d);
+   Finish(errors==0?"COMPLETE":"COPY_ERRORS",rows,errors);
   }
 
 void OnTimer()

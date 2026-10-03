@@ -17,7 +17,7 @@ SOURCE = ROOT / "tools/mql/SolTradeGoldWeekendReadOnly.mq5"
 COMMON_OUTPUT = COMMON / "SolTradeGoldWeekendReadOnly"
 
 
-def run(output: Path, timeout: int) -> dict:
+def run(output: Path, timeout: int, suffix: str = "20261003-expanded", start: str = "2023.01.01 00:00:00", max_bars: int = 2000000) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     source_text = SOURCE.read_text()
     forbidden = ("OrderSend(", "OrderSendAsync(", "CTrade", "#include <Trade", ".Buy(", ".Sell(", "PositionClose(")
@@ -51,16 +51,18 @@ def run(output: Path, timeout: int) -> dict:
     shutil.copy2(SOURCE, output / SOURCE.name)
     preset_name = "SolTradeGoldWeekendReadOnly.set"
     (TERMINAL / "MQL5/Presets" / preset_name).write_text(
-        "ReadOnlyResearchConfirmed=true\nCloseWhenDone=true\nOutputSuffix=20261003\n"
+        "ReadOnlyResearchConfirmed=true\nCloseWhenDone=true\n"
+        f"OutputSuffix={suffix}\nStartServer={start}\nEndServer=2026.10.04 00:00:00\n"
     )
     config_name = "gold-weekend-readonly.ini"
     (TERMINAL / config_name).write_text(
         "[Common]\nLogin=7404213\nServer=FPMarketsSC-Demo\nKeepPrivate=1\nNewsEnable=0\n"
         "[Experts]\nEnabled=1\nAllowLiveTrading=0\nAllowDllImport=0\nAccount=0\nProfile=0\n"
+        f"[Charts]\nMaxBars={max_bars}\n"
         "[StartUp]\nSymbol=XAUUSD.r\nPeriod=M1\nExpert=SolTradeGoldWeekendReadOnly\n"
         f"ExpertParameters={preset_name}\n"
     )
-    status = COMMON_OUTPUT / "status-20261003.csv"
+    status = COMMON_OUTPUT / f"status-{suffix}.csv"
     before = status.stat().st_mtime_ns if status.exists() else None
     started = time.time()
     with (output / "terminal.log").open("wb") as log:
@@ -76,10 +78,13 @@ def run(output: Path, timeout: int) -> dict:
             raise RuntimeError("Read-only exporter timed out")
     if not status.exists() or status.stat().st_mtime_ns == before:
         raise RuntimeError("Fresh completion status missing")
-    bars = COMMON_OUTPUT / "m1-20261003.csv"
+    bars = COMMON_OUTPUT / f"m1-{suffix}.csv"
+    requests = COMMON_OUTPUT / f"requests-{suffix}.csv"
     shutil.copy2(status, output / status.name)
     if bars.exists():
         shutil.copy2(bars, output / bars.name)
+    if requests.exists():
+        shutil.copy2(requests, output / requests.name)
     result = {
         "read_only": True,
         "source_sha256": hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
@@ -96,5 +101,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument("--suffix", default="20261003-expanded")
+    parser.add_argument("--start", default="2023.01.01 00:00:00")
+    parser.add_argument("--max-bars", type=int, default=2000000)
     args = parser.parse_args()
-    print(json.dumps(run(args.output, args.timeout), indent=2))
+    print(json.dumps(run(args.output, args.timeout, args.suffix, args.start, args.max_bars), indent=2))

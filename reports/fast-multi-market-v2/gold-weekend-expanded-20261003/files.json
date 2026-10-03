@@ -1,0 +1,92 @@
+{
+  "files": {
+    "tools/mql/SolTradeGoldWeekendReadOnly.mq5": {
+      "bytes": 4033,
+      "sha256": "45f878874503941aed92de7aa3d7d9f554d6c89dbda48be59531622b864e8f2e"
+    },
+    "tools/run_gold_weekend_readonly.py": {
+      "bytes": 5231,
+      "sha256": "68606bc23408e6ced8b53d471c116ee9017dacc16aca287aa1e88fe7c2e19787"
+    },
+    "tools/analyze_gold_weekend_expanded.py": {
+      "bytes": 17819,
+      "sha256": "e42f4f38b7fd40fbb32375d120d3a24300769eeac5519f74c769ed8625afb859"
+    },
+    "tools/summarize_gold_weekend_primary.py": {
+      "bytes": 7412,
+      "sha256": "8d1059aeffe8c5d03c48ae5a48ca5a1f2ccbbc27fb9356b671269e3624156992"
+    },
+    "tests/test_gold_weekend_expanded.py": {
+      "bytes": 2659,
+      "sha256": "0a80af755c04d10f17a46d7332660e1bf8826c601b8de3037d998a33f0528e01"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/primary.json": {
+      "bytes": 73440,
+      "sha256": "e03fd97ea91e786ccf775785b78b3e186f4e910794cd4855ce78c45c3c0d92b9"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/results.csv": {
+      "bytes": 269067,
+      "sha256": "49119d97e79bec76f89a39482e38a32f0ca2a0d8ca31ee6f7f916cbc16c5e03f"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/summary.json": {
+      "bytes": 1536,
+      "sha256": "b58a0e67b4e02ea4f962520be497b7e27ffdbdd500326ace6ebb3128a993fcb6"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/analysis/weekends.jsonl": {
+      "bytes": 2285010,
+      "sha256": "273955deed2d6eda4fb0407f1d77da0a359071b6566bbaee429fc28f8b8a031f"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export/receipt.json": {
+      "bytes": 477,
+      "sha256": "267249cd403cead805a6a87267e6751dd7088df309a43ec0a9d6ffc5697ccf6d"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export/requests-20261003-expanded.csv": {
+      "bytes": 15566,
+      "sha256": "12ea9bc728174fc79439aae02be2cf18c7d68a8aa3a887126f48afa178f1e8a0"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export/status-20261003-expanded.csv": {
+      "bytes": 191,
+      "sha256": "d73c5dc90ca1c15b5c50b7c8c9fa5a55a7cb7da4fab399d5845a73af20e43582"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/SolTradeGoldWeekendReadOnly.mq5": {
+      "bytes": 4033,
+      "sha256": "45f878874503941aed92de7aa3d7d9f554d6c89dbda48be59531622b864e8f2e"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/gold-weekend-compile.log": {
+      "bytes": 3052,
+      "sha256": "d183bbe673341ea6c3aea54b2cc567bdb3473b8f5486252e7768b49aab246e2d"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/m1-20261003-full.csv.gz": {
+      "bytes": 31756725,
+      "sha256": "bd63ab7c35fd2a8a1d4e22cb1a1e2a2c1c21aea9f3d4580a67323600438f000f"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/receipt.json": {
+      "bytes": 482,
+      "sha256": "632f572f543013bb0cae39c7adb45681a3c43fb55fe2cf6c0e7ef05b64985914"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/requests-20261003-full.csv": {
+      "bytes": 27977,
+      "sha256": "a55fbc671c50387312c55799b93117c90a9daa52ce075595512e8a0f87a60580"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/broker-export-full/status-20261003-full.csv": {
+      "bytes": 194,
+      "sha256": "479f2cd7c78b5adc5cb6f52a8f48a0fe7ba855d891c1888bd9805c341228edd4"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/history-hashes.json": {
+      "bytes": 427,
+      "sha256": "d7f9233b6a297435b6fa61c75b4e08ae7d4968f42c4e9fa362f30298f41f3b16"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/protocol.json": {
+      "bytes": 3184,
+      "sha256": "78d7616c7a03267c860cec7e59ea9eb82a2a1afd61629d6e16436b2debcc5a6b"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/report.md": {
+      "bytes": 12193,
+      "sha256": "661744e6831fa30ff4c5d2561115cc83f71c31c5f387acb26103eca88512b643"
+    },
+    "reports/fast-multi-market-v2/gold-weekend-expanded-20261003/test-results.json": {
+      "bytes": 488,
+      "sha256": "c78f61c477ec2e347fa9e93dca061b381fed6623ad33a939059ac4ea06abddd3"
+    }
+  }
+}

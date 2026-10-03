@@ -1,0 +1,79 @@
+{
+  "coverage": {
+    "rows": 2336387,
+    "first_server": "2020-02-28 01:00:00",
+    "last_server": "2026-10-02 23:59:00",
+    "daily_days": 1703
+  },
+  "complete_weekends": 327,
+  "missing_weekend_reasons": {
+    "missing_14_prior_days": 3,
+    "no_monday": 5
+  },
+  "split": {
+    "in_sample": 228,
+    "out_of_sample": 99,
+    "cut_after_friday": "2024-10-18"
+  },
+  "benchmarks": {
+    "all_friday_direction": {
+      "n": 327,
+      "mean_4h": 1.2008,
+      "median_4h": -0.33,
+      "mean_ci95": [
+        -0.743,
+        3.1655
+      ]
+    },
+    "random_50_50_direction": {
+      "n": 327,
+      "mean_4h": -0.1445,
+      "median_4h": -0.09,
+      "mean_ci95": [
+        -0.165,
+        -0.1266
+      ]
+    },
+    "unconditional_monday_buy": {
+      "n": 327,
+      "mean_4h": 0.5062,
+      "median_4h": -0.01,
+      "mean_ci95": [
+        -1.5139,
+        2.3792
+      ]
+    },
+    "unconditional_monday_sell": {
+      "n": 327,
+      "mean_4h": -0.7953,
+      "median_4h": -0.32,
+      "mean_ci95": [
+        -2.7004,
+        1.2122
+      ]
+    },
+    "strong_friday_direction": {
+      "n": 61,
+      "mean_4h": 1.7226,
+      "median_4h": -0.56,
+      "mean_ci95": [
+        -1.2634,
+        5.2831
+      ]
+    },
+    "ordinary_friday_direction": {
+      "n": 266,
+      "mean_4h": 1.0811,
+      "median_4h": -0.035,
+      "mean_ci95": [
+        -1.1118,
+        3.2308
+      ]
+    }
+  },
+  "adverse_4h_of_positive_friday_reopen": {
+    "n": 159,
+    "median_usd": 2.8299999999999272,
+    "p90_usd": 14.88000000000011
+  }
+}

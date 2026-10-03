@@ -1,0 +1,6 @@
+{
+  "full_uncompressed_m1_sha256": "5dd56e33fc9cab47d1dc5659866edd88f9916bdec2bd99bda4a7e4b48db693ec",
+  "interim_2023_uncompressed_m1_sha256": "f31c6c0f7ab02759a9b0e92d22e3dba3a46b0f0e3ae04b1aa4a44f34f5b9113a",
+  "old_100000_row_overlap": {"matched_rows": 100000, "field_mismatches": 0},
+  "storage": "Full export retained as deterministic gzip; redundant uncompressed and interim raw CSVs removed after hash verification."
+}

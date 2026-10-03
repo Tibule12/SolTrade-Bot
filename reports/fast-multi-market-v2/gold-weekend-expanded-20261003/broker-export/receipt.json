@@ -1,0 +1,11 @@
+{
+  "read_only": true,
+  "source_sha256": "45f878874503941aed92de7aa3d7d9f554d6c89dbda48be59531622b864e8f2e",
+  "isolated_terminal": "/home/tibule12/.wine-fpmarkets/drive_c/v202-validation-terminal",
+  "elapsed_seconds": 23.4,
+  "process_exit_code": 0,
+  "status": [
+    "result,login,server,symbol,rows,errors,order_capability,mql_trade_allowed,terminal_trade_allowed,server_now",
+    "COMPLETE,7404213,FPMarketsSC-Demo,XAUUSD.r,1328340,0,false,1,1,2026.10.02 23:59:59"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "frozen_before_expanded_outcomes": true,
+  "source": "FPMarketsSC-Demo XAUUSD.r completed M1 bid OHLC with reported per-bar spread; no other feed pooled",
+  "primary_hypothesis": "Direction of the final completed Friday M1 candle predicts same-direction Monday continuation; primary outcome is first +$5/+10/+20 versus equivalent adverse move in first four hours after immediate reopen. Later entry methods and every other Friday definition are secondary.",
+  "history_request_server": ["2023.01.01 00:00:00", "2026.10.04 00:00:00"],
+  "weekend_pair": "Last Friday M1 to first following Monday M1, 40-80 elapsed hours; require at least 40 Friday M1, 10 prior full trading days for ATR, and complete post-entry horizon for each reported outcome",
+  "atr": "Mean true range of 14 completed trading days strictly before Friday; Friday and Monday excluded",
+  "signal_thresholds": {
+    "close_location_primary": [0.2, 0.8],
+    "close_location_sensitivity": [[0.1, 0.9], [0.3, 0.7]],
+    "strong_return_atr_primary": 0.75,
+    "strong_return_atr_sensitivity": [0.5, 1.0],
+    "strong_close_location_primary": 0.2,
+    "strong_close_location_sensitivity": [0.1, 0.3]
+  },
+  "signals": ["M1", "M15", "H1", "H4", "FRIDAY", "CLOSE_LOCATION", "ATR_RETURN", "STRONG", "M1_H1", "H1_H4", "H4_FRIDAY", "ALL_AGREE"],
+  "entries": {
+    "REOPEN": "First Monday M1 open",
+    "AFTER_15M": "First M1 open at least 15 elapsed minutes after reopen, maximum 2-minute lateness",
+    "AFTER_30M": "First M1 open at least 30 elapsed minutes after reopen, maximum 2-minute lateness",
+    "DIRECTIONAL_H1": "First completed 60-minute block after reopen whose bid close-open direction agrees with Friday signal, first 4 hours only; next M1 open",
+    "PULLBACK_CONTINUATION": "In first 4 hours, first $5 favorable bid displacement, then $2 pullback from favorable extreme, then M1 close $1 beyond that extreme; next M1 open; same-bar sequencing is not inferred",
+    "FIRST_RANGE_BREAKOUT": "First 30-minute Monday bid range, then M1 close $1 outside the range in Friday direction within first 4 hours; next M1 open"
+  },
+  "fills": "Buy enters at M1 bid open + bar spread, exits at later bid; sell enters at bid open and exits at later bid + bar spread; no slippage/commission or exact tick fill inferred",
+  "horizons_minutes_after_entry": [15, 30, 60, 240],
+  "barrier_dollars": [5, 10, 20],
+  "barrier_window": "First four hours after entry; both thresholds in one M1 bar = ambiguous; missing/gapped interval = censored",
+  "sessions": "London/NY results use Europe/Athens as an unverified broker-server DST proxy; London and NY local Monday close are 16:00 and 17:00, with early broker Tuesday bars included to reach New York close; performance is entry-to-session-close, not intraday session-only P/L",
+  "split": "Chronological 70% weekends in sample, 30% out of sample; no parameter tuning on either split",
+  "confidence": "Wilson 95% binomial intervals and deterministic weekend bootstrap 95% intervals for means; descriptive when sample is small",
+  "benchmarks": ["50/50 Monday buy/sell return on same weekends", "unconditional all-Friday same-direction return", "non-strong Friday return"]
+}
